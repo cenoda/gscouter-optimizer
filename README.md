@@ -6,6 +6,8 @@ Find build-dependent sustained-DPS rotations for Gscouter using the Rust simulat
 
 The agreed scope, standard builds, search algorithm and compute estimate are in [the rotation-search plan](docs/rotation-search.md). The first batch targets each party member independently at C0, C1, C2, C4 and C6, with a hard limit of one week, $500 total and two 64-core Azure Fals v7 VMs. Estimates remain provisional until measured on those VMs.
 
+The [design review](docs/design-review.md) records seven implementation risks and their dispositions. The revised proposal couples ER allocation with cycles, uses two persistent search chains with staged evaluation, validates archive promotions, exports diverse candidates and schedules work by measured CPU cost. It supersedes the fixed 1,000-candidate/eight-chain allocation and the derived 5.33-day forecast; these changes are still unimplemented.
+
 ## Repository responsibilities
 
 | Repository | Responsibility |
@@ -21,6 +23,7 @@ The optimizer's main implementation language is planned to be Rust. No engine de
 ## Documents
 
 - [Rotation search](docs/rotation-search.md): agreed decisions and the proposed algorithm, workload and delivery plan.
+- [Design review](docs/design-review.md): critique, accepted changes, limits and pilot requirements.
 - [Working instructions](CLAUDE.md): repository scope and current implementation boundary.
 
 The plan was moved from `gscouter-engine/docs/rotation-search.md`, originally committed as [`84a53e4`](https://github.com/cenoda/gscouter-engine/commit/84a53e45e91a1c9ce3cabaaf2cf2c7082283bc53). This repository is now its authoritative home; the engine keeps a forwarding link.
