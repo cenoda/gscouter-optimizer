@@ -14,6 +14,8 @@ The [design review](docs/design-review.md) records seven implementation risks an
 
 The follow-up review fixes a 16-fight minimum before replacing a chain state, a frozen artifact-roll/quality/CV envelope and a diversity slot for C0-on-field transfer. Compatibility probes are empirical observations, not one-fight proofs of a C1 requirement. Discovery/coverage samples are reused only when the full evaluation identity matches; independent final audits remain separate.
 
+Search now explicitly competes across a bounded set of different play structures before concentrating depth within them. Imported programs can receive target-profile refinement inside the same discovery-location and CPU caps. A small pilot must demonstrate discovery, stability and recovery of a restricted enumerated optimum before expansion. Serving-time search on actual user gear is still outside scope; limited actual-gear experiments stay inside the pilot budget and eligible non-C0 discovery profiles.
+
 ## Repository responsibilities
 
 | Repository | Responsibility |

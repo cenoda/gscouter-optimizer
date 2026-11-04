@@ -130,6 +130,40 @@ Having room for every profile in a party does not mean adaptive scheduling actua
 - Record probe passes, execution errors and timing degradation separately; audit false conclusions rather than treating one seed as a reliability test.
 - Report eligible versus actually activated discovery locations, exact cache reuse and missing cross-archive comparisons separately from held-out final audits.
 
+## Structure and discovery-quality review
+
+A further owner-supplied review recommends explicit competition between different play structures, target-specific refinement after transfer, a small discovery-quality pilot and measurement of actual-equipment residual loss. These are incorporated as proposals, with the boundaries below. No code, larger batch or serving-time optimization is authorized by this review.
+
+### 1. Compete different structures before tuning details
+
+**Accepted.** Role, burst-period, swap/field-time and buff-distribution changes should be deliberate starting structures, not discoveries that require a lucky sequence of local mutations. Use a bounded outer family scheduler with inner annealing. Initially admit up to four distinct legal families at a selected profile, give each an initial optimization quantum and then allocate depth by observed evidence. Retain structure-changing moves and underexplored-family opportunities.
+
+Two chain slots remain active per profile in total, scheduled across family states. Do not multiply two chains by every structure or enumerate all descriptor combinations. Seed construction, failed families, paused-state resumes and outer comparisons all consume the existing discovery cap. This is a more explicit search policy, not measured proof that four families suffice or that the policy beats local-only search.
+
+### 2. Refine selected imported programs at their target profile
+
+**Accepted inside the existing scope.** Evaluate the imported program at an eligible non-C0 target, grant a bounded adaptation quantum when selected, mutate sequence/repeats/timing/ER there and independently compare the result. Return useful adapted programs to the shared archive. Track source versus target scores and imported-only versus adapted gains separately.
+
+A newly refined target consumes a distinct location in the same `min(32, 4^n)` allowance. Initial anchors and promotion slots are planned together; exhausting all slots does not make archive-seeded locations free. Allocate fewer locations or less depth elsewhere rather than append a new refinement pass to every covered profile. Mixed-C0 targets still receive bounded program reuse/probes, not additional C0 annealing. Equal-cost import-only/adaptation comparisons must establish whether the trade is useful.
+
+### 3. Measure discovery quality before spending the full batch
+
+**Accepted and made an explicit expansion decision.** Use a declared small development/held-out suite. Hide known strong complete cycles from the seed/archive path, plot independently audited quality against actual CPU budgets, repeat starts and seeds, and compare family/local-only and transfer/refinement variants at equal cost. Record failures and program structures, not only the best number from a favorable run.
+
+For a small enumerable problem, freeze a finite grammar of programs and allocations, enumerate valid choices and compare recovery of its reference maximum. That maximum is only for the declared domain and sample objective; uncertainty in expected DPS remains. Repeated runs or a flat improvement curve do not bound the unrestricted GCSL optimum. Predeclare held-out tolerances and success/failure criteria before inspecting those outcomes. If the generator fails, revise it within budget or report pilot-only/deferred results rather than scale a failing method.
+
+All development, enumeration, withheld references, repeats, seed preparation, audits and reporting are charged to existing pilot/discovery/audit allocations. No compute-speedup factor is assumed from stronger candidate generation.
+
+### 4. Actual-equipment direct search
+
+**Accept as a bounded pilot diagnostic, not a serving feature.** On selected already eligible C1/C2/C4/C6 profiles, compare archive selection with program-only refinement at actual equipment and fixed actual stats under equal cost to measure remaining transfer loss. Reuse the existing pilot allocation and do not add an equipment Cartesian grid. This diagnostic does not move the player's substats; the standard-build `(P, A)` allocation optimizer is a different experiment.
+
+C0/mixed-C0 cases keep their existing baseline/transfer/probe role under the current no-new-C0-search decision. Request-time refinement and caching of its optimized results remain possible later work with a separate explicit latency and resource decision. The review does not grant automatic permission to spend more CPU per request.
+
+### Scope and budget invariants
+
+The nominal discovery envelope stays 315,043 profiles, the distinct-location ceiling stays 101,027, the active-chain limit is two per profile in total, the serving archive stays at up to six candidates, and phase caps remain 600/6,200/250/700 CPU-hours plus the existing contingency. Family competition and refinement trade within these quotas; they do not multiply them. The one-week, $500 and 128-core limits and the documentation-only implementation boundary remain unchanged.
+
 The relevant algorithm references are the [original simulated annealing paper](https://doi.org/10.1126/science.220.4598.671) and the authors' [iterated-racing paper and supplementary material](https://iridia.ulb.ac.be/supp/IridiaSupp2016-003/). They motivate acceptance and adaptive evaluation; they do not validate this domain-specific combination or promise a speedup for it.
 
 This review changes documentation only. No application code, CI, deployment or cloud batch is added or run.

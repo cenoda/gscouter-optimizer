@@ -108,7 +108,17 @@ Insertion can use all supported actions of all four members, not only actions pr
 
 ## 3. Algorithm: shared search with racing and joint ER allocation
 
-The proposed implementation is a native Rust command in this repository, separate from the engine and serving path. Use multi-start simulated annealing with staged evaluation, persistent chains and a shared per-party archive. Compare it against random mutations and improvement-only search under equal measured CPU budgets. It remains an unvalidated finite-budget heuristic, with no global-optimum or standard annealing convergence claim.
+The proposed implementation is a native Rust command in this repository, separate from the engine and serving path. Use an outer budgeted competition between different play structures and inner multi-start simulated annealing with staged evaluation, persistent chains and a shared per-party archive. Imported programs may receive target-profile refinement within the same quotas. Compare the design against random mutations and improvement-only search under equal measured CPU budgets. It remains an unvalidated finite-budget heuristic, with no global-optimum or standard annealing convergence claim.
+
+### Competing play structures before local tuning
+
+Do not depend on a sequence of lucky local edits to discover a different way to play the party. Define a structure descriptor covering the intended on-field member, per-member burst period (for example every cycle versus every second cycle), short-swap versus longer-field blocks and concentrated versus distributed support windows. These are program-generation choices, not new equipment or constellation axes. Simulation establishes their realized timing and feasibility.
+
+Generate an initially bounded set of **up to four distinct structure families** per selected profile, including the existing baseline structure and legal alternatives chosen for that party. Deduplicate identical programs/structures; fewer than four is valid when no other feasible seed is available. Do not instantiate the full Cartesian product of descriptors, four members, 32 profiles, structures and chain counts. Record which structures were attempted, why a seed failed and which were not explored. Existing scripts and typed blocks seed families, but generation must allow a new role or burst period not present in the original C0 script.
+
+Give each selected valid family a small initial local-optimization quantum before allocating most remaining CPU to promising families. A weak initial seed alone does not show the family is bad. Keep **two active chain slots per profile in total**, scheduled across families; paused family states retain their program, allocation, temperature and accounting. Do not create two fresh chains for every family. The existing exploration allocation covers underexplored parties and structure families rather than adding another independent budget fraction.
+
+Within a family, tune support/action order, combo repetitions, waits and the frozen ER allocation. Keep occasional structure-changing proposals and explicit restarts alive; a family label is not a permanent restriction on legal programs. Relabel a program when its intended structure changes and record observed behavior without counting it as a new constellation location. Families share verified programs through the archive, while archive diversity and the C0-on-field slot prevent peak source DPS alone from deleting every alternative. Compare retained finalists using the same target conditions and independent seeds.
 
 ### Joint candidate and bounded ER repair
 
@@ -128,6 +138,14 @@ The census implies a ceiling of **101,027 distinct discovery locations**, not th
 
 Discovery and coverage use one evaluation cache. Reuse an existing sample only when program, allocation, party/profile, engine and input revisions, conditions, horizon/warmup and seed/stream identity all match. Do not rerun an identical discovery sample merely to label it coverage; evaluate missing cross-archive program/profile pairs and required additional samples instead. A discovered local winner does not establish that another anchor's program is worse. Final held-out audit samples remain independent and cannot be replaced by training samples. No numerical coverage saving is assumed before cache-hit rates are measured.
 
+### Transfer followed by selected target-profile refinement
+
+Candidate sharing is more than copying a source winner and stopping after reranking. For an eligible C1/C2/C4/C6 target profile, use the flow **retrieve -> evaluate at target -> select an adaptation quantum -> mutate at target -> independently compare -> share back**. Initialize its allocation under the same frozen investment envelope, rather than importing a source profile's ER assumptions or DPS. Count target repairs, current-state refreshes, seed preparation and archive checks as ordinary discovery work.
+
+Refinement is selective. A target promoted from coverage to local optimization consumes one of the party's `min(32, 4^n)` distinct discovery locations; plan initial anchors and remaining promotion slots together. If every location is already used, a new location does not become free merely because its seed came from the archive. Reallocate depth among admitted locations or report that the target was only compared, not refined. Preserve actual activated-location counts and the 101,027-location aggregate ceiling. No extra optimization pass is silently appended to all 315,043 profiles.
+
+Choose adaptation opportunities from the same observable progress, uncertainty and mechanic-coverage signals used by the scheduler. Compare import-only versus import-and-refine at equal CPU cost in the pilot. This proposal does not override the C0 rule: mixed-C0 builds receive candidate comparison and probes within their existing caps, not new target-profile annealing. Record parent program/source profile, target profile, allocated CPU, actual mutations and independently measured incremental gain so transfer benefit and adaptation benefit are distinguishable.
+
 Every eligible party gets an initial exploration quantum and every covered profile gets baseline/candidate comparisons. Additional quanta use observable acquisition signals, not unknown regret against a ground-truth optimum:
 
 - confirmed incremental gain per CPU-second in recent quanta;
@@ -135,7 +153,7 @@ Every eligible party gets an initial exploration quantum and every covered profi
 - gain from profile-specific candidates over the shared baseline candidate;
 - uncovered mechanic combinations, unused newly available actions and energy/timing diagnostics.
 
-Normalize signals using pilot data, record the scheduling decision and reserve an initial 20% of adaptive quanta for round-robin exploration of eligible underexplored parties. This exploration fraction is a pilot parameter, not a theorem. Low absolute DPS, popularity or no early improvement alone cannot prove a profile is solved. Draft parties follow supported ones; deferred work remains visible. Do not spend equal 32-by-1,000 quotas on every party regardless of measured progress or cost.
+Normalize signals using pilot data, record the scheduling decision and reserve an initial 20% of adaptive quanta for exploration of eligible underexplored parties and structure families. This exploration fraction is a pilot parameter, not a theorem. Low absolute DPS, popularity or no early improvement alone cannot prove a profile is solved. Draft parties follow supported ones; deferred work remains visible. Do not spend equal 32-by-1,000 quotas on every party regardless of measured progress or cost. Structure seeding and target adaptation share this allocation and the 6,200-CPU-hour discovery cap; they are not additional multipliers.
 
 ### Typed mutations and acceptance
 
@@ -219,7 +237,7 @@ An Azure Retail Prices API lookup during planning returned Linux `F64als v7 Spot
 
 The proposed per-VM price ceiling is $1.30/h: two VMs for the full week have a compute ceiling of $436.80, leaving $63.20 of the $500 envelope for storage and other charges. Account for the actual applicable charges before allocation. Track accumulated and projected total spend and enforce a stop with margin; a cloud budget alert alone is not the worker's stop mechanism.
 
-[Azure Spot](https://learn.microsoft.com/en-us/azure/virtual-machines/spot-vms) can evict for capacity as well as price, and advance notice is best effort. Persist completed work and checkpoints periodically, independently of eviction notification. Include program, profile, RNG state, seeds, sample counts, temperature, archive and consumed budget. Resume idempotent work units from external storage without rerunning completed slices. Keep worker parallelism within 64 single-core workers per VM; do not multiply that by an inner 64-thread simulation pool.
+[Azure Spot](https://learn.microsoft.com/en-us/azure/virtual-machines/spot-vms) can evict for capacity as well as price, and advance notice is best effort. Persist completed work and checkpoints periodically, independently of eviction notification. Include program, allocation, profile, structure-family/paused-chain state, transfer lineage, RNG state, seeds, sample counts, temperature, archive, activated locations and consumed budget. Resume idempotent work units from external storage without rerunning completed slices. Keep worker parallelism within 64 single-core workers per VM; do not multiply that by an inner 64-thread simulation pool.
 
 Use the first pilot to forecast remaining CPU time from the measured workload mix. Adjust discovery depth and uncertain-result allocations within the hard deadline and spending cap. If even minimum full-profile work no longer fits, report incomplete profiles and their reason rather than quietly dropping them or claiming completion. Outstanding porting work is an explicit dependency, not a reason to change other agents' branches.
 
@@ -237,11 +255,11 @@ Store programs once by content hash and let profiles reference them. The planned
 
 | Field group | Required information |
 |---|---|
-| Provenance | Program hash/GCSL, profile, data and engine commits, standard weapon/set/main stats and realized substat allocation. |
+| Provenance | Program hash/GCSL, profile, data and engine commits, standard weapon/set/main stats, realized substat allocation, source/parent program/profile and target-refinement lineage/CPU. |
 | Evaluation | Seed stream/block, sample count, mean and variability, simulated frames, CPU cost, baseline and fixed-allocation versus joint gain. |
-| Behavior | Role, cycle period, burst frequency, energy/cooldown waits and measured ER tradeoff. |
+| Behavior | Intended structure family and observed role, cycle period, burst frequency, field/swap pattern, energy/cooldown waits and measured ER tradeoff. |
 | Dependencies | Documented action prerequisites and context-specific probe results: source/target constellation vector, changed member, equipment/allocation, engine/data revisions, seeds/count, completion/error and action/wait diagnostics. Separate observations, unknowns and authoritative restrictions. |
-| Status | Screened, promotion-checked, independently audited, uncertain, timed-out or failed, with reasons. |
+| Status | Source-only, target-evaluated or target-refined lineage; screened, promotion-checked, independently audited, uncertain, timed-out or failed evaluation, with reasons. |
 
 A lower-ER label requires a measured alternative allocation or period, not merely fewer waits under a high-ER preset. A no-Favonius or no-Sacrificial compatibility claim requires evaluation on the declared alternate setup; the fixed standard-weapon batch cannot certify it from syntax alone. Identify possible weapon-specific loops, resets and swap buffs, retain robust existing alternatives where available, and mark untested transfer honestly.
 
@@ -278,10 +296,27 @@ For five-star members, C3 uses C2's structural archive and C5 uses C4's, with ac
 ## 6. Deliverables and pilot decisions
 
 1. A versioned standard-build manifest generated from existing data and reusable character/role recommendations, including missing/conflicting choices, tested weapon alternatives and valid piece allocations.
-2. The bounded native search command, staged evaluator, diverse archive, full-profile comparison runner and resumable worker queue with CPU, time and spend accounting. These remain unimplemented.
+2. The bounded native search command with structure-family scheduling and selected target-profile refinement, staged evaluator, diverse archive, full-profile comparison runner and resumable worker queue with CPU, time and spend accounting. These remain unimplemented.
 3. A held-out pilot including the existing Flins C0 reference versus new C1 search, the owner's C0 Furina/C6 Skirk case and the reverse C0 on-field dealer/higher-constellation support case, C6 four-star contexts, mixed C1/C2/C4/C6 five-star constellations and changed energy demand. Reuse the planned pilot allocation; do not turn C0 transfer checks into another discovery grid or add a new phase. Withhold known good alternatives from some starting pools. Compare algorithms by independently audited gain per CPU-hour, not raw candidate counts.
-4. Pilot decisions on chain count/depth, valid-mutation rate, 16-fight acceptance-block enforcement, racing false rejections, incumbent stability, frozen-allocation invariants, ER-repair cost, anchor acquisition, compatibility-probe false conclusions, cache reuse and workload-weighted throughput. A failed racing or horizon heuristic can be disabled without changing the objective. Do not start the full claimed workload from the single-config 12 ms measurement.
+4. Pilot decisions on chain count/depth, structure discovery and family allocation, target-refinement value, valid-mutation rate, 16-fight acceptance-block enforcement, racing false rejections, incumbent stability, frozen-allocation invariants, ER-repair cost, anchor acquisition, compatibility-probe false conclusions, cache reuse and workload-weighted throughput. A failed racing or horizon heuristic can be disabled without changing the objective. Do not start the full claimed workload from the single-config 12 ms measurement.
 5. Candidate coverage for eligible `4^n` new profiles per party within the envelope, a diverse reusable archive and a report separating supported, draft, completed, audited, uncertain, failed, unsupported and deferred profiles. Distinguish profiles searched directly from mixed-C0 cases only tested for transfer and from cases not tested. Report allocation and depth distributions, not just global averages.
 6. Independent final comparisons of retained improvements and selective gcsim checks of newly reached behavior, charged to their phase. Finite-budget search finds the best evaluated programs and allocations, not proven optimal play.
+
+### Discovery-quality pilot before expansion
+
+Select a small declared pilot suite before tuning. Include role-changing, burst-period, energy-starved and mixed-constellation cases plus less complex controls. Keep development and held-out cases distinct and record the full preparation/tuning CPU cost. The 600-hour preparation/pilot allocation and existing discovery/audit caps pay for this work; do not budget a full 4,570-party run before learning whether candidate generation works.
+
+| Experiment | Evidence required |
+|---|---|
+| Hide known strong full cycles from seeds and archives | Can the generator recover similar or better behavior without copying that complete cycle? Keep hidden cycles out of tuning and seed construction; report any remaining sourced block overlap. |
+| Increasing measured CPU budgets | Independently audited best-DPS-versus-CPU curves; discovery of new structures versus only parameter tuning. A flat curve is not an upper bound on optimal DPS. |
+| Repeated starts and RNG choices | Distribution of audited outcomes, failures and structure choices; no best-run-only reporting. Runs stuck at the same inferior structure can still look repeatable. |
+| Equal-cost ablations | Compare local-only versus structure-family search and import-only versus target refinement, with the same total CPU including evaluations, repairs and promotions. |
+| Small explicitly enumerated domain | Declare the finite valid program/allocation grammar, enumerate it and measure recovery of its reference maximum. The maximum is restricted to that domain and fixed sample objective; uncertain expected-DPS rankings remain uncertain. |
+| Actual-equipment diagnostic | On selected already eligible non-C0 profiles, compare archived-candidate selection with bounded program-only refinement at the real equipment and fixed actual stats, with the same CPU accounting. Do not exchange hypothetical artifact rolls in this experiment. Measure residual transfer loss; do not silently assume it is zero. |
+
+The enumerated reference does not bound the unrestricted GCSL optimum, and consistent restarts or diminishing improvements do not establish a global optimality gap. Publish the limitations and confidence of the reference comparisons. Use the pilot to predeclare tolerances, recovery targets and acceptable failure rates for the held-out cases before the expansion decision; avoid picking a success threshold after seeing the held-out result. If discovery is poor, revise the generator within the budget instead of spending more cores on the same failure. If adequate evidence or time is absent, report a pilot-only or deferred outcome rather than claim the full batch is complete.
+
+Serving-time optimization on actual user gear remains a separate possible feature requiring its own explicit latency and compute decision. The pilot diagnostic is offline and bounded, uses only already eligible discovery profiles and does not introduce an extra C0 or equipment Cartesian sweep. C0 and mixed-C0 pilots retain their existing baseline/transfer/probe role; no C0 search or request-time annealing is introduced by this review.
 
 The original document push and this repository's documentation migration are authorized directly to `main` with CI skipped by the owner. This repository remains documentation only; implementation and batch execution require a subsequent instruction.
