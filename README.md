@@ -4,7 +4,9 @@
 
 Find build-dependent sustained-DPS rotations for Gscouter using the Rust simulation engine. Intermediate constellations matter: Flins changes at C1, so a C0 rotation is not sufficient for every build.
 
-The agreed scope, standard builds, search algorithm and compute estimate are in [the rotation-search plan](docs/rotation-search.md). In offline discovery, four-star members are fixed at C6 and five-star members independently take C1, C2, C4 or C6. A party with n five-star members has 4^n new search profiles. C0 and mixed-C0 cases keep the existing build/scoring path and receive no new batch search. The hard limit remains one week, $500 total and two 64-core Azure Fals v7 VMs; throughput estimates remain provisional until measured on those VMs.
+The agreed scope, standard builds, search algorithm and compute estimate are in [the rotation-search plan](docs/rotation-search.md). In offline discovery, four-star members are fixed at C6 and five-star members independently take C1, C2, C4 or C6. A party with n five-star members has 4^n new search profiles. C0 and mixed-C0 combinations receive no new batch search, but can reuse the discovered candidate programs and compare them on the player's actual build, alongside the existing baseline. The hard limit remains one week, $500 total and two 64-core Azure Fals v7 VMs; throughput estimates remain provisional until measured on those VMs.
+
+Discovery profiles are sampling locations, not a whitelist of users eligible for better cycles. For example, a C0 Furina/C6 Skirk user can test cycles found with C1 Furina/C6 Skirk without pretending that their Furina is C1. Candidate comparisons stay inside the previously planned candidate/sample/CPU limits; no extra C0 search dimension or serving-time annealing is introduced.
 
 The frozen 4,570-party census gives **315,043 new profiles**, versus 2,856,250 under the superseded five-stage-for-every-member rule. This is a profile-count reduction of about 89%, not a measured reduction in all search CPU time.
 

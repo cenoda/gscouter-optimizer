@@ -4,7 +4,9 @@
 
 The owner supplied a seven-point critique of the first plan on 2026-11-04. This record distinguishes accepted problems from suggested fixes that would change the objective, silently narrow coverage or assume unmeasured gains. The [revised plan](rotation-search.md) is authoritative for implementation proposals. Standard equipment, the one-week deadline, $500 total and 128-core limit remain fixed.
 
-After this review, the owner narrowed the scope explicitly: four-star members are C6 only; five-star members take C1/C2/C4/C6; C0 and mixed-C0 cases keep the existing path. New search has `4^n` profiles per party with n five-star members, totaling 315,043 in the frozen census. This supersedes the earlier 625-per-party coverage rule discussed below; it is an owner decision, not an inferred numeric-constellation optimization.
+After this review, the owner narrowed offline discovery explicitly: four-star members are C6 only; five-star members take C1/C2/C4/C6. New search has `4^n` profiles per party with n five-star members, totaling 315,043 in the frozen census. This supersedes the earlier 625-per-party coverage rule discussed below; it is an owner decision, not an inferred numeric-constellation optimization.
+
+The owner then identified C0 Furina/C6 Skirk as a failure of the earlier interpretation that mixed-C0 users must use only the old cycle. Discovery scope and serving eligibility are now separate: C0 combinations get no additional batch search but may reuse archived programs, compared on their actual build alongside baseline within the existing candidate/sample/CPU caps. No C0 coordinate is simulated as C1 merely because C1 was used to retrieve a program. See section 5 of the plan.
 
 ## 1. Eight chains divide the search too shallowly
 
@@ -31,6 +33,8 @@ Replace the undefined notion of a profile being far from its true optimum with o
 **Accepted risk; clarify the original archive.** The old plan already retained up to 16 shared programs per party. Its top-two rule described the most expensive reranking, not an explicit instruction to export only two programs. The output contract nevertheless lacked enough detail to prevent that implementation mistake.
 
 Define up to six diverse candidates per profile including baseline, peak standard DPS and measured lower-ER/alternate-period or less proc-dependent options. Store programs by hash, expose actual evaluation depth and annotate dependencies. A signature-only batch cannot certify behavior with Favonius, Sacrificial or a swap-buff weapon it never tested. Actual-build evaluation and fallback remain necessary; diversity is a mitigation, not proof of transfer.
+
+The same applies to mixed-C0 constellations: exact discovery-profile membership is not a serving gate. A nearby profile can supply a complete program, not its constellation bonuses or score. Reuse the existing up-to-six candidate slots rather than adding mixed-C0 discovery combinations or unbounded serving-time search. Failed transfer remains a reported coverage gap.
 
 **Accepted preparation bottleneck and circularity.** Reuse library data and sourced character/role recommendation records, with explicit conflicts and missing data. For non-signature weapons, bounded comparisons use multiple seed cycles and a limited build/cycle refinement. Record the best tested conditional choice, not a claim that the best weapon over all possible rotations has been proven. Standard equipment is still one selected weapon per character, not a new exhaustive weapon dimension.
 
@@ -79,6 +83,7 @@ These caps incorporate the subsequent rarity/C0 decision: coverage and reranking
 - Compare fixed-ER and joint-ER discovery under identical total cost, including newly feasible and energy-saving cycles.
 - Exercise mixed C1/C2/C4/C6 five-star constellations with four-stars fixed at C6; numeric-only tags must not remove profiles inside that declared scope. Keep C0 references separate from new discovery.
 - Evaluate diverse candidate transfer on declared alternate builds, including proc/reset/swap-dependent weapon cases where available. Do not report untested equipment as compatible.
+- Include C0 Furina/C6 Skirk among transfer cases inside the existing pilot allocation. Confirm that its C0 effects remain absent, compare against its actual baseline and distinguish candidate reuse from new C0 search.
 - Measure total CPU cost and elapsed throughput on both VMs, including preparation, parsing, failed fights, retries, checkpointing and independent validation.
 
 The relevant algorithm references are the [original simulated annealing paper](https://doi.org/10.1126/science.220.4598.671) and the authors' [iterated-racing paper and supplementary material](https://iridia.ulb.ac.be/supp/IridiaSupp2016-003/). They motivate acceptance and adaptive evaluation; they do not validate this domain-specific combination or promise a speedup for it.
