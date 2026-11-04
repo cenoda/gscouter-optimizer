@@ -86,6 +86,50 @@ These caps incorporate the subsequent rarity/C0 decision: coverage and reranking
 - Include C0 Furina/C6 Skirk among transfer cases inside the existing pilot allocation. Confirm that its C0 effects remain absent, compare against its actual baseline and distinguish candidate reuse from new C0 search.
 - Measure total CPU cost and elapsed throughput on both VMs, including preparation, parsing, failed fights, retries, checkpointing and independent validation.
 
+## Follow-up review: five remaining blind spots
+
+A second owner-supplied review on 2026-11-04 identified the following gaps. The dispositions below are incorporated into the plan and preserve the same discovery scope and resource caps. They do not authorize implementation.
+
+### 1. C0 on-field dealer with higher-constellation supports
+
+**Accepted.** C0 Furina/C6 Skirk does not exercise the reverse transfer direction. An on-field dealer whose C1 changes resources or combo structure can have no good transferred cycle even when its supports' constellations make a better C0 cycle possible.
+
+Reserve one of the existing six archive slots for a distinct C0-on-field-oriented candidate. Within existing nonzero discovery quanta, retain a baseline-derived stream preserving the C0 on-field combo and varying support sequence/period/timing. Keep that stream's diversity value separate from peak C1-source DPS, and probe selected candidates with only the on-field member at C0. No separate C0 optimization location or extra slot is added. A baseline-derived pattern and a single legal probe are still not proof of a good mixed-C0 cycle; missing transfer remains a gap. Test both directions in the existing pilot.
+
+### 2. Short stages must not install noisy chain states
+
+**Accepted clarification.** The earlier ladder did not explicitly prohibit early acceptance. Stages 2/4/8 can diagnose, prioritize or use a separately audited rejection heuristic, but cannot replace the chain state. Both current and proposed candidates must complete a common 16-fight decision block before acceptance, or a common larger block for an extended comparison. Keep the proposal's original random acceptance draw across the ladder.
+
+Use comparable block means, not a short challenger against an incumbent's differently selected pooled history. Retain full history for reporting and archive checks separately. This fixes sample-size ambiguity; it does not remove stochastic selection bias or make 16 fights universally sufficient. All current-state refresh and promotion costs remain charged.
+
+### 3. Artifact investment must remain fixed
+
+**Accepted.** Freeze piece-level roll counts, roll-quality tiers, main stats/rarity/level and a CV ceiling no greater than 40, plus the character's initial useful-roll allocation budget. The first implementation exchanges only existing ER and allowed useful-damage roll tokens one for one. Transfer the quality tier as well as the token: one low-quality ER roll cannot become a maximum-quality crit roll.
+
+Do not turn initially irrelevant rolls into new useful rolls, increase artifact investment, or redefine the accounting pool after observing new weights. An ER-to-crit exchange above the frozen CV ceiling is rejected or uses an allowed non-crit recipient. Actual marginal utility can change with the cycle; that is measured separately from the fixed accounting convention. Piece legality remains mandatory.
+
+### 4. Static dependency inference and one-fight probes
+
+**Accepted problem; qualify the proposed remedy.** General static GCSL inference cannot reliably attribute a second skill to a constellation, reset weapon, cooldown effect or guard. Use explicit authoritative restrictions and dynamic probe records rather than a new generic causal analyzer.
+
+**Do not set `requires_c1_plus: true` from one C0 fight.** A pass is one observed legal run; a failure can depend on energy randomness, timing, equipment or interactions and does not establish a universal requirement. A legal run may simply wait and lose DPS. Lowering all five-stars at once cannot isolate the responsible character or interaction. Probe one member at a time with other source constellations held fixed, record the full context/seed/outcome and keep unknown/provisional status. Prioritize actual-user-build evaluation; no categorical gate is inferred from one seed alone.
+
+Six single-member downgrade probes for every nominal profile and five-star coordinate total at most 6,611,040 fights under the census, or 22.04 CPU-hours at the provisional 12 ms/fight rate before overhead. This is not a new allowance: all probes, failures and repeats fit inside the existing 700-hour audit/export cap and replace other work there. Deduplicate exact probe identities. Do not substitute these diagnostics for independent performance validation.
+
+### 5. Discovery capacity and coverage reuse
+
+**Arithmetic accepted; completion inference rejected.** The 2,244 parties with zero to two five-stars have 26,595 profiles, and the full census has at most 101,027 distinct discovery locations under `min(32, 4^n)`. This corrects the old 146,240-location ceiling.
+
+Having room for every profile in a party does not mean adaptive scheduling actually explored each one. Even a fully explored local profile has not necessarily compared all other anchors' archived programs. Therefore do not delete coverage for those parties wholesale or assert a fixed saving. Reuse exact program/allocation/profile/engine/data/conditions/horizon/seed evaluations, run missing comparisons, and retain untouched final audit seeds. Measure cache hits and actual activated locations before reducing the forecast. These rules remove exact duplicate work without confusing search, cross-program ranking and final validation.
+
+### Follow-up pilot additions
+
+- Exercise both C0-support/C6-dealer and C0-dealer/higher-constellation-support transfer within the existing pilot allocation and six-candidate limit.
+- Check that every accepted chain transition used at least a comparable 16-fight block and that early stops cannot install 2/4/8-fight states.
+- Check zero-sum roll/quality accounting, fixed useful-roll budgets and piece CV ceilings on every allocation mutation.
+- Record probe passes, execution errors and timing degradation separately; audit false conclusions rather than treating one seed as a reliability test.
+- Report eligible versus actually activated discovery locations, exact cache reuse and missing cross-archive comparisons separately from held-out final audits.
+
 The relevant algorithm references are the [original simulated annealing paper](https://doi.org/10.1126/science.220.4598.671) and the authors' [iterated-racing paper and supplementary material](https://iridia.ulb.ac.be/supp/IridiaSupp2016-003/). They motivate acceptance and adaptive evaluation; they do not validate this domain-specific combination or promise a speedup for it.
 
 This review changes documentation only. No application code, CI, deployment or cloud batch is added or run.
