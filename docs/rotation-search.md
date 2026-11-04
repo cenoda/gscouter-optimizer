@@ -8,29 +8,48 @@ This document records the owner's decisions of 2026-11-04 and the proposed first
 
 The optimizer owns standard-build preparation, search, batch orchestration and result artifacts. [gscouter-engine](https://github.com/cenoda/gscouter-engine) owns simulation and engine verification; [Gscouter](https://github.com/cenoda/Gscouter) owns site integration and actual-user build scoring. The planned optimizer pins the engine library to an explicit commit, consumes versioned site-data snapshots and exports candidate GCSL with provenance. It does not duplicate the simulator or import Gscouter's private Go packages.
 
-The [design review](design-review.md) supersedes the original fixed eight-chain/1,000-candidate allocation, ER checks deferred to reserve, all-C0-only anchor context and the associated 5.33-day forecast. The owner's equipment, constellation and resource constraints below remain unchanged. The revised algorithm and phase allocations are proposals to measure, not validated results.
+The [design review](design-review.md) supersedes the original fixed eight-chain/1,000-candidate allocation, ER checks deferred to reserve, all-C0-only anchor context and the associated 5.33-day forecast. A subsequent owner decision further narrows the constellation scope: four-star members are fixed at C6, five-star search stages are C1/C2/C4/C6, and C0 stays on the existing path. Equipment and hard resource constraints remain unchanged. The revised algorithm and phase allocations are proposals to measure, not validated results.
 
 This move does not change engine code, releases, team approvals or ongoing porting work. Gscouter's [cycle document](https://github.com/cenoda/Gscouter/blob/main/docs/cycle.md) records the fixed-rotation problem and the gains from existing alternatives; its [`internal/steady/steady.go`](https://github.com/cenoda/Gscouter/blob/main/internal/steady/steady.go) currently chooses rotations and fills waits rather than generating new action sequences.
 
 ## 1. Fixed scope
 
-The first batch covers every library party, with each member independently at **C0, C1, C2, C4 or C6**. It is not limited to all-C0 and all-C6 parties, nor to five parties whose members all have the same constellation.
+The owner's latest rule is:
 
-The owner's reason for excluding C3 and C5 is that they raise talent levels rather than introduce new abilities. They get no separate structural search: C3 uses the cycles found for C2, and C5 uses those for C4. Actual scoring still applies the player's real constellation and talent increases. This exclusion is already included in every cost estimate below; it buys no further reduction beyond `5^4` profiles per party.
+- **Four-star characters: C6 only** in offline discovery.
+- **Five-star characters: independently C1, C2, C4 or C6** in new search.
+- **C0: retain the existing build and scoring path.** Do not replace its equipment or substats with the new standard build or launch a new C0 search.
 
-The library snapshot inspected on 2026-11-04 (`Gscouter` checkout `e7d6d9a6`) contains 4,570 parties, including 4,332 marked supported and 238 draft. Thus the planning envelope is:
+The owner explicitly confirmed that only **4^n** combinations enter new search, where n is the party's five-star count. Mixed-C0 cases, such as a C0 five-star support with a C2 five-star damage dealer, also stay on the existing path. Do not interpret this as 5^n minus a single all-C0 profile. Existing cycles may seed other searches or be reevaluated as baselines without treating C0 as a new discovery profile. An all-four-star party has one all-C6 profile (`4^0 = 1`).
+
+The owner's reason for excluding C3 and C5 is that they raise talent levels rather than introduce new abilities. Five-star C3 uses the cycles found for C2, and C5 uses those for C4, with no separate structural search. Actual scoring always applies the player's real constellation and talent increases; the offline C6 rule does not raise a real four-star character's constellation.
+
+### Frozen party census
+
+The library snapshot inspected on 2026-11-04 (`Gscouter` checkout `e7d6d9a6`) contains 4,570 parties, including 4,332 supported and 238 draft. Rarity comes from `internal/enka/data/character.dm.json`, cross-checked against generated `CharData.rarity` in the engine checkout `643af6c`; aliases are resolved through that checkout's generated `CHAR_NAMES`/`CHAR_KEYS` before counting. Traveler keys use their declared five-star rarity. Unknown keys or conflicting rarity values must be reported rather than guessed; this census found none after alias resolution.
+
+| Five-star members n | All parties | Supported | Draft | New profiles per party | All new profiles |
+|---|---:|---:|---:|---:|---:|
+| 0 | 99 | 97 | 2 | 1 | 99 |
+| 1 | 652 | 629 | 23 | 4 | 2,608 |
+| 2 | 1,493 | 1,433 | 60 | 16 | 23,888 |
+| 3 | 1,599 | 1,512 | 87 | 64 | 102,336 |
+| 4 | 727 | 661 | 66 | 256 | 186,112 |
+| Total | **4,570** | **4,332** | **238** | | **315,043** |
 
 ```
-profiles per party = 5^4 = 625
-all library profiles = 4,570 * 625 = 2,856,250
-supported-party profiles = 4,332 * 625 = 2,707,500
+all new profiles = sum over parties (4 ^ five_star_count) = 315,043
+supported-party new profiles = 291,525
+draft-party new profiles = 23,518
+previous five-stage-per-member envelope = 4,570 * 625 = 2,856,250
+new / previous = 11.03% (88.97% fewer profiles)
 ```
 
-The full count is a budget envelope, not a promotion of draft teams or a claim that every config already runs. Unsupported or invalid cases are reported explicitly. Freeze the library snapshot for a batch and record its commit.
+These are rarity-based planning counts before invalid/unavailable-constellation and unsupported-config checks, not a claim that every generated profile is runnable. Record eligibility failures explicitly. Freeze the library and rarity/alias sources for a batch. Existing C0-path work and any baseline reevaluations are separate from this count and remain charged to their actual budgets.
 
-Supported parties receive the initial coverage and discovery passes before draft parties. Keep all 238 draft parties and their 148,750 profiles in the batch inventory: process them afterward if the hard envelope permits, otherwise label them deferred. This changes scheduling priority, not the reported scope. Popularity alone cannot silently remove an eligible party.
+Supported parties receive the initial coverage and discovery passes before draft parties. Keep all 238 draft parties and their 23,518 new profiles in the inventory: process them afterward if the hard envelope permits, otherwise label them deferred. This changes priority, not the reported scope. Popularity alone cannot silently remove an eligible party.
 
-Mechanic metadata may identify changes to energy, cooldowns, attack count, duration, action availability, field role and numeric damage. Use tags to prioritize anchors, seed candidates and explain dependencies. A numeric-only constellation can still change the best field-time or damage allocation, so tags do not justify collapsing C0/C1/C2/C4/C6 profiles. Only the owner's C3/C5 reuse rule is fixed; keep the 625-profile coverage count.
+Mechanic metadata may identify changes to energy, cooldowns, attack count, duration, action availability, field role and numeric damage. Use tags to prioritize anchors, seed candidates and explain dependencies. Numeric-only changes can still alter the best damage allocation; tags do not justify any further profile collapse within the owner's new 4^n scope.
 
 ### Standard equipment
 
@@ -95,9 +114,9 @@ Energy waits and overflow suggest a direction; neither proves the best ER. Burst
 
 ### Anchors and adaptive allocation
 
-Seed discovery from the library and alternatives, all-C0 and all-C6, and a context with four-star members at C6 and five-star members at C0. These are coverage contexts, not an asserted user-frequency distribution. Include explicit C0/C1 contrast cases for Flins and other known behavior changes, plus mixed-constellation interaction anchors. Deduplicate overlapping anchors and vary one member around realistic contexts rather than spending 17 mandatory slots on an otherwise all-C0 party.
+Use the library and alternatives as seed programs. New discovery anchors fix every four-star at C6 and start five-star contexts at all-C1, all-C6 and selected mixed C1/C2/C4/C6 combinations. Vary one five-star member around these contexts to isolate changes, and add interaction anchors. Existing C0 programs/results are references for cases such as Flins C0/C1, not extra discovery anchors or a reason to standardize C0's build. These contexts are not an asserted user-frequency distribution.
 
-Use up to 32 discovery locations per party as an initial planning ceiling, selected in rounds. Tags help choose locations but unknown tags do not block coverage. Begin with two persistent chains per active profile; parallelize across parties rather than dividing each profile into eight short chains. Measure valid proposals, accepted transitions, distinct programs, chain length and CPU time. Continue chain and cooling state across scheduling quanta. Reheating or restarting is explicit and charged, not automatic at every round. The pilot may choose one chain if two cannot reach useful depth.
+Use up to `min(32, 4^n)` distinct discovery locations per party as an initial planning ceiling, selected in rounds. Never duplicate an anchor merely to fill 32 slots. Tags help choose locations but unknown tags do not block coverage. Begin with two persistent chains per active profile; parallelize across parties rather than dividing each profile into eight short chains. Measure valid proposals, accepted transitions, distinct programs, chain length and CPU time. Continue chain and cooling state across scheduling quanta. Reheating or restarting is explicit and charged, not automatic at every round. The pilot may choose one chain if two cannot reach useful depth.
 
 Every eligible party gets an initial exploration quantum and every covered profile gets baseline/candidate comparisons. Additional quanta use observable acquisition signals, not unknown regret against a ground-truth optimum:
 
@@ -171,16 +190,16 @@ Use phase caps in CPU-hours, not a promised count of complete candidate evaluati
 |---|---:|---|
 | Pilot and standard-build preparation | 600 | Data validation, bounded weapon comparisons, representative throughput and noise measurements. |
 | Adaptive shared discovery | 6,200 | All chains, repairs, archive transfers, temperature calibration, incumbent reevaluations and failed proposals. |
-| Full-profile coverage | 1,400 | Baselines, candidate comparisons, setup and any charged allocation checks. |
-| Reranking, final audits and export | 3,000 | Leading and diversity candidates, independent samples, selective gcsim checks and result assembly. |
-| Main phase allocation | **11,200** | A ceiling on planned work, not a fixed workload promise. |
-| Unallocated contingency | **3,852.8** | Throughput variation, interruptions, uncertain results and explicit phase reallocation. |
+| Full-profile coverage | 250 | New-profile baselines, candidate comparisons, setup and any charged allocation checks. |
+| Reranking, final audits and export | 700 | Leading and diversity candidates, independent samples, selective gcsim checks and result assembly. |
+| Main phase allocation | **7,750** | A ceiling on planned work, not a fixed workload promise. |
+| Unallocated contingency | **7,302.8** | Throughput variation, interruptions, uncertain results and explicit phase reallocation. |
 
-At 12 ms, the original 16-program-by-8-fight coverage target alone costs 1,218.67 CPU-hours, and two-by-128-fight reranking costs 2,437.33; neither includes all setup or repair costs. At 20 ms they cost 2,031.11 and 4,062.22 respectively. Therefore the pilot must reserve the measured cost of minimum coverage and reporting before assigning remaining discovery time. Sample counts, shortlist sizes and quanta are tuned to the caps; any unresolved quality tradeoff is reported. No phase may silently consume the whole contingency.
+At the new 315,043-profile count, 16-program-by-8-fight coverage costs 134.42 CPU-hours at 12 ms/fight, and two-by-128-fight reranking costs 268.84. At 20 ms they cost 224.03 and 448.06 respectively. These are arithmetic targets, excluding setup, extra baseline work and repair costs. The reduced phase caps are provisional; the pilot must reserve the measured cost of minimum coverage and reporting before assigning discovery time. Sample counts, shortlist sizes and quanta are tuned to the caps; unresolved quality tradeoffs are reported. No phase may silently consume the whole contingency.
 
 The batch controller tracks measured CPU time including failed and partial work, remaining allocated wall time, Spot availability and projected billed dollars. Set per-program work limits from measured tails. Recompute the forecast after each round and redistribute explicitly. Do not imply that reducing samples makes the same quality free. One week and $500 remain hard stops, and unsupported or incomplete profiles remain visible in the report.
 
-The constellation reduction is still `625 / 2401`, about 26% of the seven-stage profile count. There is no second C3/C5 discount. No extra profile reduction is assumed from numeric-only tags, unknown popularity or fast early DPS.
+The owner's new rarity/C0 rule reduces the previous five-stage profile count by 88.97%. That reduction applies directly to full-profile passes, not automatically to joint discovery, preparation or audits. The discovery allocation is a ceiling, not a requirement to spend every freed hour; finish early when the measured objectives are met. No further reduction is assumed from numeric-only tags, popularity or fast early DPS, and C3/C5 must not be discounted twice.
 
 ### Cost controls and Spot recovery
 
@@ -208,17 +227,17 @@ Store programs once by content hash and let profiles reference them. The planned
 
 A lower-ER label requires a measured alternative allocation or period, not merely fewer waits under a high-ER preset. A no-Favonius or no-Sacrificial compatibility claim requires evaluation on the declared alternate setup; the fixed standard-weapon batch cannot certify it from syntax alone. Identify possible weapon-specific loops, resets and swap buffs, retain robust existing alternatives where available, and mark untested transfer honestly.
 
-The site evaluates stored programs using the player's actual constellation, weapon/refinement, artifact set, stats and talents. Never apply the archive's optimized substat allocation to the player, assume a missing set effect, or advertise standard-build DPS as the player's result. If archived programs fail or transfer poorly, retain the valid baseline/filler path and report that better transferred play is not established. Bounded serving-time local search is a separate proposed feature, not a promise that the fixed batch solves every weapon's rotation.
+The site evaluates applicable stored programs using the player's actual constellation, weapon/refinement, artifact set, stats and talents. Never apply the archive's optimized substat allocation or offline four-star C6 assumption to the player, assume a missing set effect, or advertise standard-build DPS as the player's result. C0 and mixed-C0 cases retain the existing build/scoring path and are outside new batch discovery. If archived programs fail or transfer poorly, retain the valid baseline/filler path and report that better transferred play is not established. Bounded serving-time local search is a separate proposed feature, not a promise that the fixed batch solves every weapon's rotation.
 
-C3 uses C2's structural archive and C5 uses C4's, with actual talent increases in real scoring. No DPS interpolation is used. No serving flag, team approval or published library rotation changes as part of this documentation revision. Engine parity, search quality and real-build transfer are separately measured.
+For five-star members, C3 uses C2's structural archive and C5 uses C4's, with actual talent increases in real scoring. No DPS interpolation is used. No serving flag, team approval or published library rotation changes as part of this documentation revision. Engine parity, search quality and real-build transfer are separately measured.
 
 ## 6. Deliverables and pilot decisions
 
 1. A versioned standard-build manifest generated from existing data and reusable character/role recommendations, including missing/conflicting choices, tested weapon alternatives and valid piece allocations.
 2. The bounded native search command, staged evaluator, diverse archive, full-profile comparison runner and resumable worker queue with CPU, time and spend accounting. These remain unimplemented.
-3. A held-out pilot including Flins C0/C1, C6 four-star support contexts, interacting constellations, changed energy demand and actual-build transfer cases. Withhold known good alternatives from some starting pools. Compare algorithms by independently audited gain per CPU-hour, not raw candidate counts.
+3. A held-out pilot including the existing Flins C0 reference versus new C1 search, C6 four-star contexts, mixed C1/C2/C4/C6 five-star constellations, changed energy demand and actual-build transfer cases. Do not turn C0 reference checks into new C0 discovery. Withhold known good alternatives from some starting pools. Compare algorithms by independently audited gain per CPU-hour, not raw candidate counts.
 4. Pilot decisions on chain count/depth, valid-mutation rate, racing false rejections, incumbent stability, ER-repair cost, anchor acquisition and workload-weighted throughput. A failed racing or horizon heuristic can be disabled without changing the objective. Do not start the full claimed workload from the single-config 12 ms measurement.
-5. Candidate coverage for eligible 625 profiles per party within the envelope, a diverse reusable archive and a report separating supported, draft, completed, audited, uncertain, failed, unsupported and deferred profiles. Report allocation and depth distributions, not just global averages.
+5. Candidate coverage for eligible `4^n` new profiles per party within the envelope, a diverse reusable archive and a report separating supported, draft, completed, audited, uncertain, failed, unsupported and deferred profiles. Keep unchanged C0/mixed-C0 paths separate in the inventory. Report allocation and depth distributions, not just global averages.
 6. Independent final comparisons of retained improvements and selective gcsim checks of newly reached behavior, charged to their phase. Finite-budget search finds the best evaluated programs and allocations, not proven optimal play.
 
 The original document push and this repository's documentation migration are authorized directly to `main` with CI skipped by the owner. This repository remains documentation only; implementation and batch execution require a subsequent instruction.

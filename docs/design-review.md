@@ -2,7 +2,9 @@
 
 > Status: Review incorporated into the implementation proposal; no code · Last updated: 2026-11-04
 
-The owner supplied a seven-point critique of the first plan on 2026-11-04. This record distinguishes accepted problems from suggested fixes that would change the objective, silently narrow coverage or assume unmeasured gains. The [revised plan](rotation-search.md) is authoritative for implementation proposals. The owner's standard equipment, C0/C1/C2/C4/C6 stages, one-week deadline, $500 total and 128-core limit remain fixed.
+The owner supplied a seven-point critique of the first plan on 2026-11-04. This record distinguishes accepted problems from suggested fixes that would change the objective, silently narrow coverage or assume unmeasured gains. The [revised plan](rotation-search.md) is authoritative for implementation proposals. Standard equipment, the one-week deadline, $500 total and 128-core limit remain fixed.
+
+After this review, the owner narrowed the scope explicitly: four-star members are C6 only; five-star members take C1/C2/C4/C6; C0 and mixed-C0 cases keep the existing path. New search has `4^n` profiles per party with n five-star members, totaling 315,043 in the frozen census. This supersedes the earlier 625-per-party coverage rule discussed below; it is an owner decision, not an inferred numeric-constellation optimization.
 
 ## 1. Eight chains divide the search too shallowly
 
@@ -18,11 +20,11 @@ Search `(program, attainable substat allocation)` jointly. Support ER/damage-rol
 
 ## 3. Anchors need realistic support contexts and measurable acquisition
 
-**Accepted in part.** Seventeen mandatory anchors with the other three members at C0 overemphasized one context. Add library and mixed contexts, including four-star supports at C6, all-C0/all-C6 and C0/C1 contrasts. These conventional contexts are not measured user prevalence.
+**Accepted in part.** Seventeen mandatory anchors with the other three members at C0 overemphasized one context. Under the latest scope, four-star C6 is mandatory in new discovery; five-star anchors use all-C1/all-C6 and mixed C1/C2/C4/C6. Library programs still seed discovery, while C0/C1 contrasts use an existing C0 reference without launching a C0 search. These conventional contexts are not measured user prevalence.
 
 Replace the undefined notion of a profile being far from its true optimum with observable signals: independently checked progress per CPU time, leading-candidate uncertainty, benefit from profile-specific candidates and mechanic/energy coverage gaps. Maintain an exploration allocation so early flat results do not starve a party.
 
-**Do not collapse all numeric-only constellations.** Changing damage distribution can change the best field time, action mix and buff allocation without changing a cooldown or energy mechanic. Mechanic tags prioritize search and share seeds; they are not equivalence proofs. Preserve all 625 profile comparisons. The owner explicitly excluded C3/C5; do not extend that exclusion merely to reduce a spreadsheet total.
+**Do not collapse all numeric-only constellations.** Changing damage distribution can change the best field time, action mix and buff allocation without changing a cooldown or energy mechanic. Mechanic tags prioritize search and share seeds; they are not equivalence proofs. Preserve comparisons within the owner's latest `4^n` scope. The earlier instruction to preserve 625 profiles is superseded by the explicit rarity/C0 decision, not by an assertion that numeric-only constellations are equivalent. C3/C5 reuse remains as directed.
 
 ## 4. A standard-build winner need not transfer to actual equipment
 
@@ -62,20 +64,20 @@ The previous fixed candidate/fight schedule is superseded by these initial CPU-h
 |---|---:|
 | Pilot and standard-build preparation | 600 |
 | Adaptive shared discovery, including ER and incumbent checks | 6,200 |
-| Full-profile coverage | 1,400 |
-| Reranking, final audits and export | 3,000 |
-| Main phase allocation | **11,200** |
-| Unallocated contingency | **3,852.8** |
+| Full-profile coverage under the new rarity/C0 scope | 250 |
+| Reranking, final audits and export | 700 |
+| Main phase allocation | **7,750** |
+| Unallocated contingency | **7,302.8** |
 | Effective planning allowance | **15,052.8** |
 
-These are allocations, not measured costs or a quality guarantee. Pilot results must reserve the real cost of coverage before assigning discovery depth. Keep the one-week/$500 hard stop and disclose unresolved outcomes. A staged evaluator that promotes nearly every candidate, or ER repair that runs often, earns no assumed compute discount.
+These caps incorporate the subsequent rarity/C0 decision: coverage and reranking allocations fall from 1,400/3,000 to 250/700 CPU-hours, and the difference returns to contingency. They are allocations, not measured costs or a quality guarantee. Pilot results must reserve the real cost of coverage before assigning discovery depth. Keep the one-week/$500 hard stop and disclose unresolved outcomes. A staged evaluator that promotes nearly every candidate, or ER repair that runs often, earns no assumed compute discount. The 88.97% profile-count reduction is not an 88.97% reduction in total adaptive-discovery CPU time.
 
 ## Pilot requirements before the full batch
 
 - Compare annealing, improvement-only and random mutation by independently audited gain per CPU-hour on held-out cases.
 - Measure validity rate, chain depth, racing promotions, rejected-candidate recovery and stability of best/archived programs.
 - Compare fixed-ER and joint-ER discovery under identical total cost, including newly feasible and energy-saving cycles.
-- Exercise mixed constellations and C6 four-star support contexts; numeric-only tags must not remove profile coverage.
+- Exercise mixed C1/C2/C4/C6 five-star constellations with four-stars fixed at C6; numeric-only tags must not remove profiles inside that declared scope. Keep C0 references separate from new discovery.
 - Evaluate diverse candidate transfer on declared alternate builds, including proc/reset/swap-dependent weapon cases where available. Do not report untested equipment as compatible.
 - Measure total CPU cost and elapsed throughput on both VMs, including preparation, parsing, failed fights, retries, checkpointing and independent validation.
 

@@ -4,7 +4,9 @@
 
 Find build-dependent sustained-DPS rotations for Gscouter using the Rust simulation engine. Intermediate constellations matter: Flins changes at C1, so a C0 rotation is not sufficient for every build.
 
-The agreed scope, standard builds, search algorithm and compute estimate are in [the rotation-search plan](docs/rotation-search.md). The first batch targets each party member independently at C0, C1, C2, C4 and C6, with a hard limit of one week, $500 total and two 64-core Azure Fals v7 VMs. Estimates remain provisional until measured on those VMs.
+The agreed scope, standard builds, search algorithm and compute estimate are in [the rotation-search plan](docs/rotation-search.md). In offline discovery, four-star members are fixed at C6 and five-star members independently take C1, C2, C4 or C6. A party with n five-star members has 4^n new search profiles. C0 and mixed-C0 cases keep the existing build/scoring path and receive no new batch search. The hard limit remains one week, $500 total and two 64-core Azure Fals v7 VMs; throughput estimates remain provisional until measured on those VMs.
+
+The frozen 4,570-party census gives **315,043 new profiles**, versus 2,856,250 under the superseded five-stage-for-every-member rule. This is a profile-count reduction of about 89%, not a measured reduction in all search CPU time.
 
 The [design review](docs/design-review.md) records seven implementation risks and their dispositions. The revised proposal couples ER allocation with cycles, uses two persistent search chains with staged evaluation, validates archive promotions, exports diverse candidates and schedules work by measured CPU cost. It supersedes the fixed 1,000-candidate/eight-chain allocation and the derived 5.33-day forecast; these changes are still unimplemented.
 
