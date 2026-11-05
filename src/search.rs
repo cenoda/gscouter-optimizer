@@ -65,6 +65,20 @@ struct State {
     polish: Option<Polish>,
     #[serde(default)]
     stage_selections: Vec<StageSelection>,
+    /// Held-out v2 second pass (`docs/heldout-recovery-v2.md` section 4).
+    #[serde(default)]
+    pass2: Option<Pass2>,
+}
+#[derive(Clone, Serialize, Deserialize)]
+struct Pass2 {
+    from_cpu: f64,
+    start_step: usize,
+    s1_key: String,
+    alternative_key: String,
+    minimise_cursor: usize,
+    minimise_done: bool,
+    minimise_accepted: usize,
+    derived: Vec<crate::heldout::Block>,
 }
 #[derive(Serialize, Deserialize)]
 struct StageSelection {
@@ -123,6 +137,10 @@ struct Options {
     basic_grammar: bool,
     /// Held-out recovery mode: per-case block dictionary file.
     dictionary: Option<String>,
+    /// Held-out v2 operators, annealing and assumption guard.
+    v2: bool,
+    /// Held-out v2: start a second pass when resumed (declared CPU point).
+    second_pass_from: Option<f64>,
 }
 
 fn proposal(
@@ -238,23 +256,92 @@ fn heldout_proposal(
     (next, "heldout: no valid edit drawn".into())
 }
 
-fn heldout_micro(c: &Candidate, m: &Manifest) -> Vec<(Candidate, String)> {
+fn heldout_micro(c: &Candidate, m: &Manifest, v2: bool) -> Vec<(Candidate, String)> {
     let Some(raw) = c.program.source_text() else {
         return Vec::new();
     };
-    crate::heldout::numeric_neighbors(raw, &m.build())
-        .into_iter()
-        .map(|(source, label)| {
-            (
-                Candidate {
-                    program: c.program.with_source(source),
-                    parent: Some(c.key()),
-                    ..c.clone()
-                },
-                label,
-            )
-        })
-        .collect()
+    if v2 {
+        crate::heldout_v2::micro(raw, &m.build())
+    } else {
+        crate::heldout::numeric_neighbors(raw, &m.build())
+    }
+    .into_iter()
+    .map(|(source, label)| {
+        (
+            Candidate {
+                program: c.program.with_source(source),
+                parent: Some(c.key()),
+                ..c.clone()
+            },
+            label,
+        )
+    })
+    .collect()
+}
+
+/// Held-out v2 proposal: one or (compound) several edits from the v2
+/// operator set or the generic action-list neighbors, evaluated once.
+/// A result that adds an assumption construct is discarded (no-op).
+fn heldout_proposal_v2(
+    c: &Candidate,
+    m: &Manifest,
+    rng: &mut Rng,
+    proposer: &crate::heldout_v2::Proposer,
+    generic: &mut Option<(String, Vec<(Program, String)>)>,
+    moves: crate::heldout_v2::Moves,
+) -> (Candidate, String) {
+    let mut next = c.clone();
+    next.parent = Some(c.key());
+    let Some(raw) = c.program.source_text() else {
+        return (next, "heldout: no editable source".into());
+    };
+    let edits = if rng.index(100) < moves.compound_percent {
+        2 + rng.index(moves.compound_max - 1)
+    } else {
+        1
+    };
+    let mut program = c.program.clone();
+    let mut labels = Vec::new();
+    for e in 0..edits {
+        for _ in 0..8 {
+            if e == 0 && rng.index(100) < 20 {
+                let key = c.key();
+                if generic.as_ref().is_none_or(|(k, _)| k != &key) {
+                    *generic = Some((key, c.program.local_neighbors(m)));
+                }
+                let list = &generic.as_ref().unwrap().1;
+                if !list.is_empty() {
+                    let (p, label) = list[rng.index(list.len())].clone();
+                    program = p;
+                    labels.push(format!("generic {label}"));
+                    break;
+                }
+                continue;
+            }
+            let current = program.source_text().unwrap_or(raw).to_string();
+            if let Some((source, label)) = proposer.edit(&current, rng) {
+                program = c.program.with_source(source);
+                labels.push(label);
+                break;
+            }
+        }
+    }
+    let changed = program.source_text().unwrap_or(raw);
+    if labels.is_empty()
+        || crate::heldout_v2::assumptions(changed)
+            .iter()
+            .zip(crate::heldout_v2::assumptions(raw))
+            .any(|(a, b)| *a > b)
+    {
+        return (next, "heldout v2: no valid edit drawn".into());
+    }
+    next.program = program;
+    let prefix = if labels.len() > 1 {
+        format!("compound x{}: ", labels.len())
+    } else {
+        String::new()
+    };
+    (next, format!("{prefix}{}", labels.join(" | ")))
 }
 
 fn polish_neighbors(c: &Candidate, frozen: &Manifest, joint: bool) -> Vec<(Candidate, String)> {
@@ -413,6 +500,7 @@ fn initialize(
         pending: None,
         polish: None,
         stage_selections: Vec::new(),
+        pass2: None,
     }
 }
 
@@ -467,13 +555,24 @@ fn run(o: &Options) -> R<()> {
         None => String::new(),
     };
     let dictionary: Option<Dictionary> = if o.dictionary.is_some() {
-        if o.joint || o.from_scratch || o.restricted || !o.local || o.algorithm != "greedy" {
-            return Err("--dictionary requires greedy, --fixed-er and one baseline chain".into());
+        if o.joint
+            || o.from_scratch
+            || o.restricted
+            || !o.local
+            || (o.algorithm != "greedy" && !(o.v2 && o.algorithm == "anneal"))
+        {
+            return Err("--dictionary requires greedy (or --heldout-v2 with anneal), --fixed-er and one baseline chain".into());
         }
         Some(serde_json::from_str(&dictionary_text).map_err(|e| e.to_string())?)
     } else {
         None
     };
+    if (o.v2 || o.second_pass_from.is_some()) && dictionary.is_none() {
+        return Err("--heldout-v2 and --second-pass-from require --dictionary".into());
+    }
+    if o.second_pass_from.is_some() && !o.v2 {
+        return Err("--second-pass-from requires --heldout-v2".into());
+    }
     let initial = if let Some(catalog) = &catalog {
         Program::Generated(Rotation::generate(catalog, &mut Rng(o.seed), 0))
     } else {
@@ -484,25 +583,27 @@ fn run(o: &Options) -> R<()> {
     if !unsupported.is_empty() {
         return Err(unsupported.join("; "));
     }
-    let identity = hash(&format!(
-        "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}{}",
-        serde_json::to_string(&m).unwrap(),
-        baseline,
-        o.seed,
-        o.algorithm,
-        o.local,
-        o.joint,
-        o.revised,
-        o.restricted,
-        o.from_scratch,
-        o.basic_grammar,
-        implementation_hash(),
-        if o.dictionary.is_some() {
-            format!("\nheldout dictionary\n{dictionary_text}")
-        } else {
-            String::new()
-        }
-    ));
+    let identity = hash(
+        &(format!(
+            "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}{}",
+            serde_json::to_string(&m).unwrap(),
+            baseline,
+            o.seed,
+            o.algorithm,
+            o.local,
+            o.joint,
+            o.revised,
+            o.restricted,
+            o.from_scratch,
+            o.basic_grammar,
+            implementation_hash(),
+            if o.dictionary.is_some() {
+                format!("\nheldout dictionary\n{dictionary_text}")
+            } else {
+                String::new()
+            }
+        ) + if o.v2 { "\nheldout v2" } else { "" }),
+    );
     fs::create_dir_all(&o.out).map_err(|e| e.to_string())?;
     let checkpoint = o.out.join("checkpoint.json");
     let mut state: State = if checkpoint.exists() {
@@ -530,6 +631,98 @@ fn run(o: &Options) -> R<()> {
             }),
         )?;
     }
+    let members: Vec<u16> = m
+        .members
+        .iter()
+        .filter_map(|x| gse::gcsl::char_key(&x.key))
+        .collect();
+    if let (Some(from), Some(dict)) = (o.second_pass_from, &dictionary)
+        && state.pass2.is_none()
+    {
+        if state.parent_cpu + 1.0 < from {
+            return Err(format!(
+                "second pass from {from} CPU-s requires a first pass of that length (have {:.1})",
+                state.parent_cpu
+            ));
+        }
+        // Restart from the pass-1 result. The peak is kept; families,
+        // temperatures, pending proposal and polish cursor are reset.
+        let s1 = state.best.clone();
+        let s1_src = s1.program.source_text().unwrap_or_default().to_string();
+        let l_src = state
+            .baseline
+            .program
+            .source_text()
+            .unwrap_or_default()
+            .to_string();
+        let alternative = state
+            .archive
+            .iter()
+            .filter(|c| c.key() != s1.key())
+            .min_by(|a, b| {
+                let sim = |c: &Candidate| {
+                    crate::heldout_v2::similarity(
+                        &s1_src,
+                        c.program.source_text().unwrap_or_default(),
+                    )
+                };
+                sim(a).total_cmp(&sim(b))
+            })
+            .cloned()
+            .unwrap_or_else(|| state.baseline.clone());
+        let derived = crate::heldout_v2::derive(dict, &[&s1_src, &l_src]);
+        let chain = |c: &Candidate, role: &str| Chain {
+            current: Candidate {
+                role: role.into(),
+                parent: Some(c.key()),
+                ..c.clone()
+            },
+            steps: 0,
+            accepted: 0,
+            temperature: 0.015,
+            score: 0.0,
+            stall: 0,
+        };
+        let discarded = state.pending.take().map(|p| p.operator);
+        state.chains = vec![
+            chain(&s1, "pass2-minimised-S1"),
+            chain(&alternative, "pass2-alternative"),
+        ];
+        state.polish = None;
+        state.pass2 = Some(Pass2 {
+            from_cpu: state.parent_cpu,
+            start_step: state.step,
+            s1_key: s1.key(),
+            alternative_key: alternative.key(),
+            minimise_cursor: 0,
+            minimise_done: false,
+            minimise_accepted: 0,
+            derived: derived.clone(),
+        });
+        atomic(
+            &o.out.join("second-pass.json"),
+            &serde_json::json!({"declared_from_cpu":from,"from_cpu":state.parent_cpu,"start_step":state.step,
+                "s1_key":s1.key(),"alternative_key":alternative.key(),"alternative_is_L":alternative.key()==state.baseline.key(),
+                "derived_templates":derived.len(),"discarded_pending_operator":discarded,"protocol":"docs/heldout-recovery-v2.md section 4"}),
+        )?;
+        atomic(&checkpoint, &state)?;
+    }
+    let derived: Vec<crate::heldout::Block> = state
+        .pass2
+        .as_ref()
+        .map(|p| p.derived.clone())
+        .unwrap_or_default();
+    let proposer = dictionary.as_ref().map(|dict| crate::heldout_v2::Proposer {
+        dict,
+        derived: &derived,
+        members: members.clone(),
+        context: m.build(),
+    });
+    let moves = if state.pass2.is_some() {
+        crate::heldout_v2::PASS2
+    } else {
+        crate::heldout_v2::PASS1
+    };
     let mut e = Evaluator::new(&o.out)?;
     let carried = state.parent_cpu;
     let worker_start = e.worker_cpu;
@@ -557,12 +750,20 @@ fn run(o: &Options) -> R<()> {
                 && !o.restricted
                 && spent(&e, carried, parent_start, worker_start) >= o.seconds * 0.75,
         );
+        let minimising = state.pass2.as_ref().is_some_and(|p| !p.minimise_done)
+            && state
+                .pending
+                .as_ref()
+                .is_none_or(|p| p.operator.starts_with("minimise"));
+        if minimising {
+            polishing = false;
+        }
         if dictionary.is_some() && polishing && state.pending.is_none() {
             // Micro coordinate search around the peak; once its neighborhood
             // is exhausted without a promotion, return to macro edits.
             let anchor = state.best.key();
             if polish_cache.as_ref().is_none_or(|(key, _)| key != &anchor) {
-                polish_cache = Some((anchor.clone(), heldout_micro(&state.best, &m)));
+                polish_cache = Some((anchor.clone(), heldout_micro(&state.best, &m, o.v2)));
             }
             let cursor = state
                 .polish
@@ -590,6 +791,13 @@ fn run(o: &Options) -> R<()> {
         }
         let family = if let Some(p) = &state.pending {
             p.family
+        } else if minimising {
+            0
+        } else if o.v2 && state.chains.iter().any(|c| c.steps < 4) {
+            // Initial quantum: every family gets four decisions first.
+            (0..state.chains.len())
+                .min_by_key(|&i| state.chains[i].steps)
+                .unwrap()
         } else if state.step < state.chains.len() * 4 || state.step.is_multiple_of(5) {
             state.step % state.chains.len()
         } else {
@@ -648,7 +856,7 @@ fn run(o: &Options) -> R<()> {
                     polish_cache = Some((
                         origin.key(),
                         if dictionary.is_some() {
-                            heldout_micro(&origin, &m)
+                            heldout_micro(&origin, &m, o.v2)
                         } else {
                             polish_neighbors(&origin, &m, o.joint)
                         },
@@ -676,6 +884,64 @@ fn run(o: &Options) -> R<()> {
                 )
             } else if state.chains[family].steps == 0 && !baseline_trial {
                 (origin.clone(), "initial family evaluation".into())
+            } else if minimising && family == 0 {
+                // G5 sweep: delete one unit of the current program; the
+                // cursor advances only when the deletion is rejected.
+                let p2 = state.pass2.as_mut().unwrap();
+                let src = origin.program.source_text().unwrap_or_default().to_string();
+                match crate::heldout_v2::delete_unit(&src, p2.minimise_cursor, &m.build()) {
+                    None => {
+                        p2.minimise_done = true;
+                        continue;
+                    }
+                    Some(None) => {
+                        p2.minimise_cursor += 1;
+                        continue;
+                    }
+                    Some(Some(source)) => (
+                        Candidate {
+                            program: origin.program.with_source(source),
+                            parent: Some(origin.key()),
+                            ..origin.clone()
+                        },
+                        format!("minimise delete unit {}", p2.minimise_cursor),
+                    ),
+                }
+            } else if let (true, Some(proposer)) = (o.v2, &proposer) {
+                if state.chains[family].stall >= RESTART_PATIENCE {
+                    state.chains[family].stall = 0;
+                    let mut next = state.best.clone();
+                    let mut labels = Vec::new();
+                    for _ in 0..RESTART_EDITS {
+                        let (n, label) = heldout_proposal_v2(
+                            &next,
+                            &m,
+                            &mut state.rng,
+                            proposer,
+                            &mut generic_cache,
+                            crate::heldout_v2::Moves {
+                                compound_percent: 0,
+                                compound_max: 1,
+                            },
+                        );
+                        next = n;
+                        labels.push(label);
+                    }
+                    next.parent = Some(state.best.key());
+                    (
+                        next,
+                        format!("restart perturbation: {}", labels.join(" | ")),
+                    )
+                } else {
+                    heldout_proposal_v2(
+                        &origin,
+                        &m,
+                        &mut state.rng,
+                        proposer,
+                        &mut generic_cache,
+                        moves,
+                    )
+                }
             } else if let Some(dict) = &dictionary {
                 if state.chains[family].stall >= RESTART_PATIENCE {
                     // Restart: perturb the promoted peak by several random
@@ -805,9 +1071,10 @@ fn run(o: &Options) -> R<()> {
         let mut temperature = state.chains[family].temperature;
         let restarting =
             operator == "fresh restart" || operator.starts_with("restart perturbation");
+        let minimise_step = operator.starts_with("minimise");
         let mut threshold = if restarting {
             -f64::MAX
-        } else if o.algorithm == "anneal" && !baseline_trial && !polishing {
+        } else if o.algorithm == "anneal" && !baseline_trial && !polishing && !minimise_step {
             temperature * u.ln()
         } else {
             0.0
@@ -834,6 +1101,9 @@ fn run(o: &Options) -> R<()> {
             }
         }
         if let Some(err) = failed {
+            if minimise_step {
+                state.pass2.as_mut().unwrap().minimise_cursor += 1;
+            }
             state.events.push(Event {
                 step: state.step,
                 family,
@@ -926,20 +1196,25 @@ fn run(o: &Options) -> R<()> {
             }
             let reference_key = reference.key();
             match eval(&mut e, &reference, decision_seed, decision_count) {
-                Err(err) => state.events.push(Event {
-                    step: state.step,
-                    family,
-                    decision_seed,
-                    samples: decision_count,
-                    accepted: false,
-                    delta: 0.0,
-                    threshold,
-                    kind: format!("unresolved incumbent: {err}"),
-                    cpu: spent(&e, carried, parent_start, worker_start),
-                    current_key: reference_key.clone(),
-                    proposal_key: next.key(),
-                    operator: operator.clone(),
-                    phase: phase.clone(),
+                Err(err) => state.events.push({
+                    if minimise_step {
+                        state.pass2.as_mut().unwrap().minimise_cursor += 1;
+                    }
+                    Event {
+                        step: state.step,
+                        family,
+                        decision_seed,
+                        samples: decision_count,
+                        accepted: false,
+                        delta: 0.0,
+                        threshold,
+                        kind: format!("unresolved incumbent: {err}"),
+                        cpu: spent(&e, carried, parent_start, worker_start),
+                        current_key: reference_key.clone(),
+                        proposal_key: next.key(),
+                        operator: operator.clone(),
+                        phase: phase.clone(),
+                    }
                 }),
                 Ok(x) => {
                     let delta = (stats(&y).mean - stats(&x).mean) / initial_dps;
@@ -969,14 +1244,22 @@ fn run(o: &Options) -> R<()> {
                                 / initial_dps;
                         temperature = (2.0 * noise).max(delta.abs() * 0.25).clamp(0.001, 0.05);
                         state.chains[family].temperature = temperature;
-                        threshold = if o.algorithm == "anneal" {
+                        threshold = if o.algorithm == "anneal" && !minimise_step {
                             temperature * u.ln()
                         } else {
                             0.0
                         };
                     }
                     let accept = delta >= threshold;
-                    if !polishing && !baseline_trial && !restarting {
+                    if minimise_step {
+                        let p2 = state.pass2.as_mut().unwrap();
+                        if accept {
+                            p2.minimise_accepted += 1;
+                        } else {
+                            p2.minimise_cursor += 1;
+                        }
+                    }
+                    if !polishing && !baseline_trial && !restarting && !minimise_step {
                         if accept && delta > 0.0 {
                             state.chains[family].stall = 0;
                         } else {
@@ -1002,6 +1285,8 @@ fn run(o: &Options) -> R<()> {
                         threshold,
                         kind: if restarting {
                             "restart"
+                        } else if minimise_step {
+                            "minimise"
                         } else if polishing {
                             "polish"
                         } else if baseline_trial {
@@ -1136,6 +1421,13 @@ fn run(o: &Options) -> R<()> {
     } else {
         "supplied baseline"
     });
+    report["heldout_v2"] = serde_json::json!(o.v2);
+    report["second_pass"] = serde_json::to_value(state.pass2.as_ref().map(|p| {
+        serde_json::json!({"from_cpu":p.from_cpu,"start_step":p.start_step,"s1_key":p.s1_key,
+            "alternative_key":p.alternative_key,"minimise_done":p.minimise_done,
+            "minimise_accepted":p.minimise_accepted,"derived_templates":p.derived.len()})
+    }))
+    .map_err(|e| e.to_string())?;
     report["stage_selections"] =
         serde_json::to_value(&state.stage_selections).map_err(|e| e.to_string())?;
     atomic(&o.out.join("report.json"), &report)?;
@@ -1228,7 +1520,8 @@ pub fn cli() -> R<()> {
             run(&Options{manifest:opt(&args,"--manifest","data/flins-c1/manifest.json"),baseline:baseline_path(&args),
                 out:opt(&args,"--out","runs/pilot").into(),seconds:number(&args,"--seconds","30")?,seed:number(&args,"--seed","1")?,algorithm,
                 local:dictionary.is_some() || args.iter().any(|a|a=="--local-only"),joint:!args.iter().any(|a|a=="--fixed-er"),audit:number(&args,"--audit","128")?,
-                revised:from_scratch || dictionary.is_some() || args.iter().any(|a|a=="--revised"),restricted:args.iter().any(|a|a=="--restricted-domain"),from_scratch,basic_grammar:args.iter().any(|a|a=="--basic-grammar"),dictionary})
+                revised:from_scratch || dictionary.is_some() || args.iter().any(|a|a=="--revised"),restricted:args.iter().any(|a|a=="--restricted-domain"),from_scratch,basic_grammar:args.iter().any(|a|a=="--basic-grammar"),dictionary,
+                v2:args.iter().any(|a|a=="--heldout-v2"),second_pass_from:if args.iter().any(|a|a=="--second-pass-from"){Some(number(&args,"--second-pass-from","192")?)}else{None}})
         },
         Some("evaluate")=>{
             let src=fs::read_to_string(opt(&args,"--config","")).map_err(|e|e.to_string())?;
@@ -1254,6 +1547,7 @@ pub fn cli() -> R<()> {
         },
         Some("enumerate")=>enumerate(&args),
         Some("heldout-manifest")|Some("dictionary")|Some("measure")=>crate::heldout::cli(&args),
+        Some("dictionary-v2")|Some("strip-assumptions")=>crate::heldout_v2::cli(&args),
         Some("validate")=>{
             let m=Manifest::load(&opt(&args,"--manifest","data/flins-c1/manifest.json"))?;
             let programs=if args.iter().any(|a|a=="--from-scratch") {
@@ -1374,6 +1668,7 @@ fn implementation_hash() -> String {
             include_str!("evaluate.rs"),
             include_str!("search.rs"),
             include_str!("heldout.rs"),
+            include_str!("heldout_v2.rs"),
             include_str!("../data/character-rarities.json"),
             include_str!("../Cargo.lock"),
             include_str!("../Cargo.toml"),
@@ -1381,6 +1676,7 @@ fn implementation_hash() -> String {
             include_str!("../docs/pilot-retry.md"),
             include_str!("../docs/from-scratch.md"),
             include_str!("../docs/heldout-recovery-pilot.md"),
+            include_str!("../docs/heldout-recovery-v2.md"),
         ]
         .join("\n"),
     )
@@ -1409,6 +1705,8 @@ mod tests {
             from_scratch: true,
             basic_grammar: false,
             dictionary: None,
+            v2: false,
+            second_pass_from: None,
         };
         let mut state = initialize(
             &options,
@@ -1575,6 +1873,8 @@ mod tests {
             from_scratch: false,
             basic_grammar: false,
             dictionary: None,
+            v2: false,
+            second_pass_from: None,
         };
         let mut state = initialize(&options, &m, &baseline, "test", None);
         let anchor = state.best.key();

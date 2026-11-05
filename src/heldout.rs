@@ -20,7 +20,8 @@ pub const MIN_BLOCK_COUNT: usize = 2;
 pub const MAX_BLOCKS_PER_CHARACTER: usize = 64;
 /// Built-in calls a guarded dictionary block may contain. Any other
 /// identifier (a rotation's own variable or function) is context-dependent.
-const BLOCK_BUILTINS: &[&str] = &["f", "rand", "randnorm", "wait", "sleep", "delay", "is_even"];
+pub(crate) const BLOCK_BUILTINS: &[&str] =
+    &["f", "rand", "randnorm", "wait", "sleep", "delay", "is_even"];
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
 pub struct Block {
@@ -38,21 +39,25 @@ pub struct Dictionary {
     pub blocks: BTreeMap<String, Vec<Block>>,
     #[serde(default)]
     pub dropped_for_leakage: Vec<String>,
+    /// v2 only: owner-abstracted templates (`$SELF` placeholder). Omitted
+    /// when empty so format-1 files serialize exactly as in stage 1.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub templates: Vec<Block>,
 }
 
-fn tokens(raw: &str) -> Vec<gse::gcsl::Token> {
+pub(crate) fn tokens(raw: &str) -> Vec<gse::gcsl::Token> {
     let mut t = gse::gcsl::lex(raw);
     t.retain(|t| t.typ != Tok::Eof);
     t
 }
 
 /// The character a field path element names, if any (`.kuki` -> kuki).
-fn field_char(val: &str) -> Option<u16> {
+pub(crate) fn field_char(val: &str) -> Option<u16> {
     gse::gcsl::char_key(val.strip_prefix('.')?)
 }
 
 /// Token text with character names replaced by the engine's canonical name.
-fn canonical(t: &gse::gcsl::Token) -> String {
+pub(crate) fn canonical(t: &gse::gcsl::Token) -> String {
     match t.typ {
         Tok::CharacterKey => gse::gcsl::char_key(&t.val)
             .map(|k| gse::gcsl::char_name(k).to_string())
@@ -111,7 +116,7 @@ pub fn statements(t: &[gse::gcsl::Token]) -> Vec<Statement> {
 }
 
 /// Matching close brace of the open brace at `open`.
-fn close(t: &[gse::gcsl::Token], open: usize) -> Option<usize> {
+pub(crate) fn close(t: &[gse::gcsl::Token], open: usize) -> Option<usize> {
     let mut depth = 0;
     for (j, tok) in t.iter().enumerate().skip(open) {
         match tok.typ {
@@ -266,6 +271,7 @@ impl Dictionary {
             unparsed,
             blocks,
             dropped_for_leakage: Vec::new(),
+            templates: Vec::new(),
         }
     }
 
@@ -287,7 +293,7 @@ impl Dictionary {
         out
     }
 
-    fn for_char(&self, id: u16) -> &[Block] {
+    pub(crate) fn for_char(&self, id: u16) -> &[Block] {
         self.blocks
             .get(gse::gcsl::char_name(id))
             .map(Vec::as_slice)
@@ -307,7 +313,7 @@ fn pick<'a>(blocks: &'a [Block], rng: &mut Rng) -> &'a Block {
     unreachable!()
 }
 
-fn parses(context: &str, source: &str) -> bool {
+pub(crate) fn parses(context: &str, source: &str) -> bool {
     gse::gcsl::parse(&format!("{HEADER}{context}\n{source}")).is_ok()
 }
 
