@@ -1,0 +1,13 @@
+{
+  "sha256": "43d70c18be1261be30d6d5485a074c378bf07f206757e74600c3a5664b566c8d",
+  "dropped_for_leakage": [
+    "bennett dash , skill , burst ;",
+    "chasca burst ;",
+    "chasca aim [ bullets = 4 ] ;",
+    "chasca skill ;",
+    "chasca aim : 4 ;",
+    "if .chasca .burst .ready && .chasca .energy == .chasca .energymax { chasca burst ; }",
+    "chongyun burst , skill ;",
+    "citlali skill ;"
+  ]
+}

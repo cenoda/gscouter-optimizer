@@ -1,0 +1,16 @@
+{
+  "sha256": "d4e162ce060ac2293bcc3ec76896c47552ccc60264652b07e7333439492540b4",
+  "dropped_for_leakage": [
+    "bennett burst ;",
+    "bennett skill [ hold_c4 = 1 ] ;",
+    "chasca burst ;",
+    "chasca aim [ bullets = 4 ] ;",
+    "chasca skill ;",
+    "chasca aim : 4 ;",
+    "if .chasca .burst .ready && .chasca .energy == .chasca .energymax { chasca burst ; }",
+    "citlali skill , attack ;",
+    "mualani attack ;",
+    "mualani walk [ f = 1 ] ;",
+    "mualani skill ;"
+  ]
+}

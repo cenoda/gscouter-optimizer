@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/travelerpyro-furina-bennett-citlali/alt/citlali-c6-no-burst/build.txt": "20b419008f9ef588889f1875e47259c847595023be94e1df121ca5017e04f933"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "aetherpyro",
+      "cons": 6,
+      "weapon": "calamityofeshu",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 0,
+      "weapon": "favoniussword",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "thealleyflash",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "citlali",
+      "cons": 6,
+      "weapon": "thrillingtalesofdragonslayers",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# The team's build with citlali at C6, the build the variant was measured and is validated with.\n\naetherpyro char lvl=90/90 cons=6 talent=9,9,9 +params=[base_atk_buff=1, skirk_story_buff=1];\naetherpyro add weapon=\"eshu\" refine=5 lvl=90/90;\naetherpyro add set=\"oc\" count=4;\naetherpyro add stats hp=4780 atk=311 em=187 pyro%=0.466 cd=0.622;\naetherpyro add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.3972 cd=0.662;\n\nfurina char lvl=90/90 cons=0 talent=9,9,9;\nfurina add weapon=\"favsword\" refine=3 lvl=90/90;\nfurina add set=\"gt\" count=4;\nfurina add stats hp=4780 atk=311 er=0.518 hp%=0.466 cr=0.311;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1984 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nbennett char lvl=90/90 cons=6 talent=9,9,9;\nbennett add weapon=\"alleyflash\" refine=1 lvl=90/90;\nbennett add set=\"no\" count=4;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\ncitlali char lvl=90/90 cons=6 talent=9,9,9;\ncitlali add weapon=\"ttds\" refine=5 lvl=90/90;\ncitlali add set=\"scroll\" count=4;\ncitlali add stats hp=4780 atk=311 er=0.518 em=187 em=187;\ncitlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.3857 em=39.64 cr=0.3972 cd=0.4634;\n"
+}

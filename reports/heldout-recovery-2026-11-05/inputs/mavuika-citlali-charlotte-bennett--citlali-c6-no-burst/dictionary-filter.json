@@ -1,0 +1,13 @@
+{
+  "sha256": "4583f38f4874c174256729d0137a7857c9106642cf8e9d9423e3f585a569cf1d",
+  "dropped_for_leakage": [
+    "bennett skill , burst ;",
+    "charlotte skill [ hold = 1 ] ;",
+    "citlali skill , attack : 2 ;",
+    "mavuika burst ;",
+    "mavuika skill , attack ;",
+    "mavuika attack ;",
+    "mavuika charge , dash , attack ;",
+    "mavuika charge : 2 , charge [ final = 1 ] , dash ;"
+  ]
+}

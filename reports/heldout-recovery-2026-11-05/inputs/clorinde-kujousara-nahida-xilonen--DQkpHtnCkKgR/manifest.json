@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/clorinde-kujousara-nahida-xilonen/alt/DQkpHtnCkKgR/build.txt": "ad6b8370abfbfa8035ce0bfb4ff415137e8b528ef945741c2bb2b9efc84c02ef"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "clorinde",
+      "cons": 0,
+      "weapon": "harbingerofdawn",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "kujousara",
+      "cons": 6,
+      "weapon": "fadingtwilight",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "nahida",
+      "cons": 0,
+      "weapon": "wanderingevenstar",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 2,
+      "weapon": "favoniussword",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nclorinde char lvl=90/90 cons=0 talent=9,9,9;\nclorinde add weapon=\"harbinger\" refine=5 lvl=90/90;\nclorinde add set=\"fohw\" count=4;\nclorinde add stats hp=4780 atk=311 atk%=0.466 electro%=0.466 cd=0.622;\nclorinde add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.3968 er=0.1102 em=39.64 cr=0.2648 cd=0.662;\n\nsara char lvl=90/90 cons=6 talent=9,9,9;\nsara add weapon=\"fadingtwilight\" refine=5 lvl=90/90;\nsara add set=\"no\" count=5;\nsara add stats hp=4780 atk=311 er=0.518 electro%=0.466 cr=0.311;\nsara add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1488 er=0.1653 em=39.64 cr=0.331 cd=0.7944;\n\nnahida char lvl=90/90 cons=0 talent=9,9,9;\nnahida add weapon=\"evenstar\" refine=1 lvl=90/90;\nnahida add set=\"ap\" count=4;\nnahida add stats hp=4780 atk=311 em=187 em=187 em=187;\nnahida add stats hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 def=39.36 def%=0.124 em=118.92 er=0.1102 cr=0.2979 cd=0.7282;\n\nxilonen char lvl=90/90 cons=2 talent=9,9,9;\nxilonen add weapon=\"favsword\" refine=3 lvl=90/90;\nxilonen add set=\"scroll\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 geo%=0.466 cr=0.311;\nxilonen add stats def%=0.248 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n"
+}

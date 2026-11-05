@@ -1,0 +1,10 @@
+{
+  "sha256": "8bb69735f8bf603219735895f1f850c8449ba325cff3924e6835c3b60daf79e8",
+  "dropped_for_leakage": [
+    "bennett attack , skill ;",
+    "bennett attack , burst , skill ;",
+    "lynette attack , burst ;",
+    "lyney aim [ weakspot = 1 ] ;",
+    "xiangling burst , skill , dash ;"
+  ]
+}

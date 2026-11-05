@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/cyno-fischl-nahida-xilonen/alt/kRfdGgkcpznD/build.txt": "70fd321b22c4b43680b7309df3b915df27cfcb3010857bd921e7485db9f30b75"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "cyno",
+      "cons": 6,
+      "weapon": "staffofthescarletsands",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "fischl",
+      "cons": 6,
+      "weapon": "elegyfortheend",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "nahida",
+      "cons": 6,
+      "weapon": "athousandfloatingdreams",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 6,
+      "weapon": "peakpatrolsong",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\ncyno char lvl=90/90 cons=6 talent=10,10,10;\ncyno add weapon=\"staffofthescarletsands\" refine=5 lvl=90/90;\ncyno add set=\"gd\" count=4;\ncyno add stats hp=4780 atk=311 em=187 electro%=0.466 cd=0.622;\ncyno add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.3972 cd=0.662;\n\nfischl char lvl=90/90 cons=6 talent=10,10,10;\nfischl add weapon=\"elegy\" refine=5 lvl=90/90;\nfischl add set=\"gt\" count=4;\nfischl add stats hp=4780 atk=311 em=187 electro%=0.466 cr=0.311;\nfischl add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nnahida char lvl=90/90 cons=6 talent=10,10,10;\nnahida add weapon=\"tfd\" refine=5 lvl=90/90;\nnahida add set=\"deepwood\" count=4;\nnahida add stats hp=4780 atk=311 em=187 em=187 cd=0.622;\nnahida add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.4959 em=39.64 cr=0.3972 cd=0.331;\n\nxilonen char lvl=90/90 cons=6 talent=10,10,10;\nxilonen add weapon=\"peakpatrolsong\" refine=5 lvl=90/90;\nxilonen add set=\"scroll\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 def%=0.583;\nxilonen add stats def%=0.372 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.5296;\n"
+}

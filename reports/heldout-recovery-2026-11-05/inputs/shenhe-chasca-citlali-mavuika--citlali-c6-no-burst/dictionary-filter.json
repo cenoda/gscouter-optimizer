@@ -1,0 +1,15 @@
+{
+  "sha256": "6fdda627df18ff640fe7c28f38a7f26bac335680d408e4b9d648a93d8f048242",
+  "dropped_for_leakage": [
+    "chasca skill ;",
+    "chasca aim : 4 ;",
+    "chasca burst , aim : 4 ;",
+    "citlali skill ;",
+    "mavuika burst ;",
+    "mavuika skill ;",
+    "mavuika charge ;",
+    "shenhe burst ;",
+    "shenhe skill [ hold = 1 ] ;",
+    "if .shenhe .burst .ready { shenhe burst ; }"
+  ]
+}

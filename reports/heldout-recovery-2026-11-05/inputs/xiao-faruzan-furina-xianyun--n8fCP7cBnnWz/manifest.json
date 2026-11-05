@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/xiao-faruzan-furina-xianyun/alt/n8fCP7cBnnWz/build.txt": "5a9d19f30364e04a7b9673b36dd8cf5ab5c95183c8400081850e6b80d63c9ba4"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "xiao",
+      "cons": 0,
+      "weapon": "deathmatch",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "faruzan",
+      "cons": 6,
+      "weapon": "favoniuswarbow",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 0,
+      "weapon": "favoniussword",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xianyun",
+      "cons": 0,
+      "weapon": "flowingpurity",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nxiao char lvl=90/90 cons=0 talent=9,9,9;\nxiao add weapon=\"deathmatch\" refine=1 lvl=90/90;\nxiao add set=\"longnightsoath\" count=4;\nxiao add stats hp=4780 atk=311 atk%=0.466 anemo%=0.466 cd=0.622;\nxiao add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1653 em=39.64 cr=0.3641 cd=0.662;\n\nfaruzan char lvl=90/90 cons=6 talent=9,9,9;\nfaruzan add weapon=\"favbow\" refine=3 lvl=90/90;\nfaruzan add set=\"noblesseoblige\" count=4;\nfaruzan add stats hp=4780 atk=311 atk%=0.466 anemo%=0.466 cr=0.311;\nfaruzan add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nfurina char lvl=90/90 cons=0 talent=9,9,9;\nfurina add weapon=\"favsword\" refine=3 lvl=90/90;\nfurina add set=\"tenacityofthemillelith\" count=4;\nfurina add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cr=0.311;\nfurina add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.3306 em=39.64 cr=0.2648 cd=0.7944;\n\nxianyun char lvl=90/90 cons=0 talent=9,9,9;\nxianyun add weapon=\"flowingpurity\" refine=5 lvl=90/90;\nxianyun add set=\"clam\" count=4;\nxianyun add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;\nxianyun add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=165.4 atk%=0.2976 er=0.4959 em=39.64 cr=0.0993 cd=0.1324;\n"
+}

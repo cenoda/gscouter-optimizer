@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/neuvillette-furina-lynette-xilonen/alt/JhJ7FPddfHRz/build.txt": "435429a0cc4d4449c3679990eb0aa654d6d04d805610991f358ada7450519309"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "neuvillette",
+      "cons": 6,
+      "weapon": "tomeoftheeternalflow",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "splendoroftranquilwaters",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "lynette",
+      "cons": 6,
+      "weapon": "freedomsworn",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 6,
+      "weapon": "peakpatrolsong",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nneuvillette char lvl=90/90 cons=6 talent=10,10,10;\nneuvillette add weapon=\"tomeoftheeternalflow\" refine=5 lvl=90/90;\nneuvillette add set=\"mh\" count=4;\nneuvillette add stats hp=4780 atk=311 hp%=0.466 hp%=0.466 cr=0.311;\nneuvillette add stats def%=0.124 def=39.36 hp=507.88 hp%=0.2976 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.2648 cd=0.7944;\n\nfurina char lvl=90/90 cons=6 talent=10,10,10;\nfurina add weapon=\"splendoroftranquilwaters\" refine=5 lvl=90/90;\nfurina add set=\"gt\" count=4;\nfurina add stats hp=4780 atk=311 hp%=0.466 hp%=0.466 cr=0.311;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1984 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nlynette char lvl=90/90 cons=6 talent=10,10,10;\nlynette add weapon=\"freedomsworn\" refine=5 lvl=90/90;\nlynette add set=\"viridescentvenerer\" count=4;\nlynette add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 cr=0.311;\nlynette add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nxilonen char lvl=90/90 cons=6 talent=10,10,10;\nxilonen add weapon=\"peakpatrolsong\" refine=5 lvl=90/90;\nxilonen add set=\"scroll\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 def%=0.583;\nxilonen add stats def%=0.372 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.5296;\n"
+}

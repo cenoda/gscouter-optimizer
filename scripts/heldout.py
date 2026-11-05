@@ -267,9 +267,14 @@ def draw(args):
         shutil.copyfile(RUNS / name, OUT / name)
     inputs = OUT / "inputs"
     for c in order:
-        for f in ["manifest.json", "L.gcsl", "dictionary.json", "build.txt"]:
-            (inputs / c).mkdir(parents=True, exist_ok=True)
+        (inputs / c).mkdir(parents=True, exist_ok=True)
+        for f in ["manifest.json", "L.gcsl", "build.txt"]:
             shutil.copyfile(RUNS / "cases" / c / f, inputs / c / f)
+        # The per-case dictionary is the global one minus these blocks
+        # (`gso dictionary filter` reproduces it); only the difference is kept.
+        per_case = RUNS / "cases" / c / "dictionary.json"
+        write(inputs / c / "dictionary-filter.json", {"sha256": sha(per_case),
+              "dropped_for_leakage": load(per_case)["dropped_for_leakage"]})
     write(OUT / "protocol.json", {"path": "docs/heldout-recovery-pilot.md", "sha256": sha(PROTOCOL)})
     print(json.dumps(draw["allocation"]), len(order), "continued:", continued)
 

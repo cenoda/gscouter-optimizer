@@ -1,0 +1,12 @@
+{
+  "sha256": "d787263ba90887877a8071bf5a1909e03afa72685ee57df44af519dd3669d3b6",
+  "dropped_for_leakage": [
+    "chasca skill ;",
+    "chasca aim : 4 , aim [ bullets = 4 ] ;",
+    "chasca burst , aim : 4 ;",
+    "citlali skill ;",
+    "mavuika burst ;",
+    "mavuika skill ;",
+    "mavuika charge , dash ;"
+  ]
+}

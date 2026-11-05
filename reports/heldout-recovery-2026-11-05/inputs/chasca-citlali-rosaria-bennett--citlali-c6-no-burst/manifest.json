@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/chasca-citlali-rosaria-bennett/alt/citlali-c6-no-burst/build.txt": "d606562a71104a5bf8e1da501cb1105ae5cee2c9ecb1006813a9b6f24514e13b"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "chasca",
+      "cons": 0,
+      "weapon": "hamayumi",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "citlali",
+      "cons": 6,
+      "weapon": "thrillingtalesofdragonslayers",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "rosaria",
+      "cons": 6,
+      "weapon": "favoniuslance",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "thealleyflash",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# The team's build with citlali at C6, the build the variant was measured and is validated with.\n\nchasca char lvl=90/90 cons=0 talent=9,9,9;\nchasca add weapon=\"hamayumi\" refine=5 lvl=90/90;\nchasca add set=\"obsidiancodex\" count=4;\nchasca add stats hp=4780 atk=311 em=187 atk%=0.466 cd=0.622;\nchasca add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.496 er=0.1102 em=39.64 cr=0.1986 cd=0.662;\n\ncitlali char lvl=90/90 cons=6 talent=9,9,9;\ncitlali add weapon=\"ttds\" refine=5 lvl=90/90;\ncitlali add set=\"scroll\" count=4;\ncitlali add stats hp=4780 atk=311 er=0.518 em=187 em=187;\ncitlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2204 em=39.64 cr=0.3972 cd=0.662;\n\nrosaria char lvl=90/90 cons=6 talent=9,9,9;\nrosaria add weapon=\"favlance\" refine=3 lvl=90/90;\nrosaria add set=\"eosf\" count=4;\nrosaria add stats hp=4780 atk=311 er=0.518 cryo%=0.466 cr=0.311;\nrosaria add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nbennett char lvl=90/90 cons=6 talent=9,9,9;\nbennett add weapon=\"alleyflash\" refine=1 lvl=90/90;\nbennett add set=\"no\" count=4;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.551 em=39.64 cr=0.1324 cd=0.7944;\n"
+}

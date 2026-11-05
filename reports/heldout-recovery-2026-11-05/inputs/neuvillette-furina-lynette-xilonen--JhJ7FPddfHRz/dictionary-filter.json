@@ -1,0 +1,11 @@
+{
+  "sha256": "915f3e48b1e69b6748d9460197da68de41f40d6d8f6d431262c5c0b1b89c9764",
+  "dropped_for_leakage": [
+    "furina burst ;",
+    "furina skill , dash , attack ;",
+    "lynette skill , attack ;",
+    "neuvillette skill ;",
+    "neuvillette skill , charge ;",
+    "xilonen skill , attack : 2 ;"
+  ]
+}

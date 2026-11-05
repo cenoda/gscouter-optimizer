@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/mavuika-citlali-xilonen-albedo/alt/citlali-c6-no-burst/build.txt": "45e9e77bcbbbfd781d01ecc52421f272789c667d3e7edc5524aa5d21d6898e8c"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "mavuika",
+      "cons": 0,
+      "weapon": "serpentspine",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "citlali",
+      "cons": 6,
+      "weapon": "thrillingtalesofdragonslayers",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 0,
+      "weapon": "favoniussword",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "albedo",
+      "cons": 0,
+      "weapon": "cinnabarspindle",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# The team's build with citlali at C6, the build the variant was measured and is validated with.\n\nmavuika char lvl=90/90 cons=0 talent=9,9,9;\nmavuika add weapon=\"serpentspine\" refine=1 lvl=90/90 +params=[stacks=5];\nmavuika add set=\"oc\" count=4;\nmavuika add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cd=0.622;\nmavuika add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=178.38 cr=0.2317 cd=0.662;\n\ncitlali char lvl=90/90 cons=6 talent=9,9,9;\ncitlali add weapon=\"ttds\" refine=5 lvl=90/90;\ncitlali add set=\"scroll\" count=4;\ncitlali add stats hp=4780 atk=311 er=0.518 cryo%=0.466 cr=0.311;\ncitlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=237.84 cr=0.1655 cd=0.5958;\n\nxilonen char lvl=90/90 cons=0 talent=9,9,9;\nxilonen add weapon=\"favsword\" refine=3 lvl=90/90;\nxilonen add set=\"ap\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 geo%=0.466 cr=0.311;\nxilonen add stats def%=0.31 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7282;\n\nalbedo char lvl=90/90 cons=0 talent=9,9,9;\nalbedo add weapon=\"cinnabarspindle\" refine=5 lvl=90/90;\nalbedo add set=\"totm\" count=4;\nalbedo add stats hp=4780 atk=311 er=0.518 geo%=0.466 cr=0.311;\nalbedo add stats def%=0.248 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1653 em=39.64 cr=0.2979 cd=0.7944;\n"
+}

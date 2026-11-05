@@ -1,0 +1,13 @@
+{
+  "sha256": "c8adb6ca42ec831305d10cec55006e8fee7c2954fef9f1b07965d00ba8e9a073",
+  "dropped_for_leakage": [
+    "cyno skill ;",
+    "cyno attack ;",
+    "cyno dash ;",
+    "cyno burst ;",
+    "fischl attack : 2 , burst ;",
+    "fischl attack , skill ;",
+    "nahida skill , burst , attack , charge ;",
+    "xilonen skill , attack : 2 ;"
+  ]
+}

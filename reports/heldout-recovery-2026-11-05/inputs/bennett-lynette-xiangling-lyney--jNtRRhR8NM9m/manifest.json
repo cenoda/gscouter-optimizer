@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/bennett-lynette-xiangling-lyney/alt/jNtRRhR8NM9m/build.txt": "913e0abc51d8679b66cab4a46a54854251322bf71328bf8993b21b5cf995b36f"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "thealleyflash",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "lynette",
+      "cons": 6,
+      "weapon": "favoniussword",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xiangling",
+      "cons": 6,
+      "weapon": "thecatch",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "lyney",
+      "cons": 0,
+      "weapon": "prototypecrescent",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nbennett char lvl=90/90 cons=6 talent=9,9,9;\nbennett add weapon=\"thealleyflash\" refine=1 lvl=90/90;\nbennett add set=\"noblesse\" count=4;\nbennett add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.3306 em=39.64 cr=0.2979 cd=0.7282;\n\nlynette char lvl=90/90 cons=6 talent=9,9,9;\nlynette add weapon=\"favsword\" refine=5 lvl=90/90;\nlynette add set=\"vv\" count=4;\nlynette add stats hp=4780 atk=311 anemo%=0.466 er=0.518 cr=0.311;\nlynette add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nxiangling char lvl=90/90 cons=6 talent=9,9,9;\nxiangling add weapon=\"thecatch\" refine=5 lvl=90/90;\nxiangling add set=\"emblemofseveredfate\" count=4;\nxiangling add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nxiangling add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.2204 em=39.64 cr=0.331 cd=0.6620;\n\nlyney char lvl=90/90 cons=0 talent=9,9,9;\nlyney add weapon=\"prototypecrescent\" refine=5 lvl=90/90;\nlyney add set=\"marechausseehunter\" count=4;\nlyney add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cd=.622;\nlyney add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.3972 cd=0.662;\n"
+}

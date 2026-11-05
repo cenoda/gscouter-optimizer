@@ -1,0 +1,199 @@
+{
+  "seed": 20261105,
+  "classification_sha256": "443547cc30d67c94ff20d923662ef224873836fc952fec7677ca42d57298dc09",
+  "cases_sha256": "617d849dee18549e14e23f7c0432bd2fdc4ff8676fd5f46471e08677e8b53864",
+  "protocol_sha256": "14bea06330201a9cc603c61e03e56a67a205428ed39bb586343a5913c50ebacd",
+  "method": "seeded random.Random(20261105); stratified by whether A uses hold= or while (largest-remainder proportional allocation); run order is a seeded shuffle; a smaller stage takes a prefix of this order",
+  "allocation": {
+    "informative": {
+      "frame": 12,
+      "other": 12
+    },
+    "control": {
+      "frame": 3,
+      "other": 3
+    }
+  },
+  "order": [
+    {
+      "case": "wriothesley-shenhe-furina-xilonen--mQBdNDhMnnH6",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "travelerpyro-furina-bennett-citlali--citlali-c6-no-burst",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "gaming-citlali-kaedeharakazuha-bennett--citlali-c6-no-burst",
+      "class": "control",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "shenhe-chasca-citlali-mavuika--citlali-c6-no-burst",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": true
+    },
+    {
+      "case": "cyno-fischl-nahida-xilonen--kRfdGgkcpznD",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "xiao-faruzan-furina-xianyun--n8fCP7cBnnWz",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "kamisatoayaka-furina-citlali-escoffier--RmDNLghj8jqh",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "wriothesley-xiangling-furina-bennett--mwjCWWCcpwJJ",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": true
+    },
+    {
+      "case": "neuvillette-furina-lanyan-xilonen--dB9DNqJgzHBr",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "noelle-xilonen-nicole-durin--99dNHg8bKpcw",
+      "class": "control",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "kaedeharakazuha-faruzan-furina-xianyun--JFrLR9QLQgdw",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "chongyun-furina-escoffier-xianyun--KPmGTPNQRDW6",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": true
+    },
+    {
+      "case": "nahida-fischl-beidou-kaedeharakazuha--bcR6QJHLLBtH",
+      "class": "control",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "chasca-citlali-chongyun-bennett--citlali-c6-no-burst",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "bennett-fischl-lisa-xingqiu--z89bwQG6KGHg",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "mavuika-citlali-charlotte-bennett--citlali-c6-no-burst",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "mavuika-citlali-xilonen-albedo--citlali-c6-no-burst",
+      "class": "control",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": true
+    },
+    {
+      "case": "neuvillette-furina-lynette-xilonen--JhJ7FPddfHRz",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "chasca-citlali-mualani-bennett--citlali-c6-no-burst",
+      "class": "control",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "citlali-chasca-escoffier-mavuika--citlali-c6-no-burst",
+      "class": "control",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "hutao-furina-yelan-citlali--m9CWdQGTJwCH",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "bennett-lynette-xiangling-lyney--jNtRRhR8NM9m",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "chasca-citlali-rosaria-bennett--citlali-c6-no-burst",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": true
+    },
+    {
+      "case": "hutao-yelan-mona-nicole--NpWw8TkzPPDz",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": true
+    },
+    {
+      "case": "hutao-yelan-columbina-ineffa--7DdP6dDqRGbC",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": false
+    },
+    {
+      "case": "mavuika-citlali-xilonen-chevreuse--dkC8Gtdm8F9d",
+      "class": "informative",
+      "stratum": "frame",
+      "continue_to_576": false
+    },
+    {
+      "case": "flins-ineffa-columbina-durin--kwnMBjKmcJWQ",
+      "class": "informative",
+      "stratum": "other",
+      "continue_to_576": false
+    }
+  ]
+}

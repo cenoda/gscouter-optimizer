@@ -1,0 +1,14 @@
+{
+  "sha256": "c7cc381f395f284cebbb2c596667419677ef25fda36303c503355f8510063de1",
+  "dropped_for_leakage": [
+    "furina skill , dash , burst , attack ;",
+    "shenhe burst ;",
+    "shenhe skill [ hold = 1 ] ;",
+    "wriothesley burst ;",
+    "wriothesley attack : 3 ;",
+    "wriothesley skill ;",
+    "wriothesley attack : 5 , charge ;",
+    "wriothesley jump ;",
+    "xilonen skill , attack : 2 ;"
+  ]
+}

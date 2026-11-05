@@ -1,0 +1,16 @@
+{
+  "sha256": "95d0611e5f17020aa4539efc47bf2e11ebde5fcfcb899474dfc4dadbe855ab2f",
+  "dropped_for_leakage": [
+    "aetherpyro attack ;",
+    "aetherpyro burst ;",
+    "aetherpyro dash ;",
+    "aetherpyro charge ;",
+    "bennett skill , burst ;",
+    "bennett skill ;",
+    "citlali skill ;",
+    "furina burst ;",
+    "furina attack ;",
+    "furina skill , dash ;",
+    "if .furina .weapon == .keys .weapon .favsword && ( ! .furina .mods .favonius-cd && ! .furina .burst .ready ) { furina attack ; }"
+  ]
+}

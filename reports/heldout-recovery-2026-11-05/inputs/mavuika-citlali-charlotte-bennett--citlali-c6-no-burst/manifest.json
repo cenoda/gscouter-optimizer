@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/mavuika-citlali-charlotte-bennett/alt/citlali-c6-no-burst/build.txt": "9876d9b0b3c694fe60a6d21c00729476e021d01fd1ad761b58d68fcd4c34fdbc"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "mavuika",
+      "cons": 0,
+      "weapon": "serpentspine",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "citlali",
+      "cons": 6,
+      "weapon": "thrillingtalesofdragonslayers",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "charlotte",
+      "cons": 6,
+      "weapon": "wanderingevenstar",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "thealleyflash",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# The team's build with citlali at C6, the build the variant was measured and is validated with.\n\nmavuika char lvl=90/90 cons=0 talent=9,9,9;\nmavuika add weapon=\"serpentspine\" refine=1 lvl=90/90 +params=[stacks=5];\nmavuika add set=\"oc\" count=4;\nmavuika add stats hp=4780 atk=311 em=187 pyro%=0.466 cd=0.622;\nmavuika add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*4 er=0.0551*2 em=19.82*10 cr=0.0331*4 cd=0.0662*10;\n\ncitlali char lvl=90/90 cons=6 talent=9,9,9;\ncitlali add weapon=\"ttds\" refine=5 lvl=90/90;\ncitlali add set=\"scroll\" count=4;\ncitlali add stats hp=4780 atk=311 em=187 cryo%=0.466 cr=0.311;\ncitlali add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*10 em=19.82*2 cr=0.0331*6 cd=0.0662*10;\n\ncharlotte char lvl=90/90 cons=6 talent=9,9,9;\ncharlotte add weapon=\"evenstar\" refine=1 lvl=90/90;\ncharlotte add set=\"totm\" count=4;\ncharlotte add stats hp=4780 atk=311 em=187 em=187 em=187;\ncharlotte add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*2 em=19.82*6 cr=0.0331*12 cd=0.0662*8;\n\nbennett char lvl=90/90 cons=6 talent=9,9,9;\nbennett add weapon=\"thealleyflash\" refine=1 lvl=90/90;\nbennett add set=\"noblesse\" count=4;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*7 em=19.82*2 cr=0.0331*8 cd=0.0662*11;\n"
+}

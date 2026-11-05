@@ -1,0 +1,14 @@
+{
+  "sha256": "9e915f2f20993316e786e8eeb8f37c92187fa8c3aee2c67cb9223f1d2b674623",
+  "dropped_for_leakage": [
+    "faruzan skill , burst ;",
+    "furina skill , dash , burst ;",
+    "kaedeharakazuha skill , high_plunge [ collision = 1 ] ;",
+    "kaedeharakazuha jump ;",
+    "kaedeharakazuha skill , high_plunge [ collision = 1 ] , burst ;",
+    "kaedeharakazuha dash ;",
+    "kaedeharakazuha high_plunge [ collision = rand ( ) > 0.3 ] ;",
+    "xianyun skill , low_plunge ;",
+    "xianyun burst ;"
+  ]
+}

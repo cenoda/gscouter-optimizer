@@ -1,0 +1,13 @@
+{
+  "sha256": "c6618a483ed8516db4d5de504c8dcec6a0dda01ba794bc60bff162acc5380e73",
+  "dropped_for_leakage": [
+    "beidou skill ;",
+    "beidou burst ;",
+    "beidou skill [ counter = 1 ] ;",
+    "beidou skill [ counter = 2 ] ;",
+    "fischl skill , attack ;",
+    "fischl attack ;",
+    "kaedeharakazuha attack , skill , high_plunge , attack ;",
+    "nahida skill , attack ;"
+  ]
+}

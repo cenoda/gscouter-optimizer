@@ -1,0 +1,12 @@
+{
+  "sha256": "7345bc50154871d886f10196be418444b893124c6b2dc39c487846c96fb19640",
+  "dropped_for_leakage": [
+    "chongyun burst , skill ;",
+    "escoffier skill ;",
+    "escoffier burst ;",
+    "if .escoffier .burst .ready { escoffier burst ; }",
+    "escoffier jump ;",
+    "furina skill , dash , burst ;",
+    "xianyun skill , low_plunge , burst ;"
+  ]
+}

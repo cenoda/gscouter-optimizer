@@ -1,0 +1,14 @@
+{
+  "sha256": "78b98273581d89c60ad0382f06510810080b1cb2acbf517f812d7842e70f71ac",
+  "dropped_for_leakage": [
+    "bennett skill , burst , attack ;",
+    "bennett skill , attack : 2 , dash ;",
+    "chasca burst ;",
+    "chasca aim [ bullets = 4 ] ;",
+    "chasca skill ;",
+    "chasca aim : 4 ;",
+    "if .chasca .burst .ready && .chasca .energy == .chasca .energymax { chasca burst ; }",
+    "citlali skill ;",
+    "rosaria skill , burst ;"
+  ]
+}

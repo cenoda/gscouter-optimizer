@@ -1,0 +1,13 @@
+{
+  "sha256": "27c4a98ee0f1f4de6a46e1ccb88eb5bbb42e64c62728ae0d2720dba940abbf59",
+  "dropped_for_leakage": [
+    "albedo skill , burst ;",
+    "citlali skill , attack ;",
+    "mavuika burst ;",
+    "mavuika skill , attack ;",
+    "mavuika charge : 3 , charge [ hold = 6 ] , charge [ final = 1 ] , dash ;",
+    "mavuika charge : 2 , charge [ final = 1 ] ;",
+    "xilonen skill , attack : 2 ;",
+    "xilonen dash ;"
+  ]
+}
