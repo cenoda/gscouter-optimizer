@@ -43,6 +43,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     }
     let mut chars = BTreeMap::new();
+    let mut waits = BTreeMap::new();
     for ci in 0..parsed.chars.len() {
         let values: Vec<f64> = samples.iter().map(|s| s.chars[ci]).collect();
         let average = values.iter().sum::<f64>() / n as f64;
@@ -56,10 +57,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             gse::gcsl::char_name(parsed.chars[ci].key),
             serde_json::json!({"mean":average,"se":se}),
         );
+        let mut reasons = BTreeMap::<&str, f64>::new();
+        for sample in &samples {
+            for (reason, seconds) in &sample.waits[ci] {
+                *reasons.entry(reason).or_default() += seconds / n as f64;
+            }
+        }
+        waits.insert(gse::gcsl::char_name(parsed.chars[ci].key), reasons);
     }
     println!(
         "{}",
-        serde_json::json!({"iterations":n,"seed":seed,"duration":450,"warmup":150,"team":{"mean":mean,"se":se},"chars":chars,"abilities_hits_and_dps":abilities})
+        serde_json::json!({"iterations":n,"seed":seed,"duration":450,"warmup":150,"team":{"mean":mean,"se":se},"chars":chars,"abilities_hits_and_dps":abilities,
+            "mean_wait_seconds":waits,"per_iteration_dps":samples.iter().map(|s|s.dps).collect::<Vec<_>>()})
     );
     Ok(())
 }

@@ -1,0 +1,760 @@
+{
+  "purpose": "post-pilot frozen-block diagnostic; no search or generator tuning",
+  "engine_commit": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "iterations": 2048,
+  "seed": 9000000000000,
+  "duration": 450,
+  "warmup": 150,
+  "greedy_selection": "highest audited outcome among three joint-ER greedy starts at 36 CPU-s; seed 37; not a median run",
+  "sources": {
+    "greedy": {
+      "path": "runs/matrix/greedy-37/candidate-1.gcsl",
+      "sha256": "1601c61be7beb3364be90962a54b8430e93f5cb10dfc52afe5134012caff05d8"
+    },
+    "reference": {
+      "path": "reports/pilot-2026-11-05/withheld-reference.gcsl",
+      "sha256": "f7140ac649f75017f9e5e6997cec8e10a6fa059d38a02c5547cee97eaf3c1a50"
+    }
+  },
+  "cpu_seconds": 122.50637499999998,
+  "wall_seconds": 31.076157830999364,
+  "conditions": [
+    {
+      "name": "allocation-greedy_support-greedy_flins-greedy",
+      "allocation": "greedy",
+      "support": "greedy",
+      "flins": "greedy",
+      "config_sha256": "f3bf1409a8d66aab8e27bfbaa2139989a10462bd93602fd1935d855f2c66a6d6",
+      "command": [
+        "/home/ubuntu/projects/gscouter-optimizer/target/release/examples/trace",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-2026-11-05/greedy-reference/allocation-greedy_support-greedy_flins-greedy.gcsl",
+        "2048",
+        "9000000000000"
+      ],
+      "team": {
+        "mean": 326324.34946942056,
+        "se": 49.052655132554875
+      },
+      "chars": {
+        "columbina": {
+          "mean": 85840.44024656282,
+          "se": 38.68198177245544
+        },
+        "flins": {
+          "mean": 142316.93321196295,
+          "se": 51.89519648327298
+        },
+        "ineffa": {
+          "mean": 91905.08781194569,
+          "se": 57.0930876808936
+        },
+        "sucrose": {
+          "mean": 6261.888198949686,
+          "se": 11.92704924681395
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 4.100000000000155
+        },
+        "flins": {
+          "skill_cd": 28.80000000000101
+        },
+        "ineffa": {
+          "swap_cd": 2.3666666666667155
+        },
+        "sucrose": {
+          "swap_cd": 1.8781331380208077
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          16.0498046875,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          96.0498046875,
+          2036.5057057530892
+        ],
+        "Normal 1 (Skill)": [
+          32.0,
+          703.2126994178229
+        ],
+        "Normal 2 (Skill)": [
+          16.0,
+          435.4929869465444
+        ],
+        "Normal 3 (Skill)": [
+          32.0,
+          498.9229908533277
+        ],
+        "Northland Spearstorm": [
+          48.0,
+          3200.1555975670735
+        ],
+        "Thunderous Symphony": [
+          96.0,
+          122297.53965633796
+        ],
+        "lunarcharged": [
+          36.228515625,
+          13145.103575088224
+        ]
+      }
+    },
+    {
+      "name": "allocation-greedy_support-greedy_flins-reference",
+      "allocation": "greedy",
+      "support": "greedy",
+      "flins": "reference",
+      "config_sha256": "d55e0e4a065547fc5168bf8fc9105091cf0aaa4cb78a161ffcc98d16d28cb458",
+      "command": [
+        "/home/ubuntu/projects/gscouter-optimizer/target/release/examples/trace",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-2026-11-05/greedy-reference/allocation-greedy_support-greedy_flins-reference.gcsl",
+        "2048",
+        "9000000000000"
+      ],
+      "team": {
+        "mean": 330869.3725967612,
+        "se": 47.778250917420216
+      },
+      "chars": {
+        "columbina": {
+          "mean": 84382.38017831191,
+          "se": 40.323267552993734
+        },
+        "flins": {
+          "mean": 146742.43997796997,
+          "se": 35.20320477386825
+        },
+        "ineffa": {
+          "mean": 92682.52169177418,
+          "se": 47.50346726692013
+        },
+        "sucrose": {
+          "mean": 7062.030748704863,
+          "se": 13.497770464358757
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 3.3385009765625
+        },
+        "flins": {
+          "skill_cd": 2.1333333333332924
+        },
+        "ineffa": {
+          "swap_cd": 2.3281982421875402
+        },
+        "sucrose": {
+          "swap_cd": 1.8895914713541404
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          16.0,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          128.0,
+          2669.617734982831
+        ],
+        "Normal 1 (Skill)": [
+          80.0,
+          1696.756327485964
+        ],
+        "Normal 2 (Skill)": [
+          32.0,
+          871.0151558139771
+        ],
+        "Normal 3 (Skill)": [
+          64.0,
+          998.0076054419768
+        ],
+        "Northland Spearstorm": [
+          48.0,
+          3200.0602821122143
+        ],
+        "Thunderous Symphony": [
+          96.0,
+          123361.8339199146
+        ],
+        "lunarcharged": [
+          38.203125,
+          13945.148952218125
+        ]
+      }
+    },
+    {
+      "name": "allocation-greedy_support-reference_flins-greedy",
+      "allocation": "greedy",
+      "support": "reference",
+      "flins": "greedy",
+      "config_sha256": "6a07379cb495ee1c8ce91c93192b25258a892cfda03e1775f4e168465c0c7cc8",
+      "command": [
+        "/home/ubuntu/projects/gscouter-optimizer/target/release/examples/trace",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-2026-11-05/greedy-reference/allocation-greedy_support-reference_flins-greedy.gcsl",
+        "2048",
+        "9000000000000"
+      ],
+      "team": {
+        "mean": 335377.5558773515,
+        "se": 44.54329446114618
+      },
+      "chars": {
+        "columbina": {
+          "mean": 84721.65909085091,
+          "se": 17.796345575861267
+        },
+        "flins": {
+          "mean": 150899.53994377147,
+          "se": 21.4574953698882
+        },
+        "ineffa": {
+          "mean": 94209.51838915846,
+          "se": 34.230230333205576
+        },
+        "sucrose": {
+          "mean": 5546.8384535711675,
+          "se": 1.0359828543490877
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 4.100000000000155
+        },
+        "flins": {
+          "skill_cd": 30.599999999998992
+        },
+        "ineffa": {
+          "swap_cd": 2.3666666666667155
+        },
+        "sucrose": {
+          "swap_cd": 1.8545654296875083
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          17.0,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          101.0,
+          2114.6466985457137
+        ],
+        "Normal 1 (Skill)": [
+          34.0,
+          747.1595663369462
+        ],
+        "Normal 2 (Skill)": [
+          17.0,
+          462.8401854479505
+        ],
+        "Normal 3 (Skill)": [
+          34.0,
+          530.2321204883903
+        ],
+        "Northland Spearstorm": [
+          51.0,
+          3400.178726151073
+        ],
+        "Thunderous Symphony": [
+          100.0,
+          130366.93776820366
+        ],
+        "lunarcharged": [
+          36.9921875,
+          13277.544878597382
+        ]
+      }
+    },
+    {
+      "name": "allocation-greedy_support-reference_flins-reference",
+      "allocation": "greedy",
+      "support": "reference",
+      "flins": "reference",
+      "config_sha256": "3354212412f6545ae619c6e3633bbefaa6e228bd232892ddf8956abb859fdee9",
+      "command": [
+        "/home/ubuntu/projects/gscouter-optimizer/target/release/examples/trace",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-2026-11-05/greedy-reference/allocation-greedy_support-reference_flins-reference.gcsl",
+        "2048",
+        "9000000000000"
+      ],
+      "team": {
+        "mean": 338640.5338216108,
+        "se": 43.81100247346507
+      },
+      "chars": {
+        "columbina": {
+          "mean": 84354.56132794298,
+          "se": 18.91267669523625
+        },
+        "flins": {
+          "mean": 151992.46093272459,
+          "se": 22.670462329400152
+        },
+        "ineffa": {
+          "mean": 95666.63640182477,
+          "se": 32.764370223185225
+        },
+        "sucrose": {
+          "mean": 6626.875159119197,
+          "se": 1.3176719247664164
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 3.75
+        },
+        "flins": {
+          "skill_cd": 2.2666666666667266
+        },
+        "ineffa": {
+          "swap_cd": 2.3666666666667155
+        },
+        "sucrose": {
+          "swap_cd": 1.9457519531250096
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          17.0,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          133.0,
+          2777.7317166829625
+        ],
+        "Normal 1 (Skill)": [
+          83.0,
+          1785.8915514019634
+        ],
+        "Normal 2 (Skill)": [
+          33.0,
+          898.2358993248528
+        ],
+        "Normal 3 (Skill)": [
+          66.0,
+          1029.1774042707316
+        ],
+        "Northland Spearstorm": [
+          50.0,
+          3333.9729842760576
+        ],
+        "Thunderous Symphony": [
+          100.0,
+          130184.09531824951
+        ],
+        "lunarcharged": [
+          33.201171875,
+          11983.356058518115
+        ]
+      }
+    },
+    {
+      "name": "allocation-reference_support-greedy_flins-greedy",
+      "allocation": "reference",
+      "support": "greedy",
+      "flins": "greedy",
+      "config_sha256": "a92804453f264eaea7421df7246d2002e5137296342f7c76e852deaca20f1df7",
+      "command": [
+        "/home/ubuntu/projects/gscouter-optimizer/target/release/examples/trace",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-2026-11-05/greedy-reference/allocation-reference_support-greedy_flins-greedy.gcsl",
+        "2048",
+        "9000000000000"
+      ],
+      "team": {
+        "mean": 326277.33437057555,
+        "se": 49.04946970082017
+      },
+      "chars": {
+        "columbina": {
+          "mean": 85839.52822999803,
+          "se": 38.680592854541324
+        },
+        "flins": {
+          "mean": 142316.34540713814,
+          "se": 51.890617073367224
+        },
+        "ineffa": {
+          "mean": 91903.6620357061,
+          "se": 57.08654686253047
+        },
+        "sucrose": {
+          "mean": 6217.798697733221,
+          "se": 11.920223065246713
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 4.100000000000155
+        },
+        "flins": {
+          "skill_cd": 28.80000000000101
+        },
+        "ineffa": {
+          "swap_cd": 2.3666666666667155
+        },
+        "sucrose": {
+          "swap_cd": 1.8781331380208077
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          16.0498046875,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          96.0498046875,
+          2036.5057057530892
+        ],
+        "Normal 1 (Skill)": [
+          32.0,
+          703.2126994178229
+        ],
+        "Normal 2 (Skill)": [
+          16.0,
+          435.4929869465444
+        ],
+        "Normal 3 (Skill)": [
+          32.0,
+          498.9229908533277
+        ],
+        "Northland Spearstorm": [
+          48.0,
+          3200.1555975670735
+        ],
+        "Thunderous Symphony": [
+          96.0,
+          122297.53965633796
+        ],
+        "lunarcharged": [
+          36.228515625,
+          13144.515770263133
+        ]
+      }
+    },
+    {
+      "name": "allocation-reference_support-greedy_flins-reference",
+      "allocation": "reference",
+      "support": "greedy",
+      "flins": "reference",
+      "config_sha256": "f04862c92539439ab4f4234b2ec6526f7f8c2b8ff7351bf02746184333e5703e",
+      "command": [
+        "/home/ubuntu/projects/gscouter-optimizer/target/release/examples/trace",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-2026-11-05/greedy-reference/allocation-reference_support-greedy_flins-reference.gcsl",
+        "2048",
+        "9000000000000"
+      ],
+      "team": {
+        "mean": 330822.6546531457,
+        "se": 47.780588607141375
+      },
+      "chars": {
+        "columbina": {
+          "mean": 84381.66571133163,
+          "se": 40.32101866728362
+        },
+        "flins": {
+          "mean": 146741.75073543674,
+          "se": 35.20171004378209
+        },
+        "ineffa": {
+          "mean": 92681.39497331707,
+          "se": 47.50251555626217
+        },
+        "sucrose": {
+          "mean": 7017.843233060354,
+          "se": 13.48783638147658
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 3.3385009765625
+        },
+        "flins": {
+          "skill_cd": 2.1333333333332924
+        },
+        "ineffa": {
+          "swap_cd": 2.3281982421875402
+        },
+        "sucrose": {
+          "swap_cd": 1.8895914713541404
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          16.0,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          128.0,
+          2669.617734982831
+        ],
+        "Normal 1 (Skill)": [
+          80.0,
+          1696.756327485964
+        ],
+        "Normal 2 (Skill)": [
+          32.0,
+          871.0151558139771
+        ],
+        "Normal 3 (Skill)": [
+          64.0,
+          998.0076054419768
+        ],
+        "Northland Spearstorm": [
+          48.0,
+          3200.0602821122143
+        ],
+        "Thunderous Symphony": [
+          96.0,
+          123361.8339199146
+        ],
+        "lunarcharged": [
+          38.203125,
+          13944.4597096848
+        ]
+      }
+    },
+    {
+      "name": "allocation-reference_support-reference_flins-greedy",
+      "allocation": "reference",
+      "support": "reference",
+      "flins": "greedy",
+      "config_sha256": "72cb0ca8f62c8d628e277647c8bfc6d1cb3e62a1c789bcbe2dd1625ed665435e",
+      "command": [
+        "/home/ubuntu/projects/gscouter-optimizer/target/release/examples/trace",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-2026-11-05/greedy-reference/allocation-reference_support-reference_flins-greedy.gcsl",
+        "2048",
+        "9000000000000"
+      ],
+      "team": {
+        "mean": 335331.6196575186,
+        "se": 44.544043067113755
+      },
+      "chars": {
+        "columbina": {
+          "mean": 84720.63371114305,
+          "se": 17.796745790181337
+        },
+        "flins": {
+          "mean": 150898.9021319354,
+          "se": 21.45767468761458
+        },
+        "ineffa": {
+          "mean": 94208.02546750086,
+          "se": 34.23042192003816
+        },
+        "sucrose": {
+          "mean": 5504.058346938564,
+          "se": 0.9573766043484332
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 4.100000000000155
+        },
+        "flins": {
+          "skill_cd": 30.599999999998992
+        },
+        "ineffa": {
+          "swap_cd": 2.3666666666667155
+        },
+        "sucrose": {
+          "swap_cd": 1.8545654296875083
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          17.0,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          101.0,
+          2114.6466985457137
+        ],
+        "Normal 1 (Skill)": [
+          34.0,
+          747.1595663369462
+        ],
+        "Normal 2 (Skill)": [
+          17.0,
+          462.8401854479505
+        ],
+        "Normal 3 (Skill)": [
+          34.0,
+          530.2321204883903
+        ],
+        "Northland Spearstorm": [
+          51.0,
+          3400.178726151073
+        ],
+        "Thunderous Symphony": [
+          100.0,
+          130366.93776820366
+        ],
+        "lunarcharged": [
+          36.9921875,
+          13276.907066761722
+        ]
+      }
+    },
+    {
+      "name": "allocation-reference_support-reference_flins-reference",
+      "allocation": "reference",
+      "support": "reference",
+      "flins": "reference",
+      "config_sha256": "67b764ed99eb44d5129bfc7fe0673d15b947921b3f68aca150254f9f54a23163",
+      "command": [
+        "/home/ubuntu/projects/gscouter-optimizer/target/release/examples/trace",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-2026-11-05/greedy-reference/allocation-reference_support-reference_flins-reference.gcsl",
+        "2048",
+        "9000000000000"
+      ],
+      "team": {
+        "mean": 338593.8981077258,
+        "se": 43.810566831561495
+      },
+      "chars": {
+        "columbina": {
+          "mean": 84353.79059369172,
+          "se": 18.912866873277977
+        },
+        "flins": {
+          "mean": 151991.7243525943,
+          "se": 22.67026002176673
+        },
+        "ineffa": {
+          "mean": 95665.39356938214,
+          "se": 32.76396089521535
+        },
+        "sucrose": {
+          "mean": 6582.989592058262,
+          "se": 1.2536067070985242
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 3.75
+        },
+        "flins": {
+          "skill_cd": 2.2666666666667266
+        },
+        "ineffa": {
+          "swap_cd": 2.3666666666667155
+        },
+        "sucrose": {
+          "swap_cd": 1.9457519531250096
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          17.0,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          133.0,
+          2777.7317166829625
+        ],
+        "Normal 1 (Skill)": [
+          83.0,
+          1785.8915514019634
+        ],
+        "Normal 2 (Skill)": [
+          33.0,
+          898.2358993248528
+        ],
+        "Normal 3 (Skill)": [
+          66.0,
+          1029.1774042707316
+        ],
+        "Northland Spearstorm": [
+          50.0,
+          3333.9729842760576
+        ],
+        "Thunderous Symphony": [
+          100.0,
+          130184.09531824951
+        ],
+        "lunarcharged": [
+          33.201171875,
+          11982.619478387618
+        ]
+      }
+    }
+  ],
+  "paired_block_contrasts": [
+    {
+      "allocation": "greedy",
+      "replace": "flins",
+      "other_block": "greedy",
+      "direction": "reference minus greedy",
+      "mean_dps": 4545.023127340429,
+      "paired_se_dps": 66.50449094632334
+    },
+    {
+      "allocation": "greedy",
+      "replace": "flins",
+      "other_block": "reference",
+      "direction": "reference minus greedy",
+      "mean_dps": 3262.9779442593626,
+      "paired_se_dps": 59.48860563903794
+    },
+    {
+      "allocation": "greedy",
+      "replace": "support",
+      "other_block": "greedy",
+      "direction": "reference minus greedy",
+      "mean_dps": 9053.206407931544,
+      "paired_se_dps": 63.19756107919172
+    },
+    {
+      "allocation": "greedy",
+      "replace": "support",
+      "other_block": "reference",
+      "direction": "reference minus greedy",
+      "mean_dps": 7771.161224850478,
+      "paired_se_dps": 62.42054401429229
+    },
+    {
+      "allocation": "reference",
+      "replace": "flins",
+      "other_block": "greedy",
+      "direction": "reference minus greedy",
+      "mean_dps": 4545.320282570548,
+      "paired_se_dps": 66.50660398882418
+    },
+    {
+      "allocation": "reference",
+      "replace": "flins",
+      "other_block": "reference",
+      "direction": "reference minus greedy",
+      "mean_dps": 3262.278450207675,
+      "paired_se_dps": 59.492771264762645
+    },
+    {
+      "allocation": "reference",
+      "replace": "support",
+      "other_block": "greedy",
+      "direction": "reference minus greedy",
+      "mean_dps": 9054.285286943237,
+      "paired_se_dps": 63.19841633525184
+    },
+    {
+      "allocation": "reference",
+      "replace": "support",
+      "other_block": "reference",
+      "direction": "reference minus greedy",
+      "mean_dps": 7771.2434545803635,
+      "paired_se_dps": 62.42810705152736
+    }
+  ],
+  "limitations": [
+    "known reference is not a proven optimum",
+    "block substitution changes subsequent timing and random-number consumption",
+    "support block includes both entry and exit actions",
+    "ability hit counts are not universal cast-count estimates",
+    "two frozen allocations; no artifact or rotation optimization"
+  ]
+}

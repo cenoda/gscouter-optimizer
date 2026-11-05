@@ -50,6 +50,14 @@ Raw means, standard errors, per-ability diagnostics and CPU accounting are in
 The gcsim Spearstorm hit count over the scored 300 seconds rises from 34 to
 about 56. This is observed behavior, not an inferred universal combo rule.
 
+A later [greedy-versus-reference block comparison](greedy-reference/README.md)
+confirms that the best joint-ER greedy result already contains the reference's
+three-burst main-field structure. At frozen common conditions, reference Flins
+filler adds about 4,545 DPS and reference support actions add about 9,054 DPS
+when substituted separately into that greedy cycle. These whole-block effects
+interact; they do not identify independent per-action losses. This revealed-
+reference diagnostic does not change the original discovery or blind evidence.
+
 ## Repeated starts and equal CPU budgets
 
 Each variant used starts 11, 37 and 91, with cumulative discovery caps of
