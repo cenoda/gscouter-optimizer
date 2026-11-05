@@ -11,6 +11,8 @@ use std::{
     time::{Duration, Instant},
 };
 
+const MAX_BATCH: usize = 32;
+
 pub fn hash(s: &str) -> String {
     format!("{:x}", Sha256::digest(s.as_bytes()))
 }
@@ -295,7 +297,10 @@ impl Evaluator {
             }
             let first = i;
             i += 1;
+            // Bounded worker batches keep long audits under the wall limit;
+            // seeds and results are unchanged by the split.
             while i < n
+                && i - first < MAX_BATCH
                 && !self
                     .cache
                     .get(&key)

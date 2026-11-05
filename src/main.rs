@@ -1,6 +1,7 @@
 mod artifact;
 mod discovery;
 mod evaluate;
+mod heldout;
 mod program;
 mod search;
 

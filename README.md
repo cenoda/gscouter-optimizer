@@ -191,3 +191,18 @@ The plan was moved from `gscouter-engine/docs/rotation-search.md`, originally co
 ## License
 
 GNU AGPL v3 or later; see [LICENSE](LICENSE), retained from the engine repository with the moved documentation.
+
+## Held-out recovery pilot
+
+`docs/heldout-recovery-pilot.md` is the protocol; `scripts/heldout.py` runs it in
+phases (`export`, `dictionary`, `measure`, `draw`, `run`, `confirm`). The search
+mode is `gso search --dictionary FILE --algorithm greedy --fixed-er`: one chain
+from the supplied library rotation, macro statement edits with blocks extracted
+from the main library rotations (`gso dictionary build`, filtered per case with
+`gso dictionary filter`) plus the existing generic action-list neighbors, and a
+micro coordinate search over existing numeric parameters in the last quarter of
+each cumulative cap. Decisions, promotions, checkpoints, accounting and audits
+are the existing ones. `gso heldout-manifest` turns a library `build.txt` into a
+format-2 fixed-build manifest; `gso measure` evaluates a rotation on it. The
+held-out mode uses each case's build as is, so the discovery-profile
+constellation grid is not applied. Results are in `reports/heldout-recovery-*`.

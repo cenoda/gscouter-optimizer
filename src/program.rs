@@ -164,7 +164,15 @@ impl Program {
         Ok(p)
     }
 
-    fn with_source(&self, source: String) -> Self {
+    /// Editable rotation text of a source-backed program.
+    pub fn source_text(&self) -> Option<&str> {
+        match self {
+            Self::Library(raw) | Self::Source(raw) => Some(raw),
+            _ => None,
+        }
+    }
+
+    pub(crate) fn with_source(&self, source: String) -> Self {
         match self {
             Self::Source(_) => Self::Source(source),
             _ => Self::Library(source),

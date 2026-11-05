@@ -2,6 +2,7 @@ use crate::{
     artifact::{ENGINE, Manifest},
     discovery::{Catalog, Rotation},
     evaluate::{Evaluator, Sample, atomic, cpu, hash, paired, stats},
+    heldout::Dictionary,
     program::{Program, Rng},
 };
 use serde::{Deserialize, Serialize};
@@ -16,6 +17,10 @@ type R<T> = Result<T, String>;
 const SEARCH_SEED: i64 = 1_000_000;
 const PROMOTION_SEED: i64 = 1_000_000_000;
 const AUDIT_SEED: i64 = 4_000_000_000_000;
+/// Held-out mode: consecutive non-improving chain decisions before a restart.
+const RESTART_PATIENCE: usize = 40;
+/// Held-out mode: macro edits composed into one restart perturbation.
+const RESTART_EDITS: usize = 3;
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Candidate {
@@ -36,6 +41,8 @@ struct Chain {
     accepted: usize,
     temperature: f64,
     score: f64,
+    #[serde(default)]
+    stall: usize,
 }
 #[derive(Serialize, Deserialize)]
 struct State {
@@ -114,6 +121,8 @@ struct Options {
     restricted: bool,
     from_scratch: bool,
     basic_grammar: bool,
+    /// Held-out recovery mode: per-case block dictionary file.
+    dictionary: Option<String>,
 }
 
 fn proposal(
@@ -182,6 +191,70 @@ fn record_proposal(out: &Path, step: usize, pending: &Pending) -> R<()> {
     f.write_all(b"\n")
         .and_then(|_| f.sync_all())
         .map_err(|e| e.to_string())
+}
+
+/// Held-out macro proposal: a dictionary statement edit (replace, insert,
+/// delete, move) or one of the existing generic action-list neighbors.
+/// Allocation never changes (fixed ER).
+fn heldout_proposal(
+    c: &Candidate,
+    m: &Manifest,
+    rng: &mut Rng,
+    dict: &Dictionary,
+    generic: &mut Option<(String, Vec<(Program, String)>)>,
+) -> (Candidate, String) {
+    let mut next = c.clone();
+    next.parent = Some(c.key());
+    let Some(raw) = c.program.source_text() else {
+        return (next, "heldout: no editable source".into());
+    };
+    let members: Vec<u16> = m
+        .members
+        .iter()
+        .filter_map(|x| gse::gcsl::char_key(&x.key))
+        .collect();
+    let context = m.build();
+    for _ in 0..8 {
+        if rng.index(100) < 25 {
+            let key = c.key();
+            if generic.as_ref().is_none_or(|(k, _)| k != &key) {
+                *generic = Some((key, c.program.local_neighbors(m)));
+            }
+            let list = &generic.as_ref().unwrap().1;
+            if !list.is_empty() {
+                let (p, label) = list[rng.index(list.len())].clone();
+                next.program = p;
+                return (next, format!("generic {label}"));
+            }
+            continue;
+        }
+        if let Some((source, label)) =
+            crate::heldout::macro_edit(raw, dict, &members, &context, rng)
+        {
+            next.program = c.program.with_source(source);
+            return (next, label);
+        }
+    }
+    (next, "heldout: no valid edit drawn".into())
+}
+
+fn heldout_micro(c: &Candidate, m: &Manifest) -> Vec<(Candidate, String)> {
+    let Some(raw) = c.program.source_text() else {
+        return Vec::new();
+    };
+    crate::heldout::numeric_neighbors(raw, &m.build())
+        .into_iter()
+        .map(|(source, label)| {
+            (
+                Candidate {
+                    program: c.program.with_source(source),
+                    parent: Some(c.key()),
+                    ..c.clone()
+                },
+                label,
+            )
+        })
+        .collect()
 }
 
 fn polish_neighbors(c: &Candidate, frozen: &Manifest, joint: bool) -> Vec<(Candidate, String)> {
@@ -318,6 +391,7 @@ fn initialize(
             accepted: 0,
             temperature: 0.015,
             score: 0.0,
+            stall: 0,
         })
         .collect();
     State {
@@ -363,7 +437,9 @@ fn run(o: &Options) -> R<()> {
     if o.joint && m.fixed_build.is_some() {
         return Err("fixed-build manifests require --fixed-er".into());
     }
-    for member in &m.members {
+    // The held-out protocol uses each case's build as is; the discovery-profile
+    // constellation grid does not apply to it.
+    for member in m.members.iter().filter(|_| o.dictionary.is_none()) {
         let eligible = match crate::artifact::rarity(&member.key)? {
             4 => member.cons == 6,
             5 => [1, 2, 4, 6].contains(&member.cons),
@@ -386,6 +462,18 @@ fn run(o: &Options) -> R<()> {
     } else {
         None
     };
+    let dictionary_text = match &o.dictionary {
+        Some(path) => fs::read_to_string(path).map_err(|e| e.to_string())?,
+        None => String::new(),
+    };
+    let dictionary: Option<Dictionary> = if o.dictionary.is_some() {
+        if o.joint || o.from_scratch || o.restricted || !o.local || o.algorithm != "greedy" {
+            return Err("--dictionary requires greedy, --fixed-er and one baseline chain".into());
+        }
+        Some(serde_json::from_str(&dictionary_text).map_err(|e| e.to_string())?)
+    } else {
+        None
+    };
     let initial = if let Some(catalog) = &catalog {
         Program::Generated(Rotation::generate(catalog, &mut Rng(o.seed), 0))
     } else {
@@ -397,7 +485,7 @@ fn run(o: &Options) -> R<()> {
         return Err(unsupported.join("; "));
     }
     let identity = hash(&format!(
-        "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}",
+        "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}{}",
         serde_json::to_string(&m).unwrap(),
         baseline,
         o.seed,
@@ -408,7 +496,12 @@ fn run(o: &Options) -> R<()> {
         o.restricted,
         o.from_scratch,
         o.basic_grammar,
-        implementation_hash()
+        implementation_hash(),
+        if o.dictionary.is_some() {
+            format!("\nheldout dictionary\n{dictionary_text}")
+        } else {
+            String::new()
+        }
     ));
     fs::create_dir_all(&o.out).map_err(|e| e.to_string())?;
     let checkpoint = o.out.join("checkpoint.json");
@@ -428,6 +521,12 @@ fn run(o: &Options) -> R<()> {
                 "identity":identity,"from_scratch":o.from_scratch,"basic_grammar":o.basic_grammar,"objective":{"duration":m.objective().0,"warmup":m.objective().1},
                 "reference_origin":if o.from_scratch { "generated starting control" } else { "supplied baseline" },
                 "baseline_read":!o.from_scratch,"initial_chains":state.chains,
+                "heldout_mode":o.dictionary.is_some(),
+                "inputs_opened":[
+                    {"role":"manifest","path":o.manifest,"sha256":hash(&fs::read_to_string(&o.manifest).map_err(|e| e.to_string())?)},
+                    {"role":"baseline","path":if o.from_scratch { String::new() } else { o.baseline.clone() },"sha256":hash(&baseline)},
+                    {"role":"dictionary","path":o.dictionary,"sha256":hash(&dictionary_text)},
+                ],
             }),
         )?;
     }
@@ -451,12 +550,29 @@ fn run(o: &Options) -> R<()> {
     let initial_dps = state.reference_dps.max(1.0);
     let decision_count = if o.restricted { 32 } else { 16 };
     let mut polish_cache: Option<(String, Vec<(Candidate, String)>)> = None;
+    let mut generic_cache: Option<(String, Vec<(Program, String)>)> = None;
     while spent(&e, carried, parent_start, worker_start) < o.seconds {
-        let polishing = state.pending.as_ref().map(|p| p.polishing).unwrap_or(
+        let mut polishing = state.pending.as_ref().map(|p| p.polishing).unwrap_or(
             o.revised
                 && !o.restricted
                 && spent(&e, carried, parent_start, worker_start) >= o.seconds * 0.75,
         );
+        if dictionary.is_some() && polishing && state.pending.is_none() {
+            // Micro coordinate search around the peak; once its neighborhood
+            // is exhausted without a promotion, return to macro edits.
+            let anchor = state.best.key();
+            if polish_cache.as_ref().is_none_or(|(key, _)| key != &anchor) {
+                polish_cache = Some((anchor.clone(), heldout_micro(&state.best, &m)));
+            }
+            let cursor = state
+                .polish
+                .as_ref()
+                .filter(|p| p.anchor == anchor)
+                .map_or(0, |p| p.cursor);
+            if cursor >= polish_cache.as_ref().unwrap().1.len() {
+                polishing = false;
+            }
+        }
         if o.from_scratch
             && polishing
             && spent(&e, carried, parent_start, worker_start) >= o.seconds * 0.75
@@ -529,7 +645,14 @@ fn run(o: &Options) -> R<()> {
                     .as_ref()
                     .is_none_or(|(key, _)| key != &origin.key())
                 {
-                    polish_cache = Some((origin.key(), polish_neighbors(&origin, &m, o.joint)));
+                    polish_cache = Some((
+                        origin.key(),
+                        if dictionary.is_some() {
+                            heldout_micro(&origin, &m)
+                        } else {
+                            polish_neighbors(&origin, &m, o.joint)
+                        },
+                    ));
                 }
                 let neighbors = &polish_cache.as_ref().unwrap().1;
                 let cursor = state.polish.as_ref().unwrap().cursor;
@@ -553,6 +676,27 @@ fn run(o: &Options) -> R<()> {
                 )
             } else if state.chains[family].steps == 0 && !baseline_trial {
                 (origin.clone(), "initial family evaluation".into())
+            } else if let Some(dict) = &dictionary {
+                if state.chains[family].stall >= RESTART_PATIENCE {
+                    // Restart: perturb the promoted peak by several random
+                    // macro edits; installed unconditionally like a restart.
+                    state.chains[family].stall = 0;
+                    let mut next = state.best.clone();
+                    let mut labels = Vec::new();
+                    for _ in 0..RESTART_EDITS {
+                        let (n, label) =
+                            heldout_proposal(&next, &m, &mut state.rng, dict, &mut generic_cache);
+                        next = n;
+                        labels.push(label);
+                    }
+                    next.parent = Some(state.best.key());
+                    (
+                        next,
+                        format!("restart perturbation: {}", labels.join(" | ")),
+                    )
+                } else {
+                    heldout_proposal(&origin, &m, &mut state.rng, dict, &mut generic_cache)
+                }
             } else if o.restricted {
                 let domain = Program::restricted_domain();
                 let index = domain
@@ -659,7 +803,8 @@ fn run(o: &Options) -> R<()> {
             continue;
         }
         let mut temperature = state.chains[family].temperature;
-        let restarting = operator == "fresh restart";
+        let restarting =
+            operator == "fresh restart" || operator.starts_with("restart perturbation");
         let mut threshold = if restarting {
             -f64::MAX
         } else if o.algorithm == "anneal" && !baseline_trial && !polishing {
@@ -831,6 +976,13 @@ fn run(o: &Options) -> R<()> {
                         };
                     }
                     let accept = delta >= threshold;
+                    if !polishing && !baseline_trial && !restarting {
+                        if accept && delta > 0.0 {
+                            state.chains[family].stall = 0;
+                        } else {
+                            state.chains[family].stall += 1;
+                        }
+                    }
                     if accept {
                         if baseline_trial {
                             state.baseline_alloc = next.clone();
@@ -1072,10 +1224,11 @@ pub fn cli() -> R<()> {
             let from_scratch=args.iter().any(|a|a=="--from-scratch");
             if from_scratch && args.iter().any(|a|a=="--baseline") { return Err("--from-scratch does not accept --baseline; evaluate reference cycles separately after discovery".into()); }
             let algorithm=opt(&args,"--algorithm",if from_scratch { "greedy" } else { "anneal" });if !["anneal","greedy","random"].contains(&algorithm.as_str()){return Err("algorithm: anneal, greedy or random".into());}
+            let dictionary=args.iter().any(|a|a=="--dictionary").then(|| opt(&args,"--dictionary",""));
             run(&Options{manifest:opt(&args,"--manifest","data/flins-c1/manifest.json"),baseline:baseline_path(&args),
                 out:opt(&args,"--out","runs/pilot").into(),seconds:number(&args,"--seconds","30")?,seed:number(&args,"--seed","1")?,algorithm,
-                local:args.iter().any(|a|a=="--local-only"),joint:!args.iter().any(|a|a=="--fixed-er"),audit:number(&args,"--audit","128")?,
-                revised:from_scratch || args.iter().any(|a|a=="--revised"),restricted:args.iter().any(|a|a=="--restricted-domain"),from_scratch,basic_grammar:args.iter().any(|a|a=="--basic-grammar")})
+                local:dictionary.is_some() || args.iter().any(|a|a=="--local-only"),joint:!args.iter().any(|a|a=="--fixed-er"),audit:number(&args,"--audit","128")?,
+                revised:from_scratch || dictionary.is_some() || args.iter().any(|a|a=="--revised"),restricted:args.iter().any(|a|a=="--restricted-domain"),from_scratch,basic_grammar:args.iter().any(|a|a=="--basic-grammar"),dictionary})
         },
         Some("evaluate")=>{
             let src=fs::read_to_string(opt(&args,"--config","")).map_err(|e|e.to_string())?;
@@ -1100,6 +1253,7 @@ pub fn cli() -> R<()> {
             Ok(())
         },
         Some("enumerate")=>enumerate(&args),
+        Some("heldout-manifest")|Some("dictionary")|Some("measure")=>crate::heldout::cli(&args),
         Some("validate")=>{
             let m=Manifest::load(&opt(&args,"--manifest","data/flins-c1/manifest.json"))?;
             let programs=if args.iter().any(|a|a=="--from-scratch") {
@@ -1219,12 +1373,14 @@ fn implementation_hash() -> String {
             include_str!("discovery.rs"),
             include_str!("evaluate.rs"),
             include_str!("search.rs"),
+            include_str!("heldout.rs"),
             include_str!("../data/character-rarities.json"),
             include_str!("../Cargo.lock"),
             include_str!("../Cargo.toml"),
             include_str!("../docs/pilot-protocol.md"),
             include_str!("../docs/pilot-retry.md"),
             include_str!("../docs/from-scratch.md"),
+            include_str!("../docs/heldout-recovery-pilot.md"),
         ]
         .join("\n"),
     )
@@ -1252,6 +1408,7 @@ mod tests {
             restricted: false,
             from_scratch: true,
             basic_grammar: false,
+            dictionary: None,
         };
         let mut state = initialize(
             &options,
@@ -1417,6 +1574,7 @@ mod tests {
             restricted: false,
             from_scratch: false,
             basic_grammar: false,
+            dictionary: None,
         };
         let mut state = initialize(&options, &m, &baseline, "test", None);
         let anchor = state.best.key();
