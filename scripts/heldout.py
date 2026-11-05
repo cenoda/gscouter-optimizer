@@ -72,6 +72,12 @@ def add_params(build, key, params):
     return pattern.sub(lambda m: m.group(1) + " +params=[" + params + "];", build)
 
 
+def unwrap(text):
+    """Remove the repetition wrapper Program::baseline adds, for S features."""
+    text = re.sub(r"while\s+1\s*\{\s*let\s+optimizer_cycle_start_*\s*=\s*f\s*\(\s*\)\s*;", "", text, count=1)
+    return re.sub(r"if\s+f\s*\(\s*\)\s*==\s*optimizer_cycle_start_*\s*\{\s*wait\s*\(\s*1\s*\)\s*;\s*\}", "", text)
+
+
 def features(text):
     """Rotation features reported per case; `frame` = hold or while, the draw stratum."""
     hold = "hold=" in text.replace(" ", "")
@@ -376,6 +382,7 @@ def journal(dest, key, seed, n):
 
 
 def body(text):
+    text = re.sub(r"\s*([;{}(),=:\[\]<>!+*/-])\s*", r" \1 ", text)
     return [line.strip() for line in re.sub(r"\s+", " ", text).replace(";", ";\n").replace("{", "{\n").splitlines() if line.strip()]
 
 
@@ -430,8 +437,8 @@ def confirm(args):
                      "decisions": rep["completed_decisions"], "L": statistics.fmean(Lf),
                      "S": statistics.fmean(Sf) if Sf else None, "S_is_L": sel["key"] == base["key"],
                      "A": statistics.fmean(Am["per_fight_dps"]) if Am["status"] == "complete" else None,
-                     "S_features": features(selected["candidate"]["program"].get("Source")
-                                            or selected["candidate"]["program"].get("Library") or "")}
+                     "S_features": features(unwrap(selected["candidate"]["program"].get("Source")
+                                            or selected["candidate"]["program"].get("Library") or ""))}
                 if Sf and c["A"] is not None:
                     Af = Am["per_fight_dps"]
                     c["S_minus_L"], c["S_minus_L_se"] = paired(Sf, Lf)

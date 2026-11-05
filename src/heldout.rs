@@ -548,13 +548,15 @@ pub fn cli(args: &[String]) -> Result<(), String> {
                 return Err(format!("unsupported: {}", unsupported.join("; ")));
             }
             let mut e = Evaluator::new(std::path::Path::new(&arg(args, "--out")?))?;
+            // A reused directory loads earlier journal CPU; report only this call's.
+            let carried = e.worker_cpu;
             let samples = e.eval(&m, &program, seed, n)?;
             println!(
                 "{}",
                 serde_json::json!({"key":Evaluator::key(&config),"config_sha256":hash(&config),
                     "seed":seed,"samples":n,"stats":stats(&samples),
                     "per_fight_dps":samples.iter().map(|s|s.dps).collect::<Vec<_>>(),
-                    "cpu_seconds":e.worker_cpu+cpu()-start,"engine":ENGINE})
+                    "cpu_seconds":e.worker_cpu-carried+cpu()-start,"engine":ENGINE})
             );
             Ok(())
         }
