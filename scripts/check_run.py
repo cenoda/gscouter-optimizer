@@ -29,6 +29,8 @@ def check(path):
         assert event["accepted"] == (delta >= event["threshold"])
         decisions += 1
     report = json.loads((path / "report.json").read_text())
+    if report["local_only"]:
+        assert state["events"][0]["current_key"] == report["shortlist_frozen_keys"][0], "local-only must share the original baseline start"
     assert len(report["audits"]) <= 6
     assert len(report["shortlist_frozen_keys"]) == len(set(report["shortlist_frozen_keys"]))
     assert report["audits"][0]["joint_minus_original_baseline"][0] == 0

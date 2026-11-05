@@ -137,7 +137,7 @@ fn initialize(o: &Options, m: &Manifest, baseline: &str, identity: &str) -> Stat
     };
     let programs = Program::families(baseline);
     let programs = if o.local {
-        vec![programs[1].clone()]
+        vec![programs[0].clone()]
     } else {
         programs
     };

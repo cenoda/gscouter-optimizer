@@ -49,14 +49,18 @@ def prepare():
     print("Selected conditional standard weapon:", winner["weapon"], flush=True)
 
 
-def matrix():
+def matrix(only_local=False):
     jobs = [(alg, seed, flag) for alg in ["anneal", "greedy", "random"] for seed in [11, 37, 91] for flag in [""]]
     jobs += [("anneal", seed, flag) for seed in [11, 37, 91] for flag in ["--local-only", "--fixed-er"]]
+
+    if only_local:
+        jobs = [("anneal", seed, "--local-only") for seed in [11, 37, 91]]
+    matrix_root = ROOT / ("runs/matrix-local-corrected" if only_local else "runs/matrix")
 
     def trial(job):
         alg, seed, flag = job
         name = f"{alg}-{seed}{flag}"
-        out = ROOT / "runs/matrix" / name
+        out = matrix_root / name
         results = []
         for budget in [4, 12, 36]:
             command = [str(BIN), "search", "--manifest", "data/flins-c1/standard.json",
@@ -73,13 +77,13 @@ def matrix():
 
     with ThreadPoolExecutor(max_workers=4) as pool:
         results = list(pool.map(trial, jobs))
-    out = ROOT / "runs/matrix/summary.json"
+    out = matrix_root / "summary.json"
     out.write_text(json.dumps(results, indent=2) + "\n")
     print("Matrix:", out, flush=True)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("phase", choices=["prepare", "matrix"])
+    parser.add_argument("phase", choices=["prepare", "matrix", "local"])
     args = parser.parse_args()
-    prepare() if args.phase == "prepare" else matrix()
+    prepare() if args.phase == "prepare" else matrix(args.phase == "local")
