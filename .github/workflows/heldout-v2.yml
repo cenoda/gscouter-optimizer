@@ -25,6 +25,7 @@ jobs:
             src
             docs
             data/character-rarities.json
+            data/flins-c1/manifest.json
             Cargo.toml
             Cargo.lock
             .github/heldout-v2-rundir
@@ -39,6 +40,7 @@ jobs:
             src
             docs
             data/character-rarities.json
+            data/flins-c1/manifest.json
             Cargo.toml
             Cargo.lock
           sparse-checkout-cone-mode: false
