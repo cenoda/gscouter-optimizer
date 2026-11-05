@@ -1,0 +1,25 @@
+{
+  "before_decisions": 41,
+  "after_decisions": 56,
+  "pending_phase": "polish",
+  "pending_operator": "delete statement 0",
+  "polish_before": {
+    "anchor": "dcd8cbec78fcf9edb399b053f4949916978ee70a9c16435da4212d217c419204",
+    "cursor": 0
+  },
+  "polish_after": {
+    "anchor": "dcd8cbec78fcf9edb399b053f4949916978ee70a9c16435da4212d217c419204",
+    "cursor": 15
+  },
+  "prior_events_exactly_preserved": true,
+  "rng_advanced": true,
+  "before_cpu": 8.156920228999999,
+  "after_cpu": 10.179203157999984,
+  "audit_cpu_seconds": 2.8660419999999998,
+  "audit_cpu_accounting": "all audit worker CPU from the journal, including earlier smoke attempts; parent audit overhead excluded",
+  "invariant_check": {
+    "path": "/home/ubuntu/projects/gscouter-optimizer/runs/retry/smoke-restored",
+    "verified_common_block_decisions": 54,
+    "accepted_events": 17
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "run": "legacy-joint-11",
+    "verified_peak_changes": 12,
+    "complete_common_32_blocks": 29,
+    "unresolved_or_incomplete_promotions": 0
+  },
+  {
+    "run": "legacy-joint-37",
+    "verified_peak_changes": 16,
+    "complete_common_32_blocks": 30,
+    "unresolved_or_incomplete_promotions": 0
+  },
+  {
+    "run": "legacy-joint-91",
+    "verified_peak_changes": 16,
+    "complete_common_32_blocks": 25,
+    "unresolved_or_incomplete_promotions": 1
+  },
+  {
+    "run": "revised-joint-11",
+    "verified_peak_changes": 25,
+    "complete_common_32_blocks": 67,
+    "unresolved_or_incomplete_promotions": 1
+  },
+  {
+    "run": "revised-joint-37",
+    "verified_peak_changes": 28,
+    "complete_common_32_blocks": 68,
+    "unresolved_or_incomplete_promotions": 1
+  },
+  {
+    "run": "revised-joint-91",
+    "verified_peak_changes": 20,
+    "complete_common_32_blocks": 64,
+    "unresolved_or_incomplete_promotions": 0
+  },
+  {
+    "run": "revised-fixed-11",
+    "verified_peak_changes": 30,
+    "complete_common_32_blocks": 53,
+    "unresolved_or_incomplete_promotions": 2
+  },
+  {
+    "run": "revised-fixed-37",
+    "verified_peak_changes": 28,
+    "complete_common_32_blocks": 53,
+    "unresolved_or_incomplete_promotions": 1
+  },
+  {
+    "run": "revised-fixed-91",
+    "verified_peak_changes": 35,
+    "complete_common_32_blocks": 57,
+    "unresolved_or_incomplete_promotions": 0
+  }
+]

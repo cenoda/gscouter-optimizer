@@ -1,0 +1,14 @@
+{
+  "matrix_discovery_cpu_seconds": 972.3938228939999,
+  "matrix_audit_cpu_seconds": 152.940345927,
+  "restricted_discovery_cpu_seconds": 20.091558995,
+  "restricted_audit_cpu_seconds": 1.9780740439999989,
+  "enumeration_cpu_seconds": 1.035443451,
+  "smoke_discovery_cpu_seconds": 10.179203157999984,
+  "smoke_audit_cpu_seconds": 2.8660419999999998,
+  "discarded_smoke_discovery_cpu_seconds": 3.014993389,
+  "discarded_smoke_audit_cpu_seconds": 0.6929731400000008,
+  "notes": "Confirmation/parity costs will be recorded separately; builds, parent orchestration, reporting and wall overhead are not included in these process CPU sums. No throughput or cloud-cost extrapolation.",
+  "confirmation_and_selected_parity_cpu_seconds": 92.589962,
+  "smoke_audit_cpu_accounting": "Audit worker CPU only, reconstructed from all smoke journal records; smoke parent audit overhead excluded."
+}

@@ -86,6 +86,7 @@ The local pilot is implemented in Rust. No cloud deployment or batch CI is confi
 ## Documents
 
 - [Measured Flins pilot](reports/pilot-2026-11-05/README.md): independent results, comparisons, failure cases and recovery.
+- [Measured greedy retry](reports/pilot-retry-2026-11-05/README.md): frozen-budget comparison, independent confirmation and complete recovery journals.
 - [Greedy retry protocol](docs/pilot-retry.md): documented before implementation; revised neighborhoods, local improvement and production-path recovery checks.
 
 - [Rotation search](docs/rotation-search.md): agreed decisions and the proposed algorithm, workload and delivery plan.

@@ -7,6 +7,11 @@ combination is **not validated for batch expansion**: greedy search was more
 consistent at this budget, the withheld library cycle is still stronger, and
 the wider pilot suite remains incomplete.
 
+A subsequent [documented greedy retry](../pilot-retry-2026-11-05/README.md)
+adds generic action-list neighborhoods and budgeted local improvement. Its
+independently confirmed result improves on the known library alternative;
+the original measurements below remain unchanged.
+
 ## Frozen conditions and confirmed result
 
 Flins C1 / Ineffa C1 / Columbina C1 / Sucrose C6, level 90/90, base talents

@@ -1,0 +1,329 @@
+{
+  "seed": 10000000000000,
+  "iterations": 2048,
+  "duration": 450,
+  "warmup": 150,
+  "frozen_selection": {
+    "rule": "highest final discovery best_hint, frozen before new confirmation; audit scores unused",
+    "variant": "revised-fixed",
+    "seed": 91,
+    "source_run": "runs/retry/matrix/revised-fixed-91",
+    "discovery_estimate": 350658.37764005666,
+    "source_commit": "67de69f44ff970adac807fcb0d2a3975f2f4bb04"
+  },
+  "identical_noncomment_source_reuse": {
+    "reference-same-allocation": "reference-standard"
+  },
+  "conditions": {
+    "selected": {
+      "config_sha256": "3549129ebe521a07638c14efa817b69b5a1eceed29902358086324d349a807cb",
+      "team": {
+        "mean": 349694.2161888311,
+        "se": 42.03839328869557
+      },
+      "chars": {
+        "columbina": {
+          "mean": 83021.58716570734,
+          "se": 17.08392466799904
+        },
+        "flins": {
+          "mean": 160750.9178527831,
+          "se": 15.346013735657255
+        },
+        "ineffa": {
+          "mean": 101160.14266765013,
+          "se": 35.584507549537335
+        },
+        "sucrose": {
+          "mean": 4761.56850269071,
+          "se": 3.1305318774140494
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 4.75
+        },
+        "flins": {
+          "skill_cd": 14.766666666666472
+        },
+        "ineffa": {
+          "swap_cd": 3.8666666666667435
+        },
+        "sucrose": {
+          "swap_cd": 1.1333333333333633
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          17.0,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          52.0,
+          1130.3793046449175
+        ],
+        "Normal 1 (Skill)": [
+          52.0,
+          1142.7441973206974
+        ],
+        "Normal 2 (Skill)": [
+          52.0,
+          1415.5078444876165
+        ],
+        "Normal 3 (Skill)": [
+          34.0,
+          530.2544134173999
+        ],
+        "Normal 4 (Skill)": [
+          17.0,
+          635.4969958421987
+        ],
+        "Northland Spearstorm": [
+          52.0,
+          3249.9074038575404
+        ],
+        "Thunderous Symphony": [
+          105.99951171875,
+          140579.2385224984
+        ],
+        "lunarcharged": [
+          32.958984375,
+          12067.389170711622
+        ]
+      }
+    },
+    "baseline-same-allocation": {
+      "config_sha256": "d9285918113547b5a8751c017ac28c8b09f5f2537ad124fe56a9f6bc6dee33e3",
+      "team": {
+        "mean": 305203.0204913719,
+        "se": 45.6240145378203
+      },
+      "chars": {
+        "columbina": {
+          "mean": 87304.25989031653,
+          "se": 22.467730808701003
+        },
+        "flins": {
+          "mean": 119043.73027183607,
+          "se": 23.74847379823147
+        },
+        "ineffa": {
+          "mean": 94743.62184666039,
+          "se": 33.22044910905059
+        },
+        "sucrose": {
+          "mean": 4111.408482558782,
+          "se": 0.8189231037123732
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 9.04999999999965
+        },
+        "flins": {},
+        "ineffa": {
+          "swap_cd": 2.3666666666667155
+        },
+        "sucrose": {
+          "swap_cd": 1.9461018880208207
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          17.0,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          119.0,
+          2511.640715587112
+        ],
+        "Normal 1 (Skill)": [
+          68.0,
+          1494.3819613851906
+        ],
+        "Normal 2 (Skill)": [
+          51.0,
+          1388.1217367583433
+        ],
+        "Normal 3 (Skill)": [
+          102.0,
+          1590.8022528779418
+        ],
+        "Northland Spearstorm": [
+          34.0,
+          2267.389481981434
+        ],
+        "Thunderous Symphony": [
+          68.0,
+          94824.96187835983
+        ],
+        "lunarcharged": [
+          41.06201171875,
+          14966.432244886086
+        ]
+      }
+    },
+    "reference-standard": {
+      "config_sha256": "f7140ac649f75017f9e5e6997cec8e10a6fa059d38a02c5547cee97eaf3c1a50",
+      "team": {
+        "mean": 338537.125262731,
+        "se": 43.62125808683538
+      },
+      "chars": {
+        "columbina": {
+          "mean": 84340.46824695331,
+          "se": 19.121727377753565
+        },
+        "flins": {
+          "mean": 152001.98670944065,
+          "se": 22.437879433449805
+        },
+        "ineffa": {
+          "mean": 95609.83839347427,
+          "se": 32.714218205102675
+        },
+        "sucrose": {
+          "mean": 6584.831912863958,
+          "se": 1.2126208143406882
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 3.75
+        },
+        "flins": {
+          "skill_cd": 2.2666666666667266
+        },
+        "ineffa": {
+          "swap_cd": 2.3666666666667155
+        },
+        "sucrose": {
+          "swap_cd": 1.9469889322916731
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          17.0,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          133.0,
+          2777.953077334752
+        ],
+        "Normal 1 (Skill)": [
+          83.0,
+          1785.772381726731
+        ],
+        "Normal 2 (Skill)": [
+          33.0,
+          898.2067174039653
+        ],
+        "Normal 3 (Skill)": [
+          66.0,
+          1029.400333560823
+        ],
+        "Northland Spearstorm": [
+          50.0,
+          3334.25893064064
+        ],
+        "Thunderous Symphony": [
+          100.0,
+          130188.4628764191
+        ],
+        "lunarcharged": [
+          33.2080078125,
+          11987.932392353681
+        ]
+      }
+    },
+    "reference-same-allocation": {
+      "config_sha256": "f7140ac649f75017f9e5e6997cec8e10a6fa059d38a02c5547cee97eaf3c1a50",
+      "team": {
+        "mean": 338537.125262731,
+        "se": 43.62125808683538
+      },
+      "chars": {
+        "columbina": {
+          "mean": 84340.46824695331,
+          "se": 19.121727377753565
+        },
+        "flins": {
+          "mean": 152001.98670944065,
+          "se": 22.437879433449805
+        },
+        "ineffa": {
+          "mean": 95609.83839347427,
+          "se": 32.714218205102675
+        },
+        "sucrose": {
+          "mean": 6584.831912863958,
+          "se": 1.2126208143406882
+        }
+      },
+      "mean_wait_seconds": {
+        "columbina": {
+          "skill_cd": 3.75
+        },
+        "flins": {
+          "skill_cd": 2.2666666666667266
+        },
+        "ineffa": {
+          "swap_cd": 2.3666666666667155
+        },
+        "sucrose": {
+          "swap_cd": 1.9469889322916731
+        }
+      },
+      "flins_abilities": {
+        "Arcane Light (0 dmg)": [
+          17.0,
+          0.0
+        ],
+        "Normal 0 (Skill)": [
+          133.0,
+          2777.953077334752
+        ],
+        "Normal 1 (Skill)": [
+          83.0,
+          1785.772381726731
+        ],
+        "Normal 2 (Skill)": [
+          33.0,
+          898.2067174039653
+        ],
+        "Normal 3 (Skill)": [
+          66.0,
+          1029.400333560823
+        ],
+        "Northland Spearstorm": [
+          50.0,
+          3334.25893064064
+        ],
+        "Thunderous Symphony": [
+          100.0,
+          130188.4628764191
+        ],
+        "lunarcharged": [
+          33.2080078125,
+          11987.932392353681
+        ]
+      }
+    }
+  },
+  "selected_minus": {
+    "baseline-same-allocation": {
+      "difference_dps": 44491.19569745908,
+      "paired_se_dps": 60.37296280116384
+    },
+    "reference-standard": {
+      "difference_dps": 11157.090926099285,
+      "paired_se_dps": 58.77947189074628
+    },
+    "reference-same-allocation": {
+      "difference_dps": 11157.090926099285,
+      "paired_se_dps": 58.77947189074628
+    }
+  },
+  "cpu_seconds_including_selected_parity": 92.589962,
+  "wall_seconds": 24.21971754399965
+}

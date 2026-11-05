@@ -1,0 +1,24 @@
+# manifest-sha256=f2cff26e94d31ad00d220a2c9bc2f8fcfa0e9387300b3125ee5ceccf8fd62376
+options duration=450 swap_delay=12;
+target lvl=100 resist=0.1 radius=2 pos=0,2.4;
+energy every interval=480,720 amount=1;
+flins char lvl=90/90 cons=1 talent=10,10,10;
+flins add weapon="bloodsoakedruins" refine=1 lvl=90/90;
+flins add set="nightoftheskysunveiling" count=4;
+flins add stats atk=311.00000000 atk%=1.39840000 cd=1.55440000 cr=0.42790000 em=139.86000000 er=0.51840000 hp=4780.00000000;
+ineffa char lvl=90/90 cons=1 talent=10,10,10;
+ineffa add weapon="fracturedhalo" refine=1 lvl=90/90;
+ineffa add set="aubadeofmorningstarandmoon" count=4;
+ineffa add stats atk=311.00000000 atk%=1.39840000 cd=1.24360000 cr=0.66130000 em=186.48000000 er=0.25920000 hp=4780.00000000;
+columbina char lvl=90/90 cons=1 talent=10,10,10;
+columbina add weapon="nocturnescurtaincall" refine=1 lvl=90/90;
+columbina add set="silkenmoonsserenade" count=4;
+columbina add stats atk=311.00000000 cd=1.24360000 cr=0.62240000 em=186.48000000 er=0.25920000 hp=4780.00000000 hp%=1.45670000;
+sucrose char lvl=90/90 cons=6 talent=10,10,10;
+sucrose add weapon="wanderingevenstar" refine=5 lvl=90/90;
+sucrose add set="viridescentvenerer" count=4;
+sucrose add stats atk=311.00000000 atk%=0.29150000 cd=0.46620000 cr=0.27230000 em=840.72000000 er=0.97200000 hp=4780.00000000;
+active ineffa ;
+while 1 {
+ for let i = 0 ; i < 6 ; i = i + 1 { if ! is_even ( i ) { ineffa skill , burst : 1 ; columbina skill : 1 , attack , attack ; } else { flins jump : 1 ; flins jump ; ineffa skill ; if i { ineffa swap ; sucrose swap ; print ( "Sucrose N2C > Columbina N1 E Q" ) ; sucrose swap ; sucrose dash : 1 ; columbina attack , attack ; } columbina skill : 1 , burst ; } if ! is_even ( i ) && .sucrose .burst .ready { columbina dash ; sucrose attack , burst ; } else if .sucrose .skill .ready { sucrose swap ; wait ( 8 ) ; sucrose attack , skill , dash ; } else { flins burst ; sucrose charge ; } flins skill , skill , attack , burst , attack : 4 , dash , attack : 3 , skill , burst , dash:1 , attack : 2 , skill , burst ; if .sucrose .skill .ready { sucrose attack , skill , jump : 1 , jump : 1 ; } else { sucrose charge : 1 , dash : 1 ; } }
+}

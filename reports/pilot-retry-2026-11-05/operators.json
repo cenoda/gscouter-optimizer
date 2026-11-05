@@ -1,0 +1,652 @@
+[
+  {
+    "name": "legacy-joint",
+    "seed": 11,
+    "operators": {
+      "discovery:initial family": {
+        "events": 4,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:allocation exchange": {
+        "events": 318,
+        "accepted": 41,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:legacy action": {
+        "events": 342,
+        "accepted": 68,
+        "failed_or_unresolved": 6,
+        "exact_noop": 0
+      }
+    },
+    "pending": null,
+    "polish": null,
+    "events": 664,
+    "discovery_hint": 324322.41806719376
+  },
+  {
+    "name": "legacy-joint",
+    "seed": 37,
+    "operators": {
+      "discovery:initial family": {
+        "events": 4,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:allocation exchange": {
+        "events": 294,
+        "accepted": 30,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:legacy action": {
+        "events": 342,
+        "accepted": 62,
+        "failed_or_unresolved": 9,
+        "exact_noop": 0
+      }
+    },
+    "pending": {
+      "operator": "legacy action mutation",
+      "polishing": false,
+      "repairs_done": false
+    },
+    "polish": null,
+    "events": 640,
+    "discovery_hint": 341171.50405819854
+  },
+  {
+    "name": "legacy-joint",
+    "seed": 91,
+    "operators": {
+      "discovery:initial family": {
+        "events": 4,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:allocation exchange": {
+        "events": 327,
+        "accepted": 32,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:legacy action": {
+        "events": 316,
+        "accepted": 52,
+        "failed_or_unresolved": 6,
+        "exact_noop": 0
+      }
+    },
+    "pending": {
+      "operator": "legacy action mutation",
+      "polishing": false,
+      "repairs_done": true
+    },
+    "polish": null,
+    "events": 647,
+    "discovery_hint": 325032.7884063135
+  },
+  {
+    "name": "revised-joint",
+    "seed": 11,
+    "operators": {
+      "discovery:initial family": {
+        "events": 4,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:allocation exchange": {
+        "events": 183,
+        "accepted": 32,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:legacy action": {
+        "events": 102,
+        "accepted": 20,
+        "failed_or_unresolved": 3,
+        "exact_noop": 3
+      },
+      "discovery:duplicate action": {
+        "events": 18,
+        "accepted": 6,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:delete actions": {
+        "events": 33,
+        "accepted": 2,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:delete statement": {
+        "events": 14,
+        "accepted": 5,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:normal count": {
+        "events": 24,
+        "accepted": 3,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete statement": {
+        "events": 36,
+        "accepted": 1,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:polish allocation": {
+        "events": 122,
+        "accepted": 23,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:relocate action": {
+        "events": 14,
+        "accepted": 6,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete actions": {
+        "events": 36,
+        "accepted": 5,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:relocate action": {
+        "events": 17,
+        "accepted": 1,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:duplicate action": {
+        "events": 26,
+        "accepted": 2,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:normal count": {
+        "events": 10,
+        "accepted": 0,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      }
+    },
+    "pending": {
+      "operator": "polish allocation 3:4:7->cr",
+      "polishing": true,
+      "repairs_done": false
+    },
+    "polish": {
+      "anchor": "fbd0605d706f0415b8450b622ae60c9fb51bfcae733138621533fd63041e9d15",
+      "cursor": 69
+    },
+    "events": 639,
+    "discovery_hint": 347522.10811808484
+  },
+  {
+    "name": "revised-joint",
+    "seed": 37,
+    "operators": {
+      "discovery:initial family": {
+        "events": 4,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:allocation exchange": {
+        "events": 216,
+        "accepted": 22,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:legacy action": {
+        "events": 116,
+        "accepted": 20,
+        "failed_or_unresolved": 2,
+        "exact_noop": 11
+      },
+      "discovery:delete actions": {
+        "events": 28,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:duplicate action": {
+        "events": 19,
+        "accepted": 5,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete statement": {
+        "events": 39,
+        "accepted": 3,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:polish allocation": {
+        "events": 102,
+        "accepted": 41,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:normal count": {
+        "events": 20,
+        "accepted": 3,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:delete statement": {
+        "events": 9,
+        "accepted": 1,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete actions": {
+        "events": 20,
+        "accepted": 0,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:relocate action": {
+        "events": 17,
+        "accepted": 0,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:duplicate action": {
+        "events": 21,
+        "accepted": 3,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:relocate action": {
+        "events": 13,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:normal count": {
+        "events": 7,
+        "accepted": 0,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      }
+    },
+    "pending": {
+      "operator": "duplicate action 1:0",
+      "polishing": true,
+      "repairs_done": false
+    },
+    "polish": {
+      "anchor": "f2d3cb3d634a3517ccb9992e9a697ee204bb4f123fbbe064e2bf12dc42e86d0d",
+      "cursor": 14
+    },
+    "events": 631,
+    "discovery_hint": 312454.2390809251
+  },
+  {
+    "name": "revised-joint",
+    "seed": 91,
+    "operators": {
+      "discovery:initial family": {
+        "events": 4,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:allocation exchange": {
+        "events": 190,
+        "accepted": 27,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:legacy action": {
+        "events": 120,
+        "accepted": 21,
+        "failed_or_unresolved": 8,
+        "exact_noop": 4
+      },
+      "discovery:delete statement": {
+        "events": 10,
+        "accepted": 1,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:delete actions": {
+        "events": 36,
+        "accepted": 5,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete statement": {
+        "events": 39,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:polish allocation": {
+        "events": 110,
+        "accepted": 31,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:normal count": {
+        "events": 18,
+        "accepted": 3,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:duplicate action": {
+        "events": 22,
+        "accepted": 7,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete actions": {
+        "events": 22,
+        "accepted": 0,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:relocate action": {
+        "events": 11,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:relocate action": {
+        "events": 12,
+        "accepted": 1,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:duplicate action": {
+        "events": 30,
+        "accepted": 5,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:normal count": {
+        "events": 8,
+        "accepted": 0,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      }
+    },
+    "pending": null,
+    "polish": {
+      "anchor": "52da3f06d1bc5d43222acfe37ec88f38e0d7ce326c79b480e0005f615ac42862",
+      "cursor": 32
+    },
+    "events": 632,
+    "discovery_hint": 330317.6360964871
+  },
+  {
+    "name": "revised-fixed",
+    "seed": 11,
+    "operators": {
+      "discovery:initial family": {
+        "events": 4,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:legacy action": {
+        "events": 246,
+        "accepted": 40,
+        "failed_or_unresolved": 8,
+        "exact_noop": 10
+      },
+      "discovery:normal count": {
+        "events": 58,
+        "accepted": 9,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:delete actions": {
+        "events": 75,
+        "accepted": 10,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:relocate action": {
+        "events": 33,
+        "accepted": 8,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:duplicate action": {
+        "events": 63,
+        "accepted": 1,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete statement": {
+        "events": 86,
+        "accepted": 5,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete actions": {
+        "events": 60,
+        "accepted": 7,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:relocate action": {
+        "events": 30,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:duplicate action": {
+        "events": 81,
+        "accepted": 5,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:delete statement": {
+        "events": 18,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:normal count": {
+        "events": 38,
+        "accepted": 5,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      }
+    },
+    "pending": null,
+    "polish": {
+      "anchor": "ce438044aaee92cbec05a65c766b2361a2efdb4f97adc8d226c5eb1af53ee0e7",
+      "cursor": 41
+    },
+    "events": 792,
+    "discovery_hint": 343471.92563993763
+  },
+  {
+    "name": "revised-fixed",
+    "seed": 37,
+    "operators": {
+      "discovery:initial family": {
+        "events": 4,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:delete statement": {
+        "events": 29,
+        "accepted": 6,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:legacy action": {
+        "events": 254,
+        "accepted": 38,
+        "failed_or_unresolved": 7,
+        "exact_noop": 12
+      },
+      "discovery:delete actions": {
+        "events": 72,
+        "accepted": 6,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:duplicate action": {
+        "events": 49,
+        "accepted": 2,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete statement": {
+        "events": 62,
+        "accepted": 5,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete actions": {
+        "events": 84,
+        "accepted": 3,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:relocate action": {
+        "events": 39,
+        "accepted": 3,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:duplicate action": {
+        "events": 57,
+        "accepted": 5,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:normal count": {
+        "events": 55,
+        "accepted": 16,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:relocate action": {
+        "events": 43,
+        "accepted": 10,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:normal count": {
+        "events": 37,
+        "accepted": 7,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      }
+    },
+    "pending": null,
+    "polish": {
+      "anchor": "24e8d4384b6dc830c3db4eaa80c096af41ffae228761205a41b0450e8710330c",
+      "cursor": 28
+    },
+    "events": 785,
+    "discovery_hint": 324435.56457718066
+  },
+  {
+    "name": "revised-fixed",
+    "seed": 91,
+    "operators": {
+      "discovery:initial family": {
+        "events": 4,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:legacy action": {
+        "events": 263,
+        "accepted": 28,
+        "failed_or_unresolved": 5,
+        "exact_noop": 19
+      },
+      "discovery:normal count": {
+        "events": 56,
+        "accepted": 6,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:relocate action": {
+        "events": 39,
+        "accepted": 11,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:delete statement": {
+        "events": 21,
+        "accepted": 4,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete statement": {
+        "events": 87,
+        "accepted": 8,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:delete actions": {
+        "events": 52,
+        "accepted": 3,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:relocate action": {
+        "events": 48,
+        "accepted": 6,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:duplicate action": {
+        "events": 72,
+        "accepted": 7,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:delete actions": {
+        "events": 76,
+        "accepted": 7,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "discovery:duplicate action": {
+        "events": 55,
+        "accepted": 2,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      },
+      "polish:normal count": {
+        "events": 24,
+        "accepted": 3,
+        "failed_or_unresolved": 0,
+        "exact_noop": 0
+      }
+    },
+    "pending": {
+      "operator": "duplicate action 2:0",
+      "polishing": true,
+      "repairs_done": false
+    },
+    "polish": {
+      "anchor": "814a84e3b00e317d7191dbc7c37926d595a0e1065027eeec2c9307cb03378bdf",
+      "cursor": 9
+    },
+    "events": 797,
+    "discovery_hint": 350658.37764005666
+  }
+]

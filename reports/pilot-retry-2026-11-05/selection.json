@@ -1,0 +1,8 @@
+{
+  "rule": "highest final discovery best_hint, frozen before new confirmation; audit scores unused",
+  "variant": "revised-fixed",
+  "seed": 91,
+  "source_run": "runs/retry/matrix/revised-fixed-91",
+  "discovery_estimate": 350658.37764005666,
+  "source_commit": "67de69f44ff970adac807fcb0d2a3975f2f4bb04"
+}

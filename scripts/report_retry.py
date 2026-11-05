@@ -81,6 +81,14 @@ def main():
         for name in ["checkpoint.json", "evaluations.jsonl", "proposals.jsonl", "shortlist.json", "report.json"]:
             z.write(selected_run / name, name)
         z.writestr("experiment.json", json.dumps(selection, indent=2))
+    with zipfile.ZipFile(OUT / "all-runs.zip", "w", zipfile.ZIP_DEFLATED) as z:
+        for row in rows:
+            run = RUNS / "matrix" / f"{row['name']}-{row['seed']}"
+            names = ["checkpoint.json", "evaluations.jsonl", "proposals.jsonl", "shortlist.json", "report.json"]
+            names += [f"report-{cap}.json" for cap in [4, 12, 36, 108]]
+            for name in names:
+                z.write(run / name, f"{run.name}/{name}")
+        z.writestr("source-commit.txt", selection["source_commit"] + "\n")
     for source, target in [(RUNS / "restricted/production-recovery.json", "production-recovery.json"),
                            (RUNS / "smoke-recovery.json", "smoke-recovery.json"),
                            (RUNS / "discarded-initialization-smoke/recovery.json", "discarded-smoke.json")]:

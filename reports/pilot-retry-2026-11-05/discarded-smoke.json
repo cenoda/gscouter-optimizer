@@ -1,0 +1,24 @@
+{
+  "before_decisions": 9,
+  "after_decisions": 18,
+  "pending_phase": "polish",
+  "pending_operator": "polish allocation 3:2:0->cr",
+  "polish_before": {
+    "anchor": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+    "cursor": 1
+  },
+  "polish_after": {
+    "anchor": "9f469101fa215cfbe4c0c87347eeaed9ed1db2d3a1cdd8155407a68a78c25df7",
+    "cursor": 0
+  },
+  "prior_events_exactly_preserved": true,
+  "rng_advanced": true,
+  "before_cpu": 1.003675228,
+  "after_cpu": 3.014993389,
+  "audit_cpu_seconds": 0.6929731400000008,
+  "invariant_check": {
+    "path": "/home/ubuntu/projects/gscouter-optimizer/runs/retry/smoke-restored",
+    "verified_common_block_decisions": 12,
+    "accepted_events": 5
+  }
+}

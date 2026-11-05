@@ -1,0 +1,24 @@
+# manifest-sha256=adc1219035b6f730998f22fcf4f117f7c102d1a1285cb2462b845716d34089dd
+options duration=450 swap_delay=12;
+target lvl=100 resist=0.1 radius=2 pos=0,2.4;
+energy every interval=480,720 amount=1;
+flins char lvl=90/90 cons=1 talent=10,10,10;
+flins add weapon="bloodsoakedruins" refine=1 lvl=90/90;
+flins add set="nightoftheskysunveiling" count=4;
+flins add stats atk=311.00000000 atk%=1.45670000 cd=1.55440000 cr=0.42790000 em=209.79000000 er=0.25920000 hp=4780.00000000;
+ineffa char lvl=90/90 cons=1 talent=10,10,10;
+ineffa add weapon="fracturedhalo" refine=1 lvl=90/90;
+ineffa add set="aubadeofmorningstarandmoon" count=4;
+ineffa add stats atk=311.00000000 atk%=1.39840000 cd=1.24360000 cr=0.66130000 em=186.48000000 er=0.25920000 hp=4780.00000000;
+columbina char lvl=90/90 cons=1 talent=10,10,10;
+columbina add weapon="nocturnescurtaincall" refine=1 lvl=90/90;
+columbina add set="silkenmoonsserenade" count=4;
+columbina add stats atk=311.00000000 cd=1.24360000 cr=0.62240000 em=186.48000000 er=0.25920000 hp=4780.00000000 hp%=1.45670000;
+sucrose char lvl=90/90 cons=6 talent=10,10,10;
+sucrose add weapon="wanderingevenstar" refine=5 lvl=90/90;
+sucrose add set="viridescentvenerer" count=4;
+sucrose add stats atk=311.00000000 atk%=0.34980000 cd=0.38850000 cr=0.27230000 em=840.72000000 er=0.97200000 hp=4780.00000000;
+active ineffa ;
+while 1 {
+ for let i = 0 ; i < 6 ; i = i + 1 { if ! is_even ( i ) { ineffa skill : 1 , burst ; columbina skill , dash : 1 , attack ; } else { ineffa skill ; if i { ineffa attack , attack ; print ( "Sucrose N2C > Columbina N1 E Q" ) ; sucrose attack : 1 , attack : 1 , attack : 1 , charge ; } columbina skill , burst ; } if ! is_even ( i ) && .sucrose .burst .ready { sucrose burst , attack ; } else if .sucrose .skill .ready { sucrose swap , swap ; wait ( 8 ) ; sucrose skill , dash ; } else { } flins skill , attack , skill , burst , dash , dash , attack : 2 , attack : 2 , skill , attack : 2 , attack , attack , burst , skill , burst ; if .sucrose .skill .ready { sucrose skill , attack ; } else { } }
+}

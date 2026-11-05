@@ -1,0 +1,16 @@
+[
+  {
+    "file": "recovery.zip",
+    "sha256": "d37d85600e5e87a54955d4ce5a058be4cf72f571023b31fe515a6fd6a09b5813",
+    "bytes": 2082217,
+    "entries": 6,
+    "crc_verified": true
+  },
+  {
+    "file": "all-runs.zip",
+    "sha256": "1daa81a0b3e540386ba0acb791bb5bf853d9c4e153fbf1461f0cb2b87134aa74",
+    "bytes": 19659643,
+    "entries": 82,
+    "crc_verified": true
+  }
+]

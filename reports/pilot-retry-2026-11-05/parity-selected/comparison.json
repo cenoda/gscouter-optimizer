@@ -1,0 +1,87 @@
+{
+  "config": "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-retry-2026-11-05/confirmation-selected.gcsl",
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "gcsim": "cenoda/gcsim@eb218847f82b",
+  "iterations": 2048,
+  "seed": 10000000000000,
+  "accuracy_passed": true,
+  "comparison": [
+    {
+      "name": "team",
+      "native_mean": 349694.2161888311,
+      "gcsim_mean": 349611.6931708649,
+      "relative_difference": 0.0002360419275961867,
+      "combined_se_dps": 59.869329416117665,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "columbina",
+      "native_mean": 83021.58716570734,
+      "gcsim_mean": 83016.89524976483,
+      "relative_difference": 5.651760317459953e-05,
+      "combined_se_dps": 24.145200008146155,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "flins",
+      "native_mean": 160750.9178527831,
+      "gcsim_mean": 160731.1309885639,
+      "relative_difference": 0.0001231053629593415,
+      "combined_se_dps": 21.86878742993599,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "ineffa",
+      "native_mean": 101160.14266765013,
+      "gcsim_mean": 101102.03330209471,
+      "relative_difference": 0.000574759613209519,
+      "combined_se_dps": 50.859137679916365,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "sucrose",
+      "native_mean": 4761.56850269071,
+      "gcsim_mean": 4761.633630442902,
+      "relative_difference": -1.3677606730544412e-05,
+      "combined_se_dps": 4.4244965413068655,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": false
+    }
+  ],
+  "accounting": {
+    "native": {
+      "cpu_seconds": 14.586151999999998,
+      "wall_seconds": 14.589922000001025,
+      "command": [
+        "target/release/examples/trace",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-retry-2026-11-05/confirmation-selected.gcsl",
+        "2048",
+        "10000000000000"
+      ]
+    },
+    "gcsim": {
+      "cpu_seconds": 46.966970999999994,
+      "wall_seconds": 9.586256360000334,
+      "command": [
+        "runs/gcsim-reference",
+        "-config",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/pilot-retry-2026-11-05/confirmation-selected.gcsl",
+        "-iter",
+        "2048",
+        "-warmup",
+        "150",
+        "-seed",
+        "10000000000000",
+        "-j",
+        "4",
+        "-abil",
+        "-cache",
+        ""
+      ]
+    }
+  }
+}
