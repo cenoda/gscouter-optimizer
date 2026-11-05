@@ -1,0 +1,446 @@
+[
+  {
+    "context": "source",
+    "constellations": [
+      1,
+      1,
+      1,
+      6
+    ],
+    "scope": "comparison only; no C0 search or player-constellation substitution",
+    "status": "empirical outcome in this build/seed block; no universal compatibility rule",
+    "results": {
+      "baseline": {
+        "cpu_seconds": 0.5363222349999999,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            118955.6454929292,
+            94870.37599528545,
+            87303.13534068645,
+            4108.6444347168635
+          ],
+          "first": 304378.38999954564,
+          "mean": 305237.8012636177,
+          "n": 128,
+          "se": 197.87811018791015,
+          "second": 306097.2125276898,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9333333333333325
+            }
+          ]
+        }
+      },
+      "selected": {
+        "cpu_seconds": 0.519984726,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            153202.51151579423,
+            93019.34707853047,
+            77276.93945682823,
+            4761.962830355781
+          ],
+          "first": 328625.76275005925,
+          "mean": 328260.76088150847,
+          "n": 128,
+          "se": 254.91160841721282,
+          "second": 327895.7590129577,
+          "waits": [
+            {
+              "insufficient_energy": 0.005338541666666667,
+              "skill_cd": 26.351953125000016
+            },
+            {
+              "swap_cd": 0.3999999999999991
+            },
+            {
+              "swap_cd": 7.049999999999985
+            },
+            {
+              "insufficient_energy": 0.11080729166666667,
+              "swap_cd": 8.425911458333314
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "context": "flins-c0",
+    "constellations": [
+      0,
+      1,
+      1,
+      6
+    ],
+    "scope": "comparison only; no C0 search or player-constellation substitution",
+    "status": "empirical outcome in this build/seed block; no universal compatibility rule",
+    "results": {
+      "baseline": {
+        "cpu_seconds": 0.526070033,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            118955.6454929292,
+            94870.37599528545,
+            87303.13534068645,
+            4108.6444347168635
+          ],
+          "first": 304378.38999954564,
+          "mean": 305237.8012636177,
+          "n": 128,
+          "se": 197.87811018791015,
+          "second": 306097.2125276898,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9333333333333325
+            }
+          ]
+        }
+      },
+      "selected": {
+        "cpu_seconds": 0.19594011,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            3373.9693432641775,
+            1601.0171905838051,
+            1780.044551702994,
+            72.36335526723576
+          ],
+          "first": 3291.0041426906137,
+          "mean": 6827.3944408182115,
+          "n": 128,
+          "se": 760.0403022249209,
+          "second": 10363.784738945811,
+          "waits": [
+            {
+              "insufficient_energy": 290.0852864583334,
+              "skill_cd": 1.5067708333333336
+            },
+            {},
+            {
+              "swap_cd": 0.2360677083333335
+            },
+            {
+              "swap_cd": 0.4696614583333336
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "context": "ineffa-c0",
+    "constellations": [
+      1,
+      0,
+      1,
+      6
+    ],
+    "scope": "comparison only; no C0 search or player-constellation substitution",
+    "status": "empirical outcome in this build/seed block; no universal compatibility rule",
+    "results": {
+      "baseline": {
+        "cpu_seconds": 0.518341611,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            107956.56039183223,
+            85389.16946467961,
+            76762.6351419341,
+            4108.6444347168635
+          ],
+          "first": 273506.25126691745,
+          "mean": 274217.00943316286,
+          "n": 128,
+          "se": 179.1532485937808,
+          "second": 274927.7675994083,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9333333333333325
+            }
+          ]
+        }
+      },
+      "selected": {
+        "cpu_seconds": 0.5083677200000001,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            138976.05743997172,
+            83774.96772724774,
+            68197.65995946892,
+            4682.780761092573
+          ],
+          "first": 295767.8993975643,
+          "mean": 295631.46588778065,
+          "n": 128,
+          "se": 224.3267520393193,
+          "second": 295495.032377997,
+          "waits": [
+            {
+              "insufficient_energy": 0.005338541666666667,
+              "skill_cd": 26.351953125000016
+            },
+            {
+              "swap_cd": 0.3999999999999991
+            },
+            {
+              "swap_cd": 7.049999999999985
+            },
+            {
+              "insufficient_energy": 0.11080729166666667,
+              "swap_cd": 8.425911458333314
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "context": "columbina-c0",
+    "constellations": [
+      1,
+      1,
+      0,
+      6
+    ],
+    "scope": "comparison only; no C0 search or player-constellation substitution",
+    "status": "empirical outcome in this build/seed block; no universal compatibility rule",
+    "results": {
+      "baseline": {
+        "cpu_seconds": 0.527511195,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            117326.3349956216,
+            93403.57542755948,
+            72077.12390458131,
+            4108.732279052625
+          ],
+          "first": 286808.7639487168,
+          "mean": 286915.76660681504,
+          "n": 128,
+          "se": 196.3642570818679,
+          "second": 287022.7692649132,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9391927083333325
+            }
+          ]
+        }
+      },
+      "selected": {
+        "cpu_seconds": 0.36160914099999997,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            49794.09670193221,
+            29383.95025985872,
+            21872.420979066355,
+            1470.871837101573
+          ],
+          "first": 134882.48329974848,
+          "mean": 102521.33977795875,
+          "n": 128,
+          "se": 7543.300469004126,
+          "second": 70160.19625616915,
+          "waits": [
+            {
+              "insufficient_energy": 197.336328125,
+              "skill_cd": 10.695833333333336
+            },
+            {
+              "swap_cd": 0.1281249999999999
+            },
+            {
+              "swap_cd": 2.3906250000000018
+            },
+            {
+              "swap_cd": 2.6916666666666647
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "context": "mixed-c2",
+    "constellations": [
+      2,
+      1,
+      1,
+      6
+    ],
+    "scope": "comparison only; no C0 search or player-constellation substitution",
+    "status": "empirical outcome in this build/seed block; no universal compatibility rule",
+    "results": {
+      "baseline": {
+        "cpu_seconds": 0.5530336979999999,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            148592.6479283806,
+            104621.5110348685,
+            95337.31084544923,
+            4325.280395891115
+          ],
+          "first": 351793.4229494083,
+          "mean": 352876.75020458974,
+          "n": 128,
+          "se": 210.6759962703978,
+          "second": 353960.077459771,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9404947916666655
+            }
+          ]
+        }
+      },
+      "selected": {
+        "cpu_seconds": 0.528670517,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            193777.29254648503,
+            102288.32705878014,
+            83998.81317580704,
+            4975.090841804075
+          ],
+          "first": 385723.73356182204,
+          "mean": 385039.5236228761,
+          "n": 128,
+          "se": 160.24388685414038,
+          "second": 384355.3136839301,
+          "waits": [
+            {
+              "insufficient_energy": 0.00625,
+              "skill_cd": 26.366666666666685
+            },
+            {
+              "swap_cd": 0.3999999999999991
+            },
+            {
+              "swap_cd": 7.049999999999985
+            },
+            {
+              "swap_cd": 8.433333333333312
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "context": "mixed-c4",
+    "constellations": [
+      1,
+      4,
+      2,
+      6
+    ],
+    "scope": "comparison only; no C0 search or player-constellation substitution",
+    "status": "empirical outcome in this build/seed block; no universal compatibility rule",
+    "results": {
+      "baseline": {
+        "cpu_seconds": 0.5702763089999999,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            144856.48619248162,
+            128164.28723763088,
+            119295.67189848014,
+            4438.8246014445585
+          ],
+          "first": 392919.6477064306,
+          "mean": 396755.26993003796,
+          "n": 128,
+          "se": 248.051573295971,
+          "second": 400590.8921536456,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9574218750000003
+            }
+          ]
+        }
+      },
+      "selected": {
+        "cpu_seconds": 0.5494342110000001,
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "stats": {
+          "chars": [
+            188640.43668866815,
+            120285.8130042453,
+            106491.66281684523,
+            5108.089603327108
+          ],
+          "first": 423565.88006678206,
+          "mean": 420526.00211308635,
+          "n": 128,
+          "se": 207.29109833094844,
+          "second": 417486.1241593904,
+          "waits": [
+            {
+              "skill_cd": 26.36106770833335
+            },
+            {
+              "swap_cd": 0.3999999999999991
+            },
+            {
+              "swap_cd": 7.049999999999985
+            },
+            {
+              "insufficient_energy": 0.033984375,
+              "swap_cd": 8.433333333333312
+            }
+          ]
+        }
+      }
+    }
+  }
+]

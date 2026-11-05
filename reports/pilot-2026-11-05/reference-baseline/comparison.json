@@ -1,0 +1,86 @@
+{
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "gcsim": "cenoda/gcsim@eb218847f82b",
+  "iterations": 2048,
+  "seed": 928123,
+  "accuracy_passed": true,
+  "comparison": [
+    {
+      "name": "team",
+      "native_mean": 305055.7074915147,
+      "gcsim_mean": 305143.0582312373,
+      "relative_difference": -0.00028626159883482494,
+      "combined_se_dps": 65.43298612484085,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "columbina",
+      "native_mean": 87276.99350530819,
+      "gcsim_mean": 87279.7894907031,
+      "relative_difference": -3.203474035895493e-05,
+      "combined_se_dps": 31.613917997508178,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "flins",
+      "native_mean": 118986.71573887969,
+      "gcsim_mean": 119030.37917560039,
+      "relative_difference": -0.00036682599033210916,
+      "combined_se_dps": 33.54485938717657,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "ineffa",
+      "native_mean": 94680.85035106975,
+      "gcsim_mean": 94721.96919140959,
+      "relative_difference": -0.0004341003538128607,
+      "combined_se_dps": 47.01085487661111,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "sucrose",
+      "native_mean": 4111.147896258141,
+      "gcsim_mean": 4110.920373524699,
+      "relative_difference": 5.5345935403572355e-05,
+      "combined_se_dps": 1.1471573948423042,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": false
+    }
+  ],
+  "accounting": {
+    "native": {
+      "cpu_seconds": 15.188044999999999,
+      "wall_seconds": 15.189379636000012,
+      "command": [
+        "target/release/examples/trace",
+        "runs/preparation/wanderingevenstar/candidate-0.gcsl",
+        "2048",
+        "928123"
+      ]
+    },
+    "gcsim": {
+      "cpu_seconds": 56.447576000000005,
+      "wall_seconds": 11.8755849449999,
+      "command": [
+        "runs/gcsim-reference",
+        "-config",
+        "runs/preparation/wanderingevenstar/candidate-0.gcsl",
+        "-iter",
+        "2048",
+        "-warmup",
+        "150",
+        "-seed",
+        "928123",
+        "-j",
+        "4",
+        "-abil",
+        "-cache",
+        ""
+      ]
+    }
+  }
+}

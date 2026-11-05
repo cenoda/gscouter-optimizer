@@ -1,0 +1,87 @@
+{
+  "config": "runs/withheld-reference/withheld.gcsl",
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "gcsim": "cenoda/gcsim@eb218847f82b",
+  "iterations": 2048,
+  "seed": 2928123,
+  "accuracy_passed": true,
+  "comparison": [
+    {
+      "name": "team",
+      "native_mean": 338426.02992434445,
+      "gcsim_mean": 338512.3852834466,
+      "relative_difference": -0.0002551025098530557,
+      "combined_se_dps": 63.44185810009401,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "columbina",
+      "native_mean": 84318.84113669005,
+      "gcsim_mean": 84333.02470339168,
+      "relative_difference": -0.00016818520089267874,
+      "combined_se_dps": 26.588545295549064,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "flins",
+      "native_mean": 151949.7020470329,
+      "gcsim_mean": 151964.80688356524,
+      "relative_difference": -9.939693829197349e-05,
+      "combined_se_dps": 32.38333629998965,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "ineffa",
+      "native_mean": 95573.53564599137,
+      "gcsim_mean": 95630.78709808894,
+      "relative_difference": -0.0005986717649708595,
+      "combined_se_dps": 47.621998615023195,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "sucrose",
+      "native_mean": 6583.951094630872,
+      "gcsim_mean": 6583.766598401252,
+      "relative_difference": 2.802289948511394e-05,
+      "combined_se_dps": 1.700345723678244,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": false
+    }
+  ],
+  "accounting": {
+    "native": {
+      "cpu_seconds": 15.474274,
+      "wall_seconds": 15.476377013999809,
+      "command": [
+        "target/release/examples/trace",
+        "runs/withheld-reference/withheld.gcsl",
+        "2048",
+        "2928123"
+      ]
+    },
+    "gcsim": {
+      "cpu_seconds": 49.51034500000001,
+      "wall_seconds": 10.063771609000469,
+      "command": [
+        "runs/gcsim-reference",
+        "-config",
+        "runs/withheld-reference/withheld.gcsl",
+        "-iter",
+        "2048",
+        "-warmup",
+        "150",
+        "-seed",
+        "2928123",
+        "-j",
+        "4",
+        "-abil",
+        "-cache",
+        ""
+      ]
+    }
+  }
+}

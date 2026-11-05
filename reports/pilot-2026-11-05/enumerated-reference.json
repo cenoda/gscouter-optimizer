@@ -1,0 +1,1360 @@
+{
+  "cpu_seconds": 1.0622117039999996,
+  "grammar": "2 field lengths x 2 normal counts x 2 Ineffa burst periods; fixed allocation; exactly 8 valid programs",
+  "objective": "32 fixed full fights at seed 6000000000000; finite sample objective only",
+  "reference_best_index": 1,
+  "rows": [
+    {
+      "frames": 360,
+      "ineffa_period": 1,
+      "normals": 2,
+      "program": {
+        "Typed": {
+          "cycle": [
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "attack",
+                    "ready": false
+                  },
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Field": {
+                "actor": 0,
+                "burst": true,
+                "cancel": true,
+                "frames": 360,
+                "normals": 2,
+                "skill": true
+              }
+            }
+          ],
+          "opening": []
+        }
+      },
+      "stats": {
+        "chars": [
+          83939.7325589744,
+          92103.68336680486,
+          79001.65303717447,
+          2061.5338007966884
+        ],
+        "first": 254888.66416738217,
+        "mean": 257106.60276375047,
+        "n": 32,
+        "se": 1193.4094760361588,
+        "second": 259324.54136011875,
+        "waits": [
+          {
+            "dash_cd": 28.03333333333333
+          },
+          {
+            "swap_cd": 4.3953124999999975
+          },
+          {
+            "swap_cd": 4.511979166666666
+          },
+          {
+            "swap_cd": 3.829687499999998
+          }
+        ]
+      }
+    },
+    {
+      "frames": 360,
+      "ineffa_period": 2,
+      "normals": 2,
+      "program": {
+        "Typed": {
+          "cycle": [
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 2,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "attack",
+                    "ready": false
+                  },
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Field": {
+                "actor": 0,
+                "burst": true,
+                "cancel": true,
+                "frames": 360,
+                "normals": 2,
+                "skill": true
+              }
+            }
+          ],
+          "opening": []
+        }
+      },
+      "stats": {
+        "chars": [
+          89673.50309567575,
+          85916.99288935887,
+          83660.58435231939,
+          2042.2329450501868
+        ],
+        "first": 261614.60375947558,
+        "mean": 261293.3132824044,
+        "n": 32,
+        "se": 517.8435107358569,
+        "second": 260972.0228053331,
+        "waits": [
+          {
+            "dash_cd": 31.098958333333343
+          },
+          {
+            "swap_cd": 3.158333333333335
+          },
+          {
+            "swap_cd": 5.064583333333331
+          },
+          {
+            "swap_cd": 4.411979166666666
+          }
+        ]
+      }
+    },
+    {
+      "frames": 360,
+      "ineffa_period": 1,
+      "normals": 4,
+      "program": {
+        "Typed": {
+          "cycle": [
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "attack",
+                    "ready": false
+                  },
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Field": {
+                "actor": 0,
+                "burst": true,
+                "cancel": true,
+                "frames": 360,
+                "normals": 4,
+                "skill": true
+              }
+            }
+          ],
+          "opening": []
+        }
+      },
+      "stats": {
+        "chars": [
+          68545.0293128486,
+          86539.07559267493,
+          75737.16816352442,
+          2035.3689718924086
+        ],
+        "first": 236119.5301050337,
+        "mean": 232856.64204094035,
+        "n": 32,
+        "se": 790.7584286484246,
+        "second": 229593.75397684696,
+        "waits": [
+          {},
+          {
+            "swap_cd": 3.9984374999999988
+          },
+          {
+            "swap_cd": 2.975
+          },
+          {
+            "swap_cd": 2.889062499999998
+          }
+        ]
+      }
+    },
+    {
+      "frames": 360,
+      "ineffa_period": 2,
+      "normals": 4,
+      "program": {
+        "Typed": {
+          "cycle": [
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 2,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "attack",
+                    "ready": false
+                  },
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Field": {
+                "actor": 0,
+                "burst": true,
+                "cancel": true,
+                "frames": 360,
+                "normals": 4,
+                "skill": true
+              }
+            }
+          ],
+          "opening": []
+        }
+      },
+      "stats": {
+        "chars": [
+          93562.03248558588,
+          78076.22403633897,
+          82947.6709814866,
+          2183.477002031006
+        ],
+        "first": 262175.64749559684,
+        "mean": 256769.40450544257,
+        "n": 32,
+        "se": 1900.226205974687,
+        "second": 251363.16151528832,
+        "waits": [
+          {},
+          {
+            "swap_cd": 2.295833333333333
+          },
+          {
+            "swap_cd": 0.9208333333333333
+          },
+          {
+            "swap_cd": 2.9562499999999985
+          }
+        ]
+      }
+    },
+    {
+      "frames": 600,
+      "ineffa_period": 1,
+      "normals": 2,
+      "program": {
+        "Typed": {
+          "cycle": [
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "attack",
+                    "ready": false
+                  },
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Field": {
+                "actor": 0,
+                "burst": true,
+                "cancel": true,
+                "frames": 600,
+                "normals": 2,
+                "skill": true
+              }
+            }
+          ],
+          "opening": []
+        }
+      },
+      "stats": {
+        "chars": [
+          120964.64548735124,
+          70505.20446283626,
+          55479.08092564532,
+          1628.546915894449
+        ],
+        "first": 244146.2401454071,
+        "mean": 248577.47779172694,
+        "n": 32,
+        "se": 4617.735027931135,
+        "second": 253008.7154380467,
+        "waits": [
+          {
+            "dash_cd": 28.29583333333333,
+            "insufficient_stamina": 0.6354166666666665
+          },
+          {
+            "swap_cd": 4.138541666666664
+          },
+          {
+            "swap_cd": 3.4442708333333325
+          },
+          {}
+        ]
+      }
+    },
+    {
+      "frames": 600,
+      "ineffa_period": 2,
+      "normals": 2,
+      "program": {
+        "Typed": {
+          "cycle": [
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 2,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "attack",
+                    "ready": false
+                  },
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Field": {
+                "actor": 0,
+                "burst": true,
+                "cancel": true,
+                "frames": 600,
+                "normals": 2,
+                "skill": true
+              }
+            }
+          ],
+          "opening": []
+        }
+      },
+      "stats": {
+        "chars": [
+          83484.93682122818,
+          57052.38725541725,
+          53887.463356662236,
+          1717.603858844146
+        ],
+        "first": 195567.3023530288,
+        "mean": 196142.3912921517,
+        "n": 32,
+        "se": 333.74261509915095,
+        "second": 196717.48023127462,
+        "waits": [
+          {
+            "dash_cd": 33.37916666666667,
+            "insufficient_stamina": 1.1182291666666668
+          },
+          {
+            "swap_cd": 1.6916666666666667
+          },
+          {},
+          {}
+        ]
+      }
+    },
+    {
+      "frames": 600,
+      "ineffa_period": 1,
+      "normals": 4,
+      "program": {
+        "Typed": {
+          "cycle": [
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "attack",
+                    "ready": false
+                  },
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Field": {
+                "actor": 0,
+                "burst": true,
+                "cancel": true,
+                "frames": 600,
+                "normals": 4,
+                "skill": true
+              }
+            }
+          ],
+          "opening": []
+        }
+      },
+      "stats": {
+        "chars": [
+          63784.00720104684,
+          71274.93409426247,
+          58670.3173396165,
+          1809.2047501717188
+        ],
+        "first": 195135.86851676297,
+        "mean": 195538.46338509742,
+        "n": 32,
+        "se": 788.9374197510521,
+        "second": 195941.05825343184,
+        "waits": [
+          {},
+          {
+            "swap_cd": 3.7609375
+          },
+          {
+            "swap_cd": 2.8744791666666663
+          },
+          {}
+        ]
+      }
+    },
+    {
+      "frames": 600,
+      "ineffa_period": 2,
+      "normals": 4,
+      "program": {
+        "Typed": {
+          "cycle": [
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 1,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 2,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  },
+                  {
+                    "actor": 2,
+                    "count": 1,
+                    "name": "burst",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Block": {
+                "actions": [
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "attack",
+                    "ready": false
+                  },
+                  {
+                    "actor": 3,
+                    "count": 1,
+                    "name": "skill",
+                    "ready": true
+                  }
+                ],
+                "period": 1,
+                "phase": 0
+              }
+            },
+            {
+              "Field": {
+                "actor": 0,
+                "burst": true,
+                "cancel": true,
+                "frames": 600,
+                "normals": 4,
+                "skill": true
+              }
+            }
+          ],
+          "opening": []
+        }
+      },
+      "stats": {
+        "chars": [
+          72022.34585768008,
+          66915.61088764,
+          57323.75414239369,
+          1913.4371976308603
+        ],
+        "first": 195938.24489999967,
+        "mean": 198175.1480853444,
+        "n": 32,
+        "se": 340.1482449409966,
+        "second": 200412.0512706892,
+        "waits": [
+          {},
+          {
+            "swap_cd": 2.2807291666666663
+          },
+          {},
+          {}
+        ]
+      }
+    }
+  ],
+  "table_replay_recovery": [
+    {
+      "algorithm": "anneal",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 11
+    },
+    {
+      "algorithm": "anneal",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 37
+    },
+    {
+      "algorithm": "anneal",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 91
+    },
+    {
+      "algorithm": "anneal",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 123
+    },
+    {
+      "algorithm": "anneal",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 231
+    },
+    {
+      "algorithm": "greedy",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 11
+    },
+    {
+      "algorithm": "greedy",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 37
+    },
+    {
+      "algorithm": "greedy",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 91
+    },
+    {
+      "algorithm": "greedy",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 123
+    },
+    {
+      "algorithm": "greedy",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 231
+    },
+    {
+      "algorithm": "random",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 11
+    },
+    {
+      "algorithm": "random",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 37
+    },
+    {
+      "algorithm": "random",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 91
+    },
+    {
+      "algorithm": "random",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 123
+    },
+    {
+      "algorithm": "random",
+      "best_index": 1,
+      "queries": 24,
+      "recovered": true,
+      "recovery_curve": [
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seed": 231
+    }
+  ],
+  "unrestricted_optimality_gap": "unknown"
+}

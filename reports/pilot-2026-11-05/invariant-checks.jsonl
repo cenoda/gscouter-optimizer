@@ -1,0 +1,15 @@
+{"path": "runs/matrix/anneal-11", "verified_common_block_decisions": 233, "accepted_events": 81}
+{"path": "runs/matrix/anneal-37", "verified_common_block_decisions": 244, "accepted_events": 126}
+{"path": "runs/matrix/anneal-91", "verified_common_block_decisions": 233, "accepted_events": 110}
+{"path": "runs/matrix/greedy-11", "verified_common_block_decisions": 226, "accepted_events": 46}
+{"path": "runs/matrix/greedy-37", "verified_common_block_decisions": 215, "accepted_events": 33}
+{"path": "runs/matrix/greedy-91", "verified_common_block_decisions": 210, "accepted_events": 40}
+{"path": "runs/matrix/random-11", "verified_common_block_decisions": 229, "accepted_events": 17}
+{"path": "runs/matrix/random-37", "verified_common_block_decisions": 229, "accepted_events": 15}
+{"path": "runs/matrix/random-91", "verified_common_block_decisions": 231, "accepted_events": 22}
+{"path": "runs/matrix/anneal-11--fixed-er", "verified_common_block_decisions": 272, "accepted_events": 69}
+{"path": "runs/matrix/anneal-37--fixed-er", "verified_common_block_decisions": 280, "accepted_events": 116}
+{"path": "runs/matrix/anneal-91--fixed-er", "verified_common_block_decisions": 279, "accepted_events": 80}
+{"path": "runs/matrix-local-corrected/anneal-11--local-only", "verified_common_block_decisions": 268, "accepted_events": 163}
+{"path": "runs/matrix-local-corrected/anneal-37--local-only", "verified_common_block_decisions": 272, "accepted_events": 131}
+{"path": "runs/matrix-local-corrected/anneal-91--local-only", "verified_common_block_decisions": 263, "accepted_events": 89}

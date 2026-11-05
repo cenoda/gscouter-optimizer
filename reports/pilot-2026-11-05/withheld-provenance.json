@@ -1,0 +1,8 @@
+{
+  "source": "teams/flins-ineffa-columbina-sucrose/alt/mjnq86pKQKPp/rotation.gcsl",
+  "source_sha256": "ffdee6ca59c307aa602c7a0903265a578e6ce9ac20a38608011a8672e1738b2e",
+  "site_commit": "2df20b3689457ec2aa417301745aa327dcdd7867",
+  "revealed_after_generator_commit": "b9c315d",
+  "used_as_seed": false,
+  "status": "reference only; no tuning after reveal"
+}

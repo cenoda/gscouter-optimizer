@@ -1,0 +1,207 @@
+[
+  {
+    "method": "Annealing + joint ER",
+    "points": [
+      {
+        "cpu_cap_seconds": 4,
+        "median_actual_cpu_seconds": 4.023549043,
+        "median_dps": 305064.42660429457,
+        "minimum_dps": 305050.41372449533,
+        "maximum_dps": 305178.0511708957,
+        "all_starts_dps": [
+          305050.41372449533,
+          305064.42660429457,
+          305178.0511708957
+        ]
+      },
+      {
+        "cpu_cap_seconds": 12,
+        "median_actual_cpu_seconds": 12.008663309000003,
+        "median_dps": 305313.9215515654,
+        "minimum_dps": 304871.81067888264,
+        "maximum_dps": 306091.83903521753,
+        "all_starts_dps": [
+          304871.81067888264,
+          305313.9215515654,
+          306091.83903521753
+        ]
+      },
+      {
+        "cpu_cap_seconds": 36,
+        "median_actual_cpu_seconds": 36.012325380000064,
+        "median_dps": 306198.3786212937,
+        "minimum_dps": 305133.33561457676,
+        "maximum_dps": 306450.90709585405,
+        "all_starts_dps": [
+          306450.90709585405,
+          305133.33561457676,
+          306198.3786212937
+        ]
+      }
+    ]
+  },
+  {
+    "method": "Greedy + joint ER",
+    "points": [
+      {
+        "cpu_cap_seconds": 4,
+        "median_actual_cpu_seconds": 4.011124593,
+        "median_dps": 305064.42660429457,
+        "minimum_dps": 305050.41372449533,
+        "maximum_dps": 305178.0511708957,
+        "all_starts_dps": [
+          305050.41372449533,
+          305064.42660429457,
+          305178.0511708957
+        ]
+      },
+      {
+        "cpu_cap_seconds": 12,
+        "median_actual_cpu_seconds": 12.009880599999999,
+        "median_dps": 309309.22838586755,
+        "minimum_dps": 305340.61593160214,
+        "maximum_dps": 318092.9194907384,
+        "all_starts_dps": [
+          309309.22838586755,
+          305340.61593160214,
+          318092.9194907384
+        ]
+      },
+      {
+        "cpu_cap_seconds": 36,
+        "median_actual_cpu_seconds": 36.01170100700001,
+        "median_dps": 323340.42086680676,
+        "minimum_dps": 321593.97572695033,
+        "maximum_dps": 326080.24272300256,
+        "all_starts_dps": [
+          321593.97572695033,
+          326080.24272300256,
+          323340.42086680676
+        ]
+      }
+    ]
+  },
+  {
+    "method": "Random + joint ER",
+    "points": [
+      {
+        "cpu_cap_seconds": 4,
+        "median_actual_cpu_seconds": 4.007826654,
+        "median_dps": 305064.42660429457,
+        "minimum_dps": 305050.41372449533,
+        "maximum_dps": 305178.0511708957,
+        "all_starts_dps": [
+          305050.41372449533,
+          305064.42660429457,
+          305178.0511708957
+        ]
+      },
+      {
+        "cpu_cap_seconds": 12,
+        "median_actual_cpu_seconds": 12.050941137000006,
+        "median_dps": 314435.1212394713,
+        "minimum_dps": 306476.564916653,
+        "maximum_dps": 320256.3448725318,
+        "all_starts_dps": [
+          314435.1212394713,
+          306476.564916653,
+          320256.3448725318
+        ]
+      },
+      {
+        "cpu_cap_seconds": 36,
+        "median_actual_cpu_seconds": 36.006543860000015,
+        "median_dps": 315960.86889772787,
+        "minimum_dps": 308226.01442787057,
+        "maximum_dps": 320572.76473402296,
+        "all_starts_dps": [
+          315960.86889772787,
+          308226.01442787057,
+          320572.76473402296
+        ]
+      }
+    ]
+  },
+  {
+    "method": "Annealing, one family",
+    "points": [
+      {
+        "cpu_cap_seconds": 4,
+        "median_actual_cpu_seconds": 4.0076204660000005,
+        "median_dps": 305064.42660429457,
+        "minimum_dps": 305050.41372449533,
+        "maximum_dps": 317384.484171295,
+        "all_starts_dps": [
+          305050.41372449533,
+          305064.42660429457,
+          317384.484171295
+        ]
+      },
+      {
+        "cpu_cap_seconds": 12,
+        "median_actual_cpu_seconds": 12.008314526999998,
+        "median_dps": 306670.3570421398,
+        "minimum_dps": 304871.81067888264,
+        "maximum_dps": 317226.43817941507,
+        "all_starts_dps": [
+          304871.81067888264,
+          306670.3570421398,
+          317226.43817941507
+        ]
+      },
+      {
+        "cpu_cap_seconds": 36,
+        "median_actual_cpu_seconds": 36.009499468000044,
+        "median_dps": 306487.9519256099,
+        "minimum_dps": 306394.6296021207,
+        "maximum_dps": 317343.03727153636,
+        "all_starts_dps": [
+          306487.9519256099,
+          306394.6296021207,
+          317343.03727153636
+        ]
+      }
+    ]
+  },
+  {
+    "method": "Annealing, fixed ER",
+    "points": [
+      {
+        "cpu_cap_seconds": 4,
+        "median_actual_cpu_seconds": 4.008231433,
+        "median_dps": 305149.13483714266,
+        "minimum_dps": 305050.41372449533,
+        "maximum_dps": 306644.1031193512,
+        "all_starts_dps": [
+          305050.41372449533,
+          305149.13483714266,
+          306644.1031193512
+        ]
+      },
+      {
+        "cpu_cap_seconds": 12,
+        "median_actual_cpu_seconds": 12.022929203,
+        "median_dps": 309895.1121602524,
+        "minimum_dps": 306717.7115130351,
+        "maximum_dps": 316516.6197834626,
+        "all_starts_dps": [
+          316516.6197834626,
+          309895.1121602524,
+          306717.7115130351
+        ]
+      },
+      {
+        "cpu_cap_seconds": 36,
+        "median_actual_cpu_seconds": 36.00553441300006,
+        "median_dps": 309507.40880957263,
+        "minimum_dps": 307939.202014386,
+        "maximum_dps": 328034.88670491654,
+        "all_starts_dps": [
+          328034.88670491654,
+          309507.40880957263,
+          307939.202014386
+        ]
+      }
+    ]
+  }
+]

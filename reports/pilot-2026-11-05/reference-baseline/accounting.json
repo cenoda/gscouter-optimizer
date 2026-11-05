@@ -1,0 +1,32 @@
+{
+  "native": {
+    "cpu_seconds": 15.188044999999999,
+    "wall_seconds": 15.189379636000012,
+    "command": [
+      "target/release/examples/trace",
+      "runs/preparation/wanderingevenstar/candidate-0.gcsl",
+      "2048",
+      "928123"
+    ]
+  },
+  "gcsim": {
+    "cpu_seconds": 56.447576000000005,
+    "wall_seconds": 11.8755849449999,
+    "command": [
+      "runs/gcsim-reference",
+      "-config",
+      "runs/preparation/wanderingevenstar/candidate-0.gcsl",
+      "-iter",
+      "2048",
+      "-warmup",
+      "150",
+      "-seed",
+      "928123",
+      "-j",
+      "4",
+      "-abil",
+      "-cache",
+      ""
+    ]
+  }
+}

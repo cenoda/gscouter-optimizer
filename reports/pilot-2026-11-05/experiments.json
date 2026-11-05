@@ -1,0 +1,6306 @@
+[
+  {
+    "name": "anneal-11",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.023549043,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 3.785499921,
+        "cap_overrun_seconds": 0.023549043000000047,
+        "completed_decisions": 30,
+        "accepted": 14,
+        "audit_seed": 4000015000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119139.54060158957,
+            94697.43364082987,
+            87096.91178729816,
+            4116.527694777976
+          ],
+          "first": 304420.5521525361,
+          "mean": 305050.41372449533,
+          "n": 128,
+          "se": 183.19862833525457,
+          "second": 305680.2752964548,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.948828124999999
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.001007224999997,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 3.7355566389999986,
+        "cap_overrun_seconds": 0.0010072249999968363,
+        "completed_decisions": 85,
+        "accepted": 34,
+        "audit_seed": 4000023000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            118867.4549504056,
+            94683.96612683902,
+            87204.15378747054,
+            4116.235814167752
+          ],
+          "first": 303976.6453114418,
+          "mean": 304871.81067888264,
+          "n": 128,
+          "se": 191.77115156841236,
+          "second": 305766.97604632325,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9694010416666656
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118867.4549504056,
+              94683.96612683902,
+              87204.15378747054,
+              4116.235814167752
+            ],
+            "first": 303976.6453114418,
+            "mean": 304871.81067888264,
+            "n": 128,
+            "se": 191.77115156841236,
+            "second": 305766.97604632325,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9694010416666656
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              118867.4549504056,
+              94683.96612683902,
+              87204.15378747054,
+              4116.235814167752
+            ],
+            "first": 303976.6453114418,
+            "mean": 304871.81067888264,
+            "n": 128,
+            "se": 191.77115156841236,
+            "second": 305766.97604632325,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9694010416666656
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118867.4549504056,
+              94683.96612683902,
+              87204.15378747054,
+              4116.235814167752
+            ],
+            "first": 303976.6453114418,
+            "mean": 304871.81067888264,
+            "n": 128,
+            "se": 191.77115156841236,
+            "second": 305766.97604632325,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9694010416666656
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.003084743999985,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 4.250176902999982,
+        "cap_overrun_seconds": 0.003084743999984596,
+        "completed_decisions": 234,
+        "accepted": 75,
+        "audit_seed": 4000047000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119041.56337258508,
+            94727.20409936027,
+            87034.50310484279,
+            4105.910490536006
+          ],
+          "first": 303988.4019512759,
+          "mean": 304909.18106732395,
+          "n": 128,
+          "se": 181.1981233299991,
+          "second": 305829.9601833722,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9442708333333332
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            155.7885,
+            205.9827
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119063.64018781213,
+              94817.09642678728,
+              88371.60424685737,
+              4198.566234397247
+            ],
+            "first": 305519.44921154174,
+            "mean": 306450.90709585405,
+            "n": 128,
+            "se": 181.2669475858784,
+            "second": 307382.3649801665,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9442708333333332
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              119063.64018781213,
+              94817.09642678728,
+              88371.60424685737,
+              4198.566234397247
+            ],
+            "first": 305519.44921154174,
+            "mean": 306450.90709585405,
+            "n": 128,
+            "se": 181.2669475858784,
+            "second": 307382.3649801665,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9442708333333332
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            1541.7260285300463,
+            2.316576857124788
+          ],
+          "key": "978c5a88d22b107fca61fbbb7c55974adb9fff105510773ea6044089f210bd62",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              119041.56337258508,
+              94727.20409936027,
+              87034.50310484279,
+              4105.910490536006
+            ],
+            "first": 303988.4019512759,
+            "mean": 304909.18106732395,
+            "n": 128,
+            "se": 181.1981233299991,
+            "second": 305829.9601833722,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9442708333333332
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "anneal-37",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.0187496949999995,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 3.7446661509999997,
+        "cap_overrun_seconds": 0.018749694999999456,
+        "completed_decisions": 30,
+        "accepted": 16,
+        "audit_seed": 4000041000000,
+        "failed_fights": 0,
+        "baseline": {
+          "chars": [
+            118895.94540185134,
+            94744.87729676007,
+            87316.25499053055,
+            4107.348915152782
+          ],
+          "first": 303920.2749421912,
+          "mean": 305064.42660429457,
+          "n": 128,
+          "se": 173.5152424036283,
+          "second": 306208.57826639776,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9479166666666663
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.008663309000003,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 3.7358442640000042,
+        "cap_overrun_seconds": 0.008663309000002783,
+        "completed_decisions": 83,
+        "accepted": 38,
+        "audit_seed": 4000049000000,
+        "failed_fights": 0,
+        "baseline": {
+          "chars": [
+            119115.6103247545,
+            94760.86838798896,
+            87324.6538264722,
+            4112.789012349991
+          ],
+          "first": 304287.8754305027,
+          "mean": 305313.9215515654,
+          "n": 128,
+          "se": 204.92494826115293,
+          "second": 306339.96767262823,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9265624999999995
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119115.6103247545,
+              94760.86838798896,
+              87324.6538264722,
+              4112.789012349991
+            ],
+            "first": 304287.8754305027,
+            "mean": 305313.9215515654,
+            "n": 128,
+            "se": 204.92494826115293,
+            "second": 306339.96767262823,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              119115.6103247545,
+              94760.86838798896,
+              87324.6538264722,
+              4112.789012349991
+            ],
+            "first": 304287.8754305027,
+            "mean": 305313.9215515654,
+            "n": 128,
+            "se": 204.92494826115293,
+            "second": 306339.96767262823,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              119115.6103247545,
+              94760.86838798896,
+              87324.6538264722,
+              4112.789012349991
+            ],
+            "first": 304287.8754305027,
+            "mean": 305313.9215515654,
+            "n": 128,
+            "se": 204.92494826115293,
+            "second": 306339.96767262823,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.031421092000045,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 4.2990685660000025,
+        "cap_overrun_seconds": 0.03142109200004484,
+        "completed_decisions": 245,
+        "accepted": 122,
+        "audit_seed": 4000073000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            118826.85429064136,
+            94844.52918849803,
+            87262.08413422512,
+            4105.408115174691
+          ],
+          "first": 303801.12101714336,
+          "mean": 305038.8757285389,
+          "n": 128,
+          "se": 203.2929217000835,
+          "second": 306276.63043993455,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9546874999999992
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            148.01849999999996,
+            212.62604999999996
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118828.51311546112,
+              94847.43603498058,
+              87264.9717575098,
+              4192.41470662532
+            ],
+            "first": 303896.57100879535,
+            "mean": 305133.33561457676,
+            "n": 128,
+            "se": 203.29646672916425,
+            "second": 306370.10022035835,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9546874999999992
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              118828.51311546112,
+              94847.43603498058,
+              87264.9717575098,
+              4192.41470662532
+            ],
+            "first": 303896.57100879535,
+            "mean": 305133.33561457676,
+            "n": 128,
+            "se": 203.29646672916425,
+            "second": 306370.10022035835,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9546874999999992
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            94.4598860377514,
+            1.8311833332854681
+          ],
+          "key": "7bab3e4fa480ad1135b898ecde9bd9a04e31b8bc37b9a52eecdfa3363d1d7481",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118826.85429064136,
+              94844.52918849803,
+              87262.08413422512,
+              4105.408115174691
+            ],
+            "first": 303801.12101714336,
+            "mean": 305038.8757285389,
+            "n": 128,
+            "se": 203.2929217000835,
+            "second": 306276.63043993455,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9546874999999992
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "anneal-91",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.02363372,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 4.289093930999999,
+        "cap_overrun_seconds": 0.023633720000000302,
+        "completed_decisions": 29,
+        "accepted": 16,
+        "audit_seed": 4000095000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            118952.73450387,
+            94885.40990404415,
+            87224.76117160058,
+            4115.145591381214
+          ],
+          "first": 304649.4521095407,
+          "mean": 305178.0511708957,
+          "n": 128,
+          "se": 175.4066013387714,
+          "second": 305706.65023225057,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9686197916666661
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.010582606000003,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 5.4561707920000035,
+        "cap_overrun_seconds": 0.01058260600000338,
+        "completed_decisions": 79,
+        "accepted": 34,
+        "audit_seed": 4000103000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119049.6624028662,
+            94955.57722972186,
+            87230.88622266549,
+            4111.090270447215
+          ],
+          "first": 304448.05515641335,
+          "mean": 305347.21612570056,
+          "n": 128,
+          "se": 165.10011998106717,
+          "second": 306246.3770949882,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9359374999999999
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            141.60825,
+            219.07514999999998
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118874.93287558084,
+              87774.99848037577,
+              85383.08366012221,
+              4155.538886701085
+            ],
+            "first": 295329.50435730204,
+            "mean": 296188.55390278006,
+            "n": 128,
+            "se": 203.28050983533794,
+            "second": 297047.6034482584,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9359374999999999
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            9903.28513243741,
+            355.8243753261276
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              122254.1298055598,
+              84726.15437230389,
+              89227.11136211712,
+              9884.44349523662
+            ],
+            "first": 305862.5342950277,
+            "mean": 306091.83903521753,
+            "n": 128,
+            "se": 281.3806492206412,
+            "second": 306321.1437754074,
+            "waits": [
+              {
+                "insufficient_energy": 0.5020833333333332
+              },
+              {
+                "swap_cd": 1.8833333333333315
+              },
+              {
+                "insufficient_energy": 0.21666666666666665,
+                "skill_cd": 1.0666666666666653
+              },
+              {
+                "swap_cd": 2.7347656250000045
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            744.6229095168615,
+            322.2917676519727
+          ],
+          "key": "68d4df594bc8ab408d657e99d913d22be1b4517918564d536dba615d3f2afd5c",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              122192.7235883142,
+              92037.3366429564,
+              91200.8201361137,
+              9790.465034936486
+            ],
+            "first": 314907.1722699243,
+            "mean": 315221.34540232073,
+            "n": 128,
+            "se": 270.83319036911314,
+            "second": 315535.51853471756,
+            "waits": [
+              {
+                "insufficient_energy": 0.5890624999999999
+              },
+              {
+                "swap_cd": 1.8833333333333315
+              },
+              {
+                "insufficient_energy": 0.5861979166666665,
+                "skill_cd": 1.0666666666666653
+              },
+              {
+                "swap_cd": 2.7394531250000043
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.012325380000064,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 6.584022023999999,
+        "cap_overrun_seconds": 0.012325380000064001,
+        "completed_decisions": 235,
+        "accepted": 100,
+        "audit_seed": 4000127000000,
+        "failed_fights": 4,
+        "baseline": {
+          "chars": [
+            119113.4318739336,
+            94816.90186602541,
+            87294.0613784062,
+            4113.402132603581
+          ],
+          "first": 304295.5613317854,
+          "mean": 305337.79725096846,
+          "n": 128,
+          "se": 175.90622837597394,
+          "second": 306380.03317015205,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9574218749999988
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            141.60825,
+            219.07514999999998
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118929.61366991959,
+              87827.27918346855,
+              85470.10941423505,
+              4158.140550090684
+            ],
+            "first": 295423.24083456694,
+            "mean": 296385.1428177141,
+            "n": 128,
+            "se": 206.24779624777676,
+            "second": 297347.04480086104,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9574218749999988
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            9813.235803579548,
+            350.7267144280122
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              121877.41136585663,
+              85053.31441196245,
+              89295.82806705592,
+              9971.824776418514
+            ],
+            "first": 305901.71142584155,
+            "mean": 306198.3786212937,
+            "n": 128,
+            "se": 291.23045638564184,
+            "second": 306495.0458167458,
+            "waits": [
+              {
+                "insufficient_energy": 0.5160156249999999
+              },
+              {
+                "swap_cd": 1.8833333333333315
+              },
+              {
+                "insufficient_energy": 0.23919270833333334,
+                "skill_cd": 1.0666666666666653
+              },
+              {
+                "swap_cd": 2.7139322916666715
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            860.5813703250569,
+            340.7267911861725
+          ],
+          "key": "68d4df594bc8ab408d657e99d913d22be1b4517918564d536dba615d3f2afd5c",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              122074.87900196791,
+              92069.39973077386,
+              91344.44855965127,
+              9808.63167615884
+            ],
+            "first": 315181.82011106267,
+            "mean": 315297.35896855174,
+            "n": 128,
+            "se": 290.46971998494064,
+            "second": 315412.8978260411,
+            "waits": [
+              {
+                "insufficient_energy": 0.5859375000000001
+              },
+              {
+                "swap_cd": 1.8833333333333315
+              },
+              {
+                "insufficient_energy": 0.49440104166666665,
+                "skill_cd": 1.0666666666666653
+              },
+              {
+                "swap_cd": 2.713281250000005
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "greedy-11",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "greedy",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.008435993,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 3.199605524,
+        "cap_overrun_seconds": 0.008435992999999975,
+        "completed_decisions": 31,
+        "accepted": 7,
+        "audit_seed": 4000015000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119139.54060158957,
+            94697.43364082987,
+            87096.91178729816,
+            4116.527694777976
+          ],
+          "first": 304420.5521525361,
+          "mean": 305050.41372449533,
+          "n": 128,
+          "se": 183.19862833525457,
+          "second": 305680.2752964548,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.948828124999999
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "greedy",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.011144150999996,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 4.843525612999997,
+        "cap_overrun_seconds": 0.011144150999996327,
+        "completed_decisions": 72,
+        "accepted": 15,
+        "audit_seed": 4000023000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            118867.4549504056,
+            94683.96612683902,
+            87204.15378747054,
+            4116.235814167752
+          ],
+          "first": 303976.6453114418,
+          "mean": 304871.81067888264,
+          "n": 128,
+          "se": 191.77115156841236,
+          "second": 305766.97604632325,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9694010416666656
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            148.01849999999996,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118867.4549504056,
+              94683.96612683902,
+              87204.15378747054,
+              4116.235814167752
+            ],
+            "first": 303976.6453114418,
+            "mean": 304871.81067888264,
+            "n": 128,
+            "se": 191.77115156841236,
+            "second": 305766.97604632325,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9694010416666656
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            4437.417706984992,
+            240.76835019356628
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              135846.13140732187,
+              89675.03385676834,
+              77155.17397439279,
+              6632.889147384852
+            ],
+            "first": 308253.48810895666,
+            "mean": 309309.22838586755,
+            "n": 128,
+            "se": 167.3138221745033,
+            "second": 310364.96866277856,
+            "waits": [
+              {
+                "skill_cd": 27.0,
+                "swap_cd": 5.350000000000013
+              },
+              {
+                "swap_cd": 1.8833333333333315
+              },
+              {},
+              {
+                "swap_cd": 1.9869791666666712
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            4437.417706984992,
+            240.76835019356628
+          ],
+          "key": "7dc4c3edca1fc114e27561e5f1885f75e991e9baa34117e8cb8a5c9fdf495279",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              135846.13140732187,
+              89675.03385676834,
+              77155.17397439279,
+              6632.889147384852
+            ],
+            "first": 308253.48810895666,
+            "mean": 309309.22838586755,
+            "n": 128,
+            "se": 167.3138221745033,
+            "second": 310364.96866277856,
+            "waits": [
+              {
+                "skill_cd": 27.0,
+                "swap_cd": 5.350000000000013
+              },
+              {
+                "swap_cd": 1.8833333333333315
+              },
+              {},
+              {
+                "swap_cd": 1.9869791666666712
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "greedy",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.01170100700001,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 6.266504259000001,
+        "cap_overrun_seconds": 0.01170100700001342,
+        "completed_decisions": 228,
+        "accepted": 41,
+        "audit_seed": 4000047000000,
+        "failed_fights": 4,
+        "baseline": {
+          "chars": [
+            119041.56337258508,
+            94727.20409936027,
+            87034.50310484279,
+            4105.910490536006
+          ],
+          "first": 303988.4019512759,
+          "mean": 304909.18106732395,
+          "n": 128,
+          "se": 181.1981233299991,
+          "second": 305829.9601833722,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9442708333333332
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            187.35023999999999,
+            123.88488,
+            148.01849999999996,
+            199.59575999999998
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118386.26245007943,
+              95299.4757612986,
+              87028.69631311385,
+              4245.819206025166
+            ],
+            "first": 304041.3369063169,
+            "mean": 304960.2537305171,
+            "n": 128,
+            "se": 182.61717674496944,
+            "second": 305879.17055471713,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.052604166666645
+              },
+              {
+                "swap_cd": 1.9436197916666662
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            16633.721996433156,
+            303.0758448232786
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              144775.5142646745,
+              90828.35976024656,
+              80840.04208877674,
+              5150.0596132524415
+            ],
+            "first": 319370.72313969105,
+            "mean": 321593.97572695033,
+            "n": 128,
+            "se": 293.8997163062549,
+            "second": 323817.22831420955,
+            "waits": [
+              {
+                "insufficient_energy": 1.8692708333333334,
+                "skill_cd": 16.031901041666664,
+                "swap_cd": 2.1333333333333306
+              },
+              {
+                "swap_cd": 3.866666666666671
+              },
+              {},
+              {
+                "swap_cd": 4.907812499999999
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            16684.794659626154,
+            302.3607609927095
+          ],
+          "key": "efbcaf991082d4bfc5097bdf4c3c0515121af96039ccb787ede28a3c2fdb5fb0",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              145431.48677965422,
+              89109.0183290886,
+              80834.00651593537,
+              5039.528463145978
+            ],
+            "first": 318420.4497663603,
+            "mean": 320414.04008782405,
+            "n": 128,
+            "se": 332.27586933509383,
+            "second": 322407.6304092877,
+            "waits": [
+              {
+                "insufficient_energy": 2.9381510416666656,
+                "skill_cd": 15.86184895833333,
+                "swap_cd": 2.1333333333333306
+              },
+              {
+                "swap_cd": 3.866666666666671
+              },
+              {},
+              {
+                "swap_cd": 4.893619791666663
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "greedy-37",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "greedy",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.018828784,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 4.418918993,
+        "cap_overrun_seconds": 0.0188287840000001,
+        "completed_decisions": 27,
+        "accepted": 9,
+        "audit_seed": 4000041000000,
+        "failed_fights": 0,
+        "baseline": {
+          "chars": [
+            118895.94540185134,
+            94744.87729676007,
+            87316.25499053055,
+            4107.348915152782
+          ],
+          "first": 303920.2749421912,
+          "mean": 305064.42660429457,
+          "n": 128,
+          "se": 173.5152424036283,
+          "second": 306208.57826639776,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9479166666666663
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "greedy",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.009880599999999,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 4.244142485000001,
+        "cap_overrun_seconds": 0.009880599999998907,
+        "completed_decisions": 73,
+        "accepted": 12,
+        "audit_seed": 4000049000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119115.6103247545,
+            94760.86838798896,
+            87324.6538264722,
+            4112.789012349991
+          ],
+          "first": 304287.8754305027,
+          "mean": 305313.9215515654,
+          "n": 128,
+          "se": 204.92494826115293,
+          "second": 306339.96767262823,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9265624999999995
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            148.01849999999996,
+            225.59417999999997
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119115.6103247545,
+              94760.86838798896,
+              87324.6538264722,
+              4139.483392386538
+            ],
+            "first": 304314.3800526495,
+            "mean": 305340.61593160214,
+            "n": 128,
+            "se": 204.92023477612543,
+            "second": 306366.8518105544,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              119115.6103247545,
+              94760.86838798896,
+              87324.6538264722,
+              4139.483392386538
+            ],
+            "first": 304314.3800526495,
+            "mean": 305340.61593160214,
+            "n": 128,
+            "se": 204.92023477612543,
+            "second": 306366.8518105544,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            26.694380036635266,
+            0.07782233051984812
+          ],
+          "key": "7b1cbcde15122db19d7ca3df9186e24def45f705a62dde74c9e545f8dafa3a5e",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              119115.6103247545,
+              94760.86838798896,
+              87324.6538264722,
+              4112.789012349991
+            ],
+            "first": 304287.8754305027,
+            "mean": 305313.9215515654,
+            "n": 128,
+            "se": 204.92494826115293,
+            "second": 306339.96767262823,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "greedy",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.000917239,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 5.850761771000002,
+        "cap_overrun_seconds": 0.0009172390000031783,
+        "completed_decisions": 219,
+        "accepted": 28,
+        "audit_seed": 4000073000000,
+        "failed_fights": 8,
+        "baseline": {
+          "chars": [
+            118826.85429064136,
+            94844.52918849803,
+            87262.08413422512,
+            4105.408115174691
+          ],
+          "first": 303801.12101714336,
+          "mean": 305038.8757285389,
+          "n": 128,
+          "se": 203.2929217000835,
+          "second": 306276.63043993455,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9546874999999992
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            148.0185,
+            219.07514999999998
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118827.62044096467,
+              94846.33702438121,
+              87263.54514912883,
+              4149.211455525588
+            ],
+            "first": 303849.0168149934,
+            "mean": 305086.71407000016,
+            "n": 128,
+            "se": 203.29357181397125,
+            "second": 306324.41132500715,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9546874999999992
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            20993.528653002337,
+            263.4447554356471
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              142452.48901832945,
+              91313.1900791719,
+              86026.29319244079,
+              6288.270433060678
+            ],
+            "first": 325836.4009326836,
+            "mean": 326080.24272300256,
+            "n": 128,
+            "se": 178.622576397771,
+            "second": 326324.0845133213,
+            "waits": [
+              {
+                "skill_cd": 28.80000000000006
+              },
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 4.100000000000009
+              },
+              {
+                "swap_cd": 1.867708333333332
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            21041.36699446353,
+            263.4679221291278
+          ],
+          "key": "45c59ed7a04de5b924ea08f2c7ed347f9caf96d1106ebd6376384860db99696d",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              142451.9081539791,
+              91311.83188164681,
+              86025.45756826588,
+              6244.502230273995
+            ],
+            "first": 325788.9989652997,
+            "mean": 326033.6998341655,
+            "n": 128,
+            "se": 178.63335795297775,
+            "second": 326278.40070303145,
+            "waits": [
+              {
+                "skill_cd": 28.80000000000006
+              },
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 4.100000000000009
+              },
+              {
+                "swap_cd": 1.867708333333332
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "greedy-91",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "greedy",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.011124593,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 4.92068026,
+        "cap_overrun_seconds": 0.011124592999999905,
+        "completed_decisions": 25,
+        "accepted": 10,
+        "audit_seed": 4000095000000,
+        "failed_fights": 0,
+        "baseline": {
+          "chars": [
+            118952.73450387,
+            94885.40990404415,
+            87224.76117160058,
+            4115.145591381214
+          ],
+          "first": 304649.4521095407,
+          "mean": 305178.0511708957,
+          "n": 128,
+          "se": 175.4066013387714,
+          "second": 305706.65023225057,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9686197916666661
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "greedy",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.004854001999995,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 5.453788654,
+        "cap_overrun_seconds": 0.00485400199999475,
+        "completed_decisions": 67,
+        "accepted": 19,
+        "audit_seed": 4000103000000,
+        "failed_fights": 0,
+        "baseline": {
+          "chars": [
+            119049.6624028662,
+            94955.57722972186,
+            87230.88622266549,
+            4111.090270447215
+          ],
+          "first": 304448.05515641335,
+          "mean": 305347.21612570056,
+          "n": 128,
+          "se": 165.10011998106717,
+          "second": 306246.3770949882,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9359374999999999
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            148.01849999999996,
+            206.09924999999998
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119042.90286749264,
+              94938.04156501216,
+              87252.10975839924,
+              4199.08989152178
+            ],
+            "first": 304498.73409670405,
+            "mean": 305432.14408242557,
+            "n": 128,
+            "se": 165.71762429648956,
+            "second": 306365.55406814755,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.051041666666645
+              },
+              {
+                "swap_cd": 1.937109375
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            12660.775408312611,
+            318.48143279931617
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              133202.26757916767,
+              95158.86481476923,
+              84776.6658895157,
+              4955.121207285971
+            ],
+            "first": 317064.6857271857,
+            "mean": 318092.9194907384,
+            "n": 128,
+            "se": 268.7004208379802,
+            "second": 319121.1532542911,
+            "waits": [
+              {
+                "insufficient_energy": 0.6483072916666661
+              },
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 6.25546875
+              },
+              {
+                "swap_cd": 2.022135416666667
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            12745.703365037667,
+            318.993645133102
+          ],
+          "key": "2d7391eb4e471ac0632c78972ceaf833f8d393446231dea5ccfb8ee11a8a273b",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              133200.01984585344,
+              95156.73363559808,
+              84774.78258686393,
+              4866.226426141341
+            ],
+            "first": 316968.96229161223,
+            "mean": 317997.76249445655,
+            "n": 128,
+            "se": 268.71798572490735,
+            "second": 319026.5626973008,
+            "waits": [
+              {
+                "insufficient_energy": 0.6483072916666661
+              },
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 6.25546875
+              },
+              {
+                "swap_cd": 2.022135416666667
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "greedy",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.099177825999945,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 5.444351964999981,
+        "cap_overrun_seconds": 0.09917782599994496,
+        "completed_decisions": 212,
+        "accepted": 35,
+        "audit_seed": 4000127000000,
+        "failed_fights": 4,
+        "baseline": {
+          "chars": [
+            119113.4318739336,
+            94816.90186602541,
+            87294.0613784062,
+            4113.402132603581
+          ],
+          "first": 304295.5613317854,
+          "mean": 305337.79725096846,
+          "n": 128,
+          "se": 175.90622837597394,
+          "second": 306380.03317015205,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9574218749999988
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            171.24302999999998,
+            120.57485999999999,
+            155.7885,
+            206.09924999999998
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              120562.95552005732,
+              94999.6704064334,
+              88720.69959400919,
+              4201.8081582855475
+            ],
+            "first": 307449.99271005596,
+            "mean": 308485.1336787856,
+            "n": 128,
+            "se": 176.06954946151686,
+            "second": 309520.27464751544,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.050520833333312
+              },
+              {
+                "swap_cd": 1.9565104166666654
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            14855.287188021171,
+            293.12891120467566
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              133256.95167635902,
+              95621.64345281303,
+              86995.29222265248,
+              7466.533514982503
+            ],
+            "first": 323351.4511838526,
+            "mean": 323340.42086680676,
+            "n": 128,
+            "se": 256.9764585429728,
+            "second": 323329.3905497607,
+            "waits": [
+              {
+                "insufficient_energy": 1.0473958333333333
+              },
+              {
+                "swap_cd": 2.363671875000003
+              },
+              {
+                "skill_cd": 3.24114583333334
+              },
+              {
+                "swap_cd": 2.843359374999999
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            18002.623615838114,
+            293.31994441313714
+          ],
+          "key": "06dcfc2894a1c0ba912032788d23224b968bf6a32228d22d802180ce87d47ff1",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              131660.76095780722,
+              95265.60433769583,
+              86099.4787706766,
+              7557.408991027099
+            ],
+            "first": 320104.8264572278,
+            "mean": 320583.2530572065,
+            "n": 128,
+            "se": 237.56497807365452,
+            "second": 321061.6796571852,
+            "waits": [
+              {
+                "insufficient_energy": 0.7225260416666662
+              },
+              {
+                "swap_cd": 2.3643229166666697
+              },
+              {
+                "skill_cd": 3.26184895833334
+              },
+              {
+                "swap_cd": 2.8489583333333326
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "random-11",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "random",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.007826654,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 3.3696331740000005,
+        "cap_overrun_seconds": 0.0078266539999996,
+        "completed_decisions": 26,
+        "accepted": 6,
+        "audit_seed": 4000015000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119139.54060158957,
+            94697.43364082987,
+            87096.91178729816,
+            4116.527694777976
+          ],
+          "first": 304420.5521525361,
+          "mean": 305050.41372449533,
+          "n": 128,
+          "se": 183.19862833525457,
+          "second": 305680.2752964548,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.948828124999999
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "random",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.007907242999998,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 4.2515717120000005,
+        "cap_overrun_seconds": 0.007907242999998232,
+        "completed_decisions": 81,
+        "accepted": 8,
+        "audit_seed": 4000023000000,
+        "failed_fights": 6,
+        "baseline": {
+          "chars": [
+            118867.4549504056,
+            94683.96612683902,
+            87204.15378747054,
+            4116.235814167752
+          ],
+          "first": 303976.6453114418,
+          "mean": 304871.81067888264,
+          "n": 128,
+          "se": 191.77115156841236,
+          "second": 305766.97604632325,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9694010416666656
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            117.26483999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118774.26659419478,
+              91603.77391394317,
+              86969.35359360799,
+              4116.235814167752
+            ],
+            "first": 300496.68683435087,
+            "mean": 301463.6299159137,
+            "n": 128,
+            "se": 199.46564526547522,
+            "second": 302430.57299747656,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9694010416666656
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            12971.491323557575,
+            303.60144529665286
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              133412.38124760776,
+              91181.11190910723,
+              83733.28590091376,
+              6108.342181842723
+            ],
+            "first": 314864.0449957108,
+            "mean": 314435.1212394713,
+            "n": 128,
+            "se": 225.20581653464006,
+            "second": 314006.19748323166,
+            "waits": [
+              {
+                "insufficient_energy": 7.5196614583333306
+              },
+              {
+                "swap_cd": 2.091796874999998
+              },
+              {
+                "skill_cd": 0.07877604166666664
+              },
+              {
+                "swap_cd": 1.856901041666668
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            9563.310560588649,
+            298.5121339907503
+          ],
+          "key": "d8deac1ab48d65a7e8ec78b0156cf742dee76b356663d97de07feea5da44511f",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              133489.57811494512,
+              94100.26407655259,
+              83938.0138257445,
+              6117.827381838566
+            ],
+            "first": 318101.3776429158,
+            "mean": 317645.6833990806,
+            "n": 128,
+            "se": 216.0119659728095,
+            "second": 317189.98915524536,
+            "waits": [
+              {
+                "insufficient_energy": 7.5196614583333306
+              },
+              {
+                "swap_cd": 2.091796874999998
+              },
+              {
+                "skill_cd": 0.07877604166666664
+              },
+              {
+                "swap_cd": 1.856901041666668
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "random",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.00103966099999,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 3.1746387730000123,
+        "cap_overrun_seconds": 0.0010396609999929751,
+        "completed_decisions": 237,
+        "accepted": 11,
+        "audit_seed": 4000047000000,
+        "failed_fights": 16,
+        "baseline": {
+          "chars": [
+            119041.56337258508,
+            94727.20409936027,
+            87034.50310484279,
+            4105.910490536006
+          ],
+          "first": 303988.4019512759,
+          "mean": 304909.18106732395,
+          "n": 128,
+          "se": 181.1981233299991,
+          "second": 305829.9601833722,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9442708333333332
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119041.56337258508,
+              94727.20409936027,
+              87034.50310484279,
+              4105.910490536006
+            ],
+            "first": 303988.4019512759,
+            "mean": 304909.18106732395,
+            "n": 128,
+            "se": 181.1981233299991,
+            "second": 305829.9601833722,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9442708333333332
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            11051.687830403862,
+            314.95297593801484
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              132327.59467817398,
+              92526.22505690245,
+              85221.76940454665,
+              5885.279758105047
+            ],
+            "first": 315636.7344214709,
+            "mean": 315960.86889772787,
+            "n": 128,
+            "se": 268.8777171125974,
+            "second": 316285.003373985,
+            "waits": [
+              {
+                "insufficient_energy": 0.8204427083333331
+              },
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.060937499999978
+              },
+              {
+                "swap_cd": 2.030859375000001
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            11051.687830403862,
+            314.95297593801484
+          ],
+          "key": "0adc768546770c6226704b9df004b46b291af5078d0cb4803ec1e1f78f691ec7",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              132327.59467817398,
+              92526.22505690245,
+              85221.76940454665,
+              5885.279758105047
+            ],
+            "first": 315636.7344214709,
+            "mean": 315960.86889772787,
+            "n": 128,
+            "se": 268.8777171125974,
+            "second": 316285.003373985,
+            "waits": [
+              {
+                "insufficient_energy": 0.8204427083333331
+              },
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.060937499999978
+              },
+              {
+                "swap_cd": 2.030859375000001
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "random-37",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "random",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.001740118,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 5.259470252000002,
+        "cap_overrun_seconds": 0.0017401179999998462,
+        "completed_decisions": 25,
+        "accepted": 7,
+        "audit_seed": 4000041000000,
+        "failed_fights": 0,
+        "baseline": {
+          "chars": [
+            118895.94540185134,
+            94744.87729676007,
+            87316.25499053055,
+            4107.348915152782
+          ],
+          "first": 303920.2749421912,
+          "mean": 305064.42660429457,
+          "n": 128,
+          "se": 173.5152424036283,
+          "second": 306208.57826639776,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9479166666666663
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "random",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.058659170999999,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 6.3948148199999935,
+        "cap_overrun_seconds": 0.05865917099999862,
+        "completed_decisions": 76,
+        "accepted": 9,
+        "audit_seed": 4000049000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119115.6103247545,
+            94760.86838798896,
+            87324.6538264722,
+            4112.789012349991
+          ],
+          "first": 304287.8754305027,
+          "mean": 305313.9215515654,
+          "n": 128,
+          "se": 204.92494826115293,
+          "second": 306339.96767262823,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9265624999999995
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            148.01849999999996,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119115.6103247545,
+              94760.86838798896,
+              87324.6538264722,
+              4112.789012349991
+            ],
+            "first": 304287.8754305027,
+            "mean": 305313.9215515654,
+            "n": 128,
+            "se": 204.92494826115293,
+            "second": 306339.96767262823,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            1162.6433650875792,
+            321.21176710906855
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              114224.34230653674,
+              92714.87762721178,
+              92177.1625608352,
+              7360.182422069276
+            ],
+            "first": 304257.6554968988,
+            "mean": 306476.564916653,
+            "n": 128,
+            "se": 277.86634566856964,
+            "second": 308695.4743364071,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.066666666666664
+              },
+              {
+                "insufficient_energy": 1.505078125
+              },
+              {
+                "swap_cd": 1.9691406249999992
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            1162.6433650875792,
+            321.21176710906855
+          ],
+          "key": "0011f1d0535c780c0b38a50f90c0b68c8fea40884ee655d1a54b760999d0958c",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              113726.4548229421,
+              93227.59851295313,
+              91033.45319131142,
+              7373.522874860035
+            ],
+            "first": 304897.87380803504,
+            "mean": 305361.0294020667,
+            "n": 128,
+            "se": 288.30350260539586,
+            "second": 305824.1849960984,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.066666666666664
+              },
+              {
+                "insufficient_energy": 2.924869791666668
+              },
+              {
+                "swap_cd": 1.9606770833333331
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "random",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.006543860000015,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 6.369351079000012,
+        "cap_overrun_seconds": 0.006543860000014945,
+        "completed_decisions": 235,
+        "accepted": 11,
+        "audit_seed": 4000073000000,
+        "failed_fights": 12,
+        "baseline": {
+          "chars": [
+            118826.85429064136,
+            94844.52918849803,
+            87262.08413422512,
+            4105.408115174691
+          ],
+          "first": 303801.12101714336,
+          "mean": 305038.8757285389,
+          "n": 128,
+          "se": 203.2929217000835,
+          "second": 306276.63043993455,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9546874999999992
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            184.16454,
+            120.57485999999999,
+            144.72402,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              116446.79097497615,
+              94698.78418977263,
+              85788.27205894559,
+              4105.408115174691
+            ],
+            "first": 299797.1331101899,
+            "mean": 301039.2553388688,
+            "n": 128,
+            "se": 201.74264351250287,
+            "second": 302281.3775675475,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9546874999999992
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            7186.759089001651,
+            251.14815002866845
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              132665.23258482374,
+              90475.66004363408,
+              79320.25054312074,
+              5764.871256291889
+            ],
+            "first": 308427.0920785024,
+            "mean": 308226.01442787057,
+            "n": 128,
+            "se": 165.73441271073781,
+            "second": 308024.9367772385,
+            "waits": [
+              {
+                "skill_cd": 27.90000000000006
+              },
+              {
+                "swap_cd": 2.066666666666664
+              },
+              {},
+              {
+                "swap_cd": 1.9050781250000026
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            3187.138699331428,
+            252.37582896281558
+          ],
+          "key": "6692e1c52f56038ab14b6b266d137ad522e3f652803d2b3b0de61e8ec3d626c9",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              135413.78685064122,
+              90642.28807053583,
+              80709.99809487019,
+              5789.667501548258
+            ],
+            "first": 312747.56183001027,
+            "mean": 312555.74051759555,
+            "n": 128,
+            "se": 166.71692747406146,
+            "second": 312363.91920518054,
+            "waits": [
+              {
+                "skill_cd": 27.90000000000006
+              },
+              {
+                "swap_cd": 2.066666666666664
+              },
+              {},
+              {
+                "swap_cd": 1.9050781250000026
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "random-91",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "random",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.032870898,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 4.300173876000001,
+        "cap_overrun_seconds": 0.03287089799999965,
+        "completed_decisions": 27,
+        "accepted": 6,
+        "audit_seed": 4000095000000,
+        "failed_fights": 0,
+        "baseline": {
+          "chars": [
+            118952.73450387,
+            94885.40990404415,
+            87224.76117160058,
+            4115.145591381214
+          ],
+          "first": 304649.4521095407,
+          "mean": 305178.0511708957,
+          "n": 128,
+          "se": 175.4066013387714,
+          "second": 305706.65023225057,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9686197916666661
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "random",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.050941137000006,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 4.343420529000003,
+        "cap_overrun_seconds": 0.05094113700000591,
+        "completed_decisions": 80,
+        "accepted": 11,
+        "audit_seed": 4000103000000,
+        "failed_fights": 8,
+        "baseline": {
+          "chars": [
+            119049.6624028662,
+            94955.57722972186,
+            87230.88622266549,
+            4111.090270447215
+          ],
+          "first": 304448.05515641335,
+          "mean": 305347.21612570056,
+          "n": 128,
+          "se": 165.10011998106717,
+          "second": 306246.3770949882,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9359374999999999
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119049.6624028662,
+              94955.57722972186,
+              87230.88622266549,
+              4111.090270447215
+            ],
+            "first": 304448.05515641335,
+            "mean": 305347.21612570056,
+            "n": 128,
+            "se": 165.10011998106717,
+            "second": 306246.3770949882,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9359374999999999
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            14909.128746831017,
+            243.9484047793506
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              136662.88261453452,
+              95043.22627636365,
+              82292.96643977979,
+              6257.269541853804
+            ],
+            "first": 320037.8219133052,
+            "mean": 320256.3448725318,
+            "n": 128,
+            "se": 180.59633015854357,
+            "second": 320474.86783175817,
+            "waits": [
+              {
+                "insufficient_energy": 2.505208333333333
+              },
+              {
+                "swap_cd": 2.3429687500000025
+              },
+              {
+                "skill_cd": 8.389453124999998
+              },
+              {
+                "swap_cd": 1.8634114583333332
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            14909.128746831017,
+            243.9484047793506
+          ],
+          "key": "224f365635b7fda6f2c885861dc941555a064016ba61fa4957acfccbba0da628",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              136662.88261453452,
+              95043.22627636365,
+              82292.96643977979,
+              6257.269541853804
+            ],
+            "first": 320037.8219133052,
+            "mean": 320256.3448725318,
+            "n": 128,
+            "se": 180.59633015854357,
+            "second": 320474.86783175817,
+            "waits": [
+              {
+                "insufficient_energy": 2.505208333333333
+              },
+              {
+                "swap_cd": 2.3429687500000025
+              },
+              {
+                "skill_cd": 8.389453124999998
+              },
+              {
+                "swap_cd": 1.8634114583333332
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "random",
+        "joint_er": true,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.06474379400004,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 4.360972243000013,
+        "cap_overrun_seconds": 0.06474379400003727,
+        "completed_decisions": 240,
+        "accepted": 16,
+        "audit_seed": 4000127000000,
+        "failed_fights": 18,
+        "baseline": {
+          "chars": [
+            119113.4318739336,
+            94816.90186602541,
+            87294.0613784062,
+            4113.402132603581
+          ],
+          "first": 304295.5613317854,
+          "mean": 305337.79725096846,
+          "n": 128,
+          "se": 175.90622837597394,
+          "second": 306380.03317015205,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9574218749999988
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119113.4318739336,
+              94816.90186602541,
+              87294.0613784062,
+              4113.402132603581
+            ],
+            "first": 304295.5613317854,
+            "mean": 305337.79725096846,
+            "n": 128,
+            "se": 175.90622837597394,
+            "second": 306380.03317015205,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9574218749999988
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            15234.967483054279,
+            251.92383318036013
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              136201.2923847191,
+              94825.24762787308,
+              83137.78860450946,
+              6408.436116921378
+            ],
+            "first": 320622.29647165554,
+            "mean": 320572.76473402296,
+            "n": 128,
+            "se": 186.62645842488777,
+            "second": 320523.23299638997,
+            "waits": [
+              {
+                "insufficient_energy": 2.376432291666665
+              },
+              {
+                "swap_cd": 2.349348958333336
+              },
+              {
+                "skill_cd": 8.452734374999999
+              },
+              {
+                "swap_cd": 1.8545572916666664
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            15234.967483054279,
+            251.92383318036013
+          ],
+          "key": "224f365635b7fda6f2c885861dc941555a064016ba61fa4957acfccbba0da628",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              136201.2923847191,
+              94825.24762787308,
+              83137.78860450946,
+              6408.436116921378
+            ],
+            "first": 320622.29647165554,
+            "mean": 320572.76473402296,
+            "n": 128,
+            "se": 186.62645842488777,
+            "second": 320523.23299638997,
+            "waits": [
+              {
+                "insufficient_energy": 2.376432291666665
+              },
+              {
+                "swap_cd": 2.349348958333336
+              },
+              {
+                "skill_cd": 8.452734374999999
+              },
+              {
+                "swap_cd": 1.8545572916666664
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "anneal-11--fixed-er",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "anneal",
+        "joint_er": false,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.002111804,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 3.1805275890000004,
+        "cap_overrun_seconds": 0.002111804000000106,
+        "completed_decisions": 34,
+        "accepted": 12,
+        "audit_seed": 4000015000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119139.54060158957,
+            94697.43364082987,
+            87096.91178729816,
+            4116.527694777976
+          ],
+          "first": 304420.5521525361,
+          "mean": 305050.41372449533,
+          "n": 128,
+          "se": 183.19862833525457,
+          "second": 305680.2752964548,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.948828124999999
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "anneal",
+        "joint_er": false,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.050383192999991,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 3.198477634999998,
+        "cap_overrun_seconds": 0.050383192999991167,
+        "completed_decisions": 101,
+        "accepted": 32,
+        "audit_seed": 4000023000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            118867.4549504056,
+            94683.96612683902,
+            87204.15378747054,
+            4116.235814167752
+          ],
+          "first": 303976.6453114418,
+          "mean": 304871.81067888264,
+          "n": 128,
+          "se": 191.77115156841236,
+          "second": 305766.97604632325,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9694010416666656
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118867.4549504056,
+              94683.96612683902,
+              87204.15378747054,
+              4116.235814167752
+            ],
+            "first": 303976.6453114418,
+            "mean": 304871.81067888264,
+            "n": 128,
+            "se": 191.77115156841236,
+            "second": 305766.97604632325,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9694010416666656
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            11644.809104579806,
+            257.58646806269735
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              134621.97878859314,
+              89670.06206961861,
+              85711.62898602925,
+              6512.949939221534
+            ],
+            "first": 316463.1665415048,
+            "mean": 316516.6197834626,
+            "n": 128,
+            "se": 172.31106667025261,
+            "second": 316570.07302541996,
+            "waits": [
+              {
+                "skill_cd": 29.066666666666617
+              },
+              {
+                "swap_cd": 0.3999999999999991
+              },
+              {
+                "swap_cd": 3.699999999999992
+              },
+              {
+                "swap_cd": 9.673828124999996
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            11644.809104579806,
+            257.58646806269735
+          ],
+          "key": "8d5977f98a793725f3c1e55984d87e9f32fbb00caf3188f9209a62f9642b77d2",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              134621.97878859314,
+              89670.06206961861,
+              85711.62898602925,
+              6512.949939221534
+            ],
+            "first": 316463.1665415048,
+            "mean": 316516.6197834626,
+            "n": 128,
+            "se": 172.31106667025261,
+            "second": 316570.07302541996,
+            "waits": [
+              {
+                "skill_cd": 29.066666666666617
+              },
+              {
+                "swap_cd": 0.3999999999999991
+              },
+              {
+                "swap_cd": 3.699999999999992
+              },
+              {
+                "swap_cd": 9.673828124999996
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "anneal",
+        "joint_er": false,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.00553441300006,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 3.168875460999992,
+        "cap_overrun_seconds": 0.0055344130000634095,
+        "completed_decisions": 279,
+        "accepted": 69,
+        "audit_seed": 4000047000000,
+        "failed_fights": 14,
+        "baseline": {
+          "chars": [
+            119041.56337258508,
+            94727.20409936027,
+            87034.50310484279,
+            4105.910490536006
+          ],
+          "first": 303988.4019512759,
+          "mean": 304909.18106732395,
+          "n": 128,
+          "se": 181.1981233299991,
+          "second": 305829.9601833722,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9442708333333332
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119041.56337258508,
+              94727.20409936027,
+              87034.50310484279,
+              4105.910490536006
+            ],
+            "first": 303988.4019512759,
+            "mean": 304909.18106732395,
+            "n": 128,
+            "se": 181.1981233299991,
+            "second": 305829.9601833722,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9442708333333332
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            23125.70563759251,
+            236.58148460887207
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              153303.01046248787,
+              92679.57097971614,
+              77303.81389446044,
+              4748.491368252269
+            ],
+            "first": 328570.446542734,
+            "mean": 328034.88670491654,
+            "n": 128,
+            "se": 145.60748257453622,
+            "second": 327499.32686709904,
+            "waits": [
+              {
+                "insufficient_energy": 0.013932291666666666,
+                "skill_cd": 26.366666666666685
+              },
+              {
+                "swap_cd": 0.3999999999999991
+              },
+              {
+                "swap_cd": 7.049999999999985
+              },
+              {
+                "swap_cd": 8.433333333333312
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            23125.70563759251,
+            236.58148460887207
+          ],
+          "key": "cea6b490307f80d53ceceb05d13f63a655f5f74a027d0da9024a42ba231ad29b",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              153303.01046248787,
+              92679.57097971614,
+              77303.81389446044,
+              4748.491368252269
+            ],
+            "first": 328570.446542734,
+            "mean": 328034.88670491654,
+            "n": 128,
+            "se": 145.60748257453622,
+            "second": 327499.32686709904,
+            "waits": [
+              {
+                "insufficient_energy": 0.013932291666666666,
+                "skill_cd": 26.366666666666685
+              },
+              {
+                "swap_cd": 0.3999999999999991
+              },
+              {
+                "swap_cd": 7.049999999999985
+              },
+              {
+                "swap_cd": 8.433333333333312
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "anneal-37--fixed-er",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "anneal",
+        "joint_er": false,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.008231433,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 3.1722113920000004,
+        "cap_overrun_seconds": 0.008231432999999733,
+        "completed_decisions": 28,
+        "accepted": 12,
+        "audit_seed": 4000041000000,
+        "failed_fights": 0,
+        "baseline": {
+          "chars": [
+            118895.94540185134,
+            94744.87729676007,
+            87316.25499053055,
+            4107.348915152782
+          ],
+          "first": 303920.2749421912,
+          "mean": 305064.42660429457,
+          "n": 128,
+          "se": 173.5152424036283,
+          "second": 306208.57826639776,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9479166666666663
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            84.70823284817834,
+            230.27338505313352
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              120447.62283446446,
+              94401.61600880748,
+              86056.74077606479,
+              4243.1552178061775
+            ],
+            "first": 303857.6076522735,
+            "mean": 305149.13483714266,
+            "n": 128,
+            "se": 193.8676160928352,
+            "second": 306440.66202201194,
+            "waits": [
+              {},
+              {
+                "swap_cd": 1.4499999999999977
+              },
+              {
+                "skill_cd": 7.3833333333333275
+              },
+              {
+                "swap_cd": 1.963541666666667
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            84.70823284817834,
+            230.27338505313352
+          ],
+          "key": "3dad32fc0cd4697ea1eaf925e43dd7c4b110a0b39faf769643223d8352135c84",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              120447.62283446446,
+              94401.61600880748,
+              86056.74077606479,
+              4243.1552178061775
+            ],
+            "first": 303857.6076522735,
+            "mean": 305149.13483714266,
+            "n": 128,
+            "se": 193.8676160928352,
+            "second": 306440.66202201194,
+            "waits": [
+              {},
+              {
+                "swap_cd": 1.4499999999999977
+              },
+              {
+                "skill_cd": 7.3833333333333275
+              },
+              {
+                "swap_cd": 1.963541666666667
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "anneal",
+        "joint_er": false,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.016249959000005,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 3.1933759300000037,
+        "cap_overrun_seconds": 0.01624995900000492,
+        "completed_decisions": 88,
+        "accepted": 33,
+        "audit_seed": 4000049000000,
+        "failed_fights": 6,
+        "baseline": {
+          "chars": [
+            119115.6103247545,
+            94760.86838798896,
+            87324.6538264722,
+            4112.789012349991
+          ],
+          "first": 304287.8754305027,
+          "mean": 305313.9215515654,
+          "n": 128,
+          "se": 204.92494826115293,
+          "second": 306339.96767262823,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9265624999999995
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119115.6103247545,
+              94760.86838798896,
+              87324.6538264722,
+              4112.789012349991
+            ],
+            "first": 304287.8754305027,
+            "mean": 305313.9215515654,
+            "n": 128,
+            "se": 204.92494826115293,
+            "second": 306339.96767262823,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            4581.1906086869,
+            325.5655857441442
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              113221.07811442604,
+              100371.54910157139,
+              90279.56966353783,
+              6022.915280717162
+            ],
+            "first": 308449.07782063546,
+            "mean": 309895.1121602524,
+            "n": 128,
+            "se": 252.53835939261918,
+            "second": 311341.14649986895,
+            "waits": [
+              {
+                "swap_cd": 0.275
+              },
+              {
+                "swap_cd": 0.9666666666666683
+              },
+              {
+                "insufficient_energy": 1.3738281250000008,
+                "skill_cd": 0.5999999999999999
+              },
+              {
+                "swap_cd": 1.8144531249999973
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            4581.1906086869,
+            325.5655857441442
+          ],
+          "key": "9cf2f3b255e64b9844657be0822a97d67135505def11c21e703871700c050326",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              113221.07811442604,
+              100371.54910157139,
+              90279.56966353783,
+              6022.915280717162
+            ],
+            "first": 308449.07782063546,
+            "mean": 309895.1121602524,
+            "n": 128,
+            "se": 252.53835939261918,
+            "second": 311341.14649986895,
+            "waits": [
+              {
+                "swap_cd": 0.275
+              },
+              {
+                "swap_cd": 0.9666666666666683
+              },
+              {
+                "insufficient_energy": 1.3738281250000008,
+                "skill_cd": 0.5999999999999999
+              },
+              {
+                "swap_cd": 1.8144531249999973
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "anneal",
+        "joint_er": false,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.00200558600002,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 3.2131428230000054,
+        "cap_overrun_seconds": 0.00200558600001699,
+        "completed_decisions": 299,
+        "accepted": 116,
+        "audit_seed": 4000073000000,
+        "failed_fights": 32,
+        "baseline": {
+          "chars": [
+            118826.85429064136,
+            94844.52918849803,
+            87262.08413422512,
+            4105.408115174691
+          ],
+          "first": 303801.12101714336,
+          "mean": 305038.8757285389,
+          "n": 128,
+          "se": 203.2929217000835,
+          "second": 306276.63043993455,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9546874999999992
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118826.85429064136,
+              94844.52918849803,
+              87262.08413422512,
+              4105.408115174691
+            ],
+            "first": 303801.12101714336,
+            "mean": 305038.8757285389,
+            "n": 128,
+            "se": 203.2929217000835,
+            "second": 306276.63043993455,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9546874999999992
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            4468.533081033656,
+            285.2126263665854
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              113043.4255034118,
+              99854.64634648025,
+              90692.56409231244,
+              5916.772867368265
+            ],
+            "first": 307752.60570503626,
+            "mean": 309507.40880957263,
+            "n": 128,
+            "se": 233.3006808359448,
+            "second": 311262.2119141092,
+            "waits": [
+              {
+                "swap_cd": 0.22916666666666663
+              },
+              {
+                "swap_cd": 0.9666666666666683
+              },
+              {
+                "insufficient_energy": 1.3213541666666664,
+                "skill_cd": 0.5953124999999999
+              },
+              {
+                "swap_cd": 1.8093749999999973
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            4468.533081033656,
+            285.2126263665854
+          ],
+          "key": "9cf2f3b255e64b9844657be0822a97d67135505def11c21e703871700c050326",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              113043.4255034118,
+              99854.64634648025,
+              90692.56409231244,
+              5916.772867368265
+            ],
+            "first": 307752.60570503626,
+            "mean": 309507.40880957263,
+            "n": 128,
+            "se": 233.3006808359448,
+            "second": 311262.2119141092,
+            "waits": [
+              {
+                "swap_cd": 0.22916666666666663
+              },
+              {
+                "swap_cd": 0.9666666666666683
+              },
+              {
+                "insufficient_energy": 1.3213541666666664,
+                "skill_cd": 0.5953124999999999
+              },
+              {
+                "swap_cd": 1.8093749999999973
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "anneal-91--fixed-er",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "anneal",
+        "joint_er": false,
+        "local_only": false,
+        "discovery_cpu_seconds": 4.028470077,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 3.220284166,
+        "cap_overrun_seconds": 0.028470076999999705,
+        "completed_decisions": 30,
+        "accepted": 12,
+        "audit_seed": 4000095000000,
+        "failed_fights": 0,
+        "baseline": {
+          "chars": [
+            118952.73450387,
+            94885.40990404415,
+            87224.76117160058,
+            4115.145591381214
+          ],
+          "first": 304649.4521095407,
+          "mean": 305178.0511708957,
+          "n": 128,
+          "se": 175.4066013387714,
+          "second": 305706.65023225057,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9686197916666661
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            1466.0519484554743,
+            264.43468324786335
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              124489.66109011587,
+              92626.76083854224,
+              84959.29561180338,
+              4568.385578890031
+            ],
+            "first": 306705.50693440234,
+            "mean": 306644.1031193512,
+            "n": 128,
+            "se": 200.19604506789287,
+            "second": 306582.6993043002,
+            "waits": [
+              {},
+              {
+                "swap_cd": 0.5999999999999999
+              },
+              {
+                "skill_cd": 8.54999999999998
+              },
+              {
+                "swap_cd": 1.9446614583333321
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            1466.0519484554743,
+            264.43468324786335
+          ],
+          "key": "047aaa2ab0503b3db42f995d8f6978e31d9c67d86c2f4feb6d80d3cb5812a74a",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              124489.66109011587,
+              92626.76083854224,
+              84959.29561180338,
+              4568.385578890031
+            ],
+            "first": 306705.50693440234,
+            "mean": 306644.1031193512,
+            "n": 128,
+            "se": 200.19604506789287,
+            "second": 306582.6993043002,
+            "waits": [
+              {},
+              {
+                "swap_cd": 0.5999999999999999
+              },
+              {
+                "skill_cd": 8.54999999999998
+              },
+              {
+                "swap_cd": 1.9446614583333321
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "anneal",
+        "joint_er": false,
+        "local_only": false,
+        "discovery_cpu_seconds": 12.022929203,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 3.236684375999996,
+        "cap_overrun_seconds": 0.022929203000000342,
+        "completed_decisions": 100,
+        "accepted": 18,
+        "audit_seed": 4000103000000,
+        "failed_fights": 10,
+        "baseline": {
+          "chars": [
+            119049.6624028662,
+            94955.57722972186,
+            87230.88622266549,
+            4111.090270447215
+          ],
+          "first": 304448.05515641335,
+          "mean": 305347.21612570056,
+          "n": 128,
+          "se": 165.10011998106717,
+          "second": 306246.3770949882,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9359374999999999
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119049.6624028662,
+              94955.57722972186,
+              87230.88622266549,
+              4111.090270447215
+            ],
+            "first": 304448.05515641335,
+            "mean": 305347.21612570056,
+            "n": 128,
+            "se": 165.10011998106717,
+            "second": 306246.3770949882,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9359374999999999
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            1370.4953873344407,
+            237.27684793963238
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              124545.13737654522,
+              92677.25779152111,
+              84923.77638482081,
+              4571.539960148353
+            ],
+            "first": 306254.6362750948,
+            "mean": 306717.7115130351,
+            "n": 128,
+            "se": 184.48248222067747,
+            "second": 307180.7867509759,
+            "waits": [
+              {},
+              {
+                "swap_cd": 0.5999999999999999
+              },
+              {
+                "skill_cd": 8.54999999999998
+              },
+              {
+                "swap_cd": 1.9460937499999995
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            1370.4953873344407,
+            237.27684793963238
+          ],
+          "key": "047aaa2ab0503b3db42f995d8f6978e31d9c67d86c2f4feb6d80d3cb5812a74a",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              124545.13737654522,
+              92677.25779152111,
+              84923.77638482081,
+              4571.539960148353
+            ],
+            "first": 306254.6362750948,
+            "mean": 306717.7115130351,
+            "n": 128,
+            "se": 184.48248222067747,
+            "second": 307180.7867509759,
+            "waits": [
+              {},
+              {
+                "swap_cd": 0.5999999999999999
+              },
+              {
+                "skill_cd": 8.54999999999998
+              },
+              {
+                "swap_cd": 1.9460937499999995
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "201bb76528e8ac234be392fe9656cefc837945d78fc4ac2ce5c130dcd6b422b6",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "anneal",
+        "joint_er": false,
+        "local_only": false,
+        "discovery_cpu_seconds": 36.027826955000045,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 3.1943945809999974,
+        "cap_overrun_seconds": 0.027826955000044507,
+        "completed_decisions": 311,
+        "accepted": 80,
+        "audit_seed": 4000127000000,
+        "failed_fights": 51,
+        "baseline": {
+          "chars": [
+            119113.4318739336,
+            94816.90186602541,
+            87294.0613784062,
+            4113.402132603581
+          ],
+          "first": 304295.5613317854,
+          "mean": 305337.79725096846,
+          "n": 128,
+          "se": 175.90622837597394,
+          "second": 306380.03317015205,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9574218749999988
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119113.4318739336,
+              94816.90186602541,
+              87294.0613784062,
+              4113.402132603581
+            ],
+            "first": 304295.5613317854,
+            "mean": 305337.79725096846,
+            "n": 128,
+            "se": 175.90622837597394,
+            "second": 306380.03317015205,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9574218749999988
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            2601.4047634174517,
+            246.63288081841208
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              135674.65288827434,
+              88441.23765858008,
+              77417.4511256056,
+              6405.860341926209
+            ],
+            "first": 308164.1933886521,
+            "mean": 307939.202014386,
+            "n": 128,
+            "se": 169.96945515501082,
+            "second": 307714.21064012015,
+            "waits": [
+              {
+                "skill_cd": 1.8666666666666685
+              },
+              {},
+              {},
+              {
+                "swap_cd": 0.12317708333333334
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            2601.4047634174517,
+            246.63288081841208
+          ],
+          "key": "77e357916af3af73884529f069a2d0bb82c885b5d4e6270b5a081b88f881a0b9",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              135674.65288827434,
+              88441.23765858008,
+              77417.4511256056,
+              6405.860341926209
+            ],
+            "first": 308164.1933886521,
+            "mean": 307939.202014386,
+            "n": 128,
+            "se": 169.96945515501082,
+            "second": 307714.21064012015,
+            "waits": [
+              {
+                "skill_cd": 1.8666666666666685
+              },
+              {},
+              {},
+              {
+                "swap_cd": 0.12317708333333334
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "anneal-11--local-only",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "493cc1b7c1f6d84207bcae1b098273c209efde4b4caf32782e2a9a4c4aa8df15",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": true,
+        "discovery_cpu_seconds": 4.006696749,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 3.7531496870000005,
+        "cap_overrun_seconds": 0.006696748999999613,
+        "completed_decisions": 29,
+        "accepted": 16,
+        "audit_seed": 4000015000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119139.54060158957,
+            94697.43364082987,
+            87096.91178729816,
+            4116.527694777976
+          ],
+          "first": 304420.5521525361,
+          "mean": 305050.41372449533,
+          "n": 128,
+          "se": 183.19862833525457,
+          "second": 305680.2752964548,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.948828124999999
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              119139.54060158957,
+              94697.43364082987,
+              87096.91178729816,
+              4116.527694777976
+            ],
+            "first": 304420.5521525361,
+            "mean": 305050.41372449533,
+            "n": 128,
+            "se": 183.19862833525457,
+            "second": 305680.2752964548,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.948828124999999
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "493cc1b7c1f6d84207bcae1b098273c209efde4b4caf32782e2a9a4c4aa8df15",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": true,
+        "discovery_cpu_seconds": 12.010337886999997,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 3.760396803999999,
+        "cap_overrun_seconds": 0.010337886999996826,
+        "completed_decisions": 90,
+        "accepted": 51,
+        "audit_seed": 4000023000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            118867.4549504056,
+            94683.96612683902,
+            87204.15378747054,
+            4116.235814167752
+          ],
+          "first": 303976.6453114418,
+          "mean": 304871.81067888264,
+          "n": 128,
+          "se": 191.77115156841236,
+          "second": 305766.97604632325,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9694010416666656
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118867.4549504056,
+              94683.96612683902,
+              87204.15378747054,
+              4116.235814167752
+            ],
+            "first": 303976.6453114418,
+            "mean": 304871.81067888264,
+            "n": 128,
+            "se": 191.77115156841236,
+            "second": 305766.97604632325,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9694010416666656
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              118867.4549504056,
+              94683.96612683902,
+              87204.15378747054,
+              4116.235814167752
+            ],
+            "first": 303976.6453114418,
+            "mean": 304871.81067888264,
+            "n": 128,
+            "se": 191.77115156841236,
+            "second": 305766.97604632325,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9694010416666656
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118867.4549504056,
+              94683.96612683902,
+              87204.15378747054,
+              4116.235814167752
+            ],
+            "first": 303976.6453114418,
+            "mean": 304871.81067888264,
+            "n": 128,
+            "se": 191.77115156841236,
+            "second": 305766.97604632325,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9694010416666656
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "493cc1b7c1f6d84207bcae1b098273c209efde4b4caf32782e2a9a4c4aa8df15",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 11,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": true,
+        "discovery_cpu_seconds": 36.009499468000044,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 3.7678339309999984,
+        "cap_overrun_seconds": 0.009499468000043976,
+        "completed_decisions": 270,
+        "accepted": 156,
+        "audit_seed": 4000047000000,
+        "failed_fights": 4,
+        "baseline": {
+          "chars": [
+            119041.56337258508,
+            94727.20409936027,
+            87034.50310484279,
+            4105.910490536006
+          ],
+          "first": 303988.4019512759,
+          "mean": 304909.18106732395,
+          "n": 128,
+          "se": 181.1981233299991,
+          "second": 305829.9601833722,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9442708333333332
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            155.7885,
+            205.99823999999998
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119065.30868107552,
+              94820.5800658017,
+              88374.75279517584,
+              4227.310383556933
+            ],
+            "first": 305557.0128915345,
+            "mean": 306487.9519256099,
+            "n": 128,
+            "se": 180.99911425288315,
+            "second": 307418.89095968544,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9442708333333332
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              119065.30868107552,
+              94820.5800658017,
+              88374.75279517584,
+              4227.310383556933
+            ],
+            "first": 305557.0128915345,
+            "mean": 306487.9519256099,
+            "n": 128,
+            "se": 180.99911425288315,
+            "second": 307418.89095968544,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9442708333333332
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            1578.7708582859068,
+            2.971637805510923
+          ],
+          "key": "c56c97d7bca15251bf6d0275a703f8a246ba300a0738c8c8b35ca5ce2b3e31ff",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              119041.56337258508,
+              94727.20409936027,
+              87034.50310484279,
+              4105.910490536006
+            ],
+            "first": 303988.4019512759,
+            "mean": 304909.18106732395,
+            "n": 128,
+            "se": 181.1981233299991,
+            "second": 305829.9601833722,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9442708333333332
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "anneal-37--local-only",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "493cc1b7c1f6d84207bcae1b098273c209efde4b4caf32782e2a9a4c4aa8df15",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": true,
+        "discovery_cpu_seconds": 4.060808925,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 5.394513513999998,
+        "cap_overrun_seconds": 0.0608089249999999,
+        "completed_decisions": 32,
+        "accepted": 14,
+        "audit_seed": 4000041000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            118895.94540185134,
+            94744.87729676007,
+            87316.25499053055,
+            4107.348915152782
+          ],
+          "first": 303920.2749421912,
+          "mean": 305064.42660429457,
+          "n": 128,
+          "se": 173.5152424036283,
+          "second": 306208.57826639776,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9479166666666663
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            149.37824999999998,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 0,
+          "joint": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            0.0,
+            0.0
+          ],
+          "key": "8ae09a30b7acb0131a01d8840e878975823f41773040c436e344ba5fdaf36782",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118895.94540185134,
+              94744.87729676007,
+              87316.25499053055,
+              4107.348915152782
+            ],
+            "first": 303920.2749421912,
+            "mean": 305064.42660429457,
+            "n": 128,
+            "se": 173.5152424036283,
+            "second": 306208.57826639776,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9479166666666663
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "493cc1b7c1f6d84207bcae1b098273c209efde4b4caf32782e2a9a4c4aa8df15",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": true,
+        "discovery_cpu_seconds": 12.00398542899999,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 5.975050639000003,
+        "cap_overrun_seconds": 0.003985428999989438,
+        "completed_decisions": 89,
+        "accepted": 39,
+        "audit_seed": 4000049000000,
+        "failed_fights": 4,
+        "baseline": {
+          "chars": [
+            119115.6103247545,
+            94760.86838798896,
+            87324.6538264722,
+            4112.789012349991
+          ],
+          "first": 304287.8754305027,
+          "mean": 305313.9215515654,
+          "n": 128,
+          "se": 204.92494826115293,
+          "second": 306339.96767262823,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9265624999999995
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            152.67273,
+            219.07514999999998
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119116.42568947365,
+              94762.66867092847,
+              88633.83214090935,
+              4157.4305408286555
+            ],
+            "first": 305639.9231758171,
+            "mean": 306670.3570421398,
+            "n": 128,
+            "se": 204.83417309129302,
+            "second": 307700.79090846283,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              119116.42568947365,
+              94762.66867092847,
+              88633.83214090935,
+              4157.4305408286555
+            ],
+            "first": 305639.9231758171,
+            "mean": 306670.3570421398,
+            "n": 128,
+            "se": 204.83417309129302,
+            "second": 307700.79090846283,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            1356.4354905744212,
+            0.46814612503115327
+          ],
+          "key": "5c8d1f0bbc34da2c9da59f54a9e9246b6ce27299f06b4e5f18642f3b4e7f066f",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              119115.6103247545,
+              94760.86838798896,
+              87324.6538264722,
+              4112.789012349991
+            ],
+            "first": 304287.8754305027,
+            "mean": 305313.9215515654,
+            "n": 128,
+            "se": 204.92494826115293,
+            "second": 306339.96767262823,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9265624999999995
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "493cc1b7c1f6d84207bcae1b098273c209efde4b4caf32782e2a9a4c4aa8df15",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 37,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": true,
+        "discovery_cpu_seconds": 36.000960185999986,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 5.934407025000013,
+        "cap_overrun_seconds": 0.0009601859999861517,
+        "completed_decisions": 274,
+        "accepted": 126,
+        "audit_seed": 4000073000000,
+        "failed_fights": 4,
+        "baseline": {
+          "chars": [
+            118826.85429064136,
+            94844.52918849803,
+            87262.08413422512,
+            4105.408115174691
+          ],
+          "first": 303801.12101714336,
+          "mean": 305038.8757285389,
+          "n": 128,
+          "se": 203.2929217000835,
+          "second": 306276.63043993455,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9546874999999992
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            152.67273,
+            219.07514999999998
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118827.62044096467,
+              94846.33702438121,
+              88571.46068124953,
+              4149.211455525588
+            ],
+            "first": 305152.4412038527,
+            "mean": 306394.6296021207,
+            "n": 128,
+            "se": 203.24389888692954,
+            "second": 307636.81800038874,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9546874999999992
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            0.0,
+            0.0
+          ],
+          "index": 1,
+          "joint": {
+            "chars": [
+              118827.62044096467,
+              94846.33702438121,
+              88571.46068124953,
+              4149.211455525588
+            ],
+            "first": 305152.4412038527,
+            "mean": 306394.6296021207,
+            "n": 128,
+            "se": 203.24389888692954,
+            "second": 307636.81800038874,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9546874999999992
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            1355.7538735817602,
+            0.4299302619812816
+          ],
+          "key": "5c8d1f0bbc34da2c9da59f54a9e9246b6ce27299f06b4e5f18642f3b4e7f066f",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              118826.85429064136,
+              94844.52918849803,
+              87262.08413422512,
+              4105.408115174691
+            ],
+            "first": 303801.12101714336,
+            "mean": 305038.8757285389,
+            "n": 128,
+            "se": 203.2929217000835,
+            "second": 306276.63043993455,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9546874999999992
+              }
+            ]
+          },
+          "role": "baseline / C0-on-field pattern",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  },
+  {
+    "name": "anneal-91--local-only",
+    "reports": [
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "493cc1b7c1f6d84207bcae1b098273c209efde4b4caf32782e2a9a4c4aa8df15",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": true,
+        "discovery_cpu_seconds": 4.0076204660000005,
+        "discovery_cpu_cap": 4.0,
+        "audit_cpu_seconds": 4.796193098000001,
+        "cap_overrun_seconds": 0.0076204660000005475,
+        "completed_decisions": 25,
+        "accepted": 8,
+        "audit_seed": 4000095000000,
+        "failed_fights": 0,
+        "baseline": {
+          "chars": [
+            118952.73450387,
+            94885.40990404415,
+            87224.76117160058,
+            4115.145591381214
+          ],
+          "first": 304649.4521095407,
+          "mean": 305178.0511708957,
+          "n": 128,
+          "se": 175.4066013387714,
+          "second": 305706.65023225057,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9686197916666661
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            148.0185,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              118952.73450387,
+              94885.40990404415,
+              87224.76117160058,
+              4115.145591381214
+            ],
+            "first": 304649.4521095407,
+            "mean": 305178.0511708957,
+            "n": 128,
+            "se": 175.4066013387714,
+            "second": 305706.65023225057,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9686197916666661
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            12206.433000399149,
+            242.55101465566736
+          ],
+          "index": 3,
+          "joint": {
+            "chars": [
+              141317.36974377057,
+              91550.43510384862,
+              79060.08891509645,
+              5456.590408579462
+            ],
+            "first": 318925.638328383,
+            "mean": 317384.484171295,
+            "n": 128,
+            "se": 162.81811288985082,
+            "second": 315843.3300142068,
+            "waits": [
+              {
+                "skill_cd": 2.0
+              },
+              {
+                "swap_cd": 2.066666666666664
+              },
+              {},
+              {
+                "swap_cd": 2.477473958333334
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            12206.433000399149,
+            242.55101465566736
+          ],
+          "key": "3a8e5066f6ac79269524f5c503eeb250ea76e16168e187a25b4aec4187af0984",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              141317.36974377057,
+              91550.43510384862,
+              79060.08891509645,
+              5456.590408579462
+            ],
+            "first": 318925.638328383,
+            "mean": 317384.484171295,
+            "n": 128,
+            "se": 162.81811288985082,
+            "second": 315843.3300142068,
+            "waits": [
+              {
+                "skill_cd": 2.0
+              },
+              {
+                "swap_cd": 2.066666666666664
+              },
+              {},
+              {
+                "swap_cd": 2.477473958333334
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "493cc1b7c1f6d84207bcae1b098273c209efde4b4caf32782e2a9a4c4aa8df15",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": true,
+        "discovery_cpu_seconds": 12.008314526999998,
+        "discovery_cpu_cap": 12.0,
+        "audit_cpu_seconds": 4.786248912000005,
+        "cap_overrun_seconds": 0.008314526999997796,
+        "completed_decisions": 86,
+        "accepted": 27,
+        "audit_seed": 4000103000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119049.6624028662,
+            94955.57722972186,
+            87230.88622266549,
+            4111.090270447215
+          ],
+          "first": 304448.05515641335,
+          "mean": 305347.21612570056,
+          "n": 128,
+          "se": 165.10011998106717,
+          "second": 306246.3770949882,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9359374999999999
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            148.0185,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119049.6624028662,
+              94955.57722972186,
+              87230.88622266549,
+              4111.090270447215
+            ],
+            "first": 304448.05515641335,
+            "mean": 305347.21612570056,
+            "n": 128,
+            "se": 165.10011998106717,
+            "second": 306246.3770949882,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9359374999999999
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            11879.222053714457,
+            244.21181237547714
+          ],
+          "index": 3,
+          "joint": {
+            "chars": [
+              141497.4280461973,
+              91802.17927469002,
+              78542.50194160822,
+              5384.328916919801
+            ],
+            "first": 319072.19013915415,
+            "mean": 317226.43817941507,
+            "n": 128,
+            "se": 177.5954932794355,
+            "second": 315380.6862196763,
+            "waits": [
+              {
+                "skill_cd": 2.0
+              },
+              {
+                "swap_cd": 2.066666666666664
+              },
+              {},
+              {
+                "swap_cd": 2.5166666666666666
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            11879.222053714457,
+            244.21181237547714
+          ],
+          "key": "3a8e5066f6ac79269524f5c503eeb250ea76e16168e187a25b4aec4187af0984",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              141497.4280461973,
+              91802.17927469002,
+              78542.50194160822,
+              5384.328916919801
+            ],
+            "first": 319072.19013915415,
+            "mean": 317226.43817941507,
+            "n": 128,
+            "se": 177.5954932794355,
+            "second": 315380.6862196763,
+            "waits": [
+              {
+                "skill_cd": 2.0
+              },
+              {
+                "swap_cd": 2.066666666666664
+              },
+              {},
+              {
+                "swap_cd": 2.5166666666666666
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      },
+      {
+        "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+        "implementation_sha256": "493cc1b7c1f6d84207bcae1b098273c209efde4b4caf32782e2a9a4c4aa8df15",
+        "manifest_sha256": "909320d2a8b433444077b9cf8202fecf8143a427a796daa9d9e1ee3db9bdbf96",
+        "seed": 91,
+        "algorithm": "anneal",
+        "joint_er": true,
+        "local_only": true,
+        "discovery_cpu_seconds": 36.10427341200002,
+        "discovery_cpu_cap": 36.0,
+        "audit_cpu_seconds": 4.80125030100001,
+        "cap_overrun_seconds": 0.10427341200001905,
+        "completed_decisions": 264,
+        "accepted": 81,
+        "audit_seed": 4000127000000,
+        "failed_fights": 2,
+        "baseline": {
+          "chars": [
+            119113.4318739336,
+            94816.90186602541,
+            87294.0613784062,
+            4113.402132603581
+          ],
+          "first": 304295.5613317854,
+          "mean": 305337.79725096846,
+          "n": 128,
+          "se": 175.90622837597394,
+          "second": 306380.03317015205,
+          "waits": [
+            {},
+            {
+              "swap_cd": 2.3666666666666694
+            },
+            {
+              "skill_cd": 9.049999999999978
+            },
+            {
+              "swap_cd": 1.9574218749999988
+            }
+          ]
+        },
+        "selected_before_audit": {
+          "artifact_scores": [
+            181.98117,
+            120.57485999999999,
+            148.0185,
+            232.05104999999995
+          ],
+          "baseline_same_allocation": {
+            "chars": [
+              119113.4318739336,
+              94816.90186602541,
+              87294.0613784062,
+              4113.402132603581
+            ],
+            "first": 304295.5613317854,
+            "mean": 305337.79725096846,
+            "n": 128,
+            "se": 175.90622837597394,
+            "second": 306380.03317015205,
+            "waits": [
+              {},
+              {
+                "swap_cd": 2.3666666666666694
+              },
+              {
+                "skill_cd": 9.049999999999978
+              },
+              {
+                "swap_cd": 1.9574218749999988
+              }
+            ]
+          },
+          "cycle_only_same_allocation": [
+            12005.240020567702,
+            263.02093636023227
+          ],
+          "index": 3,
+          "joint": {
+            "chars": [
+              141461.07482715737,
+              91511.5894024328,
+              78938.57166383919,
+              5431.8013781071895
+            ],
+            "first": 319202.4055539149,
+            "mean": 317343.03727153636,
+            "n": 128,
+            "se": 182.1147134041994,
+            "second": 315483.6689891578,
+            "waits": [
+              {
+                "skill_cd": 2.0
+              },
+              {
+                "swap_cd": 2.066666666666664
+              },
+              {},
+              {
+                "swap_cd": 2.498307291666665
+              }
+            ]
+          },
+          "joint_minus_original_baseline": [
+            12005.240020567702,
+            263.02093636023227
+          ],
+          "key": "3a8e5066f6ac79269524f5c503eeb250ea76e16168e187a25b4aec4187af0984",
+          "program_fixed_initial_allocation": {
+            "chars": [
+              141461.07482715737,
+              91511.5894024328,
+              78938.57166383919,
+              5431.8013781071895
+            ],
+            "first": 319202.4055539149,
+            "mean": 317343.03727153636,
+            "n": 128,
+            "se": 182.1147134041994,
+            "second": 315483.6689891578,
+            "waits": [
+              {
+                "skill_cd": 2.0
+              },
+              {
+                "swap_cd": 2.066666666666664
+              },
+              {},
+              {
+                "swap_cd": 2.498307291666665
+              }
+            ]
+          },
+          "role": "structure-0",
+          "status": "independently-audited shortlist member"
+        }
+      }
+    ]
+  }
+]

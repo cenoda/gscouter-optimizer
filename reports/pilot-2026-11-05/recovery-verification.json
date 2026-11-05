@@ -1,0 +1,16 @@
+{
+  "source_commit": "4e09efb",
+  "build": "clean isolated target directory from git archive",
+  "original_decisions": 279,
+  "resumed_decisions": 284,
+  "original_cpu_seconds": 36.00561497400007,
+  "resumed_cpu_seconds": 37.031882948000074,
+  "prior_decisions_preserved": true,
+  "maximum_log_float_roundtrip_delta": 3.552713678800501e-15,
+  "same_checkpoint_identity": true,
+  "rng_persisted_and_advanced": true,
+  "cache_hit_samples_after_reload": 1814,
+  "invariant_checker_passed": true,
+  "recovery_archive_sha256": "230441372adbc599e3e79451f0c5c6b6196804bf8d85b04f689d4d5183935cd3",
+  "resume_test_audit_cpu_seconds": 3.177900300999994
+}

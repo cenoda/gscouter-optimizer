@@ -1,0 +1,20 @@
+{
+  "valid_matrix_discovery_cpu_seconds": 540.3810546230003,
+  "valid_matrix_audit_cpu_seconds": 198.09344303700004,
+  "excluded_initial_local_discovery_cpu_seconds": 108.18405077500006,
+  "excluded_initial_local_audit_cpu_seconds": 40.89277854399996,
+  "preparation_cpu_seconds": 55.189662847,
+  "enumeration_cpu_seconds": 1.0622117039999996,
+  "transfer_probe_cpu_seconds": 5.895561506,
+  "notes": "Add recorded native/gcsim verification CPU, exploratory smoke runs, build/tool setup and report generation. No VM-throughput or total-batch forecast is inferred.",
+  "reference_verification_cpu_seconds": 198.78744900000004,
+  "recovery_verification_incremental_discovery_cpu_seconds": 1.0262679740000067,
+  "recovery_verification_audit_cpu_seconds": 3.177900300999994,
+  "conservative_container_cpu_upper_bound": {
+    "from_utc": "2026-11-05T02:57:52+00:00",
+    "through_utc": "2026-11-05T04:06:50.422210+00:00",
+    "logical_cpus": 16,
+    "cpu_hours_upper_bound": 18.392987599999998,
+    "interpretation": "A deliberately loose upper bound charging every core for all elapsed time since repository clone. Includes build/tool setup, reporting and discarded experiments; not an exact CPU measurement or a cloud-cost forecast."
+  }
+}

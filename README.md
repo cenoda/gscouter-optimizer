@@ -62,11 +62,13 @@ cases, comprehensive scheduling and deployment. No cloud resources or full
 | **gscouter-optimizer** | Standard-build preparation, candidate generation, rotation search, batch scheduling, checkpoints, cost accounting and search reports. |
 | [Gscouter](https://github.com/cenoda/Gscouter) | Party and artifact data, user-build scoring, result presentation and application of discovered cycles. |
 
-The planned optimizer uses the engine's Rust library at a pinned commit. It consumes versioned party, build and artifact-weight snapshots from Gscouter, rather than importing its private Go packages or copying the simulator. It exports GCSL candidates and metadata identifying the engine, input data, seeds, sample counts and measurements. The site evaluates candidates using the player's actual equipment and stats.
+The optimizer uses the engine's Rust library at a pinned commit. It consumes versioned party, build and artifact-weight snapshots from Gscouter, rather than importing its private Go packages or copying the simulator. It exports GCSL candidates and metadata identifying the engine, input data, seeds, sample counts and measurements. The site evaluates candidates using the player's actual equipment and stats.
 
-The optimizer's main implementation language is planned to be Rust. No engine dependency, executable, CI workflow or cloud deployment is configured yet. Creating this repository does not start implementation or allocate cloud resources.
+The local pilot is implemented in Rust. No cloud deployment or batch CI is configured. See the [measured pilot report](reports/pilot-2026-11-05/README.md) for results, limitations and portable machine recovery.
 
 ## Documents
+
+- [Measured Flins pilot](reports/pilot-2026-11-05/README.md): independent results, comparisons, failure cases and recovery.
 
 - [Rotation search](docs/rotation-search.md): agreed decisions and the proposed algorithm, workload and delivery plan.
 - [Design review](docs/design-review.md): critique, accepted changes, limits and pilot requirements.

@@ -1,0 +1,161 @@
+{
+  "iterations": 2048,
+  "warmup": 150,
+  "seconds": 10.054968883,
+  "workers": 4,
+  "team": {
+    "mean": 338512.3852834466,
+    "stderr": 45.430474280130404
+  },
+  "chars": {
+    "columbina": {
+      "mean": 84333.02470339168,
+      "stderr": 18.658316650649063
+    },
+    "flins": {
+      "mean": 151964.80688356524,
+      "stderr": 23.304220636285276
+    },
+    "ineffa": {
+      "mean": 95630.78709808894,
+      "stderr": 33.962883862087295
+    },
+    "sucrose": {
+      "mean": 6583.766598401252,
+      "stderr": 1.2140846263897254
+    }
+  },
+  "frames": 27000,
+  "waits": {
+    "columbina": {
+      "skill_cd": 3.75
+    },
+    "flins": {
+      "skill_cd": 2.2666666666667266
+    },
+    "ineffa": {
+      "swap_cd": 2.3666666666667155
+    },
+    "sucrose": {
+      "swap_cd": 1.950415039062506
+    }
+  },
+  "abils": {
+    "columbina/Burst": [
+      8,
+      410708.27421665174
+    ],
+    "columbina/Gravity Interference (Lunar-Charged)": [
+      66,
+      16348343.68775278
+    ],
+    "columbina/Normal 0": [
+      8,
+      15201.545278549442
+    ],
+    "columbina/Skill": [
+      16,
+      425995.18268623936
+    ],
+    "columbina/Skill (DoT)": [
+      154,
+      2312789.655342762
+    ],
+    "columbina/lunarcharged": [
+      59.20458984375,
+      5786869.065740422
+    ],
+    "flins/Arcane Light (0 dmg)": [
+      17,
+      0
+    ],
+    "flins/Normal 0 (Skill)": [
+      133,
+      833618.4792880369
+    ],
+    "flins/Normal 1 (Skill)": [
+      83,
+      535699.3440732859
+    ],
+    "flins/Normal 2 (Skill)": [
+      33,
+      269485.3607578837
+    ],
+    "flins/Normal 3 (Skill)": [
+      66,
+      308769.9409779893
+    ],
+    "flins/Northland Spearstorm": [
+      50,
+      1000084.6653960968
+    ],
+    "flins/Thunderous Symphony": [
+      100,
+      39047594.19941961
+    ],
+    "flins/lunarcharged": [
+      33.21337890625,
+      3594190.0751565094
+    ],
+    "ineffa/Birgitta": [
+      153,
+      1369531.8081690785
+    ],
+    "ineffa/Birgitta (A1)": [
+      153,
+      20242805.650349036
+    ],
+    "ineffa/Cleaning Mode: Carrier Frequency": [
+      16,
+      130361.0325901189
+    ],
+    "ineffa/Normal 0": [
+      5,
+      14141.900138198018
+    ],
+    "ineffa/Supreme Instruction: Cyclonic Exterminator": [
+      8,
+      509682.6787041917
+    ],
+    "ineffa/lunarcharged": [
+      64.58251953125,
+      6422713.059476171
+    ],
+    "sucrose/Astable Anemohypostasis Creation-6308": [
+      20.93994140625,
+      115102.93995637429
+    ],
+    "sucrose/Charge Attack": [
+      9.06005859375,
+      23957.19079166385
+    ],
+    "sucrose/Forbidden Creation-Isomer 75/Type II": [
+      32,
+      123268.67234672961
+    ],
+    "sucrose/Forbidden Creation-Isomer 75/Type II (Absorb)": [
+      32,
+      31806.39541048164
+    ],
+    "sucrose/Normal 0": [
+      37.72265625,
+      27784.155685257647
+    ],
+    "sucrose/Normal 1": [
+      5,
+      3356.377573199894
+    ],
+    "sucrose/lunarcharged": [
+      6,
+      691099.1996381271
+    ],
+    "sucrose/swirl-electro": [
+      95.72265625,
+      721324.3656699436
+    ],
+    "sucrose/swirl-hydro": [
+      31.2392578125,
+      237430.68244859445
+    ]
+  }
+}
