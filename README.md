@@ -24,6 +24,23 @@ python3 scripts/pilot_matrix.py matrix
 ./target/release/gso enumerate --manifest data/flins-c1/standard.json
 ```
 
+The documented greedy retry is available separately from the legacy control:
+
+```sh
+./target/release/gso search --manifest data/flins-c1/standard.json \
+  --algorithm greedy --revised --seconds 36 --seed 11 --out runs/revised
+python3 scripts/retry_pilot.py restricted
+python3 scripts/retry_pilot.py matrix
+```
+
+`--revised` adds character-agnostic action-list neighborhoods, proposal
+provenance and a final local-improvement window within the same CPU cap.
+The legacy path remains available without that flag. `--restricted-domain
+--fixed-er` runs the production evaluator and decision loop on the declared
+eight-program domain; it never reads the enumeration table. New checkpoint
+identities include the retry protocol, modes and build configuration. Exact
+JSON floating-point round trips preserve restored candidate keys and logs.
+
 `--seconds` caps cumulative discovery CPU, including child workers, failed
 samples, parsing, ER repairs and incumbent comparisons. A worker is also bounded
 by a wall-time limit; a timeout is unresolved. Checkpoints retain programs,

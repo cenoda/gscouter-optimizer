@@ -71,6 +71,54 @@ fn block(actor: usize, names: &[&str], period: u8) -> Step {
     }
 }
 impl Program {
+    pub fn restricted_domain() -> Vec<Self> {
+        let mut programs = Vec::new();
+        for frames in [360, 600] {
+            for normals in [2, 4] {
+                for period in [1, 2] {
+                    let mut p = Self::families("").remove(1);
+                    if let Self::Typed { cycle, .. } = &mut p {
+                        if let Step::Field {
+                            frames: f,
+                            normals: n,
+                            ..
+                        } = &mut cycle[3]
+                        {
+                            *f = frames;
+                            *n = normals;
+                        }
+                        if let Step::Block { period: p, .. } = &mut cycle[0] {
+                            *p = period;
+                        }
+                    }
+                    programs.push(p);
+                }
+            }
+        }
+        programs
+    }
+
+    pub fn mutate_revised(&self, rng: &mut Rng) -> (Self, String) {
+        if rng.index(100) < 60 {
+            let neighbors = self.local_neighbors();
+            if !neighbors.is_empty() {
+                return neighbors[rng.index(neighbors.len())].clone();
+            }
+        }
+        (self.mutate(rng), "legacy action mutation".into())
+    }
+
+    /// A bounded, deterministic neighborhood; no character-specific combos.
+    pub fn local_neighbors(&self) -> Vec<(Self, String)> {
+        let Self::Library(raw) = self else {
+            return Vec::new();
+        };
+        source_neighbors(raw)
+            .into_iter()
+            .map(|(s, label)| (Self::Library(s), label))
+            .collect()
+    }
+
     pub fn families(baseline: &str) -> Vec<Self> {
         vec![
             Self::Library(baseline.into()),
@@ -314,6 +362,128 @@ impl Program {
     }
 }
 
+/// Edit complete action lists while leaving all surrounding control tokens
+/// untouched. Round-robin action positions keep long statements from crowding
+/// out every other character under the neighborhood cap.
+fn source_neighbors(raw: &str) -> Vec<(String, String)> {
+    use gse::gcsl::Tok;
+    let lexed = gse::gcsl::lex(raw);
+    if lexed.len() > 1200 {
+        return Vec::new();
+    }
+    let text: Vec<String> = lexed
+        .iter()
+        .filter(|t| t.typ != Tok::Eof)
+        .map(|t| t.val.clone())
+        .collect();
+    let mut statements = Vec::new();
+    for i in 0..text.len().saturating_sub(1) {
+        if lexed[i].typ != Tok::CharacterKey || lexed[i + 1].typ != Tok::ActionKey {
+            continue;
+        }
+        let Some(end) = (i + 1..text.len()).find(|&j| [";", "{", "}"].contains(&text[j].as_str()))
+        else {
+            continue;
+        };
+        if text[end] != ";" {
+            continue;
+        }
+        let actions: Vec<Vec<String>> = text[i + 1..end]
+            .split(|t| t == ",")
+            .map(|a| a.to_vec())
+            .collect();
+        if actions.iter().all(|a| !a.is_empty()) {
+            statements.push((i, end, actions));
+        }
+    }
+    let context = NAMES
+        .iter()
+        .map(|n| format!("{n} char lvl=90/90 cons=1 talent=10,10,10;\n"))
+        .collect::<String>();
+    let mut result = Vec::new();
+    let mut seen = std::collections::BTreeSet::from([text.join(" ")]);
+    let max_actions = statements
+        .iter()
+        .map(|(_, _, a)| a.len())
+        .max()
+        .unwrap_or(0);
+    for position in 0..max_actions {
+        for (si, (start, end, actions)) in statements.iter().enumerate() {
+            if position >= actions.len() {
+                continue;
+            }
+            let mut edits: Vec<(Vec<Vec<String>>, String)> = Vec::new();
+            if position == 0 {
+                edits.push((Vec::new(), format!("delete statement {si}")));
+            }
+            for width in 1..=3 {
+                if position + width <= actions.len() {
+                    let mut a = actions.clone();
+                    a.drain(position..position + width);
+                    edits.push((a, format!("delete actions {si}:{position}+{width}")));
+                }
+            }
+            if actions[position][0] == "attack" {
+                let count = actions[position]
+                    .get(2)
+                    .and_then(|v| v.parse::<i32>().ok())
+                    .unwrap_or(1);
+                for delta in [-2, -1, 1, 2] {
+                    let n = count + delta;
+                    if (1..=8).contains(&n) {
+                        let mut a = actions.clone();
+                        a[position] = vec!["attack".into(), ":".into(), n.to_string()];
+                        edits.push((a, format!("normal count {si}:{position}:{count}->{n}")));
+                    }
+                }
+            }
+            for delta in [-1isize, 1] {
+                let j = position as isize + delta;
+                if j >= 0 && (j as usize) < actions.len() {
+                    let mut a = actions.clone();
+                    a.swap(position, j as usize);
+                    edits.push((a, format!("relocate action {si}:{position}->{j}")));
+                }
+            }
+            if actions.len() < 24 {
+                let mut a = actions.clone();
+                a.insert(position, a[position].clone());
+                edits.push((a, format!("duplicate action {si}:{position}")));
+            }
+            for (actions, label) in edits {
+                let replacement = if actions.is_empty() {
+                    String::new()
+                } else {
+                    format!(
+                        "{} {} ;",
+                        text[*start],
+                        actions
+                            .iter()
+                            .map(|a| a.join(" "))
+                            .collect::<Vec<_>>()
+                            .join(" , ")
+                    )
+                };
+                let mut changed = text.clone();
+                changed.splice(*start..=*end, [replacement]);
+                let source = changed.join(" ");
+                if !seen.insert(source.clone()) {
+                    continue;
+                }
+                if gse::gcsl::parse(&format!("target lvl=100 resist=0.1;\n{context}{source}"))
+                    .is_ok()
+                {
+                    result.push((source, label));
+                    if result.len() == 256 {
+                        return result;
+                    }
+                }
+            }
+        }
+    }
+    result
+}
+
 /// Mutate actual action lists while retaining the original program's guards,
 /// loop variables and opening. This is not a trace flattened from one seed.
 /// The engine lexer retains original token spellings, including quoted strings.
@@ -477,6 +647,61 @@ fn render(s: &Step, i: usize, cyclic: bool) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn block_neighborhood_preserves_guards_and_edits_every_actor() {
+        let raw = "active ineffa; for let i=0; i<2; i=i+1 { if .sucrose.skill.ready { columbina attack:2, dash; sucrose attack:3; ineffa skill, burst; flins attack:4, skill, burst; } }";
+        let p = Program::Library(raw.into());
+        let neighbors = p.local_neighbors();
+        assert!(!neighbors.is_empty() && neighbors.len() <= 256);
+        assert_eq!(neighbors, p.local_neighbors());
+        for (p, _) in &neighbors {
+            let Program::Library(s) = p else {
+                panic!("source must retain its representation");
+            };
+            assert!(s.contains("if .sucrose .skill .ready"));
+            assert!(s.contains("i = i + 1"));
+        }
+        for index in 0..4 {
+            assert!(
+                neighbors
+                    .iter()
+                    .any(|(_, label)| label == &format!("delete statement {index}"))
+            );
+        }
+        assert!(
+            neighbors
+                .iter()
+                .any(|(_, l)| l.starts_with("normal count 3:"))
+        );
+        assert!(
+            neighbors
+                .iter()
+                .any(|(_, l)| l.starts_with("normal count 0:"))
+        );
+        assert!(
+            neighbors
+                .iter()
+                .any(|(_, l)| l.starts_with("delete actions") && l.ends_with("+2"))
+        );
+        assert!(
+            neighbors
+                .iter()
+                .any(|(_, l)| l.starts_with("relocate action"))
+        );
+    }
+
+    #[test]
+    fn restricted_neighbors_are_exactly_the_declared_three_bit_domain() {
+        let domain = Program::restricted_domain();
+        assert_eq!(domain.len(), 8);
+        for i in 0..8 {
+            for bit in 0..3 {
+                assert_ne!(domain[i], domain[i ^ (1 << bit)]);
+            }
+        }
+        let unique: std::collections::BTreeSet<_> = domain.iter().map(Program::gcsl).collect();
+        assert_eq!(unique.len(), 8);
+    }
     #[test]
     fn source_mutations_preserve_guards_and_can_introduce_new_actions() {
         let raw = std::fs::read_to_string("data/flins-c1/baseline.gcsl").unwrap();

@@ -15,7 +15,7 @@ def check(path):
             cache[record["key"], record["seed"] + i] = sample
     decisions = 0
     for event in state["events"]:
-        if event["kind"] not in ("chain", "baseline allocation"):
+        if event["kind"] not in ("chain", "baseline allocation", "polish"):
             assert not event["accepted"]
             continue
         assert event["samples"] >= 16
@@ -29,6 +29,14 @@ def check(path):
         assert event["accepted"] == (delta >= event["threshold"])
         decisions += 1
     report = json.loads((path / "report.json").read_text())
+    if "revised" in report:
+        rows = [json.loads(line) for line in (path / "proposals.jsonl").read_text().splitlines()]
+        proposed = {(r["step"],r["key"]) for r in rows}
+        assert all((e["step"],e["proposal_key"]) in proposed for e in state["events"])
+        if state["pending"]:
+            assert any(r["step"]==state["step"] and r["candidate"]==state["pending"]["next"] for r in rows)
+        if report.get("restricted_domain"):
+            assert all(e["samples"]>=32 for e in state["events"] if e["kind"]=="chain")
     if report["local_only"]:
         assert state["events"][0]["current_key"] == report["shortlist_frozen_keys"][0], "local-only must share the original baseline start"
     assert len(report["audits"]) <= 6

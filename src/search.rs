@@ -5,7 +5,8 @@ use crate::{
 };
 use serde::{Deserialize, Serialize};
 use std::{
-    fs,
+    fs::{self, OpenOptions},
+    io::Write,
     path::{Path, PathBuf},
     time::Instant,
 };
@@ -53,6 +54,12 @@ struct State {
     events: Vec<Event>,
     curve: Vec<serde_json::Value>,
     pending: Option<Pending>,
+    polish: Option<Polish>,
+}
+#[derive(Clone, Serialize, Deserialize)]
+struct Polish {
+    anchor: String,
+    cursor: usize,
 }
 #[derive(Clone, Serialize, Deserialize)]
 struct Pending {
@@ -62,6 +69,9 @@ struct Pending {
     u: f64,
     baseline_trial: bool,
     repairs_done: bool,
+    reference: Candidate,
+    operator: String,
+    polishing: bool,
 }
 #[derive(Serialize, Deserialize)]
 struct Event {
@@ -76,6 +86,8 @@ struct Event {
     cpu: f64,
     current_key: String,
     proposal_key: String,
+    operator: String,
+    phase: String,
 }
 #[derive(Clone)]
 struct Options {
@@ -88,6 +100,8 @@ struct Options {
     local: bool,
     joint: bool,
     audit: usize,
+    revised: bool,
+    restricted: bool,
 }
 
 fn proposal(
@@ -96,7 +110,8 @@ fn proposal(
     rng: &mut Rng,
     joint: bool,
     force_alloc: bool,
-) -> Candidate {
+    revised: bool,
+) -> (Candidate, String) {
     let mut next = c.clone();
     next.parent = Some(c.key());
     if joint && (force_alloc || rng.index(100) < 35) {
@@ -112,14 +127,100 @@ fn proposal(
             };
             if let Some(m) = next.allocation.exchange(frozen, ci, pi, ti, &stat) {
                 next.allocation = m;
-                return next;
+                return (next, format!("allocation exchange {ci}:{pi}:{ti}->{stat}"));
             }
         }
     }
     if !force_alloc {
+        if revised {
+            let (program, label) = next.program.mutate_revised(rng);
+            next.program = program;
+            return (next, label);
+        }
         next.program = next.program.mutate(rng);
     }
-    next
+    (next, "legacy action mutation".into())
+}
+
+fn record_proposal(out: &Path, step: usize, pending: &Pending) -> R<()> {
+    let mut f = OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open(out.join("proposals.jsonl"))
+        .map_err(|e| e.to_string())?;
+    serde_json::to_writer(
+        &mut f,
+        &serde_json::json!({"step":step,
+        "phase":if pending.polishing {"polish"} else {"discovery"},
+        "operator":pending.operator,"repairs_done":pending.repairs_done,"reference_key":pending.reference.key(),
+        "key":pending.next.key(),"candidate":pending.next}),
+    )
+    .map_err(|e| e.to_string())?;
+    f.write_all(b"\n")
+        .and_then(|_| f.sync_all())
+        .map_err(|e| e.to_string())
+}
+
+fn polish_neighbors(c: &Candidate, frozen: &Manifest, joint: bool) -> Vec<(Candidate, String)> {
+    let mut programs = c.program.local_neighbors().into_iter();
+    let mut allocations = Vec::new();
+    if joint {
+        // Round-robin token positions; character ownership and physical
+        // feasibility remain enforced by Manifest::exchange.
+        for ti in 0..9 {
+            for pi in 0..5 {
+                for ci in 0..4 {
+                    for stat in &c.allocation.members[ci].useful {
+                        if let Some(a) = c.allocation.exchange(frozen, ci, pi, ti, stat) {
+                            allocations
+                                .push((a, format!("polish allocation {ci}:{pi}:{ti}->{stat}")));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    let mut allocations = allocations.into_iter();
+    let mut result = Vec::new();
+    let mut seen = std::collections::BTreeSet::from([c.key()]);
+    loop {
+        let mut produced = false;
+        for allocation_turn in [false, true] {
+            let item = if allocation_turn {
+                allocations.next().map(|(a, label)| {
+                    (
+                        Candidate {
+                            allocation: a,
+                            ..c.clone()
+                        },
+                        label,
+                    )
+                })
+            } else {
+                programs.next().map(|(p, label)| {
+                    (
+                        Candidate {
+                            program: p,
+                            ..c.clone()
+                        },
+                        label,
+                    )
+                })
+            };
+            if let Some((mut next, label)) = item {
+                produced = true;
+                next.parent = Some(c.key());
+                if seen.insert(next.key()) {
+                    result.push((next, label));
+                }
+            }
+        }
+        if !produced || result.len() >= 256 {
+            break;
+        }
+    }
+    result.truncate(256);
+    result
 }
 fn eval(e: &mut Evaluator, c: &Candidate, seed: i64, n: usize) -> R<Vec<Sample>> {
     e.eval(&c.allocation, &c.program, seed, n)
@@ -129,14 +230,23 @@ fn spent(e: &Evaluator, carried: f64, parent_start: f64, worker_start: f64) -> f
 }
 
 fn initialize(o: &Options, m: &Manifest, baseline: &str, identity: &str) -> State {
+    let mut initial_rng = Rng(o.seed);
     let base = Candidate {
-        program: Program::Library(baseline.into()),
+        program: if o.restricted {
+            Program::restricted_domain()[initial_rng.index(8)].clone()
+        } else {
+            Program::Library(baseline.into())
+        },
         allocation: m.clone(),
         role: "baseline / C0-on-field pattern".into(),
         parent: None,
     };
-    let programs = Program::families(baseline);
-    let programs = if o.local {
+    let programs = if o.restricted {
+        vec![base.program.clone()]
+    } else {
+        Program::families(baseline)
+    };
+    let programs = if o.local && !o.restricted {
         vec![programs[0].clone()]
     } else {
         programs
@@ -158,9 +268,9 @@ fn initialize(o: &Options, m: &Manifest, baseline: &str, identity: &str) -> Stat
         })
         .collect();
     State {
-        format: 1,
+        format: 2,
         identity: identity.into(),
-        rng: Rng(o.seed),
+        rng: initial_rng,
         chains,
         archive: vec![base.clone()],
         best: base.clone(),
@@ -174,12 +284,16 @@ fn initialize(o: &Options, m: &Manifest, baseline: &str, identity: &str) -> Stat
         events: Vec::new(),
         curve: Vec::new(),
         pending: None,
+        polish: None,
     }
 }
 
 fn run(o: &Options) -> R<()> {
     if !o.seconds.is_finite() || o.seconds <= 0.0 || o.audit == 0 {
         return Err("positive CPU seconds and audit count required".into());
+    }
+    if o.restricted && o.joint {
+        return Err("restricted-domain recovery requires --fixed-er".into());
     }
     let parent_start = cpu();
     let wall = Instant::now();
@@ -201,13 +315,15 @@ fn run(o: &Options) -> R<()> {
         return Err("pilot baseline must begin with active setup".into());
     }
     let identity = hash(&format!(
-        "{}\n{}\n{}\n{}\n{}\n{}\n{}",
+        "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}",
         serde_json::to_string(&m).unwrap(),
         baseline,
         o.seed,
         o.algorithm,
         o.local,
         o.joint,
+        o.revised,
+        o.restricted,
         implementation_hash()
     ));
     fs::create_dir_all(&o.out).map_err(|e| e.to_string())?;
@@ -218,18 +334,35 @@ fn run(o: &Options) -> R<()> {
     } else {
         initialize(o, &m, &baseline, &identity)
     };
-    if state.identity != identity || state.format != 1 {
+    if state.identity != identity || state.format != 2 {
         return Err("checkpoint experiment identity mismatch".into());
     }
     let mut e = Evaluator::new(&o.out)?;
     let carried = state.parent_cpu;
     let worker_start = e.worker_cpu;
     if state.best_hint == 0.0 {
-        state.best_hint = stats(&eval(&mut e, &state.baseline, SEARCH_SEED, 16)?).mean;
+        state.best_hint = stats(&eval(
+            &mut e,
+            &state.baseline,
+            if o.restricted {
+                6_000_000_000_000
+            } else {
+                SEARCH_SEED
+            },
+            if o.restricted { 32 } else { 16 },
+        )?)
+        .mean;
         state.reference_dps = state.best_hint;
     }
     let initial_dps = state.reference_dps.max(1.0);
+    let decision_count = if o.restricted { 32 } else { 16 };
+    let mut polish_cache: Option<(String, Vec<(Candidate, String)>)> = None;
     while spent(&e, carried, parent_start, worker_start) < o.seconds {
+        let polishing = state.pending.as_ref().map(|p| p.polishing).unwrap_or(
+            o.revised
+                && !o.restricted
+                && spent(&e, carried, parent_start, worker_start) >= o.seconds * 0.75,
+        );
         let family = if let Some(p) = &state.pending {
             p.family
         } else if state.step < state.chains.len() * 4 || state.step.is_multiple_of(5) {
@@ -253,8 +386,10 @@ fn run(o: &Options) -> R<()> {
         // One family is executing; all other family states are paused. This
         // serial implementation uses at most one of the two permitted slots.
         let current = state.chains[family].current.clone();
-        let baseline_trial = o.joint && state.step % 5 == 4;
-        let origin = if baseline_trial {
+        let baseline_trial = !polishing && o.joint && state.step % 5 == 4;
+        let origin = if polishing {
+            state.best.clone()
+        } else if baseline_trial {
             state.baseline_alloc.clone()
         } else if o.algorithm == "random" {
             initialize(o, &m, &baseline, &identity).chains[family]
@@ -264,24 +399,78 @@ fn run(o: &Options) -> R<()> {
             current.clone()
         };
         if state.pending.is_none() {
-            let mut next = if state.chains[family].steps == 0 && !baseline_trial {
-                origin.clone()
+            let (mut next, mut operator) = if polishing {
+                let anchor = origin.key();
+                if state.polish.as_ref().is_none_or(|p| p.anchor != anchor) {
+                    state.polish = Some(Polish { anchor, cursor: 0 });
+                }
+                if polish_cache
+                    .as_ref()
+                    .is_none_or(|(key, _)| key != &origin.key())
+                {
+                    polish_cache = Some((origin.key(), polish_neighbors(&origin, &m, o.joint)));
+                }
+                let neighbors = &polish_cache.as_ref().unwrap().1;
+                let cursor = state.polish.as_ref().unwrap().cursor;
+                let Some(next) = neighbors.get(cursor).cloned() else {
+                    break;
+                };
+                next
+            } else if state.chains[family].steps == 0 && !baseline_trial {
+                (origin.clone(), "initial family evaluation".into())
+            } else if o.restricted {
+                let domain = Program::restricted_domain();
+                let index = domain
+                    .iter()
+                    .position(|p| p == &origin.program)
+                    .ok_or("candidate outside restricted domain")?;
+                let bit = state.rng.index(3);
+                (
+                    Candidate {
+                        program: domain[index ^ (1 << bit)].clone(),
+                        parent: Some(origin.key()),
+                        ..origin.clone()
+                    },
+                    format!("restricted bit {bit}"),
+                )
             } else {
-                proposal(&origin, &m, &mut state.rng, o.joint, baseline_trial)
+                proposal(
+                    &origin,
+                    &m,
+                    &mut state.rng,
+                    o.joint,
+                    baseline_trial,
+                    o.revised,
+                )
             };
             if o.algorithm == "random" && !baseline_trial && state.chains[family].steps > 0 {
                 for _ in 0..state.rng.index(6) {
-                    next = proposal(&next, &m, &mut state.rng, o.joint, false);
+                    (next, operator) =
+                        proposal(&next, &m, &mut state.rng, o.joint, false, o.revised);
                 }
             }
             state.pending = Some(Pending {
                 next,
                 family,
-                decision_seed: SEARCH_SEED + ((state.step / 4) * 64) as i64,
+                decision_seed: if o.restricted {
+                    6_000_000_000_000
+                } else {
+                    SEARCH_SEED + ((state.step / 4) * 64) as i64
+                },
                 u: state.rng.uniform(),
                 baseline_trial,
                 repairs_done: false,
+                reference: if polishing {
+                    origin.clone()
+                } else if baseline_trial {
+                    state.baseline_alloc.clone()
+                } else {
+                    current.clone()
+                },
+                operator,
+                polishing,
             });
+            record_proposal(&o.out, state.step, state.pending.as_ref().unwrap())?;
         }
         let pending = state.pending.clone().unwrap();
         let Pending {
@@ -291,22 +480,53 @@ fn run(o: &Options) -> R<()> {
             u,
             baseline_trial,
             repairs_done,
+            reference,
+            operator,
+            polishing,
         } = pending;
+        let phase = if polishing { "polish" } else { "discovery" }.to_string();
+        if o.revised && operator != "initial family evaluation" && next.key() == reference.key() {
+            state.events.push(Event {
+                step: state.step,
+                family,
+                decision_seed,
+                samples: 0,
+                accepted: false,
+                delta: 0.0,
+                threshold: 0.0,
+                kind: "exact no-op".into(),
+                cpu: spent(&e, carried, parent_start, worker_start),
+                current_key: reference.key(),
+                proposal_key: next.key(),
+                operator,
+                phase,
+            });
+            state.chains[family].steps += 1;
+            state.step += 1;
+            state.pending = None;
+            if polishing {
+                state.polish.as_mut().unwrap().cursor += 1;
+            }
+            continue;
+        }
         let mut temperature = state.chains[family].temperature;
-        let mut threshold = if o.algorithm == "anneal" && !baseline_trial {
+        let mut threshold = if o.algorithm == "anneal" && !baseline_trial && !polishing {
             temperature * u.ln()
         } else {
             0.0
         };
         let mut completed = None;
         let mut failed = None;
-        for n in [2, 4, 8, 16] {
+        for n in [2, 4, 8, 16, 32]
+            .into_iter()
+            .filter(|n| *n <= decision_count)
+        {
             if spent(&e, carried, parent_start, worker_start) >= o.seconds {
                 break;
             }
             match eval(&mut e, &next, decision_seed, n) {
                 Ok(s) => {
-                    if n == 16 {
+                    if n == decision_count {
                         completed = Some(s);
                     }
                 }
@@ -327,12 +547,10 @@ fn run(o: &Options) -> R<()> {
                 threshold,
                 kind: format!("failed/unresolved: {err}"),
                 cpu: spent(&e, carried, parent_start, worker_start),
-                current_key: if baseline_trial {
-                    state.baseline_alloc.key()
-                } else {
-                    current.key()
-                },
+                current_key: reference.key(),
                 proposal_key: next.key(),
+                operator: operator.clone(),
+                phase: phase.clone(),
             });
         } else if let Some(mut y) = completed {
             if spent(&e, carried, parent_start, worker_start) >= o.seconds {
@@ -342,6 +560,7 @@ fn run(o: &Options) -> R<()> {
             // change. Every full comparison is charged to this same cap.
             // An unfinished repair remains a proposal, never an installed state.
             if o.joint
+                && !polishing
                 && !baseline_trial
                 && !repairs_done
                 && state.step % 4 == 3
@@ -361,7 +580,15 @@ fn run(o: &Options) -> R<()> {
                             )
                     })
                     .unwrap();
-                let add_er = diagnostic.waits[ci].values().sum::<f64>() > 1.0;
+                let add_er = if o.revised {
+                    diagnostic.waits[ci]
+                        .get("insufficient_energy")
+                        .copied()
+                        .unwrap_or(0.0)
+                        > 1.0
+                } else {
+                    diagnostic.waits[ci].values().sum::<f64>() > 1.0
+                };
                 let mut repaired = next.clone();
                 for _ in 0..2 {
                     let mut allocation = None;
@@ -395,22 +622,18 @@ fn run(o: &Options) -> R<()> {
                     }
                 }
                 state.pending.as_mut().unwrap().next = next.clone();
+                record_proposal(&o.out, state.step, state.pending.as_ref().unwrap())?;
             }
             if spent(&e, carried, parent_start, worker_start) >= o.seconds {
                 break;
             }
-            let reference = if baseline_trial {
-                &state.baseline_alloc
-            } else {
-                &current
-            };
             let reference_key = reference.key();
-            match eval(&mut e, reference, decision_seed, 16) {
+            match eval(&mut e, &reference, decision_seed, decision_count) {
                 Err(err) => state.events.push(Event {
                     step: state.step,
                     family,
                     decision_seed,
-                    samples: 16,
+                    samples: decision_count,
                     accepted: false,
                     delta: 0.0,
                     threshold,
@@ -418,10 +641,12 @@ fn run(o: &Options) -> R<()> {
                     cpu: spent(&e, carried, parent_start, worker_start),
                     current_key: reference_key.clone(),
                     proposal_key: next.key(),
+                    operator: operator.clone(),
+                    phase: phase.clone(),
                 }),
                 Ok(x) => {
                     let delta = (stats(&y).mean - stats(&x).mean) / initial_dps;
-                    if state.chains[family].steps == 1 && !baseline_trial {
+                    if state.chains[family].steps == 1 && !baseline_trial && !polishing {
                         // Bootstrap the paired block differences to calibrate
                         // noise scale, separately from the acceptance draw u.
                         let mut bootstrap = Rng(0x43414c4942524154u64 ^ family as u64 ^ o.seed);
@@ -453,7 +678,7 @@ fn run(o: &Options) -> R<()> {
                     if accept {
                         if baseline_trial {
                             state.baseline_alloc = next.clone();
-                        } else {
+                        } else if !polishing {
                             state.chains[family].current = next.clone();
                             state.chains[family].accepted += 1;
                             state.chains[family].score = stats(&y).mean;
@@ -463,11 +688,13 @@ fn run(o: &Options) -> R<()> {
                         step: state.step,
                         family,
                         decision_seed,
-                        samples: 16,
+                        samples: decision_count,
                         accepted: accept,
                         delta,
                         threshold,
-                        kind: if baseline_trial {
+                        kind: if polishing {
+                            "polish"
+                        } else if baseline_trial {
                             "baseline allocation"
                         } else {
                             "chain"
@@ -476,11 +703,17 @@ fn run(o: &Options) -> R<()> {
                         cpu: spent(&e, carried, parent_start, worker_start),
                         current_key: reference_key.clone(),
                         proposal_key: next.key(),
+                        operator: operator.clone(),
+                        phase: phase.clone(),
                     });
-                    if stats(&y).mean > state.best_hint
+                    if ((polishing && delta > 0.0) || stats(&y).mean > state.best_hint)
                         && spent(&e, carried, parent_start, worker_start) < o.seconds
                     {
-                        let seed = PROMOTION_SEED + (state.promotions * 128) as i64;
+                        let seed = if o.restricted {
+                            6_000_000_000_000
+                        } else {
+                            PROMOTION_SEED + (state.promotions * 128) as i64
+                        };
                         state.promotions += 1;
                         let a = eval(&mut e, &next, seed, 32);
                         if spent(&e, carried, parent_start, worker_start) < o.seconds
@@ -506,6 +739,9 @@ fn run(o: &Options) -> R<()> {
             break;
         }
         state.chains[family].steps += 1;
+        if polishing {
+            state.polish.as_mut().unwrap().cursor += 1;
+        }
         // Temperature is tied to completed decisions and persisted, never
         // restarted when the outer scheduler resumes a family.
         state.chains[family].temperature *= 0.997;
@@ -576,7 +812,7 @@ fn run(o: &Options) -> R<()> {
     latencies.sort_by(f64::total_cmp);
     let report = serde_json::json!({"format":1,"status":"development pilot only; expansion deferred","engine":ENGINE,
         "implementation_sha256":implementation_hash(),"manifest_sha256":hash(&serde_json::to_string(&m).unwrap()),"site_commit":m.site_commit,
-        "algorithm":o.algorithm,"seed":o.seed,"joint_er":o.joint,"local_only":o.local,
+        "algorithm":o.algorithm,"seed":o.seed,"joint_er":o.joint,"local_only":o.local,"revised":o.revised,"restricted_domain":o.restricted,
         "objective":{"duration":450,"warmup":150},"audit_seed":audit_seed,"discovery_cpu_seconds":discovery_cpu,"discovery_cpu_cap":o.seconds,
         "cap_overrun_seconds":(discovery_cpu-o.seconds).max(0.0),"audit_cpu_seconds":audit_cpu,"this_invocation_wall_seconds":wall.elapsed().as_secs_f64(),
         "completed_decisions":state.step,"accepted":state.chains.iter().map(|s|s.accepted).sum::<usize>(),"families":state.chains.len(),"max_executing_chains":1,
@@ -636,7 +872,8 @@ pub fn cli() -> R<()> {
             let algorithm=opt(&args,"--algorithm","anneal");if !["anneal","greedy","random"].contains(&algorithm.as_str()){return Err("algorithm: anneal, greedy or random".into());}
             run(&Options{manifest:opt(&args,"--manifest","data/flins-c1/manifest.json"),baseline:opt(&args,"--baseline","data/flins-c1/baseline.gcsl"),
                 out:opt(&args,"--out","runs/pilot").into(),seconds:number(&args,"--seconds","30")?,seed:number(&args,"--seed","1")?,algorithm,
-                local:args.iter().any(|a|a=="--local-only"),joint:!args.iter().any(|a|a=="--fixed-er"),audit:number(&args,"--audit","128")?})
+                local:args.iter().any(|a|a=="--local-only"),joint:!args.iter().any(|a|a=="--fixed-er"),audit:number(&args,"--audit","128")?,
+                revised:args.iter().any(|a|a=="--revised"),restricted:args.iter().any(|a|a=="--restricted-domain")})
         },
         Some("evaluate")=>{
             let src=fs::read_to_string(opt(&args,"--config","")).map_err(|e|e.to_string())?;
@@ -752,8 +989,64 @@ fn implementation_hash() -> String {
             include_str!("evaluate.rs"),
             include_str!("search.rs"),
             include_str!("../Cargo.lock"),
+            include_str!("../Cargo.toml"),
             include_str!("../docs/pilot-protocol.md"),
+            include_str!("../docs/pilot-retry.md"),
         ]
         .join("\n"),
     )
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn pending_polish_roundtrip_preserves_candidate_keys_and_rng() {
+        let m = Manifest::load("data/flins-c1/standard.json").unwrap();
+        let baseline = fs::read_to_string("data/flins-c1/baseline.gcsl").unwrap();
+        let options = Options {
+            manifest: String::new(),
+            baseline: String::new(),
+            out: PathBuf::new(),
+            seconds: 4.0,
+            seed: 11,
+            algorithm: "greedy".into(),
+            local: false,
+            joint: true,
+            audit: 128,
+            revised: true,
+            restricted: false,
+        };
+        let mut state = initialize(&options, &m, &baseline, "test");
+        let anchor = state.best.key();
+        let (next, operator) = polish_neighbors(&state.best, &m, true).remove(17);
+        state.polish = Some(Polish {
+            anchor: anchor.clone(),
+            cursor: 17,
+        });
+        state.pending = Some(Pending {
+            next,
+            family: 0,
+            decision_seed: SEARCH_SEED,
+            u: state.rng.uniform(),
+            baseline_trial: false,
+            repairs_done: false,
+            reference: state.best.clone(),
+            operator,
+            polishing: true,
+        });
+        state.best_hint = 305052.16876745573;
+        let before = serde_json::to_string(&state).unwrap();
+        let mut restored: State = serde_json::from_str(&before).unwrap();
+        assert_eq!(before, serde_json::to_string(&restored).unwrap());
+        assert_eq!(restored.polish.as_ref().unwrap().cursor, 17);
+        assert_eq!(restored.polish.as_ref().unwrap().anchor, anchor);
+        assert_eq!(
+            restored.pending.as_ref().unwrap().next.key(),
+            state.pending.as_ref().unwrap().next.key()
+        );
+        assert_eq!(restored.pending.as_ref().unwrap().reference.key(), anchor);
+        assert_eq!(restored.rng.next(), state.rng.next());
+    }
 }
