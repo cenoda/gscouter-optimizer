@@ -1,0 +1,37 @@
+# manifest-sha256=7fcc321be7f317813963190185c54d5228ed40e3b94a9880e093feb3a2f8e2fe
+options duration=450 swap_delay=12;
+target lvl=100 resist=0.1 radius=2 pos=0,2.4;
+energy every interval=480,720 amount=1;
+# Build from the source config, used to validate the rotation.
+
+mavuika char lvl=90/90 cons=6 talent=10,10,10;
+mavuika add weapon="tbs" refine=5 lvl=90/90;
+mavuika add set="oc" count=4;
+mavuika add stats hp=4780 atk=311 em=187 pyro%=0.466 cd=0.622;
+mavuika add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.3972 cd=0.662;
+
+citlali char lvl=90/90 cons=6 talent=10,10,10;
+citlali add weapon="starcallerswatch" refine=5 lvl=90/90;
+citlali add set="scroll" count=4;
+citlali add stats hp=4780 atk=311 em=187 em=187 em=187;
+citlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=118.92 cr=0.3972 cd=0.5296;
+
+xilonen char lvl=90/90 cons=6 talent=10,10,10;
+xilonen add weapon="peakpatrolsong" refine=5 lvl=90/90;
+xilonen add set="ap" count=4;
+xilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 def%=0.583;
+xilonen add stats def%=0.372 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.5296;
+
+nicole char lvl=90/90 cons=6 talent=10,10,10;
+nicole add weapon="angelosheptades" refine=5 lvl=90/90;
+nicole add set="cg" count=4;
+nicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;
+nicole add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=165.4 atk%=0.2976 er=0.1102 em=39.64 cr=0.2979 cd=0.1986;
+
+active mavuika;
+fn mav_dc_cancel ( d_travel_f ) { if d_travel_f < 6 { d_travel_f = 6 ; } let dash_ns = 10 ; let base_cons = 0.9 ; let base_tick_rate = 6 ; while ! .mavuika .dash .ready { print ( "waiting on mavuika dash cd" ) ; wait ( 1 ) ; } let d_ticks = d_travel_f / base_tick_rate + 1 ; print ( "Max number of NS ticks during dash: " , d_ticks ) ; let ns_consumed = dash_ns + base_cons * d_ticks ; print ( "Expected NS consumption: " , ns_consumed ) ; if .mavuika .nightsoul .points > ns_consumed || .mavuika .status .mavuika-burst { mavuika dash [ charge_cancel = 1 , travel = d_travel_f ] , charge ; } else { print ( "current NS points = " , .mavuika .nightsoul .points ) ; print ( "skipping mav d*c, not enough NS points " ) ; mavuika jump ; } }
+while 1 {
+let optimizer_cycle_start=f();
+for let i = 0 ; i < 4 ; i = i + 1 { mavuika skill [ hold = 1 ] ; nicole skill , attack ; xilo skill , attack : 2 ; pick_up_crystallize ( "any" ) ; citlali swap ; if is_even ( i ) { wait ( 15 ) ; citlali attack , skill ; mavuika swap ; if .mavuika .nightsoul .points { mavuika skill [ recast = 1 ] ; mavuika charge ; } mavuika burst ; mavuika charge , charge [ final = 1 ] ; mav_dc_cancel ( 6 ) ; mavuika charge [ final = 1 ] ; mav_dc_cancel ( 6 ) ; mavuika charge [ final = 1 ] ; mav_dc_cancel ( 6 ) ; mavuika charge [ final = 1 ] ; mav_dc_cancel ( 6 ) ; mavuika charge [ hold = 30 ] , charge [ final = 1 ] ; print ( "after Q buff end" ) ; mav_dc_cancel ( 6 ) ; mavuika charge [ hold = 40 ] , charge [ final = 1 ] ; } else { citlali skill , burst , attack : 2 , dash ; mavuika swap ; if .mavuika .nightsoul .points { mavuika skill [ recast = 1 ] ; delay ( 11 ) ; mavuika charge ; } mavuika burst ; mavuika charge , charge [ final = 1 ] ; mav_dc_cancel ( 6 ) ; mavuika charge [ final = 1 ] ; mav_dc_cancel ( 6 ) ; mavuika charge [ final = 1 ] ; mav_dc_cancel ( 6 ) ; mavuika charge [ final = 1 ] ; mav_dc_cancel ( 6 ) ; mavuika charge [ hold = 40 ] , charge [ final = 1 ] ; print ( "after Q buff end" ) ; mav_dc_cancel ( 6 ) ; mavuika charge [ hold = 40 ] , charge [ final = 1 ] ; mav_dc_cancel ( 6 ) ; mavuika jump ; } }
+if f() == optimizer_cycle_start { wait(1); }
+}

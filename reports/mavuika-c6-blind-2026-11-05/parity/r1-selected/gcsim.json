@@ -1,0 +1,167 @@
+{
+  "iterations": 2048,
+  "warmup": 150,
+  "seconds": 19.566767286,
+  "workers": 4,
+  "team": {
+    "mean": 726247.5618091682,
+    "stderr": 301.0127652769444
+  },
+  "chars": {
+    "citlali": {
+      "mean": 77527.89747043287,
+      "stderr": 92.1945252750194
+    },
+    "mavuika": {
+      "mean": 615952.9687090529,
+      "stderr": 288.9507801908556
+    },
+    "nicole": {
+      "mean": 16460.58369777078,
+      "stderr": 19.003897886523752
+    },
+    "xilonen": {
+      "mean": 16306.111931913187,
+      "stderr": 13.847905194237196
+    }
+  },
+  "frames": 27000,
+  "waits": {
+    "citlali": {},
+    "mavuika": {},
+    "nicole": {
+      "swap_cd": 1.9333333333333718
+    },
+    "xilonen": {}
+  },
+  "abils": {
+    "citlali/Arcane Projection": [
+      16.46533203125,
+      416488.30483004963
+    ],
+    "citlali/Arcane Projection: Unity": [
+      11.71240234375,
+      794106.9578154966
+    ],
+    "citlali/Frostfall Storm DMG": [
+      267.25537109375,
+      4430831.9982374
+    ],
+    "citlali/Ice Storm DMG": [
+      13.8564453125,
+      8997652.425360337
+    ],
+    "citlali/Normal 0": [
+      27.990234375,
+      924422.0041834239
+    ],
+    "citlali/Normal 1": [
+      27.31298828125,
+      802752.9179446542
+    ],
+    "citlali/Normal 2": [
+      13.990234375,
+      445072.7117313366
+    ],
+    "citlali/Obsidian Tzitzimitl DMG": [
+      14,
+      302378.2381858372
+    ],
+    "citlali/Spiritvessel Skull DMG": [
+      13.85546875,
+      659637.5843119776
+    ],
+    "citlali/Spiritvessel Skull DMG (C4)": [
+      33.02783203125,
+      5485026.0985293435
+    ],
+    "mavuika/Arcane Projection": [
+      15.87548828125,
+      2339628.1922414675
+    ],
+    "mavuika/Arcane Projection: Unity": [
+      21.50537109375,
+      7692263.067667097
+    ],
+    "mavuika/Flamestrider (C6)": [
+      81.9345703125,
+      7113655.800946578
+    ],
+    "mavuika/Flamestrider Charged Attack (Cyclic)": [
+      39,
+      14006523.89026102
+    ],
+    "mavuika/Flamestrider Charged Attack (Final)": [
+      26,
+      22308276.992655
+    ],
+    "mavuika/Flamestrider Normal 0": [
+      39.02783203125,
+      17602433.345212482
+    ],
+    "mavuika/Flamestrider Normal 1": [
+      39.02783203125,
+      8551706.643528719
+    ],
+    "mavuika/Rings of Searing Radiance": [
+      81.9345703125,
+      20601623.263458926
+    ],
+    "mavuika/Rings of Searing Radiance (C6)": [
+      39.02783203125,
+      11526508.78825486
+    ],
+    "mavuika/Sunfell Slice": [
+      13.02783203125,
+      64201092.25242431
+    ],
+    "mavuika/The Named Moment": [
+      13.30810546875,
+      8842178.376066402
+    ],
+    "nicole/Arcane Projection": [
+      5,
+      209258.88374928173
+    ],
+    "nicole/Arcane Projection: Unity": [
+      4.994140625,
+      607117.7041093942
+    ],
+    "nicole/Revelation: Ladder of Divine Ascent": [
+      10,
+      2258666.721736674
+    ],
+    "nicole/Revelation: Uncreated Light": [
+      14,
+      1863131.7997358493
+    ],
+    "xilonen/Arcane Projection: Unity": [
+      8.77099609375,
+      246031.32058103842
+    ],
+    "xilonen/Blade Roller 0": [
+      26.802734375,
+      1309236.7525133071
+    ],
+    "xilonen/Blade Roller 1": [
+      19.802734375,
+      971090.3905203125
+    ],
+    "xilonen/Blade Roller 2": [
+      13,
+      801044.2943376512
+    ],
+    "xilonen/Blade Roller 3": [
+      13,
+      786070.2408275265
+    ],
+    "xilonen/Ocelotlicue Point!": [
+      4.0146484375,
+      160118.86839595585
+    ],
+    "xilonen/Yohual's Scratch": [
+      13,
+      618241.7123981677
+    ]
+  }
+}

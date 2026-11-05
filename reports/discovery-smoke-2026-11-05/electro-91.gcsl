@@ -1,0 +1,106 @@
+# manifest-sha256=e44d9e5b2879d86da5de0c7c6d8af8b1a7c37b63fd10cc34c7a5ab33a246ba9f
+options duration=450 swap_delay=12;
+target lvl=100 resist=0.1 radius=2 pos=0,2.4;
+energy every interval=480,720 amount=1;
+sucrose char lvl=90/90 cons=6 talent=9,9,9;
+sucrose add weapon="sacrificialfragments" refine=5 lvl=90/90;
+sucrose add set="viridescentvenerer" count=4;
+sucrose add stats hp=4780 atk=311 atk%=0.5 def%=0.6 cr=0.5 cd=1.0 er=1.0 em=100;
+fischl char lvl=90/90 cons=6 talent=9,9,9;
+fischl add weapon="thestringless" refine=5 lvl=90/90;
+fischl add set="thunderingfury" count=4;
+fischl add stats hp=4780 atk=311 atk%=0.5 def%=0.6 cr=0.5 cd=1.0 er=1.0 em=100;
+xingqiu char lvl=90/90 cons=6 talent=9,9,9;
+xingqiu add weapon="sacrificialsword" refine=5 lvl=90/90;
+xingqiu add set="emblemofseveredfate" count=4;
+xingqiu add stats hp=4780 atk=311 atk%=0.5 def%=0.6 cr=0.5 cd=1.0 er=1.0 em=100;
+beidou char lvl=90/90 cons=6 talent=9,9,9;
+beidou add weapon="favoniusgreatsword" refine=5 lvl=90/90;
+beidou add set="emblemofseveredfate" count=4;
+beidou add stats hp=4780 atk=311 atk%=0.5 def%=0.6 cr=0.5 cd=1.0 er=1.0 em=100;
+
+active xingqiu;
+fischl swap;
+if .fischl.burst.ready {
+fischl burst:1;
+}
+if .fischl.skill.ready {
+fischl skill:1;
+}
+fischl attack:6;
+let generation_gate0=0;
+let generation_gate1=0;
+let generation_gate2=0;
+let generation_gate3=0;
+let generation_gate4=0;
+let generation_gate5=0;
+while 1 {
+let generation_start=f();
+if generation_gate0 == 0 {
+xingqiu swap;
+if .xingqiu.burst.ready {
+xingqiu burst:1;
+}
+}
+generation_gate0=generation_gate0+1;
+if generation_gate0 >= 2 { generation_gate0=0; }
+if generation_gate1 == 0 {
+xingqiu swap;
+if .xingqiu.skill.ready {
+xingqiu skill:1;
+}
+}
+generation_gate1=generation_gate1+1;
+if generation_gate1 >= 2 { generation_gate1=0; }
+if generation_gate2 == 0 {
+beidou swap;
+if .beidou.skill.ready {
+beidou skill:1;
+}
+}
+generation_gate2=generation_gate2+1;
+if generation_gate2 >= 1 { generation_gate2=0; }
+if generation_gate3 == 0 {
+sucrose swap;
+if .sucrose.skill.ready {
+sucrose skill:1;
+}
+let visit3_end=f()+480;
+let visit3_steps=0;
+while f() < visit3_end && visit3_steps < 64 {
+sucrose attack:1;
+sucrose charge:1;
+visit3_steps=visit3_steps+1;
+wait(1);
+}
+}
+generation_gate3=generation_gate3+1;
+if generation_gate3 >= 1 { generation_gate3=0; }
+if generation_gate4 == 0 {
+fischl swap;
+if .fischl.burst.ready {
+fischl burst:1;
+}
+if .fischl.skill.ready {
+fischl skill:1;
+}
+}
+generation_gate4=generation_gate4+1;
+if generation_gate4 >= 1 { generation_gate4=0; }
+if generation_gate5 == 0 {
+sucrose swap;
+if .sucrose.burst.ready {
+sucrose burst:1;
+}
+let visit5_end=f()+180;
+let visit5_steps=0;
+while f() < visit5_end && visit5_steps < 64 {
+sucrose attack:4;
+visit5_steps=visit5_steps+1;
+wait(1);
+}
+}
+generation_gate5=generation_gate5+1;
+if generation_gate5 >= 2 { generation_gate5=0; }
+if f() == generation_start { wait(1); }
+}

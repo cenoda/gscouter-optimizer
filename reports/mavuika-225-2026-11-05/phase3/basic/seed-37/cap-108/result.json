@@ -1,0 +1,37 @@
+{
+  "mode": "basic",
+  "seed": 37,
+  "cap": 108.0,
+  "discovery_cpu": 108.0078364259999,
+  "audit_cpu": 1.4447582500000067,
+  "key": "702dbaf71ffcfb2324a147c918ed8b21a6afbec138db285d7bcf5e3821309696",
+  "discovery_estimate": 1624273.645968257,
+  "independent_audit": {
+    "chars": [
+      1490550.3945852432,
+      102376.67901308884,
+      9158.20542154908,
+      15182.172866044883
+    ],
+    "first": 1491049.0802895657,
+    "mean": 1617267.4518859268,
+    "n": 128,
+    "se": 1656.8040113827276,
+    "second": 1743485.8234822876,
+    "waits": [
+      {
+        "swap_cd": 0.5999999999999999
+      },
+      {
+        "swap_cd": 0.3166666666666672
+      },
+      {},
+      {}
+    ]
+  },
+  "checker": {
+    "path": "/home/ubuntu/projects/gscouter-optimizer/runs/mavuika225-phase3/basic/seed-37",
+    "verified_common_block_decisions": 1281,
+    "accepted_events": 335
+  }
+}

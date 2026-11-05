@@ -1,0 +1,87 @@
+{
+  "config": "/home/ubuntu/projects/gscouter-optimizer/reports/mavuika-c6-blind-2026-11-05/reference-r5-c6-alternative.gcsl",
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "gcsim": "cenoda/gcsim@eb218847f82b",
+  "iterations": 2048,
+  "seed": 12000000000000,
+  "accuracy_passed": true,
+  "comparison": [
+    {
+      "name": "team",
+      "native_mean": 1743720.5044320591,
+      "gcsim_mean": 1743378.6116003033,
+      "relative_difference": 0.00019610934164315807,
+      "combined_se_dps": 810.4875265805175,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "citlali",
+      "native_mean": 70658.753829596,
+      "gcsim_mean": 70792.88585272281,
+      "relative_difference": -0.0018947104855403518,
+      "combined_se_dps": 135.6112479791218,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": false
+    },
+    {
+      "name": "mavuika",
+      "native_mean": 1653058.8196911549,
+      "gcsim_mean": 1652575.9821999173,
+      "relative_difference": 0.0002921726422495663,
+      "combined_se_dps": 797.6910127263855,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": true
+    },
+    {
+      "name": "nicole",
+      "native_mean": 9569.729841752363,
+      "gcsim_mean": 9566.44564421925,
+      "relative_difference": 0.0003433038408677813,
+      "combined_se_dps": 14.094078816458264,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": false
+    },
+    {
+      "name": "xilonen",
+      "native_mean": 10433.20106955992,
+      "gcsim_mean": 10443.2979034401,
+      "relative_difference": -0.0009668242707941976,
+      "combined_se_dps": 15.279896302846138,
+      "within_engine_accuracy_bar": true,
+      "major_contributor": false
+    }
+  ],
+  "accounting": {
+    "native": {
+      "cpu_seconds": 25.74881100000013,
+      "wall_seconds": 25.753570279000996,
+      "command": [
+        "target/release/examples/trace",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/mavuika-c6-blind-2026-11-05/reference-r5-c6-alternative.gcsl",
+        "2048",
+        "12000000000000"
+      ]
+    },
+    "gcsim": {
+      "cpu_seconds": 86.51762499999982,
+      "wall_seconds": 18.106592953001382,
+      "command": [
+        "runs/gcsim-reference",
+        "-config",
+        "/home/ubuntu/projects/gscouter-optimizer/reports/mavuika-c6-blind-2026-11-05/reference-r5-c6-alternative.gcsl",
+        "-iter",
+        "2048",
+        "-warmup",
+        "150",
+        "-seed",
+        "12000000000000",
+        "-j",
+        "4",
+        "-abil",
+        "-cache",
+        ""
+      ]
+    }
+  }
+}

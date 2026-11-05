@@ -1,0 +1,203 @@
+{
+  "all_characters": "C6",
+  "all_signatures": "R5",
+  "samples": 2048,
+  "seed": 12000000000000,
+  "duration": 450,
+  "warmup": 150,
+  "blind_selection_unchanged": true,
+  "external_source": "https://db.kqm.gg/db/npQhNPRFDqhn",
+  "external_native": {
+    "mean": 1891094.234054225,
+    "se": 612.2682320935403
+  },
+  "external_gcsim": {
+    "mean": 1889903.4285153537,
+    "stderr": 604.052348787686
+  },
+  "native_vs_gcsim_fraction": 0.0006300880356657768,
+  "blind": {
+    "mean": 973374.1050846754,
+    "se": 457.4565383309278
+  },
+  "external_minus_blind_paired": {
+    "mean": 917720.12896955,
+    "se": 737.5466422407309
+  },
+  "blind_relative_loss": 0.4852852451472469,
+  "public_3m_record_reproduced": false,
+  "export": {
+    "accepted": 0,
+    "algorithm": "greedy",
+    "audit_cpu_seconds": 0.009293227000000001,
+    "audit_seed": 4000231000000,
+    "audits": [
+      {
+        "artifact_scores": [
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "baseline_same_allocation": {
+          "chars": [
+            1814154.1614829218,
+            75342.13749429835,
+            10235.316337521046,
+            6150.833622458277
+          ],
+          "first": 1916868.4400687674,
+          "mean": 1905882.4489371956,
+          "n": 1,
+          "se": 0.0,
+          "second": 1894896.4578056235,
+          "waits": [
+            {},
+            {
+              "skill_cd": 0.26666666666666666
+            },
+            {},
+            {
+              "swap_cd": 2.6666666666666665
+            }
+          ]
+        },
+        "cycle_only_same_allocation": [
+          0.0,
+          0.0
+        ],
+        "index": 0,
+        "joint": {
+          "chars": [
+            1814154.1614829218,
+            75342.13749429835,
+            10235.316337521046,
+            6150.833622458277
+          ],
+          "first": 1916868.4400687674,
+          "mean": 1905882.4489371956,
+          "n": 1,
+          "se": 0.0,
+          "second": 1894896.4578056235,
+          "waits": [
+            {},
+            {
+              "skill_cd": 0.26666666666666666
+            },
+            {},
+            {
+              "swap_cd": 2.6666666666666665
+            }
+          ]
+        },
+        "joint_minus_original_baseline": [
+          0.0,
+          0.0
+        ],
+        "key": "b2c40f990351e37fafb0e591befdfba94b0bf9ab0a2531405dd66ef2d3dbb65a",
+        "program_fixed_initial_allocation": {
+          "chars": [
+            1814154.1614829218,
+            75342.13749429835,
+            10235.316337521046,
+            6150.833622458277
+          ],
+          "first": 1916868.4400687674,
+          "mean": 1905882.4489371956,
+          "n": 1,
+          "se": 0.0,
+          "second": 1894896.4578056235,
+          "waits": [
+            {},
+            {
+              "skill_cd": 0.26666666666666666
+            },
+            {},
+            {
+              "swap_cd": 2.6666666666666665
+            }
+          ]
+        },
+        "role": "baseline / C0-on-field pattern",
+        "status": "independently-audited shortlist member",
+        "structure": null
+      }
+    ],
+    "baseline": {
+      "chars": [
+        1814154.1614829218,
+        75342.13749429835,
+        10235.316337521046,
+        6150.833622458277
+      ],
+      "first": 1916868.4400687674,
+      "mean": 1905882.4489371956,
+      "n": 1,
+      "se": 0.0,
+      "second": 1894896.4578056235,
+      "waits": [
+        {},
+        {
+          "skill_cd": 0.26666666666666666
+        },
+        {},
+        {
+          "swap_cd": 2.6666666666666665
+        }
+      ]
+    },
+    "cache_hit_samples_this_invocation": 3,
+    "cap_overrun_seconds": 0.11476656599999999,
+    "completed_decisions": 0,
+    "completed_or_failed_fights": 17,
+    "curve": [
+      {
+        "actual_cpu_seconds": 0.11476656699999999,
+        "best_key": "b2c40f990351e37fafb0e591befdfba94b0bf9ab0a2531405dd66ef2d3dbb65a",
+        "best_search_estimate": 1900772.950240728,
+        "budget_cpu_seconds": 1e-09,
+        "decisions": 0
+      }
+    ],
+    "discovery_cpu_cap": 1e-09,
+    "discovery_cpu_seconds": 0.11476656699999999,
+    "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+    "failed_fights": 0,
+    "families": 1,
+    "format": 1,
+    "from_scratch": false,
+    "implementation_sha256": "79123f73118bf79daf5e723273ce316b691c02981f9cad58692311bf5fb76da4",
+    "joint_er": false,
+    "limitations": [
+      "non-Flins parties use baseline-derived source mutations only; broad effectiveness unvalidated",
+      "broad effectiveness and unrestricted optimality remain unvalidated",
+      "final audit seeds never used by proposal or promotion logic",
+      "audit shortlist ranking still has multiple-comparison selection uncertainty",
+      "no early low-DPS pruning",
+      "cross-profile refinement and serving integration are deferred"
+    ],
+    "local_only": true,
+    "manifest_sha256": "7fcc321be7f317813963190185c54d5228ed40e3b94a9880e093feb3a2f8e2fe",
+    "max_executing_chains": 1,
+    "objective": {
+      "duration": 450,
+      "warmup": 150
+    },
+    "provisional_best_key": "b2c40f990351e37fafb0e591befdfba94b0bf9ab0a2531405dd66ef2d3dbb65a",
+    "reference_origin": "supplied baseline",
+    "restricted_domain": false,
+    "revised": false,
+    "seed": 231,
+    "shortlist_frozen_keys": [
+      "b2c40f990351e37fafb0e591befdfba94b0bf9ab0a2531405dd66ef2d3dbb65a"
+    ],
+    "site_commit": "d8d28c36d3801a4383feb240e78582fc674a00f1",
+    "stage_selections": [],
+    "status": "local baseline refinement; broad effectiveness unvalidated",
+    "this_invocation_wall_seconds": 0.144580527,
+    "timeouts_this_invocation": 0,
+    "worker_batch_p50_seconds": 0.106462551,
+    "worker_batch_p95_seconds": 0.106462551,
+    "worker_calls": 2
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "matrix_discovery_cpu_seconds": 631.7088069890009,
+  "matrix_audit_cpu_seconds": 84.07344259800001,
+  "confirmation_cpu_seconds": 153.28843799999999,
+  "parity_cpu_seconds": 452.9471499999999,
+  "reference_export_discovery_cpu_seconds": 0.443178637,
+  "reference_export_audit_cpu_seconds": 0.036381155999999984,
+  "generated_support_check_cpu_seconds": 0.21700030299999998,
+  "excluded": "build, orchestration, reporting and archive overhead; native trace repeated ability diagnostics are included"
+}

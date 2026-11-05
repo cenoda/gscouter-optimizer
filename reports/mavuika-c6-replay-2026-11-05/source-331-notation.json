@@ -1,0 +1,10 @@
+{
+  "source_url": "https://www.bilibili.com/video/BV1nhsd6dEvM/",
+  "public_description_endpoint": "https://api.bilibili.com/x/web-interface/archive/desc?bvid=BV1nhsd6dEvM",
+  "cid": 43139991334,
+  "main_sequence": "RCQzs ZhzzPsz PszPszZsZhzcFdc Fecdcdc",
+  "tail_sequence": "CdcF QZhzzPszPszZszhZ",
+  "reported_mavuika_useful_rolls": 45.2,
+  "source_video_sha256": "bb7f31fcfe34d47658efee0e89e633b71b186e476ed192ca427f60e9765eea91",
+  "mapping_status": "inferred; not certified by the author; replay unsuccessful"
+}

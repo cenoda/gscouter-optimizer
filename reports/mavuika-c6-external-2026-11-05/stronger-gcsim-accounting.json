@@ -1,0 +1,22 @@
+{
+  "command": [
+    "runs/gcsim-reference",
+    "-config",
+    "runs/mavuika-external-research/export-stronger/candidate-0.gcsl",
+    "-iter",
+    "2048",
+    "-warmup",
+    "150",
+    "-seed",
+    "12000000000000",
+    "-j",
+    "4",
+    "-abil",
+    "-cache",
+    ""
+  ],
+  "returncode": 0,
+  "wall_seconds": 18.82829553299962,
+  "cpu_seconds": 90.608896,
+  "stderr": ""
+}

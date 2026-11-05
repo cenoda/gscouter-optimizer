@@ -1,5 +1,6 @@
 use crate::{
     artifact::{ENGINE, Manifest},
+    discovery::{Catalog, Rotation},
     evaluate::{Evaluator, Sample, atomic, cpu, hash, paired, stats},
     program::{Program, Rng},
 };
@@ -55,6 +56,15 @@ struct State {
     curve: Vec<serde_json::Value>,
     pending: Option<Pending>,
     polish: Option<Polish>,
+    #[serde(default)]
+    stage_selections: Vec<StageSelection>,
+}
+#[derive(Serialize, Deserialize)]
+struct StageSelection {
+    budget_cpu_cap: f64,
+    cpu_seconds: f64,
+    candidate: Candidate,
+    search_estimate: f64,
 }
 #[derive(Clone, Serialize, Deserialize)]
 struct Polish {
@@ -102,6 +112,8 @@ struct Options {
     audit: usize,
     revised: bool,
     restricted: bool,
+    from_scratch: bool,
+    basic_grammar: bool,
 }
 
 fn proposal(
@@ -111,6 +123,7 @@ fn proposal(
     joint: bool,
     force_alloc: bool,
     revised: bool,
+    catalog: Option<&Catalog>,
 ) -> (Candidate, String) {
     let mut next = c.clone();
     next.parent = Some(c.key());
@@ -132,12 +145,22 @@ fn proposal(
         }
     }
     if !force_alloc {
+        if let (Program::Generated(rotation), Some(catalog)) = (&next.program, catalog) {
+            if rng.index(64) == 0 {
+                let actor = rng.index(4);
+                next.program = Program::Generated(Rotation::generate(catalog, rng, actor));
+                return (next, "fresh restart".into());
+            }
+            let (program, operator) = rotation.mutate(catalog, rng);
+            next.program = Program::Generated(program);
+            return (next, operator);
+        }
         if revised {
-            let (program, label) = next.program.mutate_revised(rng);
+            let (program, label) = next.program.mutate_revised(rng, frozen);
             next.program = program;
             return (next, label);
         }
-        next.program = next.program.mutate(rng);
+        next.program = next.program.mutate(rng, frozen);
     }
     (next, "legacy action mutation".into())
 }
@@ -162,7 +185,7 @@ fn record_proposal(out: &Path, step: usize, pending: &Pending) -> R<()> {
 }
 
 fn polish_neighbors(c: &Candidate, frozen: &Manifest, joint: bool) -> Vec<(Candidate, String)> {
-    let mut programs = c.program.local_neighbors().into_iter();
+    let mut programs = c.program.local_neighbors(frozen).into_iter();
     let mut allocations = Vec::new();
     if joint {
         // Round-robin token positions; character ownership and physical
@@ -229,22 +252,45 @@ fn spent(e: &Evaluator, carried: f64, parent_start: f64, worker_start: f64) -> f
     carried + cpu() - parent_start + e.worker_cpu - worker_start
 }
 
-fn initialize(o: &Options, m: &Manifest, baseline: &str, identity: &str) -> State {
+fn initialize(
+    o: &Options,
+    m: &Manifest,
+    baseline: &str,
+    identity: &str,
+    catalog: Option<&Catalog>,
+) -> State {
     let mut initial_rng = Rng(o.seed);
+    let generated: Vec<_> = if o.from_scratch {
+        let catalog = catalog.expect("validated generated-action catalog");
+        (0..4)
+            .map(|actor| Program::Generated(Rotation::generate(catalog, &mut initial_rng, actor)))
+            .collect()
+    } else {
+        Vec::new()
+    };
     let base = Candidate {
-        program: if o.restricted {
+        program: if o.from_scratch {
+            generated[0].clone()
+        } else if o.restricted {
             Program::restricted_domain()[initial_rng.index(8)].clone()
         } else {
-            Program::Library(baseline.into())
+            Program::baseline(baseline, m).expect("validated baseline")
         },
         allocation: m.clone(),
-        role: "baseline / C0-on-field pattern".into(),
+        role: if o.from_scratch {
+            "generated starting control"
+        } else {
+            "baseline / C0-on-field pattern"
+        }
+        .into(),
         parent: None,
     };
-    let programs = if o.restricted {
+    let programs = if o.from_scratch {
+        generated
+    } else if o.restricted {
         vec![base.program.clone()]
     } else {
-        Program::families(baseline)
+        Program::families(baseline, m)
     };
     let programs = if o.local && !o.restricted {
         vec![programs[0].clone()]
@@ -258,7 +304,14 @@ fn initialize(o: &Options, m: &Manifest, baseline: &str, identity: &str) -> Stat
             current: Candidate {
                 program: p,
                 allocation: m.clone(),
-                role: format!("structure-{i}"),
+                role: format!(
+                    "{}-{i}",
+                    if o.from_scratch {
+                        "generated-family"
+                    } else {
+                        "structure"
+                    }
+                ),
                 parent: None,
             },
             steps: 0,
@@ -285,6 +338,7 @@ fn initialize(o: &Options, m: &Manifest, baseline: &str, identity: &str) -> Stat
         curve: Vec::new(),
         pending: None,
         polish: None,
+        stage_selections: Vec::new(),
     }
 }
 
@@ -295,27 +349,55 @@ fn run(o: &Options) -> R<()> {
     if o.restricted && o.joint {
         return Err("restricted-domain recovery requires --fixed-er".into());
     }
+    if o.from_scratch && (o.local || o.restricted) {
+        return Err(
+            "--from-scratch is incompatible with --local-only and --restricted-domain".into(),
+        );
+    }
     let parent_start = cpu();
     let wall = Instant::now();
     let m = Manifest::load(&o.manifest)?;
-    // This executable currently supports this declared four-member pilot,
-    // rather than silently applying its mechanics to an unrelated party.
-    if m.members.iter().map(|m| m.key.as_str()).collect::<Vec<_>>() != crate::program::NAMES {
-        return Err("this pilot supports the declared Flins party only".into());
+    if o.restricted && !Program::is_pilot(&m) {
+        return Err("restricted-domain recovery is a Flins-only diagnostic".into());
     }
-    if m.members
-        .iter()
-        .any(|m| m.key != "sucrose" && ![1, 2, 4, 6].contains(&m.cons))
-        || m.members[3].cons != 6
-    {
-        return Err("ineligible new-discovery constellation".into());
+    if o.joint && m.fixed_build.is_some() {
+        return Err("fixed-build manifests require --fixed-er".into());
     }
-    let baseline = fs::read_to_string(&o.baseline).map_err(|e| e.to_string())?;
-    if !baseline.trim_start().starts_with("active ") {
-        return Err("pilot baseline must begin with active setup".into());
+    for member in &m.members {
+        let eligible = match crate::artifact::rarity(&member.key)? {
+            4 => member.cons == 6,
+            5 => [1, 2, 4, 6].contains(&member.cons),
+            _ => false,
+        };
+        if !eligible {
+            return Err(format!(
+                "{}: ineligible new-discovery constellation",
+                member.key
+            ));
+        }
+    }
+    let baseline = if o.from_scratch {
+        String::new()
+    } else {
+        fs::read_to_string(&o.baseline).map_err(|e| e.to_string())?
+    };
+    let catalog = if o.from_scratch {
+        Some(Catalog::configured(&m, !o.basic_grammar)?)
+    } else {
+        None
+    };
+    let initial = if let Some(catalog) = &catalog {
+        Program::Generated(Rotation::generate(catalog, &mut Rng(o.seed), 0))
+    } else {
+        Program::baseline(&baseline, &m)?
+    };
+    let parsed = gse::gcsl::parse(&Evaluator::config(&m, &initial))?;
+    let unsupported = gse::check::unsupported(&parsed);
+    if !unsupported.is_empty() {
+        return Err(unsupported.join("; "));
     }
     let identity = hash(&format!(
-        "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}",
+        "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}",
         serde_json::to_string(&m).unwrap(),
         baseline,
         o.seed,
@@ -324,6 +406,8 @@ fn run(o: &Options) -> R<()> {
         o.joint,
         o.revised,
         o.restricted,
+        o.from_scratch,
+        o.basic_grammar,
         implementation_hash()
     ));
     fs::create_dir_all(&o.out).map_err(|e| e.to_string())?;
@@ -332,15 +416,25 @@ fn run(o: &Options) -> R<()> {
         serde_json::from_slice(&fs::read(&checkpoint).map_err(|e| e.to_string())?)
             .map_err(|e| e.to_string())?
     } else {
-        initialize(o, &m, &baseline, &identity)
+        initialize(o, &m, &baseline, &identity, catalog.as_ref())
     };
     if state.identity != identity || state.format != 2 {
         return Err("checkpoint experiment identity mismatch".into());
     }
+    if !o.out.join("experiment.json").exists() {
+        atomic(
+            &o.out.join("experiment.json"),
+            &serde_json::json!({
+                "identity":identity,"from_scratch":o.from_scratch,"basic_grammar":o.basic_grammar,"objective":{"duration":m.objective().0,"warmup":m.objective().1},
+                "reference_origin":if o.from_scratch { "generated starting control" } else { "supplied baseline" },
+                "baseline_read":!o.from_scratch,"initial_chains":state.chains,
+            }),
+        )?;
+    }
     let mut e = Evaluator::new(&o.out)?;
     let carried = state.parent_cpu;
     let worker_start = e.worker_cpu;
-    if state.best_hint == 0.0 {
+    if state.reference_dps == 0.0 {
         state.best_hint = stats(&eval(
             &mut e,
             &state.baseline,
@@ -352,7 +446,7 @@ fn run(o: &Options) -> R<()> {
             if o.restricted { 32 } else { 16 },
         )?)
         .mean;
-        state.reference_dps = state.best_hint;
+        state.reference_dps = state.best_hint.max(1.0);
     }
     let initial_dps = state.reference_dps.max(1.0);
     let decision_count = if o.restricted { 32 } else { 16 };
@@ -363,6 +457,21 @@ fn run(o: &Options) -> R<()> {
                 && !o.restricted
                 && spent(&e, carried, parent_start, worker_start) >= o.seconds * 0.75,
         );
+        if o.from_scratch
+            && polishing
+            && spent(&e, carried, parent_start, worker_start) >= o.seconds * 0.75
+            && state
+                .stage_selections
+                .last()
+                .is_none_or(|s| s.budget_cpu_cap != o.seconds)
+        {
+            state.stage_selections.push(StageSelection {
+                budget_cpu_cap: o.seconds,
+                cpu_seconds: spent(&e, carried, parent_start, worker_start),
+                candidate: state.best.clone(),
+                search_estimate: state.best_hint,
+            });
+        }
         let family = if let Some(p) = &state.pending {
             p.family
         } else if state.step < state.chains.len() * 4 || state.step.is_multiple_of(5) {
@@ -386,15 +495,27 @@ fn run(o: &Options) -> R<()> {
         // One family is executing; all other family states are paused. This
         // serial implementation uses at most one of the two permitted slots.
         let current = state.chains[family].current.clone();
-        let baseline_trial = !polishing && o.joint && state.step % 5 == 4;
+        let baseline_trial = !o.from_scratch && !polishing && o.joint && state.step % 5 == 4;
         let origin = if polishing {
             state.best.clone()
         } else if baseline_trial {
             state.baseline_alloc.clone()
+        } else if o.from_scratch
+            && o.algorithm != "random"
+            && state.step >= state.chains.len() * 4
+            && state.step.is_multiple_of(13)
+        {
+            // Reuse only a peak discovered in this run. It remains a proposal
+            // against the current family, requiring the same paired block.
+            state.best.clone()
         } else if o.algorithm == "random" {
-            initialize(o, &m, &baseline, &identity).chains[family]
-                .current
-                .clone()
+            if o.from_scratch {
+                current.clone()
+            } else {
+                initialize(o, &m, &baseline, &identity, None).chains[family]
+                    .current
+                    .clone()
+            }
         } else {
             current.clone()
         };
@@ -416,6 +537,20 @@ fn run(o: &Options) -> R<()> {
                     break;
                 };
                 next
+            } else if o.from_scratch && o.algorithm == "random" && state.chains[family].steps > 0 {
+                let actor = state.rng.index(4);
+                (
+                    Candidate {
+                        program: Program::Generated(Rotation::generate(
+                            catalog.as_ref().unwrap(),
+                            &mut state.rng,
+                            actor,
+                        )),
+                        parent: Some(origin.key()),
+                        ..origin.clone()
+                    },
+                    "fresh restart".into(),
+                )
             } else if state.chains[family].steps == 0 && !baseline_trial {
                 (origin.clone(), "initial family evaluation".into())
             } else if o.restricted {
@@ -441,12 +576,26 @@ fn run(o: &Options) -> R<()> {
                     o.joint,
                     baseline_trial,
                     o.revised,
+                    catalog.as_ref(),
                 )
             };
-            if o.algorithm == "random" && !baseline_trial && state.chains[family].steps > 0 {
+            if !polishing
+                && !baseline_trial
+                && origin.key() != current.key()
+                && operator != "fresh restart"
+                && o.from_scratch
+                && o.algorithm != "random"
+            {
+                operator = format!("archive-seeded {operator}");
+            }
+            if !o.from_scratch
+                && o.algorithm == "random"
+                && !baseline_trial
+                && state.chains[family].steps > 0
+            {
                 for _ in 0..state.rng.index(6) {
                     (next, operator) =
-                        proposal(&next, &m, &mut state.rng, o.joint, false, o.revised);
+                        proposal(&next, &m, &mut state.rng, o.joint, false, o.revised, None);
                 }
             }
             state.pending = Some(Pending {
@@ -510,7 +659,10 @@ fn run(o: &Options) -> R<()> {
             continue;
         }
         let mut temperature = state.chains[family].temperature;
-        let mut threshold = if o.algorithm == "anneal" && !baseline_trial && !polishing {
+        let restarting = operator == "fresh restart";
+        let mut threshold = if restarting {
+            -f64::MAX
+        } else if o.algorithm == "anneal" && !baseline_trial && !polishing {
             temperature * u.ln()
         } else {
             0.0
@@ -646,7 +798,11 @@ fn run(o: &Options) -> R<()> {
                 }),
                 Ok(x) => {
                     let delta = (stats(&y).mean - stats(&x).mean) / initial_dps;
-                    if state.chains[family].steps == 1 && !baseline_trial && !polishing {
+                    if state.chains[family].steps == 1
+                        && !baseline_trial
+                        && !polishing
+                        && !restarting
+                    {
                         // Bootstrap the paired block differences to calibrate
                         // noise scale, separately from the acceptance draw u.
                         let mut bootstrap = Rng(0x43414c4942524154u64 ^ family as u64 ^ o.seed);
@@ -692,7 +848,9 @@ fn run(o: &Options) -> R<()> {
                         accepted: accept,
                         delta,
                         threshold,
-                        kind: if polishing {
+                        kind: if restarting {
+                            "restart"
+                        } else if polishing {
                             "polish"
                         } else if baseline_trial {
                             "baseline allocation"
@@ -730,7 +888,7 @@ fn run(o: &Options) -> R<()> {
                             }
                         }
                     }
-                    if accept && state.archive.len() < 6 {
+                    if accept && (o.from_scratch || state.archive.len() < 6) {
                         retain(&mut state.archive, next, false);
                     }
                 }
@@ -766,9 +924,7 @@ fn run(o: &Options) -> R<()> {
     state.parent_cpu = spent(&e, carried, parent_start, worker_start);
     atomic(&checkpoint, &state)?;
     // Freeze the entire shortlist before looking at any final-audit seeds.
-    let mut shortlist = state.archive.clone();
-    retain(&mut shortlist, state.baseline_alloc.clone(), false);
-    retain(&mut shortlist, state.best.clone(), true);
+    let shortlist = freeze_shortlist(&state, o.from_scratch, o.seconds);
     let frozen_list: Vec<_> = shortlist.iter().map(|c| c.key()).collect();
     atomic(&o.out.join("shortlist.json"), &shortlist)?;
     let audit_start = cpu();
@@ -796,7 +952,7 @@ fn run(o: &Options) -> R<()> {
                     ..c.clone()
                 };
                 let f = eval(&mut e, &fixed, audit_seed, o.audit)?;
-                serde_json::json!({"index":i,"key":c.key(),"role":c.role,"status":"independently-audited shortlist member",
+                serde_json::json!({"index":i,"key":c.key(),"role":c.role,"structure":match &c.program { Program::Generated(p)=>Some(p.structure()), _=>None },"status":"independently-audited shortlist member",
                     "joint":stats(&s),"baseline_same_allocation":stats(&b),"program_fixed_initial_allocation":stats(&f),
                     "joint_minus_original_baseline":paired(&s,&baseline_samples),"cycle_only_same_allocation":paired(&s,&b),
                     "artifact_scores":c.allocation.score()})
@@ -810,17 +966,26 @@ fn run(o: &Options) -> R<()> {
     let audit_cpu = cpu() - audit_start + e.worker_cpu - audit_worker_start;
     let mut latencies = e.batch_wall.clone();
     latencies.sort_by(f64::total_cmp);
-    let report = serde_json::json!({"format":1,"status":"development pilot only; expansion deferred","engine":ENGINE,
+    let mut report = serde_json::json!({"format":1,"status":if o.from_scratch { "baseline-free discovery; broad effectiveness unvalidated" } else { "local baseline refinement; broad effectiveness unvalidated" },"engine":ENGINE,
         "implementation_sha256":implementation_hash(),"manifest_sha256":hash(&serde_json::to_string(&m).unwrap()),"site_commit":m.site_commit,
         "algorithm":o.algorithm,"seed":o.seed,"joint_er":o.joint,"local_only":o.local,"revised":o.revised,"restricted_domain":o.restricted,
-        "objective":{"duration":450,"warmup":150},"audit_seed":audit_seed,"discovery_cpu_seconds":discovery_cpu,"discovery_cpu_cap":o.seconds,
+        "objective":{"duration":m.objective().0,"warmup":m.objective().1},"audit_seed":audit_seed,"discovery_cpu_seconds":discovery_cpu,"discovery_cpu_cap":o.seconds,
         "cap_overrun_seconds":(discovery_cpu-o.seconds).max(0.0),"audit_cpu_seconds":audit_cpu,"this_invocation_wall_seconds":wall.elapsed().as_secs_f64(),
         "completed_decisions":state.step,"accepted":state.chains.iter().map(|s|s.accepted).sum::<usize>(),"families":state.chains.len(),"max_executing_chains":1,
         "provisional_best_key":state.best.key(),"baseline":stats(&baseline_samples),"shortlist_frozen_keys":frozen_list,
         "audits":audits,"curve":state.curve,"worker_calls":e.calls,"completed_or_failed_fights":e.fights,"failed_fights":e.failures,
         "timeouts_this_invocation":e.timeouts,"cache_hit_samples_this_invocation":e.cache_hits,
         "worker_batch_p50_seconds":latencies.get(latencies.len()/2),"worker_batch_p95_seconds":latencies.get(latencies.len()*95/100),
-        "limitations":["single declared development party; not evidence of broad transfer","final audit seeds never used by proposal or promotion logic","audit shortlist ranking still has multiple-comparison selection uncertainty","no early low-DPS pruning","cross-profile refinement and serving integration are deferred"]});
+        "limitations":[if o.from_scratch { "bounded parameter forms and resource-guarded charge/dash continuations; arbitrary mechanic predicates are not enumerated" } else { "non-Flins parties use baseline-derived source mutations only; broad effectiveness unvalidated" },"broad effectiveness and unrestricted optimality remain unvalidated","final audit seeds never used by proposal or promotion logic","audit shortlist ranking still has multiple-comparison selection uncertainty","no early low-DPS pruning","cross-profile refinement and serving integration are deferred"]});
+    report["basic_grammar"] = serde_json::json!(o.basic_grammar);
+    report["from_scratch"] = serde_json::json!(o.from_scratch);
+    report["reference_origin"] = serde_json::json!(if o.from_scratch {
+        "generated starting control"
+    } else {
+        "supplied baseline"
+    });
+    report["stage_selections"] =
+        serde_json::to_value(&state.stage_selections).map_err(|e| e.to_string())?;
     atomic(&o.out.join("report.json"), &report)?;
     println!(
         "{}",
@@ -828,6 +993,36 @@ fn run(o: &Options) -> R<()> {
     );
     Ok(())
 }
+fn freeze_shortlist(state: &State, from_scratch: bool, cap: f64) -> Vec<Candidate> {
+    if !from_scratch {
+        let mut shortlist = state.archive.clone();
+        retain(&mut shortlist, state.baseline_alloc.clone(), false);
+        retain(&mut shortlist, state.best.clone(), true);
+        return shortlist;
+    }
+    // Reserve protected candidates before adding diversity. The peak can occupy
+    // any archive index; replacing a fixed slot could accidentally evict it.
+    let stage = state
+        .stage_selections
+        .last()
+        .filter(|s| s.budget_cpu_cap == cap);
+    let mut shortlist = Vec::new();
+    let mut seen = std::collections::BTreeSet::new();
+    for candidate in [&state.baseline, &state.best]
+        .into_iter()
+        .chain(stage.map(|s| &s.candidate))
+        .chain(&state.archive)
+    {
+        if seen.insert(candidate.key()) {
+            shortlist.push(candidate.clone());
+        }
+        if shortlist.len() == 6 {
+            break;
+        }
+    }
+    shortlist
+}
+
 fn retain(archive: &mut Vec<Candidate>, c: Candidate, peak: bool) {
     let key = c.key();
     if archive.iter().any(|x| x.key() == key) {
@@ -858,6 +1053,11 @@ fn opt(args: &[String], name: &str, default: &str) -> String {
         .map(|x| x[1].clone())
         .unwrap_or_else(|| default.into())
 }
+fn baseline_path(args: &[String]) -> String {
+    let manifest = opt(args, "--manifest", "data/flins-c1/manifest.json");
+    let adjacent = Path::new(&manifest).with_file_name("baseline.gcsl");
+    opt(args, "--baseline", &adjacent.to_string_lossy())
+}
 fn number<T: std::str::FromStr>(args: &[String], name: &str, default: &str) -> R<T> {
     opt(args, name, default)
         .parse()
@@ -869,11 +1069,13 @@ pub fn cli() -> R<()> {
     match args.first().map(String::as_str){
         Some("__worker")=>{if args.len()!=3{return Err("worker input/output required".into());}crate::evaluate::worker(&args[1],&args[2])},
         Some("search")=>{
-            let algorithm=opt(&args,"--algorithm","anneal");if !["anneal","greedy","random"].contains(&algorithm.as_str()){return Err("algorithm: anneal, greedy or random".into());}
-            run(&Options{manifest:opt(&args,"--manifest","data/flins-c1/manifest.json"),baseline:opt(&args,"--baseline","data/flins-c1/baseline.gcsl"),
+            let from_scratch=args.iter().any(|a|a=="--from-scratch");
+            if from_scratch && args.iter().any(|a|a=="--baseline") { return Err("--from-scratch does not accept --baseline; evaluate reference cycles separately after discovery".into()); }
+            let algorithm=opt(&args,"--algorithm",if from_scratch { "greedy" } else { "anneal" });if !["anneal","greedy","random"].contains(&algorithm.as_str()){return Err("algorithm: anneal, greedy or random".into());}
+            run(&Options{manifest:opt(&args,"--manifest","data/flins-c1/manifest.json"),baseline:baseline_path(&args),
                 out:opt(&args,"--out","runs/pilot").into(),seconds:number(&args,"--seconds","30")?,seed:number(&args,"--seed","1")?,algorithm,
                 local:args.iter().any(|a|a=="--local-only"),joint:!args.iter().any(|a|a=="--fixed-er"),audit:number(&args,"--audit","128")?,
-                revised:args.iter().any(|a|a=="--revised"),restricted:args.iter().any(|a|a=="--restricted-domain")})
+                revised:from_scratch || args.iter().any(|a|a=="--revised"),restricted:args.iter().any(|a|a=="--restricted-domain"),from_scratch,basic_grammar:args.iter().any(|a|a=="--basic-grammar")})
         },
         Some("evaluate")=>{
             let src=fs::read_to_string(opt(&args,"--config","")).map_err(|e|e.to_string())?;
@@ -881,25 +1083,53 @@ pub fn cli() -> R<()> {
             let start=cpu();let samples=e.raw(&src,number(&args,"--seed","7000000000000")?,number(&args,"--samples","128")?)?;
             println!("{}",serde_json::json!({"stats":stats(&samples),"cpu_seconds":e.worker_cpu+cpu()-start,"engine":ENGINE}));Ok(())
         },
+        Some("render")=>{
+            let m=Manifest::load(&opt(&args,"--manifest",""))?;
+            let p:Program=serde_json::from_slice(&fs::read(opt(&args,"--program","")).map_err(|e|e.to_string())?).map_err(|e|e.to_string())?;
+            p.validate()?;
+            let source=Evaluator::config(&m,&p);
+            let parsed=gse::gcsl::parse(&source)?;
+            let missing=gse::check::unsupported(&parsed);
+            if !missing.is_empty(){return Err(missing.join("; "));}
+            let output=opt(&args,"--out","");
+            if output.is_empty(){print!("{source}");}else{
+                let path=Path::new(&output);
+                if let Some(parent)=path.parent().filter(|p|!p.as_os_str().is_empty()){fs::create_dir_all(parent).map_err(|e|e.to_string())?;}
+                fs::write(path,source).map_err(|e|e.to_string())?;
+            }
+            Ok(())
+        },
         Some("enumerate")=>enumerate(&args),
         Some("validate")=>{
             let m=Manifest::load(&opt(&args,"--manifest","data/flins-c1/manifest.json"))?;
-            let baseline=fs::read_to_string(opt(&args,"--baseline","data/flins-c1/baseline.gcsl")).map_err(|e|e.to_string())?;
+            let programs=if args.iter().any(|a|a=="--from-scratch") {
+                if args.iter().any(|a|a=="--baseline") { return Err("--from-scratch does not accept --baseline".into()); }
+                let catalog=Catalog::configured(&m,!args.iter().any(|a|a=="--basic-grammar"))?;
+                let mut rng=Rng(number(&args,"--seed","1")?);
+                (0..4).map(|actor| Program::Generated(Rotation::generate(&catalog,&mut rng,actor))).collect()
+            } else {
+                let baseline=fs::read_to_string(baseline_path(&args)).map_err(|e|e.to_string())?;
+                Program::baseline(&baseline, &m)?;
+                Program::families(&baseline, &m)
+            };
             let mut e=Evaluator::new(Path::new(&opt(&args,"--out","runs/validate")))?;
             let start=cpu();let mut results=Vec::new();
-            for (i,p) in Program::families(&baseline).iter().enumerate(){
+            for (i,p) in programs.iter().enumerate(){
                 let s=e.eval(&m,p,800_000_000_000,16)?;
                 results.push(serde_json::json!({"family":i,"stats":stats(&s)}));
             }
             println!("{}",serde_json::json!({"families":results,"artifact_scores":m.score(),"cpu_seconds":e.worker_cpu+cpu()-start}));Ok(())
         },
-        _=>Err("usage: gso validate | search [--seconds CPU --seed N --algorithm anneal|greedy|random --local-only --fixed-er --audit N --out DIR --manifest FILE] | evaluate --config FILE | enumerate".into()),
+        _=>Err("usage: gso validate [--from-scratch --manifest FILE] | search [--from-scratch --seconds CPU --seed N --algorithm anneal|greedy|random --local-only --fixed-er --audit N --out DIR --manifest FILE] | evaluate --config FILE | enumerate".into()),
     }
 }
 
 fn enumerate(args: &[String]) -> R<()> {
     let out = PathBuf::from(opt(args, "--out", "runs/enumerated"));
     let m = Manifest::load(&opt(args, "--manifest", "data/flins-c1/manifest.json"))?;
+    if !Program::is_pilot(&m) {
+        return Err("enumeration is a Flins-only diagnostic".into());
+    }
     let mut e = Evaluator::new(&out)?;
     let start = cpu();
     let mut rows = Vec::new();
@@ -908,7 +1138,7 @@ fn enumerate(args: &[String]) -> R<()> {
     for frames in [360, 600] {
         for normals in [2, 4] {
             for period in [1, 2] {
-                let mut p = Program::families("").remove(1);
+                let mut p = Program::families("", &m).remove(1);
                 if let Program::Typed { cycle, .. } = &mut p {
                     if let crate::program::Step::Field {
                         frames: f,
@@ -986,12 +1216,15 @@ fn implementation_hash() -> String {
         &[
             include_str!("artifact.rs"),
             include_str!("program.rs"),
+            include_str!("discovery.rs"),
             include_str!("evaluate.rs"),
             include_str!("search.rs"),
+            include_str!("../data/character-rarities.json"),
             include_str!("../Cargo.lock"),
             include_str!("../Cargo.toml"),
             include_str!("../docs/pilot-protocol.md"),
             include_str!("../docs/pilot-retry.md"),
+            include_str!("../docs/from-scratch.md"),
         ]
         .join("\n"),
     )
@@ -1000,6 +1233,171 @@ fn implementation_hash() -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn scratch_initialization_ignores_baseline_and_restores_generated_proposals() {
+        let m = crate::artifact::tests::fixed_party();
+        let catalog = Catalog::new(&m).unwrap();
+        let options = Options {
+            manifest: String::new(),
+            baseline: "/missing/baseline.gcsl".into(),
+            out: PathBuf::new(),
+            seconds: 4.0,
+            seed: 37,
+            algorithm: "greedy".into(),
+            local: false,
+            joint: false,
+            audit: 16,
+            revised: true,
+            restricted: false,
+            from_scratch: true,
+            basic_grammar: false,
+        };
+        let mut state = initialize(
+            &options,
+            &m,
+            "invalid source that must not be parsed",
+            "test",
+            Some(&catalog),
+        );
+        let other = initialize(
+            &options,
+            &m,
+            "an unrelated supplied cycle",
+            "test",
+            Some(&catalog),
+        );
+        assert_eq!(
+            serde_json::to_string(&state).unwrap(),
+            serde_json::to_string(&other).unwrap()
+        );
+        assert_eq!(state.chains.len(), 4);
+        for (i, chain) in state.chains.iter().enumerate() {
+            let Program::Generated(p) = &chain.current.program else {
+                panic!("baseline leaked");
+            };
+            assert!(p.cycle.iter().any(|v| v.actor == i && v.field.is_some()));
+        }
+        let (next, operator) = proposal(
+            &state.best,
+            &m,
+            &mut state.rng,
+            false,
+            false,
+            true,
+            Some(&catalog),
+        );
+        state.pending = Some(Pending {
+            next,
+            family: 0,
+            decision_seed: SEARCH_SEED,
+            u: state.rng.uniform(),
+            baseline_trial: false,
+            repairs_done: false,
+            reference: state.best.clone(),
+            operator,
+            polishing: false,
+        });
+        let mut restored: State =
+            serde_json::from_str(&serde_json::to_string(&state).unwrap()).unwrap();
+        assert_eq!(
+            restored.pending.as_ref().unwrap().next.key(),
+            state.pending.as_ref().unwrap().next.key()
+        );
+        for _ in 0..50 {
+            let a = proposal(
+                &state.best,
+                &m,
+                &mut state.rng,
+                false,
+                false,
+                true,
+                Some(&catalog),
+            );
+            let b = proposal(
+                &restored.best,
+                &m,
+                &mut restored.rng,
+                false,
+                false,
+                true,
+                Some(&catalog),
+            );
+            assert_eq!(a.0.key(), b.0.key());
+            assert_eq!(a.1, b.1);
+        }
+        let mut rng = Rng(1);
+        assert!((0..100).any(|_| {
+            proposal(
+                &state.best,
+                &m,
+                &mut rng,
+                false,
+                false,
+                true,
+                Some(&catalog),
+            )
+            .1 == "fresh restart"
+        }));
+        assert!(!polish_neighbors(&state.best, &m, false).is_empty());
+
+        // A full archive can hold the peak at an arbitrary position. Protect
+        // it and a distinct pre-polish candidate before adding diversity.
+        let neighbors = polish_neighbors(&state.best, &m, false);
+        state
+            .archive
+            .extend(neighbors.iter().take(5).map(|(c, _)| c.clone()));
+        state.best = state.archive[2].clone();
+        state.stage_selections.push(StageSelection {
+            budget_cpu_cap: 4.0,
+            cpu_seconds: 3.0,
+            candidate: neighbors[6].0.clone(),
+            search_estimate: 1000.0,
+        });
+        let shortlist = freeze_shortlist(&state, true, 4.0);
+        assert_eq!(shortlist.len(), 6);
+        assert_eq!(shortlist[0].key(), state.baseline.key());
+        assert_eq!(shortlist[1].key(), state.best.key());
+        assert_eq!(
+            shortlist[2].key(),
+            state.stage_selections[0].candidate.key()
+        );
+        assert_eq!(
+            shortlist
+                .iter()
+                .map(Candidate::key)
+                .collect::<std::collections::BTreeSet<_>>()
+                .len(),
+            6
+        );
+
+        let anchor = state.best.key();
+        let (next, operator) = polish_neighbors(&state.best, &m, false).remove(0);
+        state.polish = Some(Polish {
+            anchor: anchor.clone(),
+            cursor: 0,
+        });
+        state.pending = Some(Pending {
+            next,
+            family: 0,
+            decision_seed: SEARCH_SEED,
+            u: state.rng.uniform(),
+            baseline_trial: false,
+            repairs_done: false,
+            reference: state.best.clone(),
+            operator,
+            polishing: true,
+        });
+        let serialized = serde_json::to_string(&state).unwrap();
+        let restored: State = serde_json::from_str(&serialized).unwrap();
+        assert_eq!(serialized, serde_json::to_string(&restored).unwrap());
+        assert_eq!(restored.polish.as_ref().unwrap().anchor, anchor);
+        assert!(restored.pending.as_ref().unwrap().polishing);
+        assert_eq!(
+            restored.pending.as_ref().unwrap().next.key(),
+            state.pending.as_ref().unwrap().next.key()
+        );
+    }
 
     #[test]
     fn pending_polish_roundtrip_preserves_candidate_keys_and_rng() {
@@ -1017,8 +1415,10 @@ mod tests {
             audit: 128,
             revised: true,
             restricted: false,
+            from_scratch: false,
+            basic_grammar: false,
         };
-        let mut state = initialize(&options, &m, &baseline, "test");
+        let mut state = initialize(&options, &m, &baseline, "test", None);
         let anchor = state.best.key();
         let (next, operator) = polish_neighbors(&state.best, &m, true).remove(17);
         state.polish = Some(Polish {

@@ -1,0 +1,50 @@
+{
+  "ablations": {
+    "candidates": 16,
+    "samples_per_candidate": 64,
+    "failures": 0,
+    "recorded_cpu": 0,
+    "recorded_wall": 6.558099418994971,
+    "selected_training_mean": 1889752.4616970166
+  },
+  "timing": {
+    "candidates": 720,
+    "samples_per_candidate": 8,
+    "failures": 0,
+    "recorded_cpu": 34.079188,
+    "recorded_wall": 34.1843706290274,
+    "selected_training_mean": 1445679.7839273596
+  },
+  "refine": {
+    "candidates": 1191,
+    "samples_per_candidate": 8,
+    "failures": 0,
+    "recorded_cpu": 61.739281999999996,
+    "recorded_wall": 61.94679056199675,
+    "selected_training_mean": 1740617.357366996
+  },
+  "refine-v2": {
+    "candidates": 1402,
+    "samples_per_candidate": 8,
+    "failures": 0,
+    "recorded_cpu": 73.59208099999991,
+    "recorded_wall": 73.83757295889518,
+    "selected_training_mean": 1624384.9514396351
+  },
+  "refine-v3": {
+    "candidates": 1579,
+    "samples_per_candidate": 8,
+    "failures": 1,
+    "recorded_cpu": 85.54904000000015,
+    "recorded_wall": 85.82608517294284,
+    "selected_training_mean": 1896560.4034927017
+  },
+  "video-refine": {
+    "candidates": 2299,
+    "samples_per_candidate": 8,
+    "failures": 0,
+    "recorded_cpu": 31.84246599999998,
+    "recorded_wall": 32.11542084699977,
+    "selected_training_mean": 2142579.4321694965
+  }
+}

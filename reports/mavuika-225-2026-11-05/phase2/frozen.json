@@ -1,0 +1,37 @@
+{
+  "implementation": "721a65f933ae7d5ed1b1c9d2262a492a11e0bd48a58f02358ba354db6487f9de",
+  "manifest": "26f761b80bc1afd1a83c91fa90ba07ba54b6ef26b922a4ce6ca34c4fd98c7e06",
+  "seeds": [
+    11,
+    37,
+    91
+  ],
+  "caps": [
+    12,
+    36,
+    108,
+    324
+  ],
+  "algorithm": "anneal",
+  "target": 2250000,
+  "selection": "discovery peak, not audit winner",
+  "changes": [
+    "fresh restarts 1/64 instead of 1/10",
+    "fixed-cadence proposal mutations from own discovery peak",
+    "bounded systematic local action/parameter/timing neighborhoods"
+  ],
+  "source_files": {
+    "src/artifact.rs": "232ef6aef6e5b9b72858dccfda1bcda018ae4732cf7b4abd87d8d0b00dce4876",
+    "src/program.rs": "3dda298b8ce4ddd3019758648c21ceffe5f6b64cb55640db43d132b63337a9e8",
+    "src/discovery.rs": "a80905dee7f1b42f8a7992e7d82ae1d3ade27690d99c3e62e63933f1ea670ac4",
+    "src/evaluate.rs": "4a415969b98fa90d088ecce267113a0af7b24b83616f28914c9de1d6081a29c3",
+    "src/search.rs": "6a476adb6bfe2285f5cc9a5995f82b2c611f09c63e6236ee5bc7d3c000433b91",
+    "data/character-rarities.json": "7743f15cdaaf6f55dfbed5446020a4a78e2414c33ba6cddc6fa2ebc9a56e0db3",
+    "Cargo.lock": "731ea6d84b1a78d74b5e7aed0af254ba7c62e03f974dff05664ddbc954737751",
+    "Cargo.toml": "ac90251044ce2da3d2056e143a671df5c3c73e77a9c2ff008e0cf22206c7a695",
+    "docs/pilot-protocol.md": "026a06e61a70434b8d9f5bf62eff229f4033829645c239456083276ddfa2d6cc",
+    "docs/pilot-retry.md": "4a2d24703a84ed80dd7fb1dbcc25338ff4bdcdab0529f2ccd2ec92772bf5eec2",
+    "docs/from-scratch.md": "48571ef53a1caf95c5c9fc7bb1246936dd206f422fd4dd273195d01ab555335f"
+  },
+  "binary_sha256": "bdb26ed78a7f03325179d5d1834bcb09887c9fd454911ad01598ad046bfc7bd5"
+}

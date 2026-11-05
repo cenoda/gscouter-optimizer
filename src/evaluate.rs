@@ -1,4 +1,4 @@
-use crate::artifact::{ENGINE, HEADER, Manifest};
+use crate::artifact::{ENGINE, Manifest};
 use crate::program::Program;
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
@@ -116,6 +116,25 @@ struct Job {
     seed: i64,
     count: usize,
 }
+
+fn warmup(config: &str) -> Result<f64, String> {
+    let values: Vec<_> = config
+        .lines()
+        .filter_map(|l| l.strip_prefix("# optimizer-warmup-seconds="))
+        .collect();
+    if values.len() > 1 {
+        return Err("duplicate scoring-window metadata".into());
+    }
+    let value: f64 = values
+        .first()
+        .unwrap_or(&"150")
+        .parse()
+        .map_err(|_| "invalid warmup metadata")?;
+    if !value.is_finite() || value < 0.0 || (value * 2.0).fract() != 0.0 {
+        return Err("warmup must be finite, nonnegative and on a half-second bucket".into());
+    }
+    Ok(value)
+}
 #[derive(Serialize, Deserialize)]
 struct Work {
     samples: Vec<Result<Sample, String>>,
@@ -136,12 +155,18 @@ pub fn worker(input: &str, output: &str) -> Result<(), String> {
     let wall = Instant::now();
     let j: Job = serde_json::from_slice(&fs::read(input).map_err(|e| e.to_string())?)
         .map_err(|e| e.to_string())?;
+    let warmup = warmup(&j.config)?;
+    let parsed = gse::gcsl::parse(&j.config)?;
+    if parsed.duration <= warmup {
+        return Err("fixed duration must exceed warmup".into());
+    }
+    let expected_frames = (parsed.duration * 60.0) as i32;
     let mut samples = Vec::new();
     for i in 0..j.count {
         samples.push(
-            gse::api::run_iterations(&j.config, 150.0, j.seed, i, 1).and_then(|mut v| {
+            gse::api::run_iterations(&j.config, warmup, j.seed, i, 1).and_then(|mut v| {
                 let s = v.remove(0);
-                if s.frames != 27000 || !s.dps.is_finite() {
+                if s.frames != expected_frames || !s.dps.is_finite() {
                     return Err("incomplete full-horizon fight".into());
                 }
                 Ok(Sample {
@@ -182,7 +207,10 @@ pub struct Evaluator {
 }
 impl Evaluator {
     pub fn key(config: &str) -> String {
-        hash(&format!("{ENGINE}\nwarmup=150\n{config}"))
+        hash(&format!(
+            "{ENGINE}\nwarmup={}\n{config}",
+            warmup(config).unwrap_or(150.0)
+        ))
     }
     pub fn new(dir: &Path) -> Result<Self, String> {
         fs::create_dir_all(dir).map_err(|e| e.to_string())?;
@@ -231,10 +259,11 @@ impl Evaluator {
     }
     pub fn config(m: &Manifest, p: &Program) -> String {
         format!(
-            "# manifest-sha256={}\n{HEADER}{}{}",
+            "# manifest-sha256={}\n{}{}{}",
             hash(&serde_json::to_string(m).expect("manifest serialization")),
+            m.header(),
             m.build(),
-            p.gcsl()
+            p.gcsl(m)
         )
     }
     pub fn eval(
@@ -248,6 +277,7 @@ impl Evaluator {
         self.raw(&Self::config(m, p), seed, n)
     }
     pub fn raw(&mut self, config: &str, seed: i64, n: usize) -> Result<Vec<Sample>, String> {
+        warmup(config)?;
         if n == 0 {
             return Err("positive sample count required".into());
         }
@@ -375,7 +405,7 @@ mod tests {
     #[test]
     fn sample_reduction_uses_full_horizon_and_disjoint_seed_slices() {
         let m = Manifest::load("data/flins-c1/manifest.json").unwrap();
-        let p = Program::families("").remove(1);
+        let p = Program::families("", &m).remove(1);
         let config = Evaluator::config(&m, &p);
         let a = gse::api::run_iterations(&config, 150.0, 991, 0, 3).unwrap();
         let b = gse::api::run_iterations(&config, 150.0, 991, 1, 2).unwrap();
@@ -384,5 +414,24 @@ mod tests {
             assert_eq!(s.frames, 27000);
             assert!((s.chars.iter().sum::<f64>() - s.dps).abs() < 1e-6);
         }
+    }
+
+    #[test]
+    fn explicit_scoring_window_is_frozen_and_cache_separated() {
+        let m = Manifest::load("data/mavuika-c6-r5-225/manifest.json").unwrap();
+        assert_eq!(m.objective(), (120, 0));
+        let p = Program::Source("active mavuika; while 1 { mavuika attack; }".into());
+        let source = Evaluator::config(&m, &p);
+        assert_eq!(warmup(&source).unwrap(), 0.0);
+        let other_window =
+            source.replace("optimizer-warmup-seconds=0", "optimizer-warmup-seconds=60");
+        assert_ne!(Evaluator::key(&source), Evaluator::key(&other_window));
+        let a = gse::api::run_iterations(&source, warmup(&source).unwrap(), 717, 0, 2).unwrap();
+        assert!(a.iter().all(|s| s.frames == 7200));
+        let mut changed = m.clone();
+        changed.scoring.as_mut().unwrap().warmup = 60;
+        assert!(changed.validate(&m).is_err());
+        assert!(warmup("# optimizer-warmup-seconds=NaN").is_err());
+        assert!(warmup("# optimizer-warmup-seconds=0\n# optimizer-warmup-seconds=1").is_err());
     }
 }

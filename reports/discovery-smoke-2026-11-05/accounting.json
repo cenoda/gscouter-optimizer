@@ -1,0 +1,37 @@
+{
+  "final": {
+    "discovery_cpu": 74.13281809500006,
+    "audit_cpu": 7.350851742999998
+  },
+  "preliminary": {
+    "discovery_cpu": 76.25297520299999,
+    "audit_cpu": 6.692416367999999
+  },
+  "legacy": {
+    "discovery_cpu": 2.012033193,
+    "audit_cpu": 0.344955487
+  },
+  "excluded": "build, unit-test, orchestration and reporting overhead",
+  "archives": {
+    "source.zip": {
+      "sha256": "ec7df9f705fcd671b189f1461603c34f513d0e28000f0f64ef8551813cf2fc8e",
+      "bytes": 90477,
+      "crc_verified": true
+    },
+    "runs.zip": {
+      "sha256": "86ee3871f5662fa07bebb3612fa00c3a6806f89e9cd892dd9e64f397659a35d8",
+      "bytes": 2387421,
+      "crc_verified": true
+    },
+    "preliminary.zip": {
+      "sha256": "48ff8120014802eb4b91edfdbd5e3c86d7f8e4d3ac2840ad245607b9855e0550",
+      "bytes": 2683241,
+      "crc_verified": true
+    },
+    "legacy-control.zip": {
+      "sha256": "f0202773b66057a2c14319343926e10bef42d0f152cbf9fcede5174227782c12",
+      "bytes": 74247,
+      "crc_verified": true
+    }
+  }
+}

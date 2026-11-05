@@ -1,0 +1,20 @@
+{
+  "rule": "highest final discovery best_hint among completed starts at 108 CPU seconds; audits unused",
+  "implementation": "79123f73118bf79daf5e723273ce316b691c02981f9cad58692311bf5fb76da4",
+  "conditions": {
+    "r1": {
+      "status": "frozen",
+      "seed": 37,
+      "key": "221692ec33c27f19859fc8d7e04048a2fe9e49b165461a7f38c93ab4364fd91d",
+      "discovery_estimate": 726810.429721864,
+      "source_sha256": "5b4381bb10decbdcf13197ae301aae09abd3ced952d5ddefa35cc35d605d3f59"
+    },
+    "r5": {
+      "status": "frozen",
+      "seed": 91,
+      "key": "f633849c9fb69af3829ea141e73d4b799720b4ebf52122f00b19bad3c328c33d",
+      "discovery_estimate": 972448.2664912152,
+      "source_sha256": "cd91e7bffa6918cd3f066a8dfd94692691226e128f7ad479b4e611f224b2364c"
+    }
+  }
+}

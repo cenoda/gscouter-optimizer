@@ -1,0 +1,860 @@
+{
+  "accepted": 67,
+  "algorithm": "anneal",
+  "audit_cpu_seconds": 1.1496726890000009,
+  "audit_seed": 4000049000000,
+  "audits": [
+    {
+      "artifact_scores": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "baseline_same_allocation": {
+        "chars": [
+          551673.4551004197,
+          34603.908147276976,
+          4251.76399303823,
+          19420.28331673436
+        ],
+        "first": 639247.3526236422,
+        "mean": 609949.4105574692,
+        "n": 128,
+        "se": 650.9360936268467,
+        "second": 580651.4684912959,
+        "waits": [
+          {},
+          {
+            "swap_cd": 5.583333333333338
+          },
+          {
+            "swap_cd": 4.100000000000009
+          },
+          {
+            "swap_cd": 5.9333333333333185
+          }
+        ]
+      },
+      "cycle_only_same_allocation": [
+        0.0,
+        0.0
+      ],
+      "index": 0,
+      "joint": {
+        "chars": [
+          551673.4551004197,
+          34603.908147276976,
+          4251.76399303823,
+          19420.28331673436
+        ],
+        "first": 639247.3526236422,
+        "mean": 609949.4105574692,
+        "n": 128,
+        "se": 650.9360936268467,
+        "second": 580651.4684912959,
+        "waits": [
+          {},
+          {
+            "swap_cd": 5.583333333333338
+          },
+          {
+            "swap_cd": 4.100000000000009
+          },
+          {
+            "swap_cd": 5.9333333333333185
+          }
+        ]
+      },
+      "joint_minus_original_baseline": [
+        0.0,
+        0.0
+      ],
+      "key": "31207ff96ad883757f7e410ab2af14b29e19dae67429d9557f694ce5e87f01a6",
+      "program_fixed_initial_allocation": {
+        "chars": [
+          551673.4551004197,
+          34603.908147276976,
+          4251.76399303823,
+          19420.28331673436
+        ],
+        "first": 639247.3526236422,
+        "mean": 609949.4105574692,
+        "n": 128,
+        "se": 650.9360936268467,
+        "second": 580651.4684912959,
+        "waits": [
+          {},
+          {
+            "swap_cd": 5.583333333333338
+          },
+          {
+            "swap_cd": 4.100000000000009
+          },
+          {
+            "swap_cd": 5.9333333333333185
+          }
+        ]
+      },
+      "role": "generated starting control",
+      "status": "independently-audited shortlist member",
+      "structure": "2Q:0/2,0F:0/1,1Q:0/1,3Q:0/1"
+    },
+    {
+      "artifact_scores": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "baseline_same_allocation": {
+        "chars": [
+          551673.4551004197,
+          34603.908147276976,
+          4251.76399303823,
+          19420.28331673436
+        ],
+        "first": 639247.3526236422,
+        "mean": 609949.4105574692,
+        "n": 128,
+        "se": 650.9360936268467,
+        "second": 580651.4684912959,
+        "waits": [
+          {},
+          {
+            "swap_cd": 5.583333333333338
+          },
+          {
+            "swap_cd": 4.100000000000009
+          },
+          {
+            "swap_cd": 5.9333333333333185
+          }
+        ]
+      },
+      "cycle_only_same_allocation": [
+        744752.893754861,
+        4535.023997695606
+      ],
+      "index": 1,
+      "joint": {
+        "chars": [
+          1257781.4651370563,
+          57507.22041052503,
+          32483.600136784968,
+          6930.018627962881
+        ],
+        "first": 1411304.6466593787,
+        "mean": 1354702.3043123302,
+        "n": 128,
+        "se": 4461.411766021198,
+        "second": 1298099.961965281,
+        "waits": [
+          {
+            "swap_cd": 0.5999999999999999
+          },
+          {
+            "swap_cd": 3.266666666666665
+          },
+          {},
+          {
+            "swap_cd": 5.2333333333333405
+          }
+        ]
+      },
+      "joint_minus_original_baseline": [
+        744752.893754861,
+        4535.023997695606
+      ],
+      "key": "dae6944b82c45cbc542060d6c40248dc47caf8e15c8dc6462a1cb01a217bf887",
+      "program_fixed_initial_allocation": {
+        "chars": [
+          1257781.4651370563,
+          57507.22041052503,
+          32483.600136784968,
+          6930.018627962881
+        ],
+        "first": 1411304.6466593787,
+        "mean": 1354702.3043123302,
+        "n": 128,
+        "se": 4461.411766021198,
+        "second": 1298099.961965281,
+        "waits": [
+          {
+            "swap_cd": 0.5999999999999999
+          },
+          {
+            "swap_cd": 3.266666666666665
+          },
+          {},
+          {
+            "swap_cd": 5.2333333333333405
+          }
+        ]
+      },
+      "role": "generated-family-3",
+      "status": "independently-audited shortlist member",
+      "structure": "3Q:0/1,2F:0/2,1Q:0/1,0F:0/2"
+    },
+    {
+      "artifact_scores": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "baseline_same_allocation": {
+        "chars": [
+          551673.4551004197,
+          34603.908147276976,
+          4251.76399303823,
+          19420.28331673436
+        ],
+        "first": 639247.3526236422,
+        "mean": 609949.4105574692,
+        "n": 128,
+        "se": 650.9360936268467,
+        "second": 580651.4684912959,
+        "waits": [
+          {},
+          {
+            "swap_cd": 5.583333333333338
+          },
+          {
+            "swap_cd": 4.100000000000009
+          },
+          {
+            "swap_cd": 5.9333333333333185
+          }
+        ]
+      },
+      "cycle_only_same_allocation": [
+        187388.9869975937,
+        3413.845984694774
+      ],
+      "index": 2,
+      "joint": {
+        "chars": [
+          706914.596554126,
+          40716.09308000374,
+          40043.79220431176,
+          9663.91571662141
+        ],
+        "first": 847598.35756051,
+        "mean": 797338.3975550624,
+        "n": 128,
+        "se": 3340.4044436106687,
+        "second": 747078.4375496154,
+        "waits": [
+          {
+            "swap_cd": 0.5999999999999999
+          },
+          {
+            "swap_cd": 2.26666666666667
+          },
+          {},
+          {
+            "swap_cd": 4.41666666666667
+          }
+        ]
+      },
+      "joint_minus_original_baseline": [
+        187388.9869975937,
+        3413.845984694774
+      ],
+      "key": "baa0ed97e9fa05cdfdf47a446fb2dc98542244376fbb41c379af1e6d3abc4238",
+      "program_fixed_initial_allocation": {
+        "chars": [
+          706914.596554126,
+          40716.09308000374,
+          40043.79220431176,
+          9663.91571662141
+        ],
+        "first": 847598.35756051,
+        "mean": 797338.3975550624,
+        "n": 128,
+        "se": 3340.4044436106687,
+        "second": 747078.4375496154,
+        "waits": [
+          {
+            "swap_cd": 0.5999999999999999
+          },
+          {
+            "swap_cd": 2.26666666666667
+          },
+          {},
+          {
+            "swap_cd": 4.41666666666667
+          }
+        ]
+      },
+      "role": "generated-family-3",
+      "status": "independently-audited shortlist member",
+      "structure": "3Q:0/1,2F:0/2,1Q:0/1,0F:0/2"
+    },
+    {
+      "artifact_scores": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "baseline_same_allocation": {
+        "chars": [
+          551673.4551004197,
+          34603.908147276976,
+          4251.76399303823,
+          19420.28331673436
+        ],
+        "first": 639247.3526236422,
+        "mean": 609949.4105574692,
+        "n": 128,
+        "se": 650.9360936268467,
+        "second": 580651.4684912959,
+        "waits": [
+          {},
+          {
+            "swap_cd": 5.583333333333338
+          },
+          {
+            "swap_cd": 4.100000000000009
+          },
+          {
+            "swap_cd": 5.9333333333333185
+          }
+        ]
+      },
+      "cycle_only_same_allocation": [
+        -566466.0045675064,
+        684.5049237739703
+      ],
+      "index": 3,
+      "joint": {
+        "chars": [
+          3380.496447869712,
+          2347.565739394962,
+          29991.39952811972,
+          7763.944274578289
+        ],
+        "first": 40425.28856432003,
+        "mean": 43483.40598996269,
+        "n": 128,
+        "se": 140.7076876587556,
+        "second": 46541.523415605385,
+        "waits": [
+          {},
+          {
+            "swap_cd": 4.0
+          },
+          {},
+          {}
+        ]
+      },
+      "joint_minus_original_baseline": [
+        -566466.0045675064,
+        684.5049237739703
+      ],
+      "key": "326c92ab4cbbb01a62514e4174b371485e113df5248354d8c06a74cb87eeceb2",
+      "program_fixed_initial_allocation": {
+        "chars": [
+          3380.496447869712,
+          2347.565739394962,
+          29991.39952811972,
+          7763.944274578289
+        ],
+        "first": 40425.28856432003,
+        "mean": 43483.40598996269,
+        "n": 128,
+        "se": 140.7076876587556,
+        "second": 46541.523415605385,
+        "waits": [
+          {},
+          {
+            "swap_cd": 4.0
+          },
+          {},
+          {}
+        ]
+      },
+      "role": "generated-family-2",
+      "status": "independently-audited shortlist member",
+      "structure": "1Q:0/1,2F:0/1,0Q:0/1,3Q:0/1,3Q:0/1,3Q:0/1,3F:0/1"
+    },
+    {
+      "artifact_scores": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "baseline_same_allocation": {
+        "chars": [
+          551673.4551004197,
+          34603.908147276976,
+          4251.76399303823,
+          19420.28331673436
+        ],
+        "first": 639247.3526236422,
+        "mean": 609949.4105574692,
+        "n": 128,
+        "se": 650.9360936268467,
+        "second": 580651.4684912959,
+        "waits": [
+          {},
+          {
+            "swap_cd": 5.583333333333338
+          },
+          {
+            "swap_cd": 4.100000000000009
+          },
+          {
+            "swap_cd": 5.9333333333333185
+          }
+        ]
+      },
+      "cycle_only_same_allocation": [
+        744752.893754861,
+        4535.023997695606
+      ],
+      "index": 4,
+      "joint": {
+        "chars": [
+          1257781.4651370563,
+          57507.22041052503,
+          32483.600136784968,
+          6930.018627962881
+        ],
+        "first": 1411304.6466593787,
+        "mean": 1354702.3043123302,
+        "n": 128,
+        "se": 4461.411766021198,
+        "second": 1298099.961965281,
+        "waits": [
+          {
+            "swap_cd": 0.5999999999999999
+          },
+          {
+            "swap_cd": 3.266666666666665
+          },
+          {},
+          {
+            "swap_cd": 5.2333333333333405
+          }
+        ]
+      },
+      "joint_minus_original_baseline": [
+        744752.893754861,
+        4535.023997695606
+      ],
+      "key": "a147d2e100572ffdcc7ae1e169322b038b5d09b92d423c01d91f2e72bda3c506",
+      "program_fixed_initial_allocation": {
+        "chars": [
+          1257781.4651370563,
+          57507.22041052503,
+          32483.600136784968,
+          6930.018627962881
+        ],
+        "first": 1411304.6466593787,
+        "mean": 1354702.3043123302,
+        "n": 128,
+        "se": 4461.411766021198,
+        "second": 1298099.961965281,
+        "waits": [
+          {
+            "swap_cd": 0.5999999999999999
+          },
+          {
+            "swap_cd": 3.266666666666665
+          },
+          {},
+          {
+            "swap_cd": 5.2333333333333405
+          }
+        ]
+      },
+      "role": "generated-family-3",
+      "status": "independently-audited shortlist member",
+      "structure": "3Q:0/1,2F:0/2,1Q:0/1,0F:0/2"
+    },
+    {
+      "artifact_scores": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "baseline_same_allocation": {
+        "chars": [
+          551673.4551004197,
+          34603.908147276976,
+          4251.76399303823,
+          19420.28331673436
+        ],
+        "first": 639247.3526236422,
+        "mean": 609949.4105574692,
+        "n": 128,
+        "se": 650.9360936268467,
+        "second": 580651.4684912959,
+        "waits": [
+          {},
+          {
+            "swap_cd": 5.583333333333338
+          },
+          {
+            "swap_cd": 4.100000000000009
+          },
+          {
+            "swap_cd": 5.9333333333333185
+          }
+        ]
+      },
+      "cycle_only_same_allocation": [
+        -567503.7426110954,
+        658.9198560173411
+      ],
+      "index": 5,
+      "joint": {
+        "chars": [
+          5369.843687709075,
+          2368.31162972054,
+          32432.529560561903,
+          2274.983068382355
+        ],
+        "first": 39433.73885782526,
+        "mean": 42445.66794637386,
+        "n": 128,
+        "se": 141.1403639186457,
+        "second": 45457.59703492246,
+        "waits": [
+          {},
+          {
+            "swap_cd": 3.0
+          },
+          {},
+          {
+            "swap_cd": 1.4499999999999977
+          }
+        ]
+      },
+      "joint_minus_original_baseline": [
+        -567503.7426110954,
+        658.9198560173411
+      ],
+      "key": "dab25527b9cd3f564f4f80d582306e9c88082e38196f2c2be11b2d2a7daa3029",
+      "program_fixed_initial_allocation": {
+        "chars": [
+          5369.843687709075,
+          2368.31162972054,
+          32432.529560561903,
+          2274.983068382355
+        ],
+        "first": 39433.73885782526,
+        "mean": 42445.66794637386,
+        "n": 128,
+        "se": 141.1403639186457,
+        "second": 45457.59703492246,
+        "waits": [
+          {},
+          {
+            "swap_cd": 3.0
+          },
+          {},
+          {
+            "swap_cd": 1.4499999999999977
+          }
+        ]
+      },
+      "role": "generated-family-2",
+      "status": "independently-audited shortlist member",
+      "structure": "1Q:0/1,2F:0/1,0Q:0/1,3Q:0/1,3Q:0/1"
+    }
+  ],
+  "baseline": {
+    "chars": [
+      551673.4551004197,
+      34603.908147276976,
+      4251.76399303823,
+      19420.28331673436
+    ],
+    "first": 639247.3526236422,
+    "mean": 609949.4105574692,
+    "n": 128,
+    "se": 650.9360936268467,
+    "second": 580651.4684912959,
+    "waits": [
+      {},
+      {
+        "swap_cd": 5.583333333333338
+      },
+      {
+        "swap_cd": 4.100000000000009
+      },
+      {
+        "swap_cd": 5.9333333333333185
+      }
+    ]
+  },
+  "basic_grammar": true,
+  "cache_hit_samples_this_invocation": 5746,
+  "cap_overrun_seconds": 0.014132835999999926,
+  "completed_decisions": 216,
+  "completed_or_failed_fights": 6088,
+  "curve": [
+    {
+      "actual_cpu_seconds": 12.014132836,
+      "best_key": "dae6944b82c45cbc542060d6c40248dc47caf8e15c8dc6462a1cb01a217bf887",
+      "best_search_estimate": 1352892.8751249022,
+      "budget_cpu_seconds": 12.0,
+      "decisions": 216
+    }
+  ],
+  "discovery_cpu_cap": 12.0,
+  "discovery_cpu_seconds": 12.014132836,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "failed_fights": 8,
+  "families": 4,
+  "format": 1,
+  "from_scratch": true,
+  "implementation_sha256": "721a65f933ae7d5ed1b1c9d2262a492a11e0bd48a58f02358ba354db6487f9de",
+  "joint_er": false,
+  "limitations": [
+    "bounded parameter forms and resource-guarded charge/dash continuations; arbitrary mechanic predicates are not enumerated",
+    "broad effectiveness and unrestricted optimality remain unvalidated",
+    "final audit seeds never used by proposal or promotion logic",
+    "audit shortlist ranking still has multiple-comparison selection uncertainty",
+    "no early low-DPS pruning",
+    "cross-profile refinement and serving integration are deferred"
+  ],
+  "local_only": false,
+  "manifest_sha256": "8143b8f9fb8c9d63743d39308bd9091601cf54d1b4bd36868be5f26f773e96cb",
+  "max_executing_chains": 1,
+  "objective": {
+    "duration": 120,
+    "warmup": 0
+  },
+  "provisional_best_key": "dae6944b82c45cbc542060d6c40248dc47caf8e15c8dc6462a1cb01a217bf887",
+  "reference_origin": "generated starting control",
+  "restricted_domain": false,
+  "revised": true,
+  "seed": 37,
+  "shortlist_frozen_keys": [
+    "31207ff96ad883757f7e410ab2af14b29e19dae67429d9557f694ce5e87f01a6",
+    "dae6944b82c45cbc542060d6c40248dc47caf8e15c8dc6462a1cb01a217bf887",
+    "baa0ed97e9fa05cdfdf47a446fb2dc98542244376fbb41c379af1e6d3abc4238",
+    "326c92ab4cbbb01a62514e4174b371485e113df5248354d8c06a74cb87eeceb2",
+    "a147d2e100572ffdcc7ae1e169322b038b5d09b92d423c01d91f2e72bda3c506",
+    "dab25527b9cd3f564f4f80d582306e9c88082e38196f2c2be11b2d2a7daa3029"
+  ],
+  "site_commit": "d8d28c36d3801a4383feb240e78582fc674a00f1",
+  "stage_selections": [
+    {
+      "budget_cpu_cap": 12.0,
+      "candidate": {
+        "allocation": {
+          "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+          "fixed_build": "mavuika char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];\nmavuika add weapon=\"tbs\" refine=5 lvl=90/90;\nmavuika add set=\"oc\" count=4;\ncitlali char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];\ncitlali add weapon=\"starcallerswatch\" refine=5 lvl=90/90;\ncitlali add set=\"scroll\" count=4;\ncitlali add stats hp=4780 atk=311 em=187 em=187 em=187;\ncitlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=118.92 cr=0.3972 cd=0.5296;\nxilonen char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];\nxilonen add weapon=\"peakpatrolsong\" refine=5 lvl=90/90;\nxilonen add set=\"ap\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 def%=0.583;\nxilonen add stats def%=0.372 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.5296;\nnicole char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];\nnicole add weapon=\"angelosheptades\" refine=5 lvl=90/90;\nnicole add set=\"cg\" count=4;\nnicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;\nnicole add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=165.4 atk%=0.2976 er=0.1102 em=39.64 cr=0.2979 cd=0.1986;\nmavuika add stats hp=4780 atk=311 atk%=0.9108971394925316 cr=0.42974399999999996 cd=1.6360000000000001 pyro%=0.466 em=266.28;\n",
+          "format": 2,
+          "max_rolls": {},
+          "members": [
+            {
+              "cons": 6,
+              "key": "mavuika",
+              "pieces": [],
+              "refinement": 5,
+              "set": "oc",
+              "useful": [],
+              "weapon": "athousandblazingsuns",
+              "weights": {}
+            },
+            {
+              "cons": 6,
+              "key": "citlali",
+              "pieces": [],
+              "refinement": 5,
+              "set": "scroll",
+              "useful": [],
+              "weapon": "starcallerswatch",
+              "weights": {}
+            },
+            {
+              "cons": 6,
+              "key": "xilonen",
+              "pieces": [],
+              "refinement": 5,
+              "set": "ap",
+              "useful": [],
+              "weapon": "peakpatrolsong",
+              "weights": {}
+            },
+            {
+              "cons": 6,
+              "key": "nicole",
+              "pieces": [],
+              "refinement": 5,
+              "set": "cg",
+              "useful": [],
+              "weapon": "angelosheptades",
+              "weights": {}
+            }
+          ],
+          "scoring": {
+            "duration": 120,
+            "enemy_level": 110,
+            "periodic_energy": false,
+            "position": [
+              0.0,
+              2.4
+            ],
+            "radius": 2.0,
+            "resistance": 0.1,
+            "swap_delay": 1,
+            "warmup": 0
+          },
+          "site_commit": "d8d28c36d3801a4383feb240e78582fc674a00f1",
+          "sources": {
+            "reports/mavuika-c6-replay-2026-11-05/audit/video-refined-panel266-120.gcsl": "c1d242a80c5e7f9106dba5d5dd9576b815a60c69dc19b7404348c9885469e4d6"
+          }
+        },
+        "parent": "32bbc82396ab3a34c9a6fd6eb9e571315284b1bf02f1344861c781021bdc4da0",
+        "program": {
+          "Generated": {
+            "active": 3,
+            "advanced": false,
+            "cycle": [
+              {
+                "actor": 3,
+                "entry": [
+                  {
+                    "action": "burst",
+                    "count": 1,
+                    "delay": 0,
+                    "ready": true
+                  },
+                  {
+                    "action": "skill",
+                    "count": 1,
+                    "delay": 0,
+                    "ready": true
+                  }
+                ],
+                "field": null,
+                "period": 1,
+                "phase": 0,
+                "pickup": false
+              },
+              {
+                "actor": 2,
+                "entry": [
+                  {
+                    "action": "burst",
+                    "count": 1,
+                    "delay": 0,
+                    "ready": true
+                  },
+                  {
+                    "action": "skill",
+                    "count": 1,
+                    "delay": 0,
+                    "ready": true
+                  }
+                ],
+                "field": {
+                  "frames": 300,
+                  "pattern": [
+                    {
+                      "action": "attack",
+                      "count": 4,
+                      "delay": 0,
+                      "ready": false
+                    }
+                  ]
+                },
+                "period": 2,
+                "phase": 0,
+                "pickup": false
+              },
+              {
+                "actor": 1,
+                "entry": [
+                  {
+                    "action": "skill",
+                    "count": 1,
+                    "delay": 0,
+                    "ready": true
+                  },
+                  {
+                    "action": "burst",
+                    "count": 1,
+                    "delay": 0,
+                    "ready": true
+                  }
+                ],
+                "field": null,
+                "period": 1,
+                "phase": 0,
+                "pickup": false
+              },
+              {
+                "actor": 0,
+                "entry": [
+                  {
+                    "action": "burst",
+                    "count": 1,
+                    "delay": 0,
+                    "ready": true
+                  }
+                ],
+                "field": {
+                  "frames": 600,
+                  "pattern": [
+                    {
+                      "action": "attack",
+                      "count": 3,
+                      "delay": 0,
+                      "ready": false
+                    }
+                  ]
+                },
+                "period": 2,
+                "phase": 0,
+                "pickup": false
+              }
+            ],
+            "opening": [
+              {
+                "actor": 0,
+                "entry": [
+                  {
+                    "action": "skill",
+                    "count": 1,
+                    "delay": 0,
+                    "ready": true
+                  },
+                  {
+                    "action": "burst",
+                    "count": 1,
+                    "delay": 0,
+                    "ready": true
+                  }
+                ],
+                "field": null,
+                "period": 1,
+                "phase": 0,
+                "pickup": false
+              }
+            ]
+          }
+        },
+        "role": "generated-family-3"
+      },
+      "cpu_seconds": 9.021836977,
+      "search_estimate": 798299.1928510051
+    }
+  ],
+  "status": "baseline-free discovery; broad effectiveness unvalidated",
+  "this_invocation_wall_seconds": 18.679686231,
+  "timeouts_this_invocation": 0,
+  "worker_batch_p50_seconds": 0.005910726,
+  "worker_batch_p95_seconds": 0.043975746,
+  "worker_calls": 821
+}

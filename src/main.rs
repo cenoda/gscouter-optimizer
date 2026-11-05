@@ -1,4 +1,5 @@
 mod artifact;
+mod discovery;
 mod evaluate;
 mod program;
 mod search;

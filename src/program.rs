@@ -1,3 +1,4 @@
+use crate::artifact::Manifest;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Copy, Serialize, Deserialize)]
@@ -17,7 +18,7 @@ impl Rng {
         ((self.next() >> 11) as f64 + 0.5) / (1u64 << 53) as f64
     }
 }
-pub const NAMES: [&str; 4] = ["flins", "ineffa", "columbina", "sucrose"];
+const PILOT_NAMES: [&str; 4] = ["flins", "ineffa", "columbina", "sucrose"];
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
 pub struct Action {
@@ -46,6 +47,9 @@ pub enum Step {
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
 pub enum Program {
     Library(String),
+    Generated(crate::discovery::Rotation),
+    /// Complete rotation source with its repetition policy already applied.
+    Source(String),
     Typed {
         opening: Vec<Step>,
         cycle: Vec<Step>,
@@ -71,12 +75,115 @@ fn block(actor: usize, names: &[&str], period: u8) -> Step {
     }
 }
 impl Program {
+    pub fn is_pilot(m: &Manifest) -> bool {
+        m.format == 1 && m.members.iter().map(|c| c.key.as_str()).eq(PILOT_NAMES)
+    }
+
+    pub fn baseline(raw: &str, m: &Manifest) -> Result<Self, String> {
+        gse::gcsl::parse(&format!("{}{}{}", m.header(), m.build(), raw))?;
+        if Self::is_pilot(m) && raw.trim_start().starts_with("active ") {
+            return Ok(Self::Library(raw.into()));
+        }
+        use gse::gcsl::Tok;
+        let mut tokens = gse::gcsl::lex(raw);
+        tokens.retain(|t| t.typ != Tok::Eof);
+        let mut active = None;
+        let mut depth = 0;
+        let mut i = 0;
+        while i < tokens.len() {
+            match tokens[i].typ {
+                Tok::LeftBrace => depth += 1,
+                Tok::RightBrace => depth -= 1,
+                Tok::Active if depth == 0 => {
+                    if active.is_some()
+                        || i + 2 >= tokens.len()
+                        || tokens[i + 1].typ != Tok::CharacterKey
+                        || tokens[i + 2].typ != Tok::TerminateLine
+                    {
+                        return Err(
+                            "rotation needs exactly one top-level active declaration".into()
+                        );
+                    }
+                    active = Some(tokens[i + 1].val.clone());
+                    tokens.drain(i..i + 3);
+                    continue;
+                }
+                _ => {}
+            }
+            i += 1;
+        }
+        let active = active.ok_or("rotation missing active declaration")?;
+        // Keep global functions and initialization outside repetition. Start at
+        // the first top-level control block, character action or other runtime
+        // statement; function and let bodies can contain nested braces.
+        let mut start = 0;
+        while start < tokens.len() && matches!(tokens[start].typ, Tok::Fn | Tok::Let) {
+            let function = tokens[start].typ == Tok::Fn;
+            let mut nesting = 0;
+            let mut end = start + 1;
+            while end < tokens.len() {
+                match tokens[end].typ {
+                    Tok::LeftBrace => nesting += 1,
+                    Tok::RightBrace => {
+                        nesting -= 1;
+                        if function && nesting == 0 {
+                            end += 1;
+                            break;
+                        }
+                    }
+                    Tok::TerminateLine if nesting == 0 => {
+                        end += 1;
+                        break;
+                    }
+                    _ => {}
+                }
+                end += 1;
+            }
+            start = end;
+        }
+        if start == tokens.len() {
+            return Err("rotation contains no repeated body".into());
+        }
+        let join = |ts: &[gse::gcsl::Token]| {
+            ts.iter()
+                .map(|t| t.val.as_str())
+                .collect::<Vec<_>>()
+                .join(" ")
+        };
+        let mut guard = "optimizer_cycle_start".to_string();
+        while tokens.iter().any(|t| t.val == guard) {
+            guard.push('_');
+        }
+        let source = format!(
+            "active {active};\n{}\nwhile 1 {{\nlet {guard}=f();\n{}\nif f() == {guard} {{ wait(1); }}\n}}\n",
+            join(&tokens[..start]),
+            join(&tokens[start..])
+        );
+        let p = Self::Source(source);
+        gse::gcsl::parse(&format!("{}{}{}", m.header(), m.build(), p.gcsl(m)))?;
+        Ok(p)
+    }
+
+    fn with_source(&self, source: String) -> Self {
+        match self {
+            Self::Source(_) => Self::Source(source),
+            _ => Self::Library(source),
+        }
+    }
+
+    pub fn families(baseline: &str, m: &Manifest) -> Vec<Self> {
+        if Self::is_pilot(m) {
+            return Self::pilot_families(baseline);
+        }
+        vec![Self::baseline(baseline, m).expect("validated baseline")]
+    }
+
     pub fn restricted_domain() -> Vec<Self> {
         let mut programs = Vec::new();
         for frames in [360, 600] {
             for normals in [2, 4] {
                 for period in [1, 2] {
-                    let mut p = Self::families("").remove(1);
+                    let mut p = Self::pilot_families("").remove(1);
                     if let Self::Typed { cycle, .. } = &mut p {
                         if let Step::Field {
                             frames: f,
@@ -98,28 +205,35 @@ impl Program {
         programs
     }
 
-    pub fn mutate_revised(&self, rng: &mut Rng) -> (Self, String) {
+    pub fn mutate_revised(&self, rng: &mut Rng, m: &Manifest) -> (Self, String) {
         if rng.index(100) < 60 {
-            let neighbors = self.local_neighbors();
+            let neighbors = self.local_neighbors(m);
             if !neighbors.is_empty() {
                 return neighbors[rng.index(neighbors.len())].clone();
             }
         }
-        (self.mutate(rng), "legacy action mutation".into())
+        (self.mutate(rng, m), "legacy action mutation".into())
     }
 
     /// A bounded, deterministic neighborhood; no character-specific combos.
-    pub fn local_neighbors(&self) -> Vec<(Self, String)> {
-        let Self::Library(raw) = self else {
+    pub fn local_neighbors(&self, m: &Manifest) -> Vec<(Self, String)> {
+        if let Self::Generated(p) = self {
+            return p
+                .neighbors(m)
+                .into_iter()
+                .map(|(p, label)| (Self::Generated(p), label))
+                .collect();
+        }
+        let (Self::Library(raw) | Self::Source(raw)) = self else {
             return Vec::new();
         };
-        source_neighbors(raw)
+        source_neighbors(raw, &m.build())
             .into_iter()
-            .map(|(s, label)| (Self::Library(s), label))
+            .map(|(s, label)| (self.with_source(s), label))
             .collect()
     }
 
-    pub fn families(baseline: &str) -> Vec<Self> {
+    fn pilot_families(baseline: &str) -> Vec<Self> {
         vec![
             Self::Library(baseline.into()),
             Self::Typed {
@@ -174,6 +288,9 @@ impl Program {
         ]
     }
     pub fn validate(&self) -> Result<(), String> {
+        if let Self::Generated(p) = self {
+            return p.validate();
+        }
         if let Self::Typed { opening, cycle } = self {
             if cycle.is_empty() || cycle.len() > 20 || opening.len() > 8 {
                 return Err("bounded program size".into());
@@ -220,8 +337,10 @@ impl Program {
         }
         Ok(())
     }
-    pub fn gcsl(&self) -> String {
+    pub fn gcsl(&self, m: &Manifest) -> String {
         match self {
+            Self::Generated(p) => p.gcsl(m),
+            Self::Source(raw) => raw.clone(),
             Self::Library(raw) => {
                 // The imported baseline has only active setup followed by its
                 // original finite for-loop. Keep all of its branches intact.
@@ -231,36 +350,47 @@ impl Program {
                 format!("{setup};\nwhile 1 {{\n{body}\n}}\n")
             }
             Self::Typed { opening, cycle } => {
-                let mut out = "active ineffa;\n".to_string();
+                let names: Vec<&str> = m.members.iter().map(|c| c.key.as_str()).collect();
+                let active = if Self::is_pilot(m) {
+                    names[1]
+                } else {
+                    names[0]
+                };
+                let mut out = format!("active {active};\n");
                 for (i, s) in opening.iter().enumerate() {
-                    out.push_str(&render(s, i, false));
+                    out.push_str(&render(s, i, false, &names));
                 }
                 for i in 0..cycle.len() {
                     out.push_str(&format!("let gate{i}=0;\n"));
                 }
                 out.push_str("while 1 {\nlet cycle_start=f();\n");
                 for (i, s) in cycle.iter().enumerate() {
-                    out.push_str(&render(s, i, true));
+                    out.push_str(&render(s, i, true, &names));
                 }
                 out.push_str("if f() == cycle_start { wait(1); }\n}\n");
                 out
             }
         }
     }
-    pub fn mutate(&self, rng: &mut Rng) -> Self {
-        if let Self::Library(raw) = self
-            && rng.index(10) != 0
+    pub fn mutate(&self, rng: &mut Rng, m: &Manifest) -> Self {
+        if let Self::Generated(p) = self {
+            return crate::discovery::Catalog::configured(m, p.advanced)
+                .map(|c| Self::Generated(p.mutate(&c, rng).0))
+                .unwrap_or_else(|_| self.clone());
+        }
+        if let Self::Library(raw) | Self::Source(raw) = self
+            && (matches!(self, Self::Source(_)) || rng.index(10) != 0)
         {
-            if let Some(source) = mutate_source(raw, rng) {
-                return Self::Library(source);
+            if let Some(source) = mutate_source(raw, rng, m) {
+                return self.with_source(source);
             }
             return self.clone();
         }
         let mut p = self.clone();
-        if matches!(p, Self::Library(_)) {
+        if matches!(p, Self::Library(_) | Self::Source(_)) {
             // A deliberately simple baseline-derived seed, not a claimed
             // translation of conditional GCSL or a hidden high-cons cycle.
-            p = Self::families("").remove(1);
+            p = Self::families("", m).remove(1);
         }
         let Self::Typed { opening, cycle } = &mut p else {
             unreachable!()
@@ -365,7 +495,7 @@ impl Program {
 /// Edit complete action lists while leaving all surrounding control tokens
 /// untouched. Round-robin action positions keep long statements from crowding
 /// out every other character under the neighborhood cap.
-fn source_neighbors(raw: &str) -> Vec<(String, String)> {
+fn source_neighbors(raw: &str, context: &str) -> Vec<(String, String)> {
     use gse::gcsl::Tok;
     let lexed = gse::gcsl::lex(raw);
     if lexed.len() > 1200 {
@@ -396,10 +526,6 @@ fn source_neighbors(raw: &str) -> Vec<(String, String)> {
             statements.push((i, end, actions));
         }
     }
-    let context = NAMES
-        .iter()
-        .map(|n| format!("{n} char lvl=90/90 cons=1 talent=10,10,10;\n"))
-        .collect::<String>();
     let mut result = Vec::new();
     let mut seen = std::collections::BTreeSet::from([text.join(" ")]);
     let max_actions = statements
@@ -470,7 +596,7 @@ fn source_neighbors(raw: &str) -> Vec<(String, String)> {
                 if !seen.insert(source.clone()) {
                     continue;
                 }
-                if gse::gcsl::parse(&format!("target lvl=100 resist=0.1;\n{context}{source}"))
+                if gse::gcsl::parse(&format!("target lvl=100 resist=0.1;\n{context}\n{source}"))
                     .is_ok()
                 {
                     result.push((source, label));
@@ -487,7 +613,7 @@ fn source_neighbors(raw: &str) -> Vec<(String, String)> {
 /// Mutate actual action lists while retaining the original program's guards,
 /// loop variables and opening. This is not a trace flattened from one seed.
 /// The engine lexer retains original token spellings, including quoted strings.
-fn mutate_source(raw: &str, rng: &mut Rng) -> Option<String> {
+fn mutate_source(raw: &str, rng: &mut Rng, m: &Manifest) -> Option<String> {
     use gse::gcsl::Tok;
     let tokens = gse::gcsl::lex(raw);
     if tokens.len() > 1200 {
@@ -556,7 +682,7 @@ fn mutate_source(raw: &str, rng: &mut Rng) -> Option<String> {
                 return None;
             }
             let at = starts[rng.index(starts.len())];
-            text.insert(at, format!("{} {action};", NAMES[rng.index(4)]));
+            text.insert(at, format!("{} {action};", m.members[rng.index(4)].key));
         }
         _ => {
             text.splice(
@@ -566,14 +692,11 @@ fn mutate_source(raw: &str, rng: &mut Rng) -> Option<String> {
         }
     }
     let source = text.join(" ");
-    let context = NAMES
-        .iter()
-        .map(|n| format!("{n} char lvl=90/90 cons=1 talent=10,10,10;\n"))
-        .collect::<String>();
-    gse::gcsl::parse(&format!("target lvl=100 resist=0.1;\n{context}{source}")).ok()?;
+    let context = m.build();
+    gse::gcsl::parse(&format!("target lvl=100 resist=0.1;\n{context}\n{source}")).ok()?;
     Some(source)
 }
-fn render(s: &Step, i: usize, cyclic: bool) -> String {
+fn render(s: &Step, i: usize, cyclic: bool, names: &[&str]) -> String {
     let mut out = String::new();
     match s {
         Step::Wait(n) => out.push_str(&format!("wait({n});\n")),
@@ -586,7 +709,7 @@ fn render(s: &Step, i: usize, cyclic: bool) -> String {
                 out.push_str(&format!("if gate{i} == {phase} {{\n"));
             }
             for a in actions {
-                let name = NAMES[a.actor];
+                let name = names[a.actor];
                 if a.ready && matches!(a.name.as_str(), "skill" | "burst") {
                     out.push_str(&format!("if .{name}.{}.ready {{\n", a.name));
                 }
@@ -609,7 +732,7 @@ fn render(s: &Step, i: usize, cyclic: bool) -> String {
             skill,
             burst,
         } => {
-            let name = NAMES[*actor];
+            let name = names[*actor];
             out.push_str(&format!(
                 "{name} swap;\nlet end{i}=f()+{frames};\nlet steps{i}=0;\n"
             ));
@@ -625,7 +748,7 @@ fn render(s: &Step, i: usize, cyclic: bool) -> String {
                 out.push_str(&format!("if .{name}.skill.ready {{ {name} skill; }}\n"));
             }
             if *burst {
-                let prerequisite = if *actor == 0 {
+                let prerequisite = if name == "flins" {
                     " && .flins.status.thunderous-symphony"
                 } else {
                     ""
@@ -647,13 +770,63 @@ fn render(s: &Step, i: usize, cyclic: bool) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn other_party_keeps_initialization_and_mutates_its_own_source() {
+        let m = crate::artifact::tests::fixed_party();
+        let raw = "fn ready() { return .noelle.burst.ready; }
+let opening = 1;
+active albedo;
+for let i=0; i<4; i=i+1 {
+  albedo skill, attack;
+  bennett burst, skill;
+  xiangling burst, skill;
+  if ready() { noelle burst; }
+  noelle attack:4;
+}";
+        let p = Program::baseline(raw, &m).unwrap();
+        let source = p.gcsl(&m);
+        assert!(source.find("fn ready").unwrap() < source.find("while 1").unwrap());
+        assert!(source.find("let opening").unwrap() < source.find("while 1").unwrap());
+        assert!(!source.contains("flins") && !source.contains("ineffa"));
+        assert_eq!(Program::families(raw, &m), vec![p.clone()]);
+        let neighbors = p.local_neighbors(&m);
+        assert!(!neighbors.is_empty());
+        for (neighbor, _) in &neighbors {
+            assert!(matches!(neighbor, Program::Source(_)));
+            gse::gcsl::parse(&crate::evaluate::Evaluator::config(&m, neighbor)).unwrap();
+        }
+        let mut rng = Rng(17);
+        for _ in 0..100 {
+            let candidate = p.mutate_revised(&mut rng, &m).0;
+            assert!(matches!(candidate, Program::Source(_)));
+            gse::gcsl::parse(&crate::evaluate::Evaluator::config(&m, &candidate)).unwrap();
+        }
+        let samples = gse::api::run_iterations(
+            &crate::evaluate::Evaluator::config(&m, &p),
+            150.0,
+            991,
+            0,
+            2,
+        )
+        .unwrap();
+        assert!(
+            samples
+                .iter()
+                .all(|s| s.frames == 27000 && s.dps.is_finite())
+        );
+        let restored: Program = serde_json::from_str(&serde_json::to_string(&p).unwrap()).unwrap();
+        assert_eq!(p, restored);
+        assert!(Program::baseline("albedo attack;", &m).is_err());
+    }
     #[test]
     fn block_neighborhood_preserves_guards_and_edits_every_actor() {
         let raw = "active ineffa; for let i=0; i<2; i=i+1 { if .sucrose.skill.ready { columbina attack:2, dash; sucrose attack:3; ineffa skill, burst; flins attack:4, skill, burst; } }";
         let p = Program::Library(raw.into());
-        let neighbors = p.local_neighbors();
+        let m = crate::artifact::Manifest::load("data/flins-c1/manifest.json").unwrap();
+        let neighbors = p.local_neighbors(&m);
         assert!(!neighbors.is_empty() && neighbors.len() <= 256);
-        assert_eq!(neighbors, p.local_neighbors());
+        assert_eq!(neighbors, p.local_neighbors(&m));
         for (p, _) in &neighbors {
             let Program::Library(s) = p else {
                 panic!("source must retain its representation");
@@ -699,16 +872,18 @@ mod tests {
                 assert_ne!(domain[i], domain[i ^ (1 << bit)]);
             }
         }
-        let unique: std::collections::BTreeSet<_> = domain.iter().map(Program::gcsl).collect();
+        let m = Manifest::load("data/flins-c1/manifest.json").unwrap();
+        let unique: std::collections::BTreeSet<_> = domain.iter().map(|p| p.gcsl(&m)).collect();
         assert_eq!(unique.len(), 8);
     }
     #[test]
     fn source_mutations_preserve_guards_and_can_introduce_new_actions() {
         let raw = std::fs::read_to_string("data/flins-c1/baseline.gcsl").unwrap();
+        let m = crate::artifact::Manifest::load("data/flins-c1/manifest.json").unwrap();
         let mut rng = Rng(287);
         let mut changed = std::collections::BTreeSet::new();
         for _ in 0..100 {
-            if let Some(s) = mutate_source(&raw, &mut rng) {
+            if let Some(s) = mutate_source(&raw, &mut rng, &m) {
                 assert!(s.contains("is_even"));
                 assert!(s.contains("i = i + 1"));
                 changed.insert(s);
@@ -726,13 +901,13 @@ mod tests {
             "{}{}{}",
             crate::artifact::HEADER,
             m.build(),
-            Program::Library(raw).gcsl()
+            Program::Library(raw).gcsl(&m)
         );
         let b = format!(
             "{}{}{}",
             crate::artifact::HEADER,
             m.build(),
-            Program::Library(normalized).gcsl()
+            Program::Library(normalized).gcsl(&m)
         );
         assert_eq!(
             gse::api::run_iterations(&a, 150.0, 311, 0, 4).unwrap(),
@@ -744,17 +919,17 @@ mod tests {
         let m = crate::artifact::Manifest::load("data/flins-c1/manifest.json").unwrap();
         let baseline = std::fs::read_to_string("data/flins-c1/baseline.gcsl").unwrap();
         let mut rng = Rng(17);
-        for mut p in Program::families(&baseline) {
+        for mut p in Program::families(&baseline, &m) {
             for _ in 0..100 {
                 p.validate().unwrap();
                 gse::gcsl::parse(&format!(
                     "{}{}{}",
                     crate::artifact::HEADER,
                     m.build(),
-                    p.gcsl()
+                    p.gcsl(&m)
                 ))
                 .unwrap();
-                p = p.mutate(&mut rng);
+                p = p.mutate(&mut rng, &m);
             }
         }
     }

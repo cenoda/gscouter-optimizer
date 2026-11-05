@@ -1,0 +1,164 @@
+# manifest-sha256=8143b8f9fb8c9d63743d39308bd9091601cf54d1b4bd36868be5f26f773e96cb
+# optimizer-warmup-seconds=0
+options duration=120 swap_delay=1;
+target lvl=110 resist=0.1 radius=2 pos=0,2.4;
+mavuika char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];
+mavuika add weapon="tbs" refine=5 lvl=90/90;
+mavuika add set="oc" count=4;
+citlali char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];
+citlali add weapon="starcallerswatch" refine=5 lvl=90/90;
+citlali add set="scroll" count=4;
+citlali add stats hp=4780 atk=311 em=187 em=187 em=187;
+citlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=118.92 cr=0.3972 cd=0.5296;
+xilonen char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];
+xilonen add weapon="peakpatrolsong" refine=5 lvl=90/90;
+xilonen add set="ap" count=4;
+xilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 def%=0.583;
+xilonen add stats def%=0.372 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.5296;
+nicole char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];
+nicole add weapon="angelosheptades" refine=5 lvl=90/90;
+nicole add set="cg" count=4;
+nicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;
+nicole add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=165.4 atk%=0.2976 er=0.1102 em=39.64 cr=0.2979 cd=0.1986;
+mavuika add stats hp=4780 atk=311 atk%=0.9108971394925316 cr=0.42974399999999996 cd=1.6360000000000001 pyro%=0.466 em=266.28;
+
+active citlali;
+nicole swap;
+if .nicole.skill.ready {
+nicole skill:1;
+}
+if .nicole.burst.ready {
+nicole burst:1;
+}
+let generation_gate0=0;
+let generation_gate1=0;
+let generation_gate2=0;
+let generation_gate3=0;
+let generation_gate4=0;
+let generation_gate5=0;
+let generation_gate6=0;
+let generation_gate7=0;
+while 1 {
+let generation_start=f();
+if generation_gate0 == 0 {
+xilonen swap;
+if .xilonen.skill.ready {
+xilonen skill:1;
+}
+xilonen attack:2;
+}
+generation_gate0=generation_gate0+1;
+if generation_gate0 >= 1 { generation_gate0=0; }
+if generation_gate1 == 0 {
+mavuika swap;
+if .mavuika.skill.ready {
+mavuika skill:1;
+}
+if .mavuika.burst.ready {
+mavuika burst:1;
+}
+let visit1_end=f()+600;
+let visit1_steps=0;
+while f() < visit1_end && visit1_steps < 64 {
+let visit1_tick=f();
+mavuika charge:1;
+visit1_steps=visit1_steps+1;
+if f() == visit1_tick { wait(1); }
+}
+}
+generation_gate1=generation_gate1+1;
+if generation_gate1 >= 1 { generation_gate1=0; }
+if generation_gate2 == 1 {
+nicole swap;
+nicole attack:1;
+if .nicole.burst.ready {
+nicole burst:1;
+}
+if .nicole.skill.ready {
+nicole skill:1;
+}
+}
+generation_gate2=generation_gate2+1;
+if generation_gate2 >= 2 { generation_gate2=0; }
+if generation_gate3 == 0 {
+xilonen swap;
+if .xilonen.skill.ready {
+xilonen skill:1;
+}
+}
+generation_gate3=generation_gate3+1;
+if generation_gate3 >= 2 { generation_gate3=0; }
+if generation_gate4 == 0 {
+citlali swap;
+if .citlali.burst.ready {
+citlali burst:1;
+}
+if .citlali.skill.ready {
+citlali skill:1;
+}
+let visit4_end=f()+300;
+let visit4_steps=0;
+while f() < visit4_end && visit4_steps < 64 {
+let visit4_tick=f();
+citlali attack:3;
+visit4_steps=visit4_steps+1;
+if f() == visit4_tick { wait(1); }
+}
+}
+generation_gate4=generation_gate4+1;
+if generation_gate4 >= 2 { generation_gate4=0; }
+if generation_gate5 == 1 {
+citlali swap;
+if .citlali.burst.ready {
+citlali burst:1;
+}
+if .citlali.burst.ready {
+citlali burst:1;
+}
+let visit5_end=f()+30;
+let visit5_steps=0;
+while f() < visit5_end && visit5_steps < 64 {
+let visit5_tick=f();
+if .citlali.skill.ready {
+citlali skill:1;
+}
+visit5_steps=visit5_steps+1;
+if f() == visit5_tick { wait(1); }
+}
+}
+generation_gate5=generation_gate5+1;
+if generation_gate5 >= 2 { generation_gate5=0; }
+if generation_gate6 == 0 {
+nicole swap;
+if .nicole.burst.ready {
+nicole burst:1;
+}
+if .nicole.skill.ready {
+nicole skill:1;
+}
+}
+generation_gate6=generation_gate6+1;
+if generation_gate6 >= 2 { generation_gate6=0; }
+if generation_gate7 == 1 {
+citlali swap;
+if .citlali.skill.ready {
+citlali skill:1;
+}
+if .citlali.burst.ready {
+citlali burst:1;
+}
+let visit7_end=f()+150;
+let visit7_steps=0;
+while f() < visit7_end && visit7_steps < 64 {
+let visit7_tick=f();
+if .citlali.skill.ready {
+citlali skill:1;
+}
+visit7_steps=visit7_steps+1;
+if f() == visit7_tick { wait(1); }
+}
+}
+generation_gate7=generation_gate7+1;
+if generation_gate7 >= 2 { generation_gate7=0; }
+if f() == generation_start { wait(1); }
+}

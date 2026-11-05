@@ -1,0 +1,20 @@
+{
+  "implementation": "79123f73118bf79daf5e723273ce316b691c02981f9cad58692311bf5fb76da4",
+  "script_sha256": "ea726d388ede2245cbae7c0bd703413b78ad2bb47aaf46c0ef8fb74a50cd38f1",
+  "protocol_sha256": "b123cc80622c7b44dd4d63d12fa07ca62e10ccd83b082b213288a8eae93743d8",
+  "withheld": {
+    "original": {
+      "source": "/home/ubuntu/projects/gscouter/teams/mavuika-citlali-xilonen-nicole/rotation.gcsl",
+      "sha256": "be9d67b98e56a5c2edce8b025f77b3d4a29d43f6cd1e04faebd7e6ee73821f73"
+    },
+    "c6-alternative": {
+      "source": "/home/ubuntu/projects/gscouter/teams/mavuika-citlali-xilonen-nicole/alt/LhrRtbWNJk8t/rotation.gcsl",
+      "sha256": "93fd314d88a7e7c75d5fda39331585b05d0f5c6dbe38fc42e1dcc959fef7977c"
+    }
+  },
+  "reference_binary_sha256": "9bde0f4b12c2adba5e3946deff7a4bd093ce747ca0404c8b14681684f625b638",
+  "manifests": {
+    "r1": "266fbc1da093da5fe6ed090867614ca0ff020bd803514573e42303e2be8a42bb",
+    "r5": "19a7d40929f40f54c11c4b4f0d963918d94e61862f965e8f0ebf54349f55bebb"
+  }
+}

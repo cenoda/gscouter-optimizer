@@ -1,0 +1,124 @@
+# manifest-sha256=7fcc321be7f317813963190185c54d5228ed40e3b94a9880e093feb3a2f8e2fe
+options duration=120 swap_delay=1;
+target lvl=110 resist=0.1 radius=2 pos=0,2.4;
+# Build from the source config, used to validate the rotation.
+
+mavuika char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];
+mavuika add weapon="tbs" refine=5 lvl=90/90;
+mavuika add set="oc" count=4;
+
+citlali char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];
+citlali add weapon="starcallerswatch" refine=5 lvl=90/90;
+citlali add set="scroll" count=4;
+citlali add stats hp=4780 atk=311 em=187 em=187 em=187;
+citlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=118.92 cr=0.3972 cd=0.5296;
+
+xilonen char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];
+xilonen add weapon="peakpatrolsong" refine=5 lvl=90/90;
+xilonen add set="ap" count=4;
+xilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 def%=0.583;
+xilonen add stats def%=0.372 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.5296;
+
+nicole char lvl=100/100 cons=6 talent=10,10,10 +params=[start_energy=0];
+nicole add weapon="angelosheptades" refine=5 lvl=90/90;
+nicole add set="cg" count=4;
+nicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;
+nicole add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=165.4 atk%=0.2976 er=0.1102 em=39.64 cr=0.2979 cd=0.1986;
+
+mavuika add stats hp=4780 atk=311 atk%=0.9108971394925316 cr=0.42974399999999996 cd=1.6360000000000001 pyro%=0.466 em=266.28;
+
+
+fn mav_dc_cancel(d_travel_f) { # d_travel_f should be 6-24. https://docs.gcsim.app/reference/characters/mavuika#params
+  # To prevent Error when Mavuika tries to do D*C without enough NS points, jump instead.
+  if d_travel_f < 6 {
+    d_travel_f = 6;
+  }
+  
+  let dash_ns = 10; # 10 consumption on dash use
+  let base_cons = 0.9; # 0.9 points
+  let base_tick_rate = 6;
+  
+  while !.mavuika.dash.ready {
+    print("waiting on mavuika dash cd");
+    wait(1);
+  }
+  
+  let d_ticks = d_travel_f / base_tick_rate + 1; # +1 in case you get unlucky with tick timing
+  print("Max number of NS ticks during dash: ", d_ticks);
+  let ns_consumed = dash_ns + base_cons * d_ticks;
+  print("Expected NS consumption: ", ns_consumed);
+  
+  if .mavuika.nightsoul.points > ns_consumed || .mavuika.status.mavuika-burst {
+    mavuika dash[charge_cancel=1, travel=d_travel_f], charge;
+  } else {
+    print("current NS points = ", .mavuika.nightsoul.points);
+    print("skipping mav d*c, not enough NS points ");
+    mavuika jump;
+  }
+}
+
+
+
+fn mav_dc_hidden(d_travel_f) { # d_travel_f should be 6-24. https://docs.gcsim.app/reference/characters/mavuika#params
+  # To prevent Error when Mavuika tries to do D*C without enough NS points, jump instead.
+  if d_travel_f < 6 {
+    d_travel_f = 6;
+  }
+  
+  let dash_ns = 10; # 10 consumption on dash use
+  let base_cons = 0.9; # 0.9 points
+  let base_tick_rate = 6;
+  
+  while !.mavuika.dash.ready {
+    print("waiting on mavuika dash cd");
+    wait(1);
+  }
+  
+  let d_ticks = d_travel_f / base_tick_rate + 1; # +1 in case you get unlucky with tick timing
+  print("Max number of NS ticks during dash: ", d_ticks);
+  let ns_consumed = dash_ns + base_cons * d_ticks;
+  print("Expected NS consumption: ", ns_consumed);
+  
+  if .mavuika.nightsoul.points > ns_consumed || .mavuika.status.mavuika-burst {
+    mavuika dash[charge_cancel=1, collision=0], charge;
+  } else {
+    print("current NS points = ", .mavuika.nightsoul.points);
+    print("skipping mav d*c, not enough NS points ");
+    mavuika jump;
+  }
+}
+
+active mavuika;
+while 1 {
+mavuika skill;
+nicole skill;
+citlali skill;
+xilonen skill;
+delay(15);
+xilonen attack:2;
+pick_up_crystallize("any");
+mavuika swap;
+if .mavuika.nightsoul.points { mavuika skill[recast=1];mavuika charge; }
+delay(1);
+mavuika burst;
+mavuika charge;
+mavuika charge[hold=11];
+mavuika charge[final=1];
+mav_dc_hidden(6);
+mavuika charge[final=1];
+mav_dc_hidden(6);
+mavuika charge[hold=33];
+mavuika charge[final=1];
+mav_dc_cancel(6);
+mavuika charge[hold=21];
+mavuika charge[final=1];
+mav_dc_cancel(6);
+mavuika charge[hold=7];
+mavuika charge[final=1];
+mav_dc_cancel(6);
+mavuika charge[hold=31];
+mavuika charge[final=1];
+mav_dc_cancel(6);
+mavuika charge[hold=42];
+mavuika charge[final=1];
+}

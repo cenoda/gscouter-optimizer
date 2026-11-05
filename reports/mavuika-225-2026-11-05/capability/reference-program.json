@@ -1,0 +1,237 @@
+{
+  "Generated": {
+    "active": 0,
+    "advanced": true,
+    "opening": [],
+    "cycle": [
+      {
+        "actor": 0,
+        "entry": [
+          {
+            "action": "skill",
+            "params": {},
+            "count": 1,
+            "ready": false,
+            "delay": 0,
+            "hold_before": 0,
+            "cancel": null
+          }
+        ],
+        "field": null,
+        "pickup": false,
+        "period": 1,
+        "phase": 0
+      },
+      {
+        "actor": 3,
+        "entry": [
+          {
+            "action": "skill",
+            "params": {},
+            "count": 1,
+            "ready": false,
+            "delay": 0,
+            "hold_before": 0,
+            "cancel": null
+          }
+        ],
+        "field": null,
+        "pickup": false,
+        "period": 1,
+        "phase": 0
+      },
+      {
+        "actor": 1,
+        "entry": [
+          {
+            "action": "skill",
+            "params": {},
+            "count": 1,
+            "ready": false,
+            "delay": 0,
+            "hold_before": 0,
+            "cancel": null
+          }
+        ],
+        "field": null,
+        "pickup": false,
+        "period": 1,
+        "phase": 0
+      },
+      {
+        "actor": 2,
+        "entry": [
+          {
+            "action": "skill",
+            "params": {},
+            "count": 1,
+            "ready": false,
+            "delay": 0,
+            "hold_before": 0,
+            "cancel": null
+          },
+          {
+            "action": "attack",
+            "params": {},
+            "count": 2,
+            "ready": false,
+            "delay": 15,
+            "hold_before": 0,
+            "cancel": null
+          }
+        ],
+        "field": null,
+        "pickup": true,
+        "period": 1,
+        "phase": 0
+      },
+      {
+        "actor": 0,
+        "entry": [
+          {
+            "action": "skill",
+            "params": {
+              "recast": 1
+            },
+            "count": 1,
+            "ready": false,
+            "delay": 0,
+            "hold_before": 0,
+            "cancel": null
+          },
+          {
+            "action": "charge",
+            "params": {},
+            "count": 1,
+            "ready": false,
+            "delay": 0,
+            "hold_before": 0,
+            "cancel": null
+          },
+          {
+            "action": "burst",
+            "params": {},
+            "count": 1,
+            "ready": false,
+            "delay": 1,
+            "hold_before": 0,
+            "cancel": null
+          },
+          {
+            "action": "charge",
+            "params": {},
+            "count": 1,
+            "ready": false,
+            "delay": 0,
+            "hold_before": 0,
+            "cancel": null
+          }
+        ],
+        "field": {
+          "frames": 600,
+          "pattern": [
+            {
+              "action": "charge",
+              "params": {
+                "final": 1
+              },
+              "count": 1,
+              "ready": false,
+              "delay": 0,
+              "hold_before": 11,
+              "cancel": {
+                "collision": false,
+                "travel": 6
+              }
+            },
+            {
+              "action": "charge",
+              "params": {
+                "final": 1
+              },
+              "count": 1,
+              "ready": false,
+              "delay": 0,
+              "hold_before": 0,
+              "cancel": {
+                "collision": false,
+                "travel": 6
+              }
+            },
+            {
+              "action": "charge",
+              "params": {
+                "final": 1
+              },
+              "count": 1,
+              "ready": false,
+              "delay": 0,
+              "hold_before": 33,
+              "cancel": {
+                "collision": true,
+                "travel": 6
+              }
+            },
+            {
+              "action": "charge",
+              "params": {
+                "final": 1
+              },
+              "count": 1,
+              "ready": false,
+              "delay": 0,
+              "hold_before": 21,
+              "cancel": {
+                "collision": true,
+                "travel": 6
+              }
+            },
+            {
+              "action": "charge",
+              "params": {
+                "final": 1
+              },
+              "count": 1,
+              "ready": false,
+              "delay": 0,
+              "hold_before": 7,
+              "cancel": {
+                "collision": true,
+                "travel": 6
+              }
+            },
+            {
+              "action": "charge",
+              "params": {
+                "final": 1
+              },
+              "count": 1,
+              "ready": false,
+              "delay": 0,
+              "hold_before": 31,
+              "cancel": {
+                "collision": true,
+                "travel": 6
+              }
+            },
+            {
+              "action": "charge",
+              "params": {
+                "final": 1
+              },
+              "count": 1,
+              "ready": false,
+              "delay": 0,
+              "hold_before": 42,
+              "cancel": null
+            }
+          ],
+          "repeats": 1
+        },
+        "pickup": false,
+        "period": 1,
+        "phase": 0
+      }
+    ]
+  }
+}

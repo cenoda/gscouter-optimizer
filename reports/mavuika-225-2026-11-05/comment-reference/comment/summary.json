@@ -1,0 +1,130 @@
+[
+  {
+    "name": "literal-hold0-order0-r2",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.31615699999999997,
+    "wall": 0.3163973379996605,
+    "mean": 969984.5663423971,
+    "se": 884.6396412295483
+  },
+  {
+    "name": "literal-hold0-order0-r5",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.3160700000000001,
+    "wall": 0.3162929489990347,
+    "mean": 1007420.5994414717,
+    "se": 921.3886547943455
+  },
+  {
+    "name": "literal-hold0-order1-r2",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.31670400000000004,
+    "wall": 0.31691560200124513,
+    "mean": 1329713.7040941305,
+    "se": 1265.107123768325
+  },
+  {
+    "name": "literal-hold0-order1-r5",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.31204199999999993,
+    "wall": 0.31228380299944547,
+    "mean": 1380177.53135465,
+    "se": 1314.7781348218016
+  },
+  {
+    "name": "literal-hold1-order0-r2",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.317596,
+    "wall": 0.31782133799788426,
+    "mean": 969984.5663423971,
+    "se": 884.6396412295483
+  },
+  {
+    "name": "literal-hold1-order0-r5",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.3201870000000003,
+    "wall": 0.32040090399823384,
+    "mean": 1007420.5994414717,
+    "se": 921.3886547943455
+  },
+  {
+    "name": "literal-hold1-order1-r2",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.32175199999999965,
+    "wall": 0.3219661590010219,
+    "mean": 1329713.7040941305,
+    "se": 1265.107123768325
+  },
+  {
+    "name": "literal-hold1-order1-r5",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.32172999999999996,
+    "wall": 0.3219212210024125,
+    "mean": 1380177.53135465,
+    "se": 1314.7781348218016
+  },
+  {
+    "name": "buffered-hold0-order0-r2",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.31987100000000057,
+    "wall": 0.3201008349969925,
+    "mean": 1025786.565901265,
+    "se": 859.6850539679169
+  },
+  {
+    "name": "buffered-hold0-order0-r5",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.3221490000000002,
+    "wall": 0.32237804000033066,
+    "mean": 1064914.8765384161,
+    "se": 895.8904928845294
+  },
+  {
+    "name": "buffered-hold0-order1-r2",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.32792499999999963,
+    "wall": 0.3283937160013011,
+    "mean": 1407201.1605175508,
+    "se": 1300.2465964691542
+  },
+  {
+    "name": "buffered-hold0-order1-r5",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.32471100000000014,
+    "wall": 0.3250079850004113,
+    "mean": 1461333.0544664238,
+    "se": 1352.1524629876446
+  },
+  {
+    "name": "buffered-hold1-order0-r2",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.3266030000000001,
+    "wall": 0.3268000669995672,
+    "mean": 1025786.565901265,
+    "se": 859.6850539679169
+  },
+  {
+    "name": "buffered-hold1-order0-r5",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.3278190000000002,
+    "wall": 0.3280086270024185,
+    "mean": 1064914.8765384161,
+    "se": 895.8904928845294
+  },
+  {
+    "name": "buffered-hold1-order1-r2",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.3305939999999994,
+    "wall": 0.3307951310016506,
+    "mean": 1407201.1605175508,
+    "se": 1300.2465964691542
+  },
+  {
+    "name": "buffered-hold1-order1-r5",
+    "notation": "CQ CF CDF CDF CDF CDC CDF CDCD",
+    "cpu": 0.33504800000000023,
+    "wall": 0.33525780999843846,
+    "mean": 1461333.0544664238,
+    "se": 1352.1524629876446
+  }
+]

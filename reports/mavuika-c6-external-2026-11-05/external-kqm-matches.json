@@ -1,0 +1,1662 @@
+{
+  "pages": [
+    {
+      "skip": 0,
+      "count": 100
+    },
+    {
+      "skip": 100,
+      "count": 100
+    },
+    {
+      "skip": 200,
+      "count": 100
+    },
+    {
+      "skip": 300,
+      "count": 100
+    },
+    {
+      "skip": 400,
+      "count": 100
+    },
+    {
+      "skip": 500,
+      "count": 100
+    },
+    {
+      "skip": 600,
+      "count": 100
+    },
+    {
+      "skip": 700,
+      "count": 100
+    },
+    {
+      "skip": 800,
+      "count": 100
+    },
+    {
+      "skip": 900,
+      "count": 100
+    },
+    {
+      "skip": 1000,
+      "count": 100
+    },
+    {
+      "skip": 1100,
+      "count": 100
+    },
+    {
+      "skip": 1200,
+      "count": 100
+    },
+    {
+      "skip": 1300,
+      "count": 100
+    },
+    {
+      "skip": 1400,
+      "count": 100
+    },
+    {
+      "skip": 1500,
+      "count": 100
+    },
+    {
+      "skip": 1600,
+      "count": 100
+    },
+    {
+      "skip": 1700,
+      "count": 100
+    },
+    {
+      "skip": 1800,
+      "count": 100
+    },
+    {
+      "skip": 1900,
+      "count": 100
+    },
+    {
+      "skip": 2000,
+      "count": 100
+    },
+    {
+      "skip": 2100,
+      "count": 100
+    },
+    {
+      "skip": 2200,
+      "count": 100
+    },
+    {
+      "skip": 2300,
+      "count": 100
+    },
+    {
+      "skip": 2400,
+      "count": 100
+    },
+    {
+      "skip": 2500,
+      "count": 100
+    },
+    {
+      "skip": 2600,
+      "count": 100
+    },
+    {
+      "skip": 2700,
+      "count": 100
+    },
+    {
+      "skip": 2800,
+      "count": 100
+    },
+    {
+      "skip": 2900,
+      "count": 100
+    },
+    {
+      "skip": 3000,
+      "count": 100
+    },
+    {
+      "skip": 3100,
+      "count": 100
+    },
+    {
+      "skip": 3200,
+      "count": 100
+    },
+    {
+      "skip": 3300,
+      "count": 100
+    },
+    {
+      "skip": 3400,
+      "count": 100
+    },
+    {
+      "skip": 3500,
+      "count": 100
+    },
+    {
+      "skip": 3600,
+      "count": 100
+    },
+    {
+      "skip": 3700,
+      "count": 100
+    },
+    {
+      "skip": 3800,
+      "count": 100
+    },
+    {
+      "skip": 3900,
+      "count": 100
+    },
+    {
+      "skip": 4000,
+      "count": 100
+    },
+    {
+      "skip": 4100,
+      "count": 100
+    },
+    {
+      "skip": 4200,
+      "count": 100
+    },
+    {
+      "skip": 4300,
+      "count": 100
+    },
+    {
+      "skip": 4400,
+      "count": 100
+    },
+    {
+      "skip": 4500,
+      "count": 100
+    },
+    {
+      "skip": 4600,
+      "count": 100
+    },
+    {
+      "skip": 4700,
+      "count": 100
+    },
+    {
+      "skip": 4800,
+      "count": 100
+    },
+    {
+      "skip": 4900,
+      "count": 100
+    },
+    {
+      "skip": 5000,
+      "count": 100
+    },
+    {
+      "skip": 5100,
+      "count": 100
+    },
+    {
+      "skip": 5200,
+      "count": 100
+    },
+    {
+      "skip": 5300,
+      "count": 100
+    },
+    {
+      "skip": 5400,
+      "count": 100
+    },
+    {
+      "skip": 5500,
+      "count": 100
+    },
+    {
+      "skip": 5600,
+      "count": 100
+    },
+    {
+      "skip": 5700,
+      "count": 100
+    },
+    {
+      "skip": 5800,
+      "count": 100
+    },
+    {
+      "skip": 5900,
+      "count": 100
+    },
+    {
+      "skip": 6000,
+      "count": 24
+    },
+    {
+      "skip": 6100,
+      "count": 0
+    },
+    {
+      "skip": 6200,
+      "count": 0
+    },
+    {
+      "skip": 6300,
+      "count": 0
+    }
+  ],
+  "entries": [
+    {
+      "_id": "npQhNPRFDqhn",
+      "create_date": "1786467407",
+      "config": "options swap_delay=12 iteration=1000;\r\n\r\n# Build assumptions\r\nmavuika char lvl=90/90 cons=6 talent=10,10,10;\r\nmavuika add weapon=\"tbs\" refine=5 lvl=90/90;\r\nmavuika add set=\"oc\" count=4;\r\nmavuika add stats hp=4780 atk=311 em=187 pyro%=0.466 cd=0.622;\r\nmavuika add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.3972 cd=0.662;\r\n\r\ncitlali char lvl=90/90 cons=6 talent=10,10,10;\r\ncitlali add weapon=\"starcallerswatch\" refine=5 lvl=90/90;\r\ncitlali add set=\"scroll\" count=4;\r\ncitlali add stats hp=4780 atk=311 em=187 em=187 em=187;\r\ncitlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=118.92 cr=0.3972 cd=0.5296;\r\n\r\nxilonen char lvl=90/90 cons=6 talent=10,10,10; \r\nxilonen add weapon=\"peakpatrolsong\" refine=5 lvl=90/90;\r\nxilonen add set=\"ap\" count=4;\r\nxilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 def%=0.583;\r\nxilonen add stats def%=0.372 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.5296;\r\n// xilonen add set=\"ins\" count=4;\r\n// xilonen add stats hp=3571 atk=232 def%=0.583 def%=0.43725 def%=0.43725;\r\n// xilonen add stats def%=0.31248 def=33.0624 hp=426.619 hp%=0.083328 atk=27.7872 atk%=0.083328 er=0.092568 em=33.2976 cr=0.27804 cd=0.111216;\r\n\r\nnicole char lvl=90/90 cons=6 talent=10,10,10; \r\nnicole add weapon=\"angelosheptades\" refine=5 lvl=90/90; \r\nnicole add set=\"cg\" count=4;\r\nnicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;\r\nnicole add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=165.4 atk%=0.2976 er=0.1102 em=39.64 cr=0.2979 cd=0.1986;\r\n\r\n# Target and Energy assumptions\r\ntarget lvl=100 resist=0.1 radius=2 pos=0,2.4 hp=999999999; # standard ST target\r\nenergy every interval=480,720 amount=1; # standard Energy drops\r\n\r\n# Rotation assumptions\r\n\r\nfn mav_dc_cancel(d_travel_f) { # d_travel_f should be 6-24. https://docs.gcsim.app/reference/characters/mavuika#params\r\n  # To prevent Error when Mavuika tries to do D*C without enough NS points, jump instead.\r\n  if d_travel_f < 6 {\r\n    d_travel_f = 6;\r\n  }\r\n  \r\n  let dash_ns = 10; # 10 consumption on dash use\r\n  let base_cons = 0.9; # 0.9 points\r\n  let base_tick_rate = 6;\r\n  \r\n  while !.mavuika.dash.ready {\r\n    print(\"waiting on mavuika dash cd\");\r\n    wait(1);\r\n  }\r\n  \r\n  let d_ticks = d_travel_f / base_tick_rate + 1; # +1 in case you get unlucky with tick timing\r\n  print(\"Max number of NS ticks during dash: \", d_ticks);\r\n  let ns_consumed = dash_ns + base_cons * d_ticks;\r\n  print(\"Expected NS consumption: \", ns_consumed);\r\n  \r\n  if .mavuika.nightsoul.points > ns_consumed || .mavuika.status.mavuika-burst {\r\n    mavuika dash[charge_cancel=1, travel=d_travel_f], charge;\r\n  } else {\r\n    print(\"current NS points = \", .mavuika.nightsoul.points);\r\n    print(\"skipping mav d*c, not enough NS points \");\r\n    mavuika jump;\r\n  }\r\n}\r\n\r\nactive mavuika;\r\n\r\nfor let i=0; i<4; i=i+1 {\r\n  mavuika skill[hold=1];\r\n  nicole skill, attack;\r\n  xilo skill, attack:2;\r\n  pick_up_crystallize(\"any\");\r\n  citlali swap;\r\n  if is_even(i) {\r\n    wait(15);\r\n    citlali attack, skill;\r\n    mavuika swap;\r\n    if .mavuika.nightsoul.points {  // To prevent Error when Mavuika tries to Recast E when its already expired due to teammate stalling for Q energy\r\n      mavuika skill[recast=1];\r\n      mavuika charge;                                                           // C1     // C\r\n    }\r\n    mavuika burst;                                                              // Q      // Q\r\n    mavuika charge, charge[final=1];                                            // C1F    // cF\r\n    mav_dc_cancel(6); mavuika charge[final=1];                                  // D*C1F  // d*cF\r\n    mav_dc_cancel(6); mavuika charge[final=1];                                  // D*C1F  // d*cF\r\n    mav_dc_cancel(6); mavuika charge[final=1];                                  // D*C1F  // d*cF\r\n    mav_dc_cancel(6); mavuika charge[hold=30], charge[final=1];                 // D*C1F  // d*cF  // No Mavuika Q buff on F\r\n    print(\"after Q buff end\");\r\n    mav_dc_cancel(6); mavuika charge[hold=40], charge[final=1];                 // D*C1F  // d*cF\r\n  } else {\r\n    citlali skill, burst, attack:2, dash;\r\n    mavuika swap;\r\n    if .mavuika.nightsoul.points {  // To prevent Error when Mavuika tries to Recast E when its already expired due to teammate stalling for Q energy\r\n      mavuika skill[recast=1];\r\n      delay(11);\r\n      mavuika charge;                                                           // C1     // C\r\n    }\r\n    mavuika burst;                                                              // Q      // Q\r\n    mavuika charge, charge[final=1];                                            // C1F    // cF\r\n    mav_dc_cancel(6); mavuika charge[final=1];                                  // D*C1F  // d*cF\r\n    mav_dc_cancel(6); mavuika charge[final=1];                                  // D*C1F  // d*cF\r\n    mav_dc_cancel(6); mavuika charge[final=1];                                  // D*C1F  // d*cF\r\n    mav_dc_cancel(6); mavuika charge[hold=40], charge[final=1];                 // D*C1F  // d*cF  // No Mavuika Q buff on F\r\n    print(\"after Q buff end\");\r\n    mav_dc_cancel(6); mavuika charge[hold=40], charge[final=1];                 // D*C1F  // d*cF\r\n    mav_dc_cancel(6);                                                           // D*C1   // d*c\r\n    mavuika jump; // No points left.\r\n  }\r\n}\r\n\r\n# Mavuika hE > Nicole E > Xilonen E N2 > Citlali N1 E   > Mavuika hE C1 Q C1F 5[D*C1F]       >\r\n# Mavuika hE > Nicole E > Xilonen E N2 > Citlali EQ N2D > Mavuika hE C1 Q C1F 5[D*C1F] D*C1J >\r\n",
+      "description": "\u23ed\ufe0f\ud83d\udd04 Mavuika Citlali Xilonen Nicole. 17-19s rot. hE C1 Q C1F and [D*C1F] spam. Citlali Q every 2rots w/ zero ER. Xilonen can use 4pc Instructor, see the config. Talent Level 10,10,10. \ud83d\udce2 UPDATED after v2.44.2(2026/08/18) Citlali fix release",
+      "submitter": "972143886153699328",
+      "accepted_tags": [
+        1
+      ],
+      "rejected_tags": [
+        8,
+        6,
+        9
+      ],
+      "is_db_valid": true,
+      "share_key": "RHrQQRR9rBpC",
+      "last_update": "1790824456",
+      "hash": "90f7c8089ef8e8cf6b10ba79b809aa69135e8a51",
+      "summary": {
+        "sim_duration": {
+          "min": 74.7,
+          "max": 74.7,
+          "mean": 74.7,
+          "sd": 0
+        },
+        "mode": 2,
+        "total_damage": {
+          "min": 123012584.23890385,
+          "max": 151270702.68409783,
+          "mean": 140897983.49845406,
+          "sd": 4156000.466553512
+        },
+        "char_names": [
+          "mavuika",
+          "citlali",
+          "xilonen",
+          "nicole"
+        ],
+        "target_count": 1,
+        "mean_dps_per_target": 1886184.5180515938,
+        "team": [
+          {
+            "name": "mavuika",
+            "element": "pyro",
+            "level": 90,
+            "max_level": 90,
+            "cons": 6,
+            "weapon": {
+              "name": "athousandblazingsuns",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 10,
+              "skill": 10,
+              "burst": 10
+            },
+            "sets": {
+              "obsidiancodex": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.0992,
+              0.1102,
+              266.28,
+              0.3972,
+              1.284,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              929.1307652364002,
+              19085.1027768464,
+              0,
+              1827.3199497604799,
+              0,
+              1.1102,
+              266.28,
+              0.557456,
+              2.168,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              12552.058567,
+              1099.3477244,
+              791.6110011000001
+            ]
+          },
+          {
+            "name": "citlali",
+            "element": "cryo",
+            "level": 90,
+            "max_level": 90,
+            "cons": 6,
+            "weapon": {
+              "name": "starcallerswatch",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 10,
+              "skill": 10,
+              "burst": 10
+            },
+            "sets": {
+              "scrolloftheheroofcindercity": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.0992,
+              0.1102,
+              679.92,
+              0.3972,
+              0.5296,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              897.1681260968401,
+              18075.5499443552,
+              0,
+              1246.14742875048,
+              0,
+              1.1102,
+              1384.7344,
+              0.4472,
+              1.0295999999999998,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              11633.615306000002,
+              668.5942994,
+              763.17448941
+            ]
+          },
+          {
+            "name": "xilonen",
+            "element": "geo",
+            "level": 90,
+            "max_level": 90,
+            "cons": 6,
+            "weapon": {
+              "name": "peakpatrolsong",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 10,
+              "skill": 10,
+              "burst": 10
+            },
+            "sets": {
+              "archaicpetra": 4
+            },
+            "stats": [
+              0,
+              2.121,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.0992,
+              0.1102,
+              39.64,
+              0.3972,
+              0.5296,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              4045.513597348584,
+              18923.573881582543,
+              0,
+              1446.2211003339999,
+              0,
+              1.1102,
+              39.64,
+              0.4472,
+              1.0295999999999998,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.15,
+              0,
+              0,
+              0,
+              0,
+              0,
+              12405.10724307,
+              816.884895,
+              929.9507877000001
+            ]
+          },
+          {
+            "name": "nicole",
+            "element": "pyro",
+            "level": 90,
+            "max_level": 90,
+            "cons": 6,
+            "weapon": {
+              "name": "angelosheptades",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 10,
+              "skill": 10,
+              "burst": 10
+            },
+            "sets": {
+              "celestialgift": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              476.4,
+              1.6956000000000002,
+              0.1102,
+              39.64,
+              0.2979,
+              0.1986,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              671.7019418961601,
+              16729.479134633602,
+              0,
+              4415.983153226332,
+              0,
+              1.3102,
+              39.64,
+              0.3479,
+              0.6986,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              10409.023958000002,
+              1082.6052418000002,
+              562.58179884
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "_id": "LhrRtbWNJk8t",
+      "create_date": "1784049142",
+      "config": "options swap_delay=12 iteration=1000;\r\n\r\n# Build assumptions\r\nmavuika char lvl=90/90 cons=6 talent=10,10,10;\r\nmavuika add weapon=\"tbs\" refine=5 lvl=90/90;\r\nmavuika add set=\"oc\" count=4;\r\nmavuika add stats hp=4780 atk=311 em=187 pyro%=0.466 cd=0.622;\r\nmavuika add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.3972 cd=0.662;\r\n\r\ncitlali char lvl=90/90 cons=6 talent=10,10,10;\r\ncitlali add weapon=\"starcallerswatch\" refine=5 lvl=90/90;\r\ncitlali add set=\"scroll\" count=4;\r\ncitlali add stats hp=4780 atk=311 em=187 em=187 em=187;\r\ncitlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=118.92 cr=0.3972 cd=0.5296;\r\n\r\nxilonen char lvl=90/90 cons=6 talent=10,10,10; \r\nxilonen add weapon=\"peakpatrolsong\" refine=5 lvl=90/90;\r\nxilonen add set=\"ap\" count=4;\r\nxilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 def%=0.583;\r\nxilonen add stats def%=0.372 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.5296;\r\n// xilonen add set=\"ins\" count=4;\r\n// xilonen add stats hp=3571 atk=232 def%=0.583 def%=0.43725 def%=0.43725;\r\n// xilonen add stats def%=0.31248 def=33.0624 hp=426.619 hp%=0.083328 atk=27.7872 atk%=0.083328 er=0.092568 em=33.2976 cr=0.27804 cd=0.111216;\r\n\r\nnicole char lvl=90/90 cons=6 talent=10,10,10; \r\nnicole add weapon=\"angelosheptades\" refine=5 lvl=90/90; \r\nnicole add set=\"cg\" count=4;\r\nnicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;\r\nnicole add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=165.4 atk%=0.2976 er=0.1102 em=39.64 cr=0.2979 cd=0.1986;\r\n\r\n# Target and Energy assumptions\r\ntarget lvl=100 resist=0.1 radius=2 pos=0,2.4 hp=999999999; # standard ST target\r\nenergy every interval=480,720 amount=1; # standard Energy drops\r\n\r\n# Rotation assumptions\r\nactive mavuika;\r\n\r\nfor let i=0; i<4; i=i+1 {\r\n  mavuika skill, attack;\r\n  nicole skill, attack;\r\n  xilo skill, attack:2;\r\n  pick_up_crystallize(\"any\");\r\n  if is_even(i) {\r\n    citlali skill, attack;\r\n    mavuika burst;\r\n    mavuika charge:3, charge[hold=6], charge[final=1], dash;\r\n    mavuika charge:3, charge[hold=6], charge[final=1], dash; # the last Final CA is buffed by Mavuika Q.\r\n    mavuika charge:1, charge[hold=6], charge[final=1], dash;\r\n    mavuika charge:1, charge[hold=6], charge[final=1], dash;\r\n    mavuika charge;\r\n  } else {\r\n    citlali skill, burst, attack:2;\r\n    mavuika burst;\r\n    mavuika charge:3, charge[hold=6], charge[final=1], dash;\r\n    mavuika charge:3, charge[hold=6], charge[final=1], dash; # the last Final CA is buffed by Mavuika Q.\r\n    mavuika charge:1, charge[hold=6], charge[final=1], dash;\r\n    mavuika charge:1, charge[hold=6], charge[final=1], dash;\r\n    mavuika charge, dash, attack;\r\n  }\r\n}\r\n\r\n# Mavuika E > Nicole E > Xilonen E N2 > Citlali E  N1 > Mavuika Q 2[C3FD] 2[C1FD] C1     >\r\n# Mavuika E > Nicole E > Xilonen E N2 > Citlali EQ N2 > Mavuika Q 2[C3FD] 2[C1FD] C1D N1 >\r\n",
+      "description": "Mavuika Citlali Xilonen Nicole. 17-19s rot. 2[C3FD] combo. Citlali Q every 2rots w/ zero ER. Xilonen can use 4pc Instructor, see the config. Talent Level 10,10,10",
+      "submitter": "972143886153699328",
+      "accepted_tags": [
+        1
+      ],
+      "rejected_tags": [
+        8,
+        6,
+        9
+      ],
+      "is_db_valid": true,
+      "share_key": "dLC6zThHTMNj",
+      "last_update": "1790904024",
+      "hash": "998badef000c688b7ed0bb5d8e117a248f2aff66",
+      "summary": {
+        "sim_duration": {
+          "min": 74.98333333333333,
+          "max": 74.98333333333333,
+          "mean": 74.98333333333333,
+          "sd": 0
+        },
+        "mode": 2,
+        "total_damage": {
+          "min": 110724712.3813394,
+          "max": 137397415.77685884,
+          "mean": 128230357.29018497,
+          "sd": 3843342.794350465
+        },
+        "char_names": [
+          "mavuika",
+          "citlali",
+          "xilonen",
+          "nicole"
+        ],
+        "target_count": 1,
+        "mean_dps_per_target": 1710118.1234521223,
+        "team": [
+          {
+            "name": "mavuika",
+            "element": "pyro",
+            "level": 90,
+            "max_level": 90,
+            "cons": 6,
+            "weapon": {
+              "name": "athousandblazingsuns",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 10,
+              "skill": 10,
+              "burst": 10
+            },
+            "sets": {
+              "obsidiancodex": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.0992,
+              0.1102,
+              266.28,
+              0.3972,
+              1.284,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              929.1307652364002,
+              19085.1027768464,
+              0,
+              1827.3199497604799,
+              0,
+              1.1102,
+              266.28,
+              0.557456,
+              2.168,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              12552.058567,
+              1099.3477244,
+              791.6110011000001
+            ]
+          },
+          {
+            "name": "citlali",
+            "element": "cryo",
+            "level": 90,
+            "max_level": 90,
+            "cons": 6,
+            "weapon": {
+              "name": "starcallerswatch",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 10,
+              "skill": 10,
+              "burst": 10
+            },
+            "sets": {
+              "scrolloftheheroofcindercity": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.0992,
+              0.1102,
+              679.92,
+              0.3972,
+              0.5296,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              897.1681260968401,
+              18075.5499443552,
+              0,
+              1246.14742875048,
+              0,
+              1.1102,
+              1384.7344,
+              0.4472,
+              1.0295999999999998,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              11633.615306000002,
+              668.5942994,
+              763.17448941
+            ]
+          },
+          {
+            "name": "xilonen",
+            "element": "geo",
+            "level": 90,
+            "max_level": 90,
+            "cons": 6,
+            "weapon": {
+              "name": "peakpatrolsong",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 10,
+              "skill": 10,
+              "burst": 10
+            },
+            "sets": {
+              "archaicpetra": 4
+            },
+            "stats": [
+              0,
+              2.121,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.0992,
+              0.1102,
+              39.64,
+              0.3972,
+              0.5296,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              4045.513597348584,
+              18923.573881582543,
+              0,
+              1446.2211003339999,
+              0,
+              1.1102,
+              39.64,
+              0.4472,
+              1.0295999999999998,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.15,
+              0,
+              0,
+              0,
+              0,
+              0,
+              12405.10724307,
+              816.884895,
+              929.9507877000001
+            ]
+          },
+          {
+            "name": "nicole",
+            "element": "pyro",
+            "level": 90,
+            "max_level": 90,
+            "cons": 6,
+            "weapon": {
+              "name": "angelosheptades",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 10,
+              "skill": 10,
+              "burst": 10
+            },
+            "sets": {
+              "celestialgift": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              476.4,
+              1.6956000000000002,
+              0.1102,
+              39.64,
+              0.2979,
+              0.1986,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              671.7019418961601,
+              16729.479134633602,
+              0,
+              4415.983153226332,
+              0,
+              1.3102,
+              39.64,
+              0.3479,
+              0.6986,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              10409.023958000002,
+              1082.6052418000002,
+              562.58179884
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "_id": "CctWGHgtmGnw",
+      "create_date": "1784038308",
+      "config": "mavuika char lvl=90/90 cons=0 talent=9,9,9;\r\nmavuika add weapon=\"serpentspine\" refine=1 lvl=90/90 +params=[stacks=5];\r\nmavuika add set=\"oc\" count=4;\r\nmavuika add stats hp=4780 atk=311 em=187 pyro%=0.466 cd=0.622;\r\nmavuika add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.3968 er=0.1102 em=39.64 cr=0.2648 cd=0.662;\r\n\r\ncitlali char lvl=90/90 cons=0 talent=9,9,9;\r\ncitlali add weapon=\"ttds\" refine=5 lvl=90/90;\r\ncitlali add set=\"scroll\" count=4;\r\ncitlali add stats hp=4780 atk=311 er=0.518 cryo%=0.466 cr=0.311;\r\ncitlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2755 em=237.84 cr=0.1324 cd=0.4634;\r\n\r\nxilonen char lvl=90/90 cons=0 talent=9,9,9; \r\nxilonen add weapon=\"favsword\" refine=3 lvl=90/90;\r\nxilonen add set=\"ap\" count=4;\r\nxilonen add stats hp=4780 atk=311 def%=0.583 geo%=0.466 cr=0.311;\r\nxilonen add stats def%=0.31 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7282;\r\n// 4pc Instructor\r\n// xilonen add set=\"ins\" count=4;\r\n// xilonen add stats hp=3571 atk=232 def%=0.43725 def%=0.43725 cr=0.311;\r\n// xilonen add stats def=33.0624 def%=0.10416 hp=426.6192 hp%=0.083328 atk=27.7872 atk%=0.083328 er=0.092568 em=33.2976 cr=0.27804 cd=0.333648;\r\n\r\nnicole char lvl=90/90 cons=0 talent=9,9,9;\r\nnicole add weapon=\"oathsworneye\" refine=5 lvl=90/90;\r\nnicole add set=\"cg\" count=4;\r\nnicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;\r\nnicole add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.2976 er=0.2755 em=39.64 cr=0.3972 cd=0.331;\r\n\r\noptions swap_delay=12 iteration=1000;\r\ntarget lvl=100 resist=0.1 radius=2 pos=0,2.4 hp=999999999;\r\nenergy every interval=480,720 amount=1;\r\n\r\nlet UseXilonenDash = false;  # change this value between true and false to make Xilonen use dash or not\r\n\r\nactive mavuika;\r\n\r\nfor let i=0; i<4; i=i+1 {\r\n  mavuika skill, attack;\r\n  nicole skill, attack;\r\n  xilonen skill, attack:2;\r\n  if UseXilonenDash == true {\r\n    xilonen dash;   # dash to pick up the shard\r\n  }\r\n  pick_up_crystallize(\"pyro\");\r\n  citlali skill, burst, attack;\r\n  mavuika burst;\r\n  delay(18); # to wait Cryo app\r\n  mavuika charge:3, charge[hold=6], charge[final=1], dash;\r\n  mavuika charge:3, charge[hold=6], charge[final=1], dash; # the last Final CA is buffed by Mavuika Q.\r\n  \r\n  mavuika charge, charge[hold=30], charge[final=1], dash;\r\n  if UseXilonenDash == false {   # if you didn't use Xilonen's dash, you need to do extra action to make it 18s rot length\r\n    mavuika attack;\r\n    delay(16);\r\n  } else {\r\n    delay(21);\r\n  }\r\n}\r\n\r\n# Mavuika E > Nicole E > Xilonen E N2 > Citlali EQ N1 > Mavuika Q (wait) 2[C3FD] C1FD N1",
+      "description": "Mavuika Citlali Xilonen Nicole. 18s rot. 2[C3FD] combo. Mavuika E > Nicole E > Xilonen E N2 > Citlali EQ N1 > Mavuika Q (wait) 2[C3FD] C1FD N1. 4pc Instructor on Xilonen is ~4k lower.",
+      "submitter": "972143886153699328",
+      "accepted_tags": [
+        1
+      ],
+      "rejected_tags": [
+        8,
+        6,
+        9
+      ],
+      "is_db_valid": true,
+      "share_key": "MCLkgrRGwKgW",
+      "last_update": "1790835859",
+      "hash": "90f7c8089ef8e8cf6b10ba79b809aa69135e8a51",
+      "summary": {
+        "sim_duration": {
+          "min": 71.6,
+          "max": 71.6,
+          "mean": 71.6,
+          "sd": 0
+        },
+        "mode": 2,
+        "total_damage": {
+          "min": 7139940.889502742,
+          "max": 8523545.165401736,
+          "mean": 8121065.196185509,
+          "sd": 171859.19972651245
+        },
+        "char_names": [
+          "mavuika",
+          "citlali",
+          "xilonen",
+          "nicole"
+        ],
+        "target_count": 1,
+        "mean_dps_per_target": 113422.69827074734,
+        "team": [
+          {
+            "name": "mavuika",
+            "element": "pyro",
+            "level": 90,
+            "max_level": 90,
+            "weapon": {
+              "name": "serpentspine",
+              "refine": 1,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 9,
+              "skill": 9,
+              "burst": 9
+            },
+            "sets": {
+              "obsidiancodex": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.3968,
+              0.1102,
+              226.64,
+              0.2648,
+              1.284,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              929.1307652364002,
+              19085.1027768464,
+              0,
+              1774.1175110892,
+              0,
+              1.1102,
+              226.64,
+              0.59044,
+              2.168,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.30000000000000004,
+              0,
+              12552.058567,
+              868.373519,
+              791.6110011000001
+            ]
+          },
+          {
+            "name": "citlali",
+            "element": "cryo",
+            "level": 90,
+            "max_level": 90,
+            "weapon": {
+              "name": "thrillingtalesofdragonslayers",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 9,
+              "skill": 9,
+              "burst": 9
+            },
+            "sets": {
+              "scrolloftheheroofcindercity": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.0992,
+              0.7935000000000001,
+              237.84,
+              0.4434,
+              0.4634,
+              0,
+              0,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              897.1681260968401,
+              22169.42382398273,
+              0,
+              1056.53603061504,
+              0,
+              1.7935,
+              353.04,
+              0.4934,
+              0.9634,
+              0,
+              0,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              11633.615306000002,
+              528.0581312,
+              763.17448941
+            ]
+          },
+          {
+            "name": "xilonen",
+            "element": "geo",
+            "level": 90,
+            "max_level": 90,
+            "weapon": {
+              "name": "favoniussword",
+              "refine": 3,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 9,
+              "skill": 9,
+              "burst": 9
+            },
+            "sets": {
+              "archaicpetra": 4
+            },
+            "stats": [
+              0,
+              0.893,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.0992,
+              0.1102,
+              39.64,
+              0.642,
+              0.7282,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              2134.5391246881004,
+              18923.573881582543,
+              0,
+              1328.2111561934,
+              0,
+              1.7227318020000002,
+              39.64,
+              0.6920000000000001,
+              1.2282,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.616,
+              0,
+              0,
+              0,
+              0,
+              0,
+              12405.10724307,
+              729.4182895000001,
+              929.9507877000001
+            ]
+          },
+          {
+            "name": "nicole",
+            "element": "pyro",
+            "level": 90,
+            "max_level": 90,
+            "weapon": {
+              "name": "oathsworneye",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 9,
+              "skill": 9,
+              "burst": 9
+            },
+            "sets": {
+              "celestialgift": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              1.6956000000000002,
+              0.2755,
+              39.64,
+              0.3972,
+              0.331,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              671.7019418961601,
+              16729.479134633602,
+              0,
+              3526.2897547210323,
+              0,
+              1.4755,
+              39.64,
+              0.4472,
+              0.831,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              10409.023958000002,
+              906.8088118000001,
+              562.58179884
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "_id": "N9CT6r6b7LGC",
+      "create_date": "1784038118",
+      "config": "mavuika char lvl=90/90 cons=0 talent=9,9,9;\r\nmavuika add weapon=\"serpentspine\" refine=1 lvl=90/90 +params=[stacks=5];\r\nmavuika add set=\"oc\" count=4;\r\nmavuika add stats hp=4780 atk=311 em=187 pyro%=0.466 cd=0.622;\r\nmavuika add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.3968 er=0.1102 em=39.64 cr=0.2648 cd=0.662;\r\n\r\ncitlali char lvl=90/90 cons=0 talent=9,9,9;\r\ncitlali add weapon=\"ttds\" refine=5 lvl=90/90;\r\ncitlali add set=\"scroll\" count=4;\r\ncitlali add stats hp=4780 atk=311 er=0.518 cryo%=0.466 cr=0.311;\r\ncitlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2755 em=237.84 cr=0.1324 cd=0.4634;\r\n\r\nxilonen char lvl=90/90 cons=0 talent=9,9,9; \r\nxilonen add weapon=\"favsword\" refine=3 lvl=90/90;\r\nxilonen add set=\"ap\" count=4;\r\nxilonen add stats hp=4780 atk=311 def%=0.583 geo%=0.466 cr=0.311;\r\nxilonen add stats def%=0.31 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7282;\r\n// 4pc Instructor\r\n// xilonen add set=\"ins\" count=4;\r\n// xilonen add stats hp=3571 atk=232 def%=0.43725 def%=0.43725 cr=0.311;\r\n// xilonen add stats def=33.0624 def%=0.10416 hp=426.6192 hp%=0.083328 atk=27.7872 atk%=0.083328 er=0.092568 em=33.2976 cr=0.27804 cd=0.333648;\r\n\r\nnicole char lvl=90/90 cons=0 talent=9,9,9;\r\nnicole add weapon=\"oathsworneye\" refine=5 lvl=90/90;\r\nnicole add set=\"cg\" count=4;\r\nnicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;\r\nnicole add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=165.4 atk%=0.2976 er=0.1102 em=39.64 cr=0.2979 cd=0.1986;\r\n\r\noptions swap_delay=12 iteration=1000;\r\ntarget lvl=100 resist=0.1 radius=2 pos=0,2.4 hp=999999999;\r\nenergy every interval=480,720 amount=1;\r\n\r\nlet UseXilonenDash = false;  # change this value between true and false to make Xilonen use dash or not\r\n\r\nactive mavuika;\r\n\r\nfor let i=0; i<4; i=i+1 {\r\n  mavuika skill, attack; \r\n  delay(3); // Mavuika E off-field Pyro app should be Citlali E > Tick > Tick > Citlali Q N1\r\n  nicole skill, attack;\r\n  xilonen skill, attack:2;\r\n  if UseXilonenDash == true {\r\n    xilonen dash;   # dash to pick up the shard\r\n  }\r\n  pick_up_crystallize(\"pyro\");\r\n  citlali skill, burst, attack;\r\n  mavuika swap;\r\n  mavuika skill[recast=1], charge, dash, attack, charge;  // Both CA hits are melted\r\n  mavuika burst;\r\n  delay(24); # to wait Cryo app\r\n  mavuika charge:3, charge[hold=6], charge[final=1], dash;\r\n  mavuika charge:3, charge[hold=6], charge[final=1], dash; # the last Final CA is buffed by Mavuika Q.\r\n  \r\n  if UseXilonenDash == false {   # if you didn't use Xilonen's dash, you need to do extra action to make it 18s rot length\r\n    mavuika attack;\r\n    delay(13);\r\n  } else {\r\n    delay(19);\r\n  }\r\n}\r\n\r\n# Mavuika E N1 > Nicole E > Xilonen E N2 > Citlali EQ N1 > Mavuika hE C1D N1 C1 Q (wait) 2[C3FD] N1",
+      "description": "Mavuika Citlali Xilonen Nicole. 18s rot. 2[C3FD] combo. Nicole's Guidance of Theosis on Mavuika Q. Mavuika E N1 > Nicole E > Xilonen E N2 > Citlali EQ N1 > Mavuika hE C1D N1 C1 Q (wait) 2[C3FD] N1. 4pc Instructor on Xilonen is ~2k lower.",
+      "submitter": "972143886153699328",
+      "accepted_tags": [
+        1
+      ],
+      "rejected_tags": [
+        8,
+        6,
+        9
+      ],
+      "is_db_valid": true,
+      "share_key": "cc7mn9KnMFrn",
+      "last_update": "1790864297",
+      "hash": "90f7c8089ef8e8cf6b10ba79b809aa69135e8a51",
+      "summary": {
+        "sim_duration": {
+          "min": 71.65,
+          "max": 71.65,
+          "mean": 71.65,
+          "sd": 0
+        },
+        "mode": 2,
+        "total_damage": {
+          "min": 7367615.2394718295,
+          "max": 8676570.810515156,
+          "mean": 8310789.353055285,
+          "sd": 177813.60150117276
+        },
+        "char_names": [
+          "mavuika",
+          "citlali",
+          "xilonen",
+          "nicole"
+        ],
+        "target_count": 1,
+        "mean_dps_per_target": 115991.47736294885,
+        "team": [
+          {
+            "name": "mavuika",
+            "element": "pyro",
+            "level": 90,
+            "max_level": 90,
+            "weapon": {
+              "name": "serpentspine",
+              "refine": 1,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 9,
+              "skill": 9,
+              "burst": 9
+            },
+            "sets": {
+              "obsidiancodex": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.3968,
+              0.1102,
+              226.64,
+              0.2648,
+              1.284,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              929.1307652364002,
+              19085.1027768464,
+              0,
+              1774.1175110892,
+              0,
+              1.1102,
+              226.64,
+              0.59044,
+              2.168,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.30000000000000004,
+              0,
+              12552.058567,
+              868.373519,
+              791.6110011000001
+            ]
+          },
+          {
+            "name": "citlali",
+            "element": "cryo",
+            "level": 90,
+            "max_level": 90,
+            "weapon": {
+              "name": "thrillingtalesofdragonslayers",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 9,
+              "skill": 9,
+              "burst": 9
+            },
+            "sets": {
+              "scrolloftheheroofcindercity": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.0992,
+              0.7935000000000001,
+              237.84,
+              0.4434,
+              0.4634,
+              0,
+              0,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              897.1681260968401,
+              22169.42382398273,
+              0,
+              1056.53603061504,
+              0,
+              1.7935,
+              353.04,
+              0.4934,
+              0.9634,
+              0,
+              0,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              11633.615306000002,
+              528.0581312,
+              763.17448941
+            ]
+          },
+          {
+            "name": "xilonen",
+            "element": "geo",
+            "level": 90,
+            "max_level": 90,
+            "weapon": {
+              "name": "favoniussword",
+              "refine": 3,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 9,
+              "skill": 9,
+              "burst": 9
+            },
+            "sets": {
+              "archaicpetra": 4
+            },
+            "stats": [
+              0,
+              0.893,
+              39.36,
+              5287.88,
+              0.0992,
+              344.08,
+              0.0992,
+              0.1102,
+              39.64,
+              0.642,
+              0.7282,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.466,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              2134.5391246881004,
+              18923.573881582543,
+              0,
+              1328.2111561934,
+              0,
+              1.7227318020000002,
+              39.64,
+              0.6920000000000001,
+              1.2282,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.616,
+              0,
+              0,
+              0,
+              0,
+              0,
+              12405.10724307,
+              729.4182895000001,
+              929.9507877000001
+            ]
+          },
+          {
+            "name": "nicole",
+            "element": "pyro",
+            "level": 90,
+            "max_level": 90,
+            "weapon": {
+              "name": "oathsworneye",
+              "refine": 5,
+              "level": 90,
+              "max_level": 90
+            },
+            "talents": {
+              "attack": 9,
+              "skill": 9,
+              "burst": 9
+            },
+            "sets": {
+              "celestialgift": 4
+            },
+            "stats": [
+              0,
+              0.124,
+              39.36,
+              5287.88,
+              0.0992,
+              476.4,
+              1.6956000000000002,
+              0.1102,
+              39.64,
+              0.2979,
+              0.1986,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "snapshot": [
+              0,
+              0,
+              671.7019418961601,
+              16729.479134633602,
+              0,
+              3658.6097547210325,
+              0,
+              1.3102,
+              39.64,
+              0.3479,
+              0.6986,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              10409.023958000002,
+              906.8088118000001,
+              562.58179884
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

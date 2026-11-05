@@ -1,0 +1,104 @@
+{
+  "source": "https://www.mhydps.cn/api/teams",
+  "retrieved_utc": "2026-11-05",
+  "records": [
+    {
+      "id": "b4618a13-bcc7-496b-a6ce-6c243df5c019",
+      "members": [
+        {
+          "charId": "玛薇卡",
+          "constellation": 6
+        },
+        {
+          "charId": "茜特菈莉",
+          "constellation": 6
+        },
+        {
+          "charId": "希诺宁",
+          "constellation": 6
+        },
+        {
+          "charId": "尼可",
+          "constellation": 6
+        }
+      ],
+      "damage": 3314730,
+      "cost": 48,
+      "limitcost": 48,
+      "normalcost": 0,
+      "clean": false,
+      "lvl": true,
+      "confirm": true,
+      "tags": [
+        "宏"
+      ],
+      "video_url": "https://www.bilibili.com/video/BV1nhsd6dEvM",
+      "info": ""
+    },
+    {
+      "id": "9a94f910-c59b-4abc-a6c2-2ecb5a4a40d1",
+      "members": [
+        {
+          "charId": "玛薇卡",
+          "constellation": 6
+        },
+        {
+          "charId": "茜特菈莉",
+          "constellation": 6
+        },
+        {
+          "charId": "希诺宁",
+          "constellation": 6
+        },
+        {
+          "charId": "尼可",
+          "constellation": 6
+        }
+      ],
+      "damage": 3129272,
+      "cost": 48,
+      "limitcost": 48,
+      "normalcost": 0,
+      "clean": false,
+      "lvl": true,
+      "confirm": true,
+      "tags": [],
+      "video_url": "https://www.bilibili.com/video/BV15f4g6oEhV",
+      "info": ""
+    },
+    {
+      "id": "fd06fa34-9a18-4b16-8dca-e42617ae17ff",
+      "members": [
+        {
+          "charId": "玛薇卡",
+          "constellation": 6
+        },
+        {
+          "charId": "希诺宁",
+          "constellation": 6
+        },
+        {
+          "charId": "茜特菈莉",
+          "constellation": 6
+        },
+        {
+          "charId": "尼可",
+          "constellation": 6
+        }
+      ],
+      "damage": 3081700,
+      "cost": 48,
+      "limitcost": 48,
+      "normalcost": 0,
+      "clean": false,
+      "lvl": true,
+      "confirm": true,
+      "tags": [
+        "总伤杯S3.N"
+      ],
+      "video_url": "https://www.bilibili.com/video/BV1qKEp6GE9q",
+      "info": ""
+    }
+  ],
+  "status": "external reported results; not simulator reproductions"
+}

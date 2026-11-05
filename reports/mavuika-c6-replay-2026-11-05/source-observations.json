@@ -1,0 +1,19 @@
+{
+  "url": "https://www.bilibili.com/video/BV1jaK36kE7s/",
+  "bvid": "BV1jaK36kE7s",
+  "cid": 40058487700,
+  "local_source_sha256": "8dffc159e32ef15928319a06bd6d58490eaca8dba14020902dd5bd1cf46c2827",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "video_seconds": 130,
+  "video_displayed_seconds": 120,
+  "displayed_total_damage": 388293693,
+  "displayed_dps": 3235781,
+  "missing": [
+    "complete artifact/EM panels",
+    "exact buffered input sequence",
+    "exact target resistance and setup state"
+  ],
+  "known_engine_revision": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de"
+}

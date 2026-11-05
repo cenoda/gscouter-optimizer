@@ -8,6 +8,9 @@ from pathlib import Path
 def check(path):
     path = Path(path)
     state = json.loads((path / "checkpoint.json").read_text())
+    experiment_path = path / "experiment.json"
+    experiment = json.loads(experiment_path.read_text()) if experiment_path.exists() else {}
+    expected_frames = experiment.get("objective", {}).get("duration", 450) * 60
     cache = {}
     for line in (path / "evaluations.jsonl").read_text().splitlines():
         record = json.loads(line)
@@ -15,23 +18,35 @@ def check(path):
             cache[record["key"], record["seed"] + i] = sample
     decisions = 0
     for event in state["events"]:
-        if event["kind"] not in ("chain", "baseline allocation", "polish"):
+        if event["kind"] not in ("chain", "baseline allocation", "polish", "restart"):
             assert not event["accepted"]
             continue
         assert event["samples"] >= 16
         means = []
         for key in (event["proposal_key"], event["current_key"]):
             samples = [cache[key, event["decision_seed"] + i]["Ok"] for i in range(event["samples"])]
-            assert all(s["frames"] == 27000 for s in samples)
+            assert all(s["frames"] == expected_frames for s in samples)
             means.append(sum(s["dps"] for s in samples) / len(samples))
         delta = (means[0] - means[1]) / state["reference_dps"]
         assert math.isclose(delta, event["delta"], abs_tol=1e-12)
         assert event["accepted"] == (delta >= event["threshold"])
         decisions += 1
     report = json.loads((path / "report.json").read_text())
+    assert report["provisional_best_key"] in report["shortlist_frozen_keys"], "peak must be audited"
+    if report.get("from_scratch"):
+        experiment = json.loads((path / "experiment.json").read_text())
+        assert experiment["baseline_read"] is False
+        assert report["reference_origin"] == "generated starting control"
+        assert all("Generated" in c["current"]["program"] for c in state["chains"])
+        for event in state["events"]:
+            if event["kind"] == "restart":
+                assert event["operator"] == "fresh restart"
+                assert event["threshold"] == -sys.float_info.max
     if "revised" in report:
         rows = [json.loads(line) for line in (path / "proposals.jsonl").read_text().splitlines()]
         proposed = {(r["step"],r["key"]) for r in rows}
+        if report.get("from_scratch"):
+            assert all("Generated" in r["candidate"]["program"] for r in rows)
         assert all((e["step"],e["proposal_key"]) in proposed for e in state["events"])
         if state["pending"]:
             assert any(r["step"]==state["step"] and r["candidate"]==state["pending"]["next"] for r in rows)
