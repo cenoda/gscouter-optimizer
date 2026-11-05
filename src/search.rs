@@ -724,6 +724,7 @@ fn run(o: &Options) -> R<()> {
         crate::heldout_v2::PASS1
     };
     let mut e = Evaluator::new(&o.out)?;
+    e.scaled_limit = o.v2;
     let carried = state.parent_cpu;
     let worker_start = e.worker_cpu;
     if state.reference_dps == 0.0 {
@@ -1364,6 +1365,7 @@ fn run(o: &Options) -> R<()> {
     let shortlist = freeze_shortlist(&state, o.from_scratch, o.seconds);
     let frozen_list: Vec<_> = shortlist.iter().map(|c| c.key()).collect();
     atomic(&o.out.join("shortlist.json"), &shortlist)?;
+    e.scaled_limit = false;
     let audit_start = cpu();
     let audit_worker_start = e.worker_cpu;
     let audit_seed =

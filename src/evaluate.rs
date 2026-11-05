@@ -204,6 +204,10 @@ pub struct Evaluator {
     pub cache_hits: usize,
     pub failures: usize,
     pub timeouts: usize,
+    /// Held-out v2 discovery only: wall limit of 0.5 s per fight in the
+    /// batch, between 2 and 10 s, so a program that makes no progress is
+    /// cut at the 2-fight stage instead of after 10 s. Audits keep 10 s.
+    pub scaled_limit: bool,
     pub batch_wall: Vec<f64>,
     dir: PathBuf,
 }
@@ -224,6 +228,7 @@ impl Evaluator {
             cache_hits: 0,
             failures: 0,
             timeouts: 0,
+            scaled_limit: false,
             batch_wall: Vec::new(),
             dir: dir.into(),
         };
@@ -332,7 +337,11 @@ impl Evaluator {
                 .spawn()
                 .map_err(|e| e.to_string())?;
             let wall = Instant::now();
-            let limit = Duration::from_secs(10);
+            let limit = if self.scaled_limit {
+                Duration::from_secs_f64((0.5 * (i - first) as f64).clamp(2.0, 10.0))
+            } else {
+                Duration::from_secs(10)
+            };
             let status = loop {
                 if let Some(s) = child.try_wait().map_err(|e| e.to_string())? {
                     break s;

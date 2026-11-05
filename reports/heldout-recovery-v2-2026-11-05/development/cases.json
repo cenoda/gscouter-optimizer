@@ -1,0 +1,134 @@
+[
+ {
+  "case": "chongyun-furina-escoffier-xianyun--KPmGTPNQRDW6",
+  "class": "informative",
+  "stratum": "frame",
+  "manifest_sha256": "afa51edd3fd321ade19857e0ceb65e7f4143bbe43c5bf74e654207fc8d1b6e20",
+  "L_sha256": "5997534aee757987f025368a4110f29eae42cde0d91b03904d37477d8fd04d70",
+  "dictionary_v1_sha256": "7345bc50154871d886f10196be418444b893124c6b2dc39c487846c96fb19640",
+  "dictionary_v2_sha256": "473a710823c0a5a14bec9ab104e269c9345640fc8099ae1ad63073f1b86ad600",
+  "v2_dropped": 1,
+  "v1_dropped": 7
+ },
+ {
+  "case": "flins-ineffa-columbina-durin--kwnMBjKmcJWQ",
+  "class": "informative",
+  "stratum": "other",
+  "manifest_sha256": "e1b1432e6f59fc023d3e1180ef3b784f97eba8366c073a4e5005a146bee4cbaf",
+  "L_sha256": "d9ae0d88ac5ab7f0238f004bb895c1e8abe6265b19ce50cb7aa83205b4bc8add",
+  "dictionary_v1_sha256": "d2271cccedfaae4b3ed7b0aebf17c6377a254da37cb7cfb730352ab40c523b99",
+  "dictionary_v2_sha256": "e7912d3b0ec2fe9dc6ecd458f380fe1b1851de15554f7c568a59163c95744c4b",
+  "v2_dropped": 0,
+  "v1_dropped": 6
+ },
+ {
+  "case": "hutao-yelan-columbina-ineffa--7DdP6dDqRGbC",
+  "class": "informative",
+  "stratum": "other",
+  "manifest_sha256": "6242b59061695994422bafe13fdd16ccd519a3de917bd405d2a981995d06360c",
+  "L_sha256": "fc8cb5dd9cd3c092b932a4fc4f4591bd1a42f8330be9e7316c781850989bc3a4",
+  "dictionary_v1_sha256": "e0690ef4a6d5241893be26d3be5df184b4b7dd28d1e22763b73c8514ad7e242a",
+  "dictionary_v2_sha256": "0eeb81bcb79d69ae803832f475aa9a40155fdd760d4bc08d06569598b43435b7",
+  "v2_dropped": 2,
+  "v1_dropped": 8
+ },
+ {
+  "case": "kaedeharakazuha-faruzan-furina-xianyun--JFrLR9QLQgdw",
+  "class": "informative",
+  "stratum": "frame",
+  "manifest_sha256": "eb1f7c5f20c9ec0874ac84b4c1328f0f6a64ae5f675eeb22721ce2aff40b7de3",
+  "L_sha256": "d1d4c72415f6eb05348e3499fc87fca624b3223d4e5a04da2a749edefba25211",
+  "dictionary_v1_sha256": "9e915f2f20993316e786e8eeb8f37c92187fa8c3aee2c67cb9223f1d2b674623",
+  "dictionary_v2_sha256": "6cdaffd4d76938a13bb3dbb7da8885abece9740e9a172c3dee2d56cb32258f05",
+  "v2_dropped": 5,
+  "v1_dropped": 9
+ },
+ {
+  "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+  "class": "informative",
+  "stratum": "frame",
+  "manifest_sha256": "4c6ca040dce1fd010d45ab3cc59756bbf07481fc4f50b547e071a5435ff40fc2",
+  "L_sha256": "976ad790d8a9b15cfde1eb5d23f888f905f08ca0c30226c9df57d9c1eb30ee64",
+  "dictionary_v1_sha256": "09cf146ab7a4c4a45c60ac1f42237302c2bbcea8338c50ed345c2a051f3fd24b",
+  "dictionary_v2_sha256": "47d5035a77a7d01d54dca88190d9f4ebec2c7b832cf42a11adffc4c2f9bb9746",
+  "v2_dropped": 1,
+  "v1_dropped": 10
+ },
+ {
+  "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+  "class": "informative",
+  "stratum": "frame",
+  "manifest_sha256": "8fc5714d96c2fa55f4a88a857b9d1140bb44e65128a17b3ad07305e744f8a22f",
+  "L_sha256": "d3dc8edce0e97a415aba9e2c25827747ace0656f263f6f5edfe767c8795e79ef",
+  "dictionary_v1_sha256": "6bac71f9c749256b84be07e6f34e04c9e2b77a6ac6fb4804b2a98b34ac70d7df",
+  "dictionary_v2_sha256": "b6065f6248818633ba141a9f2a0a6bef1df632f1c6f9befd0e87c6896d4a4be8",
+  "v2_dropped": 1,
+  "v1_dropped": 12
+ },
+ {
+  "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+  "class": "informative",
+  "stratum": "other",
+  "manifest_sha256": "70c6b81eee4653cb2709b237491dcd2caaba9726324d6f253671f9697d027445",
+  "L_sha256": "6aac5d674304c468d3efff7025a661bca4bdfd42c71e2993e70816b3bdf1df17",
+  "dictionary_v1_sha256": "e165d4323074690041105038fb3547e4e8cac80bcba7b52c9f862ae7002a6870",
+  "dictionary_v2_sha256": "e7912d3b0ec2fe9dc6ecd458f380fe1b1851de15554f7c568a59163c95744c4b",
+  "v2_dropped": 0,
+  "v1_dropped": 9
+ },
+ {
+  "case": "mavuika-citlali-xilonen-chevreuse--dkC8Gtdm8F9d",
+  "class": "informative",
+  "stratum": "frame",
+  "manifest_sha256": "ec8dbc25ad2436ffb4f0b49becbe85f494d8ab2e3cd983aaf9a272ad7afdaed2",
+  "L_sha256": "572504f25596eb3d9affd6130e8da523c146887a4387b9dc63f52c3e08b7c364",
+  "dictionary_v1_sha256": "b2825d90e16b6543a966cb0a96338dfd1ec3a6e70e14e43d792e54c539855801",
+  "dictionary_v2_sha256": "211f8a8246f54124cc97d53274047b07feebc9e7a372de06a0fa2512fa08994d",
+  "v2_dropped": 2,
+  "v1_dropped": 9
+ },
+ {
+  "case": "hutao-furina-yelan-citlali--m9CWdQGTJwCH",
+  "class": "informative",
+  "stratum": "other",
+  "manifest_sha256": "5d3e724dbeb297858706c7a595bf64a2472c6d9040446f2006b2261b49a60d55",
+  "L_sha256": "f54ef7835d6ab468facdd7631a01203a547016fda9a00b8750a5570c02f93df7",
+  "dictionary_v1_sha256": "87f6bec5a8d26c64bd56c5f916c33a4347cb90ea03271c2dbe95df95f33112e4",
+  "dictionary_v2_sha256": "70274800004a0631acb0d571d18d2702c3022bb125c5bf8562b17c2e21d941a7",
+  "v2_dropped": 1,
+  "v1_dropped": 2
+ },
+ {
+  "case": "wriothesley-xiangling-furina-bennett--mwjCWWCcpwJJ",
+  "class": "informative",
+  "stratum": "other",
+  "manifest_sha256": "37a8e896341cc0771a21365dd7b496c891f0ef3bf6dbbde5527ff1fa68116337",
+  "L_sha256": "121c803909f089d7fd510a96e66d0fdd88fd222960ae87afb7a2b6b0c8598493",
+  "dictionary_v1_sha256": "c281ecc9f4d81da3ae7cad1eb718433078eb441d890d0a853843c57e85253b33",
+  "dictionary_v2_sha256": "07301e8c640d75e6fd9bb7d6b091a1424f1004f7eae8ad5fb14ccc10f0e8d82e",
+  "v2_dropped": 3,
+  "v1_dropped": 8
+ },
+ {
+  "case": "neuvillette-furina-lanyan-xilonen--dB9DNqJgzHBr",
+  "class": "informative",
+  "stratum": "other",
+  "manifest_sha256": "e74e47da69ca2ac84eb26961a034fc06a1c7b9d968103fa424287c4325b25d20",
+  "L_sha256": "bb351e7c84dceec088e79fa658782ded50dd4d085da36ecdd280c5f277faca54",
+  "dictionary_v1_sha256": "f198cb68a3f5d3bd65020343fdd41125e78f4eddb55cc9a039ec6f2cedd2ebea",
+  "dictionary_v2_sha256": "9eab1585e909e60c5127e09d28102244b0600c1f5459d0c5d1592c5e43b2a74a",
+  "v2_dropped": 1,
+  "v1_dropped": 5
+ },
+ {
+  "case": "bennett-fischl-lisa-xingqiu--z89bwQG6KGHg",
+  "class": "informative",
+  "stratum": "frame",
+  "manifest_sha256": "08d085c431060e26a599d0b7e5498f0bf724109cbfa0e2cdbe63871555c561d7",
+  "L_sha256": "65798e90f4445a7bafdd4e2d2172631ec32379de38821818e105911fe21abc3e",
+  "dictionary_v1_sha256": "2b8520db366ba7e34219521c921f09c898892d64a9b6d06961cd4fa755561653",
+  "dictionary_v2_sha256": "e7912d3b0ec2fe9dc6ecd458f380fe1b1851de15554f7c568a59163c95744c4b",
+  "v2_dropped": 0,
+  "v1_dropped": 7
+ }
+]

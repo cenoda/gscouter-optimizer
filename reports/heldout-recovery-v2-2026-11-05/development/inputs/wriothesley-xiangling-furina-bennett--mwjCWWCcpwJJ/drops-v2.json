@@ -1,0 +1,8 @@
+{
+ "dropped_for_leakage": [
+  "if .wriothesley .burst .ready && .wriothesley .energy == .wriothesley .energymax { wriothesley burst ; }",
+  "wriothesley skill ;",
+  "wriothesley attack : 3 , charge , dash ;"
+ ],
+ "sha256": "07301e8c640d75e6fd9bb7d6b091a1424f1004f7eae8ad5fb14ccc10f0e8d82e"
+}

@@ -1,0 +1,13 @@
+{
+ "dropped_for_leakage": [
+  "bennett burst , skill ;",
+  "bennett skill , dash ;",
+  "furina skill , dash , burst , attack ;",
+  "wriothesley burst ;",
+  "if .wriothesley .burst .ready && .wriothesley .energy == .wriothesley .energymax { wriothesley burst ; }",
+  "wriothesley skill ;",
+  "wriothesley attack : 3 , charge , dash ;",
+  "xiangling burst , skill , dash ;"
+ ],
+ "sha256": "c281ecc9f4d81da3ae7cad1eb718433078eb441d890d0a853843c57e85253b33"
+}

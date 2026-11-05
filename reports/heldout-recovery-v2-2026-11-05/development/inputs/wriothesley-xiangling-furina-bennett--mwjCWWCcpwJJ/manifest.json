@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/wriothesley-xiangling-furina-bennett/alt/mwjCWWCcpwJJ/build.txt": "bdc94fe762658a63f35781c104c612b8e0da00d382b7ea45e8031e497592cf52"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "wriothesley",
+      "cons": 6,
+      "weapon": "cashflowsupervision",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "keyofkhajnisut",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xiangling",
+      "cons": 6,
+      "weapon": "engulfinglightning",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "skywardblade",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nwrio char lvl=90/90 cons=6 talent=10,10,10;\nwrio add weapon=\"cashflow\" refine=5 lvl=90/90;\nwrio add set=\"mh\" count=4;\nwrio add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 cd=0.622;\nwrio add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1488 er=0.1102 em=99.1 cr=0.331 cd=0.662;\n\nfurina char lvl=90/90 cons=6 talent=10,10,10;\nfurina add weapon=\"key\" refine=5 lvl=90/90;\nfurina add set=\"totm\" count=4;\nfurina add stats hp=4780 atk=311 er=0.518 hp%=0.466 cr=0.311;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1984 atk=33.08 atk%=0.0992 er=0.551 em=39.64 cr=0.0662 cd=0.7944;\n\nxiangling char lvl=90/90 cons=6 talent=10,10,10;\nxiangling add weapon=\"engulfinglightning\" refine=5 lvl=90/90;\nxiangling add set=\"eosf\" count=4;\nxiangling add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nxiangling add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.4959 em=39.64 cr=0.2317 cd=0.662;\n\nbennett char lvl=90/90 cons=6 talent=10,10,10;\nbennett add weapon=\"skywardblade\" refine=5 lvl=90/90;\nbennett add set=\"no\" count=4;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.3857 em=39.64 cr=0.2317 cd=0.7944;\n"
+}
