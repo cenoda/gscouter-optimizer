@@ -59,6 +59,7 @@ pub struct Rotation {
 pub struct Catalog {
     actions: Vec<Vec<String>>,
     forms: Vec<Vec<Command>>,
+    combos: Vec<Vec<Vec<Command>>>,
     cancels: Vec<bool>,
     advanced: bool,
 }
@@ -140,12 +141,78 @@ impl Catalog {
             actions.push(available);
             forms.push(variants);
         }
+
+        let mut combos = Vec::new();
+        for (i, _member) in m.members.iter().enumerate() {
+            let available = &actions[i];
+            let variants = &forms[i];
+            let has_cancels = cancels[i];
+            let mut member_combos = Vec::new();
+
+            // 1. Basic Quick Support Combos
+            if available.iter().any(|a| a == "skill") {
+                let skill = forms[i]
+                    .iter()
+                    .find(|f| f.action == "skill" && f.params.is_empty())
+                    .cloned()
+                    .unwrap_or_else(|| command("skill", &mut Rng(0)));
+                if available.iter().any(|a| a == "burst") {
+                    let burst = command("burst", &mut Rng(0));
+                    member_combos.push(vec![skill.clone(), burst.clone()]);
+                    member_combos.push(vec![burst, skill.clone()]);
+                }
+                member_combos.push(vec![skill]);
+            }
+
+            // 2. Skill variants (hold / recast) if supported
+            if advanced {
+                for form in variants {
+                    if form.action == "skill" && form.params.get("hold") == Some(&1) {
+                        if available.iter().any(|a| a == "burst") {
+                            member_combos.push(vec![form.clone(), command("burst", &mut Rng(0))]);
+                        }
+                        member_combos.push(vec![form.clone()]);
+                    }
+                }
+            }
+
+            // 3. Sustained Attacks & Canceled Combos
+            let mut normal = command("attack", &mut Rng(0));
+            normal.count = 3;
+            member_combos.push(vec![normal]);
+
+            if has_cancels {
+                for form in variants {
+                    if form.action == "charge" {
+                        let mut c = form.clone();
+                        c.cancel = Some(Cancel {
+                            collision: true,
+                            travel: 6,
+                        });
+                        member_combos.push(vec![c]);
+                    }
+                }
+            }
+
+            combos.push(member_combos);
+        }
+
         Ok(Self {
             actions,
             forms,
+            combos,
             cancels,
             advanced,
         })
+    }
+
+    pub fn sample_combo(&self, actor: usize, rng: &mut Rng) -> Vec<Command> {
+        let combos = &self.combos[actor];
+        if combos.is_empty() {
+            vec![self.command(actor, rng)]
+        } else {
+            combos[rng.index(combos.len())].clone()
+        }
     }
 
     fn supports(&self, actor: usize, action: &str) -> bool {
@@ -256,40 +323,8 @@ impl Catalog {
     }
 
     fn initial_visit(&self, actor: usize, rng: &mut Rng, field: bool) -> Visit {
-        // Kit coverage is a generic starting prior, not a party rotation:
-        // exercise every member's skill, a short normal string and ready burst.
-        // Mutations can remove, reorder, replace or duplicate all of these.
-        let mut entry = Vec::new();
-        if self.supports(actor, "skill") {
-            let mut skill = command("skill", rng);
-            if field
-                && self.cancels[actor]
-                && rng.index(2) == 0
-                && self.forms[actor]
-                    .iter()
-                    .any(|f| f.action == "skill" && f.params.get("hold") == Some(&1))
-            {
-                skill.params.insert("hold".into(), 1);
-            }
-            entry.push(skill);
-        }
-        let mut normal = command("attack", rng);
-        normal.count = 2;
-        entry.push(normal);
-        if self.supports(actor, "burst") {
-            entry.push(command("burst", rng));
-        }
-        let field = field.then(|| {
-            if self.cancels[actor] {
-                Field {
-                    frames: [480, 600, 720, 900][rng.index(4)],
-                    pattern: vec![self.named(actor, "charge", rng)],
-                    repeats: (rng.index(2) == 0).then(|| (1 + rng.index(8)) as u8),
-                }
-            } else {
-                self.field(actor, rng)
-            }
-        });
+        let entry = self.sample_combo(actor, rng);
+        let field = field.then(|| self.field(actor, rng));
         Visit {
             actor,
             entry,
@@ -301,15 +336,19 @@ impl Catalog {
     }
 
     fn field(&self, actor: usize, rng: &mut Rng) -> Field {
-        let primary = if self.cancels[actor] && rng.index(2) == 0 {
-            "charge"
+        let pattern = if self.cancels[actor] && rng.index(2) == 0 {
+            let mut p = self.sample_combo(actor, rng);
+            if p.is_empty() {
+                p.push(self.command(actor, rng));
+            }
+            p
         } else {
-            "attack"
+            let mut pattern = vec![self.named(actor, "attack", rng)];
+            if rng.index(2) == 0 {
+                pattern.push(self.command(actor, rng));
+            }
+            pattern
         };
-        let mut pattern = vec![self.named(actor, primary, rng)];
-        if rng.index(2) == 0 {
-            pattern.push(self.command(actor, rng));
-        }
         Field {
             frames: [180, 300, 480, 600, 900][rng.index(5)],
             pattern,
@@ -850,11 +889,11 @@ impl Rotation {
 
 fn edit_actions(actions: &mut Vec<Command>, catalog: &Catalog, actor: usize, rng: &mut Rng) {
     if actions.is_empty() {
-        actions.push(catalog.command(actor, rng));
+        actions.extend(catalog.sample_combo(actor, rng));
         return;
     }
     let i = rng.index(actions.len());
-    match rng.index(8) {
+    match rng.index(9) {
         0 if actions.len() < 12 => actions.insert(i, catalog.command(actor, rng)),
         1 if actions.len() > 1 => {
             actions.remove(i);
@@ -867,6 +906,14 @@ fn edit_actions(actions: &mut Vec<Command>, catalog: &Catalog, actor: usize, rng
             && !actions[i].params.contains_key("recast") =>
         {
             actions[i].ready = !actions[i].ready
+        }
+        5 => {
+            let combo = catalog.sample_combo(actor, rng);
+            let end = (i + combo.len()).min(actions.len());
+            actions.splice(i..end, combo);
+            if actions.len() > 12 {
+                actions.truncate(12);
+            }
         }
         6 | 7 => catalog.tune(&mut actions[i], actor, rng),
         _ => {
