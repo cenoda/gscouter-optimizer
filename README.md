@@ -1,20 +1,58 @@
 # gscouter-optimizer
 
-> Status: Planning only; no implementation · Last updated: 2026-11-04
+> Status: Local pilot implementation; full-batch expansion deferred.
 
-Find build-dependent sustained-DPS rotations for Gscouter using the Rust simulation engine. Intermediate constellations matter: Flins changes at C1, so a C0 rotation is not sufficient for every build.
+A native Rust rotation-search pilot using `gscouter-engine` at commit
+`1ba0af119e0477d6f44ee966a78fa06d84d2c5de`. The declared development party is
+Flins C1 / Ineffa C1 / Columbina C1 / Sucrose C6. Source, frozen inputs,
+checkpoints and measured reports make recovery independent of a previous machine.
 
-The agreed scope, standard builds, search algorithm and compute estimate are in [the rotation-search plan](docs/rotation-search.md). In offline discovery, four-star members are fixed at C6 and five-star members independently take C1, C2, C4 or C6. A party with n five-star members has 4^n new search profiles. C0 and mixed-C0 combinations receive no new batch search, but can reuse the discovered candidate programs and compare them on the player's actual build, alongside the existing baseline. The hard limit remains one week, $500 total and two 64-core Azure Fals v7 VMs; throughput estimates remain provisional until measured on those VMs.
+The [search plan](docs/rotation-search.md) defines the wider workload; the
+[design review](docs/design-review.md) records its constraints. The
+[pilot protocol](docs/pilot-protocol.md) freezes this experiment before measurement.
+Standard equipment bounds discovery; its DPS is never a player's actual score.
 
-Discovery profiles are sampling locations, not a whitelist of users eligible for better cycles. For example, a C0 Furina/C6 Skirk user can test cycles found with C1 Furina/C6 Skirk without pretending that their Furina is C1. Candidate comparisons stay inside the previously planned candidate/sample/CPU limits; no extra C0 search dimension or serving-time annealing is introduced.
+```sh
+cargo build --release --locked
+cargo test --release --locked
+./target/release/gso validate
+python3 scripts/pilot_matrix.py prepare
+./target/release/gso search --manifest data/flins-c1/standard.json \
+  --seconds 36 --seed 11 --algorithm anneal --out runs/example
+python3 scripts/check_run.py runs/example
+python3 scripts/pilot_matrix.py matrix
+./target/release/gso enumerate --manifest data/flins-c1/standard.json
+```
 
-The frozen 4,570-party census gives **315,043 new profiles**, versus 2,856,250 under the superseded five-stage-for-every-member rule. This is a profile-count reduction of about 89%, not a measured reduction in all search CPU time.
+`--seconds` caps cumulative discovery CPU, including child workers, failed
+samples, parsing, ER repairs and incumbent comparisons. A worker is also bounded
+by a wall-time limit; a timeout is unresolved. Checkpoints retain programs,
+piece allocations, family states, temperature, random state and unfinished
+proposals. Repeat a command with a larger cumulative CPU cap to continue.
+Audits have separate seed namespaces for each budget and never affect proposals.
+The fixed bounded shortlist is evaluated separately; audit CPU is reported.
 
-The [design review](docs/design-review.md) records seven implementation risks and their dispositions. The revised proposal couples ER allocation with cycles, uses two persistent search chains with staged evaluation, validates archive promotions, exports diverse candidates and schedules work by measured CPU cost. It supersedes the fixed 1,000-candidate/eight-chain allocation and the derived 5.33-day forecast; these changes are still unimplemented.
+The prototype executes one chain at a time and pauses other family states,
+remaining within the two-active-chain limit. It offers up to four competing
+families, condition-preserving mutations of the actual baseline GCSL and typed
+new-role programs. State changes require a common 16-fight block; peak promotions
+reevaluate both candidates on 32 fresh seeds. Early 2/4/8-fight stages never
+install a state or reject a candidate for low DPS. Per-piece allocation moves
+retain nine maximum-tier tokens, four distinct substats, fixed main stats,
+useful-roll count and a CV ceiling of 38.9. Other quality tiers are explicitly
+unsupported in this first manifest.
 
-The follow-up review fixes a 16-fight minimum before replacing a chain state, a frozen artifact-roll/quality/CV envelope and a diversity slot for C0-on-field transfer. Compatibility probes are empirical observations, not one-fight proofs of a C1 requirement. Discovery/coverage samples are reused only when the full evaluation identity matches; independent final audits remain separate.
+`data/flins-c1` contains versioned public-file snapshots from Gscouter, source
+hashes and the frozen standard build. `scripts/export_pilot.py` reads only the
+original C0 baseline and artifact data; complete higher-constellation alternatives
+are withheld from generator construction. The finite enumeration command reports
+an eight-program fixed-sample reference and explicitly labelled table-replay
+recovery diagnostics; this is not an unrestricted optimum or a CPU benchmark.
 
-Search now explicitly competes across a bounded set of different play structures before concentrating depth within them. Imported programs can receive target-profile refinement inside the same discovery-location and CPU caps. A small pilot must demonstrate discovery, stability and recovery of a restricted enumerated optimum before expansion. Serving-time search on actual user gear is still outside scope; limited actual-gear experiments stay inside the pilot budget and eligible non-C0 discovery profiles.
+Pending broader pilot work includes additional party controls, cross-profile
+adaptation, actual-player-gear residual loss, both required mixed-C0 transfer
+cases, comprehensive scheduling and deployment. No cloud resources or full
+315,043-profile batch are started by these commands.
 
 ## Repository responsibilities
 

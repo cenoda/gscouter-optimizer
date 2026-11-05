@@ -1,0 +1,174 @@
+{
+  "format": 1,
+  "gcsim": "github.com/cenoda/gcsim@v0.0.0-20261028022427-b029c4559f0a",
+  "characters": [
+    {
+      "key": "flins",
+      "weights": {
+        "atk": 0.181,
+        "atk%": 0.437,
+        "cd": 0.719,
+        "cr": 0.308,
+        "em": 0.309,
+        "er": 1
+      },
+      "sands": {
+        "right": [
+          "atk%",
+          "em"
+        ],
+        "penalty": {
+          "er": 20.7
+        },
+        "others": 27.2
+      },
+      "goblet": {
+        "right": [
+          "atk%",
+          "em"
+        ],
+        "penalty": {
+          "electro%": 17.6
+        },
+        "others": 27.2
+      },
+      "circlet": {
+        "right": [
+          "cd"
+        ],
+        "penalty": {
+          "atk%": 20.3,
+          "cr": 40.5,
+          "em": 29.4
+        },
+        "others": 42.2
+      }
+    },
+    {
+      "key": "ineffa",
+      "weights": {
+        "atk": 0.241,
+        "atk%": 0.567,
+        "cd": 1,
+        "em": 0.426
+      },
+      "sands": {
+        "right": [
+          "atk%"
+        ],
+        "penalty": {
+          "em": 11.9
+        },
+        "others": 29
+      },
+      "goblet": {
+        "right": [
+          "atk%"
+        ],
+        "penalty": {
+          "electro%": 22,
+          "em": 11.9
+        },
+        "others": 29
+      },
+      "circlet": {
+        "right": [
+          "cd"
+        ],
+        "penalty": {
+          "atk%": 25.6,
+          "em": 32.6
+        },
+        "others": 46.8
+      }
+    },
+    {
+      "key": "columbina",
+      "weights": {
+        "atk": 0.003,
+        "atk%": 0.005,
+        "cd": 1,
+        "cr": 0.175,
+        "em": 0.494,
+        "hp": 0.209,
+        "hp%": 0.599
+      },
+      "sands": {
+        "right": [
+          "hp%",
+          "em"
+        ],
+        "penalty": {
+          "def%": 17
+        },
+        "others": 16.9
+      },
+      "goblet": {
+        "right": [
+          "hp%",
+          "em",
+          "hydro%"
+        ],
+        "penalty": {
+          "atk%": 16.9
+        },
+        "others": 17
+      },
+      "circlet": {
+        "right": [
+          "cd"
+        ],
+        "penalty": {
+          "atk%": 28.3,
+          "cr": 28,
+          "em": 18.2,
+          "hp%": 15.2
+        },
+        "others": 28.4
+      }
+    },
+    {
+      "key": "sucrose",
+      "weights": {
+        "atk": 0.02,
+        "atk%": 0.04,
+        "cd": 0.032,
+        "cr": 0.033,
+        "em": 1,
+        "er": 0.871
+      },
+      "sands": {
+        "right": [
+          "em"
+        ],
+        "penalty": {
+          "atk%": 16.8,
+          "er": 15.9
+        },
+        "others": 17.5
+      },
+      "goblet": {
+        "right": [
+          "em"
+        ],
+        "penalty": {
+          "anemo%": 16.7,
+          "atk%": 16.8,
+          "hydro%": 17.4
+        },
+        "others": 17.5
+      },
+      "circlet": {
+        "right": [
+          "em"
+        ],
+        "penalty": {
+          "atk%": 16.8,
+          "cd": 17,
+          "cr": 17
+        },
+        "others": 17.5
+      }
+    }
+  ]
+}

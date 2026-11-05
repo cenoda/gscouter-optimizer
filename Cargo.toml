@@ -1,0 +1,17 @@
+[package]
+name = "gso"
+version = "0.1.0"
+edition = "2024"
+license = "AGPL-3.0-or-later"
+
+[dependencies]
+gse = { git = "https://github.com/cenoda/gscouter-engine.git", rev = "1ba0af119e0477d6f44ee966a78fa06d84d2c5de" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+libc = "0.2"
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+

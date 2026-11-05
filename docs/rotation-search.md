@@ -1,6 +1,6 @@
 # Rotation search
 
-> Status: Agreed scope and budget; implementation proposal revised after design review, not started · Last updated: 2026-11-04
+> Status: Agreed scope and budget; local pilot implementation authorized 2026-11-05. See [the recovery protocol](pilot-protocol.md) and implementation README for measured status. The broader batch design below remains a proposal.
 
 The owner commissioned the Rust port to make rotation search affordable. A rotation written for a C0 build can miss the best play at another constellation: Flins already changes at C1. Faster result pages are a benefit, but the next objective is to find better sustained-DPS rotations for the player's build, across the constellation stages below.
 

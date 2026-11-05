@@ -4,7 +4,7 @@ The rotation-search application for Gscouter. Read `README.md` for repository bo
 
 ## Current boundary
 
-- This repository contains documentation only. The owner's current instruction is to create the repository and move the documents, **without implementing code**. Do not add application code, build scaffolding, CI workflows or deployment scripts until the owner asks for implementation.
+- The owner authorized implementation and local pilot verification on 2026-11-05 after loss of the previous machine. Start from documentation commit `6fa5c19`. The declared development party is Flins C1 / Ineffa C1 / Columbina C1 / Sucrose C6. Follow `docs/pilot-protocol.md` and retain durable source and measured artifacts. The owner's informal expected DPS is not a reference, test threshold or optimizer constant. Full-batch/cloud execution remains outside the current local pilot.
 - The one-week, $500, 128-core plan is a workload budget, not authorization to provision VMs or start a batch now.
 - Write documents, comments and commit messages in English; speak to the owner in Korean.
 - The default branch is `main`. The initial documentation is authorized directly to `main` with CI skipped.
