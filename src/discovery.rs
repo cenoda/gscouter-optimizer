@@ -715,52 +715,61 @@ impl Rotation {
         let mut rng = Rng(0x47454e45524943);
         let mut seen = std::collections::BTreeSet::from([self.gcsl(m)]);
         let mut result = Vec::new();
-        let mut reductions = Vec::new();
-        for i in 0..self.opening.len() {
-            let mut p = self.clone();
-            p.opening.remove(i);
-            reductions.push(p);
-        }
-        for (i, v) in self.cycle.iter().enumerate() {
-            if self.cycle.len() > 1 {
-                let mut p = self.clone();
-                p.cycle.remove(i);
-                reductions.push(p);
-            }
-            for j in 0..v.entry.len() {
-                let mut p = self.clone();
-                p.cycle[i].entry.remove(j);
-                reductions.push(p.clone());
-                // Removing setup time can move a burst just before cooldown.
-                // Also test queuing that same visit's later burst explicitly.
-                for a in p.cycle[i].entry.iter_mut().skip(j) {
-                    if a.action == "burst" {
-                        a.ready = false;
-                    }
-                }
-                reductions.push(p);
-            }
-            if let Some(f) = &v.field {
-                for j in 0..f.pattern.len() {
-                    if f.pattern.len() > 1 {
+
+        // Layer 1: Micro Parameter Tuning (Field repeats, frames, and hold timings)
+        for (i, visit) in self.cycle.iter().enumerate() {
+            if let Some(f) = &visit.field {
+                if catalog.advanced {
+                    for repeats in std::iter::once(None).chain((1..=8).map(Some)) {
                         let mut p = self.clone();
-                        p.cycle[i].field.as_mut().unwrap().pattern.remove(j);
-                        reductions.push(p);
+                        p.cycle[i].field.as_mut().unwrap().repeats = repeats;
+                        if seen.insert(p.gcsl(m)) {
+                            result.push((p, format!("generated local field repeat {i}")));
+                            if result.len() == 256 {
+                                return result;
+                            }
+                        }
+                    }
+                }
+                for shift in [-120, -60, -30, 30, 60, 120] {
+                    let mut p = self.clone();
+                    p.cycle[i].field.as_mut().unwrap().frames =
+                        (i32::from(f.frames) + shift).clamp(30, 1200) as u16;
+                    if seen.insert(p.gcsl(m)) {
+                        result.push((p, format!("generated local field length {i}")));
+                        if result.len() == 256 {
+                            return result;
+                        }
                     }
                 }
             }
         }
-        for p in reductions {
-            if p.validate().is_ok() && seen.insert(p.gcsl(m)) {
-                result.push((p, "generated local simplification".into()));
-                if result.len() == 256 {
-                    return result;
+
+        // Layer 2: Combo Block Variations
+        for (i, visit) in self.cycle.iter().enumerate() {
+            for combo in &catalog.combos[visit.actor] {
+                let mut p = self.clone();
+                p.cycle[i].entry = combo.clone();
+                if p.validate().is_ok() && seen.insert(p.gcsl(m)) {
+                    result.push((p, format!("generated combo replacement entry {i}")));
+                    if result.len() == 256 {
+                        return result;
+                    }
+                }
+                if visit.field.is_some() {
+                    let mut p = self.clone();
+                    p.cycle[i].field.as_mut().unwrap().pattern = combo.clone();
+                    if p.validate().is_ok() && seen.insert(p.gcsl(m)) {
+                        result.push((p, format!("generated combo replacement field {i}")));
+                        if result.len() == 256 {
+                            return result;
+                        }
+                    }
                 }
             }
         }
-        // Round-robin command positions across fields first, then entries.
-        // These local edits enumerate forms and timing instead of drawing a
-        // single random parameter mutation for an entire visit.
+
+        // Layer 3: Local Form & Command Parameter Sweeps
         for field in [true, false] {
             for position in 0..12 {
                 for (i, visit) in self.cycle.iter().enumerate() {
@@ -844,34 +853,51 @@ impl Rotation {
                 }
             }
         }
-        for (i, visit) in self.cycle.iter().enumerate() {
-            if let Some(f) = &visit.field {
-                if catalog.advanced {
-                    for repeats in std::iter::once(None).chain((1..=8).map(Some)) {
-                        let mut p = self.clone();
-                        p.cycle[i].field.as_mut().unwrap().repeats = repeats;
-                        if seen.insert(p.gcsl(m)) {
-                            result.push((p, format!("generated local field repeat {i}")));
-                            if result.len() == 256 {
-                                return result;
-                            }
-                        }
+
+        // Layer 4: Macro Simplifications (Deletions / Reductions)
+        let mut reductions = Vec::new();
+        for i in 0..self.opening.len() {
+            let mut p = self.clone();
+            p.opening.remove(i);
+            reductions.push(p);
+        }
+        for (i, v) in self.cycle.iter().enumerate() {
+            if self.cycle.len() > 1 {
+                let mut p = self.clone();
+                p.cycle.remove(i);
+                reductions.push(p);
+            }
+            for j in 0..v.entry.len() {
+                let mut p = self.clone();
+                p.cycle[i].entry.remove(j);
+                reductions.push(p.clone());
+                for a in p.cycle[i].entry.iter_mut().skip(j) {
+                    if a.action == "burst" {
+                        a.ready = false;
                     }
                 }
-                for shift in [-120, -60, -30, 30, 60, 120] {
-                    let mut p = self.clone();
-                    p.cycle[i].field.as_mut().unwrap().frames =
-                        (i32::from(f.frames) + shift).clamp(30, 1200) as u16;
-                    if seen.insert(p.gcsl(m)) {
-                        result.push((p, format!("generated local field length {i}")));
-                        if result.len() == 256 {
-                            return result;
-                        }
+                reductions.push(p);
+            }
+            if let Some(f) = &v.field {
+                for j in 0..f.pattern.len() {
+                    if f.pattern.len() > 1 {
+                        let mut p = self.clone();
+                        p.cycle[i].field.as_mut().unwrap().pattern.remove(j);
+                        reductions.push(p);
                     }
                 }
             }
         }
-        // Round-robin visits and operators, fixed RNG, independent of audit data.
+        for p in reductions {
+            if p.validate().is_ok() && seen.insert(p.gcsl(m)) {
+                result.push((p, "generated local simplification".into()));
+                if result.len() == 256 {
+                    return result;
+                }
+            }
+        }
+
+        // Layer 5: Fallback Stochastics
         for op in 0..17 {
             for i in 0..self.cycle.len() {
                 let (p, label) = self.edit(&catalog, &mut rng, op, i);
