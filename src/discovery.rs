@@ -322,6 +322,77 @@ impl Catalog {
         }
     }
 
+    pub fn field_with_frames(&self, actor: usize, rng: &mut Rng, frames: u16) -> Field {
+        let pattern = if self.cancels[actor] && rng.index(2) == 0 {
+            let mut p = self.sample_combo(actor, rng);
+            if p.is_empty() {
+                p.push(self.command(actor, rng));
+            }
+            p
+        } else {
+            let mut pattern = vec![self.named(actor, "attack", rng)];
+            if rng.index(2) == 0 {
+                pattern.push(self.command(actor, rng));
+            }
+            pattern
+        };
+        Field {
+            frames,
+            pattern,
+            repeats: (self.advanced && rng.index(2) == 0).then(|| (1 + rng.index(8)) as u8),
+        }
+    }
+
+    pub fn quick_entry(&self, actor: usize, burst: bool) -> Vec<Command> {
+        let mut entry = Vec::new();
+        if self.supports(actor, "skill") {
+            let base_skill = self.forms[actor]
+                .iter()
+                .find(|f| f.action == "skill" && f.params.is_empty())
+                .cloned()
+                .unwrap_or_else(|| Command {
+                    action: "skill".into(),
+                    count: 1,
+                    params: std::collections::BTreeMap::new(),
+                    ready: false,
+                    cancel: None,
+                    delay: 0,
+                    hold_before: 0,
+                });
+            entry.push(base_skill);
+        }
+        if burst && self.supports(actor, "burst") {
+            entry.push(Command {
+                action: "burst".into(),
+                count: 1,
+                params: std::collections::BTreeMap::new(),
+                ready: true,
+                cancel: None,
+                delay: 0,
+                hold_before: 0,
+            });
+        }
+        if entry.is_empty() {
+            entry.push(Command {
+                action: "attack".into(),
+                count: 1,
+                params: std::collections::BTreeMap::new(),
+                ready: false,
+                cancel: None,
+                delay: 0,
+                hold_before: 0,
+            });
+        }
+        entry
+    }
+
+    pub fn structure_families(&self, rng: &mut Rng) -> Vec<Rotation> {
+        StructureDescriptor::default_descriptors(self)
+            .into_iter()
+            .map(|desc| desc.instantiate(self, rng))
+            .collect()
+    }
+
     fn initial_visit(&self, actor: usize, rng: &mut Rng, field: bool) -> Visit {
         let entry = self.sample_combo(actor, rng);
         let field = field.then(|| self.field(actor, rng));
@@ -383,6 +454,189 @@ fn command(action: &str, rng: &mut Rng) -> Command {
         cancel: None,
         delay: 0,
         hold_before: 0,
+    }
+}
+
+#[derive(Clone, Debug, PartialEq)]
+pub struct StructureDescriptor {
+    pub label: &'static str,
+    pub on_field_actor: usize,
+    pub burst_periods: [u8; 4],
+    pub field_frames: u16,
+    pub bookend_support: Option<usize>,
+}
+
+impl StructureDescriptor {
+    pub fn default_descriptors(_catalog: &Catalog) -> Vec<Self> {
+        vec![
+            StructureDescriptor {
+                label: "standard-carry",
+                on_field_actor: 0,
+                burst_periods: [1, 1, 1, 1],
+                field_frames: 600,
+                bookend_support: None,
+            },
+            StructureDescriptor {
+                label: "alternating-burst",
+                on_field_actor: 1,
+                burst_periods: [1, 2, 2, 1],
+                field_frames: 480,
+                bookend_support: None,
+            },
+            StructureDescriptor {
+                label: "alternate-carry",
+                on_field_actor: 2,
+                burst_periods: [1, 1, 1, 1],
+                field_frames: 420,
+                bookend_support: None,
+            },
+            StructureDescriptor {
+                label: "bookended-support",
+                on_field_actor: 3,
+                burst_periods: [1, 1, 1, 1],
+                field_frames: 360,
+                bookend_support: Some(0),
+            },
+        ]
+    }
+
+    pub fn instantiate(&self, catalog: &Catalog, rng: &mut Rng) -> Rotation {
+        let mut cycle = Vec::new();
+        let carry = self.on_field_actor;
+
+        if let Some(bookend) = self.bookend_support {
+            cycle.push(Visit {
+                actor: bookend,
+                entry: catalog.quick_entry(bookend, true),
+                field: None,
+                period: 1,
+                phase: 0,
+                pickup: false,
+            });
+            for actor in 0..4 {
+                if actor != carry && actor != bookend {
+                    cycle.push(Visit {
+                        actor,
+                        entry: catalog.quick_entry(actor, true),
+                        field: None,
+                        period: 1,
+                        phase: 0,
+                        pickup: false,
+                    });
+                }
+            }
+            cycle.push(Visit {
+                actor: carry,
+                entry: catalog.quick_entry(carry, true),
+                field: Some(catalog.field_with_frames(carry, rng, self.field_frames)),
+                period: 1,
+                phase: 0,
+                pickup: false,
+            });
+            cycle.push(Visit {
+                actor: bookend,
+                entry: catalog.quick_entry(bookend, false),
+                field: None,
+                period: 1,
+                phase: 0,
+                pickup: catalog.advanced,
+            });
+            return Rotation {
+                active: bookend,
+                opening: Vec::new(),
+                cycle,
+                advanced: catalog.advanced,
+            };
+        }
+
+        if self.burst_periods == [1, 2, 2, 1] {
+            cycle.push(Visit {
+                actor: 0,
+                entry: catalog.quick_entry(0, true),
+                field: None,
+                period: 1,
+                phase: 0,
+                pickup: false,
+            });
+            cycle.push(Visit {
+                actor: 2,
+                entry: catalog.quick_entry(2, true),
+                field: None,
+                period: 2,
+                phase: 0,
+                pickup: false,
+            });
+            cycle.push(Visit {
+                actor: 2,
+                entry: catalog.quick_entry(2, false),
+                field: None,
+                period: 2,
+                phase: 1,
+                pickup: false,
+            });
+            cycle.push(Visit {
+                actor: 3,
+                entry: catalog.quick_entry(3, false),
+                field: None,
+                period: 2,
+                phase: 0,
+                pickup: false,
+            });
+            cycle.push(Visit {
+                actor: 3,
+                entry: catalog.quick_entry(3, true),
+                field: None,
+                period: 2,
+                phase: 1,
+                pickup: catalog.advanced,
+            });
+            cycle.push(Visit {
+                actor: carry,
+                entry: catalog.quick_entry(carry, true),
+                field: Some(catalog.field_with_frames(carry, rng, self.field_frames)),
+                period: 1,
+                phase: 0,
+                pickup: false,
+            });
+            return Rotation {
+                active: 0,
+                opening: Vec::new(),
+                cycle,
+                advanced: catalog.advanced,
+            };
+        }
+
+        let mut support_order = Vec::new();
+        for i in 0..4 {
+            if i != carry {
+                support_order.push(i);
+            }
+        }
+        for &actor in &support_order {
+            cycle.push(Visit {
+                actor,
+                entry: catalog.quick_entry(actor, true),
+                field: None,
+                period: 1,
+                phase: 0,
+                pickup: false,
+            });
+        }
+        cycle.push(Visit {
+            actor: carry,
+            entry: catalog.quick_entry(carry, true),
+            field: Some(catalog.field_with_frames(carry, rng, self.field_frames)),
+            period: 1,
+            phase: 0,
+            pickup: false,
+        });
+
+        Rotation {
+            active: support_order[0],
+            opening: Vec::new(),
+            cycle,
+            advanced: catalog.advanced,
+        }
     }
 }
 
@@ -1247,5 +1501,24 @@ mod tests {
         let source = Evaluator::config(&m, &Program::Generated(p));
         let fight = gse::api::run_iterations(&source, 150.0, 1, 0, 1).unwrap();
         assert_eq!(fight[0].frames, 27000);
+    }
+
+    #[test]
+    fn structure_descriptors_generate_four_valid_and_distinct_playstyles() {
+        let m = Manifest::load("data/mavuika-c6-r5-225/manifest.json").unwrap();
+        let catalog = Catalog::new(&m).unwrap();
+        let descriptors = StructureDescriptor::default_descriptors(&catalog);
+        assert_eq!(descriptors.len(), 4);
+        let mut rng = Rng(42);
+        let mut signatures = std::collections::BTreeSet::new();
+        for (i, desc) in descriptors.iter().enumerate() {
+            let rot = desc.instantiate(&catalog, &mut rng);
+            rot.validate().unwrap();
+            let gcsl = rot.gcsl(&m);
+            gse::gcsl::parse(&format!("{}{}{}", crate::artifact::HEADER, m.build(), gcsl)).unwrap();
+            assert!(rot.cycle.iter().any(|v| v.actor == i && v.field.is_some()));
+            signatures.insert(rot.structure());
+        }
+        assert_eq!(signatures.len(), 4);
     }
 }

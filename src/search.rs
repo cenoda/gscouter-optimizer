@@ -286,11 +286,11 @@ fn initialize(
         parent: None,
     };
     let programs = if o.from_scratch {
-        generated
+        Program::structure_families(None, m, catalog, &mut initial_rng)
     } else if o.restricted {
         vec![base.program.clone()]
     } else {
-        Program::families(baseline, m)
+        Program::structure_families(Some(baseline), m, catalog, &mut initial_rng)
     };
     let programs = if o.local && !o.restricted {
         vec![programs[0].clone()]
@@ -1102,15 +1102,15 @@ pub fn cli() -> R<()> {
         Some("enumerate")=>enumerate(&args),
         Some("validate")=>{
             let m=Manifest::load(&opt(&args,"--manifest","data/flins-c1/manifest.json"))?;
+            let mut rng=Rng(number(&args,"--seed","1")?);
+            let catalog=Catalog::configured(&m,!args.iter().any(|a|a=="--basic-grammar")).ok();
             let programs=if args.iter().any(|a|a=="--from-scratch") {
                 if args.iter().any(|a|a=="--baseline") { return Err("--from-scratch does not accept --baseline".into()); }
-                let catalog=Catalog::configured(&m,!args.iter().any(|a|a=="--basic-grammar"))?;
-                let mut rng=Rng(number(&args,"--seed","1")?);
-                (0..4).map(|actor| Program::Generated(Rotation::generate(&catalog,&mut rng,actor))).collect()
+                Program::structure_families(None, &m, catalog.as_ref(), &mut rng)
             } else {
                 let baseline=fs::read_to_string(baseline_path(&args)).map_err(|e|e.to_string())?;
                 Program::baseline(&baseline, &m)?;
-                Program::families(&baseline, &m)
+                Program::structure_families(Some(&baseline), &m, catalog.as_ref(), &mut rng)
             };
             let mut e=Evaluator::new(Path::new(&opt(&args,"--out","runs/validate")))?;
             let start=cpu();let mut results=Vec::new();
@@ -1138,7 +1138,7 @@ fn enumerate(args: &[String]) -> R<()> {
     for frames in [360, 600] {
         for normals in [2, 4] {
             for period in [1, 2] {
-                let mut p = Program::families("", &m).remove(1);
+                let mut p = Program::pilot_families("").remove(1);
                 if let Program::Typed { cycle, .. } = &mut p {
                     if let crate::program::Step::Field {
                         frames: f,

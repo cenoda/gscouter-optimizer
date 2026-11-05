@@ -171,6 +171,43 @@ impl Program {
         }
     }
 
+    pub fn structure_families(
+        baseline: Option<&str>,
+        m: &Manifest,
+        catalog: Option<&crate::discovery::Catalog>,
+        rng: &mut Rng,
+    ) -> Vec<Self> {
+        let mut families = Vec::new();
+        if let Some(raw) = baseline {
+            if let Ok(base_p) = Self::baseline(raw, m) {
+                families.push(base_p);
+            }
+        }
+        let cat_storage;
+        let cat = match catalog {
+            Some(c) => Some(c),
+            None => {
+                cat_storage = crate::discovery::Catalog::configured(m, true).ok();
+                cat_storage.as_ref()
+            }
+        };
+        if let Some(c) = cat {
+            let generated = c.structure_families(rng);
+            for rot in generated {
+                if families.len() >= 4 {
+                    break;
+                }
+                families.push(Self::Generated(rot));
+            }
+        }
+        if families.is_empty() {
+            if let Some(raw) = baseline {
+                families.push(Self::Library(raw.into()));
+            }
+        }
+        families
+    }
+
     pub fn families(baseline: &str, m: &Manifest) -> Vec<Self> {
         if Self::is_pilot(m) {
             return Self::pilot_families(baseline);
@@ -233,7 +270,7 @@ impl Program {
             .collect()
     }
 
-    fn pilot_families(baseline: &str) -> Vec<Self> {
+    pub fn pilot_families(baseline: &str) -> Vec<Self> {
         vec![
             Self::Library(baseline.into()),
             Self::Typed {
