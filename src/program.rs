@@ -200,13 +200,13 @@ impl Program {
         }
     }
     pub fn mutate(&self, rng: &mut Rng) -> Self {
-        if let Self::Library(raw) = self {
-            if rng.index(10) != 0 {
-                if let Some(source) = mutate_source(raw, rng) {
-                    return Self::Library(source);
-                }
-                return self.clone();
+        if let Self::Library(raw) = self
+            && rng.index(10) != 0
+        {
+            if let Some(source) = mutate_source(raw, rng) {
+                return Self::Library(source);
             }
+            return self.clone();
         }
         let mut p = self.clone();
         if matches!(p, Self::Library(_)) {

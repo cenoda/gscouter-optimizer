@@ -1,0 +1,1043 @@
+{
+  "program": {
+    "Library": "active ineffa ; for let i = 0 ; i < 6 ; i = i + 1 { if ! is_even ( i ) { ineffa skill , burst ; columbina skill , attack ; } else { ineffa skill ; if i { ineffa attack ; sucrose swap ; print ( \"Sucrose N2C > Columbina N1 E Q\" ) ; sucrose attack : 2 , charge ; columbina attack ; } columbina skill , burst ; } if ! is_even ( i ) && .sucrose .burst .ready { sucrose attack , burst ; } else if .sucrose .skill .ready { sucrose swap ; wait ( 8 ) ; sucrose attack , skill , dash ; } else { sucrose charge ; } flins skill , attack , skill , attack , burst , attack : 4 , dash , jump:1 , dash , attack : 2 , skill , attack , burst , attack : 4 ; if .sucrose .skill .ready { sucrose attack , skill , dash ; } else { sucrose attack , charge ; } }"
+  },
+  "allocation": {
+    "format": 1,
+    "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+    "site_commit": "2df20b3689457ec2aa417301745aa327dcdd7867",
+    "sources": {
+      "internal/artifact/artifact.go": "982069de51fb6bd269676939b48c43f77081a2f3d6c3f9bc04f84df7a8568fd8",
+      "internal/artifact/table.json": "2fbb0297dfbf0f7b006f1dd5be88f738ca77cb60017de299ef19d33ee2fc4011",
+      "teams/flins-ineffa-columbina-sucrose/build.txt": "1a87a24362c419cf0e46b057767b450b286457aa8bd9b6696a8b735cb2ce1b0c",
+      "teams/flins-ineffa-columbina-sucrose/rotation.gcsl": "3d4c017c1576ab85faf09d4a39111e3f16ac63522327a35dd95ceeb3d65cb02b"
+    },
+    "max_rolls": {
+      "atk": 19.45,
+      "atk%": 0.0583,
+      "cd": 0.0777,
+      "cr": 0.0389,
+      "def": 23.15,
+      "def%": 0.0729,
+      "em": 23.31,
+      "er": 0.0648,
+      "hp": 298.75,
+      "hp%": 0.0583
+    },
+    "members": [
+      {
+        "key": "flins",
+        "cons": 1,
+        "weapon": "bloodsoakedruins",
+        "refinement": 1,
+        "set": "nightoftheskysunveiling",
+        "useful": [
+          "atk%",
+          "cr",
+          "cd",
+          "em"
+        ],
+        "weights": {
+          "atk": 0.181,
+          "atk%": 0.437,
+          "cd": 0.719,
+          "cr": 0.308,
+          "em": 0.309,
+          "er": 1.0
+        },
+        "pieces": [
+          {
+            "slot": "flower",
+            "rarity": 5,
+            "level": 20,
+            "main": "hp",
+            "value": 4780.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "plume",
+            "rarity": 5,
+            "level": 20,
+            "main": "atk",
+            "value": 311.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "sands",
+            "rarity": 5,
+            "level": 20,
+            "main": "atk%",
+            "value": 0.466,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "goblet",
+            "rarity": 5,
+            "level": 20,
+            "main": "atk%",
+            "value": 0.466,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "circlet",
+            "rarity": 5,
+            "level": 20,
+            "main": "cd",
+            "value": 0.622,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "ineffa",
+        "cons": 1,
+        "weapon": "fracturedhalo",
+        "refinement": 1,
+        "set": "aubadeofmorningstarandmoon",
+        "useful": [
+          "atk%",
+          "cr",
+          "cd",
+          "em"
+        ],
+        "weights": {
+          "atk": 0.241,
+          "atk%": 0.567,
+          "cd": 1.0,
+          "em": 0.426
+        },
+        "pieces": [
+          {
+            "slot": "flower",
+            "rarity": 5,
+            "level": 20,
+            "main": "hp",
+            "value": 4780.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "plume",
+            "rarity": 5,
+            "level": 20,
+            "main": "atk",
+            "value": 311.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "sands",
+            "rarity": 5,
+            "level": 20,
+            "main": "atk%",
+            "value": 0.466,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "goblet",
+            "rarity": 5,
+            "level": 20,
+            "main": "atk%",
+            "value": 0.466,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "circlet",
+            "rarity": 5,
+            "level": 20,
+            "main": "cd",
+            "value": 0.622,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "columbina",
+        "cons": 1,
+        "weapon": "nocturnescurtaincall",
+        "refinement": 1,
+        "set": "silkenmoonsserenade",
+        "useful": [
+          "hp%",
+          "cr",
+          "cd",
+          "em"
+        ],
+        "weights": {
+          "atk": 0.003,
+          "atk%": 0.005,
+          "cd": 1.0,
+          "cr": 0.175,
+          "em": 0.494,
+          "hp": 0.209,
+          "hp%": 0.599
+        },
+        "pieces": [
+          {
+            "slot": "flower",
+            "rarity": 5,
+            "level": 20,
+            "main": "hp",
+            "value": 4780.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "hp%",
+                "quality": 3
+              },
+              {
+                "stat": "hp%",
+                "quality": 3
+              },
+              {
+                "stat": "hp%",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "plume",
+            "rarity": 5,
+            "level": 20,
+            "main": "atk",
+            "value": 311.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "hp%",
+                "quality": 3
+              },
+              {
+                "stat": "hp%",
+                "quality": 3
+              },
+              {
+                "stat": "hp%",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "sands",
+            "rarity": 5,
+            "level": 20,
+            "main": "hp%",
+            "value": 0.466,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "goblet",
+            "rarity": 5,
+            "level": 20,
+            "main": "hp%",
+            "value": 0.466,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "circlet",
+            "rarity": 5,
+            "level": 20,
+            "main": "cd",
+            "value": 0.622,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "hp%",
+                "quality": 3
+              },
+              {
+                "stat": "hp%",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sucrose",
+        "cons": 6,
+        "weapon": "athousandfloatingdreams",
+        "refinement": 1,
+        "set": "viridescentvenerer",
+        "useful": [
+          "em",
+          "cr",
+          "cd",
+          "atk%"
+        ],
+        "weights": {
+          "atk": 0.02,
+          "atk%": 0.04,
+          "cd": 0.032,
+          "cr": 0.033,
+          "em": 1.0,
+          "er": 0.871
+        },
+        "pieces": [
+          {
+            "slot": "flower",
+            "rarity": 5,
+            "level": 20,
+            "main": "hp",
+            "value": 4780.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "plume",
+            "rarity": 5,
+            "level": 20,
+            "main": "atk",
+            "value": 311.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "em",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "sands",
+            "rarity": 5,
+            "level": 20,
+            "main": "em",
+            "value": 187.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "goblet",
+            "rarity": 5,
+            "level": 20,
+            "main": "em",
+            "value": 187.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              }
+            ]
+          },
+          {
+            "slot": "circlet",
+            "rarity": 5,
+            "level": 20,
+            "main": "em",
+            "value": 187.0,
+            "cv_ceiling": 38.9,
+            "rolls": [
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "er",
+                "quality": 3
+              },
+              {
+                "stat": "cr",
+                "quality": 3
+              },
+              {
+                "stat": "cd",
+                "quality": 3
+              },
+              {
+                "stat": "atk%",
+                "quality": 3
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "role": "structure-0",
+  "parent": "191b9e9704ef49c8d3eab6e0c98f1ca6fce63276abb1a6d8f4667166b80dade5"
+}

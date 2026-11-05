@@ -230,7 +230,12 @@ impl Evaluator {
         Ok(e)
     }
     pub fn config(m: &Manifest, p: &Program) -> String {
-        format!("{HEADER}{}{}", m.build(), p.gcsl())
+        format!(
+            "# manifest-sha256={}\n{HEADER}{}{}",
+            hash(&serde_json::to_string(m).expect("manifest serialization")),
+            m.build(),
+            p.gcsl()
+        )
     }
     pub fn eval(
         &mut self,
@@ -352,6 +357,18 @@ impl Evaluator {
     }
 }
 
+fn append(path: &Path, r: &Record) -> Result<(), String> {
+    let mut f = OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open(path)
+        .map_err(|e| e.to_string())?;
+    serde_json::to_writer(&mut f, r).map_err(|e| e.to_string())?;
+    f.write_all(b"\n")
+        .and_then(|_| f.sync_data())
+        .map_err(|e| e.to_string())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -368,16 +385,4 @@ mod tests {
             assert!((s.chars.iter().sum::<f64>() - s.dps).abs() < 1e-6);
         }
     }
-}
-
-fn append(path: &Path, r: &Record) -> Result<(), String> {
-    let mut f = OpenOptions::new()
-        .create(true)
-        .append(true)
-        .open(path)
-        .map_err(|e| e.to_string())?;
-    serde_json::to_writer(&mut f, r).map_err(|e| e.to_string())?;
-    f.write_all(b"\n")
-        .and_then(|_| f.sync_data())
-        .map_err(|e| e.to_string())
 }

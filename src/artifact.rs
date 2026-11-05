@@ -86,10 +86,10 @@ impl Manifest {
                 "columbina" => Some("nocturnescurtaincall"),
                 _ => None,
             };
-            if let Some(weapon) = required {
-                if m.weapon != weapon || m.refinement != 1 {
-                    return Err("pilot signature must be R1".into());
-                }
+            if let Some(weapon) = required
+                && (m.weapon != weapon || m.refinement != 1)
+            {
+                return Err("pilot signature must be R1".into());
             }
             let mut fixed = m.clone();
             fixed.pieces = f.pieces.clone();

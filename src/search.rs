@@ -61,6 +61,7 @@ struct Pending {
     decision_seed: i64,
     u: f64,
     baseline_trial: bool,
+    repairs_done: bool,
 }
 #[derive(Serialize, Deserialize)]
 struct Event {
@@ -231,7 +232,7 @@ fn run(o: &Options) -> R<()> {
     while spent(&e, carried, parent_start, worker_start) < o.seconds {
         let family = if let Some(p) = &state.pending {
             p.family
-        } else if state.step < state.chains.len() * 4 || state.step % 5 == 0 {
+        } else if state.step < state.chains.len() * 4 || state.step.is_multiple_of(5) {
             state.step % state.chains.len()
         } else {
             state
@@ -279,6 +280,7 @@ fn run(o: &Options) -> R<()> {
                 decision_seed: SEARCH_SEED + ((state.step / 4) * 64) as i64,
                 u: state.rng.uniform(),
                 baseline_trial,
+                repairs_done: false,
             });
         }
         let pending = state.pending.clone().unwrap();
@@ -288,6 +290,7 @@ fn run(o: &Options) -> R<()> {
             decision_seed,
             u,
             baseline_trial,
+            repairs_done,
         } = pending;
         let mut temperature = state.chains[family].temperature;
         let mut threshold = if o.algorithm == "anneal" && !baseline_trial {
@@ -338,7 +341,13 @@ fn run(o: &Options) -> R<()> {
             // At most two nearby allocations repair a selected structural
             // change. Every full comparison is charged to this same cap.
             // An unfinished repair remains a proposal, never an installed state.
-            if o.joint && !baseline_trial && state.step % 4 == 3 && next.program != origin.program {
+            if o.joint
+                && !baseline_trial
+                && !repairs_done
+                && state.step % 4 == 3
+                && next.program != origin.program
+            {
+                state.pending.as_mut().unwrap().repairs_done = true;
                 let diagnostic = stats(&y);
                 let ci = (0..4)
                     .max_by(|&a, &b| {
@@ -378,11 +387,11 @@ fn run(o: &Options) -> R<()> {
                     if spent(&e, carried, parent_start, worker_start) >= o.seconds {
                         break;
                     }
-                    if let Ok(s) = eval(&mut e, &repaired, decision_seed, 16) {
-                        if stats(&s).mean > stats(&y).mean {
-                            next = repaired.clone();
-                            y = s;
-                        }
+                    if let Ok(s) = eval(&mut e, &repaired, decision_seed, 16)
+                        && stats(&s).mean > stats(&y).mean
+                    {
+                        next = repaired.clone();
+                        y = s;
                     }
                 }
                 state.pending.as_mut().unwrap().next = next.clone();
@@ -474,17 +483,17 @@ fn run(o: &Options) -> R<()> {
                         let seed = PROMOTION_SEED + (state.promotions * 128) as i64;
                         state.promotions += 1;
                         let a = eval(&mut e, &next, seed, 32);
-                        if spent(&e, carried, parent_start, worker_start) < o.seconds {
-                            if let (Ok(a), Ok(b)) = (a, eval(&mut e, &state.best, seed, 32)) {
-                                let (difference, se) = paired(&a, &b);
-                                state.best_hint = stats(&b).mean;
-                                if difference > 0.0 {
-                                    state.best = next.clone();
-                                    state.best_hint = stats(&a).mean;
-                                    retain(&mut state.archive, next.clone(), true);
-                                } else if difference.abs() <= 2.0 * se {
-                                    retain(&mut state.archive, next.clone(), false);
-                                }
+                        if spent(&e, carried, parent_start, worker_start) < o.seconds
+                            && let (Ok(a), Ok(b)) = (a, eval(&mut e, &state.best, seed, 32))
+                        {
+                            let (difference, se) = paired(&a, &b);
+                            state.best_hint = stats(&b).mean;
+                            if difference > 0.0 {
+                                state.best = next.clone();
+                                state.best_hint = stats(&a).mean;
+                                retain(&mut state.archive, next.clone(), true);
+                            } else if difference.abs() <= 2.0 * se {
+                                retain(&mut state.archive, next.clone(), false);
                             }
                         }
                     }
@@ -502,11 +511,11 @@ fn run(o: &Options) -> R<()> {
         state.chains[family].temperature *= 0.997;
         state.step += 1;
         state.pending = None;
-        if state.step % 8 == 0 {
+        if state.step.is_multiple_of(8) {
             state.parent_cpu = spent(&e, carried, parent_start, worker_start);
             atomic(&checkpoint, &state)?;
         }
-        if state.step % 25 == 0 {
+        if state.step.is_multiple_of(25) {
             eprintln!(
                 "{}: {} decisions, {:.2}s CPU, best search estimate {:.1}",
                 o.out.display(),
