@@ -1,0 +1,788 @@
+{
+ "gcsim": "cenoda/gcsim@eb218847f82b via Gscouter 6e0e82205 internal/score, no fillers",
+ "iterations": 256,
+ "seed": 777000,
+ "warmup": 150,
+ "rows": [
+  {
+   "case": "wriothesley-shenhe-furina-xilonen--mQBdNDhMnnH6",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 21138.0,
+    "A": 339454.0,
+    "S": 295543.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 339402.0,
+     "se": 89.0
+    },
+    "L": {
+     "dps": 21299.0,
+     "se": 130.0
+    },
+    "S": {
+     "dps": 295730.0,
+     "se": 64.0
+    }
+   },
+   "r_native": 0.8620521745686676,
+   "r_gcsim": 0.8627111344438751
+  },
+  {
+   "case": "travelerpyro-furina-bennett-citlali--citlali-c6-no-burst",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 95522.0,
+    "A": 103416.0,
+    "S": 104401.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 104008.0,
+     "se": 197.0
+    },
+    "L": {
+     "dps": 95588.0,
+     "se": 156.0
+    },
+    "S": {
+     "dps": 104810.0,
+     "se": 168.0
+    }
+   },
+   "r_native": 1.1247783126425133,
+   "r_gcsim": 1.095249406175772
+  },
+  {
+   "case": "gaming-citlali-kaedeharakazuha-bennett--citlali-c6-no-burst",
+   "cls": "control",
+   "stratum": "other",
+   "native": {
+    "L": 124533.0,
+    "A": 130096.0,
+    "S": 137242.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 129906.0,
+     "se": 203.0
+    },
+    "L": {
+     "dps": 123500.0,
+     "se": 394.0
+    },
+    "S": {
+     "dps": 137547.0,
+     "se": 191.0
+    }
+   },
+   "r_native": 2.284558691353586,
+   "r_gcsim": 2.192788011239463
+  },
+  {
+   "case": "shenhe-chasca-citlali-mavuika--citlali-c6-no-burst",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 112807.0,
+    "A": 124696.0,
+    "S": 128245.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 124613.0,
+     "se": 149.0
+    },
+    "L": {
+     "dps": 112534.0,
+     "se": 145.0
+    },
+    "S": {
+     "dps": 128204.0,
+     "se": 145.0
+    }
+   },
+   "r_native": 1.29851122886702,
+   "r_gcsim": 1.2972928222534978
+  },
+  {
+   "case": "cyno-fischl-nahida-xilonen--kRfdGgkcpznD",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 173950.0,
+    "A": 206982.0,
+    "S": 216524.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 207297.0,
+     "se": 95.0
+    },
+    "L": {
+     "dps": 173992.0,
+     "se": 87.0
+    },
+    "S": {
+     "dps": 216591.0,
+     "se": 113.0
+    }
+   },
+   "r_native": 1.2888713974327926,
+   "r_gcsim": 1.279057198618826
+  },
+  {
+   "case": "xiao-faruzan-furina-xianyun--n8fCP7cBnnWz",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 68393.0,
+    "A": 75330.0,
+    "S": 76839.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 75479.0,
+     "se": 178.0
+    },
+    "L": {
+     "dps": 68448.0,
+     "se": 118.0
+    },
+    "S": {
+     "dps": 76324.0,
+     "se": 176.0
+    }
+   },
+   "r_native": 1.2175291912930661,
+   "r_gcsim": 1.120182050917366
+  },
+  {
+   "case": "kamisatoayaka-furina-citlali-escoffier--RmDNLghj8jqh",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 112505.0,
+    "A": 434692.0,
+    "S": 416072.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 432646.0,
+     "se": 600.0
+    },
+    "L": {
+     "dps": 109033.0,
+     "se": 1054.0
+    },
+    "S": {
+     "dps": 416585.0,
+     "se": 532.0
+    }
+   },
+   "r_native": 0.9422074757826976,
+   "r_gcsim": 0.9503697317474885
+  },
+  {
+   "case": "wriothesley-xiangling-furina-bennett--mwjCWWCcpwJJ",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 164779.0,
+    "A": 226454.0,
+    "S": 229031.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 226089.0,
+     "se": 599.0
+    },
+    "L": {
+     "dps": 165428.0,
+     "se": 240.0
+    },
+    "S": {
+     "dps": 228352.0,
+     "se": 163.0
+    }
+   },
+   "r_native": 1.0417835427644913,
+   "r_gcsim": 1.0373056823989053
+  },
+  {
+   "case": "neuvillette-furina-lanyan-xilonen--dB9DNqJgzHBr",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 374547.0,
+    "A": 435126.0,
+    "S": 454794.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 434784.0,
+     "se": 116.0
+    },
+    "L": {
+     "dps": 374304.0,
+     "se": 107.0
+    },
+    "S": {
+     "dps": 455907.0,
+     "se": 232.0
+    }
+   },
+   "r_native": 1.3246669637993365,
+   "r_gcsim": 1.3492559523809524
+  },
+  {
+   "case": "noelle-xilonen-nicole-durin--99dNHg8bKpcw",
+   "cls": "control",
+   "stratum": "other",
+   "native": {
+    "L": 619290.0,
+    "A": 620400.0,
+    "S": 683814.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 621327.0,
+     "se": 1271.0
+    },
+    "L": {
+     "dps": 619999.0,
+     "se": 699.0
+    },
+    "S": {
+     "dps": 683808.0,
+     "se": 339.0
+    }
+   },
+   "r_native": 58.12972972972973,
+   "r_gcsim": 48.04894578313253
+  },
+  {
+   "case": "kaedeharakazuha-faruzan-furina-xianyun--JFrLR9QLQgdw",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 96951.0,
+    "A": 151845.0,
+    "S": 103032.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 152096.0,
+     "se": 101.0
+    },
+    "L": {
+     "dps": 96540.0,
+     "se": 321.0
+    },
+    "S": {
+     "dps": 102954.0,
+     "se": 78.0
+    }
+   },
+   "r_native": 0.11077713411301782,
+   "r_gcsim": 0.11545107639138887
+  },
+  {
+   "case": "chongyun-furina-escoffier-xianyun--KPmGTPNQRDW6",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 46669.0,
+    "A": 49928.0,
+    "S": 48531.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 49927.0,
+     "se": 37.0
+    },
+    "L": {
+     "dps": 46604.0,
+     "se": 45.0
+    },
+    "S": {
+     "dps": 48504.0,
+     "se": 37.0
+    }
+   },
+   "r_native": 0.5713409021172139,
+   "r_gcsim": 0.5717724947336744
+  },
+  {
+   "case": "nahida-fischl-beidou-kaedeharakazuha--bcR6QJHLLBtH",
+   "cls": "control",
+   "stratum": "frame",
+   "native": {
+    "L": 61871.0,
+    "A": 57078.0,
+    "S": 89292.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 57159.0,
+     "se": 35.0
+    },
+    "L": {
+     "dps": 61900.0,
+     "se": 30.0
+    },
+    "S": {
+     "dps": 89321.0,
+     "se": 34.0
+    }
+   },
+   "r_native": -5.721051533486334,
+   "r_gcsim": -5.783800885889053
+  },
+  {
+   "case": "chasca-citlali-chongyun-bennett--citlali-c6-no-burst",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 78611.0,
+    "A": 83086.0,
+    "S": 90181.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 83423.0,
+     "se": 174.0
+    },
+    "L": {
+     "dps": 78851.0,
+     "se": 170.0
+    },
+    "S": {
+     "dps": 90260.0,
+     "se": 167.0
+    }
+   },
+   "r_native": 2.5854748603351956,
+   "r_gcsim": 2.495406824146982
+  },
+  {
+   "case": "bennett-fischl-lisa-xingqiu--z89bwQG6KGHg",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 43079.0,
+    "A": 51335.0,
+    "S": 52471.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 51385.0,
+     "se": 51.0
+    },
+    "L": {
+     "dps": 43110.0,
+     "se": 28.0
+    },
+    "S": {
+     "dps": 52380.0,
+     "se": 73.0
+    }
+   },
+   "r_native": 1.1375968992248062,
+   "r_gcsim": 1.1202416918429003
+  },
+  {
+   "case": "mavuika-citlali-charlotte-bennett--citlali-c6-no-burst",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 114847.0,
+    "A": 143490.0,
+    "S": 176213.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 143546.0,
+     "se": 61.0
+    },
+    "L": {
+     "dps": 114859.0,
+     "se": 61.0
+    },
+    "S": {
+     "dps": 176256.0,
+     "se": 47.0
+    }
+   },
+   "r_native": 2.1424431798345145,
+   "r_gcsim": 2.1402377383483806
+  },
+  {
+   "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 131345.0,
+    "A": 157775.0,
+    "S": 141761.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 157728.0,
+     "se": 168.0
+    },
+    "L": {
+     "dps": 131051.0,
+     "se": 200.0
+    },
+    "S": {
+     "dps": 141029.0,
+     "se": 262.0
+    }
+   },
+   "r_native": 0.3940976163450624,
+   "r_gcsim": 0.3740300633504517
+  },
+  {
+   "case": "mavuika-citlali-xilonen-albedo--citlali-c6-no-burst",
+   "cls": "control",
+   "stratum": "frame",
+   "native": {
+    "L": 136167.0,
+    "A": 138569.0,
+    "S": 143656.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 139005.0,
+     "se": 172.0
+    },
+    "L": {
+     "dps": 135541.0,
+     "se": 211.0
+    },
+    "S": {
+     "dps": 143753.0,
+     "se": 151.0
+    }
+   },
+   "r_native": 3.11781848459617,
+   "r_gcsim": 2.3706697459584296
+  },
+  {
+   "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 131225.0,
+    "A": 149183.0,
+    "S": 142001.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 149633.0,
+     "se": 214.0
+    },
+    "L": {
+     "dps": 131151.0,
+     "se": 70.0
+    },
+    "S": {
+     "dps": 141720.0,
+     "se": 99.0
+    }
+   },
+   "r_native": 0.600066822586034,
+   "r_gcsim": 0.5718536954875013
+  },
+  {
+   "case": "neuvillette-furina-lynette-xilonen--JhJ7FPddfHRz",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 31827.0,
+    "A": 420991.0,
+    "S": 414799.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 421050.0,
+     "se": 130.0
+    },
+    "L": {
+     "dps": 31808.0,
+     "se": 46.0
+    },
+    "S": {
+     "dps": 414680.0,
+     "se": 119.0
+    }
+   },
+   "r_native": 0.9840889702027937,
+   "r_gcsim": 0.9836348595475308
+  },
+  {
+   "case": "chasca-citlali-mualani-bennett--citlali-c6-no-burst",
+   "cls": "control",
+   "stratum": "frame",
+   "native": {
+    "L": 95352.0,
+    "A": 99922.0,
+    "S": 101115.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 99312.0,
+     "se": 144.0
+    },
+    "L": {
+     "dps": 95617.0,
+     "se": 154.0
+    },
+    "S": {
+     "dps": 100932.0,
+     "se": 163.0
+    }
+   },
+   "r_native": 1.2610503282275711,
+   "r_gcsim": 1.4384303112313939
+  },
+  {
+   "case": "citlali-chasca-escoffier-mavuika--citlali-c6-no-burst",
+   "cls": "control",
+   "stratum": "other",
+   "native": {
+    "L": 132001.0,
+    "A": 137925.0,
+    "S": 143073.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 137720.0,
+     "se": 167.0
+    },
+    "L": {
+     "dps": 131816.0,
+     "se": 187.0
+    },
+    "S": {
+     "dps": 143103.0,
+     "se": 143.0
+    }
+   },
+   "r_native": 1.8690074274139095,
+   "r_gcsim": 1.9117547425474255
+  },
+  {
+   "case": "hutao-furina-yelan-citlali--m9CWdQGTJwCH",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 271366.0,
+    "A": 505402.0,
+    "S": 443734.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 505792.0,
+     "se": 306.0
+    },
+    "L": {
+     "dps": 271920.0,
+     "se": 424.0
+    },
+    "S": {
+     "dps": 443795.0,
+     "se": 138.0
+    }
+   },
+   "r_native": 0.7365020766035995,
+   "r_gcsim": 0.7349105493603338
+  },
+  {
+   "case": "bennett-lynette-xiangling-lyney--jNtRRhR8NM9m",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 45229.0,
+    "A": 63502.0,
+    "S": 56600.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 63470.0,
+     "se": 53.0
+    },
+    "L": {
+     "dps": 45231.0,
+     "se": 48.0
+    },
+    "S": {
+     "dps": 56638.0,
+     "se": 71.0
+    }
+   },
+   "r_native": 0.6222842445137635,
+   "r_gcsim": 0.6254180602006689
+  },
+  {
+   "case": "chasca-citlali-rosaria-bennett--citlali-c6-no-burst",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 74803.0,
+    "A": 78847.0,
+    "S": 82273.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 78989.0,
+     "se": 194.0
+    },
+    "L": {
+     "dps": 74794.0,
+     "se": 149.0
+    },
+    "S": {
+     "dps": 82306.0,
+     "se": 144.0
+    }
+   },
+   "r_native": 1.8471810089020773,
+   "r_gcsim": 1.7907032181168057
+  },
+  {
+   "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 69222.0,
+    "A": 75795.0,
+    "S": 72399.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 75817.0,
+     "se": 28.0
+    },
+    "L": {
+     "dps": 69263.0,
+     "se": 20.0
+    },
+    "S": {
+     "dps": 72375.0,
+     "se": 24.0
+    }
+   },
+   "r_native": 0.4833409402099498,
+   "r_gcsim": 0.4748245346353372
+  },
+  {
+   "case": "hutao-yelan-mona-nicole--NpWw8TkzPPDz",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 126117.0,
+    "A": 146430.0,
+    "S": 145178.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 146367.0,
+     "se": 49.0
+    },
+    "L": {
+     "dps": 126126.0,
+     "se": 62.0
+    },
+    "S": {
+     "dps": 145401.0,
+     "se": 67.0
+    }
+   },
+   "r_native": 0.938364594102299,
+   "r_gcsim": 0.9522750852230621
+  },
+  {
+   "case": "hutao-yelan-columbina-ineffa--7DdP6dDqRGbC",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 111409.0,
+    "A": 119605.0,
+    "S": 113604.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 119628.0,
+     "se": 138.0
+    },
+    "L": {
+     "dps": 111550.0,
+     "se": 125.0
+    },
+    "S": {
+     "dps": 113529.0,
+     "se": 78.0
+    }
+   },
+   "r_native": 0.26781356759394825,
+   "r_gcsim": 0.24498638276801188
+  },
+  {
+   "case": "mavuika-citlali-xilonen-chevreuse--dkC8Gtdm8F9d",
+   "cls": "informative",
+   "stratum": "frame",
+   "native": {
+    "L": 115361.0,
+    "A": 1025563.0,
+    "S": 615239.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 1027132.0,
+     "se": 1034.0
+    },
+    "L": {
+     "dps": 117431.0,
+     "se": 1035.0
+    },
+    "S": {
+     "dps": 616231.0,
+     "se": 838.0
+    }
+   },
+   "r_native": 0.5491945743911791,
+   "r_gcsim": 0.5483120277981447
+  },
+  {
+   "case": "flins-ineffa-columbina-durin--kwnMBjKmcJWQ",
+   "cls": "informative",
+   "stratum": "other",
+   "native": {
+    "L": 145453.0,
+    "A": 166698.0,
+    "S": 150872.0
+   },
+   "gcsim": {
+    "A": {
+     "dps": 166241.0,
+     "se": 156.0
+    },
+    "L": {
+     "dps": 145409.0,
+     "se": 84.0
+    },
+    "S": {
+     "dps": 151269.0,
+     "se": 137.0
+    }
+   },
+   "r_native": 0.25507178159566957,
+   "r_gcsim": 0.2812980030721966
+  }
+ ]
+}

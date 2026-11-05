@@ -133,5 +133,43 @@ def main():
     print(json.dumps({k: {x: v[x] for x in ("cases", "median_r", "informative_regressions")} | ({"reading": v["reading"]} if "reading" in v else {}) for k, v in out["checkpoints"].items()}, indent=1))
 
 
+
+def accounting(label="stage1"):
+    """Process CPU sums; build, orchestration, strace and reporting overhead excluded."""
+    rows = {}
+    cls = json.loads((RUNS / "classification.json").read_text())
+    rows["classification_L_and_A_cpu_seconds"] = sum(r["cpu_seconds"] for r in cls["rows"])
+    search, audit, per = 0.0, 0.0, []
+    for start in sorted((RUNS / label).glob("*/*/")):
+        reports = sorted(start.glob("report-*.json"), key=lambda p: float(p.stem.split("-")[1]))
+        if not reports:
+            continue
+        final = json.loads(reports[-1].read_text())
+        a = sum(json.loads(p.read_text())["audit_cpu_seconds"] for p in reports)
+        search += final["discovery_cpu_seconds"]
+        audit += a
+        per.append({"case": start.parent.name, "seed": int(start.name), "final_cap": final["discovery_cpu_cap"],
+                    "discovery_cpu_seconds": final["discovery_cpu_seconds"], "audit_cpu_seconds": a,
+                    "decisions": final["completed_decisions"]})
+    rows["search_discovery_cpu_seconds"] = search
+    rows["checkpoint_audit_cpu_seconds"] = audit
+    exp = json.loads((RUNS / label / "experiments.json").read_text())
+    rows["confirm_measurement_cpu_seconds"] = sum(c["measure_cpu"] for c in exp["cases"])
+    dev = []
+    for d in sorted((RUNS / "dev").glob("*/*/report.json")):
+        r = json.loads(d.read_text())
+        dev.append({"run": str(d.parent.relative_to(RUNS)), "discovery_cpu_seconds": r["discovery_cpu_seconds"]})
+    rows["development_runs"] = dev
+    smoke = [json.loads(p.read_text()) for p in (RUNS / "smoke").glob("*/*/report.json")]
+    rows["smoke_cpu_seconds"] = sum(r["discovery_cpu_seconds"] + r["audit_cpu_seconds"] for r in smoke)
+    rows["per_start"] = per
+    rows["total_cpu_hours_excluding_overhead"] = (rows["classification_L_and_A_cpu_seconds"] + search + audit
+        + rows["confirm_measurement_cpu_seconds"] + sum(x["discovery_cpu_seconds"] for x in dev)
+        + rows["smoke_cpu_seconds"]) / 3600
+    (OUT / "accounting.json").write_text(json.dumps(rows, indent=2) + "\n")
+    return rows
+
+
 if __name__ == "__main__":
     main()
+    accounting()
