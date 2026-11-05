@@ -187,3 +187,18 @@ are authorized by this document.
   thresholds chosen after seeing results to make the reading look better. If
   the search does not work, the report says so.
 - Distinguish measured results, estimates and hypotheses.
+
+## Deviations (appended 2026-11-05, after stage 1 ran)
+
+Recorded in full in `reports/heldout-recovery-2026-11-05/README.md`. In short:
+B includes the alternative's own `team.yaml` params, applied to L, A and the
+search alike (the protocol was silent; 21 cases have differing params); the
+40 `citlali-c6-no-burst` variants counted in the 247 were kept and tagged;
+the discovery-profile constellation grid is not applied to held-out builds;
+restarts (perturbation of the peak after 40 non-improving decisions) and the
+micro schedule (last quarter of each cumulative cap) were chosen at
+implementation; the reading table's uncovered cell (median r ≥ 0.5 with more
+than 5% regressions) was declared "read as Partial" before any r existed and
+did not occur. Thresholds, the selection rule and the case list were not
+changed. Stage 1 ran against this document's previous version (SHA-256
+`14bea063…`).

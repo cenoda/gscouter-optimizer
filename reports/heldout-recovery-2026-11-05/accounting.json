@@ -1,0 +1,748 @@
+{
+  "classification_L_and_A_cpu_seconds": 325.92309043299997,
+  "search_discovery_cpu_seconds": 24336.96997735299,
+  "checkpoint_audit_cpu_seconds": 1126.0960498080003,
+  "confirm_measurement_cpu_seconds": 389.66583599999984,
+  "development_runs": [
+    {
+      "run": "dev/flins/t1-11",
+      "discovery_cpu_seconds": 192.14504837899997
+    },
+    {
+      "run": "dev/mavuika/t1-11",
+      "discovery_cpu_seconds": 192.03411546300077
+    }
+  ],
+  "smoke_cpu_seconds": 3.2766985159999997,
+  "per_start": [
+    {
+      "case": "bennett-fischl-lisa-xingqiu--z89bwQG6KGHg",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.06958587599976,
+      "audit_cpu_seconds": 9.514164029999932,
+      "decisions": 2248
+    },
+    {
+      "case": "bennett-fischl-lisa-xingqiu--z89bwQG6KGHg",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 196.34665464,
+      "audit_cpu_seconds": 9.351848931000006,
+      "decisions": 920
+    },
+    {
+      "case": "bennett-fischl-lisa-xingqiu--z89bwQG6KGHg",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.08690228400008,
+      "audit_cpu_seconds": 9.65518806300004,
+      "decisions": 1497
+    },
+    {
+      "case": "bennett-lynette-xiangling-lyney--jNtRRhR8NM9m",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 196.78815699600003,
+      "audit_cpu_seconds": 16.120284128000065,
+      "decisions": 273
+    },
+    {
+      "case": "bennett-lynette-xiangling-lyney--jNtRRhR8NM9m",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 200.02737258700014,
+      "audit_cpu_seconds": 5.759661344000008,
+      "decisions": 725
+    },
+    {
+      "case": "bennett-lynette-xiangling-lyney--jNtRRhR8NM9m",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.01319343200055,
+      "audit_cpu_seconds": 6.825841543000035,
+      "decisions": 2296
+    },
+    {
+      "case": "chasca-citlali-chongyun-bennett--citlali-c6-no-burst",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.00826093399988,
+      "audit_cpu_seconds": 8.74511608100002,
+      "decisions": 1861
+    },
+    {
+      "case": "chasca-citlali-chongyun-bennett--citlali-c6-no-burst",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 193.82279228200014,
+      "audit_cpu_seconds": 9.448847459999946,
+      "decisions": 530
+    },
+    {
+      "case": "chasca-citlali-chongyun-bennett--citlali-c6-no-burst",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0126071059998,
+      "audit_cpu_seconds": 8.53387953300006,
+      "decisions": 1620
+    },
+    {
+      "case": "chasca-citlali-mualani-bennett--citlali-c6-no-burst",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.003524721,
+      "audit_cpu_seconds": 9.814386643999917,
+      "decisions": 642
+    },
+    {
+      "case": "chasca-citlali-mualani-bennett--citlali-c6-no-burst",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 194.31331505100064,
+      "audit_cpu_seconds": 10.436352245000009,
+      "decisions": 529
+    },
+    {
+      "case": "chasca-citlali-mualani-bennett--citlali-c6-no-burst",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 196.07677165099994,
+      "audit_cpu_seconds": 9.724667842999978,
+      "decisions": 214
+    },
+    {
+      "case": "chasca-citlali-rosaria-bennett--citlali-c6-no-burst",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 200.84992940099988,
+      "audit_cpu_seconds": 8.521983189999972,
+      "decisions": 1866
+    },
+    {
+      "case": "chasca-citlali-rosaria-bennett--citlali-c6-no-burst",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0104458659995,
+      "audit_cpu_seconds": 9.339317827000087,
+      "decisions": 1432
+    },
+    {
+      "case": "chasca-citlali-rosaria-bennett--citlali-c6-no-burst",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.03838123299965,
+      "audit_cpu_seconds": 10.061970572999968,
+      "decisions": 1869
+    },
+    {
+      "case": "chongyun-furina-escoffier-xianyun--KPmGTPNQRDW6",
+      "seed": 11,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 576.0109498440011,
+      "audit_cpu_seconds": 18.292517318000016,
+      "decisions": 3504
+    },
+    {
+      "case": "chongyun-furina-escoffier-xianyun--KPmGTPNQRDW6",
+      "seed": 37,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 576.0244247139983,
+      "audit_cpu_seconds": 16.961243993000018,
+      "decisions": 3709
+    },
+    {
+      "case": "chongyun-furina-escoffier-xianyun--KPmGTPNQRDW6",
+      "seed": 91,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 578.9578354370001,
+      "audit_cpu_seconds": 16.892866491999605,
+      "decisions": 797
+    },
+    {
+      "case": "citlali-chasca-escoffier-mavuika--citlali-c6-no-burst",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.01686317100018,
+      "audit_cpu_seconds": 9.955999514999974,
+      "decisions": 2066
+    },
+    {
+      "case": "citlali-chasca-escoffier-mavuika--citlali-c6-no-burst",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.01327969999983,
+      "audit_cpu_seconds": 9.178357669000007,
+      "decisions": 2164
+    },
+    {
+      "case": "citlali-chasca-escoffier-mavuika--citlali-c6-no-burst",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.02224681000013,
+      "audit_cpu_seconds": 10.607522537999962,
+      "decisions": 2073
+    },
+    {
+      "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+      "seed": 11,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 577.3682299770002,
+      "audit_cpu_seconds": 15.521509756000462,
+      "decisions": 1320
+    },
+    {
+      "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+      "seed": 37,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 583.5869704569982,
+      "audit_cpu_seconds": 15.584746622999816,
+      "decisions": 1514
+    },
+    {
+      "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+      "seed": 91,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 579.4003240160014,
+      "audit_cpu_seconds": 15.111674151000152,
+      "decisions": 1193
+    },
+    {
+      "case": "cyno-fischl-nahida-xilonen--kRfdGgkcpznD",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 196.88537069299974,
+      "audit_cpu_seconds": 12.476701274999996,
+      "decisions": 384
+    },
+    {
+      "case": "cyno-fischl-nahida-xilonen--kRfdGgkcpznD",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 199.85937810799976,
+      "audit_cpu_seconds": 15.63013251600001,
+      "decisions": 465
+    },
+    {
+      "case": "cyno-fischl-nahida-xilonen--kRfdGgkcpznD",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 197.66800203600025,
+      "audit_cpu_seconds": 12.777881390999958,
+      "decisions": 168
+    },
+    {
+      "case": "flins-ineffa-columbina-durin--kwnMBjKmcJWQ",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.00294032199972,
+      "audit_cpu_seconds": 11.856963309000015,
+      "decisions": 1471
+    },
+    {
+      "case": "flins-ineffa-columbina-durin--kwnMBjKmcJWQ",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0076067849993,
+      "audit_cpu_seconds": 11.54064685300014,
+      "decisions": 1695
+    },
+    {
+      "case": "flins-ineffa-columbina-durin--kwnMBjKmcJWQ",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0249024730001,
+      "audit_cpu_seconds": 11.566285164000028,
+      "decisions": 1136
+    },
+    {
+      "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+      "seed": 11,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 576.0416536360001,
+      "audit_cpu_seconds": 14.045984940000054,
+      "decisions": 2887
+    },
+    {
+      "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+      "seed": 37,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 576.0024614819988,
+      "audit_cpu_seconds": 14.847344703999987,
+      "decisions": 3693
+    },
+    {
+      "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+      "seed": 91,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 577.5811181489985,
+      "audit_cpu_seconds": 14.362222534000324,
+      "decisions": 3146
+    },
+    {
+      "case": "gaming-citlali-kaedeharakazuha-bennett--citlali-c6-no-burst",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.01517404799995,
+      "audit_cpu_seconds": 7.856181470000003,
+      "decisions": 2536
+    },
+    {
+      "case": "gaming-citlali-kaedeharakazuha-bennett--citlali-c6-no-burst",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.09971727499985,
+      "audit_cpu_seconds": 7.647548375000085,
+      "decisions": 2321
+    },
+    {
+      "case": "gaming-citlali-kaedeharakazuha-bennett--citlali-c6-no-burst",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.05239870899976,
+      "audit_cpu_seconds": 7.90826424199993,
+      "decisions": 2097
+    },
+    {
+      "case": "hutao-furina-yelan-citlali--m9CWdQGTJwCH",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.1485699180001,
+      "audit_cpu_seconds": 25.456618169999985,
+      "decisions": 462
+    },
+    {
+      "case": "hutao-furina-yelan-citlali--m9CWdQGTJwCH",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.04480835100014,
+      "audit_cpu_seconds": 36.026941875000034,
+      "decisions": 393
+    },
+    {
+      "case": "hutao-furina-yelan-citlali--m9CWdQGTJwCH",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0240740659996,
+      "audit_cpu_seconds": 24.225977703999938,
+      "decisions": 625
+    },
+    {
+      "case": "hutao-yelan-columbina-ineffa--7DdP6dDqRGbC",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.04781548999966,
+      "audit_cpu_seconds": 11.429876118000017,
+      "decisions": 1483
+    },
+    {
+      "case": "hutao-yelan-columbina-ineffa--7DdP6dDqRGbC",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0115568100003,
+      "audit_cpu_seconds": 11.543874629000058,
+      "decisions": 1265
+    },
+    {
+      "case": "hutao-yelan-columbina-ineffa--7DdP6dDqRGbC",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0020088769997,
+      "audit_cpu_seconds": 12.489730124999951,
+      "decisions": 1697
+    },
+    {
+      "case": "hutao-yelan-mona-nicole--NpWw8TkzPPDz",
+      "seed": 11,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 584.2388342269996,
+      "audit_cpu_seconds": 12.691302505999964,
+      "decisions": 1599
+    },
+    {
+      "case": "hutao-yelan-mona-nicole--NpWw8TkzPPDz",
+      "seed": 37,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 576.0136554909998,
+      "audit_cpu_seconds": 13.283894879999949,
+      "decisions": 3667
+    },
+    {
+      "case": "hutao-yelan-mona-nicole--NpWw8TkzPPDz",
+      "seed": 91,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 577.7214970970018,
+      "audit_cpu_seconds": 9.845240600000057,
+      "decisions": 2864
+    },
+    {
+      "case": "kaedeharakazuha-faruzan-furina-xianyun--JFrLR9QLQgdw",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.01984667600027,
+      "audit_cpu_seconds": 13.499968466000034,
+      "decisions": 1816
+    },
+    {
+      "case": "kaedeharakazuha-faruzan-furina-xianyun--JFrLR9QLQgdw",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 196.60143388000017,
+      "audit_cpu_seconds": 10.433786932999958,
+      "decisions": 1186
+    },
+    {
+      "case": "kaedeharakazuha-faruzan-furina-xianyun--JFrLR9QLQgdw",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.09663746799959,
+      "audit_cpu_seconds": 13.051996575000025,
+      "decisions": 972
+    },
+    {
+      "case": "kamisatoayaka-furina-citlali-escoffier--RmDNLghj8jqh",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0176508070006,
+      "audit_cpu_seconds": 15.842943326000011,
+      "decisions": 1223
+    },
+    {
+      "case": "kamisatoayaka-furina-citlali-escoffier--RmDNLghj8jqh",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.11365116700026,
+      "audit_cpu_seconds": 15.687008540999884,
+      "decisions": 1117
+    },
+    {
+      "case": "kamisatoayaka-furina-citlali-escoffier--RmDNLghj8jqh",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0126617849995,
+      "audit_cpu_seconds": 12.97493732399996,
+      "decisions": 1271
+    },
+    {
+      "case": "mavuika-citlali-charlotte-bennett--citlali-c6-no-burst",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0241323700004,
+      "audit_cpu_seconds": 9.392028755000077,
+      "decisions": 1813
+    },
+    {
+      "case": "mavuika-citlali-charlotte-bennett--citlali-c6-no-burst",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.02235185200013,
+      "audit_cpu_seconds": 9.330949199999942,
+      "decisions": 2127
+    },
+    {
+      "case": "mavuika-citlali-charlotte-bennett--citlali-c6-no-burst",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.00733175599999,
+      "audit_cpu_seconds": 9.827222028999977,
+      "decisions": 2323
+    },
+    {
+      "case": "mavuika-citlali-xilonen-albedo--citlali-c6-no-burst",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0016358239995,
+      "audit_cpu_seconds": 9.971815271999944,
+      "decisions": 1092
+    },
+    {
+      "case": "mavuika-citlali-xilonen-albedo--citlali-c6-no-burst",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.02533710500057,
+      "audit_cpu_seconds": 10.49681988600004,
+      "decisions": 1821
+    },
+    {
+      "case": "mavuika-citlali-xilonen-albedo--citlali-c6-no-burst",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 194.67858429700027,
+      "audit_cpu_seconds": 9.951548435000063,
+      "decisions": 813
+    },
+    {
+      "case": "mavuika-citlali-xilonen-chevreuse--dkC8Gtdm8F9d",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.08362849299925,
+      "audit_cpu_seconds": 10.472968345999988,
+      "decisions": 1053
+    },
+    {
+      "case": "mavuika-citlali-xilonen-chevreuse--dkC8Gtdm8F9d",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0169924070007,
+      "audit_cpu_seconds": 11.067106341000006,
+      "decisions": 1117
+    },
+    {
+      "case": "mavuika-citlali-xilonen-chevreuse--dkC8Gtdm8F9d",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0155098820001,
+      "audit_cpu_seconds": 7.930287808999957,
+      "decisions": 1162
+    },
+    {
+      "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 196.82530918600006,
+      "audit_cpu_seconds": 18.02281353699997,
+      "decisions": 686
+    },
+    {
+      "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 197.7803286350001,
+      "audit_cpu_seconds": 16.909310638999948,
+      "decisions": 393
+    },
+    {
+      "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.75327336700008,
+      "audit_cpu_seconds": 16.897066280999944,
+      "decisions": 356
+    },
+    {
+      "case": "nahida-fischl-beidou-kaedeharakazuha--bcR6QJHLLBtH",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.03314348300003,
+      "audit_cpu_seconds": 9.98845388200003,
+      "decisions": 809
+    },
+    {
+      "case": "nahida-fischl-beidou-kaedeharakazuha--bcR6QJHLLBtH",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.01506116900055,
+      "audit_cpu_seconds": 9.967178882000077,
+      "decisions": 1862
+    },
+    {
+      "case": "nahida-fischl-beidou-kaedeharakazuha--bcR6QJHLLBtH",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.00911819999965,
+      "audit_cpu_seconds": 9.979428808999906,
+      "decisions": 1914
+    },
+    {
+      "case": "neuvillette-furina-lanyan-xilonen--dB9DNqJgzHBr",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 196.13909906300063,
+      "audit_cpu_seconds": 14.69497455400009,
+      "decisions": 1527
+    },
+    {
+      "case": "neuvillette-furina-lanyan-xilonen--dB9DNqJgzHBr",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.00724921899916,
+      "audit_cpu_seconds": 14.713079025999932,
+      "decisions": 1340
+    },
+    {
+      "case": "neuvillette-furina-lanyan-xilonen--dB9DNqJgzHBr",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.00981449800008,
+      "audit_cpu_seconds": 14.116605911000086,
+      "decisions": 1119
+    },
+    {
+      "case": "neuvillette-furina-lynette-xilonen--JhJ7FPddfHRz",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.08594069600042,
+      "audit_cpu_seconds": 9.46077490500005,
+      "decisions": 458
+    },
+    {
+      "case": "neuvillette-furina-lynette-xilonen--JhJ7FPddfHRz",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 197.8051245479998,
+      "audit_cpu_seconds": 10.396129264999999,
+      "decisions": 709
+    },
+    {
+      "case": "neuvillette-furina-lynette-xilonen--JhJ7FPddfHRz",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.0551983099998,
+      "audit_cpu_seconds": 12.039619659000067,
+      "decisions": 974
+    },
+    {
+      "case": "noelle-xilonen-nicole-durin--99dNHg8bKpcw",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.00055087099963,
+      "audit_cpu_seconds": 13.973703689999951,
+      "decisions": 1500
+    },
+    {
+      "case": "noelle-xilonen-nicole-durin--99dNHg8bKpcw",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.00806715600007,
+      "audit_cpu_seconds": 14.043793367000063,
+      "decisions": 1473
+    },
+    {
+      "case": "noelle-xilonen-nicole-durin--99dNHg8bKpcw",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.1353088219991,
+      "audit_cpu_seconds": 14.144814893999943,
+      "decisions": 1626
+    },
+    {
+      "case": "shenhe-chasca-citlali-mavuika--citlali-c6-no-burst",
+      "seed": 11,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 576.0195639080019,
+      "audit_cpu_seconds": 14.352337654000003,
+      "decisions": 5489
+    },
+    {
+      "case": "shenhe-chasca-citlali-mavuika--citlali-c6-no-burst",
+      "seed": 37,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 576.0118581539998,
+      "audit_cpu_seconds": 13.135899670000029,
+      "decisions": 5501
+    },
+    {
+      "case": "shenhe-chasca-citlali-mavuika--citlali-c6-no-burst",
+      "seed": 91,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 576.0271610199984,
+      "audit_cpu_seconds": 14.459713602999983,
+      "decisions": 5605
+    },
+    {
+      "case": "travelerpyro-furina-bennett-citlali--citlali-c6-no-burst",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.03324102899967,
+      "audit_cpu_seconds": 12.30725558600004,
+      "decisions": 689
+    },
+    {
+      "case": "travelerpyro-furina-bennett-citlali--citlali-c6-no-burst",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 195.96796832700005,
+      "audit_cpu_seconds": 13.99400228700003,
+      "decisions": 471
+    },
+    {
+      "case": "travelerpyro-furina-bennett-citlali--citlali-c6-no-burst",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.40634216299975,
+      "audit_cpu_seconds": 13.170658181000022,
+      "decisions": 527
+    },
+    {
+      "case": "wriothesley-shenhe-furina-xilonen--mQBdNDhMnnH6",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.05708715599974,
+      "audit_cpu_seconds": 9.922236678999994,
+      "decisions": 1081
+    },
+    {
+      "case": "wriothesley-shenhe-furina-xilonen--mQBdNDhMnnH6",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 192.06682526800046,
+      "audit_cpu_seconds": 9.681876887999941,
+      "decisions": 1081
+    },
+    {
+      "case": "wriothesley-shenhe-furina-xilonen--mQBdNDhMnnH6",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 197.60189743900003,
+      "audit_cpu_seconds": 11.598136572000044,
+      "decisions": 238
+    },
+    {
+      "case": "wriothesley-xiangling-furina-bennett--mwjCWWCcpwJJ",
+      "seed": 11,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 577.66000079,
+      "audit_cpu_seconds": 13.72031408899987,
+      "decisions": 2524
+    },
+    {
+      "case": "wriothesley-xiangling-furina-bennett--mwjCWWCcpwJJ",
+      "seed": 37,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 576.0135002350005,
+      "audit_cpu_seconds": 14.473382431000125,
+      "decisions": 3759
+    },
+    {
+      "case": "wriothesley-xiangling-furina-bennett--mwjCWWCcpwJJ",
+      "seed": 91,
+      "final_cap": 576.0,
+      "discovery_cpu_seconds": 576.0656294979997,
+      "audit_cpu_seconds": 14.062280589000075,
+      "decisions": 4498
+    },
+    {
+      "case": "xiao-faruzan-furina-xianyun--n8fCP7cBnnWz",
+      "seed": 11,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 201.1155871970002,
+      "audit_cpu_seconds": 10.481107122000004,
+      "decisions": 163
+    },
+    {
+      "case": "xiao-faruzan-furina-xianyun--n8fCP7cBnnWz",
+      "seed": 37,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 197.35113455099952,
+      "audit_cpu_seconds": 11.298761524999946,
+      "decisions": 709
+    },
+    {
+      "case": "xiao-faruzan-furina-xianyun--n8fCP7cBnnWz",
+      "seed": 91,
+      "final_cap": 192.0,
+      "discovery_cpu_seconds": 200.80964539700014,
+      "audit_cpu_seconds": 10.689391523000047,
+      "decisions": 458
+    }
+  ],
+  "total_cpu_hours_excluding_overhead": 7.379475226653332,
+  "confirm_rerun_cpu_seconds": 0.0,
+  "confirm_rerun_note": "confirm was rerun once (same seeds, all evaluations cache hits) only to fix S feature extraction; values identical. confirm CPU is the worker CPU summed from the confirm journals: the measure command's printed cpu_seconds wrongly included CPU of records already in a reused journal directory (fixed after the run); classification used fresh directories and is unaffected.",
+  "wall_clock": {
+    "stage1_search_start_utc": "2026-11-05T14:33",
+    "stage1_search_end_utc": "2026-11-05T16:40",
+    "workers": 4
+  },
+  "classification_worker_cpu_from_journals": 320.245478
+}

@@ -1,0 +1,558 @@
+{
+  "label": "stage1",
+  "conditions": "native engine 1ba0af1, 450 s fight with the first 150 s excluded, one level-100 target, 10% resistance, swap delay 12, periodic energy every 480-720 frames, each case's alt build.txt with the alternative's team.yaml params, fixed ER",
+  "checkpoints": {
+    "36": {
+      "cases": 30,
+      "informative": 24,
+      "median_r": 0.7360189135691124,
+      "r_quartiles": [
+        0.45332116443943193,
+        0.7360189135691124,
+        1.125424820983665
+      ],
+      "informative_regressions": 0,
+      "all_regressions": [],
+      "share_r_at_least_0.5": 0.6666666666666666,
+      "share_S_is_L": 0.0,
+      "median_r_frame": 0.660939073337824,
+      "n_frame": 12,
+      "median_r_other": 0.8434806974314558,
+      "n_other": 12
+    },
+    "108": {
+      "cases": 30,
+      "informative": 24,
+      "median_r": 0.946453016928815,
+      "r_quartiles": [
+        0.48729960626559377,
+        0.946453016928815,
+        1.2140088945784102
+      ],
+      "informative_regressions": 0,
+      "all_regressions": [],
+      "share_r_at_least_0.5": 0.75,
+      "share_S_is_L": 0.0,
+      "median_r_frame": 0.9579373313164047,
+      "n_frame": 12,
+      "median_r_other": 0.946453016928815,
+      "n_other": 12
+    },
+    "192": {
+      "cases": 30,
+      "informative": 24,
+      "median_r": 0.9402831739683976,
+      "r_quartiles": [
+        0.5547609452403819,
+        0.9402831739683976,
+        1.2710319360027882
+      ],
+      "informative_regressions": 0,
+      "all_regressions": [],
+      "share_r_at_least_0.5": 0.7916666666666666,
+      "share_S_is_L": 0.0,
+      "median_r_frame": 0.9933910118672232,
+      "n_frame": 12,
+      "median_r_other": 0.9402831739683976,
+      "n_other": 12,
+      "reading": "Promising: worth the full stage"
+    },
+    "576": {
+      "cases": 6,
+      "informative": 6,
+      "median_r": 0.7816731779152846,
+      "r_quartiles": [
+        0.5838525824366653,
+        0.7816731779152846,
+        1.1658051315842162
+      ],
+      "informative_regressions": 0,
+      "all_regressions": [],
+      "share_r_at_least_0.5": 1.0,
+      "share_S_is_L": 0.0,
+      "median_r_frame": 0.6153082621415354,
+      "n_frame": 3,
+      "median_r_other": 0.9480380936890337,
+      "n_other": 3
+    }
+  },
+  "budget": {
+    "36->108": {
+      "median_gain": 0.0017055408402403271,
+      "rows": [
+        {
+          "case": "wriothesley-shenhe-furina-xilonen--mQBdNDhMnnH6",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.10976448885842505,
+          "converged": false
+        },
+        {
+          "case": "travelerpyro-furina-bennett-citlali--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.011184126709573361,
+          "converged": false
+        },
+        {
+          "case": "gaming-citlali-kaedeharakazuha-bennett--citlali-c6-no-burst",
+          "class": "control",
+          "stratum": "other",
+          "gain": 0.022570124698139127,
+          "converged": false
+        },
+        {
+          "case": "shenhe-chasca-citlali-mavuika--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": -0.0031092940083408127,
+          "converged": true
+        },
+        {
+          "case": "cyno-fischl-nahida-xilonen--kRfdGgkcpznD",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.11899695235351282,
+          "converged": false
+        },
+        {
+          "case": "xiao-faruzan-furina-xianyun--n8fCP7cBnnWz",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.0006900733932242442,
+          "converged": true
+        },
+        {
+          "case": "kamisatoayaka-furina-citlali-escoffier--RmDNLghj8jqh",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.19968423110986144,
+          "converged": false
+        },
+        {
+          "case": "wriothesley-xiangling-furina-bennett--mwjCWWCcpwJJ",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.003318589239883374,
+          "converged": true
+        },
+        {
+          "case": "neuvillette-furina-lanyan-xilonen--dB9DNqJgzHBr",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.0010298588797810204,
+          "converged": true
+        },
+        {
+          "case": "noelle-xilonen-nicole-durin--99dNHg8bKpcw",
+          "class": "control",
+          "stratum": "other",
+          "gain": 0.00057159997464451,
+          "converged": true
+        },
+        {
+          "case": "kaedeharakazuha-faruzan-furina-xianyun--JFrLR9QLQgdw",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.040164256055443825,
+          "converged": false
+        },
+        {
+          "case": "chongyun-furina-escoffier-xianyun--KPmGTPNQRDW6",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.003069652396348266,
+          "converged": true
+        },
+        {
+          "case": "nahida-fischl-beidou-kaedeharakazuha--bcR6QJHLLBtH",
+          "class": "control",
+          "stratum": "frame",
+          "gain": 0.028123881049138877,
+          "converged": false
+        },
+        {
+          "case": "chasca-citlali-chongyun-bennett--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.0026025794543496072,
+          "converged": true
+        },
+        {
+          "case": "bennett-fischl-lisa-xingqiu--z89bwQG6KGHg",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": -0.0008030200046599267,
+          "converged": true
+        },
+        {
+          "case": "mavuika-citlali-charlotte-bennett--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.04334106588291675,
+          "converged": false
+        },
+        {
+          "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": -0.0022253685875199825,
+          "converged": true
+        },
+        {
+          "case": "mavuika-citlali-xilonen-albedo--citlali-c6-no-burst",
+          "class": "control",
+          "stratum": "frame",
+          "gain": 0.002243055746327549,
+          "converged": true
+        },
+        {
+          "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.0027044484914484634,
+          "converged": true
+        },
+        {
+          "case": "neuvillette-furina-lynette-xilonen--JhJ7FPddfHRz",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.0003091837577737788,
+          "converged": true
+        },
+        {
+          "case": "chasca-citlali-mualani-bennett--citlali-c6-no-burst",
+          "class": "control",
+          "stratum": "frame",
+          "gain": -0.0012611939903440783,
+          "converged": true
+        },
+        {
+          "case": "citlali-chasca-escoffier-mavuika--citlali-c6-no-burst",
+          "class": "control",
+          "stratum": "other",
+          "gain": -0.0009962327533703519,
+          "converged": true
+        },
+        {
+          "case": "hutao-furina-yelan-citlali--m9CWdQGTJwCH",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.020143848875649573,
+          "converged": false
+        },
+        {
+          "case": "bennett-lynette-xiangling-lyney--jNtRRhR8NM9m",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.014762783092966192,
+          "converged": false
+        },
+        {
+          "case": "chasca-citlali-rosaria-bennett--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.0035497233796082384,
+          "converged": true
+        },
+        {
+          "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.0011680259341531052,
+          "converged": true
+        },
+        {
+          "case": "hutao-yelan-mona-nicole--NpWw8TkzPPDz",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.0015127977728223163,
+          "converged": true
+        },
+        {
+          "case": "hutao-yelan-columbina-ineffa--7DdP6dDqRGbC",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.0008796266735995317,
+          "converged": true
+        },
+        {
+          "case": "mavuika-citlali-xilonen-chevreuse--dkC8Gtdm8F9d",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.16765154030492102,
+          "converged": false
+        },
+        {
+          "case": "flins-ineffa-columbina-durin--kwnMBjKmcJWQ",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.0009217915620560735,
+          "converged": true
+        }
+      ]
+    },
+    "108->192": {
+      "median_gain": 0.0015437528865733796,
+      "rows": [
+        {
+          "case": "wriothesley-shenhe-furina-xilonen--mQBdNDhMnnH6",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.04210141612612528,
+          "converged": false
+        },
+        {
+          "case": "travelerpyro-furina-bennett-citlali--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": -0.0031202855127890894,
+          "converged": true
+        },
+        {
+          "case": "gaming-citlali-kaedeharakazuha-bennett--citlali-c6-no-burst",
+          "class": "control",
+          "stratum": "other",
+          "gain": -0.0030873342595784115,
+          "converged": true
+        },
+        {
+          "case": "shenhe-chasca-citlali-mavuika--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.0015211347897243765,
+          "converged": true
+        },
+        {
+          "case": "cyno-fischl-nahida-xilonen--kRfdGgkcpznD",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": -0.0003615582920029059,
+          "converged": true
+        },
+        {
+          "case": "xiao-faruzan-furina-xianyun--n8fCP7cBnnWz",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.006440749600084228,
+          "converged": true
+        },
+        {
+          "case": "kamisatoayaka-furina-citlali-escoffier--RmDNLghj8jqh",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.0005202774672098398,
+          "converged": true
+        },
+        {
+          "case": "wriothesley-xiangling-furina-bennett--mwjCWWCcpwJJ",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.005684317522854254,
+          "converged": true
+        },
+        {
+          "case": "neuvillette-furina-lanyan-xilonen--dB9DNqJgzHBr",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.0009477653473024539,
+          "converged": true
+        },
+        {
+          "case": "noelle-xilonen-nicole-durin--99dNHg8bKpcw",
+          "class": "control",
+          "stratum": "other",
+          "gain": 0.021720678697273677,
+          "converged": false
+        },
+        {
+          "case": "kaedeharakazuha-faruzan-furina-xianyun--JFrLR9QLQgdw",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.011089052510312003,
+          "converged": false
+        },
+        {
+          "case": "chongyun-furina-escoffier-xianyun--KPmGTPNQRDW6",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.0037298955526814392,
+          "converged": true
+        },
+        {
+          "case": "nahida-fischl-beidou-kaedeharakazuha--bcR6QJHLLBtH",
+          "class": "control",
+          "stratum": "frame",
+          "gain": 0.056563012833720006,
+          "converged": false
+        },
+        {
+          "case": "chasca-citlali-chongyun-bennett--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.00011354683448194791,
+          "converged": true
+        },
+        {
+          "case": "bennett-fischl-lisa-xingqiu--z89bwQG6KGHg",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.006714327459981018,
+          "converged": true
+        },
+        {
+          "case": "mavuika-citlali-charlotte-bennett--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": -0.00033644470387450554,
+          "converged": true
+        },
+        {
+          "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.00632255244125024,
+          "converged": true
+        },
+        {
+          "case": "mavuika-citlali-xilonen-albedo--citlali-c6-no-burst",
+          "class": "control",
+          "stratum": "frame",
+          "gain": -0.0016499583747354718,
+          "converged": true
+        },
+        {
+          "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.00333498274705879,
+          "converged": true
+        },
+        {
+          "case": "neuvillette-furina-lynette-xilonen--JhJ7FPddfHRz",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.00027811488290696573,
+          "converged": true
+        },
+        {
+          "case": "chasca-citlali-mualani-bennett--citlali-c6-no-burst",
+          "class": "control",
+          "stratum": "frame",
+          "gain": -0.0005148679122676247,
+          "converged": true
+        },
+        {
+          "case": "citlali-chasca-escoffier-mavuika--citlali-c6-no-burst",
+          "class": "control",
+          "stratum": "other",
+          "gain": 0.021129535807346445,
+          "converged": false
+        },
+        {
+          "case": "hutao-furina-yelan-citlali--m9CWdQGTJwCH",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.06477041064786193,
+          "converged": false
+        },
+        {
+          "case": "bennett-lynette-xiangling-lyney--jNtRRhR8NM9m",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.05404732826900305,
+          "converged": false
+        },
+        {
+          "case": "chasca-citlali-rosaria-bennett--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.0004626319275647939,
+          "converged": true
+        },
+        {
+          "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.00034091926989865406,
+          "converged": true
+        },
+        {
+          "case": "hutao-yelan-mona-nicole--NpWw8TkzPPDz",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.0001719745383113036,
+          "converged": true
+        },
+        {
+          "case": "hutao-yelan-columbina-ineffa--7DdP6dDqRGbC",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.0015663709834223827,
+          "converged": true
+        },
+        {
+          "case": "mavuika-citlali-xilonen-chevreuse--dkC8Gtdm8F9d",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.0038636617166571963,
+          "converged": true
+        },
+        {
+          "case": "flins-ineffa-columbina-durin--kwnMBjKmcJWQ",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.0022583383483144592,
+          "converged": true
+        }
+      ]
+    },
+    "192->576": {
+      "median_gain": 0.0021811953983463805,
+      "rows": [
+        {
+          "case": "shenhe-chasca-citlali-mavuika--citlali-c6-no-burst",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.0020988065072817808,
+          "converged": true
+        },
+        {
+          "case": "wriothesley-xiangling-furina-bennett--mwjCWWCcpwJJ",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.01621956523084478,
+          "converged": false
+        },
+        {
+          "case": "chongyun-furina-escoffier-xianyun--KPmGTPNQRDW6",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.0022635842894109803,
+          "converged": true
+        },
+        {
+          "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+          "class": "informative",
+          "stratum": "other",
+          "gain": -0.00027649695727705037,
+          "converged": true
+        },
+        {
+          "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+          "class": "informative",
+          "stratum": "frame",
+          "gain": 0.008683492777775026,
+          "converged": true
+        },
+        {
+          "case": "hutao-yelan-mona-nicole--NpWw8TkzPPDz",
+          "class": "informative",
+          "stratum": "other",
+          "gain": 0.000525712224115571,
+          "converged": true
+        }
+      ]
+    }
+  }
+}
