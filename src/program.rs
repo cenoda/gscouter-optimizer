@@ -12,7 +12,16 @@ impl Rng {
         z ^ (z >> 31)
     }
     pub fn index(&mut self, n: usize) -> usize {
-        self.next() as usize % n
+        #[cfg(gso_browser)]
+        {
+            // WASM32 must not truncate the random word before taking modulo:
+            // the same seed must draw the same index on native64 and WASM32.
+            (self.next() % n as u64) as usize
+        }
+        #[cfg(not(gso_browser))]
+        {
+            self.next() as usize % n
+        }
     }
     pub fn uniform(&mut self) -> f64 {
         ((self.next() >> 11) as f64 + 0.5) / (1u64 << 53) as f64
@@ -775,7 +784,7 @@ fn render(s: &Step, i: usize, cyclic: bool, names: &[&str]) -> String {
     out
 }
 
-#[cfg(test)]
+#[cfg(all(test, not(gso_browser)))]
 mod tests {
     use super::*;
 

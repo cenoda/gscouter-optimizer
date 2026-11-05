@@ -475,6 +475,7 @@ pub fn manifest_from_build(
     Ok(m)
 }
 
+#[cfg(not(gso_browser))]
 fn arg(args: &[String], name: &str) -> Result<String, String> {
     args.windows(2)
         .find(|x| x[0] == name)
@@ -482,10 +483,12 @@ fn arg(args: &[String], name: &str) -> Result<String, String> {
         .ok_or_else(|| format!("{name} required"))
 }
 
+#[cfg(not(gso_browser))]
 fn read(path: &str) -> Result<String, String> {
     std::fs::read_to_string(path).map_err(|e| format!("{path}: {e}"))
 }
 
+#[cfg(not(gso_browser))]
 fn write(path: &str, value: &impl Serialize) -> Result<(), String> {
     let p = std::path::Path::new(path);
     if let Some(parent) = p.parent().filter(|p| !p.as_os_str().is_empty()) {
@@ -495,6 +498,7 @@ fn write(path: &str, value: &impl Serialize) -> Result<(), String> {
 }
 
 /// `heldout-manifest`, `dictionary build|filter` and `measure`.
+#[cfg(not(gso_browser))]
 pub fn cli(args: &[String]) -> Result<(), String> {
     use crate::evaluate::{Evaluator, cpu, hash, stats};
     match args[0].as_str() {
@@ -564,7 +568,7 @@ pub fn cli(args: &[String]) -> Result<(), String> {
     }
 }
 
-#[cfg(test)]
+#[cfg(all(test, not(gso_browser)))]
 mod tests {
     use super::*;
 

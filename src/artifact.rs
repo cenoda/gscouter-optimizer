@@ -1,7 +1,10 @@
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, BTreeSet};
 
+#[cfg(not(gso_browser))]
 pub const ENGINE: &str = "1ba0af119e0477d6f44ee966a78fa06d84d2c5de";
+#[cfg(gso_browser)]
+pub const ENGINE: &str = crate::ENGINE;
 pub const HEADER: &str = "options duration=450 swap_delay=12;\ntarget lvl=100 resist=0.1 radius=2 pos=0,2.4;\nenergy every interval=480,720 amount=1;\n";
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
@@ -360,7 +363,7 @@ impl Manifest {
     }
 }
 
-#[cfg(test)]
+#[cfg(all(test, not(gso_browser)))]
 pub(crate) mod tests {
     use super::*;
 

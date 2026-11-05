@@ -1,0 +1,20 @@
+[package]
+name = "gso-browser"
+version = "0.1.0"
+edition = "2024"
+license = "AGPL-3.0-or-later"
+description = "Incremental browser-local rotation refinement using the GSO pilot grammar"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+gse = { git = "https://github.com/cenoda/gscouter-engine.git", rev = "b13b7864163e75852d4b9f282be009c94369ab29" }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+opt-level = 3
+panic = "abort"

@@ -64,7 +64,7 @@ pub struct Catalog {
 }
 
 impl Catalog {
-    #[cfg(test)]
+    #[cfg(all(test, not(gso_browser)))]
     pub fn new(m: &Manifest) -> Result<Self, String> {
         Self::configured(m, true)
     }
@@ -961,7 +961,7 @@ fn render_visit(out: &mut String, v: &Visit, m: &Manifest, id: &str) {
     }
 }
 
-#[cfg(test)]
+#[cfg(all(test, not(gso_browser)))]
 mod tests {
     use super::*;
     use crate::{evaluate::Evaluator, program::Program};
