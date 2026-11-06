@@ -1,0 +1,200 @@
+[
+ {
+  "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+  "start": "L",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 671,
+  "error": null,
+  "start_over_A": 0.08500768259946756,
+  "selected_over_A": 0.5844418435082724,
+  "selected_source": "active mavuika ; fn mav_dc_cancel ( d_travel_f ) { let dash_ns = 10 ; let base_cons = 0.9 ; let base_tick_rate = 6 ; if d_travel_f < 6 { d_travel_f = 6 ; } let d_ticks = d_travel_f / base_tick_rate + 1 ; print ( \"Max number of NS ticks during dash: \" , d_ticks ) ; let ns_consumed = dash_ns + base_cons * d_ticks ; print ( \"Expected NS consumption: \" , ns_consumed ) ; if .mavuika .nightsoul .points > ns_consumed || .mavuika .status .mavuika-burst { mavuika dash [ charge_cancel = 1 , travel = d_travel_f ] , charge ; } else { print ( \"current NS points = \" , .mavuika .nightsoul .points ) ; print ( \"skipping mav d*c, not enough NS points \" ) ; } } while 1 { let optimizer_cycle_start = f ( ) ; mavuika dash , skill ; for let i = 0 ; i < 4 ; i = i + 1 { ororon burst ; while .status .bennettburst || .chevreuse .infusion .bennett-fire-weapon { if .chevreuse .skill .ready { chevreuse attack , skill [ hold = 1 ] , attack , skill [ hold = 1 ] , attack : 2 , skill [ hold = 1 ] ; ororon skill , attack : 2 ; if .bennett .burst .ready { bennett burst , skill ; bennett burst ; } bennett dash , burst ; chevreuse burst , skill [ hold = 1 ] ; } else { mavuika charge , burst , skill , charge , skill , charge , skill ; bennett skill , dash , charge , burst ; } } bennett dash , attack : 2 ; chev skill [ hold = 2 ] , burst ; bennett burst , skill ; mavuika charge , dash ; mavuika burst ; while .ororon .mods .razor-q > 240 { if .ororon .normal > 3 { if .ororon .skill .ready { } else { } } else { if ! .element .t0 .pyro { while .ororon .mods .razor-q > 240 { if .ororon .normal > 3 { if .ororon .skill .ready { } else { ororon dash ; ororon skill , dash ; } } else { ororon skill , burst ; } } mavuika charge , dash ; ororon skill , attack , burst , attack ; while ! .ororon .mods .favonius-cd { mavuika dash ; while .bennett .armed && ! .bennett .skill .ready { bennett dash ; } } if ! .ororon .mods .favonius-cd { ororon attack ; } bennett skill , burst ; ororon skill , skill , attack , attack , burst ; chevreuse skill [ hold = 1 ] , attack ; if .mavuika .skill .ready { } ororon skill , burst ; } if .bennett .burst .ready { if .ororon .normal > 3 { ororon skill , burst ; } } chevreuse burst , skill [ hold = 1 ] : 2 ; while ( .chevreuse .mods .favonius-cd == 0 ) { if .chevreuse .burst .ready { chevreuse burst ; } } bennett skill , attack , attack , burst ; } } mavuika jump ; mav_dc_cancel ( 6 ) ; mav_dc_cancel ( 6 ) ; mav_dc_cancel ( 6 ) ; mav_dc_cancel ( 6 ) ; mavuika charge , charge [ final = 1 ] ; mav_dc_cancel ( 6 ) ; mav_dc_cancel ( 6 ) ; mavuika charge ; mav_dc_cancel ( 6 ) ; chevreuse attack : 3 , skill [ hold = 1 ] , skill [ hold = 1 ] ; bennett attack ; bennett skill , burst , attack ; while .mavuika .skill .cd > 30 && ! .mavuika .burst .ready { mavuika charge : 3 ; chevreuse burst ; bennett burst , attack , skill ; while .bennett .momentum < 3 { bennett walk [ f = 1 ] ; } } mavuika skill [ hold = 1 ] ; mavuika charge : 3 , charge : 2 , dash ; mav_dc_cancel ( 6 ) ; mav_dc_cancel ( 6 ) ; while ! .ororon .mods .favonius-cd && ! .ororon .burst .ready { ororon skill , attack : 2 ; } mavuika burst , charge : 3 , dash , charge : 2 , attack , attack , skill , dash ; } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+  "start": "K",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 536,
+  "error": null,
+  "start_over_A": 0.5940635068619725,
+  "selected_over_A": 0.9691503561530784,
+  "selected_source": "active mavuika ; fn mav_dc_cancel ( d_travel_f ) { mavuika skill ; mavuika burst , attack , skill ; chevreuse attack : 3 ; ororon skill , burst , attack : 3 ; let dash_ns = 10 ; let base_cons = 0.9 ; let base_tick_rate = 6 ; while ! .chevreuse .dash .ready { print ( \"waiting on mavuika dash cd\" ) ; wait ( 1 ) ; } let d_ticks = d_travel_f / base_tick_rate + 1 ; print ( \"Max number of NS ticks during dash: \" , d_ticks ) ; let ns_consumed = dash_ns + base_cons * d_ticks ; print ( \"Expected NS consumption: \" , ns_consumed ) ; if .mavuika .nightsoul .points > ns_consumed || .mavuika .status .mavuika-burst { chevreuse skill [ hold = 1 ] : 3 , burst ; if .chevreuse .burst .ready { ororon attack : 2 , attack : 2 , skill ; } if .chevreuse .status .xianyun-airborne-buff { } } else { print ( \"current NS points = \" , .mavuika .nightsoul .points ) ; print ( \"skipping mav d*c, not enough NS points \" ) ; while ! .element .t0 .cryo { chevreuse attack ; } while .bennett .status .xianyun-airborne-buff { if .bennett .skill .ready { bennett skill : 3 ; } else if .bennett .status .xianyun-airborne-buff { mavuika dash , skill ; bennett jump ; if .airborne { if ! .ororon .mods .favonius-cd { ororon attack ; } chevreuse attack , charge , dash ; } } } chevreuse burst , skill [ hold = 1 ] ; } } while 1 { let optimizer_cycle_start = f ( ) ; for let c = 0 ; c < 1 ; c = c + 1 { let t0 = f ( ) ; ororon skill ; chevreuse skill [ hold = 1 ] , attack ; if ! .element .t0 .pyro { } bennett attack : 2 ; while ! .mavuika .mods .favonius-cd && .mavuika .weapon == .keys .weapon .favsword { mavuika attack ; } bennett skill , swap , burst ; if .bennett .burst .ready { chevreuse attack : 2 ; mavuika charge [ final = 1 ] ; chevreuse burst , dash , burst ; } if .mavuika .burst .ready { if .bennett .burst .ready { if ! .ororon .mods .favonius-cd { ororon attack ; } while .status .bennettburst || .bennett .infusion .bennett-fire-weapon { if .bennett .skill .ready { bennett skill ; } else { bennett attack ; } } bennett skill , attack , burst , attack ; bennett attack , high_plunge , high_plunge , attack ; while .ororon .burst .cd > 335 { if .ororon .skill .ready { ororon skill ; } else if .ororon .normal == 3 { ororon dash ; } else { ororon attack ; } } } mavuika burst ; } if .chevreuse .weapon == .keys .weapon .favsword && ( ! .chevreuse .mods .favonius-cd && ! .chevreuse .burst .ready ) { bennett burst ; chevreuse skill [ hold = 1 ] , attack , burst , attack ; ororon skill , burst ; } while f ( ) - t0 < 1080 { if .mavuika .skill .ready { mavuika skill [ hold = 1 ] ; } else { while ! .chevreuse .burst .ready { if .mavuika .skill .ready { } bennett skill ; mavuika skill ; } mavuika charge : 2 , dash ; } } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+  "start": "T",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 557,
+  "error": null,
+  "start_over_A": 0.2703732875625826,
+  "selected_over_A": 0.7544529512325447,
+  "selected_source": "active bennett ; while 1 { let optimizer_cycle_start = f ( ) ; for let i = 0 ; i < 4 ; i = i + 1 { if .chevreuse .sets .no > 4 { while .chevreuse .armed { while .chevreuse .armed && ! .chevreuse .skill .ready { if .bennett .armed { bennett skill ; } mavuika skill , burst ; chevreuse charge , attack ; } if .chevreuse .armed { bennett attack : 3 , skill ; chevreuse charge : 2 , skill , burst , dash ; } if .chevreuse .armed { bennett skill , dash , dash ; chevreuse attack , charge ; } } if .ororon .weapon == .keys .weapon .favsword && ( ! .ororon .mods .favonius-cd && ! .ororon .burst .ready ) { ororon skill , burst ; } while ! .ororon .mods .favonius-cd { ororon attack ; } chevreuse skill [ hold = 1 ] , attack , burst , attack ; if ! .element .t0 .pyro && ! .element .t0 .hydro { } bennett attack ; chevreuse skill ; chevreuse burst , skill [ hold = 1 ] : 2 ; bennett attack : 2 , skill ; mavuika skill , burst ; while ! .bennett .mods .favonius-cd { bennett attack : 2 ; } bennett attack , attack ; } else { if .chevreuse .burst .ready { chevreuse skill [ hold = 1 ] , burst ; } else { chevreuse dash : 1 , dash : 1 , skill [ hold = 1 ] ; } } ororon skill , burst ; if .mavuika .burst .ready { mavuika skill , burst , dash ; } else { mavuika skill , attack : 1 ; while .mavuika .status .clorinde-night-watch { if .mavuika .bolratio >= 1 { mavuika high_plunge ; } else { while .chevreuse .burst .cd { if .bennett .normal > 3 { bennett attack ; } } } } bennett burst , skill [ hold = 1 ] : 1 ; mavuika skill ; if .bennett .status .xianyun-airborne-buff { } } mavuika charge : 11 , dash ; bennett attack : 1 , skill , attack : 2 , skill , attack ; bennett burst ; if .mavuika .status .xianyun-airborne-buff { mavuika jump ; if .airborne { mavuika dash ; } } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+  "start": "L",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 913,
+  "error": null,
+  "start_over_A": 0.4349885957554183,
+  "selected_over_A": 0.49365607906468845,
+  "selected_source": "active arlecchino ; while 1 { let optimizer_cycle_start = f ( ) ; for let i = 0 ; i < 4 ; i = i + 1 { while .status .bennettburst || .bennett .infusion .bennett-fire-weapon { if .bennett .skill .ready { bennett attack : 4 , skill ; if .xilonen .weapon == .keys .weapon .favsword && ( ! .xilonen .burst .ready ) { xilonen attack ; } arlecchino attack : 6 ; arlecchino charge [ early_cancel = 1 ] , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 ; arlecchino burst , attack , high_plunge ; while .xilonen .nightsoul .state { bennett burst ; arlecchino skill ; if .xilonen .burst .ready { while .xilonen .status .clorinde-night-watch { if .xilonen .bolratio >= 1 { xilonen skill ; } else { xilonen attack ; } } while .bennett .skydweller-points > 3 { if .bennett .normal < 3 { citlali burst , walk , attack ; arlecchino charge , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 ; bennett attack , skill , burst , attack ; } else if .bennett .mods .wanderer-a4 { bennett attack ; } else if .bennett .skydweller-points > 2 { bennett jump ; } else { break ; } } xilonen burst ; } } } else { bennett burst , skill ; while .arlecchino .infusion .bennett-fire-weapon { if .arlecchino .normal > 3 { if .arlecchino .skill .ready { bennett skill , attack : 3 ; } else { while .arlecchino .burst .cd > 180 { if .arlecchino .skill .ready && .arlecchino .mods .cyno-a1 { arlecchino skill ; } else if .arlecchino .normal == 5 { arlecchino charge , attack : 3 , dash , attack : 3 , dash , attack : 2 ; } else { arlecchino attack ; } } } } else { if ! .xilonen .mods .favonius-cd { xilonen dash , dash , attack ; } if ! .arlecchino .burst .ready { arlecchino attack : 3 , charge , attack : 3 , charge , attack : 3 , charge , attack : 3 , charge , attack : 3 , charge , attack : 3 ; } } } } } while ! .arlecchino .burst .ready { arlecchino charge , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 ; } if .bennett .weapon == .keys .weapon .favsword && ( ! .bennett .mods .favonius-cd || ! .bennett .burst .ready ) { bennett attack ; } arlecchino attack : 1 ; citlali skill ; xilonen skill , attack : 2 ; citlali charge ; if .bennett .burst .ready { if .airborne { xilonen burst ; bennett attack : 3 , skill ; } bennett burst ; } while ! .arlecchino .skill .cd { arlecchino skill ; } if .xilonen .burst .ready && .xilonen .energy == .xilonen .energymax { xilonen burst ; } xilonen dash ; arlecchino charge , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 ; bennett skill ; pick_up_crystallize ( \"pyro\" ) ; xilonen skill , attack : 3 ; arlecchino attack , skill ; delay ( 6 ) ; if .bennett .skill .ready { citlali skill , attack ; } if .citlali .burst .ready { if .citlali .nightsoul .state { } } delay ( 32 ) ; arlecchino attack : 2 , charge , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 , dash , attack : 3 ; } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+  "start": "K",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 554,
+  "error": null,
+  "start_over_A": 0.478166064035534,
+  "selected_over_A": 0.62349040968655,
+  "selected_source": "active arlecchino ; while 1 { let optimizer_cycle_start = f ( ) ; for let c = 0 ; c < 1 ; c = c + 1 { let t0 = f ( ) ; arlecchino attack : 1 , attack : 1 ; if .xilonen .normal > 3 { bennett skill , high_plunge , swap , charge ; while ( ! .arlecchino .mods .favonius-cd ) { bennett skill , burst ; xilonen burst , dash ; arlecchino attack ; } } if ! .citlali .burst .ready { } if .xilonen .burst .ready { xilonen burst ; } xilonen skill , attack : 2 ; citlali skill ; arlecchino attack : 4 ; if .arlecchino .burst .ready { arlecchino skill ; } bennett attack : 2 , skill , burst ; while .xilonen .nightsoul .state { if .citlali .burst .ready { while .citlali .skydweller-points > 3 { if .citlali .normal < 3 { if ! .arlecchino .mods .favonius-cd { } } else if .citlali .mods .wanderer-a4 { } else if .citlali .skydweller-points > 2 { citlali charge ; citlali skill , burst ; while .bennett .skydweller-points > 3 { if .bennett .normal < 3 { bennett attack ; } else if .bennett .mods .wanderer-a4 { bennett dash ; } else if .bennett .skydweller-points > 4 { bennett charge ; } else { break ; } } } else { break ; } } bennett attack , skill , burst ; citlali burst ; } xilonen high_plunge , dash ; } bennett dash ; while f ( ) - t0 < 900 { if .arlecchino .skill .ready { xilonen attack , burst ; arlecchino skill , skill , burst ; arlecchino charge , attack : 5 , dash , attack : 6 , dash , attack : 5 , dash , attack ; } else { bennett swap ; arlecchino charge , attack : 3 , attack : 3 , dash , dash , attack : 3 ; } } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+  "start": "T",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 1085,
+  "error": null,
+  "start_over_A": 0.5734464072341828,
+  "selected_over_A": 0.6471107461098602,
+  "selected_source": "active arlecchino ; while 1 { let optimizer_cycle_start = f ( ) ; for let i = 0 ; i < 4 ; i = i + 1 { arlecchino skill ; while .xilonen .status .xianyun-airborne-buff { if .airborne { bennett burst , skill ; arlecchino charge , attack : 5 , dash , attack : 5 , dash , attack : 5 , dash , attack : 3 ; } if .bennett .status .xianyun-airborne-buff { bennett skill , low_plunge , burst ; bennett dash , dash ; } } xilonen skill , attack : 2 ; arlecchino charge ; if .citlali .burst .ready { citlali skill , burst , attack ; } else { citlali attack , skill [ hold = 1 ] , dash , attack ; xilonen attack ; } pick_up_crystallize ( \"pyro\" ) ; arlecchino attack , dash , attack : 1 , dash , attack : 3 , dash , attack : 3 , dash , attack : 5 , attack : 3 , dash , attack : 3 , dash ; } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+  "start": "L",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 488,
+  "error": null,
+  "start_over_A": 0.4289293211533978,
+  "selected_over_A": 0.7770004691157343,
+  "selected_source": "active cyno ; while 1 { let optimizer_cycle_start = f ( ) ; if ! .cyno .skill .ready && .cyno .burst .ready { while .furina .mods .mika-c6 { if .furina .skill .ready { furina skill ; } else if .furina .normal > 3 && .stam > 43 { } else { xilonen attack : 2 , burst ; } } xilonen skill , skill , attack : 3 ; xilonen skill , attack : 2 , attack : 2 , burst ; xilonen skill ; xilonen attack , attack : 2 , skill , attack : 2 ; cyno attack : 6 , attack : 4 , attack , skill ; xilonen attack : 2 ; while .cyno .status .xianyun-airborne-buff { cyno jump ; cyno attack , charge , dash ; } cyno dash , dash , attack : 3 ; nahida skill ; if ! .xilonen .mods .favonius-cd { } while .cyno .status .clorinde-night-watch { if .cyno .bolratio >= 1 { if ! .furina .burst .ready { } if .furina .skill .ready { furina skill , jump ; } if .airborne { xilonen attack , attack , attack ; } furina skill , dash ; if .xilonen .burst .ready { xilonen burst ; } if ! .xilonen .mods .favonius-cd && .xilonen .weapon == .keys .weapon .favsword { xilonen skill , burst , attack : 2 ; cyno dash ; if ! .nahida .mods .favonius-cd && .nahida .weapon == .keys .weapon .favlance { nahida attack , dash : 2 ; } cyno burst , skill , skill , attack ; nahida burst ; nahida attack , skill , burst , burst ; furina burst ; } } else { } } } while ! .furina .burst .ready { if .furina .skill .ready { cyno dash ; furina skill ; } else { } } xilonen attack : 2 ; for let i = 0 ; i < 4 ; i = i + 1 { furina skill ; furina burst ; xilonen skill , attack : 3 ; nahida skill ; cyno skill , burst , attack : 5 , skill , attack : 3 , skill , attack : 4 , attack : 4 , skill , attack : 4 , attack : 4 , skill , attack : 5 , skill ; if ! .furina .mods .favonius-cd { nahida attack , skill , burst ; } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+  "start": "K",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 608,
+  "error": null,
+  "start_over_A": 0.5467016381210407,
+  "selected_over_A": 0.6020560527464501,
+  "selected_source": "active cyno ; while 1 { let optimizer_cycle_start = f ( ) ; for let c = 0 ; c < 1 ; c = c + 1 { let t0 = f ( ) ; furina skill , dash , attack : 1 ; xilonen skill , attack : 2 ; xilonen skill ; cyno skill , burst , attack : 7 , skill ; furina dash , attack : 2 ; if .nahida .weapon == .keys .weapon .favsword && ( ! .nahida .burst .ready ) { nahida attack ; } if .furina .skill .ready { xilonen skill , attack : 2 , burst ; furina skill , dash ; } xilonen skill , attack : 2 ; while .cyno .status .dreamdrifter-state { if .cyno .burst .ready { cyno charge ; } else { wait ( 1 ) ; } } if .xilonen .burst .ready { xilonen dash , attack : 3 ; } nahida skill , attack , burst , attack ; furina attack : 4 ; if .furina .weapon == .keys .weapon .favsword && ( ! .furina .mods .favonius-cd || ! .furina .burst .ready ) { cyno jump ; if ! .xilonen .mods .favonius-cd { xilonen attack ; } } if .furina .burst .ready { } if .furina .normal == 2 && .stam > 50 { cyno burst ; furina burst , attack , skill , attack : 4 , skill , attack : 3 , skill , attack : 4 , skill , attack : 6 , attack : 4 , skill , attack : 3 , skill , attack ; } if .furina .burst .ready { furina burst ; } nahida attack : 2 , charge , attack : 2 ; if .cyno .burst .ready { xilonen skill , attack : 4 ; } nahida skill , attack , attack : 2 ; } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+  "start": "T",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 623,
+  "error": null,
+  "start_over_A": 0.38001596089803535,
+  "selected_over_A": 0.590256594016067,
+  "selected_source": "active furina ; while 1 { let optimizer_cycle_start = f ( ) ; for let i = 0 ; i < 3 ; i = i + 1 { if .nahida .weapon == .keys .weapon .favsword && ( ! .nahida .mods .favonius-cd || ! .nahida .burst .ready ) { nahida skill , attack : 2 ; } furina skill , attack ; xilonen skill , attack : 1 ; if ! .xilonen .mods .favonius-cd { xilonen attack ; } nahida burst , skill ; while .cyno .skill .cd > 30 && ! .cyno .burst .ready { while ! .furina .mods .favonius-cd && ! .furina .burst .ready { } furina attack : 4 , skill ; if ! .cyno .mods .favonius-cd { if .furina .status .xianyun-airborne-buff { furina skill , dash , attack , burst ; } cyno attack ; } while .cyno .burst .cd > 335 { if .cyno .skill .ready { xilonen burst ; cyno skill , skill ; } else if .cyno .normal == 3 { while .nahida .status .clorinde-night-watch { if .nahida .bolratio >= 1 { nahida skill ; } else { furina burst , skill , attack ; nahida skill , attack : 15 , burst ; if ! .nahida .skill .ready { nahida attack , skill , burst , attack , charge ; } } } cyno dash ; } else { cyno dash ; } } if .furina .skill .ready { furina skill , dash ; } while .cyno .burst .cd > 180 { if .cyno .skill .ready && .cyno .mods .cyno-a1 { if .cyno .skill .ready { cyno attack : 2 , skill ; } xilonen burst , skill , attack : 2 ; if .xilonen .burst .ready { if ! .furina .burst .ready { furina walk ; } } } else if .cyno .normal == 5 { cyno dash ; } else { furina attack ; cyno skill , burst , attack : 2 , skill ; } } } furina burst , attack ; cyno dash , dash ; cyno skill , burst , attack : 4 , attack : 2 , skill ; for let x = 0 ; x < 7 ; x = x + 1 { cyno attack : 5 , skill ; } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+  "start": "L",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 426,
+  "error": null,
+  "start_over_A": 0.16961846823028456,
+  "selected_over_A": 0.6574077936357393,
+  "selected_source": "active mualani ; fn mualani_combo ( ) { while .mualani .nightsoul .state { for let k = 0 ; k < 3 ; k = k + 1 { while .mualani .momentum < 3 { while .mualani .momentum < 3 { while .candace .mods .razor-q > 240 { if .candace .normal > 3 { if .candace .skill .ready { sucrose attack , skill , jump ; } else { candace dash ; } } else { sucrose skill , dash , charge ; xiangling burst , attack , skill , dash , attack ; while .xiangling .armed { if .sucrose .burst .ready { sucrose burst ; } if ! .candace .mods .favonius-cd { xiangling skill , charge ; candace attack ; } candace skill , attack , burst , attack ; sucrose charge , high_plunge [ collision = 1 ] ; candace skill , dash , attack : 5 , charge : 2 , charge : 2 ; candace attack , skill , burst , attack ; if .xiangling .armed { xiangling burst , burst , charge ; } if .candace .armed { candace attack , attack , charge ; } candace skill , burst ; while ! .element .t0 .cryo { } } candace attack : 3 , burst , attack : 2 ; } } while .mualani .momentum < 3 { while .mualani .momentum < 3 { mualani walk [ f = 1 ] ; } } } } mualani attack ; } break ; } } while 1 { let optimizer_cycle_start = f ( ) ; sucrose attack : 1 , attack , attack : 1 , swap , charge , attack , attack : 1 , charge ; for let i = 0 ; i < 2 ; i = i + 1 { while .status .bennettburst || .xiangling .infusion .bennett-fire-weapon { if .xiangling .skill .ready { } else { } } while ! .xiangling .mods .favonius-cd { xiangling attack ; } sucrose burst , jump : 2 ; mualani attack ; xiangling burst , jump , dash ; if ! .candace .mods .favonius-cd { mualani skill ; candace attack , attack , skill ; } else { wait ( 8 ) ; } sucrose skill , dash ; mualani walk , burst ; if .sucrose .skill .ready { xiangling skill , dash ; } mualani skill ; mualani_combo ( ) ; mualani skill ; if .candace .normal > 3 { candace attack , skill , burst , attack ; xiangling attack , skill ; candace skill , attack : 2 , dash ; } candace skill , attack : 2 , burst ; xiangling attack : 2 ; if ! .xiangling .mods .favonius-cd { xiangling attack : 3 ; } if ! .mualani .burst .ready { } if ! .xiangling .mods .favonius-cd { while ! .element .t0 .hydro { mualani attack ; } } sucrose attack : 2 , charge ; xiangling attack : 2 , skill , dash ; sucrose attack , skill , jump , attack : 2 , dash , attack : 2 , dash , attack : 2 ; mualani skill ; mualani_combo ( ) ; if .mualani .nightsoul .state { mualani skill ; } while ! .element .t0 .hydro { while ! .candace .mods .favonius-cd && ! .candace .burst .ready { if .sucrose .nightsoul .state { sucrose skill ; } mualani skill , skill ; } while ! .element .t0 .electro { mualani burst , burst ; while ! .element .t0 .hydro { sucrose burst ; sucrose skill , skill ; mualani attack : 3 , dash ; } sucrose attack , skill , dash ; } } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+  "start": "K",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 1138,
+  "error": null,
+  "start_over_A": 0.1813827785782135,
+  "selected_over_A": 0.3253592239965242,
+  "selected_source": "active mualani ; fn mualani_combo ( ) { } while 1 { let optimizer_cycle_start = f ( ) ; for let c = 0 ; c < 1 ; c = c + 1 { let t0 = f ( ) ; while .mualani .nightsoul .state { for let k = 0 ; k < 3 ; k = k + 1 { if .candace .normal > 3 { mualani walk [ f = 1 ] ; xiangling attack : 3 , skill , dash ; } } break ; } if .xiangling .burst .ready { while .mualani .status .clorinde-night-watch { if .mualani .bolratio >= 1 { xiangling skill , attack : 2 ; mualani skill ; } else { mualani attack ; } } xiangling burst ; candace skill [ hold = 1 ] ; } if .mualani .skill .ready { mualani skill ; } mualani attack ; xiangling skill , dash ; candace attack : 2 ; candace burst ; candace skill , attack : 2 , dash ; while ! .candace .mods .favonius-cd && ! .candace .burst .ready { candace attack ; } if .candace .burst .ready { sucrose charge ; while .status .bennettburst || .sucrose .infusion .bennett-fire-weapon { if .sucrose .skill .ready { } else { mualani skill , walk [ f = 90 ] , attack , walk [ f = 90 ] , attack , walk [ f = 90 ] , attack ; mualani skill , attack ; while .mualani .momentum < 3 { } sucrose burst ; mualani walk [ f = 1 ] ; } } candace skill , attack ; } sucrose charge ; sucrose attack , skill , burst ; xiangling attack : 5 ; xiangling attack ; xiangling skill , dash ; candace skill , dash ; if .sucrose .burst .ready { candace burst ; } if .mualani .burst .ready { mualani skill , burst [ travel = 13 ] ; } sucrose attack , skill , attack : 2 , jump , attack , attack , charge ; } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+  "start": "T",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 454,
+  "error": null,
+  "start_over_A": 0.823387464555601,
+  "selected_over_A": 0.9710766776549612,
+  "selected_source": "active mualani ; fn mualani_combo2 ( ) { while .mualani .nightsoul .state { for let k = 0 ; k < 2 ; k = k + 1 { if .sucrose .burst .ready { sucrose burst ; } while .mualani .momentum < 3 { if .sucrose .weapon == .keys .weapon .favsword && ( ! .sucrose .mods .favonius-cd && ! .sucrose .burst .ready ) { mualani skill , attack , skill ; while .sucrose .mods .razor-q > 240 { if .sucrose .normal > 3 { if .sucrose .skill .ready { } else { if .mualani .nightsoul .state { } candace attack , skill , burst ; candace burst , skill ; while .sucrose .status .clorinde-night-watch { if .sucrose .bolratio >= 1 { candace skill , skill , burst ; sucrose skill ; } else { sucrose burst ; } } sucrose attack ; mualani skill ; } } else { sucrose attack ; } } } mualani walk [ f = 1 ] ; } if .sucrose .burst .ready { xiangling burst ; } mualani attack ; } break ; } } fn mualani_combo3 ( ) { while .mualani .nightsoul .state { for let k = 0 ; k < 3 ; k = k + 1 { while .mualani .momentum < 3 { mualani walk [ f = 1 ] , walk [ f = 1 ] ; } mualani attack ; } break ; } } while 1 { let optimizer_cycle_start = f ( ) ; for let i = 0 ; i < 4 ; i = i + 1 { mualani attack ; if .xiangling .burst .ready { candace attack , skill , burst ; sucrose skill , dash , burst ; xiangling burst , dash , skill , dash , attack ; pick_up_crystallize ( \"hydro\" ) ; mualani skill ; mualani_combo2 ( ) ; mualani skill , burst [ travel = 9 ] ; } else { candace attack : 2 , skill ; sucrose attack : 1 , skill , dash ; xiangling attack : 2 , skill ; pick_up_crystallize ( \"hydro\" ) ; mualani skill ; mualani_combo3 ( ) ; mualani skill ; } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+  "start": "L",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 646,
+  "error": null,
+  "start_over_A": 0.1461215100946811,
+  "selected_over_A": 0.7828458820754824,
+  "selected_source": "active neuvillette ; while 1 { let optimizer_cycle_start = f ( ) ; for let i = 0 ; i < 4 ; i = i + 1 { if ! .neuvillette .mods .favonius-cd { } neuvillette skill ; if .xilonen .normal > 3 { xilonen dash ; } neuvillette attack ; citlali skill ; if ! .xilonen .mods .favonius-cd { xilonen attack ; } furina skill , dash , attack , attack ; xilonen skill , attack : 2 ; furina burst ; if ! .furina .mods .favonius-cd { furina attack ; } neuvillette charge , skill , charge , burst ; xilonen skill , attack : 2 ; citlali skill ; while .xilonen .status .xianyun-airborne-buff { if .xilonen .skill .ready { furina skill ; furina attack , skill , dash , burst ; if .citlali .skill .ready && ! .citlali .burst .ready { citlali skill ; } citlali skill ; while ! .element .t0 .hydro { citlali attack ; } if ! .citlali .mods .favonius-cd { citlali attack ; } neuvillette charge , charge ; while ( .xilonen .mods .favonius-cd == 0 ) { xilonen attack , skill , attack : 2 ; } } else if .xilonen .status .xianyun-airborne-buff { neuvillette charge : 2 ; while .furina .mods .razor-q > 210 { if .furina .normal > 3 && .furina .skill .ready { furina skill , dash ; } else if .furina .normal > 3 { furina dash ; } else { furina skill , burst ; furina attack ; } } furina attack ; while ! .neuvillette .mods .razor-q { if .neuvillette .burst .ready && .neuvillette .skill .ready { citlali skill , dash , attack , burst ; } else if .neuvillette .burst .ready { neuvillette burst ; } else if .neuvillette .skill .ready { neuvillette skill , dash ; } else if .neuvillette .normal > 3 { neuvillette dash ; } else { neuvillette attack ; } } neuvillette charge : 2 ; if ! .furina .skill .ready && .furina .burst .ready { } neuvillette skill , dash , attack : 2 ; if .xilonen .status .xianyun-airborne-buff { furina burst , high_plunge [ collision = 1 ] , high_plunge [ collision = 1 ] ; if .neuvillette .weapon == .keys .weapon .favsword && ( ! .neuvillette .burst .ready ) { neuvillette attack ; } xilonen skill ; citlali skill , burst ; xilonen attack : 2 ; xilonen burst , skill , attack : 2 ; if .furina .normal > 3 { furina dash ; } } } } if .neuvillette .sets .ap >= 4 { pick_up_crystallize ( \"hydro\" ) ; } neuvillette charge , charge ; } wait ( 173 ) ; if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+  "start": "K",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 599,
+  "error": null,
+  "start_over_A": 0.42521493822167145,
+  "selected_over_A": 0.6274022503922928,
+  "selected_source": "active neuvillette ; while 1 { let optimizer_cycle_start = f ( ) ; for let c = 0 ; c < 1 ; c = c + 1 { let t0 = f ( ) ; furina skill , dash , attack , dash , attack : 2 ; xilonen skill , attack : 2 ; neuvillette charge , dash ; neuvillette skill ; xilonen skill , attack : 2 ; citlali dash , attack , attack : 2 ;  citlali burst , skill , attack ; if .furina .burst .ready { while .citlali .mods .yunjin-c6 { citlali jump : 5 , dash ; } furina burst ; } while ! .neuvillette .burst .ready { if .neuvillette .skill .ready { neuvillette attack , charge , burst , skill , charge ; } else { } } xilonen dash ; if .neuvillette .burst .ready { neuvillette burst ; } while f ( ) - t0 < 978 { } if .neuvillette .skill .ready { if .furina .weapon == .keys .weapon .favsword && ( ! .furina .mods .favonius-cd && ! .furina .burst .ready ) { } xilonen skill , attack : 2 ; if .furina .weapon == .keys .weapon .favsword && ( ! .furina .mods .favonius-cd && ! .furina .burst .ready ) { } neuvillette charge ; } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+  "start": "T",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 694,
+  "error": null,
+  "start_over_A": 0.5947809632313307,
+  "selected_over_A": 0.8468374787635429,
+  "selected_source": "active neuvillette ; while 1 { let optimizer_cycle_start = f ( ) ; for let i = 0 ; i < 4 ; i = i + 1 { if ! .xilonen .burst .ready { } if ! .element .t0 .pyro { if .neuvillette .skill .ready { } } citlali skill ; pick_up_crystallize ( \"hydro\" ) ; furina attack , attack , skill , dash , burst ; xilonen skill , attack : 3 ; neuvillette skill ; pick_up_crystallize ( \"hydro\" ) ; if .neuvillette .weapon == .keys .weapon .favsword && ( ! .neuvillette .mods .favonius-cd || ! .neuvillette .burst .ready ) { citlali skill , skill , skill , burst , skill , skill , burst ; furina charge , burst , charge , attack ; furina charge , burst ; } neuvillette charge , skill , charge , attack : 1 , burst ; } wait ( 24 ) ; if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+  "start": "L",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 1153,
+  "error": null,
+  "start_over_A": 0.13485974833952705,
+  "selected_over_A": 0.7713424989920559,
+  "selected_source": "active wrio ; while 1 { let optimizer_cycle_start = f ( ) ; while ! .kaedeharakazuha .burst .ready { kaedeharakazuha attack , attack ; } for let x = 0 ; x < 4 ; x = x + 1 { xilonen skill , attack : 2 ; if is_even ( x ) { shenhe burst ; } shenhe skill [ hold = 1 ] ; kazuha skill , jump ; if ! .element .t0 .pyro { xilonen attack ; } wrio skill , attack : 3 , charge , jump , attack : 4 , charge , jump , attack : 4 , charge , jump , attack : 3 , charge , jump , attack : 3 , charge , jump ; if .wrio .burst .ready { if .airborne { wriothesley dash ; } wrio burst ; } else { } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+  "start": "K",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 974,
+  "error": null,
+  "start_over_A": 0.7321908379300139,
+  "selected_over_A": 0.8950702748178786,
+  "selected_source": "active wriothesley ; while 1 { let optimizer_cycle_start = f ( ) ; for let c = 0 ; c < 1 ; c = c + 1 { let t0 = f ( ) ; wriothesley attack : 3 ; xilonen skill , attack : 2 ; if ! .shenhe .mods .favonius-cd && .shenhe .weapon == .keys .weapon .favlance { xilonen attack : 3 ; } shenhe skill [ hold = 1 ] , attack ; kaedeharakazuha jump ; if .kaedeharakazuha .burst .ready { } kaedeharakazuha skill , high_plunge ; if .wriothesley .skill .ready { while .kaedeharakazuha .status .clorinde-night-watch { if .kaedeharakazuha .bolratio >= 1 { } else { if .airborne { xilonen high_plunge [ collision = rand ( ) > 0.5 ] ; } if .xilonen .serpents_subtlety >= 50 { kaedeharakazuha skill , attack : 2 ; shenhe skill [ hold = 1 ] ; while .wriothesley .onfield && ! .wriothesley .burst .ready { wriothesley attack ; } } } } wriothesley skill ; } while .wriothesley .mods .razor-q > 240 { if .wriothesley .normal > 3 { if .wriothesley .skill .ready { shenhe attack ; xilonen attack : 3 , attack : 3 , charge ; } else { wriothesley skill : 3 , charge ; } } else { wriothesley skill , attack : 3 , charge , jump , attack : 3 , charge , jump , attack : 3 , charge , jump , attack : 3 , charge , jump , attack : 3 , charge ; } } wriothesley attack : 4 , charge , attack : 3 , charge ; if .wriothesley .burst .ready { wriothesley attack : 5 , charge ; while .wriothesley .skill .cd > 30 && ! .wriothesley .burst .ready { if .shenhe .normal == 4 && .stam > 20 { wriothesley skill , attack : 3 , charge , jump , attack : 3 , charge , jump , attack : 3 , jump , attack : 3 , jump , attack : 3 , charge , jump ; shenhe dash ; } wriothesley attack : 3 ; } } while f ( ) - t0 < 1200 { wriothesley attack : 5 , charge ; } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ },
+ {
+  "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+  "start": "T",
+  "cap": 96,
+  "seed": 11,
+  "decisions": 815,
+  "error": null,
+  "start_over_A": 0.5379327876733823,
+  "selected_over_A": 0.9870188299421523,
+  "selected_source": "active wriothesley ; while 1 { let optimizer_cycle_start = f ( ) ; if .shenhe .normal > 3 { while .shenhe .armed { while .shenhe .armed && ! .shenhe .skill .ready { } if .shenhe .armed { shenhe skill ; } if .shenhe .armed { shenhe burst , skill ; } } if ! .xilonen .mods .favonius-cd && .xilonen .weapon == .keys .weapon .favsword { shenhe burst , attack : 10 ; } } for let x = 0 ; x < 4 ; x = x + 1 { while .status .bennettburst || .kaedeharakazuha .infusion .bennett-fire-weapon { if .kaedeharakazuha .skill .ready { } else { wriothesley burst ; kaedeharakazuha skill ; } } xilonen skill , attack : 2 ; shenhe skill [ hold = 1 ] ; if is_even ( x ) { shenhe burst ; } if .kaedeharakazuha .sets .ap >= 4 { wriothesley charge ; kaedeharakazuha burst , attack , skill , high_plunge ; while .wriothesley .mods .bennett-field { if .wriothesley .skill .ready { xilonen burst ; while .kaedeharakazuha .mods .razor-q > 240 { if .kaedeharakazuha .normal > 3 { if .kaedeharakazuha .skill .ready { shenhe attack , skill ; kaedeharakazuha skill [ hold = 0 ] , high_plunge [ collision = 1 ] ; } else { wriothesley burst ; if .airborne { xilonen high_plunge [ collision = rand ( ) > 0.5 ] ; } } } else { kaedeharakazuha attack ; } } kaedeharakazuha skill , burst , high_plunge , high_plunge , burst , high_plunge ; wriothesley charge , jump ; if .shenhe .nightsoul .state { while ( ! .shenhe .mods .favonius-cd ) { shenhe attack ; } shenhe skill ; } shenhe skill [ hold = 0 ] , attack ; } else { } } wriothesley attack : 5 , charge , skill , dash , attack : 7 , charge , attack : 5 , charge , dash ; if .airborne { wriothesley high_plunge [ collision = rand ( ) > 0.5 ] ; } wriothesley charge , jump , attack : 2 ; pick_up_crystallize ( \"cryo\" ) ; } kaedeharakazuha skill , high_plunge [ collision = 1 ] ; wriothesley skill , attack : 3 , charge , jump , attack : 3 , jump , attack : 3 , charge , dash , attack : 3 , charge , jump , attack : 4 , charge , attack : 3 ; if .wriothesley .burst .ready { wriothesley burst ; } else {  if .wriothesley .status .xianyun-airborne-buff { wriothesley attack : 3 , charge , jump ; xilonen jump ; wriothesley attack : 3 , burst ; wriothesley jump , jump ; while ! .xilonen .mods .favonius-cd && ! .xilonen .burst .ready { xilonen attack ; } wriothesley burst , attack ; } } } if f ( ) == optimizer_cycle_start { wait ( 1 ) ; } }"
+ }
+]

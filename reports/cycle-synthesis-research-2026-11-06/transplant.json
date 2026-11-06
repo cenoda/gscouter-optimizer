@@ -1,0 +1,727 @@
+[
+ {
+  "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+  "D": "mavuika",
+  "donors": [
+   "arlecchino-mavuika-chevreuse-ororon",
+   "chasca-bennett-mavuika-chevreuse",
+   "chasca-mavuika-ororon-bennett",
+   "clorinde-mavuika-ororon-chevreuse",
+   "cyno-chevreuse-mavuika-ororon",
+   "gaming-chevreuse-mavuika-ororon",
+   "hutao-chevreuse-mavuika-ororon",
+   "keqing-chevreuse-mavuika-bennett"
+  ],
+  "n_programs": 8,
+  "n_valid": 4,
+  "best": {
+   "donor": "cyno-chevreuse-mavuika-ororon",
+   "shared": 3,
+   "mapping": {
+    "chevreuse": "chevreuse",
+    "mavuika": "mavuika",
+    "ororon": "ororon",
+    "cyno": "bennett"
+   },
+   "text": "active bennett;\nbennett skill;\nfor let i=0; i<4; i=i+1 {\n  \n  if .chevreuse.sets.no > 4 {\n    chevreuse burst, skill[hold=1]:3;\n  } else {\n    if .chevreuse.burst.ready {\n      chevreuse burst, skill[hold=1];\n    } else {\n      chevreuse attack:1, skill[hold=1];\n    }\n  }\n  \n  ororon skill, burst;\n  \n  if .mavuika.burst.ready {\n    mavuika burst, skill, dash;\n  } else {\n    mavuika dash, skill;\n  }\n  \n  bennett skill, burst;\n  while .bennett.mods.cyno-q > 240 {\n    if .bennett.skill.ready { \n      bennett skill;\n    } else if .bennett.normal == 4 && .stam > 18 {\n      bennett dash;\n    } else {\n      bennett attack;\n    }\n  }\n}\n"
+  },
+  "audit": {
+   "mean": 132626.08650873895,
+   "se": 510.4322144666405,
+   "chars": [
+    100148.9759337045,
+    20665.165889138578,
+    8349.596977570696,
+    3462.3477083251337
+   ],
+   "waits": [
+    {
+     "skill_cd": 21.517187500000002
+    },
+    {
+     "burst_cd": 0.10416666666666667,
+     "insufficient_energy": 29.88125,
+     "skill_cd": 24.59635416666666
+    },
+    {
+     "skill_cd": 0.05625,
+     "swap_cd": 3.590624999999998
+    },
+    {
+     "insufficient_energy": 85.74843750000001,
+     "skill_cd": 0.12343749999999998
+    }
+   ],
+   "cpu": 0.183664237
+  },
+  "top6_audit_max": 132626.08650873895,
+  "reference_audit_32": {
+   "L": 41698.780112420645,
+   "A": 490529.54788679094,
+   "S_V2S384": 364502.14328067086,
+   "S_V2T384": 356012.7140594329
+  }
+ },
+ {
+  "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+  "D": "arlecchino",
+  "donors": [
+   "arlecchino-bennett-citlali-layla",
+   "arlecchino-candace-xilonen-bennett",
+   "arlecchino-chevreuse-xilonen-bennett",
+   "arlecchino-chiori-xilonen-bennett",
+   "arlecchino-citlali-escoffier-bennett",
+   "arlecchino-citlali-kaedeharakazuha-bennett",
+   "arlecchino-citlali-kaeya-bennett",
+   "arlecchino-citlali-rosaria-bennett"
+  ],
+  "n_programs": 8,
+  "n_valid": 7,
+  "best": {
+   "donor": "arlecchino-chevreuse-xilonen-bennett",
+   "shared": 3,
+   "mapping": {
+    "arlecchino": "arlecchino",
+    "xilonen": "xilonen",
+    "bennett": "bennett",
+    "chevreuse": "citlali"
+   },
+   "text": "active arlecchino;\nfor let i = 0; i < 4; i = i + 1 {\n  arlecchino skill;\n  bennett skill, burst;\n  xilonen skill, attack:2;\n  if .citlali.burst.ready {\n    citlali burst, skill[hold=1], dash;\n  } else {\n    citlali attack, skill[hold=1], attack, dash;\n  }\n  pick_up_crystallize(\"pyro\");\n  arlecchino attack, charge, \n       attack:3, dash, \n       attack:3, dash,\n       attack:3, dash,\n       attack:3, dash,\n       attack:3, dash,\n       attack:3, dash;\n}\n"
+  },
+  "audit": {
+   "mean": 398789.60889763705,
+   "se": 599.2735965947725,
+   "chars": [
+    351158.0784718569,
+    39934.29622710608,
+    3016.4650716433703,
+    4680.769127030946
+   ],
+   "waits": [
+    {
+     "insufficient_stamina": 11.566666666666665
+    },
+    {},
+    {},
+    {
+     "insufficient_energy": 12.75
+    }
+   ],
+   "cpu": 0.161623168
+  },
+  "top6_audit_max": 398789.60889763705,
+  "reference_audit_32": {
+   "L": 302502.43054604187,
+   "A": 695426.1180588062,
+   "S_V2S384": 570506.0299641355,
+   "S_V2T384": 573931.0113600602
+  }
+ },
+ {
+  "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+  "D": "cyno",
+  "donors": [
+   "cyno-fischl-nahida-xilonen",
+   "cyno-furina-baizhu-nahida",
+   "cyno-furina-dori-nahida",
+   "cyno-furina-fischl-nahida",
+   "cyno-furina-fischl-xilonen",
+   "cyno-furina-kukishinobu-nahida",
+   "cyno-furina-nahida-escoffier",
+   "cyno-furina-nahida-ororon"
+  ],
+  "n_programs": 8,
+  "n_valid": 8,
+  "best": {
+   "donor": "cyno-furina-dori-nahida",
+   "shared": 3,
+   "mapping": {
+    "cyno": "cyno",
+    "furina": "furina",
+    "nahida": "nahida",
+    "dori": "xilonen"
+   },
+   "text": "active furina;\nfor let i=0; i<3; i=i+1 { \n  furina skill, dash;\n  xilonen skill, burst, attack;\n  nahida burst, skill;\n  furina burst, attack;\n  cyno skill, burst, attack, skill;\n  for let x = 0; x < 7; x = x + 1 {\n    cyno attack:4, skill;\n  }\n}\n"
+  },
+  "audit": {
+   "mean": 117497.63673583552,
+   "se": 224.27684674175325,
+   "chars": [
+    78869.14089332132,
+    21964.14876326763,
+    14494.447760437188,
+    2169.8993188093787
+   ],
+   "waits": [
+    {
+     "skill_cd": 105.5
+    },
+    {
+     "swap_cd": 2.566666666666667
+    },
+    {},
+    {}
+   ],
+   "cpu": 0.20536733599999998
+  },
+  "top6_audit_max": 117497.63673583552,
+  "reference_audit_32": {
+   "L": 132621.22318002622,
+   "A": 309191.3204334123,
+   "S_V2S384": 239263.3180016094,
+   "S_V2T384": 272414.00664209377
+  }
+ },
+ {
+  "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+  "D": "mualani",
+  "donors": [
+   "mualani-barbara-sucrose-xiangling",
+   "mualani-candace-kaedeharakazuha-xiangling",
+   "mualani-candace-lynette-xiangling",
+   "mualani-candace-sucrose-mavuika",
+   "mualani-candace-xilonen-xiangling",
+   "mualani-candace-zhongli-xiangling",
+   "mualani-mona-sucrose-xiangling",
+   "mualani-sucrose-xilonen-xiangling"
+  ],
+  "n_programs": 8,
+  "n_valid": 6,
+  "best": {
+   "donor": "mualani-sucrose-xilonen-xiangling",
+   "shared": 3,
+   "mapping": {
+    "mualani": "mualani",
+    "sucrose": "sucrose",
+    "xiangling": "xiangling",
+    "xilonen": "candace"
+   },
+   "text": "active mualani;\nfn mualani_combo2() {\n  \n  while .mualani.nightsoul.state {\n    for let k=0; k<2; k=k+1 {\n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    break;\n  }\n}\nfn mualani_combo3() {\n  \n  while .mualani.nightsoul.state {\n    for let k=0; k<3; k=k+1 {\n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    break;\n  }\n}\nfor let i=0; i<4; i=i+1 {\n  mualani attack;\n  \n  if .xiangling.burst.ready {\n    \n   candace skill, attack:2;\n    \n   sucrose skill, dash, burst;\n   \n   xiangling burst, attack, skill, dash, attack;\n  \n   pick_up_crystallize(\"hydro\");\n   \n   mualani skill;\n   mualani_combo2();\n   mualani skill, burst[travel=10];\n   \n  }\n  else {\n   candace skill, attack:2;\n   \n   sucrose attack, skill, dash;\n   \n   xiangling attack, skill, dash;\n   pick_up_crystallize(\"hydro\");\n   \n   mualani skill;\n   mualani_combo3();\n   mualani skill;\n  }\n}\n"
+  },
+  "audit": {
+   "mean": 58876.23575677628,
+   "se": 144.09218124607315,
+   "chars": [
+    52505.35239020131,
+    731.9634354797982,
+    1829.9747881819842,
+    3808.9451429131827
+   ],
+   "waits": [
+    {
+     "skill_cd": 8.618749999999999
+    },
+    {},
+    {
+     "insufficient_energy": 0.05104166666666667,
+     "skill_cd": 0.7411458333333333,
+     "swap_cd": 1.8484375000000004
+    },
+    {
+     "swap_cd": 1.7666666666666673
+    }
+   ],
+   "cpu": 0.200321516
+  },
+  "top6_audit_max": 58876.23575677628,
+  "reference_audit_32": {
+   "L": 12128.551082107399,
+   "A": 71504.89689389792,
+   "S_V2S384": 58617.841498492315,
+   "S_V2T384": 60076.55395061996
+  }
+ },
+ {
+  "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+  "D": "neuvillette",
+  "donors": [
+   "neuvillette-chiori-furina-xilonen",
+   "neuvillette-furina-baizhu-xilonen",
+   "neuvillette-furina-charlotte-xilonen",
+   "neuvillette-furina-citlali-baizhu",
+   "neuvillette-furina-citlali-charlotte",
+   "neuvillette-furina-citlali-durin",
+   "neuvillette-furina-citlali-escoffier",
+   "neuvillette-furina-citlali-jean"
+  ],
+  "n_programs": 8,
+  "n_valid": 7,
+  "best": {
+   "donor": "neuvillette-furina-baizhu-xilonen",
+   "shared": 3,
+   "mapping": {
+    "neuvillette": "neuvillette",
+    "furina": "furina",
+    "xilonen": "xilonen",
+    "baizhu": "citlali"
+   },
+   "text": "active neuvillette;\nfor let i=0; i<4; i=i+1 {\n  neuvillette skill;\n  furina skill, dash, attack;\n  xilonen skill, attack:2;\n  citlali skill, burst, dash; pick_up_crystallize(\"hydro\");\n  furina burst;\n  neuvillette charge, burst, skill, charge;\n  xilonen skill, attack:2;\n  citlali skill, dash; pick_up_crystallize(\"hydro\");\n  neuvillette charge, charge;\n}\nwait(173);\n"
+  },
+  "audit": {
+   "mean": 356790.79590260494,
+   "se": 465.7752040602855,
+   "chars": [
+    283106.8762174557,
+    56815.14289548973,
+    14794.098706684068,
+    2074.678082975282
+   ],
+   "waits": [
+    {},
+    {
+     "swap_cd": 0.23333333333333336
+    },
+    {},
+    {}
+   ],
+   "cpu": 0.175188082
+  },
+  "top6_audit_max": 356790.79590260494,
+  "reference_audit_32": {
+   "L": 87653.79712547186,
+   "A": 599869.2257469525,
+   "S_V2S384": 520080.25578895956,
+   "S_V2T384": 526254.1871989889
+  }
+ },
+ {
+  "case": "mualani-mona-xilonen-mavuika--M8TgfHLLtqbp",
+  "D": "mualani",
+  "donors": [
+   "mualani-candace-xilonen-mavuika",
+   "mualani-emilie-mavuika-xilonen",
+   "mualani-lanyan-mavuika-xilonen",
+   "mualani-mavuika-citlali-xilonen",
+   "mualani-mona-kaedeharakazuha-mavuika",
+   "mualani-mona-prune-mavuika",
+   "mualani-mona-sucrose-mavuika",
+   "mualani-mona-xilonen-xiangling"
+  ],
+  "n_programs": 8,
+  "n_valid": 7,
+  "best": {
+   "donor": "mualani-candace-xilonen-mavuika",
+   "shared": 3,
+   "mapping": {
+    "mualani": "mualani",
+    "xilonen": "xilonen",
+    "mavuika": "mavuika",
+    "candace": "mona"
+   },
+   "text": "fn mualani_combo() {\n  mualani skill;\n  while .mualani.nightsoul.state {\n    for let k=0; k<3; k=k+1 { \n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    break;\n  }\n}\nactive mavuika; \nfor let i=0; i<3; i=i+1 {\n  mona skill, burst;\n  xilonen skill, attack:2;\n  mavuika burst, charge, skill, dash; pick_up_crystallize(\"hydro\");\n  mualani_combo();\n  mualani burst;\n  mualani attack;\n  xilonen skill, attack:2;\n  mona skill, burst;\n  mavuika burst, charge, skill, dash; pick_up_crystallize(\"hydro\");\n  mualani_combo();\n  mualani walk[f=1];\n}\n"
+  },
+  "audit": {
+   "mean": 88478.27973854299,
+   "se": 232.01404786267048,
+   "chars": [
+    65642.92766731266,
+    3450.2512072393047,
+    1025.3926439043337,
+    18359.708220086697
+   ],
+   "waits": [
+    {},
+    {
+     "burst_cd": 0.35156250000000006,
+     "insufficient_energy": 16.869791666666668
+    },
+    {},
+    {
+     "burst_cd": 4.166145833333334
+    }
+   ],
+   "cpu": 0.19455964100000003
+  },
+  "top6_audit_max": 88478.27973854299,
+  "reference_audit_32": {
+   "L": 92152.78155291024,
+   "A": 107317.00103023776,
+   "S_V2S384": 96868.10826000797,
+   "S_V2T384": 96519.85581970497
+  }
+ },
+ {
+  "case": "wriothesley-furina-xilonen-bennett--PFGMCrLDpbcq",
+  "D": "wriothesley",
+  "donors": [
+   "wriothesley-bennett-xiangling-xilonen",
+   "wriothesley-bennett-xinyan-xilonen",
+   "wriothesley-citlali-furina-xilonen",
+   "wriothesley-furina-escoffier-xilonen",
+   "wriothesley-furina-mavuika-bennett",
+   "wriothesley-furina-yunjin-xilonen",
+   "wriothesley-ganyu-furina-xilonen",
+   "wriothesley-rosaria-furina-xilonen"
+  ],
+  "n_programs": 8,
+  "n_valid": 8,
+  "best": {
+   "donor": "wriothesley-bennett-xiangling-xilonen",
+   "shared": 3,
+   "mapping": {
+    "wriothesley": "wriothesley",
+    "bennett": "bennett",
+    "xilonen": "xilonen",
+    "xiangling": "furina"
+   },
+   "text": "active wriothesley;\nwriothesley attack;\nfor let i=0; i<4; i=i+1 {\n  xilonen skill, attack:2;\n  bennett attack, burst, skill;\n  pick_up_crystallize(\"any\");\n  furina burst, skill;\n  wriothesley skill,\n       attack:3, charge, jump,\n       attack:3, charge, jump, \n       attack:3, charge, jump,\n       attack:3, charge, jump,\n       attack:3, charge, jump,\n       attack:3;\n  if .wriothesley.burst.ready  {\n    wriothesley burst, attack; \n    bennett skill, attack;\n    wriothesley attack:3;\n  } else {\n    wriothesley charge; \n    bennett skill, attack;\n    furina swap; wait(55); \n  }\n}\n"
+  },
+  "audit": {
+   "mean": 188828.37192296295,
+   "se": 471.8487591480035,
+   "chars": [
+    139324.95318727786,
+    40172.12655446602,
+    4331.593896775657,
+    4999.698284443438
+   ],
+   "waits": [
+    {
+     "insufficient_stamina": 0.47916666666666663,
+     "swap_cd": 3.0802083333333323
+    },
+    {
+     "insufficient_energy": 0.10208333333333333,
+     "swap_cd": 0.5833333333333334
+    },
+    {},
+    {
+     "insufficient_energy": 0.005729166666666666
+    }
+   ],
+   "cpu": 0.151072817
+  },
+  "top6_audit_max": 188828.37192296295,
+  "reference_audit_32": {
+   "L": 98954.23379213337,
+   "A": 274194.8436343636,
+   "S_V2S384": 277476.5837298634,
+   "S_V2T384": 268120.8127797157
+  }
+ },
+ {
+  "case": "yoimiya-furina-yunjin-xilonen--rk6QCLfwKJkD",
+  "D": "yoimiya",
+  "donors": [
+   "yoimiya-furina-xilonen-bennett",
+   "yoimiya-furina-xilonen-chiori",
+   "yoimiya-furina-yunjin-bennett",
+   "yoimiya-yelan-furina-xilonen",
+   "yoimiya-yelan-yunjin-xilonen",
+   "yoimiya-yunjin-xilonen-bennett",
+   "bennett-furina-xiangling-yoimiya",
+   "jean-furina-yelan-yoimiya"
+  ],
+  "n_programs": 10,
+  "n_valid": 10,
+  "best": {
+   "donor": "yoimiya-furina-xilonen-bennett",
+   "shared": 3,
+   "mapping": {
+    "yoimiya": "yoimiya",
+    "furina": "furina",
+    "xilonen": "xilonen",
+    "bennett": "yunjin"
+   },
+   "text": "active furina;\nfor let i = 0; i < 4; i = i + 1 {\n  furina skill, dash, burst, attack;\n  if is_even(i) {\n    furina attack, dash, attack:2;\n  } else {\n    yoimiya burst;\n  }\n  yunjin skill, dash, burst;\n  if !.element.t0.hydro && !.element.t0.pyro {\n    yunjin attack;\n  }\n  xilonen skill, attack:2;\n  yoimiya skill, attack:5, dash, attack:5, dash, attack:5, dash, attack;\n  xilonen skill, burst, attack:2;\n}\n"
+  },
+  "audit": {
+   "mean": 218104.63588333025,
+   "se": 1144.9138683089627,
+   "chars": [
+    126281.46334107658,
+    75711.95069583824,
+    13796.29349484174,
+    2314.9283515736943
+   ],
+   "waits": [
+    {},
+    {
+     "insufficient_energy": 1.4177083333333333
+    },
+    {
+     "insufficient_energy": 10.825
+    },
+    {
+     "insufficient_energy": 0.00625
+    }
+   ],
+   "cpu": 0.199212553
+  },
+  "top6_audit_max": 218104.63588333025,
+  "reference_audit_32": {
+   "L": 95776.78717152684,
+   "A": 239802.5318431884,
+   "S_V2S384": 234532.83118558084,
+   "S_V2T384": 235652.47240769007
+  }
+ },
+ {
+  "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+  "D": "wriothesley",
+  "donors": [
+   "wriothesley-charlotte-xilonen-shenhe",
+   "wriothesley-chongyun-xilonen-shenhe",
+   "wriothesley-diona-kaedeharakazuha-shenhe",
+   "wriothesley-kaedeharakazuha-shenhe-escoffier",
+   "wriothesley-kaeya-shenhe-xilonen",
+   "wriothesley-lanyan-shenhe-xilonen",
+   "wriothesley-layla-kaedeharakazuha-shenhe",
+   "wriothesley-rosaria-xilonen-shenhe"
+  ],
+  "n_programs": 8,
+  "n_valid": 7,
+  "best": {
+   "donor": "wriothesley-lanyan-shenhe-xilonen",
+   "shared": 3,
+   "mapping": {
+    "wriothesley": "wriothesley",
+    "shenhe": "shenhe",
+    "xilonen": "xilonen",
+    "lanyan": "kaedeharakazuha"
+   },
+   "text": "active wriothesley;\nwriothesley attack;\nfor let x=0; x<4; x=x+1 {\n  xilonen skill, attack:2;\n  shenhe skill[hold=1], attack;\n  if is_even(x) {\n    shenhe burst;\n  }\n  if .shenhe.sets.ap >= 4 {\n    shenhe dash; pick_up_crystallize(\"cryo\");\n  }\n  kaedeharakazuha skill:2;\n\n  wriothesley skill,\n       attack:3, charge, jump,\n       attack:3, charge, jump,\n       attack:3, charge, jump,\n       attack:3, charge, jump,\n       attack:3, charge, jump,\n       attack:3;\n  if .wriothesley.burst.ready {\n    wriothesley burst;\n  } else {\n    wriothesley charge;\n  }\n}\n"
+  },
+  "audit": {
+   "mean": 181774.72056924578,
+   "se": 156.36371021685068,
+   "chars": [
+    169354.37791335938,
+    6452.8069065562295,
+    1442.1834360802031,
+    4525.352313250147
+   ],
+   "waits": [
+    {},
+    {},
+    {
+     "skill_cd": 55.66666666666669
+    },
+    {}
+   ],
+   "cpu": 0.09629243400000001
+  },
+  "top6_audit_max": 181774.72056924578,
+  "reference_audit_32": {
+   "L": 45570.921929638185,
+   "A": 337913.4433419483,
+   "S_V2S384": 336739.2372915699,
+   "S_V2T384": 341372.2633950326
+  }
+ },
+ {
+  "case": "raidenshogun-furina-xilonen-yelan--PhjwKhdjDwtb",
+  "D": "yelan",
+  "donors": [
+   "aratakiitto-xilonen-furina-yelan",
+   "arlecchino-furina-yelan-xilonen",
+   "chasca-furina-yelan-xilonen",
+   "clorinde-furina-yelan-xilonen",
+   "cyno-furina-yelan-xilonen",
+   "diluc-furina-yelan-xilonen",
+   "eula-yelan-furina-xilonen",
+   "freminet-furina-yelan-xilonen"
+  ],
+  "n_programs": 8,
+  "n_valid": 6,
+  "best": {
+   "donor": "cyno-furina-yelan-xilonen",
+   "shared": 3,
+   "mapping": {
+    "furina": "furina",
+    "yelan": "yelan",
+    "xilonen": "xilonen",
+    "cyno": "raidenshogun"
+   },
+   "text": "active yelan;\nyelan aim;\nfor let i=0; i<4; i=i+1 { \n  xilonen skill, attack:2, burst;\n  \n  furina skill, dash, burst;\n  \n  yelan skill;\n  if !.yelan.burst.ready {\n    yelan attack;\n  }\n  yelan burst, attack;\n  \n  xilonen skill, attack:2;\n  \n  raidenshogun skill, burst;\n  while .furina.skill.cd > 60 {\n    if .raidenshogun.skill.ready {\n      raidenshogun skill;\n    } else if .raidenshogun.normal == 5 {\n      raidenshogun dash;\n    } else {\n      raidenshogun attack;\n    }\n  }\n  \n}\n"
+  },
+  "audit": {
+   "mean": 249141.37584930367,
+   "se": 517.0329265048354,
+   "chars": [
+    73271.32258580512,
+    75615.11996273723,
+    91113.35315047656,
+    9141.58015028449
+   ],
+   "waits": [
+    {},
+    {},
+    {
+     "insufficient_energy": 1.0973958333333333,
+     "swap_cd": 0.6843750000000001
+    },
+    {
+     "skill_cd": 19.7890625
+    }
+   ],
+   "cpu": 0.241675607
+  },
+  "top6_audit_max": 249141.37584930367,
+  "reference_audit_32": {
+   "L": 174318.22869859383,
+   "A": 354007.857369221,
+   "S_V2S384": 336304.5448578934,
+   "S_V2T384": 344658.21354477125
+  }
+ },
+ {
+  "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+  "D": "clorinde",
+  "donors": [
+   "clorinde-chiori-kujousara-xilonen",
+   "clorinde-fischl-nahida-xilonen",
+   "clorinde-furina-kujousara-xilonen",
+   "clorinde-furina-nahida-xilonen",
+   "clorinde-kujousara-yunjin-xilonen",
+   "clorinde-nahida-beidou-xilonen",
+   "clorinde-nahida-lisa-xilonen",
+   "clorinde-citlali-mavuika-xilonen"
+  ],
+  "n_programs": 9,
+  "n_valid": 8,
+  "best": {
+   "donor": "clorinde-furina-kujousara-xilonen",
+   "shared": 3,
+   "mapping": {
+    "clorinde": "clorinde",
+    "kujousara": "kujousara",
+    "xilonen": "xilonen",
+    "furina": "nahida"
+   },
+   "text": "fn clorinde_combo() {\n  clorinde skill;\n  while .clorinde.status.clorinde-night-watch {\n    if .clorinde.bolratio >= 1 {\n      clorinde skill;\n    } else {\n      clorinde attack;\n    }\n  }\n}\nactive kujousara;\nfor let i=0; i<3; i=i+1 {\n  kujousara skill, aim, attack; \n\txilonen skill, attack:2;\n\tnahida skill, dash, burst, attack;\n  kujousara burst; \n  clorinde_combo();\n  kujousara skill;\n  clorinde burst;\n\txilonen skill, burst, attack:2;\n\tkujousara aim;\n\tclorinde_combo();\n}\n"
+  },
+  "audit": {
+   "mean": 65635.68313039947,
+   "se": 78.78386683244376,
+   "chars": [
+    51979.11190233059,
+    6090.398516611201,
+    5085.884056692958,
+    2480.2886547648177
+   ],
+   "waits": [
+    {
+     "skill_cd": 5.166666666666666
+    },
+    {
+     "swap_cd": 2.1000000000000005
+    },
+    {},
+    {}
+   ],
+   "cpu": 0.12653726499999998
+  },
+  "top6_audit_max": 65635.68313039947,
+  "reference_audit_32": {
+   "L": 69229.11202835108,
+   "A": 75906.34010867738
+  }
+ },
+ {
+  "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+  "D": "flins",
+  "donors": [
+   "flins-ineffa-aino-sucrose",
+   "flins-ineffa-columbina-sucrose",
+   "flins-ineffa-mona-sucrose",
+   "flins-ineffa-yelan-sucrose",
+   "flins-fischl-aino-sucrose",
+   "flins-fischl-columbina-sucrose",
+   "flins-iansan-aino-sucrose",
+   "flins-ineffa-columbina-durin"
+  ],
+  "n_programs": 12,
+  "n_valid": 11,
+  "best": {
+   "donor": "flins-fischl-columbina-sucrose",
+   "shared": 2,
+   "mapping": {
+    "flins": "flins",
+    "sucrose": "sucrose",
+    "fischl": "furina",
+    "columbina": "ineffa"
+   },
+   "text": "active ineffa;\nfor let i=0; i<6; i=i+1 {\n  ineffa skill;\n  if is_even(i) {\n    ineffa attack;\n  } else {\n    ineffa burst;\n  }\n  if is_even(i) {\n    furina attack, skill;\n  } else {\n    furina attack:2, burst;\n  }\n  if .sucrose.burst.ready && is_even(i) {\n    sucrose burst, attack, skill, dash;\n  } else {\n    sucrose attack, skill, dash;\n  }\n  flins skill,\n        skill, attack, burst, \n        attack:3, dash, attack:3, dash, attack:3, dash, attack,\n        skill, burst, \n        attack:3, dash, attack:3, dash, attack:3, dash, attack;\n  \n  if .flins.status.manifest-flame {   \n    flins skill;\n    if .flins.energy >= 30 {\n      flins burst;\n    }\n  }\n  if !is_even(i) {\n    flins attack, dash; \n  }\n}\n"
+  },
+  "audit": {
+   "mean": 131919.24952095654,
+   "se": 185.77070061401483,
+   "chars": [
+    72983.12866803017,
+    46653.55022848549,
+    3821.6835291536536,
+    8460.887095287064
+   ],
+   "waits": [
+    {},
+    {
+     "swap_cd": 1.4666666666666668
+    },
+    {
+     "swap_cd": 1.0
+    },
+    {}
+   ],
+   "cpu": 0.141854959
+  },
+  "top6_audit_max": 131919.24952095654,
+  "reference_audit_32": {
+   "L": 131255.39215096083,
+   "A": 150164.93560936977
+  }
+ },
+ {
+  "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+  "D": "mualani",
+  "donors": [
+   "mualani-candace-xilonen-xiangling",
+   "mualani-citlali-xilonen-xiangling",
+   "mualani-kaedeharakazuha-xilonen-xiangling",
+   "mualani-lynette-xilonen-xiangling",
+   "mualani-mona-xilonen-xiangling",
+   "mualani-sucrose-xilonen-xiangling",
+   "mualani-xilonen-mavuika-chiori",
+   "mualani-yelan-xilonen-xiangling"
+  ],
+  "n_programs": 8,
+  "n_valid": 6,
+  "best": {
+   "donor": "mualani-sucrose-xilonen-xiangling",
+   "shared": 3,
+   "mapping": {
+    "mualani": "mualani",
+    "xilonen": "xilonen",
+    "xiangling": "xiangling",
+    "sucrose": "chiori"
+   },
+   "text": "active mualani;\nfn mualani_combo2() {\n  \n  while .mualani.nightsoul.state {\n    for let k=0; k<2; k=k+1 {\n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    break;\n  }\n}\nfn mualani_combo3() {\n  \n  while .mualani.nightsoul.state {\n    for let k=0; k<3; k=k+1 {\n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    break;\n  }\n}\nfor let i=0; i<4; i=i+1 {\n  mualani attack;\n  \n  if .xiangling.burst.ready {\n    \n   xilonen skill, attack:2;\n    \n   chiori skill, dash, burst;\n   \n   xiangling burst, attack, skill, dash, attack;\n  \n   pick_up_crystallize(\"hydro\");\n   \n   mualani skill;\n   mualani_combo2();\n   mualani skill, burst[travel=10];\n   \n  }\n  else {\n   xilonen skill, attack:2;\n   \n   chiori attack, skill, dash;\n   \n   xiangling attack, skill, dash;\n   pick_up_crystallize(\"hydro\");\n   \n   mualani skill;\n   mualani_combo3();\n   mualani skill;\n  }\n}\n"
+  },
+  "audit": {
+   "mean": 117519.20019702913,
+   "se": 1178.9017492133034,
+   "chars": [
+    68361.58383211574,
+    2467.25107026444,
+    1034.824244464761,
+    45655.541050184314
+   ],
+   "waits": [
+    {
+     "insufficient_energy": 16.153125000000003
+    },
+    {
+     "swap_cd": 1.2541666666666669
+    },
+    {},
+    {}
+   ],
+   "cpu": 0.199626231
+  },
+  "top6_audit_max": 119992.78314172357,
+  "reference_audit_32": {
+   "L": 131760.61063576184,
+   "A": 157325.98631141105
+  }
+ }
+]

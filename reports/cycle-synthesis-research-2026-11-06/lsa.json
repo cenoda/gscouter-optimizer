@@ -1,0 +1,8026 @@
+[
+ {
+  "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+  "group": "low",
+  "members": [
+   "mavuika",
+   "ororon",
+   "chevreuse",
+   "bennett"
+  ],
+  "selected": {
+   "V2S": {
+    "seed": "91",
+    "audit_seed": 4000475000000,
+    "S_audit": 364666.6370330959,
+    "A_audit": 490688.20869991544,
+    "L_audit": 41824.17403356605
+   },
+   "V2T": {
+    "seed": "91",
+    "audit_seed": 4000475000000,
+    "S_audit": 355148.2707965591
+   }
+  },
+  "measure_seed": 4000475000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 321,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 1,
+     "element_guards": 0,
+     "while_loops": 1,
+     "if_blocks": 2,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "mavuika": {
+       "charge": 10,
+       "skill": 2,
+       "burst": 1,
+       "dash": 2,
+       "jump": 1
+      },
+      "ororon": {
+       "skill": 1,
+       "burst": 1
+      },
+      "chevreuse": {
+       "skill": 1,
+       "burst": 1
+      },
+      "bennett": {
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 41698.780112420645,
+     "se": 270.2909689515066,
+     "chars": [
+      39255.57509965255,
+      1956.701447130217,
+      402.52967629536636,
+      83.97388934248039
+     ],
+     "waits": [
+      {
+       "skill_cd": 12.683333333333335
+      },
+      {},
+      {
+       "insufficient_energy": 250.4489583333333
+      },
+      {}
+     ],
+     "cpu_seconds": 0.08184384299999999,
+     "config_sha256": "0eb6a2e8cd5e7c1cb4ce109049a922fc4915ac123605e1bc7bf8c02cbc011176"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 93,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 0,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "mavuika": {
+       "attack": 1,
+       "charge": 14,
+       "skill": 1,
+       "burst": 1,
+       "dash": 7
+      },
+      "ororon": {
+       "skill": 1,
+       "burst": 1
+      },
+      "chevreuse": {
+       "skill": 1
+      },
+      "bennett": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 490529.54788679094,
+     "se": 916.3100773330351,
+     "chars": [
+      467282.5688588663,
+      17331.798672629164,
+      2486.6867387734023,
+      3428.493616522599
+     ],
+     "waits": [
+      {},
+      {},
+      {
+       "swap_cd": 9.866666666666672
+      },
+      {}
+     ],
+     "cpu_seconds": 0.196443258,
+     "config_sha256": "67d884174e2e94b2bfb9fd5d80f9c8b1de58cbab5493172af1a73090725e2ffb"
+    }
+   },
+   "S_V2S384": {
+    "static": {
+     "tokens": 1042,
+     "time_box": false,
+     "ready_guards": 13,
+     "status_guards": 14,
+     "element_guards": 3,
+     "while_loops": 16,
+     "if_blocks": 22,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "mavuika": {
+       "attack": 11,
+       "charge": 36,
+       "skill": 10,
+       "burst": 5,
+       "dash": 21,
+       "high_plunge": 1,
+       "swap": 2
+      },
+      "ororon": {
+       "attack": 12,
+       "skill": 7,
+       "burst": 6,
+       "dash": 1
+      },
+      "chevreuse": {
+       "attack": 6,
+       "skill": 7,
+       "burst": 1,
+       "dash": 4
+      },
+      "bennett": {
+       "attack": 9,
+       "charge": 1,
+       "skill": 9,
+       "burst": 5,
+       "dash": 4,
+       "jump": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 364502.14328067086,
+     "se": 767.6904950271283,
+     "chars": [
+      346844.92978297215,
+      13098.890385072187,
+      2371.318953157515,
+      2187.0041594685385
+     ],
+     "waits": [
+      {
+       "dash_cd": 3.6333333333333364,
+       "skill_cd": 4.55
+      },
+      {},
+      {
+       "swap_cd": 9.133333333333328
+      },
+      {
+       "skill_cd": 31.61666666666667
+      }
+     ],
+     "cpu_seconds": 0.20002308200000002,
+     "config_sha256": "7d6f56de13233493846d9dfbb6ad5654270546152fd0934e598100b9ca876885"
+    }
+   },
+   "S_V2T384": {
+    "static": {
+     "tokens": 405,
+     "time_box": false,
+     "ready_guards": 2,
+     "status_guards": 1,
+     "element_guards": 0,
+     "while_loops": 3,
+     "if_blocks": 2,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "mavuika": {
+       "charge": 18,
+       "skill": 2,
+       "burst": 2,
+       "dash": 8
+      },
+      "ororon": {
+       "skill": 2,
+       "burst": 3,
+       "aim": 3
+      },
+      "chevreuse": {
+       "attack": 3,
+       "skill": 3,
+       "burst": 2
+      },
+      "bennett": {
+       "attack": 8,
+       "skill": 5,
+       "burst": 3
+      }
+     }
+    },
+    "measured": {
+     "mean": 356012.7140594329,
+     "se": 645.4283183746579,
+     "chars": [
+      339146.9991016415,
+      11019.209918257471,
+      2518.553088917106,
+      3327.9519506168504
+     ],
+     "waits": [
+      {},
+      {},
+      {
+       "swap_cd": 4.200000000000001
+      },
+      {
+       "skill_cd": 20.533333333333335
+      }
+     ],
+     "cpu_seconds": 0.133735631,
+     "config_sha256": "5e223f2d9df3fd887ee998a14aeb02cada4be62e3979f1eeacbbd0cf2d600a81"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "mavuika",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 900,
+    "burst_cd": 0,
+    "energy_max": 0,
+    "energy_used": 0,
+    "team_energy_gain_4s": 34.87,
+    "mods": [
+     {
+      "on": "mavuika",
+      "key": "athousandblazingsuns-buff-icd",
+      "remaining": 582
+     },
+     {
+      "on": "mavuika",
+      "key": "athousandblazingsuns-buff",
+      "remaining": 342
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-c1",
+      "remaining": 600
+     },
+     {
+      "on": "mavuika",
+      "key": "obsidiancodex-4pc-icd",
+      "remaining": 54
+     },
+     {
+      "on": "mavuika",
+      "key": "obsidiancodex-4pc",
+      "remaining": 354
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 598
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-particle-icd",
+      "remaining": 28
+     }
+    ]
+   },
+   {
+    "char": "mavuika",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 116,
+    "skill_cd": 0,
+    "burst_cd": 964,
+    "energy_max": 0,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mavuika",
+      "key": "athousandblazingsuns-buff-icd",
+      "remaining": 484
+     },
+     {
+      "on": "mavuika",
+      "key": "athousandblazingsuns-buff",
+      "remaining": 244
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-c1",
+      "remaining": 583
+     },
+     {
+      "on": "mavuika",
+      "key": "obsidiancodex-4pc-icd",
+      "remaining": 43
+     },
+     {
+      "on": "mavuika",
+      "key": "obsidiancodex-4pc",
+      "remaining": 343
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-burst",
+      "remaining": 409
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a4",
+      "remaining": 1190
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 590
+     }
+    ]
+   },
+   {
+    "char": "mavuika",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 21,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 0,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mavuika",
+      "key": "mavuika-fighting-spirit-na-icd",
+      "remaining": 6
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-c1",
+      "remaining": 600
+     }
+    ]
+   },
+   {
+    "char": "mavuika",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 79,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 0,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "ororon",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 29,
+    "skill_cd": 885,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 34.06,
+    "mods": [
+     {
+      "on": "ororon",
+      "key": "ororon-a1",
+      "remaining": 871
+     }
+    ]
+   },
+   {
+    "char": "ororon",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 63,
+    "skill_cd": 0,
+    "burst_cd": 837,
+    "energy_max": 60,
+    "energy_used": 52,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mavuika",
+      "key": "ororon-c6",
+      "remaining": 477
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 549
+     },
+     {
+      "on": "ororon",
+      "key": "supersonic-oculus",
+      "remaining": 477
+     },
+     {
+      "on": "ororon",
+      "key": "ororon-c2",
+      "remaining": 481
+     },
+     {
+      "on": "ororon",
+      "key": "ororon-c6",
+      "remaining": 481
+     },
+     {
+      "on": "chevreuse",
+      "key": "ororon-c6",
+      "remaining": 477
+     },
+     {
+      "on": "bennett",
+      "key": "ororon-c6",
+      "remaining": 477
+     }
+    ]
+   },
+   {
+    "char": "ororon",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 12,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "ororon",
+    "action": "charge",
+    "ok": false,
+    "error": "engine panic"
+   },
+   {
+    "char": "chevreuse",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 23,
+    "skill_cd": 895,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 39.23,
+    "mods": [
+     {
+      "on": "chevreuse",
+      "key": "chev-skill-heal",
+      "remaining": 716
+     }
+    ]
+   },
+   {
+    "char": "chevreuse",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 56,
+    "skill_cd": 0,
+    "burst_cd": 844,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": [
+     {
+      "on": "chevreuse",
+      "key": "chev-c4",
+      "remaining": 304
+     }
+    ]
+   },
+   {
+    "char": "chevreuse",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 11,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mavuika",
+      "key": "mavuika-fighting-spirit-na-icd",
+      "remaining": 6
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-c1",
+      "remaining": 600
+     }
+    ]
+   },
+   {
+    "char": "chevreuse",
+    "action": "charge",
+    "ok": false,
+    "error": "chevreuse: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "bennett",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 31,
+    "skill_cd": 223,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 18.58,
+    "mods": [
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 585
+     },
+     {
+      "on": "bennett",
+      "key": "bennett-press-particle-icd",
+      "remaining": 3
+     }
+    ]
+   },
+   {
+    "char": "bennett",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 49,
+    "skill_cd": 0,
+    "burst_cd": 885,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mavuika",
+      "key": "nob-4pc",
+      "remaining": 671
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 588
+     },
+     {
+      "on": "ororon",
+      "key": "nob-4pc",
+      "remaining": 671
+     },
+     {
+      "on": "chevreuse",
+      "key": "nob-4pc",
+      "remaining": 671
+     },
+     {
+      "on": "bennett",
+      "key": "nob-4pc",
+      "remaining": 671
+     },
+     {
+      "on": "bennett",
+      "key": "bennett-field",
+      "remaining": 111
+     }
+    ]
+   },
+   {
+    "char": "bennett",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 13,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mavuika",
+      "key": "mavuika-fighting-spirit-na-icd",
+      "remaining": 6
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-c1",
+      "remaining": 600
+     },
+     {
+      "on": "bennett",
+      "key": "peakpatrolsong-buff",
+      "remaining": 360
+     },
+     {
+      "on": "bennett",
+      "key": "peakpatrolsong-buff-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "bennett",
+    "action": "charge",
+    "ok": false,
+    "error": "bennett: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+  "group": "low",
+  "members": [
+   "arlecchino",
+   "citlali",
+   "xilonen",
+   "bennett"
+  ],
+  "selected": {
+   "V2S": {
+    "seed": "37",
+    "audit_seed": 4000421000000,
+    "S_audit": 571157.0266519223,
+    "A_audit": 695575.1029324632,
+    "L_audit": 304501.81648072356
+   },
+   "V2T": {
+    "seed": "37",
+    "audit_seed": 4000421000000,
+    "S_audit": 574129.3351577157
+   }
+  },
+  "measure_seed": 4000421000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 98,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 0,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "arlecchino": {
+       "attack": 17,
+       "charge": 1,
+       "skill": 1,
+       "dash": 5
+      },
+      "citlali": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1
+      },
+      "bennett": {
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 302502.43054604187,
+     "se": 1489.3151382027331,
+     "chars": [
+      258699.97035479237,
+      38685.57165320373,
+      2235.5414193747242,
+      2881.3471186710753
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 43.58958333333336
+      },
+      {},
+      {
+       "insufficient_energy": 11.185416666666667
+      }
+     ],
+     "cpu_seconds": 0.10198729399999999,
+     "config_sha256": "f47a84c0ac70005c8d96d57397b1145cdd01efffb6981ae69fa7548548760ef6"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 294,
+     "time_box": true,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 2,
+     "while_loops": 1,
+     "if_blocks": 7,
+     "waits": [
+      1,
+      2,
+      47
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "arlecchino": {
+       "attack": 24,
+       "charge": 2,
+       "skill": 1,
+       "burst": 1,
+       "dash": 8,
+       "swap": 1
+      },
+      "citlali": {
+       "attack": 1,
+       "skill": 1
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1
+      },
+      "bennett": {
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 695426.1180588062,
+     "se": 1129.8729481971636,
+     "chars": [
+      661224.3911266951,
+      27840.017124745023,
+      2554.0790866128737,
+      3807.6307207537307
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.5666666666666665
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.149133943,
+     "config_sha256": "ea3a57bf228721d70b602ea8babd262ebee795dd9ee6e67d6a07bd85232bed54"
+    }
+   },
+   "S_V2S384": {
+    "static": {
+     "tokens": 240,
+     "time_box": false,
+     "ready_guards": 2,
+     "status_guards": 3,
+     "element_guards": 0,
+     "while_loops": 1,
+     "if_blocks": 7,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "arlecchino": {
+       "attack": 34,
+       "charge": 3,
+       "skill": 2,
+       "walk": 2
+      },
+      "citlali": {
+       "attack": 4,
+       "skill": 2,
+       "swap": 1
+      },
+      "xilonen": {
+       "attack": 4,
+       "skill": 2,
+       "burst": 1
+      },
+      "bennett": {
+       "attack": 2,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 570506.0299641355,
+     "se": 634.7974374785249,
+     "chars": [
+      543901.3778656208,
+      22714.522345771373,
+      3890.129752742938,
+      0.0
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 15.0
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.10387430299999999,
+     "config_sha256": "6b1ed79fc23a1a8e75e940b0194a62577f784baa426938900398a9abdfe36e5a"
+    }
+   },
+   "S_V2T384": {
+    "static": {
+     "tokens": 509,
+     "time_box": false,
+     "ready_guards": 11,
+     "status_guards": 4,
+     "element_guards": 0,
+     "while_loops": 5,
+     "if_blocks": 17,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "arlecchino": {
+       "attack": 28,
+       "charge": 2,
+       "skill": 4,
+       "dash": 6
+      },
+      "citlali": {
+       "attack": 9,
+       "skill": 5,
+       "burst": 2,
+       "jump": 1,
+       "swap": 1
+      },
+      "xilonen": {
+       "attack": 13,
+       "charge": 2,
+       "skill": 6,
+       "burst": 2
+      },
+      "bennett": {
+       "attack": 3,
+       "skill": 4,
+       "burst": 2,
+       "dash": 1,
+       "jump": 1,
+       "high_plunge": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 573931.0113600602,
+     "se": 625.9046957104459,
+     "chars": [
+      547109.8201218109,
+      22912.363350771717,
+      3908.8278874772573,
+      0.0
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 15.899999999999991
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.10183650999999999,
+     "config_sha256": "ead7bb0752e3ab7952991e33dbfc9f13b4340c95a68396c778f9ba9adb319e74"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "arlecchino",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 64,
+    "skill_cd": 1752,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 44.34,
+    "mods": [
+     {
+      "on": "arlecchino",
+      "key": "scarletsands-skill",
+      "remaining": 574
+     },
+     {
+      "on": "arlecchino",
+      "key": "arlecchino-c6-icd",
+      "remaining": 878
+     },
+     {
+      "on": "arlecchino",
+      "key": "arlecchino-c6",
+      "remaining": 1178
+     },
+     {
+      "on": "arlecchino",
+      "key": "directive-limit",
+      "remaining": 2079
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 853
+     }
+    ]
+   },
+   {
+    "char": "arlecchino",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 111,
+    "skill_cd": 0,
+    "burst_cd": 789,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 899
+     }
+    ]
+   },
+   {
+    "char": "arlecchino",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 11,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "arlecchino",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 37,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "citlali",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 41,
+    "skill_cd": 937,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 38.32,
+    "mods": [
+     {
+      "on": "citlali",
+      "key": "nightsoul-blessing",
+      "remaining": 1177
+     },
+     {
+      "on": "citlali",
+      "key": "starcallerswatch-icd",
+      "remaining": 836
+     },
+     {
+      "on": "citlali",
+      "key": "starcallerswatch",
+      "remaining": 896
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 879
+     }
+    ]
+   },
+   {
+    "char": "citlali",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 110,
+    "skill_cd": 0,
+    "burst_cd": 790,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "citlali",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 16,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "citlali",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 45,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 24.26,
+    "mods": [
+     {
+      "on": "arlecchino",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "citlali",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-e-recast-cd",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nightsoul-blessing",
+      "remaining": 768
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-particle-icd",
+      "remaining": 21
+     },
+     {
+      "on": "bennett",
+      "key": "xilonen-c4",
+      "remaining": 885
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 92,
+    "skill_cd": 0,
+    "burst_cd": 808,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff",
+      "remaining": 360
+     },
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "charge",
+    "ok": false,
+    "error": "xilonen: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "bennett",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 31,
+    "skill_cd": 223,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 20.68,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 885
+     },
+     {
+      "on": "bennett",
+      "key": "bennett-press-particle-icd",
+      "remaining": 3
+     }
+    ]
+   },
+   {
+    "char": "bennett",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 49,
+    "skill_cd": 0,
+    "burst_cd": 885,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "arlecchino",
+      "key": "nob-4pc",
+      "remaining": 671
+     },
+     {
+      "on": "citlali",
+      "key": "nob-4pc",
+      "remaining": 671
+     },
+     {
+      "on": "xilonen",
+      "key": "nob-4pc",
+      "remaining": 671
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 888
+     },
+     {
+      "on": "bennett",
+      "key": "nob-4pc",
+      "remaining": 671
+     },
+     {
+      "on": "bennett",
+      "key": "bennett-field",
+      "remaining": 111
+     }
+    ]
+   },
+   {
+    "char": "bennett",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 13,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "bennett",
+    "action": "charge",
+    "ok": false,
+    "error": "bennett: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+  "group": "low",
+  "members": [
+   "cyno",
+   "furina",
+   "nahida",
+   "xilonen"
+  ],
+  "selected": {
+   "V2S": {
+    "seed": "37",
+    "audit_seed": 4000421000000,
+    "S_audit": 239304.82318037882,
+    "A_audit": 309033.822881552,
+    "L_audit": 132888.58753891636
+   },
+   "V2T": {
+    "seed": "37",
+    "audit_seed": 4000421000000,
+    "S_audit": 272149.5507089592
+   }
+  },
+  "measure_seed": 4000421000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 98,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 0,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "cyno": {
+       "attack": 29,
+       "skill": 10,
+       "burst": 1
+      },
+      "furina": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "nahida": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 132621.22318002622,
+     "se": 207.25654728533092,
+     "chars": [
+      85179.3223761728,
+      29700.250347200028,
+      14776.239542608806,
+      2965.4109140445735
+     ],
+     "waits": [
+      {
+       "skill_cd": 109.28333333333332
+      },
+      {
+       "swap_cd": 0.8166666666666665
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.130314826,
+     "config_sha256": "c755a1ae0ab2ab7de1b46712c2cb2691960027665783b1a33a98ddc16fb57d19"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 128,
+     "time_box": true,
+     "ready_guards": 1,
+     "status_guards": 1,
+     "element_guards": 0,
+     "while_loops": 1,
+     "if_blocks": 2,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "cyno": {
+       "attack": 1,
+       "skill": 3,
+       "burst": 1,
+       "dash": 1
+      },
+      "furina": {
+       "attack": 3,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      },
+      "nahida": {
+       "attack": 1,
+       "charge": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 4,
+       "skill": 2
+      }
+     }
+    },
+    "measured": {
+     "mean": 309191.3204334123,
+     "se": 505.05199227441267,
+     "chars": [
+      183107.27249471078,
+      76502.3835378218,
+      36027.89662873965,
+      13553.767772140349
+     ],
+     "waits": [
+      {
+       "skill_cd": 1.4572916666666669
+      },
+      {
+       "insufficient_energy": 0.022395833333333334,
+       "swap_cd": 0.46666666666666673
+      },
+      {
+       "insufficient_energy": 0.5385416666666667
+      },
+      {}
+     ],
+     "cpu_seconds": 0.287149041,
+     "config_sha256": "2aa828457561b42eff5bade74d4408aa23c4337001482e9672f3aad05847e022"
+    }
+   },
+   "S_V2S384": {
+    "static": {
+     "tokens": 529,
+     "time_box": false,
+     "ready_guards": 13,
+     "status_guards": 3,
+     "element_guards": 0,
+     "while_loops": 8,
+     "if_blocks": 16,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "cyno": {
+       "attack": 34,
+       "skill": 9,
+       "burst": 2,
+       "dash": 3
+      },
+      "furina": {
+       "attack": 1,
+       "charge": 1,
+       "skill": 4,
+       "burst": 3,
+       "dash": 2
+      },
+      "nahida": {
+       "attack": 7,
+       "charge": 1,
+       "skill": 5,
+       "burst": 2,
+       "dash": 1
+      },
+      "xilonen": {
+       "attack": 9,
+       "charge": 5,
+       "skill": 4,
+       "burst": 2,
+       "dash": 1,
+       "jump": 1,
+       "high_plunge": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 239263.3180016094,
+     "se": 367.40759092777347,
+     "chars": [
+      162864.94111735473,
+      49152.80247510736,
+      16230.641140738777,
+      11014.933268409017
+     ],
+     "waits": [
+      {
+       "insufficient_energy": 0.225,
+       "skill_cd": 3.6562500000000013
+      },
+      {},
+      {
+       "swap_cd": 1.8333333333333341
+      },
+      {}
+     ],
+     "cpu_seconds": 0.196686443,
+     "config_sha256": "4fb643856152ab9e11139942b4aee33f11651440115ae60e054342b697fcf480"
+    }
+   },
+   "S_V2T384": {
+    "static": {
+     "tokens": 353,
+     "time_box": false,
+     "ready_guards": 7,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 5,
+     "if_blocks": 9,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "cyno": {
+       "attack": 35,
+       "skill": 8,
+       "burst": 2,
+       "jump": 1
+      },
+      "furina": {
+       "attack": 3,
+       "skill": 1,
+       "burst": 2,
+       "dash": 1
+      },
+      "nahida": {
+       "attack": 9,
+       "charge": 2,
+       "skill": 5,
+       "burst": 2,
+       "dash": 3
+      },
+      "xilonen": {
+       "attack": 7,
+       "skill": 4,
+       "burst": 1,
+       "dash": 2,
+       "high_plunge": 1,
+       "swap": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 272414.00664209377,
+     "se": 1529.0918254796768,
+     "chars": [
+      193058.86912163376,
+      45796.243290858896,
+      28239.340728223775,
+      5319.553501377404
+     ],
+     "waits": [
+      {
+       "insufficient_energy": 13.207291666666666
+      },
+      {},
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.168247849,
+     "config_sha256": "d432af8c21a95476b90b9cd024c369eb49f9c4b1426ddf52d42dc881ed6e0a3c"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "cyno",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 31,
+    "skill_cd": 436,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 16.48,
+    "mods": [
+     {
+      "on": "cyno",
+      "key": "cyno-q",
+      "remaining": 329
+     },
+     {
+      "on": "cyno",
+      "key": "cyno-together-we-rise",
+      "remaining": 329
+     },
+     {
+      "on": "cyno",
+      "key": "scarletsands-skill",
+      "remaining": 590
+     },
+     {
+      "on": "cyno",
+      "key": "cyno-particle-icd",
+      "remaining": 20
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 890
+     }
+    ]
+   },
+   {
+    "char": "cyno",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 83,
+    "skill_cd": 0,
+    "burst_cd": 1117,
+    "energy_max": 80,
+    "energy_used": 80,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "cyno",
+      "key": "cyno-q",
+      "remaining": 629
+     },
+     {
+      "on": "cyno",
+      "key": "cyno-c1",
+      "remaining": 517
+     },
+     {
+      "on": "cyno",
+      "key": "cyno-c6",
+      "remaining": 397
+     }
+    ]
+   },
+   {
+    "char": "cyno",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 14,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "cyno",
+      "key": "cyno-c2-icd",
+      "remaining": 6
+     },
+     {
+      "on": "cyno",
+      "key": "cyno-c2",
+      "remaining": 240
+     }
+    ]
+   },
+   {
+    "char": "cyno",
+    "action": "charge",
+    "ok": false,
+    "error": "cyno: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "furina",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 1182,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 9.49,
+    "mods": [
+     {
+      "on": "cyno",
+      "key": "tom-4pc",
+      "remaining": 180
+     },
+     {
+      "on": "furina",
+      "key": "center-of-attention",
+      "remaining": 582
+     },
+     {
+      "on": "furina",
+      "key": "furina-skill",
+      "remaining": 1736
+     },
+     {
+      "on": "furina",
+      "key": "khaj-nisut-buff",
+      "remaining": 1200
+     },
+     {
+      "on": "furina",
+      "key": "khaj-nisut-icd",
+      "remaining": 18
+     },
+     {
+      "on": "furina",
+      "key": "tom-4pc-icd",
+      "remaining": 30
+     },
+     {
+      "on": "furina",
+      "key": "tom-4pc",
+      "remaining": 180
+     },
+     {
+      "on": "nahida",
+      "key": "tom-4pc",
+      "remaining": 180
+     },
+     {
+      "on": "xilonen",
+      "key": "tom-4pc",
+      "remaining": 180
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 111,
+    "skill_cd": 0,
+    "burst_cd": 789,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "furina-burst",
+      "remaining": 1076
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 887
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "spiritbreath-thorn-icd",
+      "remaining": 360
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 33,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "nahida",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 25,
+    "skill_cd": 286,
+    "burst_cd": 0,
+    "energy_max": 50,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 888
+     }
+    ]
+   },
+   {
+    "char": "nahida",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 111,
+    "skill_cd": 0,
+    "burst_cd": 699,
+    "energy_max": 50,
+    "energy_used": 50,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "cyno",
+      "key": "nahida-a1",
+      "remaining": 45
+     },
+     {
+      "on": "furina",
+      "key": "nahida-a1",
+      "remaining": 45
+     },
+     {
+      "on": "nahida",
+      "key": "nahida-c6",
+      "remaining": 555
+     },
+     {
+      "on": "nahida",
+      "key": "nahida-q-within",
+      "remaining": 45
+     },
+     {
+      "on": "nahida",
+      "key": "nahida-q",
+      "remaining": 45
+     },
+     {
+      "on": "nahida",
+      "key": "nahida-a1",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nahida-a1",
+      "remaining": 45
+     }
+    ]
+   },
+   {
+    "char": "nahida",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 21,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 50,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "nahida",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 21,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 50,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 21.98,
+    "mods": [
+     {
+      "on": "cyno",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "furina",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "nahida",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-e-recast-cd",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nightsoul-blessing",
+      "remaining": 768
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-particle-icd",
+      "remaining": 21
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 92,
+    "skill_cd": 0,
+    "burst_cd": 808,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff",
+      "remaining": 360
+     },
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "charge",
+    "ok": false,
+    "error": "xilonen: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+  "group": "low",
+  "members": [
+   "mualani",
+   "candace",
+   "sucrose",
+   "xiangling"
+  ],
+  "selected": {
+   "V2S": {
+    "seed": "37",
+    "audit_seed": 4000421000000,
+    "S_audit": 58867.59783466315,
+    "A_audit": 71545.59719711528,
+    "L_audit": 12194.069776422606
+   },
+   "V2T": {
+    "seed": "37",
+    "audit_seed": 4000421000000,
+    "S_audit": 60064.09261511158
+   }
+  },
+  "measure_seed": 4000421000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 208,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 2,
+     "element_guards": 1,
+     "while_loops": 3,
+     "if_blocks": 3,
+     "waits": [
+      8
+     ],
+     "for_bounds": [
+      3,
+      2
+     ],
+     "written_actions": {
+      "mualani": {
+       "attack": 3,
+       "skill": 3,
+       "burst": 1,
+       "walk": 2
+      },
+      "candace": {
+       "attack": 4,
+       "skill": 2,
+       "burst": 2,
+       "dash": 1
+      },
+      "sucrose": {
+       "attack": 1,
+       "skill": 2,
+       "burst": 1,
+       "dash": 1
+      },
+      "xiangling": {
+       "attack": 4,
+       "skill": 2,
+       "burst": 1,
+       "dash": 2
+      }
+     }
+    },
+    "measured": {
+     "mean": 12128.551082107399,
+     "se": 298.45753431548644,
+     "chars": [
+      8840.99949613756,
+      1184.6304025181773,
+      601.1947290009136,
+      1501.7264544507466
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 206.6557291666667
+      },
+      {
+       "swap_cd": 0.18958333333333344
+      },
+      {}
+     ],
+     "cpu_seconds": 0.081612389,
+     "config_sha256": "a9feb2a30edbdd3c6227965886916d0c5261d951999c9cd739309f0827ec0492"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 237,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 3,
+     "element_guards": 0,
+     "while_loops": 2,
+     "if_blocks": 3,
+     "waits": [
+      8
+     ],
+     "for_bounds": [
+      3,
+      2
+     ],
+     "written_actions": {
+      "mualani": {
+       "attack": 1,
+       "skill": 2,
+       "burst": 1,
+       "walk": 2
+      },
+      "candace": {
+       "attack": 5,
+       "skill": 2,
+       "burst": 1
+      },
+      "sucrose": {
+       "attack": 2,
+       "skill": 2,
+       "burst": 1,
+       "dash": 2
+      },
+      "xiangling": {
+       "attack": 5,
+       "skill": 2,
+       "burst": 1,
+       "dash": 2
+      }
+     }
+    },
+    "measured": {
+     "mean": 71504.89689389792,
+     "se": 194.57162025336942,
+     "chars": [
+      62329.07675881806,
+      2331.379984213754,
+      1583.8455796882554,
+      5260.594571177887
+     ],
+     "waits": [
+      {
+       "skill_cd": 1.8760416666666668
+      },
+      {},
+      {
+       "insufficient_energy": 0.04635416666666667,
+       "swap_cd": 1.3291666666666668
+      },
+      {
+       "insufficient_energy": 0.6192708333333334
+      }
+     ],
+     "cpu_seconds": 0.227852061,
+     "config_sha256": "e0873e301a757206d28fb91f8b3f1010cda4ba1fb5ff9c3560a56e3b3ca01492"
+    }
+   },
+   "S_V2S384": {
+    "static": {
+     "tokens": 246,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 3,
+     "element_guards": 1,
+     "while_loops": 5,
+     "if_blocks": 4,
+     "waits": [
+      10,
+      1
+     ],
+     "for_bounds": [
+      3,
+      2
+     ],
+     "written_actions": {
+      "mualani": {
+       "attack": 4,
+       "skill": 2,
+       "jump": 1,
+       "walk": 3
+      },
+      "candace": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "sucrose": {
+       "attack": 4,
+       "charge": 1,
+       "skill": 2,
+       "burst": 1,
+       "dash": 1
+      },
+      "xiangling": {
+       "attack": 6,
+       "skill": 2,
+       "burst": 1,
+       "dash": 2
+      }
+     }
+    },
+    "measured": {
+     "mean": 58617.841498492315,
+     "se": 247.774744828638,
+     "chars": [
+      49358.199415080686,
+      2178.9135724458347,
+      1560.7599037446043,
+      5519.968607221165
+     ],
+     "waits": [
+      {
+       "character_deceased": 0.8968749999999995,
+       "skill_cd": 1.2265625
+      },
+      {},
+      {
+       "swap_cd": 0.6791666666666666
+      },
+      {
+       "insufficient_energy": 2.236458333333333
+      }
+     ],
+     "cpu_seconds": 0.16435959599999997,
+     "config_sha256": "a481aead1468380460e335441925231f0060b2729938d0fa268864bf8edcd917"
+    }
+   },
+   "S_V2T384": {
+    "static": {
+     "tokens": 238,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 3,
+     "element_guards": 1,
+     "while_loops": 5,
+     "if_blocks": 4,
+     "waits": [
+      7,
+      1
+     ],
+     "for_bounds": [
+      3,
+      2
+     ],
+     "written_actions": {
+      "mualani": {
+       "attack": 2,
+       "skill": 2,
+       "jump": 1,
+       "walk": 3
+      },
+      "candace": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "sucrose": {
+       "attack": 4,
+       "skill": 2,
+       "burst": 1,
+       "dash": 1
+      },
+      "xiangling": {
+       "attack": 6,
+       "skill": 2,
+       "burst": 1,
+       "dash": 2
+      }
+     }
+    },
+    "measured": {
+     "mean": 60076.55395061996,
+     "se": 210.79730930327298,
+     "chars": [
+      50774.456289335496,
+      2134.8369674610344,
+      1579.6666332007844,
+      5587.594060622619
+     ],
+     "waits": [
+      {
+       "character_deceased": 0.8999999999999995,
+       "skill_cd": 1.3505208333333334
+      },
+      {},
+      {
+       "insufficient_energy": 0.3,
+       "swap_cd": 0.6000000000000001
+      },
+      {
+       "insufficient_energy": 0.9171875
+      }
+     ],
+     "cpu_seconds": 0.255781422,
+     "config_sha256": "6c97ea81b3f3ac48d641a8a5eb782cbda6106384bcd2ca95eb760d4ef132aa8c"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "mualani",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 5,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "mualani",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 108,
+    "skill_cd": 0,
+    "burst_cd": 792,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 12.0,
+    "mods": []
+   },
+   {
+    "char": "mualani",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 11,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "mualani",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 84,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "candace",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 32,
+    "skill_cd": 342,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 16.87,
+    "mods": [
+     {
+      "on": "candace",
+      "key": "candace-c2",
+      "remaining": 884
+     },
+     {
+      "on": "candace",
+      "key": "candace-particle-icd",
+      "remaining": 14
+     }
+    ]
+   },
+   {
+    "char": "candace",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 53,
+    "skill_cd": 0,
+    "burst_cd": 847,
+    "energy_max": 60,
+    "energy_used": 54,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "candace",
+      "key": "candace-q",
+      "remaining": 700
+     }
+    ]
+   },
+   {
+    "char": "candace",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 11,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "candace",
+    "action": "charge",
+    "ok": false,
+    "error": "candace: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "sucrose",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 11,
+    "skill_cd": 898,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 46.12,
+    "mods": []
+   },
+   {
+    "char": "sucrose",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 47,
+    "skill_cd": 0,
+    "burst_cd": 1171,
+    "energy_max": 80,
+    "energy_used": 80,
+    "team_energy_gain_4s": 12.0,
+    "mods": []
+   },
+   {
+    "char": "sucrose",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 17,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "sucrose",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 54,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "xiangling",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 14,
+    "skill_cd": 719,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 19.63,
+    "mods": [
+     {
+      "on": "xiangling",
+      "key": "xianglingguoba",
+      "remaining": 437
+     }
+    ]
+   },
+   {
+    "char": "xiangling",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 97,
+    "skill_cd": 0,
+    "burst_cd": 1121,
+    "energy_max": 80,
+    "energy_used": 80,
+    "team_energy_gain_4s": 26.15,
+    "mods": [
+     {
+      "on": "mualani",
+      "key": "xiangling-c6",
+      "remaining": 811
+     },
+     {
+      "on": "candace",
+      "key": "xiangling-c6",
+      "remaining": 811
+     },
+     {
+      "on": "sucrose",
+      "key": "xiangling-c6",
+      "remaining": 811
+     },
+     {
+      "on": "xiangling",
+      "key": "xiangling-c6",
+      "remaining": 817
+     },
+     {
+      "on": "xiangling",
+      "key": "favonius-cd",
+      "remaining": 517
+     }
+    ]
+   },
+   {
+    "char": "xiangling",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 12,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "xiangling",
+    "action": "charge",
+    "ok": false,
+    "error": "xiangling: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+  "group": "low",
+  "members": [
+   "neuvillette",
+   "furina",
+   "citlali",
+   "xilonen"
+  ],
+  "selected": {
+   "V2S": {
+    "seed": "37",
+    "audit_seed": 4000421000000,
+    "S_audit": 520241.2738822251,
+    "A_audit": 599611.5675434669,
+    "L_audit": 86833.73615805789
+   },
+   "V2T": {
+    "seed": "11",
+    "audit_seed": 4000395000000,
+    "S_audit": 525643.3528398628
+   }
+  },
+  "measure_seed": 4000421000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 117,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 2,
+     "waits": [
+      173
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "neuvillette": {
+       "charge": 4,
+       "skill": 2,
+       "burst": 1
+      },
+      "furina": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      },
+      "citlali": {
+       "attack": 1,
+       "skill": 1
+      },
+      "xilonen": {
+       "attack": 4,
+       "skill": 2,
+       "burst": 1,
+       "dash": 2
+      }
+     }
+    },
+    "measured": {
+     "mean": 87653.79712547186,
+     "se": 674.4546371011211,
+     "chars": [
+      76475.59874811095,
+      7840.4993312716915,
+      2531.210778140962,
+      806.4882679482713
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.10312500000000005
+      },
+      {
+       "swap_cd": 0.10000000000000005
+      },
+      {
+       "insufficient_energy": 151.23072916666663
+      }
+     ],
+     "cpu_seconds": 0.10921239299999998,
+     "config_sha256": "57ae1d8aba21204750227b84cc9ece31e0e3f7c9b0952dbacf44f57a8740c30b"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 108,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 2,
+     "waits": [
+      715
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "neuvillette": {
+       "charge": 2,
+       "skill": 2,
+       "burst": 1
+      },
+      "furina": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      },
+      "citlali": {
+       "attack": 1,
+       "skill": 1
+      },
+      "xilonen": {
+       "attack": 4,
+       "skill": 2,
+       "dash": 2
+      }
+     }
+    },
+    "measured": {
+     "mean": 599869.2257469525,
+     "se": 431.71519818421206,
+     "chars": [
+      456432.91183492856,
+      122526.35352704534,
+      15558.363162894375,
+      5351.597222086426
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.3666666666666667
+      },
+      {
+       "swap_cd": 0.3666666666666667
+      },
+      {}
+     ],
+     "cpu_seconds": 0.231017101,
+     "config_sha256": "8159a97b4433a4bd62cfa3837f22e4aad82c294858625623e9e010142814d250"
+    }
+   },
+   "S_V2S384": {
+    "static": {
+     "tokens": 426,
+     "time_box": false,
+     "ready_guards": 7,
+     "status_guards": 5,
+     "element_guards": 0,
+     "while_loops": 5,
+     "if_blocks": 10,
+     "waits": [
+      1,
+      173,
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "neuvillette": {
+       "attack": 10,
+       "charge": 3,
+       "skill": 8,
+       "burst": 4,
+       "dash": 2
+      },
+      "furina": {
+       "attack": 10,
+       "skill": 5,
+       "burst": 3,
+       "dash": 3
+      },
+      "citlali": {
+       "attack": 7,
+       "skill": 9,
+       "burst": 4,
+       "dash": 1
+      },
+      "xilonen": {
+       "attack": 17,
+       "skill": 8,
+       "burst": 4
+      }
+     }
+    },
+    "measured": {
+     "mean": 520080.25578895956,
+     "se": 622.0783163900007,
+     "chars": [
+      380144.7023864753,
+      117982.69106007539,
+      15976.32299931685,
+      5976.539343092094
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 0.3671875,
+       "swap_cd": 7.333333333333337
+      },
+      {
+       "swap_cd": 0.5500000000000003
+      },
+      {}
+     ],
+     "cpu_seconds": 0.21732129599999997,
+     "config_sha256": "9ab895d47b1ae784d32be975a6b17f79fedfbddc9002f6beab9200afad1fb702"
+    }
+   },
+   "S_V2T384": {
+    "static": {
+     "tokens": 124,
+     "time_box": false,
+     "ready_guards": 2,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 2,
+     "if_blocks": 2,
+     "waits": [
+      173,
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "neuvillette": {
+       "charge": 3,
+       "skill": 2,
+       "burst": 1,
+       "dash": 1
+      },
+      "furina": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1
+      },
+      "citlali": {
+       "attack": 1,
+       "skill": 2
+      },
+      "xilonen": {
+       "attack": 5,
+       "skill": 2,
+       "dash": 2
+      }
+     }
+    },
+    "measured": {
+     "mean": 526254.1871989889,
+     "se": 325.1580286633838,
+     "chars": [
+      397764.7886867832,
+      103910.07561754924,
+      15804.965979869616,
+      8774.356914788023
+     ],
+     "waits": [
+      {},
+      {},
+      {
+       "skill_cd": 15.0,
+       "swap_cd": 1.950000000000001
+      },
+      {}
+     ],
+     "cpu_seconds": 0.2134809,
+     "config_sha256": "3e15183f48996701cccb797ce4a1083a45f8c3d580f71b2dbdfbaccd8905aa5a"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "neuvillette",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 21,
+    "skill_cd": 719,
+    "burst_cd": 0,
+    "energy_max": 70,
+    "energy_used": 0,
+    "team_energy_gain_4s": 32.64,
+    "mods": []
+   },
+   {
+    "char": "neuvillette",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 120,
+    "skill_cd": 0,
+    "burst_cd": 960,
+    "energy_max": 70,
+    "energy_used": 70,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 875
+     }
+    ]
+   },
+   {
+    "char": "neuvillette",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 19,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 70,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     }
+    ]
+   },
+   {
+    "char": "neuvillette",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 17,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 70,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "furina",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 1182,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 10.66,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "center-of-attention",
+      "remaining": 582
+     },
+     {
+      "on": "furina",
+      "key": "furina-skill",
+      "remaining": 1736
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 111,
+    "skill_cd": 0,
+    "burst_cd": 789,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "furina-burst",
+      "remaining": 1076
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 887
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "spiritbreath-thorn-icd",
+      "remaining": 360
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 33,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "citlali",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 41,
+    "skill_cd": 937,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 34.64,
+    "mods": [
+     {
+      "on": "citlali",
+      "key": "nightsoul-blessing",
+      "remaining": 1177
+     },
+     {
+      "on": "citlali",
+      "key": "starcallerswatch-icd",
+      "remaining": 836
+     },
+     {
+      "on": "citlali",
+      "key": "starcallerswatch",
+      "remaining": 896
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 879
+     }
+    ]
+   },
+   {
+    "char": "citlali",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 110,
+    "skill_cd": 0,
+    "burst_cd": 790,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "citlali",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 16,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "citlali",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 45,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 21.32,
+    "mods": [
+     {
+      "on": "neuvillette",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "furina",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "citlali",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-e-recast-cd",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nightsoul-blessing",
+      "remaining": 768
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-particle-icd",
+      "remaining": 21
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 92,
+    "skill_cd": 0,
+    "burst_cd": 808,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff",
+      "remaining": 360
+     },
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "charge",
+    "ok": false,
+    "error": "xilonen: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "mualani-mona-xilonen-mavuika--M8TgfHLLtqbp",
+  "group": "low",
+  "members": [
+   "mualani",
+   "mona",
+   "xilonen",
+   "mavuika"
+  ],
+  "selected": {
+   "V2S": {
+    "seed": "91",
+    "audit_seed": 4000475000000,
+    "S_audit": 96631.74414930576,
+    "A_audit": 107672.09004094229,
+    "L_audit": 92229.500051882
+   },
+   "V2T": {
+    "seed": "91",
+    "audit_seed": 4000475000000,
+    "S_audit": 96446.81873052243
+   }
+  },
+  "measure_seed": 4000475000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 151,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 2,
+     "if_blocks": 2,
+     "waits": [],
+     "for_bounds": [
+      3,
+      4
+     ],
+     "written_actions": {
+      "mualani": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1,
+       "walk": 2
+      },
+      "mona": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1,
+       "jump": 2
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1
+      },
+      "mavuika": {
+       "charge": 1,
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 92152.78155291024,
+     "se": 95.59801694027179,
+     "chars": [
+      67507.23995215888,
+      3572.4391119159413,
+      909.5696019583238,
+      20163.532886877067
+     ],
+     "waits": [
+      {},
+      {},
+      {},
+      {
+       "burst_cd": 1.950000000000001
+      }
+     ],
+     "cpu_seconds": 0.185952879,
+     "config_sha256": "ae9034cafd7ae5246fce36baf2c80460cded7cbc135cd95dd9da0d07e7017aa8"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 111,
+     "time_box": false,
+     "ready_guards": 1,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 2,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "mualani": {
+       "attack": 3,
+       "skill": 1,
+       "burst": 1,
+       "walk": 4
+      },
+      "mona": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1
+      },
+      "mavuika": {
+       "charge": 1,
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 107317.00103023776,
+     "se": 248.42514878361078,
+     "chars": [
+      79950.81995589325,
+      3593.9132916783906,
+      1405.3366794453261,
+      22366.931103220766
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 0.7947916666666667
+      },
+      {},
+      {
+       "burst_cd": 2.7973958333333315
+      }
+     ],
+     "cpu_seconds": 0.089651255,
+     "config_sha256": "836a216c79e5597d656af473e3e9c9fab85ae1e6ce5b1c2373ad61a69b27ec49"
+    }
+   },
+   "S_V2S384": {
+    "static": {
+     "tokens": 221,
+     "time_box": false,
+     "ready_guards": 1,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 3,
+     "if_blocks": 4,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      3,
+      4
+     ],
+     "written_actions": {
+      "mualani": {
+       "attack": 3,
+       "skill": 2,
+       "burst": 2,
+       "walk": 3
+      },
+      "mona": {
+       "attack": 1,
+       "charge": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 3,
+       "skill": 1
+      },
+      "mavuika": {
+       "charge": 1,
+       "skill": 3,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 96868.10826000797,
+     "se": 147.97247979523235,
+     "chars": [
+      72534.5685557501,
+      3490.4575252723043,
+      897.4247170932483,
+      19945.657461892315
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 0.7078125000000001,
+       "swap_cd": 1.5
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.16815028099999996,
+     "config_sha256": "5663a1ac59b8081fe874a3b98927350986f24a71edd542f0719298208491b277"
+    }
+   },
+   "S_V2T384": {
+    "static": {
+     "tokens": 221,
+     "time_box": false,
+     "ready_guards": 1,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 3,
+     "if_blocks": 4,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      3,
+      4
+     ],
+     "written_actions": {
+      "mualani": {
+       "attack": 3,
+       "skill": 2,
+       "burst": 2,
+       "walk": 3
+      },
+      "mona": {
+       "attack": 1,
+       "charge": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 3,
+       "skill": 1
+      },
+      "mavuika": {
+       "charge": 1,
+       "skill": 3,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 96519.85581970497,
+     "se": 222.6239805337683,
+     "chars": [
+      72202.04398635928,
+      3532.995918054367,
+      888.7165582383741,
+      19896.099357052957
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 1.1208333333333333,
+       "swap_cd": 1.5
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.18411101299999996,
+     "config_sha256": "e2675a2e147adab8eb5e0a8a424ccee1b8df5488d4019748a49fb281dd68966a"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "mualani",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 5,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "mualani",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 108,
+    "skill_cd": 0,
+    "burst_cd": 792,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "mualani",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 11,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-fighting-spirit-na-icd",
+      "remaining": 6
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 600
+     }
+    ]
+   },
+   {
+    "char": "mualani",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 84,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 600
+     }
+    ]
+   },
+   {
+    "char": "mona",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 28,
+    "skill_cd": 716,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mualani",
+      "key": "celestialgift-4pc-holder-hydro",
+      "remaining": 1172
+     },
+     {
+      "on": "mona",
+      "key": "celestialgift-4pc-active",
+      "remaining": 1172
+     },
+     {
+      "on": "mona",
+      "key": "celestialgift-4pc-holder",
+      "remaining": 1172
+     },
+     {
+      "on": "mona",
+      "key": "celestialgift-4pc-holder-hydro",
+      "remaining": 1172
+     },
+     {
+      "on": "xilonen",
+      "key": "celestialgift-4pc-holder-hydro",
+      "remaining": 1172
+     },
+     {
+      "on": "mavuika",
+      "key": "celestialgift-4pc-holder-hydro",
+      "remaining": 1172
+     }
+    ]
+   },
+   {
+    "char": "mona",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 104,
+    "skill_cd": 0,
+    "burst_cd": 796,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mona",
+      "key": "mona-c2-hexerei-post-burst-ca",
+      "remaining": 196
+     }
+    ]
+   },
+   {
+    "char": "mona",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 11,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mona",
+      "key": "mona-c2-icd",
+      "remaining": 300
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-fighting-spirit-na-icd",
+      "remaining": 6
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 600
+     }
+    ]
+   },
+   {
+    "char": "mona",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 54,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 29.01,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-e-recast-cd",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nightsoul-blessing",
+      "remaining": 525
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-particle-icd",
+      "remaining": 21
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 591
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 92,
+    "skill_cd": 0,
+    "burst_cd": 808,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mavuika",
+      "key": "mavuika-fighting-spirit-na-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "charge",
+    "ok": false,
+    "error": "xilonen: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "mavuika",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 900,
+    "burst_cd": 0,
+    "energy_max": 0,
+    "energy_used": 0,
+    "team_energy_gain_4s": 15.59,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 898
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 598
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-particle-icd",
+      "remaining": 28
+     }
+    ]
+   },
+   {
+    "char": "mavuika",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 116,
+    "skill_cd": 0,
+    "burst_cd": 964,
+    "energy_max": 0,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 890
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-burst",
+      "remaining": 409
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a4",
+      "remaining": 1190
+     },
+     {
+      "on": "mavuika",
+      "key": "mavuika-a1",
+      "remaining": 590
+     }
+    ]
+   },
+   {
+    "char": "mavuika",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 21,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 0,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mavuika",
+      "key": "mavuika-fighting-spirit-na-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "mavuika",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 79,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 0,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "wriothesley-furina-xilonen-bennett--PFGMCrLDpbcq",
+  "group": "solved",
+  "members": [
+   "wriothesley",
+   "furina",
+   "xilonen",
+   "bennett"
+  ],
+  "selected": {
+   "V2S": {
+    "seed": "11",
+    "audit_seed": 4000395000000,
+    "S_audit": 277919.21801789023,
+    "A_audit": 272997.13712350157,
+    "L_audit": 99333.66902137932
+   },
+   "V2T": {
+    "seed": "11",
+    "audit_seed": 4000395000000,
+    "S_audit": 268252.91321435565
+   }
+  },
+  "measure_seed": 4000395000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 122,
+     "time_box": false,
+     "ready_guards": 1,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 1,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "wriothesley": {
+       "attack": 19,
+       "charge": 5,
+       "skill": 1,
+       "burst": 1,
+       "jump": 5
+      },
+      "furina": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 4,
+       "skill": 2,
+       "burst": 1
+      },
+      "bennett": {
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 98954.23379213337,
+     "se": 1194.2599898066635,
+     "chars": [
+      67091.4093627038,
+      27083.527915779643,
+      3977.2550579460512,
+      802.0414557038589
+     ],
+     "waits": [
+      {},
+      {},
+      {
+       "insufficient_energy": 164.6645833333333
+      },
+      {}
+     ],
+     "cpu_seconds": 0.12014053,
+     "config_sha256": "dfef2f3fd25caeb06742e1f1b611faa8fbd951ea1faeb1f4a9ce5181d6ebfc62"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 127,
+     "time_box": false,
+     "ready_guards": 1,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 1,
+     "waits": [
+      3
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "wriothesley": {
+       "attack": 24,
+       "charge": 4,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1,
+       "jump": 3
+      },
+      "furina": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1,
+       "swap": 1
+      },
+      "bennett": {
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 274194.8436343636,
+     "se": 882.1449510032387,
+     "chars": [
+      212060.77420331733,
+      54027.18740080863,
+      4322.087267566049,
+      3784.794762672361
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 6.328645833333334,
+       "skill_cd": 1.568229166666667
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.205680282,
+     "config_sha256": "87c18519d756f8abf953f9878efc2b3f521f200de23398470808711fb4390155"
+    }
+   },
+   "S_V2S384": {
+    "static": {
+     "tokens": 723,
+     "time_box": false,
+     "ready_guards": 15,
+     "status_guards": 3,
+     "element_guards": 0,
+     "while_loops": 13,
+     "if_blocks": 15,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "wriothesley": {
+       "attack": 59,
+       "charge": 14,
+       "skill": 5,
+       "burst": 2,
+       "dash": 2,
+       "jump": 10,
+       "high_plunge": 1
+      },
+      "furina": {
+       "attack": 4,
+       "charge": 1,
+       "skill": 3,
+       "burst": 3,
+       "dash": 2
+      },
+      "xilonen": {
+       "attack": 27,
+       "skill": 13,
+       "burst": 7
+      },
+      "bennett": {
+       "attack": 10,
+       "charge": 2,
+       "skill": 11,
+       "burst": 9,
+       "dash": 7,
+       "high_plunge": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 277476.5837298634,
+     "se": 360.200148797208,
+     "chars": [
+      199866.6296374837,
+      64147.5299087301,
+      9134.964273010974,
+      4327.459910639379
+     ],
+     "waits": [
+      {
+       "swap_cd": 0.75
+      },
+      {
+       "insufficient_energy": 0.3911458333333333
+      },
+      {
+       "no_failure": 1.633333333333333
+      },
+      {}
+     ],
+     "cpu_seconds": 0.195544487,
+     "config_sha256": "6f0de6ccc7eab8164318dc3344c87ce1ef4e9300fd139614a6e3f0c844645474"
+    }
+   },
+   "S_V2T384": {
+    "static": {
+     "tokens": 196,
+     "time_box": false,
+     "ready_guards": 4,
+     "status_guards": 0,
+     "element_guards": 1,
+     "while_loops": 2,
+     "if_blocks": 6,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "wriothesley": {
+       "attack": 18,
+       "charge": 4,
+       "skill": 2,
+       "dash": 2,
+       "jump": 1
+      },
+      "furina": {
+       "attack": 3,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 4,
+       "skill": 4,
+       "dash": 1
+      },
+      "bennett": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1,
+       "high_plunge": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 268120.8127797157,
+     "se": 346.1471627197648,
+     "chars": [
+      186096.79273639832,
+      67292.63690502531,
+      9205.701630618789,
+      5525.681507673804
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 0.19427083333333334
+      },
+      {
+       "no_failure": 1.7489583333333334,
+       "skill_cd": 3.779687500000001
+      },
+      {}
+     ],
+     "cpu_seconds": 0.203487517,
+     "config_sha256": "d1815e4ba9499a34b7fb6a1b972d93a81318c5698df7beb3ceb15e4b27e07aee"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "wriothesley",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 5,
+    "skill_cd": 956,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "wriothesley",
+      "key": "wriothesley-e",
+      "remaining": 596
+     },
+     {
+      "on": "wriothesley",
+      "key": "wriothesley-a4",
+      "remaining": 596
+     }
+    ]
+   },
+   {
+    "char": "wriothesley",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 94,
+    "skill_cd": 0,
+    "burst_cd": 806,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 12.0,
+    "mods": []
+   },
+   {
+    "char": "wriothesley",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 12,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     }
+    ]
+   },
+   {
+    "char": "wriothesley",
+    "action": "charge",
+    "ok": false,
+    "error": "wriothesley: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "furina",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 1182,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 13.16,
+    "mods": [
+     {
+      "on": "wriothesley",
+      "key": "tom-4pc",
+      "remaining": 180
+     },
+     {
+      "on": "furina",
+      "key": "center-of-attention",
+      "remaining": 582
+     },
+     {
+      "on": "furina",
+      "key": "furina-skill",
+      "remaining": 1736
+     },
+     {
+      "on": "furina",
+      "key": "tom-4pc-icd",
+      "remaining": 30
+     },
+     {
+      "on": "furina",
+      "key": "tom-4pc",
+      "remaining": 180
+     },
+     {
+      "on": "xilonen",
+      "key": "tom-4pc",
+      "remaining": 180
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     },
+     {
+      "on": "bennett",
+      "key": "tom-4pc",
+      "remaining": 180
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 111,
+    "skill_cd": 0,
+    "burst_cd": 789,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "furina-burst",
+      "remaining": 1076
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 887
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 12.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "spiritbreath-thorn-icd",
+      "remaining": 360
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 33,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 27.96,
+    "mods": [
+     {
+      "on": "wriothesley",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "furina",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-e-recast-cd",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nightsoul-blessing",
+      "remaining": 768
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-particle-icd",
+      "remaining": 21
+     },
+     {
+      "on": "bennett",
+      "key": "xilonen-c4",
+      "remaining": 885
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 92,
+    "skill_cd": 0,
+    "burst_cd": 808,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 12.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff",
+      "remaining": 360
+     },
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "charge",
+    "ok": false,
+    "error": "xilonen: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "bennett",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 31,
+    "skill_cd": 223,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 22.94,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 885
+     },
+     {
+      "on": "bennett",
+      "key": "bennett-press-particle-icd",
+      "remaining": 3
+     }
+    ]
+   },
+   {
+    "char": "bennett",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 49,
+    "skill_cd": 0,
+    "burst_cd": 885,
+    "energy_max": 60,
+    "energy_used": 54,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 888
+     },
+     {
+      "on": "bennett",
+      "key": "skyward-blade",
+      "remaining": 671
+     },
+     {
+      "on": "bennett",
+      "key": "bennett-field",
+      "remaining": 111
+     }
+    ]
+   },
+   {
+    "char": "bennett",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 13,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "bennett",
+    "action": "charge",
+    "ok": false,
+    "error": "bennett: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "yoimiya-furina-yunjin-xilonen--rk6QCLfwKJkD",
+  "group": "solved",
+  "members": [
+   "yoimiya",
+   "furina",
+   "xilonen",
+   "yunjin"
+  ],
+  "selected": {
+   "V2S": {
+    "seed": "11",
+    "audit_seed": 4000395000000,
+    "S_audit": 234414.1885269664,
+    "A_audit": 239728.84693272068,
+    "L_audit": 96394.3875670095
+   },
+   "V2T": {
+    "seed": "11",
+    "audit_seed": 4000395000000,
+    "S_audit": 236047.54444690255
+   }
+  },
+  "measure_seed": 4000395000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 80,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 0,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "yoimiya": {
+       "attack": 18,
+       "skill": 1,
+       "dash": 3
+      },
+      "furina": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1
+      },
+      "yunjin": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 95776.78717152684,
+     "se": 1105.488520105685,
+     "chars": [
+      57093.72776875564,
+      34116.36628088552,
+      3290.852112118957,
+      1275.841009766776
+     ],
+     "waits": [
+      {},
+      {},
+      {
+       "insufficient_energy": 167.49270833333335
+      },
+      {}
+     ],
+     "cpu_seconds": 0.107184007,
+     "config_sha256": "64a83c3a5964fb37c76bfd983a9e988ad1dd3e6f2e4a6a7839c2c6d6ea9f7308"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 103,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 1,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "yoimiya": {
+       "attack": 18,
+       "skill": 1,
+       "burst": 1,
+       "dash": 3
+      },
+      "furina": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      },
+      "xilonen": {
+       "attack": 4,
+       "skill": 3,
+       "burst": 1
+      },
+      "yunjin": {
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 239802.5318431884,
+     "se": 1079.5018431450692,
+     "chars": [
+      144894.3676081699,
+      75647.1684863171,
+      17106.109160645134,
+      2154.8865880563126
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 1.7442708333333332,
+       "skill_cd": 0.7468749999999998
+      },
+      {
+       "insufficient_energy": 3.2807291666666676,
+       "no_failure": 1.1536458333333335
+      },
+      {
+       "insufficient_energy": 0.2947916666666667
+      }
+     ],
+     "cpu_seconds": 0.200654222,
+     "config_sha256": "d1057011e7a5939c8e644df4b9a094e7f2069a7a217584bf977a73dea8cbc168"
+    }
+   },
+   "S_V2S384": {
+    "static": {
+     "tokens": 272,
+     "time_box": false,
+     "ready_guards": 3,
+     "status_guards": 4,
+     "element_guards": 0,
+     "while_loops": 3,
+     "if_blocks": 8,
+     "waits": [
+      1,
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "yoimiya": {
+       "attack": 16,
+       "skill": 2,
+       "dash": 3
+      },
+      "furina": {
+       "attack": 5,
+       "skill": 1,
+       "burst": 1,
+       "high_plunge": 1
+      },
+      "xilonen": {
+       "attack": 7,
+       "skill": 4,
+       "burst": 1,
+       "dash": 2
+      },
+      "yunjin": {
+       "attack": 3,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 234532.83118558084,
+     "se": 608.3090475784645,
+     "chars": [
+      134268.63135303318,
+      83073.55916085576,
+      13939.602648273214,
+      3251.0380234185523
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 2.5
+      },
+      {
+       "skill_cd": 0.5
+      },
+      {}
+     ],
+     "cpu_seconds": 0.220377525,
+     "config_sha256": "c78cbf5e536107d5069e38e0563a3c6fd916128d4261406fe51fe4a4a6474fed"
+    }
+   },
+   "S_V2T384": {
+    "static": {
+     "tokens": 164,
+     "time_box": false,
+     "ready_guards": 5,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 1,
+     "if_blocks": 5,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "yoimiya": {
+       "attack": 16,
+       "skill": 1,
+       "burst": 1,
+       "dash": 4
+      },
+      "furina": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 4,
+       "skill": 3,
+       "burst": 1
+      },
+      "yunjin": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 235652.47240769007,
+     "se": 508.0463569072621,
+     "chars": [
+      150330.32878055048,
+      69363.71714973866,
+      13428.623437608327,
+      2529.8030397926386
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 2.2380208333333336,
+       "skill_cd": 5.279166666666666
+      },
+      {
+       "skill_cd": 0.25729166666666664
+      },
+      {
+       "swap_cd": 1.25
+      }
+     ],
+     "cpu_seconds": 0.185200345,
+     "config_sha256": "5ab339b5314c9a6e1aab311c6ed6cffe2cbd1545410ec62c9b33f0c0174c3de6"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "yoimiya",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 22,
+    "skill_cd": 1069,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "yoimiya",
+      "key": "thundering-pulse-skill",
+      "remaining": 578
+     },
+     {
+      "on": "yoimiya",
+      "key": "yoimiyaskill",
+      "remaining": 589
+     }
+    ]
+   },
+   {
+    "char": "yoimiya",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 109,
+    "skill_cd": 0,
+    "burst_cd": 791,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "yoimiya-a4",
+      "remaining": 866
+     },
+     {
+      "on": "xilonen",
+      "key": "yoimiya-a4",
+      "remaining": 866
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 866
+     },
+     {
+      "on": "yunjin",
+      "key": "yoimiya-a4",
+      "remaining": 866
+     }
+    ]
+   },
+   {
+    "char": "yoimiya",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 24,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "yoimiya",
+    "action": "charge",
+    "ok": false,
+    "error": "engine panic"
+   },
+   {
+    "char": "furina",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 1182,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 12.87,
+    "mods": [
+     {
+      "on": "yoimiya",
+      "key": "tom-4pc",
+      "remaining": 180
+     },
+     {
+      "on": "furina",
+      "key": "center-of-attention",
+      "remaining": 582
+     },
+     {
+      "on": "furina",
+      "key": "furina-skill",
+      "remaining": 1736
+     },
+     {
+      "on": "furina",
+      "key": "khaj-nisut-buff",
+      "remaining": 1200
+     },
+     {
+      "on": "furina",
+      "key": "khaj-nisut-icd",
+      "remaining": 18
+     },
+     {
+      "on": "furina",
+      "key": "tom-4pc-icd",
+      "remaining": 30
+     },
+     {
+      "on": "furina",
+      "key": "tom-4pc",
+      "remaining": 180
+     },
+     {
+      "on": "xilonen",
+      "key": "tom-4pc",
+      "remaining": 180
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     },
+     {
+      "on": "yunjin",
+      "key": "tom-4pc",
+      "remaining": 180
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 111,
+    "skill_cd": 0,
+    "burst_cd": 789,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "furina-burst",
+      "remaining": 1076
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 887
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "spiritbreath-thorn-icd",
+      "remaining": 360
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 33,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 40.68,
+    "mods": [
+     {
+      "on": "yoimiya",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "furina",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-e-recast-cd",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nightsoul-blessing",
+      "remaining": 768
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-particle-icd",
+      "remaining": 21
+     },
+     {
+      "on": "yunjin",
+      "key": "xilonen-c4",
+      "remaining": 885
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 92,
+    "skill_cd": 0,
+    "burst_cd": 808,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff",
+      "remaining": 360
+     },
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "charge",
+    "ok": false,
+    "error": "xilonen: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "yunjin",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 56,
+    "skill_cd": 398,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 21.83,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 857
+     },
+     {
+      "on": "yunjin",
+      "key": "footprint-def",
+      "remaining": 852
+     }
+    ]
+   },
+   {
+    "char": "yunjin",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 41,
+    "skill_cd": 0,
+    "burst_cd": 859,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "yoimiya",
+      "key": "nob-4pc",
+      "remaining": 679
+     },
+     {
+      "on": "yoimiya",
+      "key": "yunjin-q",
+      "remaining": 714
+     },
+     {
+      "on": "yoimiya",
+      "key": "yunjin-c2",
+      "remaining": 714
+     },
+     {
+      "on": "yoimiya",
+      "key": "yunjin-c6",
+      "remaining": 714
+     },
+     {
+      "on": "furina",
+      "key": "nob-4pc",
+      "remaining": 679
+     },
+     {
+      "on": "furina",
+      "key": "yunjin-q",
+      "remaining": 714
+     },
+     {
+      "on": "furina",
+      "key": "yunjin-c2",
+      "remaining": 714
+     },
+     {
+      "on": "furina",
+      "key": "yunjin-c6",
+      "remaining": 714
+     },
+     {
+      "on": "xilonen",
+      "key": "nob-4pc",
+      "remaining": 679
+     },
+     {
+      "on": "xilonen",
+      "key": "yunjin-q",
+      "remaining": 714
+     },
+     {
+      "on": "xilonen",
+      "key": "yunjin-c2",
+      "remaining": 714
+     },
+     {
+      "on": "xilonen",
+      "key": "yunjin-c6",
+      "remaining": 714
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 894
+     },
+     {
+      "on": "yunjin",
+      "key": "nob-4pc",
+      "remaining": 679
+     },
+     {
+      "on": "yunjin",
+      "key": "yunjin-q",
+      "remaining": 714
+     },
+     {
+      "on": "yunjin",
+      "key": "yunjin-c2",
+      "remaining": 714
+     },
+     {
+      "on": "yunjin",
+      "key": "yunjin-c6",
+      "remaining": 714
+     }
+    ]
+   },
+   {
+    "char": "yunjin",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "yunjin",
+    "action": "charge",
+    "ok": false,
+    "error": "yunjin: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+  "group": "solved",
+  "members": [
+   "wriothesley",
+   "shenhe",
+   "kaedeharakazuha",
+   "xilonen"
+  ],
+  "selected": {
+   "V2S": {
+    "seed": "91",
+    "audit_seed": 4000475000000,
+    "S_audit": 337155.95587327384,
+    "A_audit": 337929.05659159645,
+    "L_audit": 45563.55571462639
+   },
+   "V2T": {
+    "seed": "91",
+    "audit_seed": 4000475000000,
+    "S_audit": 341385.42012570484
+   }
+  },
+  "measure_seed": 4000475000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 153,
+     "time_box": false,
+     "ready_guards": 1,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 4,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "wriothesley": {
+       "attack": 19,
+       "charge": 6,
+       "skill": 1,
+       "burst": 1,
+       "jump": 5
+      },
+      "shenhe": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      },
+      "kaedeharakazuha": {},
+      "xilonen": {
+       "attack": 2,
+       "skill": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 45570.921929638185,
+     "se": 59.704262402544785,
+     "chars": [
+      39741.888960227734,
+      2655.422584581739,
+      1777.215081901834,
+      1396.3953029268687
+     ],
+     "waits": [
+      {},
+      {},
+      {
+       "insufficient_energy": 232.03333333333353
+      },
+      {}
+     ],
+     "cpu_seconds": 0.066903168,
+     "config_sha256": "ca451a422e36e451a16911af86b91b88e824e59c72732af07d6b9ccecc5cfdac"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 110,
+     "time_box": false,
+     "ready_guards": 1,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 2,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "wriothesley": {
+       "attack": 15,
+       "charge": 3,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1,
+       "jump": 2
+      },
+      "shenhe": {
+       "skill": 1,
+       "burst": 1
+      },
+      "kaedeharakazuha": {},
+      "xilonen": {
+       "attack": 2,
+       "skill": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 337913.4433419483,
+     "se": 190.19874683355644,
+     "chars": [
+      314117.1574017711,
+      10869.544316371192,
+      6278.012439602659,
+      6648.729184202971
+     ],
+     "waits": [
+      {
+       "skill_cd": 1.649999999999999
+      },
+      {
+       "swap_cd": 2.4000000000000004
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.10804066,
+     "config_sha256": "4f5d4985c91d3747f2914adfef367406ce2030b9f94cdb837a0cd5e1dd8fbee7"
+    }
+   },
+   "S_V2S384": {
+    "static": {
+     "tokens": 361,
+     "time_box": false,
+     "ready_guards": 3,
+     "status_guards": 1,
+     "element_guards": 3,
+     "while_loops": 4,
+     "if_blocks": 8,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "wriothesley": {
+       "attack": 36,
+       "charge": 10,
+       "skill": 2,
+       "burst": 4,
+       "dash": 2,
+       "jump": 1
+      },
+      "shenhe": {
+       "attack": 3,
+       "skill": 2,
+       "burst": 3,
+       "walk": 1,
+       "swap": 1
+      },
+      "kaedeharakazuha": {
+       "attack": 3,
+       "skill": 2,
+       "dash": 2,
+       "high_plunge": 1
+      },
+      "xilonen": {
+       "attack": 10,
+       "skill": 4,
+       "burst": 4,
+       "dash": 1,
+       "high_plunge": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 336739.2372915699,
+     "se": 480.44577264048394,
+     "chars": [
+      314186.4671115785,
+      10103.796435594642,
+      6506.9762750107975,
+      5941.997469386368
+     ],
+     "waits": [
+      {
+       "skill_cd": 0.7484375
+      },
+      {
+       "insufficient_energy": 0.215625,
+       "swap_cd": 4.805208333333334
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.118571949,
+     "config_sha256": "78c066b6e09842cc8da3f1afa00476df2502704577147f4b4eeb115eb3a36ce5"
+    }
+   },
+   "S_V2T384": {
+    "static": {
+     "tokens": 149,
+     "time_box": false,
+     "ready_guards": 2,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 1,
+     "if_blocks": 4,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "wriothesley": {
+       "attack": 21,
+       "charge": 5,
+       "skill": 1,
+       "burst": 2,
+       "dash": 2,
+       "jump": 1
+      },
+      "shenhe": {
+       "skill": 1,
+       "burst": 1
+      },
+      "kaedeharakazuha": {},
+      "xilonen": {
+       "attack": 2,
+       "skill": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 341372.2633950326,
+     "se": 198.6323775730367,
+     "chars": [
+      317535.9738021304,
+      11237.200214407645,
+      6444.558441842679,
+      6154.530936652023
+     ],
+     "waits": [
+      {
+       "skill_cd": 0.75
+      },
+      {
+       "swap_cd": 2.6182291666666653
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.11604306499999999,
+     "config_sha256": "0b574fb1dd35e56bbda4e9c6550c3b3146b95262988fa3343a47defcf2268a6e"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "wriothesley",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 5,
+    "skill_cd": 956,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "wriothesley",
+      "key": "wriothesley-e",
+      "remaining": 596
+     },
+     {
+      "on": "wriothesley",
+      "key": "wriothesley-a4",
+      "remaining": 596
+     }
+    ]
+   },
+   {
+    "char": "wriothesley",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 94,
+    "skill_cd": 0,
+    "burst_cd": 806,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 12.0,
+    "mods": []
+   },
+   {
+    "char": "wriothesley",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 12,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     }
+    ]
+   },
+   {
+    "char": "wriothesley",
+    "action": "charge",
+    "ok": false,
+    "error": "wriothesley: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "shenhe",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 21,
+    "skill_cd": 581,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 22.96,
+    "mods": [
+     {
+      "on": "wriothesley",
+      "key": "shenhe-quill",
+      "remaining": 582
+     },
+     {
+      "on": "wriothesley",
+      "key": "shenhe-a4-press",
+      "remaining": 582
+     },
+     {
+      "on": "shenhe",
+      "key": "calamity-consummation",
+      "remaining": 1179
+     },
+     {
+      "on": "shenhe",
+      "key": "shenhe-quill",
+      "remaining": 582
+     },
+     {
+      "on": "shenhe",
+      "key": "shenhe-a4-press",
+      "remaining": 582
+     },
+     {
+      "on": "shenhe",
+      "key": "shenhe-c4",
+      "remaining": 3583
+     },
+     {
+      "on": "kaedeharakazuha",
+      "key": "shenhe-quill",
+      "remaining": 582
+     },
+     {
+      "on": "kaedeharakazuha",
+      "key": "shenhe-a4-press",
+      "remaining": 582
+     },
+     {
+      "on": "xilonen",
+      "key": "shenhe-quill",
+      "remaining": 582
+     },
+     {
+      "on": "xilonen",
+      "key": "shenhe-a4-press",
+      "remaining": 582
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 883
+     }
+    ]
+   },
+   {
+    "char": "shenhe",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 78,
+    "skill_cd": 0,
+    "burst_cd": 1122,
+    "energy_max": 80,
+    "energy_used": 74,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "shenhe",
+      "key": "shenheburst",
+      "remaining": 1002
+     },
+     {
+      "on": "shenhe",
+      "key": "shenhe-a1",
+      "remaining": 23
+     },
+     {
+      "on": "shenhe",
+      "key": "shenhe-c2",
+      "remaining": 23
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     }
+    ]
+   },
+   {
+    "char": "shenhe",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 14,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "shenhe",
+    "action": "charge",
+    "ok": false,
+    "error": "shenhe: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "kaedeharakazuha",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 24,
+    "skill_cd": 308,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 16.58,
+    "mods": [
+     {
+      "on": "kaedeharakazuha",
+      "key": "kazuha-c6-dmgup",
+      "remaining": 286
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 886
+     }
+    ]
+   },
+   {
+    "char": "kaedeharakazuha",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 93,
+    "skill_cd": 0,
+    "burst_cd": 807,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "kaedeharakazuha",
+      "key": "kazuha-c2",
+      "remaining": 51
+     },
+     {
+      "on": "kaedeharakazuha",
+      "key": "kazuha-c6-dmgup",
+      "remaining": 293
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 889
+     }
+    ]
+   },
+   {
+    "char": "kaedeharakazuha",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 13,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "kaedeharakazuha",
+    "action": "charge",
+    "ok": false,
+    "error": "kaedeharakazuha: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 22.11,
+    "mods": [
+     {
+      "on": "wriothesley",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "shenhe",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "kaedeharakazuha",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-e-recast-cd",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nightsoul-blessing",
+      "remaining": 768
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-particle-icd",
+      "remaining": 21
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 92,
+    "skill_cd": 0,
+    "burst_cd": 808,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 12.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff",
+      "remaining": 360
+     },
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "charge",
+    "ok": false,
+    "error": "xilonen: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "raidenshogun-furina-xilonen-yelan--PhjwKhdjDwtb",
+  "group": "solved",
+  "members": [
+   "raidenshogun",
+   "furina",
+   "yelan",
+   "xilonen"
+  ],
+  "selected": {
+   "V2S": {
+    "seed": "11",
+    "audit_seed": 4000395000000,
+    "S_audit": 336514.3450324652,
+    "A_audit": 354748.24658246874,
+    "L_audit": 173686.5012653867
+   },
+   "V2T": {
+    "seed": "37",
+    "audit_seed": 4000421000000,
+    "S_audit": 344849.3956989801
+   }
+  },
+  "measure_seed": 4000395000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 88,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 0,
+     "waits": [],
+     "for_bounds": [
+      6
+     ],
+     "written_actions": {
+      "raidenshogun": {},
+      "furina": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      },
+      "yelan": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 174318.22869859383,
+     "se": 1143.487859794097,
+     "chars": [
+      47495.42804953292,
+      51066.256795836474,
+      71588.33449831387,
+      4168.2093549106075
+     ],
+     "waits": [
+      {
+       "skill_cd": 17.35416666666666
+      },
+      {
+       "swap_cd": 1.2869791666666668
+      },
+      {
+       "insufficient_energy": 51.98906250000001
+      },
+      {}
+     ],
+     "cpu_seconds": 0.182507256,
+     "config_sha256": "ea346081214cd60102cd635cd6404cc1387e9845ce834ae3793c9a92284d5327"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 87,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 0,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "raidenshogun": {},
+      "furina": {
+       "attack": 2,
+       "charge": 2,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      },
+      "yelan": {
+       "attack": 5,
+       "skill": 2,
+       "burst": 1
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 354007.857369221,
+     "se": 496.6277683771476,
+     "chars": [
+      58932.52333987358,
+      115617.57669555339,
+      173249.941543098,
+      6207.815790696289
+     ],
+     "waits": [
+      {},
+      {},
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.21742352,
+     "config_sha256": "23d3357a091037f439109be8fb0df2eabd51ea7c25a27e69329361bf8ae74ef4"
+    }
+   },
+   "S_V2S384": {
+    "static": {
+     "tokens": 656,
+     "time_box": false,
+     "ready_guards": 12,
+     "status_guards": 8,
+     "element_guards": 0,
+     "while_loops": 7,
+     "if_blocks": 21,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      6
+     ],
+     "written_actions": {
+      "raidenshogun": {
+       "attack": 49,
+       "skill": 3,
+       "burst": 5,
+       "dash": 7
+      },
+      "furina": {
+       "attack": 12,
+       "charge": 3,
+       "skill": 5,
+       "burst": 2,
+       "walk": 1,
+       "high_plunge": 1,
+       "swap": 1
+      },
+      "yelan": {
+       "attack": 11,
+       "skill": 8,
+       "burst": 1,
+       "dash": 2
+      },
+      "xilonen": {
+       "attack": 10,
+       "charge": 1,
+       "skill": 2,
+       "burst": 2,
+       "dash": 2,
+       "jump": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 336304.5448578934,
+     "se": 407.36258848811303,
+     "chars": [
+      46629.2520882675,
+      105882.6943510424,
+      179608.46476251414,
+      4184.133656069241
+     ],
+     "waits": [
+      {},
+      {},
+      {
+       "insufficient_energy": 0.03177083333333333,
+       "swap_cd": 1.3999999999999992
+      },
+      {}
+     ],
+     "cpu_seconds": 0.21583741999999997,
+     "config_sha256": "546092fa6217cc090b7d66941cd89227c4d6f79fe48643c82988d89726208a00"
+    }
+   },
+   "S_V2T384": {
+    "static": {
+     "tokens": 516,
+     "time_box": false,
+     "ready_guards": 12,
+     "status_guards": 4,
+     "element_guards": 0,
+     "while_loops": 3,
+     "if_blocks": 15,
+     "waits": [
+      1
+     ],
+     "for_bounds": [
+      6
+     ],
+     "written_actions": {
+      "raidenshogun": {
+       "attack": 57,
+       "skill": 8,
+       "burst": 7,
+       "dash": 6
+      },
+      "furina": {
+       "attack": 5,
+       "skill": 5,
+       "burst": 2,
+       "dash": 2,
+       "jump": 1
+      },
+      "yelan": {
+       "attack": 9,
+       "skill": 5,
+       "burst": 2,
+       "jump": 1,
+       "swap": 1
+      },
+      "xilonen": {
+       "attack": 25,
+       "charge": 1,
+       "skill": 6,
+       "burst": 1,
+       "dash": 2,
+       "high_plunge": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 344658.21354477125,
+     "se": 553.6788127644193,
+     "chars": [
+      56768.31859465639,
+      100881.2675367522,
+      174295.81278925197,
+      12712.814624110903
+     ],
+     "waits": [
+      {},
+      {
+       "skill_cd": 0.49062500000000003
+      },
+      {
+       "insufficient_energy": 0.4536458333333333
+      },
+      {}
+     ],
+     "cpu_seconds": 0.213270979,
+     "config_sha256": "7fb77514d77d2ec298db6ed853df91ab09fd1481cc23dde683726048f1cfdd93"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "raidenshogun",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 17,
+    "skill_cd": 589,
+    "burst_cd": 0,
+    "energy_max": 90,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "raidenshogun",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 110,
+    "skill_cd": 0,
+    "burst_cd": 970,
+    "energy_max": 90,
+    "energy_used": 90,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "raidenshogun",
+      "key": "engulfing-er",
+      "remaining": 610
+     },
+     {
+      "on": "raidenshogun",
+      "key": "raidenburst",
+      "remaining": 408
+     },
+     {
+      "on": "yelan",
+      "key": "aquasimulacra-dmg",
+      "remaining": 51
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 888
+     }
+    ]
+   },
+   {
+    "char": "raidenshogun",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 14,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 90,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "raidenshogun",
+    "action": "charge",
+    "ok": false,
+    "error": "raidenshogun: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 90,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "furina",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 1182,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 11.65,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "center-of-attention",
+      "remaining": 582
+     },
+     {
+      "on": "furina",
+      "key": "furina-skill",
+      "remaining": 1736
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 111,
+    "skill_cd": 0,
+    "burst_cd": 789,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "furina-burst",
+      "remaining": 1076
+     },
+     {
+      "on": "yelan",
+      "key": "aquasimulacra-dmg",
+      "remaining": 50
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 887
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "spiritbreath-thorn-icd",
+      "remaining": 360
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 33,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "yelan",
+      "key": "aquasimulacra-dmg",
+      "remaining": 68
+     }
+    ]
+   },
+   {
+    "char": "yelan",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 40,
+    "skill_cd": 593,
+    "burst_cd": 0,
+    "energy_max": 70,
+    "energy_used": 0,
+    "team_energy_gain_4s": 30.59,
+    "mods": [
+     {
+      "on": "raidenshogun",
+      "key": "yelan-c4",
+      "remaining": 1495
+     },
+     {
+      "on": "furina",
+      "key": "yelan-c4",
+      "remaining": 1495
+     },
+     {
+      "on": "yelan",
+      "key": "aquasimulacra-dmg",
+      "remaining": 61
+     },
+     {
+      "on": "yelan",
+      "key": "yelanc4",
+      "remaining": 1495
+     },
+     {
+      "on": "yelan",
+      "key": "yelan-c4",
+      "remaining": 1495
+     },
+     {
+      "on": "yelan",
+      "key": "yelan-particle-icd",
+      "remaining": 14
+     },
+     {
+      "on": "xilonen",
+      "key": "yelan-c4",
+      "remaining": 1495
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 896
+     }
+    ]
+   },
+   {
+    "char": "yelan",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 90,
+    "skill_cd": 0,
+    "burst_cd": 990,
+    "energy_max": 70,
+    "energy_used": 70,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "raidenshogun",
+      "key": "yelan-a4",
+      "remaining": 886
+     },
+     {
+      "on": "furina",
+      "key": "yelan-a4",
+      "remaining": 886
+     },
+     {
+      "on": "yelan",
+      "key": "aquasimulacra-dmg",
+      "remaining": 71
+     },
+     {
+      "on": "yelan",
+      "key": "yelanburst",
+      "remaining": 886
+     },
+     {
+      "on": "yelan",
+      "key": "yelan-a4",
+      "remaining": 886
+     },
+     {
+      "on": "xilonen",
+      "key": "yelan-a4",
+      "remaining": 886
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 886
+     }
+    ]
+   },
+   {
+    "char": "yelan",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 13,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 70,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "yelan",
+    "action": "charge",
+    "ok": false,
+    "error": "engine panic"
+   },
+   {
+    "char": "xilonen",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 25.26,
+    "mods": [
+     {
+      "on": "raidenshogun",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "furina",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "yelan",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-e-recast-cd",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nightsoul-blessing",
+      "remaining": 768
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-c4",
+      "remaining": 885
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-particle-icd",
+      "remaining": 21
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 92,
+    "skill_cd": 0,
+    "burst_cd": 808,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": [
+     {
+      "on": "yelan",
+      "key": "aquasimulacra-dmg",
+      "remaining": 69
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff",
+      "remaining": 360
+     },
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "charge",
+    "ok": false,
+    "error": "xilonen: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+  "group": "stage1-restructure",
+  "members": [
+   "clorinde",
+   "kujousara",
+   "nahida",
+   "xilonen"
+  ],
+  "measure_seed": 4000000000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 162,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 1,
+     "element_guards": 0,
+     "while_loops": 1,
+     "if_blocks": 2,
+     "waits": [
+      12
+     ],
+     "for_bounds": [
+      2
+     ],
+     "written_actions": {
+      "clorinde": {
+       "attack": 1,
+       "skill": 2,
+       "burst": 1
+      },
+      "kujousara": {},
+      "nahida": {
+       "attack": 2,
+       "charge": 1,
+       "skill": 3,
+       "burst": 1,
+       "dash": 3
+      },
+      "xilonen": {
+       "attack": 6,
+       "skill": 3,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 69229.11202835108,
+     "se": 69.58542223186925,
+     "chars": [
+      56032.020120038804,
+      4798.832186111464,
+      6323.459731558344,
+      2074.799990642531
+     ],
+     "waits": [
+      {
+       "skill_cd": 16.533333333333346
+      },
+      {
+       "swap_cd": 2.1000000000000005
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.124663537,
+     "config_sha256": "df8a4416da38118c80db4fbc08e294fd41692a479126bef8c60f351736e50f04"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 115,
+     "time_box": false,
+     "ready_guards": 1,
+     "status_guards": 1,
+     "element_guards": 0,
+     "while_loops": 1,
+     "if_blocks": 2,
+     "waits": [
+      12
+     ],
+     "for_bounds": [
+      5
+     ],
+     "written_actions": {
+      "clorinde": {
+       "attack": 1,
+       "skill": 2,
+       "burst": 1
+      },
+      "kujousara": {},
+      "nahida": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 75906.34010867738,
+     "se": 99.85690969119987,
+     "chars": [
+      59696.35554583077,
+      8389.508373376837,
+      6211.730971046282,
+      1608.7452184235233
+     ],
+     "waits": [
+      {
+       "skill_cd": 1.0999999999999999
+      },
+      {
+       "insufficient_energy": 0.5020833333333333,
+       "swap_cd": 1.0666666666666664
+      },
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.16612778499999997,
+     "config_sha256": "0f79b37e39090cc30e6a1b6d331ffec180dd96b09d898f106f98a773dfb4a22e"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "clorinde",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 6,
+    "skill_cd": 960,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "clorinde",
+      "key": "clorinde-night-watch",
+      "remaining": 450
+     }
+    ]
+   },
+   {
+    "char": "clorinde",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 132,
+    "skill_cd": 0,
+    "burst_cd": 768,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "clorinde",
+      "key": "wanderingevenstar-nahida",
+      "remaining": 532
+     },
+     {
+      "on": "clorinde",
+      "key": "fragmentofharmonicwhimsy-4pc",
+      "remaining": 246
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 865
+     }
+    ]
+   },
+   {
+    "char": "clorinde",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "clorinde",
+      "key": "wanderingevenstar-nahida",
+      "remaining": 647
+     }
+    ]
+   },
+   {
+    "char": "clorinde",
+    "action": "charge",
+    "ok": false,
+    "error": "clorinde: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "kujousara",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 29,
+    "skill_cd": 578,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 15.55,
+    "mods": []
+   },
+   {
+    "char": "kujousara",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 56,
+    "skill_cd": 0,
+    "burst_cd": 1191,
+    "energy_max": 80,
+    "energy_used": 80,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "clorinde",
+      "key": "nob-4pc",
+      "remaining": 664
+     },
+     {
+      "on": "kujousara",
+      "key": "nob-4pc",
+      "remaining": 664
+     },
+     {
+      "on": "kujousara",
+      "key": "twilight-icd",
+      "remaining": 415
+     },
+     {
+      "on": "kujousara",
+      "key": "sara-c1-icd",
+      "remaining": 175
+     },
+     {
+      "on": "kujousara",
+      "key": "sara-attack-buff",
+      "remaining": 356
+     },
+     {
+      "on": "kujousara",
+      "key": "sara-c6",
+      "remaining": 356
+     },
+     {
+      "on": "nahida",
+      "key": "nob-4pc",
+      "remaining": 664
+     },
+     {
+      "on": "xilonen",
+      "key": "nob-4pc",
+      "remaining": 664
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 895
+     }
+    ]
+   },
+   {
+    "char": "kujousara",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 14,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "kujousara",
+    "action": "charge",
+    "ok": false,
+    "error": "engine panic"
+   },
+   {
+    "char": "nahida",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 25,
+    "skill_cd": 286,
+    "burst_cd": 0,
+    "energy_max": 50,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 888
+     }
+    ]
+   },
+   {
+    "char": "nahida",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 111,
+    "skill_cd": 0,
+    "burst_cd": 699,
+    "energy_max": 50,
+    "energy_used": 50,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "clorinde",
+      "key": "nahida-a1",
+      "remaining": 45
+     },
+     {
+      "on": "kujousara",
+      "key": "nahida-a1",
+      "remaining": 45
+     },
+     {
+      "on": "nahida",
+      "key": "nahida-q-within",
+      "remaining": 45
+     },
+     {
+      "on": "nahida",
+      "key": "nahida-a1",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nahida-a1",
+      "remaining": 45
+     }
+    ]
+   },
+   {
+    "char": "nahida",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 21,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 50,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "nahida",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 21,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 50,
+    "energy_used": 0,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 30.78,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-e-recast-cd",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nightsoul-blessing",
+      "remaining": 768
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-particle-icd",
+      "remaining": 21
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 92,
+    "skill_cd": 0,
+    "burst_cd": 808,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "wanderingevenstar-nahida",
+      "remaining": 647
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "charge",
+    "ok": false,
+    "error": "xilonen: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+  "group": "stage1-restructure",
+  "members": [
+   "flins",
+   "ineffa",
+   "sucrose",
+   "furina"
+  ],
+  "measure_seed": 4000000000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 172,
+     "time_box": false,
+     "ready_guards": 5,
+     "status_guards": 1,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 6,
+     "waits": [],
+     "for_bounds": [
+      6
+     ],
+     "written_actions": {
+      "flins": {
+       "attack": 19,
+       "skill": 3,
+       "burst": 2,
+       "dash": 2
+      },
+      "ineffa": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "sucrose": {
+       "attack": 2,
+       "charge": 2,
+       "skill": 2,
+       "burst": 1,
+       "dash": 2
+      },
+      "furina": {
+       "attack": 3,
+       "skill": 1,
+       "dash": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 131255.39215096083,
+     "se": 195.7700418729986,
+     "chars": [
+      65073.48855855728,
+      48545.139328399855,
+      5557.432057714995,
+      12079.332206288796
+     ],
+     "waits": [
+      {
+       "skill_cd": 2.829687499999999
+      },
+      {
+       "swap_cd": 1.649999999999999
+      },
+      {
+       "swap_cd": 3.35625
+      },
+      {
+       "swap_cd": 1.4666666666666668
+      }
+     ],
+     "cpu_seconds": 0.16546607000000002,
+     "config_sha256": "3389134a8dfb3a48868153d8121defb17a344a8a80424a4a839c7ccfe03429f4"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 128,
+     "time_box": false,
+     "ready_guards": 3,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 0,
+     "if_blocks": 3,
+     "waits": [],
+     "for_bounds": [
+      4
+     ],
+     "written_actions": {
+      "flins": {
+       "attack": 19,
+       "skill": 4,
+       "burst": 3,
+       "dash": 2
+      },
+      "ineffa": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1
+      },
+      "sucrose": {
+       "attack": 1,
+       "skill": 2,
+       "burst": 1,
+       "dash": 1
+      },
+      "furina": {
+       "attack": 1,
+       "skill": 1,
+       "dash": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 150164.93560936977,
+     "se": 500.8236441884773,
+     "chars": [
+      91151.8200768022,
+      42820.01607164551,
+      2813.3695131941436,
+      13379.729947727705
+     ],
+     "waits": [
+      {
+       "skill_cd": 2.9869791666666656
+      },
+      {
+       "swap_cd": 1.515104166666666
+      },
+      {
+       "skill_cd": 11.343229166666667,
+       "swap_cd": 4.228125
+      },
+      {
+       "swap_cd": 0.27187500000000003
+      }
+     ],
+     "cpu_seconds": 0.12642239900000002,
+     "config_sha256": "d977eac65d98d9bc66f7e97afc100895b6db6028ba1f9970475fbacb8bf26e86"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "flins",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 17,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "flins",
+      "key": "manifest-flame",
+      "remaining": 602
+     }
+    ]
+   },
+   {
+    "char": "flins",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 91,
+    "skill_cd": 0,
+    "burst_cd": 809,
+    "energy_max": 80,
+    "energy_used": 80,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "flins",
+      "key": "bloodsoakedruins-lc",
+      "remaining": 119
+     }
+    ]
+   },
+   {
+    "char": "flins",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 11,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "flins",
+    "action": "charge",
+    "ok": false,
+    "error": "flins: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "ineffa",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 31,
+    "skill_cd": 930,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 7.48,
+    "mods": [
+     {
+      "on": "ineffa",
+      "key": "fracturedhalo-atkp",
+      "remaining": 1169
+     },
+     {
+      "on": "ineffa",
+      "key": "fracturedhalo-lc-buff",
+      "remaining": 1173
+     }
+    ]
+   },
+   {
+    "char": "ineffa",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 105,
+    "skill_cd": 0,
+    "burst_cd": 795,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 7.48,
+    "mods": [
+     {
+      "on": "ineffa",
+      "key": "fracturedhalo-atkp",
+      "remaining": 1095
+     },
+     {
+      "on": "ineffa",
+      "key": "ineffa-a4",
+      "remaining": 1095
+     }
+    ]
+   },
+   {
+    "char": "ineffa",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 9,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "ineffa",
+    "action": "charge",
+    "ok": false,
+    "error": "ineffa: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "sucrose",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 11,
+    "skill_cd": 898,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 29.88,
+    "mods": [
+     {
+      "on": "flins",
+      "key": "ascendant-gleam",
+      "remaining": 1189
+     },
+     {
+      "on": "ineffa",
+      "key": "ascendant-gleam",
+      "remaining": 1189
+     },
+     {
+      "on": "sucrose",
+      "key": "ascendant-gleam",
+      "remaining": 1189
+     },
+     {
+      "on": "furina",
+      "key": "ascendant-gleam",
+      "remaining": 1189
+     }
+    ]
+   },
+   {
+    "char": "sucrose",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 47,
+    "skill_cd": 0,
+    "burst_cd": 1171,
+    "energy_max": 80,
+    "energy_used": 80,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "flins",
+      "key": "ascendant-gleam",
+      "remaining": 1153
+     },
+     {
+      "on": "ineffa",
+      "key": "ascendant-gleam",
+      "remaining": 1153
+     },
+     {
+      "on": "sucrose",
+      "key": "ascendant-gleam",
+      "remaining": 1153
+     },
+     {
+      "on": "furina",
+      "key": "ascendant-gleam",
+      "remaining": 1153
+     }
+    ]
+   },
+   {
+    "char": "sucrose",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 17,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "sucrose",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 54,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "furina",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 1182,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 33.61,
+    "mods": [
+     {
+      "on": "flins",
+      "key": "ascendant-gleam",
+      "remaining": 1182
+     },
+     {
+      "on": "flins",
+      "key": "gleaming-moon-devotion-em",
+      "remaining": 480
+     },
+     {
+      "on": "ineffa",
+      "key": "ascendant-gleam",
+      "remaining": 1182
+     },
+     {
+      "on": "ineffa",
+      "key": "gleaming-moon-devotion-em",
+      "remaining": 480
+     },
+     {
+      "on": "sucrose",
+      "key": "ascendant-gleam",
+      "remaining": 1182
+     },
+     {
+      "on": "sucrose",
+      "key": "gleaming-moon-devotion-em",
+      "remaining": 480
+     },
+     {
+      "on": "furina",
+      "key": "ascendant-gleam",
+      "remaining": 1182
+     },
+     {
+      "on": "furina",
+      "key": "furina-skill",
+      "remaining": 1736
+     },
+     {
+      "on": "furina",
+      "key": "gleaming-moon-devotion-em",
+      "remaining": 480
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 111,
+    "skill_cd": 0,
+    "burst_cd": 789,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "flins",
+      "key": "ascendant-gleam",
+      "remaining": 1089
+     },
+     {
+      "on": "flins",
+      "key": "gleaming-moon-devotion-em",
+      "remaining": 467
+     },
+     {
+      "on": "ineffa",
+      "key": "ascendant-gleam",
+      "remaining": 1089
+     },
+     {
+      "on": "ineffa",
+      "key": "gleaming-moon-devotion-em",
+      "remaining": 467
+     },
+     {
+      "on": "sucrose",
+      "key": "ascendant-gleam",
+      "remaining": 1089
+     },
+     {
+      "on": "sucrose",
+      "key": "gleaming-moon-devotion-em",
+      "remaining": 467
+     },
+     {
+      "on": "furina",
+      "key": "ascendant-gleam",
+      "remaining": 1089
+     },
+     {
+      "on": "furina",
+      "key": "furina-burst",
+      "remaining": 1076
+     },
+     {
+      "on": "furina",
+      "key": "gleaming-moon-devotion-em",
+      "remaining": 467
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 25.51,
+    "mods": [
+     {
+      "on": "furina",
+      "key": "spiritbreath-thorn-icd",
+      "remaining": 360
+     }
+    ]
+   },
+   {
+    "char": "furina",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 33,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ },
+ {
+  "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+  "group": "stage1-restructure",
+  "members": [
+   "mualani",
+   "xiangling",
+   "xilonen",
+   "chiori"
+  ],
+  "measure_seed": 4000000000000,
+  "programs": {
+   "L": {
+    "static": {
+     "tokens": 156,
+     "time_box": false,
+     "ready_guards": 0,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 2,
+     "if_blocks": 0,
+     "waits": [],
+     "for_bounds": [
+      3,
+      2
+     ],
+     "written_actions": {
+      "mualani": {
+       "attack": 4,
+       "skill": 2,
+       "burst": 1,
+       "walk": 1
+      },
+      "xiangling": {},
+      "xilonen": {
+       "attack": 4,
+       "skill": 2,
+       "burst": 1
+      },
+      "chiori": {
+       "skill": 4,
+       "burst": 1
+      }
+     }
+    },
+    "measured": {
+     "mean": 131760.61063576184,
+     "se": 558.0206040818672,
+     "chars": [
+      77919.5241505086,
+      2221.8544923349486,
+      1412.1035510702975,
+      50207.128441848094
+     ],
+     "waits": [
+      {
+       "insufficient_energy": 0.38385416666666666,
+       "swap_cd": 16.0
+      },
+      {},
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.21209279500000003,
+     "config_sha256": "4eee036744540f7d709f701c07b55676e2753f5a3c81cde384b4261ca7b8e4e2"
+    }
+   },
+   "A": {
+    "static": {
+     "tokens": 300,
+     "time_box": false,
+     "ready_guards": 3,
+     "status_guards": 0,
+     "element_guards": 0,
+     "while_loops": 1,
+     "if_blocks": 6,
+     "waits": [
+      12
+     ],
+     "for_bounds": [
+      4,
+      3
+     ],
+     "written_actions": {
+      "mualani": {
+       "attack": 4,
+       "skill": 2,
+       "burst": 1,
+       "walk": 1
+      },
+      "xiangling": {
+       "attack": 1,
+       "skill": 1,
+       "burst": 1,
+       "dash": 1
+      },
+      "xilonen": {
+       "attack": 2,
+       "skill": 1
+      },
+      "chiori": {
+       "skill": 4
+      }
+     }
+    },
+    "measured": {
+     "mean": 157325.98631141105,
+     "se": 419.70000795240253,
+     "chars": [
+      78757.9060372795,
+      2870.0545058572216,
+      1121.8303969835683,
+      74576.19537129074
+     ],
+     "waits": [
+      {},
+      {},
+      {},
+      {}
+     ],
+     "cpu_seconds": 0.434254895,
+     "config_sha256": "bdc20858ab45f487101293f010c89246f8fe7fdbad378042adc8c916da643833"
+    }
+   }
+  },
+  "probe": [
+   {
+    "char": "mualani",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 5,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "mualani",
+      "key": "surfs-up-icd",
+      "remaining": 895
+     },
+     {
+      "on": "mualani",
+      "key": "surfs-up-buff",
+      "remaining": 835
+     }
+    ]
+   },
+   {
+    "char": "mualani",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 108,
+    "skill_cd": 0,
+    "burst_cd": 792,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "mualani",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 11,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     }
+    ]
+   },
+   {
+    "char": "mualani",
+    "action": "charge",
+    "ok": true,
+    "error": null,
+    "frames": 84,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 900
+     }
+    ]
+   },
+   {
+    "char": "xiangling",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 14,
+    "skill_cd": 719,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 17.86,
+    "mods": [
+     {
+      "on": "xiangling",
+      "key": "xianglingguoba",
+      "remaining": 437
+     }
+    ]
+   },
+   {
+    "char": "xiangling",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 97,
+    "skill_cd": 0,
+    "burst_cd": 1121,
+    "energy_max": 80,
+    "energy_used": 80,
+    "team_energy_gain_4s": 33.71,
+    "mods": [
+     {
+      "on": "mualani",
+      "key": "xiangling-c6",
+      "remaining": 811
+     },
+     {
+      "on": "xiangling",
+      "key": "xiangling-c6",
+      "remaining": 817
+     },
+     {
+      "on": "xiangling",
+      "key": "favonius-cd",
+      "remaining": 337
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 821
+     },
+     {
+      "on": "xilonen",
+      "key": "xiangling-c6",
+      "remaining": 811
+     },
+     {
+      "on": "chiori",
+      "key": "xiangling-c6",
+      "remaining": 811
+     }
+    ]
+   },
+   {
+    "char": "xiangling",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 12,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "xiangling",
+    "action": "charge",
+    "ok": false,
+    "error": "xiangling: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 80,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 15,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 42.3,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-e-recast-cd",
+      "remaining": 45
+     },
+     {
+      "on": "xilonen",
+      "key": "nightsoul-blessing",
+      "remaining": 525
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "xilonen",
+      "key": "xilonen-particle-icd",
+      "remaining": 21
+     },
+     {
+      "on": "chiori",
+      "key": "urakumisugiri-increase-buff",
+      "remaining": 891
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 92,
+    "skill_cd": 0,
+    "burst_cd": 808,
+    "energy_max": 60,
+    "energy_used": 60,
+    "team_energy_gain_4s": 6.0,
+    "mods": []
+   },
+   {
+    "char": "xilonen",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 18,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff",
+      "remaining": 360
+     },
+     {
+      "on": "xilonen",
+      "key": "peakpatrolsong-buff-icd",
+      "remaining": 6
+     }
+    ]
+   },
+   {
+    "char": "xilonen",
+    "action": "charge",
+    "ok": false,
+    "error": "xilonen: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 60,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "chiori",
+    "action": "skill",
+    "ok": true,
+    "error": null,
+    "frames": 30,
+    "skill_cd": 949,
+    "burst_cd": 0,
+    "energy_max": 50,
+    "energy_used": 0,
+    "team_energy_gain_4s": 18.76,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 891
+     },
+     {
+      "on": "chiori",
+      "key": "chiori-a4",
+      "remaining": 1189
+     },
+     {
+      "on": "chiori",
+      "key": "urakumisugiri-increase-buff",
+      "remaining": 891
+     },
+     {
+      "on": "chiori",
+      "key": "husk-4pc-stack-gain-icd",
+      "remaining": 9
+     },
+     {
+      "on": "chiori",
+      "key": "chiori-a1-window",
+      "remaining": 74
+     }
+    ]
+   },
+   {
+    "char": "chiori",
+    "action": "burst",
+    "ok": true,
+    "error": null,
+    "frames": 99,
+    "skill_cd": 0,
+    "burst_cd": 711,
+    "energy_max": 50,
+    "energy_used": 50,
+    "team_energy_gain_4s": 0.0,
+    "mods": [
+     {
+      "on": "xilonen",
+      "key": "xilonen-a4",
+      "remaining": 893
+     },
+     {
+      "on": "chiori",
+      "key": "urakumisugiri-increase-buff",
+      "remaining": 893
+     },
+     {
+      "on": "chiori",
+      "key": "husk-4pc-stack-gain-icd",
+      "remaining": 11
+     }
+    ]
+   },
+   {
+    "char": "chiori",
+    "action": "attack",
+    "ok": true,
+    "error": null,
+    "frames": 17,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 50,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   },
+   {
+    "char": "chiori",
+    "action": "charge",
+    "ok": false,
+    "error": "chiori: need to use attack right before charge",
+    "frames": 0,
+    "skill_cd": 0,
+    "burst_cd": 0,
+    "energy_max": 50,
+    "energy_used": 0,
+    "team_energy_gain_4s": 0.0,
+    "mods": []
+   }
+  ]
+ }
+]

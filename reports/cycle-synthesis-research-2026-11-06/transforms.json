@@ -1,0 +1,1258 @@
+[
+ {
+  "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+  "reference_audit_32": {
+   "L": 41698.780112420645,
+   "A": 490529.54788679094,
+   "S_V2S384": 364502.14328067086,
+   "S_V2T384": 356012.7140594329
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "fn mav_dc_cancel(d_travel_f) { \n  \n  if d_travel_f < 6 {\n    d_travel_f = 6;\n  }\n  \n  let dash_ns = 10; \n  let base_cons = 0.9; \n  let base_tick_rate = 6;\n  \n  while !.mavuika.dash.ready {\n    print(\"waiting on mavuika dash cd\");\n    wait(1);\n  }\n  \n  let d_ticks = d_travel_f / base_tick_rate + 1; \n  print(\"Max number of NS ticks during dash: \", d_ticks);\n  let ns_consumed = dash_ns + base_cons * d_ticks;\n  print(\"Expected NS consumption: \", ns_consumed);\n  \n  if .mavuika.nightsoul.points > ns_consumed || .mavuika.status.mavuika-burst {\n    mavuika dash[charge_cancel=1, travel=d_travel_f], charge;\n  } else {\n    print(\"current NS points = \", .mavuika.nightsoul.points);\n    print(\"skipping mav d*c, not enough NS points \");\n    mavuika jump;\n  }\n}\nactive mavuika; \nmavuika skill[hold=1];\nfor let i=0; i<4; i=i+1 {\n  ororon skill; if .ororon.burst.ready { ororon burst; }\n  chev skill[hold=1]; if .chev.burst.ready { chev burst; }\n  bennett skill; if .bennett.burst.ready { bennett burst; }\n  if .mavuika.burst.ready { mavuika burst; }\n  mavuika charge;\n  mav_dc_cancel(6);\n  mav_dc_cancel(6);\n  mavuika charge, charge[final=1];\n  mav_dc_cancel(6);\n  mav_dc_cancel(6);\n  mavuika charge, charge[final=1];\n  mav_dc_cancel(6);\n  mav_dc_cancel(6);\n  mavuika charge, charge[final=1];\n  mav_dc_cancel(6);       \n  mavuika skill[hold=1];\n  mavuika charge;\n  mav_dc_cancel(6);\n  mav_dc_cancel(6);\n  mavuika charge;\n}\n",
+    "measured": {
+     "mean": 193027.64930229247,
+     "se": 832.9247003192584,
+     "chars": [
+      180331.35925598175,
+      9530.449040028505,
+      2252.3219828001043,
+      913.519023482078
+     ],
+     "waits": [
+      {
+       "insufficient_stamina": 22.68333333333332,
+       "skill_cd": 38.23906249999999
+      },
+      {},
+      {
+       "swap_cd": 4.220312499999998
+      },
+      {
+       "swap_cd": 0.6458333333333333
+      }
+     ],
+     "cpu": 0.160114546
+    }
+   },
+   "L_guard_all": {
+    "text": "fn mav_dc_cancel(d_travel_f) { \n  \n  if d_travel_f < 6 {\n    d_travel_f = 6;\n  }\n  \n  let dash_ns = 10; \n  let base_cons = 0.9; \n  let base_tick_rate = 6;\n  \n  while !.mavuika.dash.ready {\n    print(\"waiting on mavuika dash cd\");\n    wait(1);\n  }\n  \n  let d_ticks = d_travel_f / base_tick_rate + 1; \n  print(\"Max number of NS ticks during dash: \", d_ticks);\n  let ns_consumed = dash_ns + base_cons * d_ticks;\n  print(\"Expected NS consumption: \", ns_consumed);\n  \n  if .mavuika.nightsoul.points > ns_consumed || .mavuika.status.mavuika-burst {\n    mavuika dash[charge_cancel=1, travel=d_travel_f], charge;\n  } else {\n    print(\"current NS points = \", .mavuika.nightsoul.points);\n    print(\"skipping mav d*c, not enough NS points \");\n    mavuika jump;\n  }\n}\nactive mavuika; \nif .mavuika.skill.ready { mavuika skill[hold=1]; }\nfor let i=0; i<4; i=i+1 {\n  if .ororon.skill.ready { ororon skill; } if .ororon.burst.ready { ororon burst; }\n  if .chev.skill.ready { chev skill[hold=1]; } if .chev.burst.ready { chev burst; }\n  if .bennett.skill.ready { bennett skill; } if .bennett.burst.ready { bennett burst; }\n  if .mavuika.burst.ready { mavuika burst; }\n  mavuika charge;\n  mav_dc_cancel(6);\n  mav_dc_cancel(6);\n  mavuika charge, charge[final=1];\n  mav_dc_cancel(6);\n  mav_dc_cancel(6);\n  mavuika charge, charge[final=1];\n  mav_dc_cancel(6);\n  mav_dc_cancel(6);\n  mavuika charge, charge[final=1];\n  mav_dc_cancel(6);       \n  if .mavuika.skill.ready { mavuika skill[hold=1]; }\n  mavuika charge;\n  mav_dc_cancel(6);\n  mav_dc_cancel(6);\n  mavuika charge;\n}\n",
+    "measured": {
+     "mean": 232218.0899338986,
+     "se": 929.5035496595287,
+     "chars": [
+      217741.94516025417,
+      10679.552977588522,
+      2640.2506264874896,
+      1156.3411695682792
+     ],
+     "waits": [
+      {
+       "insufficient_stamina": 24.79999999999999
+      },
+      {
+       "swap_cd": 0.4520833333333334
+      },
+      {
+       "swap_cd": 5.0473958333333355
+      },
+      {
+       "swap_cd": 0.7656250000000001
+      }
+     ],
+     "cpu": 0.176253705
+    }
+   },
+   "A_support+A_window (=A)": {
+    "text": "active mavuika;\nfor let i=0; i<4; i=i+1 {\n  let t0 = f();\n  mavuika skill, attack;\n  ororon burst, skill;\n  chev skill[hold=1];\n  bennett attack:2, skill, burst;\n  mavuika burst;\n  mavuika charge:2, dash, charge:2, dash, charge:2, dash, charge:2, dash, charge:2, dash, charge:2, dash, charge:2, dash;\n}\n",
+    "measured": {
+     "mean": 490529.54788679094,
+     "se": 916.3100773330351,
+     "chars": [
+      467282.5688588663,
+      17331.798672629164,
+      2486.6867387734023,
+      3428.493616522599
+     ],
+     "waits": [
+      {},
+      {},
+      {
+       "swap_cd": 9.866666666666672
+      },
+      {}
+     ],
+     "cpu": 0.187495082
+    }
+   },
+   "A_support+timebox(skill-ready) P=1080": {
+    "text": "active mavuika;\nfor let i=0; i<4; i=i+1 {\n  let t0 = f();\n  mavuika skill, attack;\n  ororon burst, skill;\n  chev skill[hold=1];\n  bennett attack:2, skill, burst;\n  mavuika burst;\n  while f() - t0 < 1080 { if .mavuika.skill.ready { mavuika skill; } else { mavuika charge:2, dash; } }\n}\n",
+    "measured": {
+     "mean": 195123.77626059693,
+     "se": 533.5816605734203,
+     "chars": [
+      169321.74642142217,
+      19239.852068131397,
+      2954.0645473861173,
+      3608.1132236575177
+     ],
+     "waits": [
+      {
+       "burst_cd": 122.07031249999997
+      },
+      {
+       "insufficient_energy": 23.50208333333334
+      },
+      {
+       "swap_cd": 10.483333333333333
+      },
+      {
+       "insufficient_energy": 10.753125
+      }
+     ],
+     "cpu": 0.22360583999999997
+    }
+   },
+   "A_support+timebox(no skill) P=1080": {
+    "text": "active mavuika;\nfor let i=0; i<4; i=i+1 {\n  let t0 = f();\n  mavuika skill, attack;\n  ororon burst, skill;\n  chev skill[hold=1];\n  bennett attack:2, skill, burst;\n  mavuika burst;\n  while f() - t0 < 1080 { mavuika charge:2, dash; }\n}\n",
+    "measured": {
+     "mean": 487359.8102137178,
+     "se": 704.4276472129116,
+     "chars": [
+      464071.3213557537,
+      17230.093391766623,
+      2600.658387935238,
+      3457.737078262714
+     ],
+     "waits": [
+      {},
+      {},
+      {
+       "swap_cd": 10.100000000000001
+      },
+      {}
+     ],
+     "cpu": 0.20647581899999998
+    }
+   },
+   "skeleton_support+A_window": {
+    "text": "active mavuika;\nfor let i=0; i<4; i=i+1 {\n  let t0 = f();\n  ororon skill;\n  if .ororon.burst.ready { ororon burst; }\n  chevreuse skill[hold=1];\n  if .chevreuse.burst.ready { chevreuse burst; }\n  bennett skill;\n  if .bennett.burst.ready { bennett burst; }\n  if .mavuika.burst.ready { mavuika burst; }\n  mavuika charge:2, dash, charge:2, dash, charge:2, dash, charge:2, dash, charge:2, dash, charge:2, dash, charge:2, dash;\n}\n",
+    "measured": {
+     "mean": 4690.642459837318,
+     "se": 51.69609758020504,
+     "chars": [
+      3373.7774904348776,
+      735.5458224189347,
+      418.65186831317146,
+      162.66727867033336
+     ],
+     "waits": [
+      {
+       "insufficient_stamina": 157.78229166666674
+      },
+      {
+       "swap_cd": 0.7427083333333335
+      },
+      {
+       "swap_cd": 1.850000000000001
+      },
+      {
+       "swap_cd": 0.33333333333333337
+      }
+     ],
+     "cpu": 0.065482981
+    }
+   },
+   "skeleton_support+timebox(no skill) P=1080": {
+    "text": "active mavuika;\nfor let i=0; i<4; i=i+1 {\n  let t0 = f();\n  ororon skill;\n  if .ororon.burst.ready { ororon burst; }\n  chevreuse skill[hold=1];\n  if .chevreuse.burst.ready { chevreuse burst; }\n  bennett skill;\n  if .bennett.burst.ready { bennett burst; }\n  if .mavuika.burst.ready { mavuika burst; }\n  while f() - t0 < 1080 { mavuika charge:2, dash; }\n}\n",
+    "measured": {
+     "mean": 12870.38135182868,
+     "se": 110.38727346617748,
+     "chars": [
+      6500.600530440543,
+      3385.1110920498436,
+      2251.8349795529484,
+      732.8347497853583
+     ],
+     "waits": [
+      {
+       "insufficient_stamina": 99.67291666666668
+      },
+      {
+       "swap_cd": 4.133333333333336
+      },
+      {
+       "swap_cd": 7.400000000000004
+      },
+      {
+       "swap_cd": 1.6562499999999996
+      }
+     ],
+     "cpu": 0.07024745199999999
+    }
+   }
+  }
+ },
+ {
+  "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+  "reference_audit_32": {
+   "L": 302502.43054604187,
+   "A": 695426.1180588062,
+   "S_V2S384": 570506.0299641355,
+   "S_V2T384": 573931.0113600602
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active arlecchino;\nfor let i = 0; i < 4; i = i + 1 {\n  \n  arlecchino skill;\n  bennett skill; if .bennett.burst.ready { bennett burst; }\n  xilonen skill, attack:2; pick_up_crystallize(\"pyro\");\n  citlali attack, skill; if .citlali.burst.ready { citlali burst; }\n  arlecchino charge, attack:3, dash, attack:3, dash, attack:3, dash, attack:3, dash;\n  delay(6);\n  arlecchino attack:3, dash;\n  delay(32);\n  arlecchino attack:2;\n  \n}\n",
+    "measured": {
+     "mean": 388680.9181673551,
+     "se": 562.6478014576281,
+     "chars": [
+      340779.53659075964,
+      40971.86015962665,
+      3622.3657379579604,
+      3307.1556790105874
+     ],
+     "waits": [
+      {
+       "skill_cd": 17.18333333333333
+      },
+      {
+       "skill_cd": 3.0,
+       "swap_cd": 0.15000000000000002
+      },
+      {},
+      {
+       "swap_cd": 1.5
+      }
+     ],
+     "cpu": 0.13246413199999998
+    }
+   },
+   "L_guard_all": {
+    "text": "active arlecchino;\nfor let i = 0; i < 4; i = i + 1 {\n  \n  if .arlecchino.skill.ready { arlecchino skill; }\n  if .bennett.skill.ready { bennett skill; } if .bennett.burst.ready { bennett burst; }\n  if .xilonen.skill.ready { xilonen skill; } xilonen attack:2; pick_up_crystallize(\"pyro\");\n  citlali attack; if .citlali.skill.ready { citlali skill; } if .citlali.burst.ready { citlali burst; }\n  arlecchino charge, attack:3, dash, attack:3, dash, attack:3, dash, attack:3, dash;\n  delay(6);\n  arlecchino attack:3, dash;\n  delay(32);\n  arlecchino attack:2;\n  \n}\n",
+    "measured": {
+     "mean": 238758.3159872635,
+     "se": 506.5012821504494,
+     "chars": [
+      196782.7376684481,
+      34402.981892916454,
+      3601.3970117306203,
+      3971.1994141679593
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 7.333333333333337
+      },
+      {},
+      {
+       "swap_cd": 1.8333333333333341
+      }
+     ],
+     "cpu": 0.113652663
+    }
+   },
+   "L + `if i == 3 { arlecchino burst; }` (burst every 4th cycle)": {
+    "text": "active arlecchino;\nfor let i = 0; i < 4; i = i + 1 {\n  \n  arlecchino skill;\n  bennett skill, burst;\n  xilonen skill, attack:2; pick_up_crystallize(\"pyro\");\n  citlali attack, skill, burst;\n  arlecchino charge, \n             attack:3, dash,\n             attack:3, dash,\n             attack:3, dash,\n             attack:3, dash;\n  delay(6);\n  arlecchino attack:3, dash;\n  delay(32);\n  arlecchino attack:2;\n  \n  if i == 3 { arlecchino burst; }\n}\n",
+    "measured": {
+     "mean": 301079.25807097764,
+     "se": 1329.9209956918828,
+     "chars": [
+      257113.43527622882,
+      39044.53121644181,
+      2189.87068872677,
+      2731.420889580338
+     ],
+     "waits": [
+      {},
+      {
+       "insufficient_energy": 36.41927083333332
+      },
+      {},
+      {
+       "insufficient_energy": 10.908333333333331
+      }
+     ],
+     "cpu": 0.09322472899999999
+    }
+   },
+   "A without its arlecchino burst": {
+    "text": "active arlecchino;\nfn WaitForCryo() {\n  let StartFrame = f();\n  if !.element.t0.pyro {      \n    while !.element.t0.cryo && f() - StartFrame < 120 {   \n      wait(1);\n    }\n  }\n}\nlet sss = true; \nfor let i = 0; i < 4; i = i + 1 {\n  if .arle.weapon == .keys.weapon.crimsonmoonssemblance {\n    arle charge;\n  }\n  arlecchino skill;   delay(11);  \n  bennett skill, burst;\n  xilonen skill, attack:2; pick_up_crystallize(\"pyro\");\n  citlali skill, attack;\n  arle swap;\n  if .arle.weapon == .keys.weapon.staffofthescarletsands {\n    if sss == true {\n      wait(2); \n    }\n  }\n  arle charge[early_cancel=1], dash;\n  wait(47); \n  \n  WaitForCryo();\n  arle attack:3, dash;\n  WaitForCryo();\n  arle attack:3, dash;\n  WaitForCryo();\n  arle attack:3, dash;\n  WaitForCryo();\n  arle attack:3;\n  if i<3 {\n    arle dash;\n    WaitForCryo();\n    arle attack:3, dash;\n    WaitForCryo();\n    arle attack:3;\n    if .arle.weapon != .keys.weapon.crimsonmoonssemblance {\n      arle dash;  \n      arle attack:3;\n    }\n  } else {\n    if .arle.weapon != .keys.weapon.crimsonmoonssemblance {\n      arle dash;\n      WaitForCryo();\n      arle attack:3;\n    }\n  }\n}\n",
+    "measured": {
+     "mean": 619752.1338338287,
+     "se": 976.6334096104193,
+     "chars": [
+      583424.4295627722,
+      28765.04025633758,
+      2602.907087928674,
+      4959.756926790379
+     ],
+     "waits": [
+      {
+       "skill_cd": 13.733333333333336
+      },
+      {
+       "swap_cd": 0.5666666666666665
+      },
+      {},
+      {}
+     ],
+     "cpu": 0.140502665
+    }
+   },
+   "A without WaitForCryo calls": {
+    "text": "active arlecchino;\nfn WaitForCryo() {\n  let StartFrame = f();\n  if !.element.t0.pyro {      \n    while !.element.t0.cryo && f() - StartFrame < 120 {   \n      wait(1);\n    }\n  }\n}\nlet sss = true; \nfor let i = 0; i < 4; i = i + 1 {\n  if .arle.weapon == .keys.weapon.crimsonmoonssemblance {\n    arle charge;\n  }\n  arlecchino skill;   delay(11);  \n  bennett skill, burst;\n  xilonen skill, attack:2; pick_up_crystallize(\"pyro\");\n  citlali skill, attack;\n  arle swap;\n  if .arle.weapon == .keys.weapon.staffofthescarletsands {\n    if sss == true {\n      wait(2); \n    }\n  }\n  arle charge[early_cancel=1], dash;\n  wait(47); \n  arle attack:3, dash;\n  arle attack:3, dash;\n  arle attack:3, dash;\n  arle attack:3;\n  if i<3 {\n    arle dash;\n    arle attack:3, dash;\n    arle attack:3;\n    if .arle.weapon != .keys.weapon.crimsonmoonssemblance {\n      arle dash;  \n      arle attack:3;\n    }\n  } else {\n    if .arle.weapon != .keys.weapon.crimsonmoonssemblance {\n      arle dash;\n      arle attack:3;\n    }\n    arle burst;\n  }\n}\n",
+    "measured": {
+     "mean": 477780.4152914608,
+     "se": 1487.636206196832,
+     "chars": [
+      431333.9037216067,
+      37415.0294656879,
+      3163.318417498909,
+      5868.163686666999
+     ],
+     "waits": [
+      {
+       "insufficient_stamina": 5.916666666666665
+      },
+      {
+       "skill_cd": 0.6666666666666667,
+       "swap_cd": 0.46666666666666673
+      },
+      {},
+      {}
+     ],
+     "cpu": 0.135814286
+    }
+   }
+  }
+ },
+ {
+  "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+  "reference_audit_32": {
+   "L": 132621.22318002622,
+   "A": 309191.3204334123,
+   "S_V2S384": 239263.3180016094,
+   "S_V2T384": 272414.00664209377
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active cyno;\ncyno skill;\nfor let i=0; i<4; i=i+1 {\n  furina skill;\n  xilonen skill; if .xilonen.burst.ready { xilonen burst; } xilonen attack:2;\n  furina attack; if .furina.burst.ready { furina burst; }\n  nahida skill, attack; if .nahida.burst.ready { nahida burst; }\n  cyno skill; if .cyno.burst.ready { cyno burst; } cyno attack, skill, attack:4, skill, attack:4, skill, attack:4, skill, attack:4, skill, attack:4, skill, attack:4, skill, attack:4, skill;\n}\n",
+    "measured": {
+     "mean": 132621.22318002622,
+     "se": 207.25654728533092,
+     "chars": [
+      85179.3223761728,
+      29700.250347200028,
+      14776.239542608806,
+      2965.4109140445735
+     ],
+     "waits": [
+      {
+       "skill_cd": 109.28333333333332
+      },
+      {
+       "swap_cd": 0.8166666666666665
+      },
+      {},
+      {}
+     ],
+     "cpu": 0.16856372799999997
+    }
+   },
+   "L_guard_all": {
+    "text": "active cyno;\nif .cyno.skill.ready { cyno skill; }\nfor let i=0; i<4; i=i+1 {\n  if .furina.skill.ready { furina skill; }\n  if .xilonen.skill.ready { xilonen skill; } if .xilonen.burst.ready { xilonen burst; } xilonen attack:2;\n  furina attack; if .furina.burst.ready { furina burst; }\n  if .nahida.skill.ready { nahida skill; } nahida attack; if .nahida.burst.ready { nahida burst; }\n  if .cyno.skill.ready { cyno skill; } if .cyno.burst.ready { cyno burst; } cyno attack; if .cyno.skill.ready { cyno skill; } cyno attack:4; if .cyno.skill.ready { cyno skill; } cyno attack:4; if .cyno.skill.ready { cyno skill; } cyno attack:4; if .cyno.skill.ready { cyno skill; } cyno attack:4; if .cyno.skill.ready { cyno skill; } cyno attack:4; if .cyno.skill.ready { cyno skill; } cyno attack:4; if .cyno.skill.ready { cyno skill; } cyno attack:4; if .cyno.skill.ready { cyno skill; }\n}\n",
+    "measured": {
+     "mean": 167208.88660619783,
+     "se": 718.6788393459186,
+     "chars": [
+      105730.93033319068,
+      38497.62392353876,
+      18269.50867031895,
+      4710.823679149529
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 5.379166666666669
+      },
+      {
+       "swap_cd": 1.0484375000000006
+      },
+      {}
+     ],
+     "cpu": 0.206426077
+    }
+   },
+   "A_support+A_window P=1260 (=A)": {
+    "text": "active cyno;\ncyno skill;\nfor let i=0; i<4; i=i+1 {\n  let Startframe = f();\n  xilonen skill, attack:2;\n  furina skill, dash, attack;\n  nahida skill, burst, attack, charge;\n  furina burst, attack:2;\n  xilonen skill, attack:2;\n  cyno skill, burst;\n  while f() - Startframe < 1260 {\n    if .cyno.mods.cyno-a1 && .cyno.skill.ready {\n      cyno skill;\n    } else if .cyno.normal == 5 && .stam > 20 {\n      cyno dash;\n    } else {\n      cyno attack;\n    }\n  }\n}\n",
+    "measured": {
+     "mean": 309191.3204334123,
+     "se": 505.05199227441267,
+     "chars": [
+      183107.27249471078,
+      76502.3835378218,
+      36027.89662873965,
+      13553.767772140349
+     ],
+     "waits": [
+      {
+       "skill_cd": 1.4572916666666669
+      },
+      {
+       "insufficient_energy": 0.022395833333333334,
+       "swap_cd": 0.46666666666666673
+      },
+      {
+       "insufficient_energy": 0.5385416666666667
+      },
+      {}
+     ],
+     "cpu": 0.25429432999999996
+    }
+   },
+   "A_support+A_window P=1200 (probe period)": {
+    "text": "active cyno;\ncyno skill;\nfor let i=0; i<4; i=i+1 {\n  let Startframe = f();\n  xilonen skill, attack:2;\n  furina skill, dash, attack;\n  nahida skill, burst, attack, charge;\n  furina burst, attack:2;\n  xilonen skill, attack:2;\n  cyno skill, burst;\n  while f() - Startframe < 1200 {\n    if .cyno.mods.cyno-a1 && .cyno.skill.ready {\n      cyno skill;\n    } else if .cyno.normal == 5 && .stam > 20 {\n      cyno dash;\n    } else {\n      cyno attack;\n    }\n  }\n}\n",
+    "measured": {
+     "mean": 290911.9074515919,
+     "se": 2294.274585219511,
+     "chars": [
+      162584.45015601546,
+      78703.2942866142,
+      35497.63526626175,
+      14126.527742700795
+     ],
+     "waits": [
+      {
+       "skill_cd": 5.414583333333333
+      },
+      {
+       "insufficient_energy": 5.032291666666667,
+       "skill_cd": 0.18697916666666667,
+       "swap_cd": 0.4604166666666667
+      },
+      {
+       "insufficient_energy": 5.091666666666667
+      },
+      {
+       "skill_cd": 0.46354166666666663
+      }
+     ],
+     "cpu": 0.23661775799999998
+    }
+   },
+   "A_support+generic_window(no status guard) P=1260": {
+    "text": "active cyno;\ncyno skill;\nfor let i=0; i<4; i=i+1 {\n  let Startframe = f();\n  xilonen skill, attack:2;\n  furina skill, dash, attack;\n  nahida skill, burst, attack, charge;\n  furina burst, attack:2;\n  xilonen skill, attack:2;\n  if .cyno.burst.ready { cyno burst; }\n  while f() - Startframe < 1260 {\n    if .cyno.skill.ready {\n      cyno skill;\n    } else if .cyno.normal == 5 && .stam > 20 {\n      cyno dash;\n    } else {\n      cyno attack;\n    }\n  }\n}\n",
+    "measured": {
+     "mean": 210741.4228713448,
+     "se": 9201.01536745904,
+     "chars": [
+      94758.5137198172,
+      71287.03971148541,
+      32259.6796045181,
+      12436.189835523968
+     ],
+     "waits": [
+      {
+       "skill_cd": 4.706249999999999,
+       "swap_cd": 0.01875
+      },
+      {
+       "insufficient_energy": 8.470833333333333,
+       "skill_cd": 0.12135416666666665,
+       "swap_cd": 0.45000000000000007
+      },
+      {
+       "insufficient_energy": 17.935416666666665
+      },
+      {
+       "no_failure": 0.033854166666666664,
+       "skill_cd": 4.1578125
+      }
+     ],
+     "cpu": 0.239781222
+    }
+   },
+   "A_support+skeleton_window P=1200": {
+    "text": "active cyno;\ncyno skill;\nfor let i=0; i<4; i=i+1 {\n  let Startframe = f();\n  xilonen skill, attack:2;\n  furina skill, dash, attack;\n  nahida skill, burst, attack, charge;\n  furina burst, attack:2;\n  xilonen skill, attack:2;\n  if .cyno.burst.ready { cyno burst; }\n  while f() - Startframe < 1200 { if .cyno.skill.ready { cyno skill; } else { cyno attack; } }\n}\n",
+    "measured": {
+     "mean": 84350.37753743315,
+     "se": 7613.430248685637,
+     "chars": [
+      15029.624946961718,
+      43049.97881318523,
+      19288.115971291387,
+      6982.657805994809
+     ],
+     "waits": [
+      {
+       "skill_cd": 1.275,
+       "swap_cd": 0.515625
+      },
+      {
+       "insufficient_energy": 36.67812500000001,
+       "skill_cd": 0.715625,
+       "swap_cd": 0.34062500000000007
+      },
+      {
+       "insufficient_energy": 90.69843750000001
+      },
+      {
+       "no_failure": 0.17708333333333331,
+       "skill_cd": 34.147916666666674
+      }
+     ],
+     "cpu": 0.174135729
+    }
+   },
+   "skeleton_support+A_window P=1260": {
+    "text": "active cyno;\ncyno skill;\nfor let i=0; i<4; i=i+1 {\n  let Startframe = f();\n  furina skill;\n  xilonen skill;\n  if .xilonen.burst.ready { xilonen burst; }\n  xilonen attack:2;\n  furina attack;\n  if .furina.burst.ready { furina burst; }\n  nahida skill, attack;\n  if .nahida.burst.ready { nahida burst; }\n  cyno skill, burst;\n  while f() - Startframe < 1260 {\n    if .cyno.mods.cyno-a1 && .cyno.skill.ready {\n      cyno skill;\n    } else if .cyno.normal == 5 && .stam > 20 {\n      cyno dash;\n    } else {\n      cyno attack;\n    }\n  }\n}\n",
+    "measured": {
+     "mean": 18448.872039951864,
+     "se": 512.9568513492106,
+     "chars": [
+      1124.6580631141642,
+      12169.640466429908,
+      4092.2404196661996,
+      1062.3330907415877
+     ],
+     "waits": [
+      {
+       "insufficient_energy": 269.97239583333345
+      },
+      {
+       "swap_cd": 0.2989583333333332
+      },
+      {},
+      {}
+     ],
+     "cpu": 0.10878154500000001
+    }
+   },
+   "skeleton_support+skeleton_window P=1200": {
+    "text": "active cyno;\ncyno skill;\nfor let i=0; i<4; i=i+1 {\n  let Startframe = f();\n  furina skill;\n  xilonen skill;\n  if .xilonen.burst.ready { xilonen burst; }\n  xilonen attack:2;\n  furina attack;\n  if .furina.burst.ready { furina burst; }\n  nahida skill, attack;\n  if .nahida.burst.ready { nahida burst; }\n  if .cyno.burst.ready { cyno burst; }\n  while f() - Startframe < 1200 { if .cyno.skill.ready { cyno skill; } else { cyno attack; } }\n}\n",
+    "measured": {
+     "mean": 166354.30098197248,
+     "se": 315.162409592412,
+     "chars": [
+      88729.14767931546,
+      47883.87657315507,
+      22887.90949852547,
+      6853.367230976546
+     ],
+     "waits": [
+      {
+       "skill_cd": 3.088020833333332
+      },
+      {
+       "swap_cd": 5.758333333333334
+      },
+      {
+       "swap_cd": 1.2546875000000002
+      },
+      {}
+     ],
+     "cpu": 0.214338279
+    }
+   }
+  }
+ },
+ {
+  "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+  "reference_audit_32": {
+   "L": 12128.551082107399,
+   "A": 71504.89689389792,
+   "S_V2S384": 58617.841498492315,
+   "S_V2T384": 60076.55395061996
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active mualani;\nfn mualani_combo() {\n  \n  while .mualani.nightsoul.state {\n    for let k=0; k<3; k=k+1 {\n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    break;\n  }\n}\nmualani attack; \nfor let i=0; i<2; i=i+1 {\n  sucrose skill;\n  if .xiangling.burst.ready { xiangling burst; } xiangling skill, dash;  \n  candace skill; if .candace.burst.ready { candace burst; } candace attack;\n  if !.candace.mods.favonius-cd {\n    candace attack;\n  } else {\n    wait(8); \n  }\n  if .mualani.burst.ready { mualani burst; }\n  mualani skill;\n  mualani_combo();\n  mualani walk[f=1];\n  candace skill, attack:2, dash; if .candace.burst.ready { candace burst; }\n  xiangling attack:3;\n  if !.xiangling.mods.favonius-cd {\n    xiangling attack;\n  }\n  xiangling skill, dash;\n  sucrose skill, dash, attack; if .sucrose.burst.ready { sucrose burst; }\n  mualani skill;\n  mualani_combo();\n  if .mualani.nightsoul.state {\n    mualani skill; \n  }\n  while !.element.t0.hydro {\n    mualani attack;\n  }\n}\n",
+    "measured": {
+     "mean": 59965.561705981985,
+     "se": 287.6384781249,
+     "chars": [
+      51153.45896171932,
+      2144.7141836632786,
+      1481.3872614206882,
+      5186.001299178668
+     ],
+     "waits": [
+      {
+       "skill_cd": 1.6239583333333327
+      },
+      {},
+      {
+       "swap_cd": 0.6041666666666667
+      },
+      {
+       "swap_cd": 0.027083333333333334
+      }
+     ],
+     "cpu": 0.20668906299999998
+    }
+   },
+   "L_guard_all": {
+    "text": "active mualani;\nfn mualani_combo() {\n  \n  while .mualani.nightsoul.state {\n    for let k=0; k<3; k=k+1 {\n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    break;\n  }\n}\nmualani attack; \nfor let i=0; i<2; i=i+1 {\n  if .sucrose.skill.ready { sucrose skill; }\n  if .xiangling.burst.ready { xiangling burst; } if .xiangling.skill.ready { xiangling skill; } xiangling dash;  \n  if .candace.skill.ready { candace skill; } if .candace.burst.ready { candace burst; } candace attack;\n  if !.candace.mods.favonius-cd {\n    candace attack;\n  } else {\n    wait(8); \n  }\n  if .mualani.burst.ready { mualani burst; }\n  if .mualani.skill.ready { mualani skill; }\n  mualani_combo();\n  mualani walk[f=1];\n  if .candace.skill.ready { candace skill; } candace attack:2, dash; if .candace.burst.ready { candace burst; }\n  xiangling attack:3;\n  if !.xiangling.mods.favonius-cd {\n    xiangling attack;\n  }\n  if .xiangling.skill.ready { xiangling skill; } xiangling dash;\n  if .sucrose.skill.ready { sucrose skill; } sucrose dash, attack; if .sucrose.burst.ready { sucrose burst; }\n  if .mualani.skill.ready { mualani skill; }\n  mualani_combo();\n  if .mualani.nightsoul.state {\n    if .mualani.skill.ready { mualani skill; } \n  }\n  while !.element.t0.hydro {\n    mualani attack;\n  }\n}\n",
+    "measured": {
+     "mean": 37703.952858458,
+     "se": 880.5628135659257,
+     "chars": [
+      28424.570281055476,
+      2528.278580963447,
+      1281.5347792035109,
+      5469.569217235536
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.0375
+      },
+      {
+       "swap_cd": 0.791666666666667
+      },
+      {
+       "swap_cd": 0.6385416666666666
+      }
+     ],
+     "cpu": 0.19116853399999997
+    }
+   }
+  }
+ },
+ {
+  "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+  "reference_audit_32": {
+   "L": 87653.79712547186,
+   "A": 599869.2257469525,
+   "S_V2S384": 520080.25578895956,
+   "S_V2T384": 526254.1871989889
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active neuvillette;\nfor let i=0; i<4; i=i+1 {\n  neuvillette skill;\n  furina skill, dash, attack;\n  xilonen skill; if .xilonen.burst.ready { xilonen burst; } xilonen attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  citlali skill, attack;\n  if .furina.burst.ready { furina burst; }\n  neuvillette charge; if .neuvillette.burst.ready { neuvillette burst; } neuvillette skill, charge;\n  xilonen skill, attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  neuvillette charge, charge;\n}\nwait(173);\n",
+    "measured": {
+     "mean": 373788.49789853644,
+     "se": 367.3418385235983,
+     "chars": [
+      296831.74267817277,
+      65645.93840185486,
+      8772.685756655615,
+      2538.1310618528837
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {}
+     ],
+     "cpu": 0.18309301299999997
+    }
+   },
+   "L_guard_all": {
+    "text": "active neuvillette;\nfor let i=0; i<4; i=i+1 {\n  if .neuvillette.skill.ready { neuvillette skill; }\n  if .furina.skill.ready { furina skill; } furina dash, attack;\n  if .xilonen.skill.ready { xilonen skill; } if .xilonen.burst.ready { xilonen burst; } xilonen attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  if .citlali.skill.ready { citlali skill; } citlali attack;\n  if .furina.burst.ready { furina burst; }\n  neuvillette charge; if .neuvillette.burst.ready { neuvillette burst; } if .neuvillette.skill.ready { neuvillette skill; } neuvillette charge;\n  if .xilonen.skill.ready { xilonen skill; } xilonen attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  neuvillette charge, charge;\n}\nwait(173);\n",
+    "measured": {
+     "mean": 373788.49789853644,
+     "se": 367.3418385235983,
+     "chars": [
+      296831.74267817277,
+      65645.93840185486,
+      8772.685756655615,
+      2538.1310618528837
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {}
+     ],
+     "cpu": 0.208501164
+    }
+   },
+   "L_guard_bursts with trailing wait(173)": {
+    "text": "active neuvillette;\nfor let i=0; i<4; i=i+1 {\n  neuvillette skill;\n  furina skill, dash, attack;\n  xilonen skill; if .xilonen.burst.ready { xilonen burst; } xilonen attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  citlali skill, attack;\n  if .furina.burst.ready { furina burst; }\n  neuvillette charge; if .neuvillette.burst.ready { neuvillette burst; } neuvillette skill, charge;\n  xilonen skill, attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  neuvillette charge, charge;\n}\nwait(173);\n",
+    "measured": {
+     "mean": 373788.49789853644,
+     "se": 367.3418385235983,
+     "chars": [
+      296831.74267817277,
+      65645.93840185486,
+      8772.685756655615,
+      2538.1310618528837
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {}
+     ],
+     "cpu": 0.189620338
+    }
+   },
+   "L_guard_bursts with trailing wait(400)": {
+    "text": "active neuvillette;\nfor let i=0; i<4; i=i+1 {\n  neuvillette skill;\n  furina skill, dash, attack;\n  xilonen skill; if .xilonen.burst.ready { xilonen burst; } xilonen attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  citlali skill, attack;\n  if .furina.burst.ready { furina burst; }\n  neuvillette charge; if .neuvillette.burst.ready { neuvillette burst; } neuvillette skill, charge;\n  xilonen skill, attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  neuvillette charge, charge;\n}\nwait(400);\n",
+    "measured": {
+     "mean": 373643.7506280439,
+     "se": 383.34463267855506,
+     "chars": [
+      296819.57825164637,
+      65488.446289872336,
+      8859.14172025334,
+      2476.5843662715374
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {}
+     ],
+     "cpu": 0.17918807699999997
+    }
+   },
+   "L_guard_bursts with trailing wait(715)": {
+    "text": "active neuvillette;\nfor let i=0; i<4; i=i+1 {\n  neuvillette skill;\n  furina skill, dash, attack;\n  xilonen skill; if .xilonen.burst.ready { xilonen burst; } xilonen attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  citlali skill, attack;\n  if .furina.burst.ready { furina burst; }\n  neuvillette charge; if .neuvillette.burst.ready { neuvillette burst; } neuvillette skill, charge;\n  xilonen skill, attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  neuvillette charge, charge;\n}\nwait(715);\n",
+    "measured": {
+     "mean": 357019.7200126541,
+     "se": 334.61080047287953,
+     "chars": [
+      284017.16048596386,
+      62338.62903809397,
+      8336.60190841974,
+      2327.3285801762177
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {}
+     ],
+     "cpu": 0.17614965999999999
+    }
+   },
+   "L_guard_bursts with trailing wait(1000)": {
+    "text": "active neuvillette;\nfor let i=0; i<4; i=i+1 {\n  neuvillette skill;\n  furina skill, dash, attack;\n  xilonen skill; if .xilonen.burst.ready { xilonen burst; } xilonen attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  citlali skill, attack;\n  if .furina.burst.ready { furina burst; }\n  neuvillette charge; if .neuvillette.burst.ready { neuvillette burst; } neuvillette skill, charge;\n  xilonen skill, attack:2; \n  if .xilonen.sets.ap >=4 {\n    xilonen dash; pick_up_crystallize(\"hydro\");\n  }\n  neuvillette charge, charge;\n}\nwait(1000);\n",
+    "measured": {
+     "mean": 330759.0370902236,
+     "se": 304.5941529153701,
+     "chars": [
+      261886.16147622175,
+      58694.5389310524,
+      7818.131313754844,
+      2360.205369194425
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {
+       "swap_cd": 0.23333333333333336
+      },
+      {}
+     ],
+     "cpu": 0.17983494899999997
+    }
+   },
+   "A with trailing wait(173)": {
+    "text": "active neuvillette;\nlet UseXilonenDash = false;  \nfor let i=0; i<4; i=i+1 {\n  neuvillette skill;\n  furina skill, dash, attack;\n  xilonen skill, attack:2;\n  if UseXilonenDash == true {\n    xilonen dash;   \n  }\n  pick_up_crystallize(\"hydro\");\n  citlali skill, attack;\n  furina burst, attack;\n  neuvillette charge, burst;\n  xilonen skill, attack:2;\n  if UseXilonenDash == true {\n    xilonen dash;   \n  }\n  pick_up_crystallize(\"hydro\");\n  neuvillette skill, charge;\n}\nwait(173);\n",
+    "measured": {
+     "mean": 599869.2257469525,
+     "se": 431.71519818421206,
+     "chars": [
+      456432.91183492856,
+      122526.35352704534,
+      15558.363162894375,
+      5351.597222086426
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 0.3666666666666667
+      },
+      {
+       "swap_cd": 0.3666666666666667
+      },
+      {}
+     ],
+     "cpu": 0.227137015
+    }
+   }
+  }
+ },
+ {
+  "case": "mualani-mona-xilonen-mavuika--M8TgfHLLtqbp",
+  "reference_audit_32": {
+   "L": 92152.78155291024,
+   "A": 107317.00103023776,
+   "S_V2S384": 96868.10826000797,
+   "S_V2T384": 96519.85581970497
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active mavuika;\nfn mualani_combo() {\n  \n  while .mualani.nightsoul.state {\n    for let k=0; k<3; k=k+1 {\n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    break;\n  }\n}\nfor let i=0; i<4; i=i+1 {\n  mona skill, attack;\n  xilonen skill, attack:2;\n  if .mona.sets.ap >=4 {\n    mona dash; pick_up_crystallize(\"hydro\");\n  }\n  if .mona.burst.ready { mona burst; }\n  if .mavuika.burst.ready { mavuika burst; } mavuika charge, skill;\n  mualani skill;\n  mualani_combo();\n  mualani walk[f=1];\n  if is_even(i) {\n    if .mualani.burst.ready { mualani burst; }\n  } else {\n    mona jump:2;          \n  }\n}\n",
+    "measured": {
+     "mean": 70286.52419117557,
+     "se": 87.40180440291034,
+     "chars": [
+      50149.77057195441,
+      3253.7955014387244,
+      867.0540770843915,
+      16015.90404069802
+     ],
+     "waits": [
+      {
+       "skill_cd": 0.0067708333333333336
+      },
+      {},
+      {},
+      {}
+     ],
+     "cpu": 0.208499216
+    }
+   },
+   "L_guard_all": {
+    "text": "active mavuika;\nfn mualani_combo() {\n  \n  while .mualani.nightsoul.state {\n    for let k=0; k<3; k=k+1 {\n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    break;\n  }\n}\nfor let i=0; i<4; i=i+1 {\n  if .mona.skill.ready { mona skill; } mona attack;\n  if .xilonen.skill.ready { xilonen skill; } xilonen attack:2;\n  if .mona.sets.ap >=4 {\n    mona dash; pick_up_crystallize(\"hydro\");\n  }\n  if .mona.burst.ready { mona burst; }\n  if .mavuika.burst.ready { mavuika burst; } mavuika charge; if .mavuika.skill.ready { mavuika skill; }\n  if .mualani.skill.ready { mualani skill; }\n  mualani_combo();\n  mualani walk[f=1];\n  if is_even(i) {\n    if .mualani.burst.ready { mualani burst; }\n  } else {\n    mona jump:2;          \n  }\n}\n",
+    "measured": {
+     "mean": 70254.17521730578,
+     "se": 82.49129512295306,
+     "chars": [
+      50101.382798914914,
+      3259.1359661797724,
+      866.973164256867,
+      16026.683287954198
+     ],
+     "waits": [
+      {
+       "swap_cd": 0.030729166666666665
+      },
+      {},
+      {},
+      {}
+     ],
+     "cpu": 0.196314636
+    }
+   }
+  }
+ },
+ {
+  "case": "wriothesley-furina-xilonen-bennett--PFGMCrLDpbcq",
+  "reference_audit_32": {
+   "L": 98954.23379213337,
+   "A": 274194.8436343636,
+   "S_V2S384": 277476.5837298634,
+   "S_V2T384": 268120.8127797157
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active wrio;\nwrio attack;\nfor let i=0; i<4; i=i+1 {\n  xilonen skill, attack:2; if .xilonen.burst.ready { xilonen burst; }\n  furina attack, skill; if .furina.burst.ready { furina burst; }\n  bennett skill; if .bennett.burst.ready { bennett burst; }\n  xilonen skill, attack:2;\n  wrio skill, attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump, attack:3;\n  if .wrio.burst.ready && .wrio.energy == .wrio.energymax  {\n    if .wrio.burst.ready { wrio burst; }\n  }\n}\n",
+    "measured": {
+     "mean": 201673.43271429688,
+     "se": 972.7680780119673,
+     "chars": [
+      139724.351805654,
+      49514.7990124619,
+      8900.667853093302,
+      3533.6140430878368
+     ],
+     "waits": [
+      {},
+      {},
+      {
+       "skill_cd": 27.00833333333332
+      },
+      {}
+     ],
+     "cpu": 0.169276553
+    }
+   },
+   "L_guard_all": {
+    "text": "active wrio;\nwrio attack;\nfor let i=0; i<4; i=i+1 {\n  if .xilonen.skill.ready { xilonen skill; } xilonen attack:2; if .xilonen.burst.ready { xilonen burst; }\n  furina attack; if .furina.skill.ready { furina skill; } if .furina.burst.ready { furina burst; }\n  if .bennett.skill.ready { bennett skill; } if .bennett.burst.ready { bennett burst; }\n  if .xilonen.skill.ready { xilonen skill; } xilonen attack:2;\n  if .wrio.skill.ready { wrio skill; } wrio attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump, attack:3;\n  if .wrio.burst.ready && .wrio.energy == .wrio.energymax  {\n    if .wrio.burst.ready { wrio burst; }\n  }\n}\n",
+    "measured": {
+     "mean": 174130.53145440892,
+     "se": 1196.0345028240122,
+     "chars": [
+      129836.51521205987,
+      33806.83525198428,
+      7326.446754617814,
+      3160.7342357469693
+     ],
+     "waits": [
+      {
+       "insufficient_stamina": 5.176562500000001
+      },
+      {
+       "swap_cd": 0.9375
+      },
+      {},
+      {
+       "swap_cd": 0.7760416666666667
+      }
+     ],
+     "cpu": 0.166331632
+    }
+   }
+  }
+ },
+ {
+  "case": "yoimiya-furina-yunjin-xilonen--rk6QCLfwKJkD",
+  "reference_audit_32": {
+   "L": 95776.78717152684,
+   "A": 239802.5318431884,
+   "S_V2S384": 234532.83118558084,
+   "S_V2T384": 235652.47240769007
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active xilonen;\nfor let i=0; i<4; i=i+1 {\n  if .xilonen.burst.ready { xilonen burst; }\n  furina skill, attack; if .furina.burst.ready { furina burst; }\n  xilonen skill, attack:2;\n  yunjin skill, attack; if .yunjin.burst.ready { yunjin burst; } yunjin attack, dash;\n  pick_up_crystallize(\"hydro\");\n  yoimiya skill, attack:5, dash, attack:5, dash, attack:5, dash, attack:3;\n}\n",
+    "measured": {
+     "mean": 150897.0247088639,
+     "se": 563.3626525771888,
+     "chars": [
+      98919.54647781307,
+      42883.35864969877,
+      7120.955885194313,
+      1973.1636961577985
+     ],
+     "waits": [
+      {
+       "skill_cd": 1.9739583333333335
+      },
+      {
+       "skill_cd": 25.172395833333336
+      },
+      {},
+      {}
+     ],
+     "cpu": 0.16078871899999997
+    }
+   },
+   "L_guard_all": {
+    "text": "active xilonen;\nfor let i=0; i<4; i=i+1 {\n  if .xilonen.burst.ready { xilonen burst; }\n  if .furina.skill.ready { furina skill; } furina attack; if .furina.burst.ready { furina burst; }\n  if .xilonen.skill.ready { xilonen skill; } xilonen attack:2;\n  if .yunjin.skill.ready { yunjin skill; } yunjin attack; if .yunjin.burst.ready { yunjin burst; } yunjin attack, dash;\n  pick_up_crystallize(\"hydro\");\n  if .yoimiya.skill.ready { yoimiya skill; } yoimiya attack:5, dash, attack:5, dash, attack:5, dash, attack:3;\n}\n",
+    "measured": {
+     "mean": 144014.1940222319,
+     "se": 292.7424328067272,
+     "chars": [
+      82116.47590399851,
+      49793.13325566882,
+      9389.54234608481,
+      2715.042516479856
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 6.0
+      },
+      {},
+      {}
+     ],
+     "cpu": 0.145564808
+    }
+   }
+  }
+ },
+ {
+  "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+  "reference_audit_32": {
+   "L": 45570.921929638185,
+   "A": 337913.4433419483,
+   "S_V2S384": 336739.2372915699,
+   "S_V2T384": 341372.2633950326
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active wrio;\nwrio attack;\nfor let x=0; x<4; x=x+1 {\n  xilonen skill, attack:2;\n  shenhe skill[hold=1], attack;\n  if is_even(x) {\n    if .shenhe.burst.ready { shenhe burst; }\n  }\n  if .shenhe.sets.ap >= 4 {\n    shenhe dash; pick_up_crystallize(\"cryo\");\n  }\n  kazuha skill, high_plunge;\n  if !is_even(x) {\n    if .kazuha.burst.ready { kazuha burst; }\n  }\n  wrio skill, attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump;\n  if .wrio.burst.ready {\n    if .wrio.burst.ready { wrio burst; }\n  } else {\n    wrio attack:3, charge;\n  }\n}\n",
+    "measured": {
+     "mean": 311597.0792194796,
+     "se": 235.76939679179893,
+     "chars": [
+      283873.57984341605,
+      12234.889688777312,
+      9460.098120102186,
+      6028.511567184192
+     ],
+     "waits": [
+      {
+       "skill_cd": 3.483333333333334
+      },
+      {},
+      {},
+      {}
+     ],
+     "cpu": 0.115298183
+    }
+   },
+   "L_guard_all": {
+    "text": "active wrio;\nwrio attack;\nfor let x=0; x<4; x=x+1 {\n  if .xilonen.skill.ready { xilonen skill; } xilonen attack:2;\n  if .shenhe.skill.ready { shenhe skill[hold=1]; } shenhe attack;\n  if is_even(x) {\n    if .shenhe.burst.ready { shenhe burst; }\n  }\n  if .shenhe.sets.ap >= 4 {\n    shenhe dash; pick_up_crystallize(\"cryo\");\n  }\n  if .kazuha.skill.ready { kazuha skill; } kazuha high_plunge;\n  if !is_even(x) {\n    if .kazuha.burst.ready { kazuha burst; }\n  }\n  if .wrio.skill.ready { wrio skill; } wrio attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump, attack:3, charge, jump;\n  if .wrio.burst.ready {\n    if .wrio.burst.ready { wrio burst; }\n  } else {\n    wrio attack:3, charge;\n  }\n}\n",
+    "measured": {
+     "mean": 260274.45997824598,
+     "se": 639.9572505289951,
+     "chars": [
+      234158.455336818,
+      11152.871098343836,
+      9099.237829957117,
+      5863.895713126905
+     ],
+     "waits": [
+      {
+       "insufficient_stamina": 13.83385416666667
+      },
+      {},
+      {},
+      {}
+     ],
+     "cpu": 0.12322162
+    }
+   }
+  }
+ },
+ {
+  "case": "raidenshogun-furina-xilonen-yelan--PhjwKhdjDwtb",
+  "reference_audit_32": {
+   "L": 174318.22869859383,
+   "A": 354007.857369221,
+   "S_V2S384": 336304.5448578934,
+   "S_V2T384": 344658.21354477125
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active raiden;\nraiden skill;\nfor let i=0; i<6; i=i+1 {\n furina skill, dash; if .furina.burst.ready { furina burst; }\n xilonen skill; if .xilonen.burst.ready { xilonen burst; } xilonen attack:2;\n if .yelan.burst.ready { yelan burst; } yelan skill:1, attack:2;\n furina attack:2;\n if .raiden.burst.ready { raiden burst; } raiden attack:4, dash, attack:4, dash, attack:4, dash, attack:4, dash, attack:1, skill;\n}\n",
+    "measured": {
+     "mean": 202401.60863568253,
+     "se": 316.7507011119286,
+     "chars": [
+      62222.6958927136,
+      80471.83505996338,
+      54373.36295333184,
+      5333.7147296740295
+     ],
+     "waits": [
+      {
+       "skill_cd": 18.96666666666666
+      },
+      {
+       "skill_cd": 4.25,
+       "swap_cd": 1.633333333333333
+      },
+      {},
+      {}
+     ],
+     "cpu": 0.23832338399999997
+    }
+   },
+   "L_guard_all": {
+    "text": "active raiden;\nif .raiden.skill.ready { raiden skill; }\nfor let i=0; i<6; i=i+1 {\n if .furina.skill.ready { furina skill; } furina dash; if .furina.burst.ready { furina burst; }\n if .xilonen.skill.ready { xilonen skill; } if .xilonen.burst.ready { xilonen burst; } xilonen attack:2;\n if .yelan.burst.ready { yelan burst; } yelan skill:1, attack:2;\n furina attack:2;\n if .raiden.burst.ready { raiden burst; } raiden attack:4, dash, attack:4, dash, attack:4, dash, attack:4, dash, attack:1; if .raiden.skill.ready { raiden skill; }\n}\n",
+    "measured": {
+     "mean": 196149.58258297795,
+     "se": 437.3859225369805,
+     "chars": [
+      69923.46405940293,
+      60655.365741881884,
+      59673.06359203631,
+      5897.689189656908
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 1.75
+      },
+      {},
+      {}
+     ],
+     "cpu": 0.19781527599999998
+    }
+   }
+  }
+ },
+ {
+  "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+  "reference_audit_32": {
+   "L": 69229.11202835108,
+   "A": 75906.34010867738
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "fn clorinde_combo() {\n  clorinde skill;\n  while .clorinde.status.clorinde-night-watch {\n    if .clorinde.bolratio >= 1 {\n      clorinde skill;\n    } else {\n      clorinde attack;\n    }\n  }\n}\nactive sara; \nsara skill, aim;\nwait(12); \nfor let r=0; r<2; r=r+1 { \n  if !r { \n    xilonen skill, attack:2;\n    nahida skill, attack, dash; pick_up_crystallize(\"electro\");\n  } else {\n    xilonen skill; if .xilonen.burst.ready { xilonen burst; } xilonen attack:2; \n    nahida skill; if .nahida.burst.ready { nahida burst; } nahida charge, dash; pick_up_crystallize(\"electro\");\n  }\n  if .sara.burst.ready { sara burst; }\n  clorinde_combo();\n  sara skill;\n  if .clorinde.burst.ready { clorinde burst; }\n  xilonen skill, attack:2;\n  nahida skill, attack, dash; pick_up_crystallize(\"electro\");  \n  sara aim;\n  clorinde_combo();\n}\n",
+    "measured": {
+     "mean": 69229.11202835108,
+     "se": 69.58542223186925,
+     "chars": [
+      56032.020120038804,
+      4798.832186111464,
+      6323.459731558344,
+      2074.799990642531
+     ],
+     "waits": [
+      {
+       "skill_cd": 16.533333333333346
+      },
+      {
+       "swap_cd": 2.1000000000000005
+      },
+      {},
+      {}
+     ],
+     "cpu": 0.133657678
+    }
+   },
+   "L_guard_all": {
+    "text": "fn clorinde_combo() {\n  if .clorinde.skill.ready { clorinde skill; }\n  while .clorinde.status.clorinde-night-watch {\n    if .clorinde.bolratio >= 1 {\n      if .clorinde.skill.ready { clorinde skill; }\n    } else {\n      clorinde attack;\n    }\n  }\n}\nactive sara; \nif .sara.skill.ready { sara skill; } sara aim;\nwait(12); \nfor let r=0; r<2; r=r+1 { \n  if !r { \n    if .xilonen.skill.ready { xilonen skill; } xilonen attack:2;\n    if .nahida.skill.ready { nahida skill; } nahida attack, dash; pick_up_crystallize(\"electro\");\n  } else {\n    if .xilonen.skill.ready { xilonen skill; } if .xilonen.burst.ready { xilonen burst; } xilonen attack:2; \n    if .nahida.skill.ready { nahida skill; } if .nahida.burst.ready { nahida burst; } nahida charge, dash; pick_up_crystallize(\"electro\");\n  }\n  if .sara.burst.ready { sara burst; }\n  clorinde_combo();\n  if .sara.skill.ready { sara skill; }\n  if .clorinde.burst.ready { clorinde burst; }\n  if .xilonen.skill.ready { xilonen skill; } xilonen attack:2;\n  if .nahida.skill.ready { nahida skill; } nahida attack, dash; pick_up_crystallize(\"electro\");  \n  sara aim;\n  clorinde_combo();\n}\n",
+    "measured": {
+     "mean": 54512.842638133196,
+     "se": 63.918384076431295,
+     "chars": [
+      38567.382164328985,
+      7486.757073218137,
+      6530.568983956419,
+      1928.1344166297565
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 3.033333333333332
+      },
+      {},
+      {}
+     ],
+     "cpu": 0.13505187999999999
+    }
+   }
+  }
+ },
+ {
+  "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+  "reference_audit_32": {
+   "L": 131255.39215096083,
+   "A": 150164.93560936977
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active ineffa;\nfor let i=0; i<6; i=i+1 {\n  \n  if .ineffa.burst.ready {\n    if .ineffa.burst.ready { ineffa burst; }\n  } else {\n    ineffa skill, attack;\n  }\n  \n  if .furina.skill.ready {\n    furina skill, dash, attack;\n  } else {\n    furina attack:2;\n  }\n  \n  sucrose attack;\n  if .sucrose.burst.ready {\n    if .sucrose.burst.ready { sucrose burst; }\n  } else if .sucrose.skill.ready {\n    sucrose skill, dash;\n  } else {\n    sucrose charge;\n  }\n  \n  flins skill, skill, attack:3, dash, attack:4; if .flins.burst.ready { flins burst; } flins attack:4, skill; if .flins.burst.ready { flins burst; } flins attack:4, dash, attack:1;\n  \n  if .ineffa.status.ineffa-a4 { \n    flins attack:3;\n  }\n  sucrose attack;\n  if .sucrose.skill.ready {\n    sucrose skill, dash;\n  } else {\n    sucrose charge;\n  }\n  \n}\n",
+    "measured": {
+     "mean": 131255.39215096083,
+     "se": 195.7700418729986,
+     "chars": [
+      65073.48855855728,
+      48545.139328399855,
+      5557.432057714995,
+      12079.332206288796
+     ],
+     "waits": [
+      {
+       "skill_cd": 2.829687499999999
+      },
+      {
+       "swap_cd": 1.649999999999999
+      },
+      {
+       "swap_cd": 3.35625
+      },
+      {
+       "swap_cd": 1.4666666666666668
+      }
+     ],
+     "cpu": 0.138315305
+    }
+   },
+   "L_guard_all": {
+    "text": "active ineffa;\nfor let i=0; i<6; i=i+1 {\n  \n  if .ineffa.burst.ready {\n    if .ineffa.burst.ready { ineffa burst; }\n  } else {\n    if .ineffa.skill.ready { ineffa skill; } ineffa attack;\n  }\n  \n  if .furina.skill.ready {\n    if .furina.skill.ready { furina skill; } furina dash, attack;\n  } else {\n    furina attack:2;\n  }\n  \n  sucrose attack;\n  if .sucrose.burst.ready {\n    if .sucrose.burst.ready { sucrose burst; }\n  } else if .sucrose.skill.ready {\n    if .sucrose.skill.ready { sucrose skill; } sucrose dash;\n  } else {\n    sucrose charge;\n  }\n  \n  if .flins.skill.ready { flins skill; } if .flins.skill.ready { flins skill; } flins attack:3, dash, attack:4; if .flins.burst.ready { flins burst; } flins attack:4; if .flins.skill.ready { flins skill; } if .flins.burst.ready { flins burst; } flins attack:4, dash, attack:1;\n  \n  if .ineffa.status.ineffa-a4 { \n    flins attack:3;\n  }\n  sucrose attack;\n  if .sucrose.skill.ready {\n    if .sucrose.skill.ready { sucrose skill; } sucrose dash;\n  } else {\n    sucrose charge;\n  }\n  \n}\n",
+    "measured": {
+     "mean": 107619.31309638669,
+     "se": 750.0459873680835,
+     "chars": [
+      42503.23747439683,
+      45933.95353982304,
+      5436.022428834852,
+      13746.099653331992
+     ],
+     "waits": [
+      {},
+      {
+       "swap_cd": 2.808854166666666
+      },
+      {
+       "swap_cd": 3.521875
+      },
+      {
+       "swap_cd": 1.3979166666666665
+      }
+     ],
+     "cpu": 0.147473219
+    }
+   }
+  }
+ },
+ {
+  "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+  "reference_audit_32": {
+   "L": 131760.61063576184,
+   "A": 157325.98631141105
+  },
+  "programs": {
+   "L_guard_bursts": {
+    "text": "active mualani;\nfn mualani_combo() {\n  mualani skill;\n  while .mualani.nightsoul.state {\n    for let k=0; k<3; k=k+1 {\n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    mualani skill;\n  }\n}\nmualani attack;\nfor let i=0; i<2; i=i+1 {\n  xilonen skill; if .xilonen.burst.ready { xilonen burst; } xilonen attack:2;\n  chiori skill:2;\n  if .xl.burst.ready { xl burst; } xl skill, dash;\n  pick_up_crystallize(\"hydro\");\n  if .mualani.burst.ready { mualani burst; }\n  mualani_combo();\n  mualani attack;\n  \n  xilonen skill, attack:2;\n  if .chiori.burst.ready { chiori burst; } chiori skill:2;\n  xl attack:3, skill, dash;\n  pick_up_crystallize(\"hydro\");\n  mualani_combo();\n  mualani attack;\n  \n}\n",
+    "measured": {
+     "mean": 132234.01594517133,
+     "se": 462.2720465912065,
+     "chars": [
+      76815.86316484792,
+      2228.1184832089807,
+      1420.5886769514973,
+      51769.44562016303
+     ],
+     "waits": [
+      {
+       "swap_cd": 16.8125
+      },
+      {},
+      {},
+      {}
+     ],
+     "cpu": 0.215628394
+    }
+   },
+   "L_guard_all": {
+    "text": "active mualani;\nfn mualani_combo() {\n  if .mualani.skill.ready { mualani skill; }\n  while .mualani.nightsoul.state {\n    for let k=0; k<3; k=k+1 {\n      while .mualani.momentum < 3 {\n        mualani walk[f=1];\n      }\n      mualani attack;\n    }\n    if .mualani.skill.ready { mualani skill; }\n  }\n}\nmualani attack;\nfor let i=0; i<2; i=i+1 {\n  if .xilonen.skill.ready { xilonen skill; } if .xilonen.burst.ready { xilonen burst; } xilonen attack:2;\n  chiori skill:2;\n  if .xl.burst.ready { xl burst; } if .xl.skill.ready { xl skill; } xl dash;\n  pick_up_crystallize(\"hydro\");\n  if .mualani.burst.ready { mualani burst; }\n  mualani_combo();\n  mualani attack;\n  \n  if .xilonen.skill.ready { xilonen skill; } xilonen attack:2;\n  if .chiori.burst.ready { chiori burst; } chiori skill:2;\n  xl attack:3; if .xl.skill.ready { xl skill; } xl dash;\n  pick_up_crystallize(\"hydro\");\n  mualani_combo();\n  mualani attack;\n  \n}\n",
+    "measured": {
+     "mean": 132234.01594517133,
+     "se": 462.2720465912065,
+     "chars": [
+      76815.86316484792,
+      2228.1184832089807,
+      1420.5886769514973,
+      51769.44562016303
+     ],
+     "waits": [
+      {
+       "swap_cd": 16.8125
+      },
+      {},
+      {},
+      {}
+     ],
+     "cpu": 0.227718777
+    }
+   }
+  }
+ }
+]
