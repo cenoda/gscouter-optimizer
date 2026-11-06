@@ -17,9 +17,11 @@ OUT = ROOT / "reports/heldout-recovery-v2-2026-11-05"
 ARMS = [("V1", "192"), ("V2S", "384"), ("V2T", "384")]
 
 
-def main(tool, gso):
-    ex = json.loads((OUT / "experiments.json").read_text())["cases"]
-    work = RUNS / "parity"
+def main(tool, gso, label=""):
+    rundir = OUT / label if label else OUT
+    results = RUNS / ("results-" + label.replace(".", "") if label else "results")
+    ex = json.loads((rundir / "experiments.json").read_text())["cases"]
+    work = RUNS / ("parity-" + label if label else "parity")
     work.mkdir(parents=True, exist_ok=True)
     items, meta = [], {}
     for c in ex:
@@ -30,13 +32,13 @@ def main(tool, gso):
             subprocess.run([gso, "config", "--manifest", inputs / "manifest.json", "--rotation", rot, "--out", cfg], check=True)
             items.append({"name": f"{case}|{name}", "path": str(cfg)})
         for arm, cap in ARMS:
-            e = c["arms"][arm].get(cap, {})
+            e = c["arms"].get(arm, {}).get(cap, {})
             if "selected_start" not in e:
                 continue
             s = e["starts"][str(e["selected_start"])]
             if s.get("audit_failure"):
                 continue
-            path = RUNS / "results" / case / arm / str(e["selected_start"]) / f"selected-{cap}.gcsl"
+            path = results / case / arm / str(e["selected_start"]) / f"selected-{cap}.gcsl"
             items.append({"name": f"{case}|{arm}@{cap}", "path": str(path)})
             meta[f"{case}|{arm}@{cap}"] = s["S"]
         meta[f"{case}|L"] = c["arms"]["V2S"]["384"]["starts"][str(c["arms"]["V2S"]["384"]["selected_start"])]["L"]
@@ -58,11 +60,11 @@ def main(tool, gso):
             if S and L and A and A != L:
                 row.setdefault("r_gcsim", {})[k] = (S - L) / (A - L)
         rows.append(row)
-    (OUT / "gcsim-parity.json").write_text(json.dumps(
+    (rundir / "gcsim-parity.json").write_text(json.dumps(
         {"gcsim": "cenoda/gcsim@eb218847f82b via Gscouter 6e0e82205 internal/score, no fillers",
          "iterations": 256, "seed": 777000, "warmup": 150, "rows": rows}, indent=1) + "\n")
     print("parity rows", len(rows))
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2])
+    main(*sys.argv[1:4])

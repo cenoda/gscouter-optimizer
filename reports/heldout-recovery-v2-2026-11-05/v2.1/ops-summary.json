@@ -1,0 +1,200 @@
+{
+ "V2S@384 initial family": {
+  "decisions": 120,
+  "accepted": 120,
+  "improving": 0,
+  "failed": 0
+ },
+ "V2S@384 substitute action": {
+  "decisions": 10741,
+  "accepted": 6388,
+  "improving": 626,
+  "failed": 2014
+ },
+ "V2S@384 dictionary insert": {
+  "decisions": 23448,
+  "accepted": 12815,
+  "improving": 1410,
+  "failed": 1403
+ },
+ "V2S@384 template insert": {
+  "decisions": 13137,
+  "accepted": 8735,
+  "improving": 537,
+  "failed": 2540
+ },
+ "V2S@384 compound": {
+  "decisions": 59127,
+  "accepted": 21465,
+  "improving": 4069,
+  "failed": 12996
+ },
+ "V2S@384 template replace": {
+  "decisions": 12658,
+  "accepted": 7263,
+  "improving": 555,
+  "failed": 2802
+ },
+ "V2S@384 generic": {
+  "decisions": 34329,
+  "accepted": 19573,
+  "improving": 3480,
+  "failed": 2855
+ },
+ "V2S@384 dictionary replace": {
+  "decisions": 26069,
+  "accepted": 15030,
+  "improving": 1976,
+  "failed": 1633
+ },
+ "V2S@384 delete unit": {
+  "decisions": 11294,
+  "accepted": 7166,
+  "improving": 698,
+  "failed": 735
+ },
+ "V2S@384 reassign owner": {
+  "decisions": 7920,
+  "accepted": 4694,
+  "improving": 378,
+  "failed": 958
+ },
+ "V2S@384 repeat segment": {
+  "decisions": 5751,
+  "accepted": 3237,
+  "improving": 347,
+  "failed": 309
+ },
+ "V2S@384 move unit": {
+  "decisions": 8084,
+  "accepted": 5355,
+  "improving": 684,
+  "failed": 544
+ },
+ "V2S@384 micro": {
+  "decisions": 22020,
+  "accepted": 11853,
+  "improving": 1927,
+  "failed": 276
+ },
+ "V2S@384 delete segment": {
+  "decisions": 2258,
+  "accepted": 1212,
+  "improving": 200,
+  "failed": 139
+ },
+ "V2S@384 restart perturbation": {
+  "decisions": 1376,
+  "accepted": 1376,
+  "improving": 325,
+  "failed": 349
+ },
+ "V2S@384 heldout v2": {
+  "decisions": 0,
+  "accepted": 0,
+  "improving": 0,
+  "failed": 0
+ },
+ "V2T@384 initial family": {
+  "decisions": 357,
+  "accepted": 357,
+  "improving": 0,
+  "failed": 1
+ },
+ "V2T@384 substitute action": {
+  "decisions": 9329,
+  "accepted": 5356,
+  "improving": 568,
+  "failed": 1794
+ },
+ "V2T@384 dictionary insert": {
+  "decisions": 20183,
+  "accepted": 10500,
+  "improving": 1254,
+  "failed": 1037
+ },
+ "V2T@384 template insert": {
+  "decisions": 11205,
+  "accepted": 7209,
+  "improving": 481,
+  "failed": 2246
+ },
+ "V2T@384 compound": {
+  "decisions": 74375,
+  "accepted": 23193,
+  "improving": 4959,
+  "failed": 17417
+ },
+ "V2T@384 template replace": {
+  "decisions": 11038,
+  "accepted": 5939,
+  "improving": 537,
+  "failed": 2508
+ },
+ "V2T@384 generic": {
+  "decisions": 30055,
+  "accepted": 16953,
+  "improving": 3337,
+  "failed": 2357
+ },
+ "V2T@384 dictionary replace": {
+  "decisions": 22699,
+  "accepted": 12507,
+  "improving": 1826,
+  "failed": 1249
+ },
+ "V2T@384 delete unit": {
+  "decisions": 10095,
+  "accepted": 6151,
+  "improving": 652,
+  "failed": 579
+ },
+ "V2T@384 reassign owner": {
+  "decisions": 6953,
+  "accepted": 3977,
+  "improving": 352,
+  "failed": 811
+ },
+ "V2T@384 repeat segment": {
+  "decisions": 5296,
+  "accepted": 2845,
+  "improving": 339,
+  "failed": 247
+ },
+ "V2T@384 move unit": {
+  "decisions": 7133,
+  "accepted": 4623,
+  "improving": 689,
+  "failed": 432
+ },
+ "V2T@384 micro": {
+  "decisions": 22640,
+  "accepted": 11087,
+  "improving": 2055,
+  "failed": 490
+ },
+ "V2T@384 delete segment": {
+  "decisions": 1997,
+  "accepted": 1051,
+  "improving": 188,
+  "failed": 102
+ },
+ "V2T@384 restart perturbation": {
+  "decisions": 1224,
+  "accepted": 1224,
+  "improving": 253,
+  "failed": 341
+ },
+ "V2T@384 minimise": {
+  "decisions": 1579,
+  "accepted": 475,
+  "improving": 62,
+  "failed": 141
+ },
+ "V2T@384 heldout v2": {
+  "decisions": 0,
+  "accepted": 0,
+  "improving": 0,
+  "failed": 0
+ }
+}

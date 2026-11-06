@@ -206,3 +206,14 @@ are the existing ones. `gso heldout-manifest` turns a library `build.txt` into a
 format-2 fixed-build manifest; `gso measure` evaluates a rotation on it. The
 held-out mode uses each case's build as is, so the discovery-profile
 constellation grid is not applied. Results are in `reports/heldout-recovery-*`.
+
+## Held-out recovery v2
+
+`docs/heldout-recovery-v2.md` is the protocol (annealing, owner-abstracted
+templates, compound moves, a second pass from the first pass's result, and an
+equal-CPU single-pass control). `scripts/heldout_v2.py` exports inputs, runs
+one case per job (`job`) and measures A afterwards (`confirm`, `report`);
+`.github/workflows/heldout-v2.yml` runs the jobs on GitHub-hosted runners when
+`ci/heldout-v2-runs` is pushed. Search flags: `--heldout-v2 --algorithm
+anneal` and, on resume, `--second-pass-from CPU`. Results:
+`reports/heldout-recovery-v2-2026-11-05/`.
