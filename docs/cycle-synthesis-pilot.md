@@ -569,3 +569,75 @@ development cases and the main-library corpus); its tree is unchanged.
   the build.
 - Cost at batch scale: the per-case seed preparation is measured here only on
   60 cases.
+
+## Amendment 1 (2026-11-06, after implementation and development, before the draw)
+
+The owner authorized implementation and the pilot run. This amendment records
+what the implementation does where sections 5–6 left room or differ, and the
+development run used to check the stop rules. **Development cases only**
+(the 70 cases already read with A); no held-out case had been drawn or
+searched when it was written. Implementation commit: `70e99c7`
+(`src/synth.rs`, `src/search.rs`, `scripts/cycle_synth.py`,
+`.github/workflows/cycle-synthesis.yml`).
+
+Implementation choices (generic; no character name in the search code):
+
+1. **Typed families.** A typed family carries its `CycleSpec` beside the
+   rendered source program; typed moves (section 5.4 list) apply while the
+   start's cumulative CPU is below 192 s and the chain has not stalled. Any
+   accepted non-typed proposal (a v2.1 restart perturbation) or reaching 192 s
+   ends typed moves for that chain ("lowering"); from then on it uses the
+   unchanged v2.1 operators and micro search. The rendered program is the
+   evaluator's usual `while 1` wrapper around the typed source, so cache keys,
+   decision blocks and promotions are unchanged.
+2. **Skeleton grid (F1).** On-field candidates D ∈ {L's active member, L's
+   top-DPS member on L's 16 search fights}; support visits from L's
+   statements (bursts split out, guarded) or one library statement with a
+   skill per member; burst policy ready-guarded or every 2nd cycle; unit ∈
+   {`attack`} ∪ D's three most frequent library statements without skill or
+   burst; window P ∈ probed skill/burst cycle times in 300–1800 frames merged
+   within 30 frames. Initial rules: skill-when-ready, or a once-per-cycle
+   opener skill when the probe saw a delayed cooldown. Dash/status/aura rules
+   enter only through typed moves. The grid is subsampled to 48 programs with
+   the start's RNG.
+3. **Probe.** Own statuses: mods on the member itself with ≥ 60 frames
+   remaining whose engine name does not contain `icd`, created by its skill or
+   burst or during 20 s of normal attacks after it. The status guard rule uses
+   these names as they are (allowed by the protocol; counted in the report).
+4. **Transplants.** Donors ranked as in F7; retargeting maps statement owners
+   and field-path character names; up to 24 programs. Every seed must pass
+   static admission: no more assumption constructs than L, the v2.1 parameter
+   rule with L as parent, engine support.
+5. **Families.** SYN: L, best skeleton, best transplant, and the best
+   remaining seed of a (kind, D) not yet used (when L's active and top-DPS
+   member coincide this is often none, or a second skeleton/transplant of the
+   same D is excluded). XO: L, best transplant, and the best transplant from a
+   different donor team.
+6. **Selection block.** 32 fights of the frozen peak at seed namespace
+   7×10¹² + cap, run after the discovery cap by the search itself; its CPU is
+   reported per start beside the discovery CPU (mean 0.25 s in development) and
+   is the same size for every arm, rather than being deducted from the cap.
+7. **Donor leakage filter.** Character-normalised (every character name
+   replaced by one placeholder) token-multiset Jaccard ≥ 0.90 against A,
+   computed offline by `gso synth donor-filter`; jobs receive only the dropped
+   team names.
+8. **Corpus.** `reports/cycle-synthesis-2026-11-06/inputs/corpus.json`: the
+   4,570 main-library rotations of Gscouter `6e0e82205`, no `alt/`.
+9. **Pool.** The pool rule of 6.3 is implemented in `scripts/cycle_synth.py`
+   (`pool_rows`), and the primary stratum is drawn whole.
+
+**Development run** (GitHub Actions run 42158183244, 20 development cases,
+all three arms, 3 starts, caps 96/192/384; 20.4 CPU-h on runners plus 0.07
+CPU-h local measurement; results in
+`reports/cycle-synthesis-2026-11-06/development/`). Stop-rule checks:
+synthesized families produced at least one valid seed in all 120 SYN/XO
+starts; seed preparation never exceeded 20 CPU-s (stop rule: 96 s in more than
+a quarter of cases); 0 forbidden opened paths; L reproduced fight for fight in
+every start. The generator therefore "works" by the declared rule, and no
+generator change was made after the development run. Development readings
+(these read A and are not evidence): on the 10 A/L ≥ 2 development cases median
+S/A at 384 s was V21S 0.883, SYN 0.916, XO 0.957 (below 0.90: 5 / 4 / 3);
+SYN vs V21S median selected d +1.3% (p = 0.45), XO vs V21S +4.8% (p = 0.07);
+on 9 A/L < 1.25 cases SYN's median d vs V21S was −1.9% (p = 0.09). XO
+looked at least as good as SYN on development data; the arms are kept as
+declared so the held-out run can attribute the difference.
