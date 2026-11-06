@@ -268,3 +268,12 @@ the situations exist):
    comparisons (V2T vs V2S at 384; V2S vs V1 at 192) are paired as declared.
 8. **Draw size.** 40 cases as declared (32 informative + 8 control), one
    runner job per case; no prefix is expected to be needed.
+9. **Pool exclusion of the development parties.** The alternatives of
+   `flins-ineffa-columbina-sucrose` (Flins C1) and
+   `mavuika-citlali-xilonen-nicole` (Mavuika C6R5) were used as known
+   references in earlier reports (`reports/pilot-2026-11-05`,
+   `reports/mavuika-c6-blind-2026-11-05`), so they are development material
+   and leave the pool (131 → 129 informative). Found by a mechanical search of
+   the repository for pool alternative ids after a first, uncommitted draw
+   contained the Mavuika one; that draw was discarded before any search and
+   the draw below is rerun with the same seed.

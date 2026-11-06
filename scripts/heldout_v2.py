@@ -99,8 +99,11 @@ def draw(args):
     cls = load(STAGE1 / "classification.json")
     stage1 = {o["case"] for o in load(STAGE1 / "draw.json")["order"]}
     rng = random.Random(DRAW_SEED)
+    # Amendment 1, item 9: the development parties' own alternatives (Flins C1,
+    # Mavuika C6R5) were used as references in earlier reports.
+    dev_teams = ("flins-ineffa-columbina-sucrose", "mavuika-citlali-xilonen-nicole")
     pool = [r for r in cls["rows"] if r["case"] not in stage1 and r["kind"] == "database"
-            and r["class"] in ("informative", "control")]
+            and r["class"] in ("informative", "control") and r["case"].split("--")[0] not in dev_teams]
 
     def stratified(rows, k):
         strata = {s: sorted(r["case"] for r in rows if r["stratum"] == s) for s in ("frame", "other")}
@@ -124,7 +127,8 @@ def draw(args):
         "implementation_commit": head, "classification_sha256": sha(STAGE1 / "classification.json"),
         "pool": {"informative": sum(r["class"] == "informative" for r in pool),
                  "control": sum(r["class"] == "control" for r in pool),
-                 "rule": "classification rows, kind database, class informative/control, not a stage-1 case"},
+                 "rule": "classification rows, kind database, class informative/control, not a stage-1 case, "
+                         "not an alternative of the development teams flins-ineffa-columbina-sucrose / mavuika-citlali-xilonen-nicole"},
         "method": "random.Random(20261106); stratified by stage-1 frame stratum (largest remainder); "
                   "run order is a seeded shuffle; a smaller run takes a prefix of this order",
         "allocation": {"informative": ia, "control": ca}, "cases": len(order),
