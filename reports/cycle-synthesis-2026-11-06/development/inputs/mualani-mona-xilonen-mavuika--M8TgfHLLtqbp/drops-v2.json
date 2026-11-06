@@ -1,0 +1,7 @@
+{
+ "dropped_for_leakage": [
+  "if .mualani .burst .ready { mualani burst ; }",
+  "mualani skill , walk [ f = 90 ] , attack , walk [ f = 90 ] , attack , walk [ f = 90 ] , attack ;"
+ ],
+ "sha256": "5af1911df78f41f319deb60c2437c21dd8b9582f03b5fa6ff16ecfaae3987e18"
+}

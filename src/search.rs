@@ -17,6 +17,8 @@ type R<T> = Result<T, String>;
 const SEARCH_SEED: i64 = 1_000_000;
 const PROMOTION_SEED: i64 = 1_000_000_000;
 const AUDIT_SEED: i64 = 4_000_000_000_000;
+/// Cycle-synthesis pilot: per-start selection block (`docs/cycle-synthesis-pilot.md` 6.5).
+const SELECTION_SEED: i64 = 7_000_000_000_000;
 /// Held-out mode: consecutive non-improving chain decisions before a restart.
 const RESTART_PATIENCE: usize = 40;
 /// Held-out mode: macro edits composed into one restart perturbation.
@@ -43,6 +45,10 @@ struct Chain {
     score: f64,
     #[serde(default)]
     stall: usize,
+    /// Cycle synthesis: the typed program this chain's current state renders
+    /// from; `None` once lowered (any accepted non-typed proposal).
+    #[serde(default)]
+    spec: Option<crate::synth::CycleSpec>,
 }
 #[derive(Serialize, Deserialize)]
 struct State {
@@ -68,6 +74,18 @@ struct State {
     /// Held-out v2 second pass (`docs/heldout-recovery-v2.md` section 4).
     #[serde(default)]
     pass2: Option<Pass2>,
+    /// Cycle-synthesis pilot seeding record and typed-move context.
+    #[serde(default)]
+    synth: Option<SynthState>,
+}
+#[derive(Clone, Serialize, Deserialize)]
+struct SynthState {
+    mode: String,
+    context: Option<crate::synth::Context>,
+    on_field: Vec<usize>,
+    seeds: Vec<crate::synth::Seed>,
+    families: Vec<String>,
+    seed_cpu: f64,
 }
 #[derive(Clone, Serialize, Deserialize)]
 struct Pass2 {
@@ -103,6 +121,8 @@ struct Pending {
     reference: Candidate,
     operator: String,
     polishing: bool,
+    #[serde(default)]
+    next_spec: Option<crate::synth::CycleSpec>,
 }
 #[derive(Serialize, Deserialize)]
 struct Event {
@@ -141,6 +161,15 @@ struct Options {
     v2: bool,
     /// Held-out v2: start a second pass when resumed (declared CPU point).
     second_pass_from: Option<f64>,
+    /// Cycle-synthesis pilot: "syn" or "xo" (`docs/cycle-synthesis-pilot.md`).
+    synth: Option<String>,
+    corpus: Option<String>,
+    donor_drops: Option<String>,
+    party: String,
+    /// Typed moves stop at this cumulative CPU (lowering, section 5.4).
+    lower_at: f64,
+    /// Fights in the per-start selection block (0: none).
+    selection: usize,
 }
 
 fn proposal(
@@ -480,6 +509,7 @@ fn initialize(
             temperature: 0.015,
             score: 0.0,
             stall: 0,
+            spec: None,
         })
         .collect();
     State {
@@ -502,6 +532,7 @@ fn initialize(
         polish: None,
         stage_selections: Vec::new(),
         pass2: None,
+        synth: None,
     }
 }
 
@@ -574,6 +605,22 @@ fn run(o: &Options) -> R<()> {
     if o.second_pass_from.is_some() && !o.v2 {
         return Err("--second-pass-from requires --heldout-v2".into());
     }
+    if let Some(mode) = &o.synth {
+        if !["syn", "xo"].contains(&mode.as_str()) {
+            return Err("--cycle-synthesis syn|xo".into());
+        }
+        if !o.v2 || o.second_pass_from.is_some() || o.corpus.is_none() || o.party.is_empty() {
+            return Err("--cycle-synthesis requires --heldout-v2, --corpus and --party, without --second-pass-from".into());
+        }
+    }
+    let corpus_text = match &o.corpus {
+        Some(path) => fs::read_to_string(path).map_err(|e| e.to_string())?,
+        None => String::new(),
+    };
+    let donor_drops_text = match &o.donor_drops {
+        Some(path) => fs::read_to_string(path).map_err(|e| e.to_string())?,
+        None => String::new(),
+    };
     let initial = if let Some(catalog) = &catalog {
         Program::Generated(Rotation::generate(catalog, &mut Rng(o.seed), 0))
     } else {
@@ -603,7 +650,17 @@ fn run(o: &Options) -> R<()> {
             } else {
                 String::new()
             }
-        ) + if o.v2 { "\nheldout v2" } else { "" }),
+        ) + if o.v2 { "\nheldout v2" } else { "" }
+            + &match &o.synth {
+                Some(mode) => format!(
+                    "\ncycle synthesis {mode} party {} lower {} corpus {} drops {}",
+                    o.party,
+                    o.lower_at,
+                    hash(&corpus_text),
+                    hash(&donor_drops_text)
+                ),
+                None => String::new(),
+            }),
     );
     fs::create_dir_all(&o.out).map_err(|e| e.to_string())?;
     let checkpoint = o.out.join("checkpoint.json");
@@ -628,7 +685,10 @@ fn run(o: &Options) -> R<()> {
                     {"role":"manifest","path":o.manifest,"sha256":hash(&fs::read_to_string(&o.manifest).map_err(|e| e.to_string())?)},
                     {"role":"baseline","path":if o.from_scratch { String::new() } else { o.baseline.clone() },"sha256":hash(&baseline)},
                     {"role":"dictionary","path":o.dictionary,"sha256":hash(&dictionary_text)},
+                    {"role":"corpus","path":o.corpus,"sha256":hash(&corpus_text)},
+                    {"role":"donor drops","path":o.donor_drops,"sha256":hash(&donor_drops_text)},
                 ],
+                "cycle_synthesis":o.synth,"party":o.party,"lower_at":o.lower_at,
             }),
         )?;
     }
@@ -683,6 +743,7 @@ fn run(o: &Options) -> R<()> {
             temperature: 0.015,
             score: 0.0,
             stall: 0,
+            spec: None,
         };
         let discarded = state.pending.take().map(|p| p.operator);
         state.chains = vec![
@@ -741,6 +802,23 @@ fn run(o: &Options) -> R<()> {
         )?)
         .mean;
         state.reference_dps = state.best_hint.max(1.0);
+    }
+    if let (Some(mode), Some(proposer), None) = (&o.synth, &proposer, &state.synth) {
+        let seeded = seed_families(
+            o,
+            mode,
+            &m,
+            &baseline,
+            &mut e,
+            &mut state,
+            proposer,
+            dictionary.as_ref().unwrap(),
+            &corpus_text,
+            &donor_drops_text,
+            &mut |e: &Evaluator| spent(e, carried, parent_start, worker_start) < o.seconds,
+        )?;
+        atomic(&o.out.join("synth-seeds.json"), &seeded)?;
+        atomic(&checkpoint, &state)?;
     }
     let initial_dps = state.reference_dps.max(1.0);
     let decision_count = if o.restricted { 32 } else { 16 };
@@ -845,6 +923,7 @@ fn run(o: &Options) -> R<()> {
         } else {
             current.clone()
         };
+        let mut typed_next: Option<crate::synth::CycleSpec> = None;
         if state.pending.is_none() {
             let (mut next, mut operator) = if polishing {
                 let anchor = origin.key();
@@ -885,6 +964,7 @@ fn run(o: &Options) -> R<()> {
                     "fresh restart".into(),
                 )
             } else if state.chains[family].steps == 0 && !baseline_trial {
+                typed_next = state.chains[family].spec.clone();
                 (origin.clone(), "initial family evaluation".into())
             } else if minimising && family == 0 {
                 // G5 sweep: delete one unit of the current program; the
@@ -910,7 +990,30 @@ fn run(o: &Options) -> R<()> {
                     ),
                 }
             } else if let (true, Some(proposer)) = (o.v2, &proposer) {
-                if state.chains[family].stall >= RESTART_PATIENCE {
+                let typed = state.chains[family]
+                    .spec
+                    .clone()
+                    .filter(|_| spent(&e, carried, parent_start, worker_start) < o.lower_at)
+                    .zip(state.synth.as_ref().and_then(|x| x.context.clone()));
+                if let (Some((spec, ctx)), true) =
+                    (typed, state.chains[family].stall < RESTART_PATIENCE)
+                {
+                    let mut next = origin.clone();
+                    next.parent = Some(origin.key());
+                    match crate::synth::typed_proposal(&spec, &ctx, &mut state.rng)
+                        .and_then(|(ns, label)| ns.program(&m).ok().map(|p| (ns, p, label)))
+                    {
+                        Some((ns, p, label)) => {
+                            next.program = p;
+                            typed_next = Some(ns);
+                            (next, label)
+                        }
+                        None => {
+                            typed_next = Some(spec);
+                            (origin.clone(), "typed: no valid edit drawn".into())
+                        }
+                    }
+                } else if state.chains[family].stall >= RESTART_PATIENCE {
                     state.chains[family].stall = 0;
                     let mut next = state.best.clone();
                     let mut labels = Vec::new();
@@ -1030,6 +1133,7 @@ fn run(o: &Options) -> R<()> {
                 },
                 operator,
                 polishing,
+                next_spec: typed_next,
             });
             record_proposal(&o.out, state.step, state.pending.as_ref().unwrap())?;
         }
@@ -1044,6 +1148,7 @@ fn run(o: &Options) -> R<()> {
             reference,
             operator,
             polishing,
+            next_spec,
         } = pending;
         let phase = if polishing { "polish" } else { "discovery" }.to_string();
         if o.revised && operator != "initial family evaluation" && next.key() == reference.key() {
@@ -1273,6 +1378,7 @@ fn run(o: &Options) -> R<()> {
                             state.baseline_alloc = next.clone();
                         } else if !polishing {
                             state.chains[family].current = next.clone();
+                            state.chains[family].spec = next_spec.clone();
                             state.chains[family].accepted += 1;
                             state.chains[family].score = stats(&y).mean;
                         }
@@ -1367,6 +1473,25 @@ fn run(o: &Options) -> R<()> {
     let frozen_list: Vec<_> = shortlist.iter().map(|c| c.key()).collect();
     atomic(&o.out.join("shortlist.json"), &shortlist)?;
     e.scaled_limit = false;
+    // Selection block: the frozen peak on a separate seed namespace, charged
+    // to this start and reported beside the discovery CPU (same for every arm).
+    let selection = if o.selection > 0 {
+        let start = cpu();
+        let worker = e.worker_cpu;
+        let seed = SELECTION_SEED + (o.seconds * 1000.0).round() as i64 * 1000;
+        let result = eval(&mut e, &state.best, seed, o.selection);
+        let cpu_used = cpu() - start + e.worker_cpu - worker;
+        Some(match result {
+            Ok(s) => {
+                serde_json::json!({"key":state.best.key(),"seed":seed,"stats":stats(&s),"cpu_seconds":cpu_used})
+            }
+            Err(err) => {
+                serde_json::json!({"key":state.best.key(),"seed":seed,"error":err,"cpu_seconds":cpu_used})
+            }
+        })
+    } else {
+        None
+    };
     let audit_start = cpu();
     let audit_worker_start = e.worker_cpu;
     let audit_seed =
@@ -1431,6 +1556,12 @@ fn run(o: &Options) -> R<()> {
             "minimise_accepted":p.minimise_accepted,"derived_templates":p.derived.len()})
     }))
     .map_err(|e| e.to_string())?;
+    report["selection_block"] = serde_json::json!(selection);
+    report["cycle_synthesis"] =
+        serde_json::json!(state.synth.as_ref().map(|x| serde_json::json!({
+        "mode":x.mode,"on_field":x.on_field,"families":x.families,"seed_cpu":x.seed_cpu,
+        "chain_specs_active":state.chains.iter().map(|c| c.spec.is_some()).collect::<Vec<_>>(),
+        "chain_roles":state.chains.iter().map(|c| c.current.role.clone()).collect::<Vec<_>>()})));
     report["stage_selections"] =
         serde_json::to_value(&state.stage_selections).map_err(|e| e.to_string())?;
     atomic(&o.out.join("report.json"), &report)?;
@@ -1440,6 +1571,174 @@ fn run(o: &Options) -> R<()> {
     );
     Ok(())
 }
+/// Cycle-synthesis seeding (`docs/cycle-synthesis-pilot.md` 5.3): probe,
+/// skeleton grid (SYN only), transplants, screening, and up to three extra
+/// families beside L. Every fight is charged to this start's cap.
+#[allow(clippy::too_many_arguments)]
+fn seed_families(
+    o: &Options,
+    mode: &str,
+    m: &Manifest,
+    baseline: &str,
+    e: &mut Evaluator,
+    state: &mut State,
+    proposer: &crate::heldout_v2::Proposer,
+    dict: &Dictionary,
+    corpus_text: &str,
+    donor_drops_text: &str,
+    budget_left: &mut dyn FnMut(&Evaluator) -> bool,
+) -> R<serde_json::Value> {
+    use crate::synth::{self, Seed};
+    let start_cpu = cpu();
+    let start_worker = e.worker_cpu;
+    let l_samples = eval(e, &state.baseline, SEARCH_SEED, 16)?;
+    let on_field = synth::on_field_candidates(baseline, m, &l_samples);
+    let corpus: Vec<synth::Donor> = serde_json::from_str(corpus_text).map_err(|e| e.to_string())?;
+    let dropped: std::collections::BTreeSet<String> = if donor_drops_text.is_empty() {
+        Default::default()
+    } else {
+        let v: serde_json::Value =
+            serde_json::from_str(donor_drops_text).map_err(|e| e.to_string())?;
+        serde_json::from_value(v["dropped"].clone()).map_err(|e| e.to_string())?
+    };
+    let mut skeletons: Vec<Seed> = Vec::new();
+    let mut context = None;
+    let mut probe_error = None;
+    if mode == "syn" {
+        match synth::probe(m) {
+            Ok(facts) => {
+                let ctx = synth::context(facts, baseline, m, dict);
+                let mut rng = Rng(o.seed ^ 0x53594e5448);
+                for spec in synth::skeleton_grid(&ctx, baseline, m, &on_field, &mut rng) {
+                    let src = spec.source(m);
+                    let (program, error) = match synth::admissible(&src, baseline, m, proposer) {
+                        Ok(p) => (p, None),
+                        Err(err) => (Program::Source(String::new()), Some(err)),
+                    };
+                    skeletons.push(Seed {
+                        kind: "skeleton".into(),
+                        d: spec.d,
+                        origin: spec.descriptor(),
+                        program,
+                        spec: Some(spec),
+                        screen2: None,
+                        screen16: None,
+                        error,
+                    });
+                }
+                context = Some(ctx);
+            }
+            Err(err) => probe_error = Some(err),
+        }
+    }
+    let mut grafts: Vec<Seed> = Vec::new();
+    for (team, d, src) in synth::transplants(&corpus, &dropped, &o.party, m, &on_field) {
+        let (program, error) = match synth::admissible(&src, baseline, m, proposer) {
+            Ok(p) => (p, None),
+            Err(err) => (Program::Source(String::new()), Some(err)),
+        };
+        grafts.push(Seed {
+            kind: "transplant".into(),
+            d,
+            origin: team,
+            program,
+            spec: None,
+            screen2: None,
+            screen16: None,
+            error,
+        });
+    }
+    for list in [&mut skeletons, &mut grafts] {
+        let mut valid: Vec<Seed> = list.iter().filter(|s| s.error.is_none()).cloned().collect();
+        synth::screen(e, m, &mut valid, budget_left);
+        let mut it = valid.into_iter();
+        for s in list.iter_mut().filter(|s| s.error.is_none()) {
+            *s = it.next().unwrap();
+        }
+    }
+    let best = |v: &[Seed], skip: &[(String, usize)]| -> Option<Seed> {
+        v.iter()
+            .filter(|s| s.screen16.is_some() && !skip.contains(&(s.kind.clone(), s.d)))
+            .max_by(|a, b| a.screen16.unwrap().total_cmp(&b.screen16.unwrap()))
+            .cloned()
+    };
+    let mut chosen: Vec<Seed> = Vec::new();
+    if mode == "syn" {
+        if let Some(s) = best(&skeletons, &[]) {
+            chosen.push(s);
+        }
+        if let Some(s) = best(&grafts, &[]) {
+            chosen.push(s);
+        }
+        let used: Vec<(String, usize)> = chosen.iter().map(|s| (s.kind.clone(), s.d)).collect();
+        let all: Vec<Seed> = skeletons.iter().chain(grafts.iter()).cloned().collect();
+        let rest: Vec<Seed> = all
+            .into_iter()
+            .filter(|s| !chosen.iter().any(|c| c.program == s.program))
+            .collect();
+        if let Some(s) = best(&rest, &used) {
+            chosen.push(s);
+        }
+    } else {
+        if let Some(s) = best(&grafts, &[]) {
+            chosen.push(s);
+        }
+        let rest: Vec<Seed> = grafts
+            .iter()
+            .filter(|s| {
+                !chosen
+                    .iter()
+                    .any(|c| c.program == s.program || c.origin == s.origin)
+            })
+            .cloned()
+            .collect();
+        let used: Vec<(String, usize)> = chosen.iter().map(|s| (s.kind.clone(), s.d)).collect();
+        if let Some(s) = best(&rest, &used).or_else(|| best(&rest, &[])) {
+            chosen.push(s);
+        }
+    }
+    for s in &chosen {
+        state.chains.push(Chain {
+            current: Candidate {
+                program: s.program.clone(),
+                allocation: m.clone(),
+                role: format!("synth-{}-{}", s.kind, s.origin),
+                parent: None,
+            },
+            steps: 0,
+            accepted: 0,
+            temperature: 0.015,
+            score: 0.0,
+            stall: 0,
+            spec: s.spec.clone(),
+        });
+    }
+    let seed_cpu = cpu() - start_cpu + e.worker_cpu - start_worker;
+    let summary = |v: &[Seed]| {
+        v.iter()
+            .map(|s| serde_json::json!({"kind":s.kind,"d":s.d,"origin":s.origin,"screen2":s.screen2,"screen16":s.screen16,"error":s.error}))
+            .collect::<Vec<_>>()
+    };
+    let record = serde_json::json!({"mode":mode,"on_field":on_field,"probe_error":probe_error,
+        "facts":context.as_ref().map(|c: &synth::Context| c.facts.clone()),
+        "skeletons":summary(&skeletons),"transplants":summary(&grafts),
+        "chosen":chosen.iter().map(|s| serde_json::json!({"kind":s.kind,"d":s.d,"origin":s.origin,"screen16":s.screen16,
+            "source":s.program.source_text()})).collect::<Vec<_>>(),
+        "L_screen16":stats(&l_samples).mean,"seed_cpu_seconds":seed_cpu});
+    state.synth = Some(SynthState {
+        mode: mode.into(),
+        context,
+        on_field,
+        seeds: chosen.clone(),
+        families: chosen
+            .iter()
+            .map(|s| format!("{} {}", s.kind, s.origin))
+            .collect(),
+        seed_cpu,
+    });
+    Ok(record)
+}
+
 fn freeze_shortlist(state: &State, from_scratch: bool, cap: f64) -> Vec<Candidate> {
     if !from_scratch {
         let mut shortlist = state.archive.clone();
@@ -1524,7 +1823,11 @@ pub fn cli() -> R<()> {
                 out:opt(&args,"--out","runs/pilot").into(),seconds:number(&args,"--seconds","30")?,seed:number(&args,"--seed","1")?,algorithm,
                 local:dictionary.is_some() || args.iter().any(|a|a=="--local-only"),joint:!args.iter().any(|a|a=="--fixed-er"),audit:number(&args,"--audit","128")?,
                 revised:from_scratch || dictionary.is_some() || args.iter().any(|a|a=="--revised"),restricted:args.iter().any(|a|a=="--restricted-domain"),from_scratch,basic_grammar:args.iter().any(|a|a=="--basic-grammar"),dictionary,
-                v2:args.iter().any(|a|a=="--heldout-v2"),second_pass_from:if args.iter().any(|a|a=="--second-pass-from"){Some(number(&args,"--second-pass-from","192")?)}else{None}})
+                v2:args.iter().any(|a|a=="--heldout-v2"),second_pass_from:if args.iter().any(|a|a=="--second-pass-from"){Some(number(&args,"--second-pass-from","192")?)}else{None},
+                synth:args.iter().any(|a|a=="--cycle-synthesis").then(|| opt(&args,"--cycle-synthesis","")),
+                corpus:args.iter().any(|a|a=="--corpus").then(|| opt(&args,"--corpus","")),
+                donor_drops:args.iter().any(|a|a=="--donor-drops").then(|| opt(&args,"--donor-drops","")),
+                party:opt(&args,"--party",""),lower_at:number(&args,"--lower-at","192")?,selection:number(&args,"--selection-block","0")?})
         },
         Some("evaluate")=>{
             let src=fs::read_to_string(opt(&args,"--config","")).map_err(|e|e.to_string())?;
@@ -1549,6 +1852,7 @@ pub fn cli() -> R<()> {
             Ok(())
         },
         Some("enumerate")=>enumerate(&args),
+        Some("synth")=>crate::synth::cli(&args),
         Some("heldout-manifest")|Some("dictionary")|Some("measure")=>crate::heldout::cli(&args),
         Some("dictionary-v2")|Some("strip-assumptions")|Some("config")|Some("param-check")=>crate::heldout_v2::cli(&args),
         Some("validate")=>{
@@ -1672,6 +1976,7 @@ fn implementation_hash() -> String {
             include_str!("search.rs"),
             include_str!("heldout.rs"),
             include_str!("heldout_v2.rs"),
+            include_str!("synth.rs"),
             include_str!("../data/character-rarities.json"),
             include_str!("../Cargo.lock"),
             include_str!("../Cargo.toml"),
@@ -1710,6 +2015,12 @@ mod tests {
             dictionary: None,
             v2: false,
             second_pass_from: None,
+            synth: None,
+            corpus: None,
+            donor_drops: None,
+            party: String::new(),
+            lower_at: 192.0,
+            selection: 0,
         };
         let mut state = initialize(
             &options,
@@ -1755,6 +2066,7 @@ mod tests {
             reference: state.best.clone(),
             operator,
             polishing: false,
+            next_spec: None,
         });
         let mut restored: State =
             serde_json::from_str(&serde_json::to_string(&state).unwrap()).unwrap();
@@ -1845,6 +2157,7 @@ mod tests {
             reference: state.best.clone(),
             operator,
             polishing: true,
+            next_spec: None,
         });
         let serialized = serde_json::to_string(&state).unwrap();
         let restored: State = serde_json::from_str(&serialized).unwrap();
@@ -1878,6 +2191,12 @@ mod tests {
             dictionary: None,
             v2: false,
             second_pass_from: None,
+            synth: None,
+            corpus: None,
+            donor_drops: None,
+            party: String::new(),
+            lower_at: 192.0,
+            selection: 0,
         };
         let mut state = initialize(&options, &m, &baseline, "test", None);
         let anchor = state.best.key();
@@ -1896,6 +2215,7 @@ mod tests {
             reference: state.best.clone(),
             operator,
             polishing: true,
+            next_spec: None,
         });
         state.best_hint = 305052.16876745573;
         let before = serde_json::to_string(&state).unwrap();

@@ -468,7 +468,7 @@ pub fn strip(raw: &str) -> String {
 }
 
 /// Split an action list (tokens between owner and `;`) at top-level commas.
-fn actions(t: &[Token], start: usize, end: usize) -> Vec<(usize, usize)> {
+pub(crate) fn actions(t: &[Token], start: usize, end: usize) -> Vec<(usize, usize)> {
     let mut out = Vec::new();
     let mut depth = 0i32;
     let mut a = start + 1;

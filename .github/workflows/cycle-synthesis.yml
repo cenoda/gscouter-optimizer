@@ -1,0 +1,111 @@
+# Cycle-synthesis pilot searches (docs/cycle-synthesis-pilot.md section 6).
+# Triggered only by a push to ci/cycle-synthesis-runs. One job per case runs
+# every arm (V21S, SYN, XO) and start of that case on the same runner. Jobs
+# receive only the case's exported inputs and the main-library corpus: no
+# alt/, no withheld rotation A, no Gscouter checkout.
+name: cycle-synthesis
+on:
+  push:
+    branches: [ci/cycle-synthesis-runs]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+      rundir: ${{ steps.matrix.outputs.rundir }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            src
+            docs
+            data/character-rarities.json
+            data/flins-c1/manifest.json
+            data/flins-c1/baseline.gcsl
+            Cargo.toml
+            Cargo.lock
+            .github/cycle-synthesis-rundir
+          sparse-checkout-cone-mode: false
+      - id: rundir
+        run: echo "rundir=$(cat .github/cycle-synthesis-rundir)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          path: matrixsrc
+          sparse-checkout: |
+            ${{ steps.rundir.outputs.rundir }}/matrix.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: cargo-cs-${{ hashFiles('Cargo.lock', 'src/**') }}
+          restore-keys: cargo-cs-
+      - run: cargo build --release --locked
+      - run: |
+          mkdir bin
+          cp target/release/gso bin/gso
+          sha256sum bin/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: binaries
+          path: bin
+      - id: matrix
+        run: |
+          RUNDIR=${{ steps.rundir.outputs.rundir }}
+          echo "rundir=$RUNDIR" >> "$GITHUB_OUTPUT"
+          echo "matrix=$(jq -c . matrixsrc/$RUNDIR/matrix.json)" >> "$GITHUB_OUTPUT"
+  search:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 40
+      matrix:
+        case: ${{ fromJSON(needs.build.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts/cycle_synth.py
+            scripts/heldout_v2.py
+            scripts/heldout_v2_report.py
+            ${{ needs.build.outputs.rundir }}/inputs/dictionary-v21.json
+            reports/cycle-synthesis-2026-11-06/inputs/corpus.json
+            ${{ needs.build.outputs.rundir }}/inputs/${{ matrix.case }}/
+          sparse-checkout-cone-mode: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: binaries
+          path: bin
+      - run: |
+          chmod +x bin/*
+          sudo apt-get install -y -q strace >/dev/null
+          nproc; grep -m1 "model name" /proc/cpuinfo; echo "$ImageOS $ImageVersion"
+      - name: materialize inputs
+        run: python3 scripts/cycle_synth.py materialize --case "${{ matrix.case }}" --inputs-root "${{ needs.build.outputs.rundir }}/inputs" --dest work/inputs --bin bin/gso --corpus reports/cycle-synthesis-2026-11-06/inputs/corpus.json
+      - name: search (all arms and starts of this case)
+        run: python3 scripts/cycle_synth.py job --case "${{ matrix.case }}" --inputs work/inputs --out "work/out/${{ matrix.case }}" --bin bin/gso
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: case-${{ matrix.case }}
+          path: work/out
+  aggregate:
+    needs: search
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: case-*
+          path: results
+          merge-multiple: true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cycle-synthesis-results
+          path: results

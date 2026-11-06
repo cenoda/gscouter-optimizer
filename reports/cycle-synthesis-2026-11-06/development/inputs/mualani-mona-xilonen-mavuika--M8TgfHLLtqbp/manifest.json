@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/mualani-mona-xilonen-mavuika/alt/M8TgfHLLtqbp/build.txt": "e0bc09834f8a356732df3d396f74c7c6b3c0635ae7697eb319db97bb32fef899"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "mualani",
+      "cons": 0,
+      "weapon": "sacrificialjade",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "mona",
+      "cons": 2,
+      "weapon": "favoniuscodex",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 0,
+      "weapon": "favoniussword",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "mavuika",
+      "cons": 0,
+      "weapon": "serpentspine",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nmualani char lvl=90/90 cons=0 talent=9,9,9;\nmualani add weapon=\"sacrificialjade\" refine=1 lvl=90/90;\nmualani add set=\"obsidiancodex\" count=4;\nmualani add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cd=0.622;\nmualani add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*6 atk=16.54*2 atk%=0.0496*2 er=0.0551*2 em=19.82*10 cr=0.0331*2 cd=0.0662*10;\n\nmona char lvl=90/90 cons=2 talent=9,9,9;\nmona add weapon=\"favcodex\" refine=5 lvl=90/90;\nmona add set=\"cg\" count=4;\nmona add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 cr=0.311;\nmona add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*7 em=19.82*2 cr=0.0331*10 cd=0.0662*9;\n\nxilonen char lvl=90/90 cons=0 talent=9,9,9;\nxilonen add weapon=\"favsword\" refine=5 lvl=90/90;\nxilonen add set=\"ap\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 geo%=0.466 cr=0.311;\nxilonen add stats def%=0.062*5 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*2 em=19.82*2 cr=0.0331*10 cd=0.0662*11;\n\nmavuika char lvl=90/90 cons=0 talent=9,9,9;\nmavuika add weapon=\"serpentspine\" refine=1 lvl=90/90 +params=[stacks=5];\nmavuika add set=\"scroll\" count=4;\nmavuika add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cr=0.311;\nmavuika add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*4 er=0.0551*2 em=19.82*2 cr=0.0331*10 cd=0.0662*12;\n"
+}

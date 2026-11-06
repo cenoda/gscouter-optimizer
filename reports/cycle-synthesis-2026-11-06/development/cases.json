@@ -1,0 +1,222 @@
+[
+ {
+  "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 11.857651419368786,
+  "manifest_sha256": "8775ea0170975437cd3339e49b52256beca240fffcfc9cb462b3cf4c7998d5be",
+  "L_sha256": "d3e1faee254e4853f9d998083cb4d50e52b82872eb56e193a94840e243650d3e",
+  "dictionary_sha256": "1390f7d7bcde91f6b6e34b2e2e56356c7ba63ba3ede6a8cfcd124f5eb515717c",
+  "donor_drops": 1,
+  "donor_max_similarity": 0.9052631578947369
+ },
+ {
+  "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 2.2886223075580197,
+  "manifest_sha256": "2edbf08122d7c5a9805af2bc175ecc679516b9e0c4a6b733c1f234a5424c057e",
+  "L_sha256": "aa4509e24f149c9f8f793c33a9a8ebfed4edf285f457ed65fbfe073723cb39ad",
+  "dictionary_sha256": "15f2da64811f1b6015a79d2b5a4702c646e0abd508301e2893d38af4a7182b1b",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.8297101449275363
+ },
+ {
+  "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 2.324551044534824,
+  "manifest_sha256": "fcc46188594ba01dac23c9fe83a901522fc7ab642255fcc601f8245c95224c59",
+  "L_sha256": "d718c6920e9bfa3de289590e188aad38f100a04de4bb37ff7df618299b2a3264",
+  "dictionary_sha256": "2f9134ad76d5698f369adff5cd2b81245a9685bc3efe25411bc6afd65824c97f",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.8290598290598291
+ },
+ {
+  "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 5.975847485775109,
+  "manifest_sha256": "af7a1fb66516258b474190c0ff00297f78674c3595c9cb3add86cc0a5ef07d35",
+  "L_sha256": "7c51adac37073616d38fa20d6d5a6c1d3da32f0eadbd009689d8477cbbe292a6",
+  "dictionary_sha256": "2c61485ef98cc9fe12cbea342eb7acbddfa3c17b7ca481d4a7d82ce8848583de",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.8194444444444444
+ },
+ {
+  "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+  "class": "informative",
+  "stratum": "other",
+  "A_over_L": 6.912465202416236,
+  "manifest_sha256": "0e4cf4ec38e18d494eecee27662c2397996f84c7241c44d361a1d9ac53243973",
+  "L_sha256": "b9d95c9bc4032700a1953b2d500b1ec9e212824c6b32e3004d0dc7c5ab2bfce9",
+  "dictionary_sha256": "5dec40a3b87d46b4b127f961ee3285dc53469f3d00a3b049e0fe9c3206cdd003",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.7542372881355932
+ },
+ {
+  "case": "mualani-mona-xilonen-mavuika--M8TgfHLLtqbp",
+  "class": "informative",
+  "stratum": "other",
+  "A_over_L": 1.167862252666545,
+  "manifest_sha256": "45682c0819ef6b7711f430d6922ce638849d7bf3f9c45b6e6b60bbcfae7438c0",
+  "L_sha256": "0dda1bcadbc51dec48d789094085aced5492924ebda82add0a5d395c0a07d2a5",
+  "dictionary_sha256": "5af1911df78f41f319deb60c2437c21dd8b9582f03b5fa6ff16ecfaae3987e18",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.7768595041322314
+ },
+ {
+  "case": "wriothesley-furina-xilonen-bennett--PFGMCrLDpbcq",
+  "class": "informative",
+  "stratum": "other",
+  "A_over_L": 2.730637777726915,
+  "manifest_sha256": "f77c7aea3573171a8a9242ea7f218a9c22b2e129be80699ddaae870ffe578ad3",
+  "L_sha256": "37f04f639a6407bfbb6a94ce9b032ca38888c8d979200d9df89f3b1d82c2f9fa",
+  "dictionary_sha256": "e24c5cc0074d0e889ad871f57eab81b4fba3284f1f15282a6462e8375411866f",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.752
+ },
+ {
+  "case": "yoimiya-furina-yunjin-xilonen--rk6QCLfwKJkD",
+  "class": "informative",
+  "stratum": "other",
+  "A_over_L": 2.466002113286049,
+  "manifest_sha256": "a7afa7805401624617e44e077fd07ba9d9bfec12c19ffeff8d61ff16639e4a01",
+  "L_sha256": "b621845b6da333003613526dcb67652f6f5f83ebbc719694de4f183e5dd09c4d",
+  "dictionary_sha256": "390b4b6c6b7c05031c0ab448ea5f9d9c867183fd677d811c2fc4921b88788f32",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.8035714285714286
+ },
+ {
+  "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 7.401243483743293,
+  "manifest_sha256": "eb08e010621a13642c1d550b5fc376bb7fc66757b61768cf46ab1ed7a3f27620",
+  "L_sha256": "fa0ceabcf3d45ab73e24ab59a8ae583228f590b9f26d9d990fff6a58bc4cc6bc",
+  "dictionary_sha256": "0391da21a252a22e276a2de6ea0bc1db3a07a8b3f6f08c400e87388c130449a5",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.752
+ },
+ {
+  "case": "raidenshogun-furina-xilonen-yelan--PhjwKhdjDwtb",
+  "class": "informative",
+  "stratum": "other",
+  "A_over_L": 2.022491463542796,
+  "manifest_sha256": "ec0f694689f4eef2b446a5b17e55ca947b0a3e58c0cfa64e62a29231e9bd165e",
+  "L_sha256": "30d171c40d1d7e8b0993468fac183bcde1a630dd3dda847cb9a709624feb203e",
+  "dictionary_sha256": "f78e044c2a3ac33293dbee970b2a1cf66c918e24fbab9b3b28b821e3e90af6b3",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.8695652173913043
+ },
+ {
+  "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 1.095581859286301,
+  "manifest_sha256": "8fc5714d96c2fa55f4a88a857b9d1140bb44e65128a17b3ad07305e744f8a22f",
+  "L_sha256": "d3dc8edce0e97a415aba9e2c25827747ace0656f263f6f5edfe767c8795e79ef",
+  "dictionary_sha256": "afc328f8e52de1ad93d58980bfa983a8b6ed50094583cf3ff573465d6f79a3d2",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.7894736842105263
+ },
+ {
+  "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+  "class": "informative",
+  "stratum": "other",
+  "A_over_L": 1.141269158904746,
+  "manifest_sha256": "70c6b81eee4653cb2709b237491dcd2caaba9726324d6f253671f9697d027445",
+  "L_sha256": "6aac5d674304c468d3efff7025a661bca4bdfd42c71e2993e70816b3bdf1df17",
+  "dictionary_sha256": "1390f7d7bcde91f6b6e34b2e2e56356c7ba63ba3ede6a8cfcd124f5eb515717c",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.8582677165354331
+ },
+ {
+  "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 1.202200883481827,
+  "manifest_sha256": "4c6ca040dce1fd010d45ab3cc59756bbf07481fc4f50b547e071a5435ff40fc2",
+  "L_sha256": "976ad790d8a9b15cfde1eb5d23f888f905f08ca0c30226c9df57d9c1eb30ee64",
+  "dictionary_sha256": "2ed2635a1d22ea72be4a8796552cb758a86742cff6f8449200a3fc6ef94a571b",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.6514657980456026
+ },
+ {
+  "case": "kaedeharakazuha-furina-chongyun-xianyun--DrCQ7p7RghND",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 3.542482394822492,
+  "manifest_sha256": "e7719ea1d34bbcc175a268a68fbdcba1adbea262ac19079ea27582f4beb91c72",
+  "L_sha256": "eb0ec8f639879082f780e67906e977c1717a77bf02e1b06e7f2c37f0e6fc1f3b",
+  "dictionary_sha256": "605cc33e27a683ce6eafa9c3f25f4cb76a196183b7cc4c61a472df809f4a026f",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.7653061224489796
+ },
+ {
+  "case": "varka-prune-nicole-durin--dDfWKHTKH8zK",
+  "class": "informative",
+  "stratum": "other",
+  "A_over_L": 1.1063623373275147,
+  "manifest_sha256": "ba21b7e01c6eaec3ef9f5586d62b8290d8ada067f16c92c678fb66076675c6a2",
+  "L_sha256": "cb0057aef72f184a29ff3639020c01a9da6710cbc55577426656b667755311f1",
+  "dictionary_sha256": "d1382cdbc52922d323111098872e72a7dca8150368d0b8b79c7b44b97ffa4817",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.6984126984126984
+ },
+ {
+  "case": "alhaitham-furina-nahida-kukishinobu--PzrDR9zzLn9H",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 1.1102010496861334,
+  "manifest_sha256": "07cb53e11e8a1531ebd910891405802b111d1292a4dc0aaaf666e62f72c73209",
+  "L_sha256": "2fd1208127a55082cba49c52cee30d0c3a492a7e04f954f179e17d3c45783438",
+  "dictionary_sha256": "5039914e9a458206162678119aee1a4ab61af2377a1abc9c69e03ace898cc433",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.7911392405063291
+ },
+ {
+  "case": "kinich-yaemiko-fischl-xilonen--Fqcp66H6wRq9",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 1.1864766215725315,
+  "manifest_sha256": "9e098a5676559a6839a41b1194e656bfa6efd280b08763e8a4515f86ab789842",
+  "L_sha256": "fd6a0fd80128dca675766738312e90013c12eac2196000b7b09a60e1e6802c37",
+  "dictionary_sha256": "ec90efba5744c23322f8010f34b13668cccf8b94622d886f496ec8aa8a3caa2d",
+  "donor_drops": 1,
+  "donor_max_similarity": 0.920863309352518
+ },
+ {
+  "case": "hutao-fischl-yelan-bennett--zmJmWDr9CMM8",
+  "class": "informative",
+  "stratum": "other",
+  "A_over_L": 1.1144824881113278,
+  "manifest_sha256": "669399ff451983cbfc535b1cbc5c8925b2ffcde04e411b4d004d9e00052a16d2",
+  "L_sha256": "d25f91a1f32acf78eca2bf16962595bfa49a1a2ebc6843a3fa558a30a3096f56",
+  "dictionary_sha256": "1390f7d7bcde91f6b6e34b2e2e56356c7ba63ba3ede6a8cfcd124f5eb515717c",
+  "donor_drops": 2,
+  "donor_max_similarity": 0.9240506329113924
+ },
+ {
+  "case": "aratakiitto-albedo-gorou-furina--g6wbFkjbNKLc",
+  "class": "informative",
+  "stratum": "frame",
+  "A_over_L": 1.1891049594785144,
+  "manifest_sha256": "61dd215c7cc89b1a879f25db2bae64cae9c8b3733cad6e348642767443a733c0",
+  "L_sha256": "5b2a324b1879c6649f1dad5841f4a59dbf47ccea6b93297793e4a80b9c997d66",
+  "dictionary_sha256": "55cef286fb350541e76b729188dd9b23507d2fff61ff8345c9c2833b3a19c10b",
+  "donor_drops": 0,
+  "donor_max_similarity": 0.7073170731707317
+ },
+ {
+  "case": "noelle-furina-yelan-xilonen--cp6jwz87tHkb",
+  "class": "control",
+  "stratum": "other",
+  "A_over_L": 0.9799383470173888,
+  "manifest_sha256": "b30a63e3c3af8c5037e8cd8bb4c7f7527f8a4039364ba4206b8cd424c98024e7",
+  "L_sha256": "3afc4b16746220ebb970e28af9906a673d08ef663fc5dac524b63a833e403c54",
+  "dictionary_sha256": "767db79c75d0cc3cdca46cc56e0db5566add16d4cea1bce021ef24b1d6182060",
+  "donor_drops": 1,
+  "donor_max_similarity": 0.9066666666666666
+ }
+]
