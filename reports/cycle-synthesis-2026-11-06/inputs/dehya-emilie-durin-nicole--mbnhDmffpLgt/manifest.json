@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/dehya-emilie-durin-nicole/alt/mbnhDmffpLgt/build.txt": "a64c068ca022f73370e73f135660cac83d39a1eb6895ccd6879e5af8e18babe7"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "dehya",
+      "cons": 6,
+      "weapon": "serpentspine",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "emilie",
+      "cons": 1,
+      "weapon": "deathmatch",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "durin",
+      "cons": 0,
+      "weapon": "wolffang",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "nicole",
+      "cons": 0,
+      "weapon": "oathsworneye",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\ndehya char lvl=90/90 cons=6 talent=9,9,9;\ndehya add weapon=\"serpent\" refine=1 lvl=90/90 +params=[stacks=5];\ndehya add set=\"ur\" count=4;\ndehya add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cd=0.622;\ndehya add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*5 em=19.82*2 cr=0.0331*12 cd=0.0662*9;\n\nemilie char lvl=90/90 cons=1 talent=9,9,9;\nemilie add weapon=\"deathmatch\" refine=1 lvl=90/90;\nemilie add set=\"ur\" count=4;\nemilie add stats hp=4780 atk=311 atk%=0.466 dendro%=0.466 cd=0.622;\nemilie add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*3 er=0.0551*3 em=19.82*2 cr=0.0331*12 cd=0.0662*10;\n\ndurin char lvl=90/90 cons=0 talent=9,9,9;\ndurin add weapon=\"wolffang\" refine=1 lvl=90/90;\ndurin add set=\"risingwinds\" count=4;\ndurin add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cd=0.622;\ndurin add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*3 er=0.0551*3 em=19.82*2 cr=0.0331*12 cd=0.0662*10;\n\nnicole char lvl=90/90 cons=0 talent=9,9,9;\nnicole add weapon=\"oathsworn\" refine=5 lvl=90/90;\nnicole add set=\"cg\" count=4;\nnicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;\nnicole add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*10 atk%=0.0496*6 er=0.0551*9 em=19.82*2 cr=0.0331*2 cd=0.0662*3;\n"
+}

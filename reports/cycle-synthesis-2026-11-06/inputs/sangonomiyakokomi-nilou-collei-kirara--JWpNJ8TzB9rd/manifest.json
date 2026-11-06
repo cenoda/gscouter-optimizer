@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/sangonomiyakokomi-nilou-collei-kirara/alt/JWpNJ8TzB9rd/build.txt": "d8541492c3e7efeb9086f9ed52afd674ebf739d719e1ea661810c168cb71cfd0"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "nilou",
+      "cons": 6,
+      "weapon": "keyofkhajnisut",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "kirara",
+      "cons": 6,
+      "weapon": "favoniussword",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "collei",
+      "cons": 6,
+      "weapon": "favoniuswarbow",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "sangonomiyakokomi",
+      "cons": 0,
+      "weapon": "sacrificialfragments",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nnilou char lvl=90/90 cons=6 talent=10,10,10;\nnilou add weapon=\"keyofkhajnisut\" refine=1 lvl=90/90;\nnilou add set=\"vourukashasglow\" +params=[stacks=5] count=4;\nnilou add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cr=0.311;\nnilou add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1984 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nkirara char lvl=90/90 cons=6 talent=9,9,9;\nkirara add weapon=\"favsword\" refine=3 lvl=90/90;\nkirara add set=\"deepwood\" count=4;\nkirara add stats hp=4780 atk=311 atk%=0.466 dendro%=0.466 cr=0.311;\nkirara add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.4408 em=39.64 cr=0.2979 cd=0.5958;\n\ncollei char lvl=90/90 cons=6 talent=9,9,9;\ncollei add weapon=\"favbow\" refine=3 lvl=90/90;\ncollei add set=\"emblemofseveredfate\" count=4;\ncollei add stats hp=4780 atk=311 atk%=0.466 dendro%=0.466 cr=0.311;\ncollei add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2204 em=39.64 cr=0.331 cd=0.7944;\n\nkokomi char lvl=90/90 cons=0 talent=9,9,9;\nkokomi add weapon=\"sacrificialfragments\" refine=5 lvl=90/90;\nkokomi add set=\"flowerofparadiselost\" count=4;\nkokomi add stats hp=4780 atk=311 em=187 em=187 em=187;\nkokomi add stats def=39.36 def%=0.124 hp=2031.52 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.6612 em=118.92 cr=0.0662 cd=0.1324;\n"
+}

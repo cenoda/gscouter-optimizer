@@ -1,0 +1,9 @@
+{
+ "dropped_for_leakage": [
+  "albedo attack ;",
+  "faruzan attack , burst ;",
+  "xiao jump , low_plunge ;",
+  "xiao jump , low_plunge [ collision = 1 ] ;"
+ ],
+ "sha256": "fc6ed34191e8cb003afd55df5af4343f756487680d47aaac5dbeb2bdb79db220"
+}

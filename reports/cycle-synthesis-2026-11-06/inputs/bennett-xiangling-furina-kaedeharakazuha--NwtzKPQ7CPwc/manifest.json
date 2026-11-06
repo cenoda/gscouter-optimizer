@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/bennett-xiangling-furina-kaedeharakazuha/alt/NwtzKPQ7CPwc/build.txt": "20e8c471519010716ba8e1bcb59596a6b75a98abfaa68589440755bcefd38f8c"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "keyofkhajnisut",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "favoniussword",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "kaedeharakazuha",
+      "cons": 0,
+      "weapon": "xiphosmoonlight",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xiangling",
+      "cons": 6,
+      "weapon": "favoniuslance",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nfurina char lvl=90/90 cons=6 talent=9,9,9 +params=[start_hp%=50];\nfurina add weapon=\"key\" refine=1 lvl=90/90;\nfurina add set=\"mh\" count=4;\nfurina add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cd=0.622;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1984 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.662;\n\nbennett char lvl=90/90 cons=6 talent=9,9,9 +params=[start_hp%=50];\nbennett add weapon=\"favoniussword\" refine=5 lvl=90/90;\nbennett add set=\"sodp\" count=4;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2204 em=39.64 cr=0.331 cd=0.7944;\n\nkaz char lvl=90/90 cons=0 talent=9,9,9 +params=[start_hp%=50];\nkaz add weapon=\"xiphos\" refine=5 lvl=90/90;\nkaz add set=\"vv\" count=4;\nkaz add stats hp=4780 atk=311 em=187 em=187 em=187;\nkaz add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.248 er=0.1102 em=118.92 cr=0.3972 cd=0.331;\n\nxiangling char lvl=90/90 cons=6 talent=9,9,9 +params=[start_hp%=50];\nxiangling add weapon=\"favoniuslance\" refine=5 lvl=90/90;\nxiangling add set=\"ins\" count=4;\nxiangling add stats hp=3571 atk=232 er=0.518 pyro%=0.348 cr=0.232;\nxiangling add stats def%=0.10416 def=33.0624 hp=426.619 hp%=0.083328 atk=27.7872 atk%=0.083328 er=0.092568 em=33.2976 cr=0.27804 cd=0.333648;\n"
+}

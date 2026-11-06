@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/kaedeharakazuha-yaemiko-fischl-nahida/alt/MN6777qTjHNP/build.txt": "c21ad4133420c491659276c87ae7a299fbff4b5f9f32a20373e324fd5cf77c77"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "kaedeharakazuha",
+      "cons": 6,
+      "weapon": "freedomsworn",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "fischl",
+      "cons": 6,
+      "weapon": "elegyfortheend",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "yaemiko",
+      "cons": 6,
+      "weapon": "kagurasverity",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "nahida",
+      "cons": 6,
+      "weapon": "athousandfloatingdreams",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nkazuha char lvl=90/90 cons=6 talent=9,9,9;\nkazuha add weapon=\"freedomsworn\" refine=5 lvl=90/90;\nkazuha add set=\"viridescentvenerer\" count=4;\nkazuha add stats hp=4780 atk=311 em=187 em=187 em=187;\nkazuha add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.6612 em=118.92 cr=0.2648 cd=0.1324;\n\nfischl char lvl=90/90 cons=6 talent=9,9,9;\nfischl add weapon=\"elegyfortheend\" refine=5 lvl=90/90;\nfischl add set=\"gt\" count=4;\nfischl add stats hp=4780 atk=311 atk%=0.466 electro%=0.466 cr=0.311;\nfischl add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nyae char lvl=90/90 cons=6 talent=9,9,9;\nyae add weapon=\"kagura\" refine=5 lvl=90/90;\nyae add set=\"gildeddreams\" count=4;\nyae add stats hp=4780 atk=311 electro%=0.466 atk%=0.466 cr=0.311;\nyae add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nnahida char lvl=90/90 cons=6 talent=9,9,9;\nnahida add weapon=\"tfd\" refine=5 lvl=90/90;\nnahida add set=\"totm\" count=4;\nnahida add stats hp=4780 atk=311 em=187 dendro%=0.466 cd=0.622;\nnahida add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2204 em=39.64 cr=0.3972 cd=0.662;\n"
+}

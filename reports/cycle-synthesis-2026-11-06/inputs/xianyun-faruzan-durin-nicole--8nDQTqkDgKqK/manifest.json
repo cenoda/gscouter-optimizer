@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/xianyun-faruzan-durin-nicole/alt/8nDQTqkDgKqK/build.txt": "2b9d5c368b3363c83a293178a9766c6bc3a0d44389eb2939923cd0c28be7128e"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "xianyun",
+      "cons": 6,
+      "weapon": "cranesechoingcall",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "faruzan",
+      "cons": 6,
+      "weapon": "favoniuswarbow",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "durin",
+      "cons": 0,
+      "weapon": "lionsroar",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "nicole",
+      "cons": 0,
+      "weapon": "skywardatlas",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nxianyun char lvl=90/90 cons=6 talent=1,10,9;\nxianyun add weapon=\"crane\" refine=1 lvl=90/90;\nxianyun add set=\"lno\" count=4;\nxianyun add stats hp=4780 atk=311 atk%=0.466 anemo%=0.466 cr=0.311;\nxianyun add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*6 em=19.82*2 cr=0.0331*15 cd=0.0662*5;\n\nfaruzan char lvl=90/90 cons=6 talent=1,9,10;\nfaruzan add weapon=\"favbow\" refine=5 lvl=90/90;\nfaruzan add set=\"scroll\" count=4;\nfaruzan add stats hp=4780 atk=311 er=0.518 anemo%=0.466 cr=0.311;\nfaruzan add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*8 em=19.82*2 cr=0.0331*16 cd=0.0662*2;\n\ndurin char lvl=90/90 cons=0 talent=1,10,10;\ndurin add weapon=\"lionsroar\" refine=5 lvl=90/90;\ndurin add set=\"risingwinds\" count=4;\ndurin add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cr=0.311;\ndurin add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*5 em=19.82*2 cr=0.0331*8 cd=0.0662*13;\n\nnicole char lvl=90/90 cons=0 talent=1,10,10;\nnicole add weapon=\"atlas\" refine=1 lvl=90/90;\nnicole add set=\"cg\" count=4;\nnicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;\nnicole add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*10 atk%=0.0496*6 er=0.0551*2 em=19.82*2 cr=0.0331*9 cd=0.0662*3;\n"
+}

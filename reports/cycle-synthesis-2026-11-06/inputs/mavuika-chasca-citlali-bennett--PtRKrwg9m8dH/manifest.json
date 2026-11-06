@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/mavuika-chasca-citlali-bennett/alt/PtRKrwg9m8dH/build.txt": "c53f506ff76fc226c4f85ffad3bb237eeb4da5d79c496171d97b7238db773cb2"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "chasca",
+      "cons": 6,
+      "weapon": "astralvulturescrimsonplumage",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "mavuika",
+      "cons": 6,
+      "weapon": "athousandblazingsuns",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "citlali",
+      "cons": 6,
+      "weapon": "starcallerswatch",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "aquilafavonia",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nchasca char lvl=90/90 cons=6 talent=10,10,10;\nchasca add weapon=\"astralvulturescrimsonplumage\" refine=5 lvl=90/90;\nchasca add set=\"obsidiancodex\" count=4;\nchasca add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 cd=0.622;\nchasca add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.2976 er=0.1102 em=39.64 cr=0.331 cd=0.662;\n\nmavuika char lvl=90/90 cons=6 talent=10,10,10;\nmavuika add weapon=\"tbs\" refine=5 lvl=90/90;\nmavuika add set=\"oc\" count=4;\nmavuika add stats hp=4780 atk=311 em=187 pyro%=0.466 cd=0.622;\nmavuika add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.3972 cd=0.662;\n\ncitlali char lvl=90/90 cons=6 talent=10,10,10;\ncitlali add weapon=\"starcallerswatch\" refine=5 lvl=90/90;\ncitlali add set=\"scroll\" count=4;\ncitlali add stats hp=4780 atk=311 em=187 em=187 em=187;\ncitlali add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=118.92 cr=0.3972 cd=0.5296;\n\nbennett char lvl=90/90 cons=6 talent=10,10,10;\nbennett add weapon=\"aquila\" refine=5 lvl=90/90;\nbennett add set=\"no\" count=4;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.3857 em=39.64 cr=0.2648 cd=0.7282;\n"
+}

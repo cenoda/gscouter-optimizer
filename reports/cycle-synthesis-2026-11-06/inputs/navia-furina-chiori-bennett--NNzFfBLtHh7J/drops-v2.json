@@ -1,0 +1,9 @@
+{
+ "dropped_for_leakage": [
+  "furina skill , dash , burst , attack : 2 ;",
+  "navia dash ;",
+  "navia skill , attack : 2 ;",
+  "if .$SELF .skill .ready { $SELF skill , attack : 2 ; }"
+ ],
+ "sha256": "32752a3edf7b0d84e671f0acccaadc472eda744591185270bacb687f91a26778"
+}

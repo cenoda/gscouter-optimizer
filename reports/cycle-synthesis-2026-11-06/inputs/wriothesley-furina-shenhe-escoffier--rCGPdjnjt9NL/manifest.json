@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/wriothesley-furina-shenhe-escoffier/alt/rCGPdjnjt9NL/build.txt": "4fe69eef3b37dcb20b81c5308aa46db5e067a889052a3f28a1578cd8e431b753"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "wriothesley",
+      "cons": 6,
+      "weapon": "cashflowsupervision",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "shenhe",
+      "cons": 6,
+      "weapon": "calamityqueller",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "favoniussword",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "escoffier",
+      "cons": 6,
+      "weapon": "symphonistofscents",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nwrio char lvl=90/90 cons=6 talent=10,10,10;\nwrio add weapon=\"cashflow\" refine=5 lvl=90/90;\nwrio add set=\"mh\" count=4;\nwrio add stats hp=4780 atk=311 atk%=0.466 cryo%=0.466 cd=0.622;\nwrio add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.4464 er=0.1102 em=39.64 cr=0.2317 cd=0.662;\n\nshenhe char lvl=90/90 cons=6 talent=10,10,10;\nshenhe add weapon=\"calamityqueller\" refine=5 lvl=90/90;\nshenhe add set=\"no\" count=4;\nshenhe add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;\nshenhe add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=165.4 atk%=0.2976 er=0.2204 em=39.64 cr=0.2648 cd=0.1324;\n\nfurina char lvl=90/90 cons=6 talent=10,10,10;\nfurina add weapon=\"favsword\" refine=5 lvl=90/90;\nfurina add set=\"totm\" count=4;\nfurina add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cr=0.311;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1488 atk=33.08 atk%=0.0992 er=0.1653 em=39.64 cr=0.331 cd=0.7944;\n\nescoffier char lvl=90/90 cons=6 talent=10,10,10;\nescoffier add weapon=\"symphonistofscents\" refine=5 lvl=90/90;\nescoffier add set=\"gt\" count=4;\nescoffier add stats hp=4780 atk=311 atk%=0.466 cryo%=0.466 cr=0.311;\nescoffier add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.248 er=0.1653 em=39.64 cr=0.2648 cd=0.7944;\n"
+}

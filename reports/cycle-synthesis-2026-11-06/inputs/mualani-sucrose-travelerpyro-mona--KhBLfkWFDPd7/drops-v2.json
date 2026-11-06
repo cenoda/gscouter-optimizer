@@ -1,0 +1,7 @@
+{
+ "dropped_for_leakage": [
+  "if .sucrose .skill .ready { sucrose skill , dash ; }",
+  "if .$SELF .skill .ready { $SELF skill , dash ; }"
+ ],
+ "sha256": "ed890ea51b4c60265d0f3096e6499aa8d9498975693563d31d4c0e8d79eb66dc"
+}

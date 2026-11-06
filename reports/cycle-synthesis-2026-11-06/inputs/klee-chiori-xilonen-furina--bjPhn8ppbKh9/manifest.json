@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/klee-chiori-xilonen-furina/alt/bjPhn8ppbKh9/build.txt": "f398482f3fa3c38e33be91239a0d8a83c86bc3f9dd3509099b1efba88076124a"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "xilonen",
+      "cons": 4,
+      "weapon": "peakpatrolsong",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "chiori",
+      "cons": 4,
+      "weapon": "urakumisugiri",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "klee",
+      "cons": 4,
+      "weapon": "tomeoftheeternalflow",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 4,
+      "weapon": "keyofkhajnisut",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nxilonen char lvl=90/90 cons=4 talent=9,9,9;\nxilonen add weapon=\"peakpatrolsong\" refine=1 lvl=90/90;\nxilonen add set=\"scroll\" count=4;\nxilonen add stats hp=4780 atk=311 er=0.583 def%=0.583 def%=0.583;\nxilonen add stats def%=0.496 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.3972;\n\nchiori char lvl=90/90 cons=4 talent=9,9,9;\nchiori add weapon=\"urakumisugiri\" refine=1 lvl=90/90;\nchiori add set=\"husk\" count=4 +params=[stacks=4];\nchiori add stats hp=4780 atk=311 def%=0.583 geo%=0.466 cr=0.311;\nchiori add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2204 em=39.64 cr=0.331 cd=0.7944;\n\nklee char lvl=90/90 cons=4 talent=9,9,9;\nklee add weapon=\"eternalflow\" refine=1 lvl=90/90;\nklee add set=\"mh\" count=4;\nklee add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 cr=0.311;\nklee add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.2976 er=0.1102 em=39.64 cr=0.2648 cd=0.7944;\n\nfurina char lvl=90/90 cons=4 talent=9,9,9;\nfurina add weapon=\"key\" refine=1 lvl=90/90;\nfurina add set=\"gt\" count=4;\nfurina add stats hp=4780 atk=311 hp%=0.466 er=0.518 cr=0.311;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1984 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n"
+}

@@ -1,0 +1,10 @@
+{
+ "dropped_for_leakage": [
+  "if ! .element .t0 .pyro { bennett attack ; }",
+  "bennett burst , skill [ hold = 1 , hold_c4 = 1 ] ;",
+  "if .furina .skill .ready { furina skill , dash , burst ; }",
+  "if ! .element .t0 .pyro { $SELF attack ; }",
+  "if .$SELF .skill .ready { $SELF skill , dash , burst ; }"
+ ],
+ "sha256": "366edfadc9ce6906809dff04971581e69a4072461802aeba58db8f493de6cc6f"
+}

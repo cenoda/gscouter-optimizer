@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/raidenshogun-furina-kujousara-xilonen/alt/nzH9PNLrRpzJ/build.txt": "ec2a1458dc870f28f009ff525d7f9191a2d85ed98a6be530bb43c2dd7180bd44"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "raidenshogun",
+      "cons": 3,
+      "weapon": "engulfinglightning",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "splendoroftranquilwaters",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "kujousara",
+      "cons": 6,
+      "weapon": "elegyfortheend",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 3,
+      "weapon": "peakpatrolsong",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nraiden char lvl=90/90 cons=3 talent=9,10,10;\nraiden add weapon=\"engulfinglightning\" refine=5 lvl=90/90;\nraiden add set=\"eosf\" count=5;\nraiden add stats hp=4780 atk=311 atk%=0.932 cr=0.311;\nraiden add stats cr=0.07 er=0.052 atk%=0.082 cd=0.28;\nraiden add stats cd=0.272 cr=0.070 er=0.117 atk%=0.047;\nraiden add stats cr=0.039 cd=0.358 hp%=0.117 atk=19;\nraiden add stats hp%=0.053 cd=0.062 er=0.058 cr=0.175;\nraiden add stats er=0.104 atk=14 atk%=0.146 cd=0.148;\n\nfurina char lvl=90/90 cons=6 talent=9,10,10;\nfurina add set=\"tenacity\" count=5;\nfurina add weapon=\"splendor\" refine=1 lvl=90/90;\nfurina add stats hp=4780 atk=311 hp%=0.932 cd=0.622;\nfurina add stats def%=0.073 em=23 cr=0.132 cd=0.140;\nfurina add stats cd=0.218 hp=209 cr=0.070 er=0.175;\nfurina add stats er=0.045 atk=18 cr=0.144 cd=0.132;\nfurina add stats em=44 er=0.175 cr=0.097 atk=18;\nfurina add stats em=40 def=19 cr=0.105 er=0.104;\n\nsara char lvl=90/90 cons=6 talent=9,10,10;\nsara add set=\"noblesse\" count=5;\nsara add weapon=\"elegy\" refine=5 lvl=90/90;\nsara add stats hp=4780 atk=311 er=0.518 atk%=0.466 cr=0.311;\nsara add stats def%=0.124 cr=0.074 cd=0.28 def=16;\nsara add stats hp=269 cd=0.179 er=0.045 cr=0.105;\nsara add stats cr=0.144 atk%=0.105 cd=0.054 hp=508;\nsara add stats cd=0.14 def=19 cr=0.093 hp=777;\nsara add stats atk=35 hp=269 er=0.097 cd=0.218;\n\nxilonen char lvl=90/90 cons=3 talent=9,10,10;\nxilonen add set=\"scroll\" count=5;\nxilonen add weapon=\"pps\" refine=5 lvl=90/90;\nxilonen add stats hp=4780 atk=311 er=0.518 def%=0.466 heal=0.359;\nxilonen add stats def%=0.204 er=0.065 def=44 cd=0.148;\nxilonen add stats def=21 er=0.123 def%=0.241 cr=0.039;\nxilonen add stats def=19 def%=0.146 atk%=0.093 hp=837;\nxilonen add stats atk%=0.099 er=0.117 cr=0.101 cd=0.054;\nxilonen add stats cr=0.039 hp%=0.146 er=0.065 def%=0.204;\n"
+}

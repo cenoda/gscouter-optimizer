@@ -1,0 +1,8 @@
+{
+ "threshold": 0.9,
+ "dropped": [
+  "arlecchino-chevreuse-ororon-bennett",
+  "arlecchino-mona-xilonen-bennett",
+  "arlecchino-raidenshogun-chevreuse-bennett"
+ ]
+}

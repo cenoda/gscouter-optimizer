@@ -1,0 +1,6 @@
+{
+ "dropped_for_leakage": [
+  "if .nilou .burst .ready { nilou burst ; }"
+ ],
+ "sha256": "e93f10ef1a76749ba3e0e08304877c09de185dd966f56919b05e6621f286f79d"
+}

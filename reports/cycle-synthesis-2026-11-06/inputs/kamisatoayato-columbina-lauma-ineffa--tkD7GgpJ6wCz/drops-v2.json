@@ -1,0 +1,9 @@
+{
+ "dropped_for_leakage": [
+  "columbina attack , charge ;",
+  "columbina attack , charge , dash , charge , dash ;",
+  "kamisatoayato burst , attack ;",
+  "if .$SELF .burst .ready { $SELF burst , attack ; }"
+ ],
+ "sha256": "491a19ab83f64aae1df45759353ec83a4a2b8e03b940072e97c3da7cfcdde24d"
+}
