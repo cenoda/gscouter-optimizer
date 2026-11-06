@@ -1,7 +1,10 @@
 # Cycle-synthesis pilot (proposed)
 
-**Status: research note and proposed protocol, written 2026-11-06 before any
-cycle-synthesis code exists. Nothing in sections 4–9 is a measured result.**
+**Status: research note and protocol, written 2026-11-06 before any
+cycle-synthesis code existed; Amendment 1 was added before the draw. The
+measured held-out result is in
+[`reports/cycle-synthesis-2026-11-06/`](../reports/cycle-synthesis-2026-11-06/README.md);
+sections 4–9 themselves remain the pre-registered plan.**
 Section 2 reports small diagnostic measurements made for this note on
 development cases only (their A had already been read); they are evidence
 about where the gap is, not about whether the proposed method works. The

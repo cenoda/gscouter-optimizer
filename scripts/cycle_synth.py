@@ -362,13 +362,24 @@ def report(args):
         e = c["arms"][arm].get(cap, c["arms"][arm].get(str(cap), {}))
         return [v for v in e.get("starts", {}).values() if v.get("status") == "complete"]
     out = {"strata": {}, "comparisons": {}, "per_case": []}
+    import re
+    guard_re = re.compile(r"\.(\w+) \.mods \.([\w-]+) && \.\1 \.skill \.ready")
+
+    def own_guard(c, s):
+        """The synthesizer's own-status guard in a selected program and not in L."""
+        if not s or not args.rundir:
+            return False
+        L = (Path(args.rundir) / "inputs" / c["case"] / "L.gcsl").read_text()
+        Ln = " ".join(L.replace(".", " .").split())
+        found = guard_re.findall(s.get("selected_source") or "")
+        return any(f".{x} .mods .{k}" not in Ln for x, k in found)
     lines = ["# Cycle-synthesis pilot tables", ""]
     for st in ["primary (A/L>=2)", "secondary (1.25<=A/L<2)", "non-inferiority (A/L<1.25)", "control"]:
         cs = [c for c in ex if stratum_of.get(c["case"]) == st]
         if not cs:
             continue
-        lines += [f"## {st} (n = {len(cs)})", "", "| Arm @384 | median S/A | S/A < 0.90 | median r | regressions | selected audit failures | selected from synthesized family |",
-                  "|---|---:|---:|---:|---:|---:|---:|"]
+        lines += [f"## {st} (n = {len(cs)})", "", "| Arm @384 | median S/A | S/A < 0.90 | median r | regressions | selected audit failures | selected from synthesized family | own-status guard |",
+                  "|---|---:|---:|---:|---:|---:|---:|---:|"]
         out["strata"][st] = {}
         for arm in ARMS:
             v = [sel(c, arm) for c in cs]
@@ -376,13 +387,14 @@ def report(args):
             sa = [x["S_over_A"] for x in v]
             rr = [x["r"] for x in v if x.get("r") is not None]
             synth = sum(1 for x in v if (x.get("selected_role") or "").startswith("synth"))
+            guards = sum(1 for c in cs for x in [sel(c, arm)] if x and own_guard(c, x))
             rec = {"n": len(v), "median_S_over_A": statistics.median(sa) if sa else None,
                    "below_0.90": sum(s < 0.9 for s in sa), "median_r": statistics.median(rr) if rr else None,
                    "regressions": sum(bool(x.get("regression")) for x in v), "audit_failures": sum(x["audit_failure"] for x in v),
-                   "selected_from_synth_family": synth}
+                   "selected_from_synth_family": synth, "own_status_guard": guards}
             out["strata"][st][arm] = rec
             f = lambda z: "–" if z is None else f"{z:.3f}"
-            lines.append(f"| {arm} | {f(rec['median_S_over_A'])} | {rec['below_0.90']} | {f(rec['median_r'])} | {rec['regressions']} | {rec['audit_failures']} | {synth} |")
+            lines.append(f"| {arm} | {f(rec['median_S_over_A'])} | {rec['below_0.90']} | {f(rec['median_r'])} | {rec['regressions']} | {rec['audit_failures']} | {synth} | {guards} |")
         lines.append("")
         lines += ["| Comparison | median d (% of A) | x better | p | reading | start-averaged median d, p |", "|---|---:|---:|---:|---|---|"]
         for x, y in [("SYN", "V21S"), ("XO", "V21S"), ("SYN", "XO")]:
