@@ -100,6 +100,12 @@ closer to *another party's main-library rotation with the same on-field
 member* (0.91 / 0.81 / 0.81) than to L. Where A is a repair of L, local
 search finds it; where A is a different cycle, it does not.
 
+*Coordinator review (2026-11-06):* this separates only three of the six
+unsolved cases. The other two unsolved broken-L cases (Mualani–Candace,
+Neuvillette) have A close to L (0.75 / 0.73) and no closer to another main
+rotation (0.73 / 0.72). Distance from L explains part of the failures, not
+all of them; transplant families are expected to address that part only.
+
 **F5. A's advantage is joint and interaction-heavy.** Decomposition hybrids
 (hand-built, `transforms.json`):
 
@@ -154,6 +160,13 @@ The unchanged v2.1 search run for 96 CPU-s from K or T instead of L
 5 of 6 cases (section 2a). This is a single-seed probe whose K and T starts
 used extra, uncharged selection CPU; it cannot support an effect claim, only
 the decision to test it.
+
+*Coordinator review (2026-11-06):* "best of K/T" takes the better of two
+96 CPU-s runs after seeing both, so it compares roughly 192 CPU-s with
+selection against one 96 CPU-s run from L, on one seed. It is not an
+equal-cost comparison and does not count as evidence that synthesized starts
+beat L at equal CPU. Only the held-out SYN vs V21S comparison of section 6
+can show that.
 
 ### 2a. Search from L, K and T (one seed, 96 CPU-s)
 
