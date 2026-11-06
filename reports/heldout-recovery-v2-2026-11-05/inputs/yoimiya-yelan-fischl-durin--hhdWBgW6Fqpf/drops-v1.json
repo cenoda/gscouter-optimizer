@@ -1,0 +1,12 @@
+{
+ "dropped_for_leakage": [
+  "durin skill : 2 , burst ;",
+  "fischl attack : 2 , burst ;",
+  "fischl skill , attack ;",
+  "yelan skill , attack , burst , attack ;",
+  "yoimiya burst ;",
+  "if .yoimiya .burst .ready { yoimiya burst ; }",
+  "yoimiya attack : 3 ;"
+ ],
+ "sha256": "c798e142b1d0f1d4cbcbcbbd74d8fb9a6ca1750e71f4148519704582301cac14"
+}

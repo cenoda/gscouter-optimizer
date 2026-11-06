@@ -1,0 +1,12 @@
+{
+ "dropped_for_leakage": [
+  "alhaitham burst ;",
+  "alhaitham skill [ hold = 1 ] , low_plunge [ short = 1 ] , attack : 2 , charge , dash , attack : 3 , charge ;",
+  "furina skill , burst ;",
+  "kukishinobu skill ;",
+  "kukishinobu burst ;",
+  "kukishinobu attack ;",
+  "nahida skill , burst ;"
+ ],
+ "sha256": "8d4e263f7d3947fb97d158482dacf2813b7ea6c3f09dc46fcb7f3e625ad2d1c6"
+}

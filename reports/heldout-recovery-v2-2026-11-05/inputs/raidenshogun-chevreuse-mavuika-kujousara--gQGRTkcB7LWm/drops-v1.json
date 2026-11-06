@@ -1,0 +1,10 @@
+{
+ "dropped_for_leakage": [
+  "chevreuse burst , skill [ hold = 1 ] ;",
+  "kujousara aim ;",
+  "kujousara skill , burst ;",
+  "raidenshogun skill ;",
+  "raidenshogun burst , attack : 4 , skill , attack : 4 , dash , attack : 4 , dash , attack : 4 ;"
+ ],
+ "sha256": "a601208d041c8c9dc58fcc56474850293530c56b6f58688c540a608f40792edf"
+}

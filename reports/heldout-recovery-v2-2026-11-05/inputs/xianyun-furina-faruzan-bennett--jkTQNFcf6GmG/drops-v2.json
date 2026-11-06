@@ -1,0 +1,11 @@
+{
+ "dropped_for_leakage": [
+  "xianyun skill : 3 , high_plunge ;",
+  "if .airborne { xianyun high_plunge [ collision = rand ( ) > 0.5 ] , dash ; }",
+  "xianyun high_plunge [ collision = rand ( ) > 0.5 ] , dash ;",
+  "xianyun skill : 3 , high_plunge , burst ;",
+  "while .xianyun .status .xianyun-airborne-buff { if .xianyun .skill .ready { xianyun skill : 3 , high_plunge ; } else if .xianyun .status .xianyun-airborne-buff { xianyun jump ; if .airborne { xianyun high_plunge [ collision = rand ( ) > 0.5 ] , dash ; } } }",
+  "while .$SELF .status .xianyun-airborne-buff { if .$SELF .skill .ready { $SELF skill : 3 , high_plunge ; } else if .$SELF .status .xianyun-airborne-buff { $SELF jump ; if .airborne { $SELF high_plunge [ collision = rand ( ) > 0.5 ] , dash ; } } }"
+ ],
+ "sha256": "ca71b63f309ff0508a02eb62b445a320fbd76ac2cc4a70fe72eadbc5428fcc0e"
+}

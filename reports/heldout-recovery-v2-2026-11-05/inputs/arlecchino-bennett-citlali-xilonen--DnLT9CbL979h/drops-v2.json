@@ -1,0 +1,12 @@
+{
+ "dropped_for_leakage": [
+  "arlecchino attack : 3 , dash ;",
+  "arlecchino charge [ early_cancel = 1 ] , dash ;",
+  "arlecchino burst ;",
+  "arlecchino dash ;",
+  "arlecchino swap ;",
+  "if .arlecchino .weapon == .keys .weapon .crimsonmoonssemblance { arlecchino charge ; }",
+  "if .$SELF .weapon == .keys .weapon .crimsonmoonssemblance { $SELF charge ; }"
+ ],
+ "sha256": "5b2036096113e4d3e7ebe5749f50dc1deb15a68f1b8a613922de5eb6291f8ec0"
+}

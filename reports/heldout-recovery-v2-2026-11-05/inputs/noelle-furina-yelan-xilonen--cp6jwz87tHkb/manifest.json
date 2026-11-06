@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/noelle-furina-yelan-xilonen/alt/cp6jwz87tHkb/build.txt": "c7fcfa1233c8efc8363ef70eaed768489fbb6554fc3e0dc1b701da62a06dd099"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "noelle",
+      "cons": 6,
+      "weapon": "serpentspine",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 2,
+      "weapon": "favoniussword",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "yelan",
+      "cons": 0,
+      "weapon": "aquasimulacra",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 0,
+      "weapon": "favoniussword",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nnoelle char lvl=90/90 cons=6 talent=10,10,10;\nnoelle add weapon=\"serpentspine\" refine=5 lvl=90/90 +params=[stacks=5];\nnoelle add set=\"gladiatorsfinale\" count=4;\nnoelle add stats hp=4780 atk=311 def%=0.583 def%=0.583 cd=0.622;\nnoelle add stats hp%=0 hp=0 atk%=0 atk=79 def%=0 def=97 er=0.33 em=80 cr=0.455 cd=0.855;\n\nfurina char lvl=90/90 cons=2 talent=10,10,10;\nfurina add weapon=\"favoniussword\" refine=5 lvl=90/90;\nfurina add set=\"goldentroupe\" count=4;\nfurina add stats hp=4780 atk=311 er=0.518 hp%=0.466 cr=0.311;\nfurina add stats hp%=0.28 hp=1046 atk%=0 atk=47 def%=0 def=42 er=0.278 em=23 cr=0.349 cd=0.661;\n\nyelan char lvl=90/90 cons=0 talent=9,9,10;\nyelan add weapon=\"aquasimulacra\" refine=3 lvl=90/90;\nyelan add set=\"emblemofseveredfate\" count=4;\nyelan add stats hp=4780 atk=311 er=0.518 hp%=0.466 cr=0.311;\nyelan add stats hp%=0.344 hp=0 atk%=0.041 atk=0 def%=0 def=85 er=0.383 em=103 cr=0.322 cd=0.629;\n\nxilonen char lvl=90/90 cons=0 talent=5,10,6;\nxilonen add weapon=\"favoniussword\" refine=5 lvl=90/90;\nxilonen add set=\"scrolloftheheroofcindercity\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 cr=0.311;\nxilonen add stats cr=0.256;\n"
+}

@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/aratakiitto-xilonen-furina-mavuika/alt/bkd7t7WCRqBd/build.txt": "da7f992ef029e4f5ed005d2c0313948b8ad1755f6f3acac5b0b7ad6e5e5ca690"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "aratakiitto",
+      "cons": 6,
+      "weapon": "redhornstonethresher",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 6,
+      "weapon": "peakpatrolsong",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "keyofkhajnisut",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "mavuika",
+      "cons": 6,
+      "weapon": "athousandblazingsuns",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nitto char lvl=90/90 cons=6 talent=10,10,10;\nitto add weapon=\"redhorn\" refine=5 lvl=90/90;\nitto add set=\"mh\" count=4;\nitto add stats hp=4780 atk=311 def%=0.583 geo%=0.466 cd=0.622;\nitto add stats def%=0.062*8 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*2 em=19.82*2 cr=0.0331*12 cd=0.0662*6;\n\nxilonen char lvl=90/90 cons=6 talent=10,10,10;\nxilonen add weapon=\"peakpatrolsong\" refine=5 lvl=90/90;\nxilonen add set=\"scroll\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 def%=0.583;\nxilonen add stats def%=0.062*6 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*2 em=19.82*2 cr=0.0331*12 cd=0.0662*8;\n\nfurina char lvl=90/90 cons=6 talent=10,10,10;\nfurina add weapon=\"key\" refine=5 lvl=90/90;\nfurina add set=\"totm\" count=4;\nfurina add stats hp=4780 atk=311 er=0.518 hp%=0.466 cr=0.311;\nfurina add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*4 atk=16.54*2 atk%=0.0496*2 er=0.0551*2 em=19.82*2 cr=0.0331*10 cd=0.0662*12;\n\nmavuika char lvl=90/90 cons=6 talent=10,10,10;\nmavuika add weapon=\"athousandblazingsuns\" refine=5 lvl=90/90;\nmavuika add set=\"obsidiancodex\" count=4;\nmavuika add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cd=0.622;\nmavuika add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*2 em=19.82*4 cr=0.0331*12 cd=0.0662*10;\n"
+}

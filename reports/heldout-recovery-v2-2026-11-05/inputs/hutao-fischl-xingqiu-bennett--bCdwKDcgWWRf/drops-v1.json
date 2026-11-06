@@ -1,0 +1,10 @@
+{
+ "dropped_for_leakage": [
+  "bennett burst , attack , skill ;",
+  "fischl attack : 2 , burst ;",
+  "fischl attack : 1 , skill ;",
+  "if .fischl .burst .ready { fischl attack : 2 , burst ; }",
+  "xingqiu skill , burst , attack ;"
+ ],
+ "sha256": "a9df53cbdfc2b04cee50cb1e560ce678a08bf1d3652860ebea53eb0db3700e56"
+}
