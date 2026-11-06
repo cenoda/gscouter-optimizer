@@ -1,0 +1,328 @@
+{
+ "cases": 40,
+ "informative": 32,
+ "control": 8,
+ "arms": {
+  "V1@36": {
+   "n": 32,
+   "median_r": 0.8038815469433213,
+   "quartiles": [
+    0.368,
+    0.804,
+    1.013
+   ],
+   "r_ge_half": 21,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V1@108": {
+   "n": 32,
+   "median_r": 0.864596366474015,
+   "quartiles": [
+    0.536,
+    0.865,
+    1.004
+   ],
+   "r_ge_half": 25,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 1
+  },
+  "V1@192": {
+   "n": 32,
+   "median_r": 0.9001349476079137,
+   "quartiles": [
+    0.561,
+    0.9,
+    1.031
+   ],
+   "r_ge_half": 27,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 31,
+   "median_r_strip": 0.8797469413328661,
+   "reading_strip": "Partial (>5% regressions)",
+   "control_regressions": 0,
+   "selected_audit_failures": 1
+  },
+  "V2S@36": {
+   "n": 32,
+   "median_r": 0.7755167347052656,
+   "quartiles": [
+    0.556,
+    0.776,
+    0.919
+   ],
+   "r_ge_half": 25,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2S@108": {
+   "n": 32,
+   "median_r": 0.8724235497533037,
+   "quartiles": [
+    0.581,
+    0.872,
+    1.006
+   ],
+   "r_ge_half": 25,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2S@192": {
+   "n": 32,
+   "median_r": 0.9905474300135968,
+   "quartiles": [
+    0.668,
+    0.991,
+    1.132
+   ],
+   "r_ge_half": 28,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 32,
+   "median_r_strip": 0.9342399536701964,
+   "reading_strip": "Partial (>5% regressions)",
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2S@288": {
+   "n": 32,
+   "median_r": 0.9743069307149341,
+   "quartiles": [
+    0.712,
+    0.974,
+    1.16
+   ],
+   "r_ge_half": 28,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2S@384": {
+   "n": 32,
+   "median_r": 0.9827620376981913,
+   "quartiles": [
+    0.737,
+    0.983,
+    1.152
+   ],
+   "r_ge_half": 28,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 32,
+   "median_r_strip": 0.9660231410229976,
+   "reading_strip": "Promising",
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2T@288": {
+   "n": 32,
+   "median_r": 1.0161256550699256,
+   "quartiles": [
+    0.722,
+    1.016,
+    1.216
+   ],
+   "r_ge_half": 29,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2T@384": {
+   "n": 32,
+   "median_r": 0.999200252200293,
+   "quartiles": [
+    0.721,
+    0.999,
+    1.255
+   ],
+   "r_ge_half": 28,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 31,
+   "median_r_strip": 0.96422158151729,
+   "reading_strip": "Partial (>5% regressions)",
+   "control_regressions": 0,
+   "selected_audit_failures": 1
+  }
+ },
+ "comparisons": {
+  "Q2 two-pass vs equal-CPU single (primary)": {
+   "x": [
+    "V2T",
+    384
+   ],
+   "y": [
+    "V2S",
+    384
+   ],
+   "paired_fights": true,
+   "n": 32,
+   "median_d_start_averaged": 0.012114489433467669,
+   "mean_d": 0.07243429433320459,
+   "x_better_cases": 26,
+   "wilcoxon": {
+    "n": 32,
+    "W_plus": 416.0,
+    "z": 2.84223884962571,
+    "p": 0.004479791575013289
+   },
+   "reading": "V2T@384 beats V2S@384",
+   "secondary_selected": {
+    "n": 32,
+    "median": 0.0029448579252903118,
+    "wilcoxon": {
+     "n": 29,
+     "W_plus": 269.0,
+     "z": 1.1135948601559507,
+     "p": 0.26545303243391527
+    }
+   }
+  },
+  "Q1 v2 vs v1 at 192": {
+   "x": [
+    "V2S",
+    192
+   ],
+   "y": [
+    "V1",
+    192
+   ],
+   "paired_fights": true,
+   "n": 32,
+   "median_d_start_averaged": -0.0036788140287697547,
+   "mean_d": -0.07636078126050058,
+   "x_better_cases": 16,
+   "wilcoxon": {
+    "n": 32,
+    "W_plus": 236.0,
+    "z": -0.523570314404736,
+    "p": 0.6005774332559537
+   },
+   "reading": "no detectable difference at this sample size",
+   "secondary_selected": {
+    "n": 32,
+    "median": 0.01967932499218128,
+    "wilcoxon": {
+     "n": 32,
+     "W_plus": 282.0,
+     "z": 0.33658091640304455,
+     "p": 0.7364328441559215
+    }
+   }
+  },
+  "budget V2S 384 vs 192 (unpaired fights)": {
+   "x": [
+    "V2S",
+    384
+   ],
+   "y": [
+    "V2S",
+    192
+   ],
+   "paired_fights": false,
+   "n": 32,
+   "median_d_start_averaged": 0.02074413769246697,
+   "mean_d": 0.03170659829842672,
+   "x_better_cases": 28,
+   "wilcoxon": {
+    "n": 32,
+    "W_plus": 455.0,
+    "z": 3.5714975018323063,
+    "p": 0.0003549459344252667
+   },
+   "reading": "V2S@384 beats V2S@192",
+   "secondary_selected": {
+    "n": 32,
+    "median": 0.008233317778870486,
+    "wilcoxon": {
+     "n": 32,
+     "W_plus": 421.0,
+     "z": 2.9357335486265552,
+     "p": 0.003327600143207907
+    }
+   }
+  },
+  "(descriptive) V2T 288 vs V2S 288": {
+   "x": [
+    "V2T",
+    288
+   ],
+   "y": [
+    "V2S",
+    288
+   ],
+   "paired_fights": true,
+   "n": 32,
+   "median_d_start_averaged": 0.010217441392659846,
+   "mean_d": 0.05605335361269352,
+   "x_better_cases": 28,
+   "wilcoxon": {
+    "n": 32,
+    "W_plus": 464.0,
+    "z": 3.7397879600338286,
+    "p": 0.00018417555129966856
+   },
+   "reading": "V2T@288 beats V2S@288",
+   "secondary_selected": {
+    "n": 32,
+    "median": 0.0026807542856488453,
+    "wilcoxon": {
+     "n": 28,
+     "W_plus": 265.0,
+     "z": 1.411828250741905,
+     "p": 0.15800053800961816
+    }
+   }
+  }
+ },
+ "accounting": {
+  "discovery_cpu_seconds": 92376.146871993,
+  "audit_cpu_seconds": 7346.203433907002,
+  "job_children_cpu_seconds": 101089.27,
+  "sum_job_wall_seconds": 29127.180633306503,
+  "max_job_wall_seconds": 1047.0762858390808,
+  "local_measure_cpu_seconds": 1227.095583726,
+  "job_errors": 0,
+  "cpu_models": [
+   "AMD EPYC 7763 64-Core Processor",
+   "AMD EPYC 9V45 96-Core Processor",
+   "AMD EPYC 9V74 80-Core Processor",
+   "INTEL(R) XEON(R) PLATINUM 8573C",
+   "Intel(R) Xeon(R) 6973P-C",
+   "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz"
+  ],
+  "nproc": [
+   4
+  ],
+  "L_reproduction_failures": 0
+ }
+}

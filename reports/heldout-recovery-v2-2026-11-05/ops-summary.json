@@ -1,0 +1,254 @@
+{
+ "V1": {
+  "initial family": {
+   "decisions": 120,
+   "accepted": 120,
+   "improving": 0,
+   "failed": 0
+  },
+  "delete statement": {
+   "decisions": 8797,
+   "accepted": 2627,
+   "improving": 684,
+   "failed": 266
+  },
+  "dictionary replace": {
+   "decisions": 25412,
+   "accepted": 7855,
+   "improving": 2104,
+   "failed": 923
+  },
+  "dictionary insert": {
+   "decisions": 24461,
+   "accepted": 7554,
+   "improving": 1638,
+   "failed": 675
+  },
+  "generic": {
+   "decisions": 22871,
+   "accepted": 7291,
+   "improving": 2695,
+   "failed": 1510
+  },
+  "move statement": {
+   "decisions": 7505,
+   "accepted": 2467,
+   "improving": 865,
+   "failed": 237
+  },
+  "micro": {
+   "decisions": 8540,
+   "accepted": 3299,
+   "improving": 858,
+   "failed": 162
+  },
+  "restart perturbation": {
+   "decisions": 514,
+   "accepted": 514,
+   "improving": 67,
+   "failed": 63
+  }
+ },
+ "V2S": {
+  "initial family": {
+   "decisions": 120,
+   "accepted": 120,
+   "improving": 0,
+   "failed": 0
+  },
+  "substitute action": {
+   "decisions": 9558,
+   "accepted": 5712,
+   "improving": 541,
+   "failed": 1531
+  },
+  "dictionary insert": {
+   "decisions": 20410,
+   "accepted": 11246,
+   "improving": 1225,
+   "failed": 680
+  },
+  "template insert": {
+   "decisions": 12340,
+   "accepted": 8297,
+   "improving": 530,
+   "failed": 3108
+  },
+  "compound": {
+   "decisions": 50816,
+   "accepted": 18598,
+   "improving": 3608,
+   "failed": 12505
+  },
+  "template replace": {
+   "decisions": 12276,
+   "accepted": 7118,
+   "improving": 581,
+   "failed": 3317
+  },
+  "generic": {
+   "decisions": 29842,
+   "accepted": 17303,
+   "improving": 3215,
+   "failed": 1782
+  },
+  "dictionary replace": {
+   "decisions": 22607,
+   "accepted": 13149,
+   "improving": 1704,
+   "failed": 824
+  },
+  "delete unit": {
+   "decisions": 9978,
+   "accepted": 6378,
+   "improving": 615,
+   "failed": 417
+  },
+  "delete segment": {
+   "decisions": 1919,
+   "accepted": 1070,
+   "improving": 171,
+   "failed": 66
+  },
+  "repeat segment": {
+   "decisions": 4953,
+   "accepted": 2825,
+   "improving": 320,
+   "failed": 140
+  },
+  "reassign owner": {
+   "decisions": 7047,
+   "accepted": 4228,
+   "improving": 329,
+   "failed": 934
+  },
+  "move unit": {
+   "decisions": 6632,
+   "accepted": 4480,
+   "improving": 546,
+   "failed": 341
+  },
+  "micro": {
+   "decisions": 22614,
+   "accepted": 12842,
+   "improving": 1895,
+   "failed": 306
+  },
+  "restart perturbation": {
+   "decisions": 1176,
+   "accepted": 1176,
+   "improving": 284,
+   "failed": 353
+  },
+  "heldout v2": {
+   "decisions": 0,
+   "accepted": 0,
+   "improving": 0,
+   "failed": 0
+  }
+ },
+ "V2T": {
+  "initial family": {
+   "decisions": 358,
+   "accepted": 358,
+   "improving": 0,
+   "failed": 1
+  },
+  "substitute action": {
+   "decisions": 8269,
+   "accepted": 4646,
+   "improving": 509,
+   "failed": 1433
+  },
+  "dictionary insert": {
+   "decisions": 17213,
+   "accepted": 8892,
+   "improving": 1034,
+   "failed": 598
+  },
+  "template insert": {
+   "decisions": 10574,
+   "accepted": 6815,
+   "improving": 457,
+   "failed": 2737
+  },
+  "compound": {
+   "decisions": 63537,
+   "accepted": 19961,
+   "improving": 4223,
+   "failed": 18048
+  },
+  "template replace": {
+   "decisions": 10500,
+   "accepted": 5635,
+   "improving": 531,
+   "failed": 3059
+  },
+  "generic": {
+   "decisions": 25677,
+   "accepted": 14604,
+   "improving": 2963,
+   "failed": 1686
+  },
+  "dictionary replace": {
+   "decisions": 19379,
+   "accepted": 10724,
+   "improving": 1577,
+   "failed": 724
+  },
+  "delete unit": {
+   "decisions": 8797,
+   "accepted": 5329,
+   "improving": 610,
+   "failed": 394
+  },
+  "delete segment": {
+   "decisions": 1646,
+   "accepted": 860,
+   "improving": 162,
+   "failed": 53
+  },
+  "repeat segment": {
+   "decisions": 4516,
+   "accepted": 2450,
+   "improving": 295,
+   "failed": 150
+  },
+  "reassign owner": {
+   "decisions": 6152,
+   "accepted": 3412,
+   "improving": 297,
+   "failed": 818
+  },
+  "move unit": {
+   "decisions": 6086,
+   "accepted": 3961,
+   "improving": 578,
+   "failed": 333
+  },
+  "micro": {
+   "decisions": 23024,
+   "accepted": 11607,
+   "improving": 2157,
+   "failed": 398
+  },
+  "restart perturbation": {
+   "decisions": 1033,
+   "accepted": 1033,
+   "improving": 205,
+   "failed": 342
+  },
+  "minimise": {
+   "decisions": 1556,
+   "accepted": 446,
+   "improving": 64,
+   "failed": 104
+  },
+  "heldout v2": {
+   "decisions": 0,
+   "accepted": 0,
+   "improving": 0,
+   "failed": 0
+  }
+ }
+}
