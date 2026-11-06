@@ -794,11 +794,18 @@ pub fn cli(args: &[String]) -> Result<(), String> {
                 .map_err(|e| e.to_string())?;
             write(&arg(args, "--out")?, &drop_listed(&d, &list))
         }
+        ("config", _) => {
+            // Full engine/gcsim config of a rotation on a manifest (parity checks).
+            let m = crate::artifact::Manifest::load(&arg(args, "--manifest")?)?;
+            let p = crate::program::Program::baseline(&read(&arg(args, "--rotation")?)?, &m)?;
+            std::fs::write(arg(args, "--out")?, crate::evaluate::Evaluator::config(&m, &p))
+                .map_err(|e| e.to_string())
+        }
         ("strip-assumptions", _) => {
             let raw = read(&arg(args, "--rotation")?)?;
             std::fs::write(arg(args, "--out")?, strip(&raw)).map_err(|e| e.to_string())
         }
-        _ => Err("dictionary-v2 build|filter|drop | strip-assumptions".into()),
+        _ => Err("dictionary-v2 build|filter|drop | strip-assumptions | config".into()),
     }
 }
 

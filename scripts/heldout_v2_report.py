@@ -128,9 +128,20 @@ def confirm(args):
                          "L": statistics.fmean(Lf), "S": statistics.fmean(Sf) if Sf and None not in Sf else None,
                          "S_is_L": sel["key"] == aud["baseline_key"], "selected_key": sel["key"],
                          "A": A.get("mean"), "second_pass": rep.get("second_pass")}
-                    if c["S"] is not None and A["status"] == "complete":
-                        c["S_minus_L"], c["S_minus_L_se"] = paired(Sf, Lf)
+                    if A["status"] == "complete":
                         c["A_minus_L"], c["A_minus_L_se"] = paired(A["per_fight"], Lf)
+                    c["audit_failure"] = c["S"] is None
+                    if c["S"] is None:
+                        # Amendment 1: a selected program whose audit fails
+                        # falls back to L (r = 0, not a regression).
+                        c["audit_error"] = next((a.get("error") for a in rep["audits"]
+                                                 if a["key"] == sel["key"] and "joint" not in a), None)
+                        Sf = Lf
+                        c["S_effective"] = c["L"]
+                    else:
+                        c["S_effective"] = c["S"]
+                    if A["status"] == "complete":
+                        c["S_minus_L"], c["S_minus_L_se"] = paired(Sf, Lf) if not c["audit_failure"] else (0.0, 0.0)
                         c["r"] = c["S_minus_L"] / c["A_minus_L"] if c["A_minus_L"] else None
                         c["regression"] = c["S_minus_L"] < -2 * c["S_minus_L_se"]
                         c["S_per_fight"] = Sf
@@ -142,7 +153,7 @@ def confirm(args):
                     entry_cap["selected_start"] = seed
                     ss = [v["S"] for v in done.values() if v["S"] is not None]
                     entry_cap["start_spread"] = (max(ss) - min(ss)) if ss else None
-                    if cap in STRIP_CAPS and done[seed]["S"] is not None:
+                    if cap in STRIP_CAPS and not done[seed]["audit_failure"]:
                         d = results / case / arm / str(seed)
                         S_text = program_text(load(d / f"selected-{capname(cap)}.json"))
                         seed_a = done[seed]["audit_seed"]
@@ -244,15 +255,16 @@ def report(args):
         return e, e["starts"][str(e["selected_start"])]
 
     lines.append("## Pre-declared reading per arm (informative cases)\n")
-    lines.append("| Arm @ cap | Cases with S | Median r | r quartiles | r ≥ 0.5 | Regressions | Reading | Median r_strip (n) | Reading (strip) | Control regressions |")
-    lines.append("|---|---:|---:|---|---:|---:|---|---|---|---:|")
+    lines.append("| Arm @ cap | Cases | Median r | r quartiles | r ≥ 0.5 | Regressions | Reading | Median r_strip (n) | Reading (strip) | Control regressions | Selected audit failures (S := L) |")
+    lines.append("|---|---:|---:|---|---:|---:|---|---|---|---:|---:|")
     for arm, caps in ARMS.items():
         for cap in caps:
-            rs, regs, rstrip, sregs = [], 0, [], 0
+            rs, regs, rstrip, sregs, afail = [], 0, [], 0, 0
             for c in inf:
                 e, s = sel(c, arm, cap)
                 if s is None or s.get("r") is None:
                     continue
+                afail += bool(s.get("audit_failure"))
                 rs.append(s["r"])
                 regs += bool(s["regression"])
                 st = e.get("strip")
@@ -269,14 +281,14 @@ def report(args):
                    "regressions": regs, "reading": reading(med, regs / len(rs) if rs else 1),
                    "strip_n": len(rstrip), "median_r_strip": mstrip,
                    "reading_strip": reading(mstrip, sregs / len(rstrip) if rstrip else 1) if cap in STRIP_CAPS else None,
-                   "control_regressions": creg}
+                   "control_regressions": creg, "selected_audit_failures": afail}
             summary["arms"][f"{arm}@{cap}"] = row
             lines.append(f"| {arm} @ {cap} | {len(rs)} | {med:.3f} | {row['quartiles']} | {row['r_ge_half']} | {regs} | {row['reading']} | "
-                         + (f"{mstrip:.3f} ({len(rstrip)})" if mstrip is not None else "–") + f" | {row['reading_strip'] or '–'} | {creg}/{len(ctl)} |"
+                         + (f"{mstrip:.3f} ({len(rstrip)})" if mstrip is not None else "–") + f" | {row['reading_strip'] or '–'} | {creg}/{len(ctl)} | {afail} |"
                          if med is not None else f"| {arm} @ {cap} | 0 | – | – | – | – | – | – | – | – |")
 
-    def compare(name, x, y):
-        d_avg, d_sel, wins = [], [], 0
+    def compare(name, x, y, paired_fights=True):
+        d_avg, d_sel = [], []
         for c in inf:
             ex_ = c["arms"][x[0]].get(str(x[1]))
             ey = c["arms"][y[0]].get(str(y[1]))
@@ -286,14 +298,18 @@ def report(args):
             diffs = []
             for s in STARTS:
                 a, b = ex_["starts"].get(str(s)), ey["starts"].get(str(s))
-                if a and b and a.get("S") is not None and b.get("S") is not None and a["audit_seed"] == b["audit_seed"]:
-                    diffs.append((a["S"] - b["S"]) / a["L"])
+                if a and b and a.get("S_effective") is not None and b.get("S_effective") is not None:
+                    if paired_fights:
+                        assert a["audit_seed"] == b["audit_seed"]
+                        diffs.append((a["S_effective"] - b["S_effective"]) / a["L"])
+                    else:  # different audit fights: difference of relative gains
+                        diffs.append(a["S_effective"] / a["L"] - b["S_effective"] / b["L"])
             if len(diffs) == len(STARTS):
                 d_avg.append(statistics.fmean(diffs))
             _, sa = sel(c, *x)
             _, sb = sel(c, *y)
-            if sa and sb and sa.get("S") is not None and sb.get("S") is not None:
-                d_sel.append((sa["S"] - sb["S"]) / L)
+            if sa and sb and sa.get("S_effective") is not None and sb.get("S_effective") is not None:
+                d_sel.append(sa["S_effective"] / sa["L"] - sb["S_effective"] / sb["L"])
         w = wilcoxon(d_avg)
         med = statistics.median(d_avg) if d_avg else None
         if med is not None and w["p"] < 0.05 and med > 0:
@@ -303,7 +319,7 @@ def report(args):
         else:
             verdict = "no detectable difference at this sample size"
         ws = wilcoxon(d_sel)
-        summary["comparisons"][name] = {"x": x, "y": y, "n": len(d_avg), "median_d_start_averaged": med,
+        summary["comparisons"][name] = {"x": x, "y": y, "paired_fights": paired_fights, "n": len(d_avg), "median_d_start_averaged": med,
                                         "mean_d": statistics.fmean(d_avg) if d_avg else None,
                                         "x_better_cases": sum(v > 0 for v in d_avg), "wilcoxon": w, "reading": verdict,
                                         "secondary_selected": {"n": len(d_sel), "median": statistics.median(d_sel) if d_sel else None,
@@ -315,9 +331,9 @@ def report(args):
     lines.append("|---|---:|---:|---:|---:|---:|---|---|")
     for name, x, y in [("Q2 two-pass vs equal-CPU single (primary)", ("V2T", 384), ("V2S", 384)),
                        ("Q1 v2 vs v1 at 192", ("V2S", 192), ("V1", 192)),
-                       ("budget V2S 384 vs 192", ("V2S", 384), ("V2S", 192)),
+                       ("budget V2S 384 vs 192 (unpaired fights)", ("V2S", 384), ("V2S", 192)),
                        ("(descriptive) V2T 288 vs V2S 288", ("V2T", 288), ("V2S", 288))]:
-        r = compare(name, x, y)
+        r = compare(name, x, y, paired_fights="unpaired" not in name)
         sec = r["secondary_selected"]
         lines.append(f"| {name} | {r['n']} | {fmt_pct(r['median_d_start_averaged'])} | {fmt_pct(r['mean_d'])} | {r['x_better_cases']}/{r['n']} | "
                      f"{r['wilcoxon']['p']:.3g} | {r['reading']} | {fmt_pct(sec['median'])}, {sec['wilcoxon']['p']:.3g} |")
@@ -329,9 +345,10 @@ def report(args):
         cells, regs, L, A = [], [], None, None
         for arm, cap in [("V1", 192), ("V2S", 192), ("V2S", 384), ("V2T", 384)]:
             _, s = sel(c, arm, cap)
-            if s and s.get("S") is not None:
+            if s and s.get("S_effective") is not None:
                 L, A = L or s["L"], A or s["A"]
-                cells.append(f"{s['S']:,.0f} ({s['r']:.2f})" if s.get("r") is not None else f"{s['S']:,.0f}")
+                mark = " [audit failed, S:=L]" if s.get("audit_failure") else ""
+                cells.append((f"{s['S_effective']:,.0f} ({s['r']:.2f})" if s.get("r") is not None else f"{s['S_effective']:,.0f}") + mark)
                 if s.get("regression"):
                     regs.append(f"{arm}@{cap}")
             else:
@@ -358,8 +375,19 @@ def report(args):
     acc = {"jobs": [], "totals": {}}
     for c in ex:
         j = c["job"]
-        disc = sum(s["discovery_cpu"] for s in j["searches"])
-        aud = sum(s["audit_cpu"] for s in j["searches"])
+        # Reports carry cumulative discovery CPU; count each chain once and
+        # V2T only after the state it shares with V2S at 192.
+        final = {}
+        for s_ in j["searches"]:
+            k = (s_["arm"], s_["seed"])
+            final[k] = max(final.get(k, 0.0), s_["discovery_cpu"])
+        shared = {}
+        for (arm, seed), v in final.items():
+            if arm == "V2T":
+                e = c["arms"]["V2T"]["288"]["starts"].get(str(seed), {})
+                shared[(arm, seed)] = (e.get("second_pass") or {}).get("from_cpu", 0.0)
+        disc = sum(v - shared.get(k, 0.0) for k, v in final.items())
+        aud = sum(s_["audit_cpu"] for s_ in j["searches"])
         acc["jobs"].append({"case": c["case"], "wall_seconds": j["wall_seconds"], "children_cpu_seconds": j["children_cpu_seconds"],
                             "discovery_cpu": disc, "audit_cpu": aud, "errors": len(j["errors"]),
                             "environment": j["environment"], "measure_cpu": c.get("measure_cpu")})

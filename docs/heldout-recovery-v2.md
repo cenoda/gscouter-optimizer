@@ -223,3 +223,48 @@ failures, exclusions and regressions. Any change after held-out results are
 seen is a new labeled run, reported alongside this one. Runner-to-runner
 hardware differences mean decisions per CPU-second differ between cases; this
 is reported, and no cross-case comparison of decision counts is made.
+
+## Amendment 1 (2026-11-06, after development, before the held-out draw)
+
+Made on development cases only (section 2). No held-out case had been drawn
+or searched. Development results are in
+`reports/heldout-recovery-v2-2026-11-05/development/`: 12 stage-1 cases, run
+once with the same workflow on GitHub-hosted runners; they read A and are
+not evidence for the questions above.
+
+Implementation changes from section 3–4 values:
+
+1. **Guarded-block extraction (G1).** Inside an action parameter list,
+   `name=value` is a parameter, not an assignment. Stage 1 (and the first v2
+   draft) rejected every `if`/`while` block containing a parameterized
+   action, which is why no `while ... xianyun-airborne-buff` loop was
+   extracted even with the larger cap.
+2. **Template retention.** The 256 most common *statement* templates plus
+   **all** guarded-block templates with count ≥ 2 (431 templates). A template
+   draw picks guarded or statement templates with probability 1/2 each, then
+   sqrt(count) weighting within the group. With a single 256 cut, the
+   one-statement templates (counts up to 2,755) removed every loop template.
+3. **Worker wall limit (v2 discovery only).** 0.5 s per fight in the batch,
+   between 2 and 10 s (stage 1: 10 s for every batch). A program that makes
+   no progress is now cut at the 2-fight stage instead of costing about 10
+   CPU-s. Audits keep the 10 s limit. V1 keeps its own code unchanged.
+4. **Second-pass initial quantum.** Each pass-2 family first receives four
+   decisions before the existing scheduler allocates the rest.
+5. **`gso config`** renders a rotation's full config (for the gcsim parity
+   check); no search effect.
+
+Measurement rules added (they are not chosen from results; development showed
+the situations exist):
+
+6. **Audit failure of the selected program.** A selected program that fails
+   its 128-fight audit (an engine error on some fight, e.g. "high_plunge can
+   only be used while airborne", or a worker timeout) gets **S := L** for r,
+   regression and paired differences (the deployed fallback would be the
+   baseline). Such cases are counted and listed per arm. The selection rule
+   is unchanged (no re-selection after the audit).
+7. **Budget comparison V2S@384 vs V2S@192** uses different audit fights per
+   cap, so its d is the difference of relative gains
+   (S_384/L_384 − S_192/L_192), not a paired difference. The two primary
+   comparisons (V2T vs V2S at 384; V2S vs V1 at 192) are paired as declared.
+8. **Draw size.** 40 cases as declared (32 informative + 8 control), one
+   runner job per case; no prefix is expected to be needed.

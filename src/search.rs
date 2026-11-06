@@ -1549,7 +1549,7 @@ pub fn cli() -> R<()> {
         },
         Some("enumerate")=>enumerate(&args),
         Some("heldout-manifest")|Some("dictionary")|Some("measure")=>crate::heldout::cli(&args),
-        Some("dictionary-v2")|Some("strip-assumptions")=>crate::heldout_v2::cli(&args),
+        Some("dictionary-v2")|Some("strip-assumptions")|Some("config")=>crate::heldout_v2::cli(&args),
         Some("validate")=>{
             let m=Manifest::load(&opt(&args,"--manifest","data/flins-c1/manifest.json"))?;
             let programs=if args.iter().any(|a|a=="--from-scratch") {
