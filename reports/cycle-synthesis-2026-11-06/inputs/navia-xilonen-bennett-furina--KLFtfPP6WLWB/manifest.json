@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/navia-xilonen-bennett-furina/alt/KLFtfPP6WLWB/build.txt": "e890c38062a6977779355df6239c39081cf64d4d0998366038efd16a04063d54"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "navia",
+      "cons": 6,
+      "weapon": "verdict",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "splendoroftranquilwaters",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 6,
+      "weapon": "peakpatrolsong",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "skywardblade",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nnavia char lvl=90/90 cons=6 talent=10,10,10;\nnavia add weapon=\"verdict\" refine=5 lvl=90/90;\nnavia add set=\"nighttime\" count=5;\nnavia add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 cd=0.622;\nnavia add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.3972 cd=0.662;\n\nfurina char lvl=90/90 cons=6 talent=10,10,10;\nfurina add weapon=\"splendoroftranquilwaters\" refine=5 lvl=90/90;\nfurina add set=\"totm\" count=4;\nfurina add stats hp=4780 atk=311 er=0.518 hydro%=0.466 cr=0.311;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.4408 em=39.64 cr=0.331 cd=0.5296;\n\nxilonen char lvl=90/90 cons=6 talent=10,10,10;\nxilonen add weapon=\"peakpatrolsong\" refine=5 lvl=90/90;\nxilonen add set=\"scroll\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 def%=0.583;\nxilonen add stats def%=0.372 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.5296;\n\nbennett char lvl=90/90 cons=6 talent=10,10,10;\nbennett add weapon=\"skywardblade\" refine=5 lvl=90/90;\nbennett add set=\"no\" count=5;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.551 em=39.64 cr=0.1655 cd=0.7282;\n"
+}

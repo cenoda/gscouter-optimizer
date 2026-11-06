@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/aratakiitto-albedo-gorou-furina/alt/g6wbFkjbNKLc/build.txt": "9662ab7e474dbb0b65ccfa4e007b2e623e24ecd42f7c86b682152aec1f2d526e"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "aratakiitto",
+      "cons": 6,
+      "weapon": "redhornstonethresher",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "albedo",
+      "cons": 0,
+      "weapon": "cinnabarspindle",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "gorou",
+      "cons": 6,
+      "weapon": "favoniuswarbow",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 3,
+      "weapon": "festeringdesire",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nitto char lvl=90/90 cons=6 talent=9,9,9;\nitto add weapon=\"redhorn\" refine=5 lvl=90/90;\nitto add set=\"marechausseehunter\" count=5;\nitto add stats hp=4780 atk=311 def%=0.583 geo%=0.466 cd=0.622;\nitto add stats def%=0.248 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.662;\n\nalbedo char lvl=90/90 cons=0 talent=9,9,9;\nalbedo add weapon=\"cinnabarspindle\" refine=5 lvl=90/90;\nalbedo add set=\"goldentroupe\" count=5;\nalbedo add stats hp=4780 atk=311 def%=0.583 geo%=0.466 cr=0.311;\nalbedo add stats def%=0.248 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\nalbedo add stats geo%=0.125;\n\ngorou char lvl=90/90 cons=6 talent=9,9,9;\ngorou add weapon=\"favoniuswarbow\" refine=5 lvl=90/90;\ngorou add set=\"noblesse\" count=5;\ngorou add stats hp=4780 atk=311 er=0.518 geo%=0.466 cr=0.311;\ngorou add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2204 em=39.64 cr=0.331 cd=0.7944;\n\nfurina char lvl=90/90 cons=3 talent=9,9,9;\nfurina add weapon=\"festering\" refine=5 lvl=90/90;\nfurina add set=\"goldentroupe\" count=5;\nfurina add stats hp=4780 atk=311 er=0.518 hp%=0.466 cd=0.622;\nfurina add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2204 em=39.64 cr=0.3972 cd=0.662;\n"
+}

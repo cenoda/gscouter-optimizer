@@ -1,0 +1,11 @@
+{
+ "dropped_for_leakage": [
+  "arlecchino attack : 3 ;",
+  "arlecchino charge [ early_cancel = 1 ] , dash ;",
+  "arlecchino dash ;",
+  "bennett skill , burst ;",
+  "citlali skill , burst ;",
+  "kaedeharakazuha skill , high_plunge ;"
+ ],
+ "sha256": "a2849953dff63bbb3c6ca1e078952d5d3626a3aa7fa38cc0c86d566d59bbb54d"
+}

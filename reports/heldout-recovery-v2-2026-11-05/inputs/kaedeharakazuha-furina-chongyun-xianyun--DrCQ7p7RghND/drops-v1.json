@@ -1,0 +1,15 @@
+{
+ "dropped_for_leakage": [
+  "chongyun burst , skill ;",
+  "furina skill , dash , burst ;",
+  "kaedeharakazuha burst ;",
+  "kaedeharakazuha attack ;",
+  "if .kaedeharakazuha .burst .ready { kaedeharakazuha burst ; }",
+  "kaedeharakazuha jump ;",
+  "kaedeharakazuha skill , high_plunge [ collision = rand ( ) > 0.5 ] ;",
+  "xianyun skill , low_plunge , burst ;",
+  "xianyun skill , low_plunge ;",
+  "xianyun burst ;"
+ ],
+ "sha256": "08879b5140e9ec8c7d15d6bc9be3ef1cdfa4a6464f00faf96d65b2a0cc5f74b4"
+}

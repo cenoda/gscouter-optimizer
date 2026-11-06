@@ -1,0 +1,2396 @@
+{
+ "strata": {
+  "primary (A/L>=2)": {
+   "V21S": {
+    "n": 25,
+    "median_S_over_A": 0.8827366525923597,
+    "below_0.90": 15,
+    "median_r": 0.8346485465253217,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 0,
+    "own_status_guard": 1
+   },
+   "SYN": {
+    "n": 25,
+    "median_S_over_A": 0.9469987278017519,
+    "below_0.90": 6,
+    "median_r": 0.902311449561784,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 17,
+    "own_status_guard": 5
+   },
+   "XO": {
+    "n": 25,
+    "median_S_over_A": 0.9427922537273756,
+    "below_0.90": 8,
+    "median_r": 0.9148028726283418,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 11,
+    "own_status_guard": 0
+   }
+  },
+  "secondary (1.25<=A/L<2)": {
+   "V21S": {
+    "n": 15,
+    "median_S_over_A": 0.9381491229542394,
+    "below_0.90": 6,
+    "median_r": 0.7275172682169174,
+    "regressions": 0,
+    "audit_failures": 1,
+    "selected_from_synth_family": 0,
+    "own_status_guard": 0
+   },
+   "SYN": {
+    "n": 15,
+    "median_S_over_A": 0.9570844519876942,
+    "below_0.90": 3,
+    "median_r": 0.8956364923620863,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 9,
+    "own_status_guard": 1
+   },
+   "XO": {
+    "n": 15,
+    "median_S_over_A": 0.975730212964374,
+    "below_0.90": 4,
+    "median_r": 0.9444160415391795,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 6,
+    "own_status_guard": 0
+   }
+  },
+  "non-inferiority (A/L<1.25)": {
+   "V21S": {
+    "n": 12,
+    "median_S_over_A": 1.001767973968523,
+    "below_0.90": 1,
+    "median_r": 1.0120210136287306,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 0,
+    "own_status_guard": 0
+   },
+   "SYN": {
+    "n": 12,
+    "median_S_over_A": 1.007368957998667,
+    "below_0.90": 0,
+    "median_r": 1.0616528863007384,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 8,
+    "own_status_guard": 0
+   },
+   "XO": {
+    "n": 12,
+    "median_S_over_A": 0.9980990670693619,
+    "below_0.90": 1,
+    "median_r": 0.9820040935790653,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 6,
+    "own_status_guard": 0
+   }
+  },
+  "control": {
+   "V21S": {
+    "n": 8,
+    "median_S_over_A": 1.0536712423453753,
+    "below_0.90": 0,
+    "median_r": -0.41766780749062693,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 0,
+    "own_status_guard": 0
+   },
+   "SYN": {
+    "n": 8,
+    "median_S_over_A": 1.0607118643062619,
+    "below_0.90": 0,
+    "median_r": -0.5686837875322814,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 2,
+    "own_status_guard": 0
+   },
+   "XO": {
+    "n": 8,
+    "median_S_over_A": 1.0839563755916035,
+    "below_0.90": 0,
+    "median_r": -0.8180284657343151,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 6,
+    "own_status_guard": 0
+   }
+  }
+ },
+ "comparisons": {
+  "primary (A/L>=2)": {
+   "SYN vs V21S": {
+    "n": 25,
+    "median_d": 0.02487525505744211,
+    "mean_d": 0.0506717473434542,
+    "x_better": 17,
+    "p": 0.021417591770725778,
+    "reading": "SYN beats V21S",
+    "start_averaged_median_d": 0.045425489173565765,
+    "start_averaged_p": 0.032427612126453724,
+    "start_averaged_reading": "SYN beats V21S"
+   },
+   "XO vs V21S": {
+    "n": 25,
+    "median_d": 0.03263925331131214,
+    "mean_d": 0.05353986912818738,
+    "x_better": 19,
+    "p": 0.010999863323964817,
+    "reading": "XO beats V21S",
+    "start_averaged_median_d": 0.07287827161051842,
+    "start_averaged_p": 0.001569253367915299,
+    "start_averaged_reading": "XO beats V21S"
+   },
+   "SYN vs XO": {
+    "n": 25,
+    "median_d": -0.008557080296661064,
+    "mean_d": -0.002822830896992848,
+    "x_better": 9,
+    "p": 0.5449095877922506,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": -0.009741783842271824,
+    "start_averaged_p": 0.14253207931545744,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "tail SYN vs V21S": {
+    "SYN_only_at_or_above_0.90": 9,
+    "V21S_only": 0,
+    "p": 0.00390625
+   }
+  },
+  "secondary (1.25<=A/L<2)": {
+   "SYN vs V21S": {
+    "n": 15,
+    "median_d": 0.022575077602183264,
+    "mean_d": 0.034632473973585286,
+    "x_better": 11,
+    "p": 0.2559885116701381,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.014245356823232564,
+    "start_averaged_p": 0.09953968814740123,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "XO vs V21S": {
+    "n": 15,
+    "median_d": 0.016469470445844975,
+    "mean_d": 0.03745247682448837,
+    "x_better": 10,
+    "p": 0.28053090025207417,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.024382204458200066,
+    "start_averaged_p": 0.05347436715448435,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "SYN vs XO": {
+    "n": 15,
+    "median_d": 0.0007278237404386553,
+    "mean_d": -0.002794848590354746,
+    "x_better": 8,
+    "p": 0.9095609385561121,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": -0.010864527589704692,
+    "start_averaged_p": 0.6495629244115453,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "tail SYN vs V21S": {
+    "SYN_only_at_or_above_0.90": 4,
+    "V21S_only": 1,
+    "p": 0.375
+   }
+  },
+  "non-inferiority (A/L<1.25)": {
+   "SYN vs V21S": {
+    "n": 12,
+    "median_d": 0.014869035678563009,
+    "mean_d": 0.017064072802590927,
+    "x_better": 9,
+    "p": 0.041389404009149346,
+    "reading": "SYN beats V21S",
+    "start_averaged_median_d": 0.014010714762478935,
+    "start_averaged_p": 0.034170472692229434,
+    "start_averaged_reading": "SYN beats V21S"
+   },
+   "XO vs V21S": {
+    "n": 12,
+    "median_d": 0.017592215861350284,
+    "mean_d": 0.018623804237476897,
+    "x_better": 8,
+    "p": 0.08437944259396046,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.020957041382097794,
+    "start_averaged_p": 0.015022338553107799,
+    "start_averaged_reading": "XO beats V21S"
+   },
+   "SYN vs XO": {
+    "n": 12,
+    "median_d": -0.0018415852333886614,
+    "mean_d": -0.0015514879569879202,
+    "x_better": 6,
+    "p": 0.8139453463016609,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": -0.004636532736314655,
+    "start_averaged_p": 0.38818640520827785,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "tail SYN vs V21S": {
+    "SYN_only_at_or_above_0.90": 1,
+    "V21S_only": 0,
+    "p": 1.0
+   }
+  },
+  "control": {
+   "SYN vs V21S": {
+    "n": 8,
+    "median_d": 0.004344354624685753,
+    "mean_d": 0.12060252592554847,
+    "x_better": 5,
+    "p": 0.40081416938293446,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.0050645513426977075,
+    "start_averaged_p": 0.40081416938293446,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "XO vs V21S": {
+    "n": 8,
+    "median_d": 0.01870229797908337,
+    "mean_d": 1.7216979108508204,
+    "x_better": 6,
+    "p": 0.027991815485665764,
+    "reading": "XO beats V21S",
+    "start_averaged_median_d": 0.01502079471186337,
+    "start_averaged_p": 0.025061844343883637,
+    "start_averaged_reading": "XO beats V21S"
+   },
+   "SYN vs XO": {
+    "n": 8,
+    "median_d": -0.013989351691701185,
+    "mean_d": -1.6005071903297863,
+    "x_better": 0,
+    "p": 0.01171868559976864,
+    "reading": "XO beats SYN",
+    "start_averaged_median_d": -0.0105498227201439,
+    "start_averaged_p": 0.03569190011680444,
+    "start_averaged_reading": "XO beats SYN"
+   },
+   "tail SYN vs V21S": {
+    "SYN_only_at_or_above_0.90": 0,
+    "V21S_only": 0,
+    "p": 1.0
+   }
+  }
+ },
+ "per_case": [
+  {
+   "case": "aratakiitto-travelergeo-gorou-zhongli--zRhRMFP6CRLg",
+   "stratum": "control",
+   "A_over_L": 1.042779087381627,
+   "V21S": {
+    "S": 48974.088451674215,
+    "A": 49026.133202407895,
+    "L": 46897.00526801901,
+    "S_over_A": 0.9989384283986091,
+    "r": 0.9755558367850733,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 49123.03383265028
+   },
+   "SYN": {
+    "S": 49289.87239327195,
+    "A": 49033.56882306748,
+    "L": 47125.454084810575,
+    "S_over_A": 1.0052271041320553,
+    "r": 1.1343229340802634,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 49532.69355754626
+   },
+   "XO": {
+    "S": 49621.910006569524,
+    "A": 49033.56882306748,
+    "L": 47125.454084810575,
+    "S_over_A": 1.011998742853595,
+    "r": 1.3083363760606384,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-aratakiitto-gorou-zhongli-bennett",
+    "selection": 49670.091066170775
+   }
+  },
+  {
+   "case": "charlotte-furina-shenhe-kaedeharakazuha--dzRdDDwTbPhJ",
+   "stratum": "control",
+   "A_over_L": 0.8577882600144947,
+   "V21S": {
+    "S": 53031.97495502753,
+    "A": 43646.17987552074,
+    "L": 50945.90963475504,
+    "S_over_A": 1.2150427621907611,
+    "r": -0.285772951749835,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 53016.86074879979
+   },
+   "SYN": {
+    "S": 53030.13841476468,
+    "A": 43714.99875871584,
+    "L": 50941.80737179013,
+    "S_over_A": 1.2130879542617303,
+    "r": -0.2889700218705773,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 53095.968123065635
+   },
+   "XO": {
+    "S": 53031.97495502753,
+    "A": 43646.17987552074,
+    "L": 50945.90963475504,
+    "S_over_A": 1.2150427621907611,
+    "r": -0.285772951749835,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 53016.86074879979
+   }
+  },
+  {
+   "case": "columbina-nilou-lauma-nahida--kHdhjLRzw9Tt",
+   "stratum": "control",
+   "A_over_L": 1.0082597981651202,
+   "V21S": {
+    "S": 1107869.553434489,
+    "A": 1098109.646314898,
+    "L": 1090908.0560024292,
+    "S_over_A": 1.0088879167507032,
+    "r": 2.3552433137846083,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 1106913.666385431
+   },
+   "SYN": {
+    "S": 1124292.3684766034,
+    "A": 1099425.1464882565,
+    "L": 1089930.431016116,
+    "S_over_A": 1.0226183856788948,
+    "r": 3.619059208389359,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 1125631.1532347158
+   },
+   "XO": {
+    "S": 1134435.8993996014,
+    "A": 1098109.646314898,
+    "L": 1090908.0560024292,
+    "S_over_A": 1.033080715761499,
+    "r": 6.044198782288942,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-columbina-ineffa-lauma-nilou",
+    "selection": 1141191.908124194
+   }
+  },
+  {
+   "case": "kaedeharakazuha-yaemiko-fischl-nahida--MN6777qTjHNP",
+   "stratum": "control",
+   "A_over_L": 0.9657853510916655,
+   "V21S": {
+    "S": 207296.92397991248,
+    "A": 196323.01858278847,
+    "L": 203404.955736746,
+    "S_over_A": 1.055897191660673,
+    "r": -0.5495626632314188,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 207756.63687591857
+   },
+   "SYN": {
+    "S": 209413.25389003722,
+    "A": 196323.01858278847,
+    "L": 203404.955736746,
+    "S_over_A": 1.0666770274914485,
+    "r": -0.8483975531939856,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-kaedeharakazuha-yaemiko-fischl-baizhu",
+    "selection": 209944.83786758332
+   },
+   "XO": {
+    "S": 213094.79934663433,
+    "A": 196323.01858278847,
+    "L": 203404.955736746,
+    "S_over_A": 1.0854295175620137,
+    "r": -1.3682476135040715,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-kaedeharakazuha-yaemiko-fischl-baizhu",
+    "selection": 213131.30763888103
+   }
+  },
+  {
+   "case": "klee-chiori-xilonen-furina--bjPhn8ppbKh9",
+   "stratum": "control",
+   "A_over_L": 0.8321824942685466,
+   "V21S": {
+    "S": 309393.75295017246,
+    "A": 157785.5727060775,
+    "L": 191233.29298305174,
+    "S_over_A": 1.9608494467774327,
+    "r": -3.5326909872677863,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 308383.60250303725
+   },
+   "SYN": {
+    "S": 460695.7485143035,
+    "A": 157839.22176558577,
+    "L": 190158.78692460526,
+    "S_over_A": 2.9187659655247398,
+    "r": -8.37068692782826,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 463432.7858834283
+   },
+   "XO": {
+    "S": 2467286.72284815,
+    "A": 157785.5727060775,
+    "L": 191233.29298305174,
+    "S_over_A": 15.636960214633845,
+    "r": -68.0480885099951,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 2468947.063427733
+   }
+  },
+  {
+   "case": "raidenshogun-chevreuse-durin-nicole--BbFnWtCQ79JG",
+   "stratum": "control",
+   "A_over_L": 0.9913328679783482,
+   "V21S": {
+    "S": 815193.2181519471,
+    "A": 775307.306576746,
+    "L": 781424.9084923918,
+    "S_over_A": 1.0514452930300777,
+    "r": -5.519860580204235,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 820790.7804901946
+   },
+   "SYN": {
+    "S": 816934.7922771737,
+    "A": 774531.734878967,
+    "L": 781046.6492313559,
+    "S_over_A": 1.0547467011210752,
+    "r": -5.508613176573399,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 819659.882902924
+   },
+   "XO": {
+    "S": 838117.7429870118,
+    "A": 774254.7107942593,
+    "L": 780126.2875213817,
+    "S_over_A": 1.0824832336211934,
+    "r": -9.876641004749382,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-raidenshogun-durin-xiangling-nicole",
+    "selection": 836293.8418520081
+   }
+  },
+  {
+   "case": "raidenshogun-furina-kujousara-xilonen--nzH9PNLrRpzJ",
+   "stratum": "control",
+   "A_over_L": 0.9365129073355506,
+   "V21S": {
+    "S": 224466.62833386305,
+    "A": 192864.23482602817,
+    "L": 206487.5719779947,
+    "S_over_A": 1.1638582370460837,
+    "r": -1.3197248335935896,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 224378.85436547888
+   },
+   "SYN": {
+    "S": 220327.00336069672,
+    "A": 193231.75566934855,
+    "L": 206872.82847698822,
+    "S_over_A": 1.1402215055050922,
+    "r": -0.9862988837779227,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 219501.09525594467
+   },
+   "XO": {
+    "S": 225571.91618193183,
+    "A": 192640.638058388,
+    "L": 206652.25470034115,
+    "S_over_A": 1.1709466831892583,
+    "r": -1.350283979718795,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-raidenshogun-furina-kujousara-escoffier",
+    "selection": 227140.1902546865
+   }
+  },
+  {
+   "case": "varesa-chevreuse-durin-nicole--CghBhWfKQqgK",
+   "stratum": "control",
+   "A_over_L": 1.0251210587569817,
+   "V21S": {
+    "S": 1289879.8738568327,
+    "A": 1240264.272555517,
+    "L": 1211416.4325614886,
+    "S_over_A": 1.0400040559090562,
+    "r": 2.719906977839102,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 1292439.0758337576
+   },
+   "SYN": {
+    "S": 1281565.3151966631,
+    "A": 1240264.272555517,
+    "L": 1211416.4325614886,
+    "S_over_A": 1.0333001954140362,
+    "r": 2.4316857917159527,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-varesa-fischl-columbina-durin",
+    "selection": 1282675.499790854
+   },
+   "XO": {
+    "S": 1283913.6177509557,
+    "A": 1240264.272555517,
+    "L": 1211416.4325614886,
+    "S_over_A": 1.0351935842717623,
+    "r": 2.513088855334541,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-varesa-fischl-columbina-durin",
+    "selection": 1284351.9313449182
+   }
+  },
+  {
+   "case": "arlecchino-rosaria-kaeya-bennett--QWRCBGLDDbNC",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1699588167196036,
+   "V21S": {
+    "S": 74095.13346326811,
+    "A": 73986.51712169513,
+    "L": 63956.26876227208,
+    "S_over_A": 1.0014680558809699,
+    "r": 1.0108288785761645,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 74034.17282771242
+   },
+   "SYN": {
+    "S": 76246.79869273069,
+    "A": 75130.27082972275,
+    "L": 64035.27366661582,
+    "S_over_A": 1.0148612250518632,
+    "r": 1.1006334518696959,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-arlecchino-rosaria-sucrose-bennett",
+    "selection": 75252.99045205515
+   },
+   "XO": {
+    "S": 73496.36672724108,
+    "A": 73986.51712169513,
+    "L": 63956.26876227208,
+    "S_over_A": 0.9933751389642003,
+    "r": 0.9511327758904811,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-arlecchino-bennett-citlali-layla",
+    "selection": 74175.21312183361
+   }
+  },
+  {
+   "case": "arlecchino-zhongli-chiori-bennett--T9gR8kNtdT7G",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1849987557648947,
+   "V21S": {
+    "S": 175709.71120118312,
+    "A": 175347.1123006008,
+    "L": 147904.83420865922,
+    "S_over_A": 1.0020678920560762,
+    "r": 1.0132131486812967,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 175756.53012380624
+   },
+   "SYN": {
+    "S": 174532.19001978444,
+    "A": 175347.1123006008,
+    "L": 147904.83420865922,
+    "S_over_A": 0.9953525195247053,
+    "r": 0.9703041315270516,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 174533.65078294044
+   },
+   "XO": {
+    "S": 170295.12824859517,
+    "A": 175380.33245247285,
+    "L": 147976.864179233,
+    "S_over_A": 0.9710047065553616,
+    "r": 0.8144320947562872,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-arlecchino-xilonen-zhongli-bennett",
+    "selection": 170506.86750610225
+   }
+  },
+  {
+   "case": "dehya-bennett-raidenshogun-chevreuse--8HbwrHWqbtkF",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1049626097221583,
+   "V21S": {
+    "S": 52517.94409001772,
+    "A": 48526.76184059997,
+    "L": 43297.54500651912,
+    "S_over_A": 1.0822470343792552,
+    "r": 1.7632466535726148,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 52372.4662122692
+   },
+   "SYN": {
+    "S": 53494.880525330336,
+    "A": 48526.24342783751,
+    "L": 43219.51121829233,
+    "S_over_A": 1.1023907219375346,
+    "r": 1.9362893964304004,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-raidenshogun-chevreuse-fischl-dehya",
+    "selection": 53300.91412806402
+   },
+   "XO": {
+    "S": 55404.55680893137,
+    "A": 48526.76184059997,
+    "L": 43297.54500651912,
+    "S_over_A": 1.1417319991579797,
+    "r": 2.3152629134646276,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-raidenshogun-chevreuse-fischl-dehya",
+    "selection": 55809.94540220833
+   }
+  },
+  {
+   "case": "flins-fischl-columbina-nicole--B8tTztqwDgnR",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1944722869529727,
+   "V21S": {
+    "S": 150230.4772179183,
+    "A": 151780.78934052784,
+    "L": 126988.0990564973,
+    "S_over_A": 0.9897858475414082,
+    "r": 0.9374689836057015,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 150978.3059377163
+   },
+   "SYN": {
+    "S": 148557.18924174714,
+    "A": 151780.78934052784,
+    "L": 126988.0990564973,
+    "S_over_A": 0.9787614749350895,
+    "r": 0.8699778014467013,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 148987.77804795938
+   },
+   "XO": {
+    "S": 151210.08146069414,
+    "A": 151780.78934052784,
+    "L": 126988.0990564973,
+    "S_over_A": 0.9962399202012759,
+    "r": 0.97698080065957,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 151446.73553103124
+   }
+  },
+  {
+   "case": "flins-fischl-columbina-sucrose--crFc77PfHpCQ",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1475351644254077,
+   "V21S": {
+    "S": 151858.85107722945,
+    "A": 154978.09794126684,
+    "L": 135385.87939502185,
+    "S_over_A": 0.9798729826635276,
+    "r": 0.84079154401658,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 151797.66700355415
+   },
+   "SYN": {
+    "S": 155177.519221703,
+    "A": 154978.09794126684,
+    "L": 135385.87939502185,
+    "S_over_A": 1.0012867707313826,
+    "r": 1.0101785961587468,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-flins-ineffa-columbina-sucrose",
+    "selection": 154697.9471742044
+   },
+   "XO": {
+    "S": 150877.7536564765,
+    "A": 155416.65079242975,
+    "L": 135409.22727583957,
+    "S_over_A": 0.970795296946559,
+    "r": 0.7731393483928818,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 150628.31455781436
+   }
+  },
+  {
+   "case": "kamisatoayaka-sangonomiyakokomi-venti-shenhe--TChhGFDHdWng",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.0952908305268565,
+   "V21S": {
+    "S": 144877.1043336227,
+    "A": 146354.33386039836,
+    "L": 133822.2702122535,
+    "S_over_A": 0.9899064859385392,
+    "r": 0.8821240006234423,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 145363.96479179093
+   },
+   "SYN": {
+    "S": 146237.73904687542,
+    "A": 145994.42575389618,
+    "L": 135262.69273645597,
+    "S_over_A": 1.0016665930341024,
+    "r": 1.022672320731781,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-kamisatoayaka-sangonomiyakokomi-lynette-shenhe",
+    "selection": 146427.30739767762
+   },
+   "XO": {
+    "S": 151076.6090154209,
+    "A": 146180.06315247348,
+    "L": 133811.25178403378,
+    "S_over_A": 1.0334966736047997,
+    "r": 1.3958784491969367,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 150713.20757580304
+   }
+  },
+  {
+   "case": "keqing-durin-nicole-chevreuse--WWK8Tr6bhBzW",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1264780376210979,
+   "V21S": {
+    "S": 734632.2692878331,
+    "A": 757956.2032491753,
+    "L": 670203.4808635998,
+    "S_over_A": 0.9692278605790702,
+    "r": 0.7342084287840175,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 739392.0730399832
+   },
+   "SYN": {
+    "S": 736587.2622364549,
+    "A": 757996.9479603483,
+    "L": 674371.2637722039,
+    "S_over_A": 0.9717549182994686,
+    "r": 0.7439819365097824,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-keqing-emilie-nicole-durin",
+    "selection": 733973.0295130288
+   },
+   "XO": {
+    "S": 755663.8985232388,
+    "A": 757996.9479603483,
+    "L": 674371.2637722039,
+    "S_over_A": 0.9969220859749008,
+    "r": 0.9721012813257208,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 756046.235084139
+   }
+  },
+  {
+   "case": "navia-furina-chiori-bennett--NNzFfBLtHh7J",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.0572204909739904,
+   "V21S": {
+    "S": 255824.5949449065,
+    "A": 246644.04038927314,
+    "L": 233798.62176515762,
+    "S_over_A": 1.0372218787088627,
+    "r": 1.7146948514701024,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 255846.59998099814
+   },
+   "SYN": {
+    "S": 258199.2197871393,
+    "A": 247203.65299121084,
+    "L": 234062.71346281125,
+    "S_over_A": 1.0444797909047057,
+    "r": 1.8367412978474842,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-navia-furina-albedo-bennett",
+    "selection": 258023.6033458189
+   },
+   "XO": {
+    "S": 264459.41468312085,
+    "A": 247203.65299121084,
+    "L": 234062.71346281125,
+    "S_over_A": 1.0698038296890522,
+    "r": 2.313129982420022,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-navia-furina-albedo-bennett",
+    "selection": 264282.22721556335
+   }
+  },
+  {
+   "case": "raidenshogun-furina-kujousara-xilonen--6hR8LtNDdrtQ",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.0574180330368912,
+   "V21S": {
+    "S": 136550.05794842917,
+    "A": 133664.20415691967,
+    "L": 125737.19363071374,
+    "S_over_A": 1.0215903263683188,
+    "r": 1.3640532306560182,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 136272.90557140158
+   },
+   "SYN": {
+    "S": 134923.2966150819,
+    "A": 133182.4261103665,
+    "L": 125750.02539030874,
+    "S_over_A": 1.013071322963232,
+    "r": 1.234227212752038,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 134961.8586626128
+   },
+   "XO": {
+    "S": 133086.00844843738,
+    "A": 133182.4261103665,
+    "L": 125750.02539030874,
+    "S_over_A": 0.9992760481638229,
+    "r": 0.9870273864985606,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 133378.76668046502
+   }
+  },
+  {
+   "case": "raidenshogun-xiangling-dehya-chevreuse--bwG8nQQpNC7z",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.0703065820668187,
+   "V21S": {
+    "S": 57815.1072647135,
+    "A": 51219.1892046516,
+    "L": 48118.585384886646,
+    "S_over_A": 1.1287782599155802,
+    "r": 3.12730114631735,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 58101.81834386548
+   },
+   "SYN": {
+    "S": 59989.0311571871,
+    "A": 51410.544305856645,
+    "L": 48082.49352411199,
+    "S_over_A": 1.1668624008393003,
+    "r": 3.577630996013017,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 60071.45641700329
+   },
+   "XO": {
+    "S": 62010.68745072479,
+    "A": 51219.1892046516,
+    "L": 48118.585384886646,
+    "S_over_A": 1.2106924848605987,
+    "r": 4.480450542337047,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 62346.36065581273
+   }
+  },
+  {
+   "case": "sangonomiyakokomi-nilou-collei-kirara--JWpNJ8TzB9rd",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1547806788351855,
+   "V21S": {
+    "S": 52448.735001453984,
+    "A": 60711.009066326056,
+    "L": 52448.735001453984,
+    "S_over_A": 0.8639081413414553,
+    "r": 0.0,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 52199.03852940323
+   },
+   "SYN": {
+    "S": 55695.915820372786,
+    "A": 60623.24871139736,
+    "L": 52368.754751382796,
+    "S_over_A": 0.9187220580262597,
+    "r": 0.4030726880541704,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D3 P1126 rules1",
+    "selection": 55873.027256397836
+   },
+   "XO": {
+    "S": 54533.97532338183,
+    "A": 60623.24871139736,
+    "L": 52368.754751382796,
+    "S_over_A": 0.8995554755403478,
+    "r": 0.26230809332316835,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-sangonomiyakokomi-nilou-travelerdendro-kirara",
+    "selection": 54495.28909410731
+   }
+  },
+  {
+   "case": "xiao-faruzan-zhongli-albedo--RqLrHQfhFJ7n",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.0677447348119558,
+   "V21S": {
+    "S": 53523.238283396975,
+    "A": 50776.06558572683,
+    "L": 47112.81918555207,
+    "S_over_A": 1.0541036936592105,
+    "r": 1.7499284507695216,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 53289.733945648826
+   },
+   "SYN": {
+    "S": 55902.46832554816,
+    "A": 50424.10005405351,
+    "L": 47380.1117475875,
+    "S_over_A": 1.1086458313707526,
+    "r": 2.7997336782988045,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-xiao-jean-zhongli-albedo",
+    "selection": 56303.45690275608
+   },
+   "XO": {
+    "S": 53900.9161071015,
+    "A": 50776.06558572683,
+    "L": 47112.81918555207,
+    "S_over_A": 1.061541800951452,
+    "r": 1.8530276645397181,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-faruzan-xiao-furina-lanyan",
+    "selection": 54065.20440498148
+   }
+  },
+  {
+   "case": "bennett-xiangling-furina-kaedeharakazuha--NwtzKPQ7CPwc",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.069396104031319,
+   "V21S": {
+    "S": 110054.69108279949,
+    "A": 175540.64700098996,
+    "L": 84764.9147173173,
+    "S_over_A": 0.6269470516545312,
+    "r": 0.27859622532652284,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 110420.63680532943
+   },
+   "SYN": {
+    "S": 110829.53707219195,
+    "A": 174398.95978632392,
+    "L": 84528.97246224077,
+    "S_over_A": 0.6354942552867395,
+    "r": 0.29265125536412784,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D0 P733 rules1",
+    "selection": 111209.2721936367
+   },
+   "XO": {
+    "S": 119133.64561828473,
+    "A": 174398.95978632392,
+    "L": 84528.97246224077,
+    "S_over_A": 0.6831098405876329,
+    "r": 0.3850526097356051,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 119588.7413051189
+   }
+  },
+  {
+   "case": "charlotte-xiangling-xianyun-bennett--rTCzzmJwMr8g",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 3.972845493509796,
+   "V21S": {
+    "S": 39170.52163937288,
+    "A": 49361.55612227733,
+    "L": 12751.308286853971,
+    "S_over_A": 0.7935430873034177,
+    "r": 0.7216343760163293,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 39103.97901339748
+   },
+   "SYN": {
+    "S": 49920.199827205375,
+    "A": 50129.032785424344,
+    "L": 12855.87104495064,
+    "S_over_A": 0.995834091610886,
+    "r": 0.9943972298440087,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-chongyun-xiangling-bennett-xianyun",
+    "selection": 49456.08622338129
+   },
+   "XO": {
+    "S": 50349.157985944206,
+    "A": 49361.55612227733,
+    "L": 12751.308286853971,
+    "S_over_A": 1.0200075107279927,
+    "r": 1.0269761042893373,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-chongyun-xiangling-bennett-xianyun",
+    "selection": 51154.32318286357
+   }
+  },
+  {
+   "case": "clorinde-furina-xilonen-chiori--fQHPqwGcjzF7",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.203865392899788,
+   "V21S": {
+    "S": 379864.27993286826,
+    "A": 401618.9028563175,
+    "L": 183472.9102823246,
+    "S_over_A": 0.9458326717972432,
+    "r": 0.9002749366754003,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 379831.65772433573
+   },
+   "SYN": {
+    "S": 379125.05880622606,
+    "A": 401927.3718058207,
+    "L": 182761.92604567314,
+    "S_over_A": 0.943267578674361,
+    "r": 0.8959584485569448,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-clorinde-furina-nahida-xilonen",
+    "selection": 379065.0017490589
+   },
+   "XO": {
+    "S": 365290.80075156793,
+    "A": 401957.5034737633,
+    "L": 184303.58948774802,
+    "S_over_A": 0.9087796535571112,
+    "r": 0.8315366719086368,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-clorinde-furina-nahida-xilonen",
+    "selection": 365008.2096630386
+   }
+  },
+  {
+   "case": "clorinde-mavuika-ororon-chevreuse--JztbbjLkhwKn",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 8.418201273482762,
+   "V21S": {
+    "S": 431227.0745893621,
+    "A": 449039.0063562162,
+    "L": 53475.80548638869,
+    "S_over_A": 0.9603332193535005,
+    "r": 0.9549707057489516,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 432417.90126032993
+   },
+   "SYN": {
+    "S": 439150.2078451245,
+    "A": 449039.0063562162,
+    "L": 53475.80548638869,
+    "S_over_A": 0.9779778630116442,
+    "r": 0.9750007116704826,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 440311.3418855171
+   },
+   "XO": {
+    "S": 440186.6865258055,
+    "A": 449039.0063562162,
+    "L": 53475.80548638869,
+    "S_over_A": 0.9802860782580026,
+    "r": 0.9776209722973606,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 440228.57897279004
+   }
+  },
+  {
+   "case": "dehya-emilie-durin-nicole--mbnhDmffpLgt",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 4.561913067132811,
+   "V21S": {
+    "S": 92092.88328573733,
+    "A": 101544.24895083348,
+    "L": 22450.50133922854,
+    "S_over_A": 0.9069236735438125,
+    "r": 0.8805042629727486,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 92409.93226086059
+   },
+   "SYN": {
+    "S": 99190.38654526512,
+    "A": 101713.9404883698,
+    "L": 22534.633851763614,
+    "S_over_A": 0.9751896944412135,
+    "r": 0.9681286178131547,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D0 P960 rules1",
+    "selection": 99263.95280704694
+   },
+   "XO": {
+    "S": 105596.24606321192,
+    "A": 101713.9404883698,
+    "L": 22534.633851763614,
+    "S_over_A": 1.03816886413211,
+    "r": 1.0490318208096967,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 105770.75583687838
+   }
+  },
+  {
+   "case": "eula-furina-rosaria-escoffier--z9rTPFd8GtBh",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.9187225525203186,
+   "V21S": {
+    "S": 223865.0089425049,
+    "A": 251767.40802481511,
+    "L": 87744.29412471924,
+    "S_over_A": 0.8891739034007132,
+    "r": 0.8298873956306848,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 223796.23506574365
+   },
+   "SYN": {
+    "S": 242772.04256695817,
+    "A": 251194.277347716,
+    "L": 87451.35757710505,
+    "S_over_A": 0.966471231471968,
+    "r": 0.9485642811759029,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-eula-furina-shenhe-escoffier",
+    "selection": 241029.3920942148
+   },
+   "XO": {
+    "S": 236087.3327356175,
+    "A": 251901.90594265176,
+    "L": 87039.98191482213,
+    "S_over_A": 0.9372193189731775,
+    "r": 0.9040738284458901,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-eula-rosaria-furina-mika",
+    "selection": 236538.4525343416
+   }
+  },
+  {
+   "case": "furina-xiangling-xianyun-yelan--rDk7m6g7CjGM",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.006182827639256,
+   "V21S": {
+    "S": 397940.17253302236,
+    "A": 375816.9950156811,
+    "L": 188364.8344704398,
+    "S_over_A": 1.0588668894987523,
+    "r": 1.1180203922589718,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 396392.92899707385
+   },
+   "SYN": {
+    "S": 357843.8594945148,
+    "A": 376324.3532644827,
+    "L": 187146.66880640594,
+    "S_over_A": 0.9508921131208862,
+    "r": 0.902311449561784,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 360409.98576044623
+   },
+   "XO": {
+    "S": 362153.7469574597,
+    "A": 376324.3532644827,
+    "L": 187146.66880640594,
+    "S_over_A": 0.9623447002988302,
+    "r": 0.9250936686976781,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 366990.30423969106
+   }
+  },
+  {
+   "case": "hutao-yelan-xingqiu-kaedeharakazuha--GhjMjQPnhgrm",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 3.474913952504984,
+   "V21S": {
+    "S": 87862.46663742897,
+    "A": 99534.1774688981,
+    "L": 28795.322927991216,
+    "S_over_A": 0.8827366525923597,
+    "r": 0.8350028296723466,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 88041.59455129638
+   },
+   "SYN": {
+    "S": 94480.04741779139,
+    "A": 99767.87153358266,
+    "L": 28750.437038868982,
+    "S_over_A": 0.9469987278017519,
+    "r": 0.9255418876587994,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D1 P1270 rules1",
+    "selection": 94734.59694264746
+   },
+   "XO": {
+    "S": 94110.04588328232,
+    "A": 99820.55485841511,
+    "L": 28858.761063563437,
+    "S_over_A": 0.9427922537273756,
+    "r": 0.9195269923468717,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-hutao-xingqiu-zhongli-yelan",
+    "selection": 94520.76817324414
+   }
+  },
+  {
+   "case": "kaedeharakazuha-furina-bennett-xianyun--PnrGrChJrnLc",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 16.223126531968866,
+   "V21S": {
+    "S": 241551.15393915024,
+    "A": 345377.9661120254,
+    "L": 21419.309953587755,
+    "S_over_A": 0.6993820615088159,
+    "r": 0.679505979546671,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 240340.14285807777
+   },
+   "SYN": {
+    "S": 215725.14809453333,
+    "A": 344957.27574704203,
+    "L": 21995.19589746303,
+    "S_over_A": 0.6253677288799239,
+    "r": 0.5998535564525124,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-freminet-furina-bennett-xianyun",
+    "selection": 217034.45119004068
+   },
+   "XO": {
+    "S": 234442.64572211314,
+    "A": 344957.27574704203,
+    "L": 21995.19589746303,
+    "S_over_A": 0.6796280647057014,
+    "r": 0.6578092695080437,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 235014.22805742617
+   }
+  },
+  {
+   "case": "kaedeharakazuha-furina-nahida-bennett--DndWrPt9DNRQ",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.8654068783940745,
+   "V21S": {
+    "S": 112354.30218040364,
+    "A": 157249.433021452,
+    "L": 54775.747532137095,
+    "S_over_A": 0.714497343625247,
+    "r": 0.561886247901861,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 112832.83650821188
+   },
+   "SYN": {
+    "S": 118675.88928295164,
+    "A": 157249.433021452,
+    "L": 54775.747532137095,
+    "S_over_A": 0.7546983604498075,
+    "r": 0.6235761058625876,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-kaedeharakazuha-bennett-kukishinobu-nahida",
+    "selection": 119184.83689562193
+   },
+   "XO": {
+    "S": 124318.32012478483,
+    "A": 157071.86875747071,
+    "L": 54711.688603449664,
+    "S_over_A": 0.7914741265142805,
+    "r": 0.6800166961077865,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 124320.11632169798
+   }
+  },
+  {
+   "case": "keqing-chevreuse-fischl-bennett--TFdMDHQ9g6rW",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.165625287748726,
+   "V21S": {
+    "S": 67022.10969038612,
+    "A": 67528.12406231895,
+    "L": 31312.14093483448,
+    "S_over_A": 0.9925066129266992,
+    "r": 0.9860278714469357,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 67268.69120315593
+   },
+   "SYN": {
+    "S": 63510.47469319111,
+    "A": 67588.03336643417,
+    "L": 31241.233070054164,
+    "S_over_A": 0.9396704050976562,
+    "r": 0.887815195835845,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 63691.92741837144
+   },
+   "XO": {
+    "S": 67961.05139413192,
+    "A": 67713.95054639627,
+    "L": 31690.572615645826,
+    "S_over_A": 1.00364918669996,
+    "r": 1.0068594579944912,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 68138.61603942954
+   }
+  },
+  {
+   "case": "keqing-furina-nahida-xilonen--hnphQtKJJNQd",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.28249070694322,
+   "V21S": {
+    "S": 223392.96496702626,
+    "A": 220112.78595036973,
+    "L": 100811.70154936971,
+    "S_over_A": 1.0149022647752781,
+    "r": 1.027494963965549,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 223654.18616681854
+   },
+   "SYN": {
+    "S": 215162.84427719977,
+    "A": 220036.19688028074,
+    "L": 100388.95137585996,
+    "S_over_A": 0.9778520412905859,
+    "r": 0.9592689945971152,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D1 P810 rules1",
+    "selection": 215804.981974235
+   },
+   "XO": {
+    "S": 208696.18367236693,
+    "A": 220112.78595036973,
+    "L": 100811.70154936971,
+    "S_over_A": 0.9481329436238339,
+    "r": 0.9043042874645723,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-keqing-nahida-fischl-xilonen",
+    "selection": 209584.8079890636
+   }
+  },
+  {
+   "case": "lyney-xiangling-kaedeharakazuha-bennett--bRrtzdr7jpGh",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.4681103108028073,
+   "V21S": {
+    "S": 75819.13970929029,
+    "A": 44081.57536200206,
+    "L": 17759.904505605395,
+    "S_over_A": 1.719973460264438,
+    "r": 2.2057579672825147,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 75829.87258751494
+   },
+   "SYN": {
+    "S": 89868.75598418585,
+    "A": 43888.27956504937,
+    "L": 17860.78858906008,
+    "S_over_A": 2.047670969899518,
+    "r": 2.7666119435620624,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-lyney-xilonen-kaedeharakazuha-bennett",
+    "selection": 89766.56161223534
+   },
+   "XO": {
+    "S": 92566.85835477755,
+    "A": 44081.57536200206,
+    "L": 17759.904505605395,
+    "S_over_A": 2.09989905294014,
+    "r": 2.8420290739633147,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-lyney-xilonen-kaedeharakazuha-bennett",
+    "selection": 92566.69031395853
+   }
+  },
+  {
+   "case": "mavuika-chasca-citlali-bennett--PtRKrwg9m8dH",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.4080344440432744,
+   "V21S": {
+    "S": 519191.9752422563,
+    "A": 789033.7283203222,
+    "L": 322127.3623258254,
+    "S_over_A": 0.6580098627057437,
+    "r": 0.4220645235724921,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 522203.80731306714
+   },
+   "SYN": {
+    "S": 710324.4122744773,
+    "A": 785322.8800666565,
+    "L": 324575.35747895204,
+    "S_over_A": 0.9044998309665784,
+    "r": 0.837224371015683,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 713308.4076509308
+   },
+   "XO": {
+    "S": 602007.988535602,
+    "A": 789033.7283203222,
+    "L": 322127.3623258254,
+    "S_over_A": 0.762968637370095,
+    "r": 0.5994363037086443,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-citlali-chasca-mona-mavuika",
+    "selection": 600715.6671893356
+   }
+  },
+  {
+   "case": "mualani-sucrose-travelerpyro-mona--KhBLfkWFDPd7",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 3.1718226061572277,
+   "V21S": {
+    "S": 172337.09453544396,
+    "A": 246251.36400314813,
+    "L": 78446.56644249093,
+    "S_over_A": 0.6998421926842231,
+    "r": 0.559522310790989,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 172362.41828020278
+   },
+   "SYN": {
+    "S": 168667.45243152665,
+    "A": 246251.36400314813,
+    "L": 78446.56644249093,
+    "S_over_A": 0.6849401753135888,
+    "r": 0.5376537935777619,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 169582.6124303686
+   },
+   "XO": {
+    "S": 151692.24660292483,
+    "A": 246251.36400314813,
+    "L": 78446.56644249093,
+    "S_over_A": 0.6160057111439414,
+    "r": 0.43649336148424134,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 152155.98485078092
+   }
+  },
+  {
+   "case": "navia-xilonen-bennett-furina--KLFtfPP6WLWB",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.9642851259219647,
+   "V21S": {
+    "S": 307591.5832719469,
+    "A": 301727.9014924385,
+    "L": 100893.25200700318,
+    "S_over_A": 1.0194336743486592,
+    "r": 1.0291965644102352,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 307225.42931157927
+   },
+   "SYN": {
+    "S": 308663.1978688893,
+    "A": 301727.9014924385,
+    "L": 100893.25200700318,
+    "S_over_A": 1.0229852669976713,
+    "r": 1.0345323697590039,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-navia-xilonen-mavuika-bennett",
+    "selection": 308728.0583894629
+   },
+   "XO": {
+    "S": 309507.201674052,
+    "A": 301727.9014924385,
+    "L": 100893.25200700318,
+    "S_over_A": 1.025782501860566,
+    "r": 1.0387348507916598,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-navia-furina-yelan-xilonen",
+    "selection": 309597.47110071813
+   }
+  },
+  {
+   "case": "neuvillette-furina-baizhu-kaedeharakazuha--GRJb7RnzKm8j",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 3.252596072745735,
+   "V21S": {
+    "S": 253488.36733069544,
+    "A": 288232.7686841463,
+    "L": 89009.26319611508,
+    "S_over_A": 0.8794571432246666,
+    "r": 0.8256008934872489,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 253459.74175145495
+   },
+   "SYN": {
+    "S": 268270.28094032186,
+    "A": 288232.7686841463,
+    "L": 89009.26319611508,
+    "S_over_A": 0.9307417826399195,
+    "r": 0.8997985318302528,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-neuvillette-furina-kaedeharakazuha-ineffa",
+    "selection": 268610.39768445765
+   },
+   "XO": {
+    "S": 271947.2595713806,
+    "A": 289057.89660009777,
+    "L": 88222.05205249076,
+    "S_over_A": 0.940805502184951,
+    "r": 0.9148028726283418,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 272625.8645965691
+   }
+  },
+  {
+   "case": "neuvillette-furina-zhongli-kaedeharakazuha--gkCP8FNwGqtw",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.337039053396064,
+   "V21S": {
+    "S": 277003.7985351628,
+    "A": 305947.87642558507,
+    "L": 130902.07379008137,
+    "S_over_A": 0.9053953953576068,
+    "r": 0.8346485465253217,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 276671.403674292
+   },
+   "SYN": {
+    "S": 278992.3789911921,
+    "A": 305947.87642558507,
+    "L": 130902.07379008137,
+    "S_over_A": 0.9118951314540361,
+    "r": 0.8460088900816309,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 278748.2963509373
+   },
+   "XO": {
+    "S": 286991.8237331994,
+    "A": 306012.6744558495,
+    "L": 129606.90110764925,
+    "S_over_A": 0.9378429316482628,
+    "r": 0.8921755770141064,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-neuvillette-furina-kaedeharakazuha-ineffa",
+    "selection": 287241.44228203414
+   }
+  },
+  {
+   "case": "wriothesley-furina-shenhe-escoffier--rCGPdjnjt9NL",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 16.880271484710093,
+   "V21S": {
+    "S": 367001.3573430998,
+    "A": 425515.55117722705,
+    "L": 25141.7395334586,
+    "S_over_A": 0.862486356439283,
+    "r": 0.8538510958199478,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 367269.76455913775
+   },
+   "SYN": {
+    "S": 411228.31506287924,
+    "A": 425314.87702265405,
+    "L": 25169.50525953617,
+    "S_over_A": 0.9668796867431833,
+    "r": 0.9647963891280142,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-wriothesley-furina-escoffier-citlali",
+    "selection": 410599.6767254555
+   },
+   "XO": {
+    "S": 419675.6193446915,
+    "A": 424932.52700419765,
+    "L": 25185.331687415925,
+    "S_over_A": 0.9876288414620371,
+    "r": 0.9868494195304099,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 419640.4535007643
+   }
+  },
+  {
+   "case": "xianyun-faruzan-durin-nicole--8nDQTqkDgKqK",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 3.967791764569412,
+   "V21S": {
+    "S": 121750.16268765349,
+    "A": 101603.92821450418,
+    "L": 25616.8696547337,
+    "S_over_A": 1.1982820430979497,
+    "r": 1.2651271789564345,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 122092.35960074997
+   },
+   "SYN": {
+    "S": 121187.26775252161,
+    "A": 101603.92821450418,
+    "L": 25616.8696547337,
+    "S_over_A": 1.1927419528177443,
+    "r": 1.2577194052407417,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 121044.96070314162
+   },
+   "XO": {
+    "S": 121529.23735408126,
+    "A": 101690.40148333255,
+    "L": 25747.785738974697,
+    "S_over_A": 1.19509054523696,
+    "r": 1.261234560810115,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 121715.43220029154
+   }
+  },
+  {
+   "case": "xianyun-furina-xiangling-bennett--cBp9fPLQQpFf",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.195032873582545,
+   "V21S": {
+    "S": 98764.63355649065,
+    "A": 162889.75426194162,
+    "L": 74628.21827525205,
+    "S_over_A": 0.6063280898420909,
+    "r": 0.27346470930302563,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 98143.78442861786
+   },
+   "SYN": {
+    "S": 102816.55774000051,
+    "A": 162889.75426194162,
+    "L": 74628.21827525205,
+    "S_over_A": 0.631203344899533,
+    "r": 0.3193728632708075,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-chongyun-furina-xiangling-xianyun",
+    "selection": 102836.7117535849
+   },
+   "XO": {
+    "S": 100101.00926021808,
+    "A": 164899.0128246137,
+    "L": 74405.9173679857,
+    "S_over_A": 0.6070443209183147,
+    "r": 0.28394533044289166,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 100578.30009294789
+   }
+  },
+  {
+   "case": "xilonen-furina-yelan-kaedeharakazuha--CWB6gTBpHBPc",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 4.643897597341651,
+   "V21S": {
+    "S": 145843.95794423297,
+    "A": 170214.89240016715,
+    "L": 36393.58751864645,
+    "S_over_A": 0.8568225487659489,
+    "r": 0.8178844954657177,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 145613.83547137486
+   },
+   "SYN": {
+    "S": 164897.3986804993,
+    "A": 170357.38712898485,
+    "L": 36403.31589874457,
+    "S_over_A": 0.9679497992983916,
+    "r": 0.9592398469240925,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-dori-furina-yelan-kaedeharakazuha",
+    "selection": 164696.9089434456
+   },
+   "XO": {
+    "S": 150714.21200391185,
+    "A": 170214.89240016715,
+    "L": 36393.58751864645,
+    "S_over_A": 0.8854349339162984,
+    "r": 0.8542782076925622,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-dori-furina-yelan-kaedeharakazuha",
+    "selection": 150820.58567848362
+   }
+  },
+  {
+   "case": "yelan-furina-xilonen-chiori--KkWbqJbtNwjb",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.341171482552807,
+   "V21S": {
+    "S": 419339.0699630279,
+    "A": 502099.10700774734,
+    "L": 214027.35301737412,
+    "S_over_A": 0.8351719095102026,
+    "r": 0.7127103372742163,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 420439.48095227126
+   },
+   "SYN": {
+    "S": 483014.5231764876,
+    "A": 502960.51598352485,
+    "L": 215785.88159415516,
+    "S_over_A": 0.960342825782192,
+    "r": 0.9305440299438382,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 482796.0597533588
+   },
+   "XO": {
+    "S": 431592.22889206046,
+    "A": 502901.5167861466,
+    "L": 213418.99129906122,
+    "S_over_A": 0.8582042695957712,
+    "r": 0.7536663473068,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 432229.2590052887
+   }
+  },
+  {
+   "case": "yoimiya-furina-yelan-bennett--PCKCJzbrDWCT",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 4.159772318500371,
+   "V21S": {
+    "S": 171682.36215999426,
+    "A": 204009.75181223446,
+    "L": 49193.731619089434,
+    "S_over_A": 0.8415399785300777,
+    "r": 0.7911883433516168,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 173023.78503505702
+   },
+   "SYN": {
+    "S": 189379.3440680642,
+    "A": 204927.47079130664,
+    "L": 49520.11269317752,
+    "S_over_A": 0.9241286360330077,
+    "r": 0.89995244167638,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D0 P1200 rules1",
+    "selection": 189247.5638406996
+   },
+   "XO": {
+    "S": 202399.61613165677,
+    "A": 204927.47079130664,
+    "L": 49520.11269317752,
+    "S_over_A": 0.9876646373963978,
+    "r": 0.9837340091834421,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-sayu-furina-yelan-yoimiya",
+    "selection": 201859.00525645426
+   }
+  },
+  {
+   "case": "yoimiya-yelan-furina-xilonen--LFWM8kDNzwpq",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 4.834913704310076,
+   "V21S": {
+    "S": 288570.8982134118,
+    "A": 321940.7105294355,
+    "L": 66920.026495447,
+    "S_over_A": 0.8963479571715344,
+    "r": 0.8691486047791467,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 288433.71817780356
+   },
+   "SYN": {
+    "S": 286394.6088089105,
+    "A": 321940.7105294355,
+    "L": 66920.026495447,
+    "S_over_A": 0.8895880497310545,
+    "r": 0.8606148287337054,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D1 P1200 rules1",
+    "selection": 286654.73604826786
+   },
+   "XO": {
+    "S": 316941.1008637998,
+    "A": 321694.0849236021,
+    "L": 67186.49684505572,
+    "S_over_A": 0.9852251431327029,
+    "r": 0.9813247844762274,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 317643.9754944348
+   }
+  },
+  {
+   "case": "arlecchino-furina-kaedeharakazuha-bennett--PWzB7dFwcBMq",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.5861771482206783,
+   "V21S": {
+    "S": 67012.22741945727,
+    "A": 105954.19066845725,
+    "L": 67012.22741945727,
+    "S_over_A": 0.6324641526369276,
+    "r": 0.0,
+    "audit_failure": true,
+    "selected_role": "structure-0",
+    "selection": 103546.10546356252
+   },
+   "SYN": {
+    "S": 102373.82244598816,
+    "A": 106514.3677363219,
+    "L": 66840.1043462942,
+    "S_over_A": 0.9611268847731066,
+    "r": 0.8956364923620863,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-arlecchino-emilie-kaedeharakazuha-bennett",
+    "selection": 102989.36326107595
+   },
+   "XO": {
+    "S": 106189.58934755842,
+    "A": 106514.3677363219,
+    "L": 66840.1043462942,
+    "S_over_A": 0.9969508490200357,
+    "r": 0.9918138772843572,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-arlecchino-kaedeharakazuha-thoma-bennett",
+    "selection": 106322.85588359536
+   }
+  },
+  {
+   "case": "dehya-bennett-furina-kaedeharakazuha--BnjBwTgnP6HT",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.2830241610103958,
+   "V21S": {
+    "S": 78485.86045244061,
+    "A": 83660.32492285233,
+    "L": 64670.26108816138,
+    "S_over_A": 0.9381491229542394,
+    "r": 0.7275172682169174,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 78400.2690148348
+   },
+   "SYN": {
+    "S": 78615.19312676784,
+    "A": 83280.68981341984,
+    "L": 64846.1620010993,
+    "S_over_A": 0.9439786498274153,
+    "r": 0.746915313798607,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 78401.01431142085
+   },
+   "XO": {
+    "S": 76782.83556473564,
+    "A": 83300.72917969032,
+    "L": 64837.145127932665,
+    "S_over_A": 0.9217546631447278,
+    "r": 0.6469865440705583,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-dehya-bennett-citlali-kaedeharakazuha",
+    "selection": 78264.34160475672
+   }
+  },
+  {
+   "case": "dehya-bennett-rosaria-citlali--tmjgqKrTWCpC",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.9260043279562449,
+   "V21S": {
+    "S": 94746.4916804054,
+    "A": 92236.31262422925,
+    "L": 47372.522486470305,
+    "S_over_A": 1.027214650984614,
+    "r": 1.0559511144392468,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 94815.04616670118
+   },
+   "SYN": {
+    "S": 88474.81523387264,
+    "A": 92442.0149654779,
+    "L": 47406.73731212596,
+    "S_over_A": 0.9570844519876942,
+    "r": 0.9119090646638883,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 88614.92084763823
+   },
+   "XO": {
+    "S": 89295.61500767636,
+    "A": 92236.31262422925,
+    "L": 47372.522486470305,
+    "S_over_A": 0.9681177886139779,
+    "r": 0.9344527600650057,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 89293.64635343481
+   }
+  },
+  {
+   "case": "hutao-columbina-fischl-mona--wWBKQkFnFdDk",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.7441601782205378,
+   "V21S": {
+    "S": 105015.68478483979,
+    "A": 132593.10503518413,
+    "L": 74640.43602533816,
+    "S_over_A": 0.7920146734400212,
+    "r": 0.5241389098807678,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 106165.04901752922
+   },
+   "SYN": {
+    "S": 125386.72976337471,
+    "A": 132686.65704292603,
+    "L": 74127.54174633362,
+    "S_over_A": 0.9449837124377194,
+    "r": 0.8753408885605868,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-hutao-columbina-fischl-ineffa",
+    "selection": 125954.15660958969
+   },
+   "XO": {
+    "S": 119097.08331689259,
+    "A": 132353.4710659637,
+    "L": 74196.9871019436,
+    "S_over_A": 0.8998410268933237,
+    "r": 0.7720565817343338,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 118993.97226532974
+   }
+  },
+  {
+   "case": "hutao-xingqiu-yelan-fischl--gwwwczFcrFKg",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.6801365180947296,
+   "V21S": {
+    "S": 60585.68309032291,
+    "A": 77818.3438228765,
+    "L": 46301.76598098231,
+    "S_over_A": 0.7785527179584147,
+    "r": 0.45321916551337477,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 61258.31005928068
+   },
+   "SYN": {
+    "S": 64095.566567102025,
+    "A": 77946.57310640482,
+    "L": 47221.99791931093,
+    "S_over_A": 0.8223012765372663,
+    "r": 0.5491880211537948,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 64109.80688796431
+   },
+   "XO": {
+    "S": 61868.80130662039,
+    "A": 77908.89333792718,
+    "L": 46310.312021025595,
+    "S_over_A": 0.7941173164694635,
+    "r": 0.49237936126179227,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 61595.38097677939
+   }
+  },
+  {
+   "case": "kamisatoayato-columbina-lauma-ineffa--tkD7GgpJ6wCz",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.8108403762089609,
+   "V21S": {
+    "S": 102224.88792281703,
+    "A": 129244.74332666447,
+    "L": 70057.64373272154,
+    "S_over_A": 0.7909403917840194,
+    "r": 0.5434840431577319,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 102828.43528804932
+   },
+   "SYN": {
+    "S": 121456.30186926766,
+    "A": 129090.47645408535,
+    "L": 70974.27174959617,
+    "S_over_A": 0.9408618296677137,
+    "r": 0.8686394849141278,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-columbina-ineffa-lauma-mona",
+    "selection": 121252.35217054571
+   },
+   "XO": {
+    "S": 126356.34392512796,
+    "A": 129244.74332666447,
+    "L": 70057.64373272154,
+    "S_over_A": 0.9776517069306555,
+    "r": 0.9511988351963077,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-columbina-ineffa-lauma-sangonomiyakokomi",
+    "selection": 126690.21658089141
+   }
+  },
+  {
+   "case": "kamisatoayato-furina-kaedeharakazuha-xilonen--dMk9F9HqRMjp",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.7573629827377064,
+   "V21S": {
+    "S": 248709.79096247925,
+    "A": 245993.07789430732,
+    "L": 138584.39779928877,
+    "S_over_A": 1.0110438598168163,
+    "r": 1.0252932357586793,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 247274.96578045678
+   },
+   "SYN": {
+    "S": 254805.53477278713,
+    "A": 245947.9399979091,
+    "L": 137219.21984148741,
+    "S_over_A": 1.0360141043464455,
+    "r": 1.0814650881766583,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 253267.41243680037
+   },
+   "XO": {
+    "S": 240022.87828157432,
+    "A": 245993.07789430732,
+    "L": 138584.39779928877,
+    "S_over_A": 0.975730212964374,
+    "r": 0.9444160415391795,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 240101.00122768438
+   }
+  },
+  {
+   "case": "mualani-mona-sucrose-mavuika--cfDJ8TCdpgGR",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.299223199041037,
+   "V21S": {
+    "S": 132118.15301410778,
+    "A": 142830.68948753664,
+    "L": 109090.54379409917,
+    "S_over_A": 0.9249983563625965,
+    "r": 0.6824988080738337,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 132451.45242858547
+   },
+   "SYN": {
+    "S": 116053.01021559373,
+    "A": 142636.7490241704,
+    "L": 109378.88697854859,
+    "S_over_A": 0.813626299039724,
+    "r": 0.20067806005959912,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-mualani-candace-sucrose-mavuika",
+    "selection": 116021.56484996105
+   },
+   "XO": {
+    "S": 122904.2222756983,
+    "A": 143203.79791914244,
+    "L": 110025.15675185336,
+    "S_over_A": 0.8582469463910032,
+    "r": 0.3881733871772436,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 123390.33720974399
+   }
+  },
+  {
+   "case": "mualani-xilonen-sucrose-mavuika--jRWpgmRPkqKD",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.5134418880250808,
+   "V21S": {
+    "S": 138938.7089886061,
+    "A": 177968.35884994676,
+    "L": 117363.88920750839,
+    "S_over_A": 0.7806933203544999,
+    "r": 0.355993871547552,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 139947.85170744793
+   },
+   "SYN": {
+    "S": 142146.843728494,
+    "A": 179061.57604562017,
+    "L": 116971.1108061641,
+    "S_over_A": 0.7938433630913576,
+    "r": 0.40546858241821754,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 142159.2047406723
+   },
+   "XO": {
+    "S": 146195.589096021,
+    "A": 177968.35884994676,
+    "L": 117363.88920750839,
+    "S_over_A": 0.8214695580762487,
+    "r": 0.47573553664634644,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-mualani-nilou-mavuika-xilonen",
+    "selection": 146171.62763086753
+   }
+  },
+  {
+   "case": "neuvillette-furina-citlali-escoffier--6nwfwkqzfHWR",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.3741216823471876,
+   "V21S": {
+    "S": 450265.52009748446,
+    "A": 463990.4473416623,
+    "L": 337477.2847149066,
+    "S_over_A": 0.9704198064360765,
+    "r": 0.8915138396731909,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 450002.79162357433
+   },
+   "SYN": {
+    "S": 467479.43683032726,
+    "A": 463221.9013899786,
+    "L": 336967.4848779768,
+    "S_over_A": 1.0091911358844934,
+    "r": 1.0337218733250713,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D0 P1200 rules1",
+    "selection": 467420.34760172537
+   },
+   "XO": {
+    "S": 467142.2929334045,
+    "A": 462668.83977020317,
+    "L": 338035.18922633067,
+    "S_over_A": 1.0096688014810402,
+    "r": 1.0358928198257857,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-neuvillette-furina-ganyu-escoffier",
+    "selection": 467282.3844964245
+   }
+  },
+  {
+   "case": "noelle-furina-gorou-xilonen--jwFpbrDQLc7g",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.9554035195775041,
+   "V21S": {
+    "S": 128149.68950602059,
+    "A": 119121.57901838448,
+    "L": 60101.934870439596,
+    "S_over_A": 1.0757890431106758,
+    "r": 1.1529678909111227,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 128169.31196667397
+   },
+   "SYN": {
+    "S": 115956.30695684091,
+    "A": 118926.0609242594,
+    "L": 61220.057695760646,
+    "S_over_A": 0.9750285686388803,
+    "r": 0.9485364814530802,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-noelle-furina-gorou-chiori",
+    "selection": 117012.58327347199
+   },
+   "XO": {
+    "S": 132582.58610008867,
+    "A": 119121.57901838448,
+    "L": 60101.934870439596,
+    "S_over_A": 1.1130022552809402,
+    "r": 1.2280767238779249,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 131952.6030353164
+   }
+  },
+  {
+   "case": "raidenshogun-furina-fischl-nahida--DRMbHJmRQwkP",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.269342013085452,
+   "V21S": {
+    "S": 235738.72179266415,
+    "A": 229893.102434255,
+    "L": 180972.14033756772,
+    "S_over_A": 1.0254275543568379,
+    "r": 1.1194910955932527,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 236187.55206099898
+   },
+   "SYN": {
+    "S": 236187.12440888316,
+    "A": 229893.102434255,
+    "L": 180972.14033756772,
+    "S_over_A": 1.0273780374790848,
+    "r": 1.1286569540923717,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-raidenshogun-fischl-yelan-nahida",
+    "selection": 236346.4466945308
+   },
+   "XO": {
+    "S": 237718.23738732398,
+    "A": 230166.25362859873,
+    "L": 181627.71121956635,
+    "S_over_A": 1.0328109948338096,
+    "r": 1.155587361793543,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-fischl-raidenshogun-furina-sayu",
+    "selection": 237856.23910052644
+   }
+  },
+  {
+   "case": "sethos-nahida-fischl-xilonen--FRtpGQLNrKhN",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.4644325510843044,
+   "V21S": {
+    "S": 89514.06900011671,
+    "A": 75767.41014847564,
+    "L": 51557.482168412804,
+    "S_over_A": 1.1814323443905868,
+    "r": 1.5678108114555989,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 89791.26033999545
+   },
+   "SYN": {
+    "S": 84110.4295936295,
+    "A": 75789.65645996369,
+    "L": 51617.711604385826,
+    "S_over_A": 1.109787714080236,
+    "r": 1.3442326707007057,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 84355.22947411505
+   },
+   "XO": {
+    "S": 78852.27826366416,
+    "A": 75767.41014847564,
+    "L": 51557.482168412804,
+    "S_over_A": 1.04071497374852,
+    "r": 1.1274216147081877,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 78868.02938490835
+   }
+  },
+  {
+   "case": "skirk-furina-mona-escoffier--HDjJgKcgtqzf",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.346719398582075,
+   "V21S": {
+    "S": 149811.6260410537,
+    "A": 146613.32615148165,
+    "L": 108957.9929148966,
+    "S_over_A": 1.02181452377847,
+    "r": 1.0849361727720603,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 149553.6245886901
+   },
+   "SYN": {
+    "S": 153121.1455899945,
+    "A": 146600.5834957008,
+    "L": 109064.77955393905,
+    "S_over_A": 1.0444784184265197,
+    "r": 1.17371579690715,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D0 P1200 rules1",
+    "selection": 153173.71151579646
+   },
+   "XO": {
+    "S": 151523.62265295,
+    "A": 146477.22099815152,
+    "L": 108788.97165314596,
+    "S_over_A": 1.0344517845191927,
+    "r": 1.1338985424502677,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 151911.52050424524
+   }
+  },
+  {
+   "case": "yelan-furina-escoffier-citlali--FTjTFjpN7fpm",
+   "stratum": "secondary (1.25<=A/L<2)",
+   "A_over_L": 1.4749862755704115,
+   "V21S": {
+    "S": 386527.6318670477,
+    "A": 456204.46612124593,
+    "L": 309566.62159263896,
+    "S_over_A": 0.8472684082937493,
+    "r": 0.5248372991420693,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 387689.3843145396
+   },
+   "SYN": {
+    "S": 426822.05819839396,
+    "A": 456204.46612124593,
+    "L": 309566.62159263896,
+    "S_over_A": 0.9355937740534023,
+    "r": 0.7996260241187612,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D0 P1200 rules1",
+    "selection": 426606.0925681297
+   },
+   "XO": {
+    "S": 418261.2177469682,
+    "A": 456204.46612124593,
+    "L": 309566.62159263896,
+    "S_over_A": 0.9168284153443743,
+    "r": 0.7412451847184954,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 418286.27693763253
+   }
+  }
+ ]
+}

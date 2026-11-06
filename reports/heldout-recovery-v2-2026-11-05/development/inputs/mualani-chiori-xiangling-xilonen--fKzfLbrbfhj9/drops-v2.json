@@ -1,0 +1,6 @@
+{
+ "dropped_for_leakage": [
+  "if .$SELF .skill .ready { $SELF skill : 2 ; }"
+ ],
+ "sha256": "47d5035a77a7d01d54dca88190d9f4ebec2c7b832cf42a11adffc4c2f9bb9746"
+}

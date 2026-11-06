@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/charlotte-xiangling-xianyun-bennett/alt/rTCzzmJwMr8g/build.txt": "4dce06d522204c637672c9c389daded1cd65e753157a997d2c3d1241102356c6"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "charlotte",
+      "cons": 6,
+      "weapon": "thewidsith",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xiangling",
+      "cons": 6,
+      "weapon": "favoniuslance",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "thealleyflash",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xianyun",
+      "cons": 0,
+      "weapon": "oathsworneye",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\ncharlotte char lvl=90/90 cons=6 talent=9,9,9;\ncharlotte add weapon=\"widsith\" refine=3 lvl=90/90;\ncharlotte add set=\"longnightsoath\" count=4;\ncharlotte add stats hp=4780 atk=311 em=187 cryo%=0.466 cr=0.311;\ncharlotte add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.331 cd=0.7944;\n\nxiangling char lvl=90/90 cons=6 talent=9,9,9;\nxiangling add weapon=\"favlance\" refine=3 lvl=90/90;\nxiangling add set=\"emblem\" count=4;\nxiangling add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nxiangling add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.551 em=39.64 cr=0.331 cd=0.3972;\n\nbennett char lvl=90/90 cons=6 talent=9,9,9;\nbennett add weapon=\"alleyflash\" refine=1 lvl=90/90;\nbennett add set=\"no\" count=4;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.4959 em=39.64 cr=0.2317 cd=0.662;\n\nxianyun char lvl=90/90 cons=0 talent=9,9,9;\nxianyun add weapon=\"oathsworn\" refine=5 lvl=90/90;\nxianyun add set=\"vv\" count=4;\nxianyun add stats hp=4780 atk=311 er=0.518 atk%=0.466 atk%=0.466;\nxianyun add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=165.4 atk%=0.3968 er=0.3857 em=59.46 cr=0.0662 cd=0.1324;\n"
+}

@@ -1,0 +1,12 @@
+{
+ "dropped_for_leakage": [
+  "hutao burst ;",
+  "if .hutao .burst .ready { hutao burst ; }",
+  "xingqiu skill , dash ;",
+  "xingqiu burst , attack , skill , dash ;",
+  "yelan burst , attack ;",
+  "yelan attack , skill ;",
+  "zhongli skill [ hold = 1 ] ;"
+ ],
+ "sha256": "ba70d8d2ab9d477eb74ba22a1aba082f720167f7d5e7a9fcecf533c3dd217651"
+}

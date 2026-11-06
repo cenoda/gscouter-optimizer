@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/bennett-beidou-lisa-xingqiu/alt/7pBGp67L8wnp/build.txt": "3b41948438c802152b8ba09eb5abaf4b61652ba44b4af5d63e621026491913fb"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "ironsting",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "beidou",
+      "cons": 6,
+      "weapon": "serpentspine",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "lisa",
+      "cons": 6,
+      "weapon": "thrillingtalesofdragonslayers",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xingqiu",
+      "cons": 6,
+      "weapon": "favoniussword",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nbennett char lvl=90/90 cons=6 talent=9,9,9;\nbennett add weapon=\"ironsting\" refine=5 lvl=90/90;\nbennett add set=\"thunderingfury\" count=4;\nbennett add stats hp=4780 atk=311 em=187 pyro%=0.466 cr=0.311;\nbennett add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.331 cd=0.7944;\n\nbeidou char lvl=90/90 cons=6 talent=9,9,9;\nbeidou add weapon=\"serpent\" refine=1 lvl=90/90 +params=[stacks=5];\nbeidou add set=\"emblem\" count=4;\nbeidou add stats hp=4780 atk=311 atk%=0.466 electro%=0.466 cd=0.622;\nbeidou add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.3972 cd=0.662;\n\nlisa char lvl=90/90 cons=6 talent=9,9,9;\nlisa add weapon=\"ttds\" refine=5 lvl=90/90;\nlisa add set=\"eosf\" count=4;\nlisa add stats hp=4780 atk=311 er=0.518 electro%=0.466 cr=0.311;\nlisa add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2204 em=39.64 cr=0.331 cd=0.7944;\n\nxingqiu char lvl=90/90 cons=6 talent=9,9,9;\nxingqiu add weapon=\"favsword\" refine=3 lvl=90/90;\nxingqiu add set=\"no\" count=4;\nxingqiu add stats hp=4780 atk=311 atk%=0.466 hydro%=0.466 cr=0.311;\nxingqiu add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n"
+}

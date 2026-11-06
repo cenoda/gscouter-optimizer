@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/raidenshogun-furina-xilonen-yelan/alt/PhjwKhdjDwtb/build.txt": "435abee2780d81f63719a2286158617a5e56c27c4b944ac002b54ccdea7c7173"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "raidenshogun",
+      "cons": 6,
+      "weapon": "engulfinglightning",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "splendoroftranquilwaters",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "yelan",
+      "cons": 6,
+      "weapon": "aquasimulacra",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 6,
+      "weapon": "peakpatrolsong",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nraiden char lvl=90/90 cons=6 talent=10,10,10;\nraiden add weapon=\"engulfinglightning\" refine=5 lvl=90/90;\nraiden add set=\"eosf\" count=4;\nraiden add stats hp=4780 atk=311 er=0.518 atk%=0.466 cr=0.311;\nraiden add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1488 er=0.1653 em=39.64 cr=0.331 cd=0.7944;\n\nfurina char lvl=90/90 cons=6 talent=10,10,10;\nfurina add weapon=\"splendoroftranquilwaters\" refine=5 lvl=90/90;\nfurina add set=\"mh\" count=4;\nfurina add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cd=0.622;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1984 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.662;\n\nyelan char lvl=90/90 cons=6 talent=10,10,10;\nyelan add weapon=\"aquasimulacra\" refine=5 lvl=90/90;\nyelan add set=\"mh\" count=4;\nyelan add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cd=0.622;\nyelan add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1984 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.662;\n\nxilonen char lvl=90/90 cons=6 talent=10,10,10;\nxilonen add weapon=\"pps\" refine=5 lvl=90/90;\nxilonen add set=\"scroll\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 geo%=0.466;\nxilonen add stats def=39.36 def%=0.248 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.662;\n"
+}

@@ -1,0 +1,16 @@
+{
+ "dropped_for_leakage": [
+  "beidou skill [ counter = 1 ] , burst , attack ;",
+  "kamisatoayato skill , attack : 15 ;",
+  "kamisatoayato burst [ radius = 2 ] ;",
+  "kukishinobu skill , attack ;",
+  "kukishinobu burst ;",
+  "kukishinobu attack ;",
+  "kukishinobu dash ;",
+  "if .kukishinobu .normal == 3 { kukishinobu dash ; }",
+  "while ! .kukishinobu .skill .ready { if .kukishinobu .normal == 3 { kukishinobu dash ; } kukishinobu attack ; }",
+  "nahida skill , attack ;",
+  "nahida skill , burst , attack ;"
+ ],
+ "sha256": "a6e19562e0541e96baab5e6322762e3513f256d7d351620671ba2785b30fe577"
+}

@@ -1,0 +1,13 @@
+{
+ "dropped_for_leakage": [
+  "mavuika skill , burst , charge ;",
+  "mona skill , burst , attack ;",
+  "mualani walk [ f = 1 ] ;",
+  "mualani burst ;",
+  "if .mualani .burst .ready { mualani burst ; }",
+  "mualani skill , walk [ f = 90 ] , attack , walk [ f = 90 ] , attack , walk [ f = 90 ] , attack ;",
+  "xilonen skill , attack : 2 ;",
+  "xilonen burst ;"
+ ],
+ "sha256": "566347aab169c7c9c42fc9fc84e63bb7edbf325f692d758b524ba412dadb4b9f"
+}

@@ -1,0 +1,10 @@
+{
+ "dropped_for_leakage": [
+  "nahida dash ;",
+  "sethos attack ;",
+  "sethos aim [ hold = 1 ] ;",
+  "if .sethos .skill .ready { sethos skill ; }",
+  "sethos walk ;"
+ ],
+ "sha256": "61bff5fde5a01b6f90a6fff48d974b847860d9465eac899217ae6c6121ac2984"
+}

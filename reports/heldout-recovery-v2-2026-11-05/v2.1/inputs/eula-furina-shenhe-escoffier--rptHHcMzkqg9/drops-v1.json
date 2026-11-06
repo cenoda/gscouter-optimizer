@@ -1,0 +1,17 @@
+{
+ "dropped_for_leakage": [
+  "escoffier skill , burst ;",
+  "eula skill ;",
+  "eula attack ;",
+  "if ! .eula .burst .ready { eula attack ; }",
+  "eula attack , skill ;",
+  "furina burst ;",
+  "furina attack ;",
+  "furina skill , dash ;",
+  "if .furina .weapon == .keys .weapon .favsword && ( ! .furina .mods .favonius-cd || ! .furina .burst .ready ) { furina attack ; }",
+  "shenhe burst , skill ;",
+  "shenhe skill , attack : 2 ;",
+  "shenhe skill ;"
+ ],
+ "sha256": "55719957fa1a5333a967943ed15be8e38a1d4ac62eec77ae65bd19f1b303ae65"
+}

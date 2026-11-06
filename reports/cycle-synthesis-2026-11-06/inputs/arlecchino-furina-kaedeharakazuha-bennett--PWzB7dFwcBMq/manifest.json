@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/arlecchino-furina-kaedeharakazuha-bennett/alt/PWzB7dFwcBMq/build.txt": "6953ad8197c50661ade85660d1f9f4d03a301088bd19ee4169a4d620ebf43f3f"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "arlecchino",
+      "cons": 0,
+      "weapon": "crimsonmoonssemblance",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 2,
+      "weapon": "favoniussword",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "kaedeharakazuha",
+      "cons": 0,
+      "weapon": "xiphosmoonlight",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "aquilafavonia",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\narle char lvl=90/90 cons=0 talent=9,9,9;\narle add weapon=\"crimsonmoonssemblance\" refine=1 lvl=90/90;\narle add set=\"fohw\" count=5;\narle add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cd=0.622;\narle add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.3972 cd=0.662;\n\nfurina char lvl=90/90 cons=2 talent=9,9,9;\nfurina add weapon=\"favsword\" refine=5 lvl=90/90;\nfurina add set=\"totm\" count=4;\nfurina add stats hp=4780 atk=311 er=0.518 hp%=0.466 cr=0.311;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2204 em=39.64 cr=0.331 cd=0.7944;\n\nkazuha char lvl=90/90 cons=0 talent=9,9,9;\nkazuha add weapon=\"xiphos\" refine=5 lvl=90/90;\nkazuha add set=\"viridescentvenerer\" count=4;\nkazuha add stats hp=4780 atk=311 em=187 em=187 em=187;\nkazuha add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=118.92 cr=0.3972 cd=0.5296;\n\nbennett char lvl=90/90 cons=6 talent=9,9,9;\nbennett add weapon=\"aquila\" refine=1 lvl=90/90;\nbennett add set=\"no\" count=5;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2755 em=59.46 cr=0.2648 cd=0.7944;\n"
+}

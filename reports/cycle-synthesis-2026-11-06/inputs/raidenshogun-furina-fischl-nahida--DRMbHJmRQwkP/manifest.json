@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/raidenshogun-furina-fischl-nahida/alt/DRMbHJmRQwkP/build.txt": "3cc73b0698d14384fb6fcf0685377b2867041044526a1210dcf429625eca227a"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "raidenshogun",
+      "cons": 6,
+      "weapon": "staffofthescarletsands",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "keyofkhajnisut",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "nahida",
+      "cons": 6,
+      "weapon": "athousandfloatingdreams",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "fischl",
+      "cons": 6,
+      "weapon": "elegyfortheend",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nraiden char lvl=90/90 cons=6 talent=10,10,10;\nraiden add weapon=\"staffofthescarletsands\" refine=5 lvl=90/90;\nraiden add set=\"gd\" count=5;\nraiden add stats hp=4780 atk=311 em=187 electro%=0.466 cd=0.622;\nraiden add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.3972 cd=0.662;\n\nfurina char lvl=90/90 cons=6 talent=10,10,10;\nfurina add weapon=\"key\" refine=5 lvl=90/90;\nfurina add set=\"totm\" count=4;\nfurina add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cr=0.311;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1984 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nnahida char lvl=90/90 cons=6 talent=10,10,10;\nnahida add weapon=\"tfd\" refine=5 lvl=90/90;\nnahida add set=\"deepwood\" count=4;\nnahida add stats hp=4780 atk=311 em=187 dendro%=0.466 cd=0.622;\nnahida add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.3972 cd=0.662;\n\nfischl char lvl=90/90 cons=6 talent=10,10,10;\nfischl add weapon=\"elegy\" refine=5 lvl=90/90;\nfischl add set=\"scroll\" count=4;\nfischl add stats hp=4780 atk=311 atk%=0.466 electro%=0.466 cr=0.311;\nfischl add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.331 cd=0.7944;\n"
+}

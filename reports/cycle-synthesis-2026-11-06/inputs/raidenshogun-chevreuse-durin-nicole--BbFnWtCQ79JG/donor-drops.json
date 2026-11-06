@@ -1,0 +1,7 @@
+{
+ "threshold": 0.9,
+ "dropped": [
+  "raidenshogun-chevreuse-durin-bennett",
+  "raidenshogun-chevreuse-xinyan-bennett"
+ ]
+}

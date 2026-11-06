@@ -1,0 +1,17 @@
+{
+ "dropped_for_leakage": [
+  "clorinde attack ;",
+  "clorinde skill ;",
+  "while .clorinde .status .clorinde-night-watch { if .clorinde .bolratio >= 1 { clorinde skill ; } else { clorinde attack ; } }",
+  "clorinde burst ;",
+  "kujousara burst ;",
+  "kujousara skill , aim ;",
+  "nahida skill ;",
+  "nahida burst ;",
+  "nahida attack ;",
+  "if .nahida .burst .ready { nahida burst ; }",
+  "nahida dash ;",
+  "xilonen skill , attack : 2 ;"
+ ],
+ "sha256": "6bac71f9c749256b84be07e6f34e04c9e2b77a6ac6fb4804b2a98b34ac70d7df"
+}

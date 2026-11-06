@@ -1,0 +1,11 @@
+{
+ "dropped_for_leakage": [
+  "beidou skill [ counter = 1 ] , burst , attack ;",
+  "kukishinobu dash ;",
+  "if .kukishinobu .normal == 3 { kukishinobu dash ; }",
+  "while ! .kukishinobu .skill .ready { if .kukishinobu .normal == 3 { kukishinobu dash ; } kukishinobu attack ; }",
+  "if .$SELF .normal == 3 { $SELF dash ; }",
+  "while ! .$SELF .skill .ready { if .$SELF .normal == 3 { $SELF dash ; } $SELF attack ; }"
+ ],
+ "sha256": "0600628924aa5e2dd17776931bde8e9b0c647c5b53cabe3233aacfe6930db553"
+}

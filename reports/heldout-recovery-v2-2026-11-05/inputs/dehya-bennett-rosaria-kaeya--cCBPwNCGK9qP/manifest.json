@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/dehya-bennett-rosaria-kaeya/alt/cCBPwNCGK9qP/build.txt": "fb7ae2af9c12aef9e9305573b369b9be7daf9f0de75946ac34139970a3518202"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "thealleyflash",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "dehya",
+      "cons": 0,
+      "weapon": "akuoumaru",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "rosaria",
+      "cons": 6,
+      "weapon": "thecatch",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "kaeya",
+      "cons": 6,
+      "weapon": "favoniussword",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nbennett char lvl=90/90 cons=6 talent=9,9,9;\nbennett add weapon=\"alleyflash\" refine=5 lvl=90/90;\nbennett add set=\"noblesse\" count=5;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\ndehya char lvl=90/90 cons=0 talent=9,9,9;\ndehya add weapon=\"akuoumaru\" refine=1 lvl=90/90;\ndehya add set=\"eosf\" count=4;\ndehya add stats hp=4780 atk=311 er=.518 cr=0.311 pyro%=0.466;\ndehya add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=79.28 cr=0.331 cd=0.7944;\n\nrosaria char lvl=90/90 cons=6 talent=9,9,9;\nrosaria add weapon=\"catch\" refine=5 lvl=90/90;\nrosaria add set=\"eosf\" count=5;\nrosaria add stats hp=4780 atk=311 atk%=0.466 cryo%=0.466 cr=0.311;\nrosaria add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nkaeya char lvl=90/90 cons=6 talent=9,9,9;\nkaeya add weapon=\"favsword\" refine=5 lvl=90/90;\nkaeya add set=\"eosf\" count=4;\nkaeya add stats hp=4780 atk=311 atk%=0.466 cryo%=0.466 cr=0.311;\nkaeya add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n"
+}

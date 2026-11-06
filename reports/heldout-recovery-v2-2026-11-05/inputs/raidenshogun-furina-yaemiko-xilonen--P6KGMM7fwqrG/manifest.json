@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/raidenshogun-furina-yaemiko-xilonen/alt/P6KGMM7fwqrG/build.txt": "4746bbc211354e028b6019dd7c9781c086417161353109c19d1c170c78a6989d"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "raidenshogun",
+      "cons": 6,
+      "weapon": "engulfinglightning",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "yaemiko",
+      "cons": 6,
+      "weapon": "kagurasverity",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "splendoroftranquilwaters",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 6,
+      "weapon": "peakpatrolsong",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nraiden char lvl=90/90 cons=6 talent=10,10,10;\nraiden add weapon=\"engulfinglightning\" refine=5 lvl=90/90;\nraiden add set=\"eosf\" count=5;\nraidenshogun add stats hp=4780 atk=311 er=0.518 atk%=0.466 cr=0.311;\nraidenshogun add stats hp=507.88 hp%=0.0991 atk=33.07 atk%=0.1982 def=39.35 def%=0.1239 em=39.63 er=0.1101 cr=0.3305 cd=0.7926;\n\nyaemiko char lvl=90/90 cons=6 talent=10,10,10;\nyaemiko add weapon=\"kagurasverity\" refine=5 lvl=90/90;\nyaemiko add set=\"glad\" count=2;\nyaemiko add set=\"sr\" count=2;\nyaemiko add stats def%=0.1239 def=39.35 hp=4780 atk=311 atk%=0.7137 er=0.1101 em=39.63 cr=0.6415 cd=0.7265 electro%=0.466;\n\nfurina char lvl=90/90 cons=6 talent=10,10,10;\nfurina add weapon=\"splendoroftranquilwaters\" refine=5 lvl=90/90;\nfurina add set=\"totm\" count=5;\nfurina add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cr=0.311;\nfurina add stats hp=507.88 hp%=0.1982 atk=33.07 atk%=0.0991 def=39.35 def%=0.1239 em=39.63 er=0.1101 cr=0.3305 cd=0.7926;\n\nxilonen char lvl=90/90 cons=6 talent=10,10,10;\nxilonen add weapon=\"peakpatrolsong\" refine=5 lvl=90/90;\nxilonen add set=\"scrolloftheheroofcindercity\" count=5;\nxilonen add stats def%=2.1207 def=236.1 hp=5287.88 hp%=0.0991 atk=344.07 atk%=0.0991 er=0.1101 em=39.63 cr=0.2644 cd=0.1321;\n"
+}

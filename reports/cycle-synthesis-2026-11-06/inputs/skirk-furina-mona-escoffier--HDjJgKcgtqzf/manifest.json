@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/skirk-furina-mona-escoffier/alt/HDjJgKcgtqzf/build.txt": "8c89b29384dda93a114391aafd45de9bdc11ccbd6d25df68236e7449f4639ca2"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "skirk",
+      "cons": 0,
+      "weapon": "azurelight",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 0,
+      "weapon": "favoniussword",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "mona",
+      "cons": 4,
+      "weapon": "thrillingtalesofdragonslayers",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "escoffier",
+      "cons": 0,
+      "weapon": "favoniuslance",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nskirk char lvl=90/90 cons=0 talent=9,9,9 +params=[start_serpents_subtlety=0];\nskirk add weapon=\"azurelight\" refine=1 lvl=90/90;\nskirk add set=\"finaleofthedeepgalleries\" count=4;\nskirk add stats hp=4780 atk=311 atk%=0.466 cryo%=0.466 cr=0.311;\nskirk add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.2976 er=0.1102 em=39.64 cr=0.2648 cd=0.7944;\n\nfurina char lvl=90/90 cons=0 talent=9,9,9 +params=[start_energy=0];\nfurina add weapon=\"favsword\" refine=3 lvl=90/90;\nfurina add set=\"totm\" count=4;\nfurina add stats hp=4780 atk=311 er=0.518 hydro%=0.466 cd=0.622;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.248 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.3972 cd=0.5958;\n\nmona char lvl=90/90 cons=4 talent=9,9,9 +params=[start_energy=0];\nmona add weapon=\"ttds\" refine=5 lvl=90/90;\nmona add set=\"no\" count=4;\nmona add stats hp=4780 atk=311 er=0.518 atk%=0.466 cr=0.311;\nmona add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.4408 em=39.64 cr=0.1986 cd=0.7944;\n\nescoffier char lvl=90/90 cons=0 talent=9,9,9 +params=[start_energy=0];\nescoffier add weapon=\"favlance\" refine=3 lvl=90/90;\nescoffier add set=\"scroll\" count=4;\nescoffier add stats hp=4780 atk=311 er=0.518 cryo%=0.466 cd=0.622;\nescoffier add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.5456 er=0.1653 em=39.64 cr=0.3972 cd=0.1324;\n"
+}

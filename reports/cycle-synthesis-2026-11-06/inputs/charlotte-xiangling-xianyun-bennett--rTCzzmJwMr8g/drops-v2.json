@@ -1,0 +1,11 @@
+{
+ "dropped_for_leakage": [
+  "charlotte attack ;",
+  "charlotte burst ;",
+  "charlotte skill [ hold = 1 ] ;",
+  "charlotte dash ;",
+  "charlotte high_plunge [ collision = rand ( ) > 0.5 ] ;",
+  "charlotte jump ;"
+ ],
+ "sha256": "15ff0fa0d286fe7fbad937ee6b8f48056134dc083a386a3a1a5ab90bdafc1fc7"
+}

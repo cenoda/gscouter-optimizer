@@ -1,0 +1,17 @@
+{
+ "dropped_for_leakage": [
+  "bennett skill , burst ;",
+  "faruzan attack ;",
+  "while ! .faruzan .mods .favonius-cd { faruzan attack ; }",
+  "faruzan skill , aim [ weakspot = 1 ] , burst ;",
+  "jean skill , burst ;",
+  "jean attack ;",
+  "while ! .jean .mods .favonius-cd { jean attack ; }",
+  "wanderer attack ;",
+  "wanderer dash ;",
+  "wanderer charge ;",
+  "wanderer skill ;",
+  "wanderer attack , skill , attack , charge ;"
+ ],
+ "sha256": "a710bdc6d17a409e2c3df9d2987014fdb0fa9fe826f98aeb771641304c3bad56"
+}

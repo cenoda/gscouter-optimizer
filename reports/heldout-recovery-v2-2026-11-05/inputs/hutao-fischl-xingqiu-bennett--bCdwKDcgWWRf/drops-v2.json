@@ -1,0 +1,7 @@
+{
+ "dropped_for_leakage": [
+  "if .fischl .burst .ready { fischl attack : 2 , burst ; }",
+  "if .$SELF .burst .ready { $SELF attack : 2 , burst ; }"
+ ],
+ "sha256": "e6f26672f8644c8b064d7e16eb4aa02b462a7da89e7b63e7cadbac599a66f739"
+}

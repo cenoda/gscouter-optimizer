@@ -1,0 +1,14 @@
+{
+ "dropped_for_leakage": [
+  "bennett skill , burst ;",
+  "furina skill , dash , burst , attack : 2 ;",
+  "wriothesley burst ;",
+  "wriothesley attack ;",
+  "wriothesley attack : 3 ;",
+  "wriothesley skill ;",
+  "wriothesley attack : 5 , charge ;",
+  "wriothesley jump ;",
+  "xilonen skill , attack : 2 ;"
+ ],
+ "sha256": "5cbdc5193b55d43cc89319d3520f13076b7bf517e8ce8c67282d286c763e1842"
+}

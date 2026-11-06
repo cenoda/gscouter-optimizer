@@ -1,0 +1,15 @@
+{
+ "dropped_for_leakage": [
+  "chiori skill : 2 ;",
+  "mualani attack ;",
+  "mualani walk [ f = 1 ] ;",
+  "mualani skill ;",
+  "mualani burst ;",
+  "if .mualani .nightsoul .state { mualani skill ; }",
+  "xiangling attack ;",
+  "xiangling burst ;",
+  "xiangling skill , dash ;",
+  "xilonen skill , attack : 2 ;"
+ ],
+ "sha256": "09cf146ab7a4c4a45c60ac1f42237302c2bbcea8338c50ed345c2a051f3fd24b"
+}

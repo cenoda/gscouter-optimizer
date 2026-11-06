@@ -1,0 +1,915 @@
+{
+ "strata": {
+  "primary (A/L>=2)": {
+   "V21S": {
+    "n": 10,
+    "median_S_over_A": 0.883064704901027,
+    "below_0.90": 5,
+    "median_r": 0.8109844127958935,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 0
+   },
+   "SYN": {
+    "n": 10,
+    "median_S_over_A": 0.9162159415870357,
+    "below_0.90": 4,
+    "median_r": 0.846358732087503,
+    "regressions": 0,
+    "audit_failures": 1,
+    "selected_from_synth_family": 7
+   },
+   "XO": {
+    "n": 10,
+    "median_S_over_A": 0.9573931469550616,
+    "below_0.90": 3,
+    "median_r": 0.951283736255536,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 8
+   }
+  },
+  "non-inferiority (A/L<1.25)": {
+   "V21S": {
+    "n": 9,
+    "median_S_over_A": 0.9508108099253417,
+    "below_0.90": 1,
+    "median_r": 0.4886041485333139,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 0
+   },
+   "SYN": {
+    "n": 9,
+    "median_S_over_A": 0.9324494095777578,
+    "below_0.90": 2,
+    "median_r": 0.47794421716203156,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 2
+   },
+   "XO": {
+    "n": 9,
+    "median_S_over_A": 0.9636212500584205,
+    "below_0.90": 2,
+    "median_r": 0.6090947792746885,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 2
+   }
+  },
+  "control": {
+   "V21S": {
+    "n": 1,
+    "median_S_over_A": 1.0800075568162883,
+    "below_0.90": 0,
+    "median_r": -2.191078645938642,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 0
+   },
+   "SYN": {
+    "n": 1,
+    "median_S_over_A": 1.1310896815285187,
+    "below_0.90": 0,
+    "median_r": -4.228474660075984,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 0
+   },
+   "XO": {
+    "n": 1,
+    "median_S_over_A": 1.0996986046442074,
+    "below_0.90": 0,
+    "median_r": -2.9764504875524387,
+    "regressions": 0,
+    "audit_failures": 0,
+    "selected_from_synth_family": 0
+   }
+  }
+ },
+ "comparisons": {
+  "primary (A/L>=2)": {
+   "SYN vs V21S": {
+    "n": 10,
+    "median_d": 0.013024812524171463,
+    "mean_d": -0.017359008342630648,
+    "x_better": 5,
+    "p": 0.4445867389117456,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.06787426005537991,
+    "start_averaged_p": 0.059336119880908644,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "XO vs V21S": {
+    "n": 10,
+    "median_d": 0.048212586005055125,
+    "mean_d": 0.0707435193852429,
+    "x_better": 6,
+    "p": 0.07446183141740552,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.057592008117545654,
+    "start_averaged_p": 0.07446183141740552,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "SYN vs XO": {
+    "n": 10,
+    "median_d": -0.021078483824349434,
+    "mean_d": -0.08809052517192321,
+    "x_better": 4,
+    "p": 0.2845026979112074,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.008694212955092793,
+    "start_averaged_p": 0.7212766990291557,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "tail SYN vs V21S": {
+    "SYN_only_at_or_above_0.90": 2,
+    "V21S_only": 1,
+    "p": 1.0
+   }
+  },
+  "non-inferiority (A/L<1.25)": {
+   "SYN vs V21S": {
+    "n": 9,
+    "median_d": -0.018470122808777915,
+    "mean_d": -0.015435768567489164,
+    "x_better": 2,
+    "p": 0.08583095844428568,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": -0.005311118653378771,
+    "start_averaged_p": 0.3742593192802245,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "XO vs V21S": {
+    "n": 9,
+    "median_d": 0.0007132069767487591,
+    "mean_d": 0.007048319147694564,
+    "x_better": 5,
+    "p": 0.6784023758521882,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.010363821520437633,
+    "start_averaged_p": 0.10974463874701332,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "SYN vs XO": {
+    "n": 9,
+    "median_d": -0.023543587078996227,
+    "mean_d": -0.022483038884407013,
+    "x_better": 3,
+    "p": 0.21352435403618233,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": -0.013347045272549318,
+    "start_averaged_p": 0.21352435403618233,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "tail SYN vs V21S": {
+    "SYN_only_at_or_above_0.90": 0,
+    "V21S_only": 1,
+    "p": 1.0
+   }
+  },
+  "control": {
+   "SYN vs V21S": {
+    "n": 1,
+    "median_d": 0.05108212471223044,
+    "mean_d": 0.05108212471223044,
+    "x_better": 1,
+    "p": 0.31731050786291415,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.021979002611818326,
+    "start_averaged_p": 0.31731050786291415,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "XO vs V21S": {
+    "n": 1,
+    "median_d": 0.019691047827919146,
+    "mean_d": 0.019691047827919146,
+    "x_better": 1,
+    "p": 0.31731050786291415,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.0053792884287718135,
+    "start_averaged_p": 0.31731050786291415,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "SYN vs XO": {
+    "n": 1,
+    "median_d": 0.031391076884311295,
+    "mean_d": 0.031391076884311295,
+    "x_better": 1,
+    "p": 0.31731050786291415,
+    "reading": "no detectable difference at this sample size",
+    "start_averaged_median_d": 0.01659971418304651,
+    "start_averaged_p": 0.31731050786291415,
+    "start_averaged_reading": "no detectable difference at this sample size"
+   },
+   "tail SYN vs V21S": {
+    "SYN_only_at_or_above_0.90": 0,
+    "V21S_only": 0,
+    "p": 1.0
+   }
+  }
+ },
+ "per_case": [
+  {
+   "case": "noelle-furina-yelan-xilonen--cp6jwz87tHkb",
+   "stratum": "control",
+   "A_over_L": 0.9799383470173888,
+   "V21S": {
+    "S": 89958.64121966406,
+    "A": 83294.45535071031,
+    "L": 85382.83567860835,
+    "S_over_A": 1.0800075568162883,
+    "r": -2.191078645938642,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 89666.06076092346
+   },
+   "SYN": {
+    "S": 94213.49897572635,
+    "A": 83294.45535071031,
+    "L": 85382.83567860835,
+    "S_over_A": 1.1310896815285187,
+    "r": -4.228474660075984,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 94371.5397085872
+   },
+   "XO": {
+    "S": 91598.79632377537,
+    "A": 83294.45535071031,
+    "L": 85382.83567860835,
+    "S_over_A": 1.0996986046442074,
+    "r": -2.9764504875524387,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 91545.21197653459
+   }
+  },
+  {
+   "case": "alhaitham-furina-nahida-kukishinobu--PzrDR9zzLn9H",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1102010496861334,
+   "V21S": {
+    "S": 86427.53785438953,
+    "A": 91661.59541756549,
+    "L": 82205.19527612258,
+    "S_over_A": 0.942898031183811,
+    "r": 0.4465063359324716,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 86771.25494967894
+   },
+   "SYN": {
+    "S": 86724.82703889541,
+    "A": 91661.59541756549,
+    "L": 82205.19527612258,
+    "S_over_A": 0.9461413653539351,
+    "r": 0.47794421716203156,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 87397.91156557765
+   },
+   "XO": {
+    "S": 88882.86979240859,
+    "A": 91732.39793014823,
+    "L": 82113.58971220203,
+    "S_over_A": 0.9689365131399978,
+    "r": 0.7037545532487938,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 89012.13503164786
+   }
+  },
+  {
+   "case": "aratakiitto-albedo-gorou-furina--g6wbFkjbNKLc",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1891049594785144,
+   "V21S": {
+    "S": 99057.38515413372,
+    "A": 108164.13607286233,
+    "L": 91430.84327436234,
+    "S_over_A": 0.9158061881750338,
+    "r": 0.4557705391048336,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 99551.24402648755
+   },
+   "SYN": {
+    "S": 96855.02323223725,
+    "A": 108164.13607286233,
+    "L": 91430.84327436234,
+    "S_over_A": 0.8954448928154249,
+    "r": 0.3241549659826146,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-aratakiitto-albedo-gorou-xinyan",
+    "selection": 97281.27894189682
+   },
+   "XO": {
+    "S": 96794.87088550997,
+    "A": 108564.11745299873,
+    "L": 91315.68826967514,
+    "S_over_A": 0.8915917446426616,
+    "r": 0.31766270177995737,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-aratakiitto-albedo-gorou-xinyan",
+    "selection": 96914.61656224368
+   }
+  },
+  {
+   "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.095581859286301,
+   "V21S": {
+    "S": 71438.2189944213,
+    "A": 75825.62862424231,
+    "L": 69219.92763814756,
+    "S_over_A": 0.9421381700432312,
+    "r": 0.3358146790088337,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 71454.66166597839
+   },
+   "SYN": {
+    "S": 71101.64356938865,
+    "A": 75825.62862424231,
+    "L": 69219.92763814756,
+    "S_over_A": 0.9376993618046531,
+    "r": 0.2848624143300098,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 71186.67355833028
+   },
+   "XO": {
+    "S": 73094.82522641968,
+    "A": 75854.31020952291,
+    "L": 69208.13349093507,
+    "S_over_A": 0.9636212500584205,
+    "r": 0.5848011420783316,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 73109.81082907124
+   }
+  },
+  {
+   "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.141269158904746,
+   "V21S": {
+    "S": 157272.78519746102,
+    "A": 149496.71391706564,
+    "L": 131294.56413096227,
+    "S_over_A": 1.0520149980333964,
+    "r": 1.4272062021120198,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 157705.7074348632
+   },
+   "SYN": {
+    "S": 162470.01312250926,
+    "A": 149694.11361816633,
+    "L": 131105.15261721416,
+    "S_over_A": 1.0853467059962771,
+    "r": 1.687284216890266,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-flins-fischl-columbina-sucrose",
+    "selection": 162169.75597665954
+   },
+   "XO": {
+    "S": 156417.83415530474,
+    "A": 149694.11361816633,
+    "L": 131105.15261721416,
+    "S_over_A": 1.0449163990127828,
+    "r": 1.3617050214261106,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-flins-fischl-columbina-sucrose",
+    "selection": 156402.3271541933
+   }
+  },
+  {
+   "case": "hutao-fischl-yelan-bennett--zmJmWDr9CMM8",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1144824881113278,
+   "V21S": {
+    "S": 82389.47058958578,
+    "A": 82102.27040412505,
+    "L": 73699.42557366217,
+    "S_over_A": 1.003498078482447,
+    "r": 1.034178922883296,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 82697.81019889802
+   },
+   "SYN": {
+    "S": 79216.37851694887,
+    "A": 82102.27040412505,
+    "L": 73699.42557366217,
+    "S_over_A": 0.9648500355353,
+    "r": 0.6565577556884119,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 79310.54617660877
+   },
+   "XO": {
+    "S": 82448.02650164491,
+    "A": 82102.27040412505,
+    "L": 73699.42557366217,
+    "S_over_A": 1.0042112854591958,
+    "r": 1.0411475047434375,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 83284.9751066446
+   }
+  },
+  {
+   "case": "kinich-yaemiko-fischl-xilonen--Fqcp66H6wRq9",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1864766215725315,
+   "V21S": {
+    "S": 61173.25232429943,
+    "A": 62366.92232074495,
+    "L": 52625.188620883346,
+    "S_over_A": 0.9808605274714916,
+    "r": 0.8774684226420109,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 61066.262006160716
+   },
+   "SYN": {
+    "S": 57683.98034332171,
+    "A": 62430.760139467595,
+    "L": 52568.217643496624,
+    "S_over_A": 0.9239672913553866,
+    "r": 0.5187062769985522,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 57449.33446234357
+   },
+   "XO": {
+    "S": 65595.71777878118,
+    "A": 62466.68476355846,
+    "L": 52643.18475362865,
+    "S_over_A": 1.050091229061801,
+    "r": 1.3185252722613947,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 65657.44997058634
+   }
+  },
+  {
+   "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.202200883481827,
+   "V21S": {
+    "S": 150840.827393548,
+    "A": 157706.70124261675,
+    "L": 131331.59171531818,
+    "S_over_A": 0.9564642859499911,
+    "r": 0.7396835891065224,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 150777.58565389487
+   },
+   "SYN": {
+    "S": 145683.46894546435,
+    "A": 157892.5034364144,
+    "L": 131296.32945830445,
+    "S_over_A": 0.9226750211363467,
+    "r": 0.5409477129680871,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 145620.75850533682
+   },
+   "XO": {
+    "S": 146303.798425502,
+    "A": 157706.70124261675,
+    "L": 131331.59171531818,
+    "S_over_A": 0.9276955086418778,
+    "r": 0.5676642477896593,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 147162.5089485045
+   }
+  },
+  {
+   "case": "mualani-mona-xilonen-mavuika--M8TgfHLLtqbp",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.167862252666545,
+   "V21S": {
+    "S": 96676.6970180559,
+    "A": 107672.09004094229,
+    "L": 92229.500051882,
+    "S_over_A": 0.8978807505389244,
+    "r": 0.2879825838362836,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 96821.10641894944
+   },
+   "SYN": {
+    "S": 95986.30709953712,
+    "A": 107672.09004094229,
+    "L": 92229.500051882,
+    "S_over_A": 0.8914687832570014,
+    "r": 0.2432757102478593,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 95810.64972721468
+   },
+   "XO": {
+    "S": 95290.61301288377,
+    "A": 107973.22215119806,
+    "L": 92178.25231782976,
+    "S_over_A": 0.8825393103434992,
+    "r": 0.19704758716783768,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 95450.82346993696
+   }
+  },
+  {
+   "case": "varka-prune-nicole-durin--dDfWKHTKH8zK",
+   "stratum": "non-inferiority (A/L<1.25)",
+   "A_over_L": 1.1063623373275147,
+   "V21S": {
+    "S": 1335685.5493126304,
+    "A": 1404785.826338585,
+    "L": 1269664.9081149134,
+    "S_over_A": 0.9508108099253417,
+    "r": 0.4886041485333139,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 1335395.6123507258
+   },
+   "SYN": {
+    "S": 1309741.949155634,
+    "A": 1404625.2115154709,
+    "L": 1269504.8483039795,
+    "S_over_A": 0.9324494095777578,
+    "r": 0.2977870980754774,
+    "audit_failure": false,
+    "selected_role": "baseline / C0-on-field pattern",
+    "selection": 1312881.9983259903
+   },
+   "XO": {
+    "S": 1351805.9561097985,
+    "A": 1404625.2115154709,
+    "L": 1269504.8483039795,
+    "S_over_A": 0.9623961929683116,
+    "r": 0.6090947792746885,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 1352776.8819647427
+   }
+  },
+  {
+   "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.2886223075580197,
+   "V21S": {
+    "S": 564754.1175712532,
+    "A": 695575.1029324632,
+    "L": 304501.81648072356,
+    "S_over_A": 0.8119239966903876,
+    "r": 0.6654821745863384,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 564700.6297342916
+   },
+   "SYN": {
+    "S": 560505.1470945047,
+    "A": 695575.1029324632,
+    "L": 304501.81648072356,
+    "S_over_A": 0.805815424864232,
+    "r": 0.6546172788648741,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-arlecchino-sucrose-xilonen-bennett",
+    "selection": 560789.1248572937
+   },
+   "XO": {
+    "S": 588618.9669595993,
+    "A": 695575.1029324632,
+    "L": 304501.81648072356,
+    "S_over_A": 0.8462335188221238,
+    "r": 0.7265061570855653,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 588439.544693673
+   }
+  },
+  {
+   "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.324551044534824,
+   "V21S": {
+    "S": 267619.4393213,
+    "A": 309098.20794555865,
+    "L": 133053.40266044167,
+    "S_over_A": 0.8658071526847406,
+    "r": 0.7643851600330906,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 270966.35033878137
+   },
+   "SYN": {
+    "S": 285566.9707322163,
+    "A": 309033.822881552,
+    "L": 132888.58753891636,
+    "S_over_A": 0.9240638065745633,
+    "r": 0.8667755497122122,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D0 P1200 rules1",
+    "selection": 285862.8803808999
+   },
+   "XO": {
+    "S": 265727.6332423598,
+    "A": 309197.85493777384,
+    "L": 132978.72381949562,
+    "S_over_A": 0.8594096918810693,
+    "r": 0.75331723962345,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-cyno-fischl-nahida-yaoyao",
+    "selection": 263678.4206636614
+   }
+  },
+  {
+   "case": "kaedeharakazuha-furina-chongyun-xianyun--DrCQ7p7RghND",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 3.542482394822492,
+   "V21S": {
+    "S": 140677.57771145593,
+    "A": 140951.81695452775,
+    "L": 35650.62413326245,
+    "S_over_A": 0.9980543759633812,
+    "r": 0.9973956682187138,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 137417.22235038283
+   },
+   "SYN": {
+    "S": 35650.62413326245,
+    "A": 140951.81695452775,
+    "L": 35650.62413326245,
+    "S_over_A": 0.25292773731865864,
+    "r": 0.0,
+    "audit_failure": true,
+    "selected_role": "structure-0",
+    "selection": 141583.46068073643
+   },
+   "XO": {
+    "S": 136036.8512688211,
+    "A": 140951.81695452775,
+    "L": 35650.62413326245,
+    "S_over_A": 0.9651301714876633,
+    "r": 0.9533246912592046,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-kaeya-furina-chongyun-xianyun",
+    "selection": 135414.96305991634
+   }
+  },
+  {
+   "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 11.857651419368786,
+   "V21S": {
+    "S": 343210.3436953252,
+    "A": 490478.0174422173,
+    "L": 41609.00548176642,
+    "S_over_A": 0.6997466379535724,
+    "r": 0.6719139218283404,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 343604.9453445778
+   },
+   "SYN": {
+    "S": 506337.0500218081,
+    "A": 490688.20869991544,
+    "L": 41824.17403356605,
+    "S_over_A": 1.0318916188415337,
+    "r": 1.0348632104898419,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 507476.5778134428
+   },
+   "XO": {
+    "S": 468516.5309834234,
+    "A": 490688.20869991544,
+    "L": 41824.17403356605,
+    "S_over_A": 0.9548151406058112,
+    "r": 0.9506049137285575,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-mavuika-chevreuse-ororon-lisa",
+    "selection": 469584.35415340075
+   }
+  },
+  {
+   "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 5.975847485775109,
+   "V21S": {
+    "S": 59003.50460123515,
+    "A": 71545.59719711528,
+    "L": 12194.069776422606,
+    "S_over_A": 0.8246979117201942,
+    "r": 0.7886812161213672,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 59409.40096479482
+   },
+   "SYN": {
+    "S": 61306.79309374329,
+    "A": 71623.68280463654,
+    "L": 12350.999900813707,
+    "S_over_A": 0.85595700602224,
+    "r": 0.8259419144627937,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 61381.738674183325
+   },
+   "XO": {
+    "S": 68644.76917745947,
+    "A": 71507.11658488658,
+    "L": 11921.357333721367,
+    "S_over_A": 0.959971153304312,
+    "r": 0.9519625587825146,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-mualani-candace-lynette-xiangling",
+    "selection": 68822.2613835399
+   }
+  },
+  {
+   "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 6.912465202416236,
+   "V21S": {
+    "S": 471924.555161635,
+    "A": 599611.5675434669,
+    "L": 86833.73615805789,
+    "S_over_A": 0.7870504518367624,
+    "r": 0.7509896010191187,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 470386.0875314696
+   },
+   "SYN": {
+    "S": 497610.51635023777,
+    "A": 599628.6257238947,
+    "L": 87013.29502176319,
+    "S_over_A": 0.8298645111372114,
+    "r": 0.8009850598226893,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D0 P1200 rules1",
+    "selection": 497004.6380681058
+   },
+   "XO": {
+    "S": 561807.7977392696,
+    "A": 599831.7501296187,
+    "L": 86646.9193273748,
+    "S_over_A": 0.9366089701284861,
+    "r": 0.9259059307522637,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 561883.3604116546
+   }
+  },
+  {
+   "case": "raidenshogun-furina-xilonen-yelan--PhjwKhdjDwtb",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.022491463542796,
+   "V21S": {
+    "S": 325772.1715889098,
+    "A": 354748.24658246874,
+    "L": 173686.5012653867,
+    "S_over_A": 0.9183193285020992,
+    "r": 0.8399657810499126,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 326155.8214771477
+   },
+   "SYN": {
+    "S": 322241.98242516513,
+    "A": 354748.24658246874,
+    "L": 173686.5012653867,
+    "S_over_A": 0.908368076599508,
+    "r": 0.8204686246651528,
+    "audit_failure": false,
+    "selected_role": "synth-skeleton-skeleton D0 P1200 rules1",
+    "selection": 322094.63400731713
+   },
+   "XO": {
+    "S": 319296.0580535503,
+    "A": 355064.1895457164,
+    "L": 173997.97448052236,
+    "S_over_A": 0.8992629148607487,
+    "r": 0.8024582803628637,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-raidenshogun-furina-fischl-xilonen",
+    "selection": 320289.0630109296
+   }
+  },
+  {
+   "case": "wriothesley-furina-xilonen-bennett--PFGMCrLDpbcq",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.730637777726915,
+   "V21S": {
+    "S": 261735.636313488,
+    "A": 273313.45932147896,
+    "L": 98549.18559975753,
+    "S_over_A": 0.9576390308888052,
+    "r": 0.9337517745393057,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 261819.8327975522
+   },
+   "SYN": {
+    "S": 260031.02255519724,
+    "A": 272997.13712350157,
+    "L": 99333.66902137932,
+    "S_over_A": 0.9525045767698341,
+    "r": 0.9253376964654438,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-wriothesley-yunjin-xilonen-bennett",
+    "selection": 259454.08750570554
+   },
+   "XO": {
+    "S": 278712.6794597482,
+    "A": 273313.45932147896,
+    "L": 98549.18559975753,
+    "S_over_A": 1.0197546807671791,
+    "r": 1.0308943013539844,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-wriothesley-yunjin-xilonen-bennett",
+    "selection": 280471.4589461427
+   }
+  },
+  {
+   "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 7.401243483743293,
+   "V21S": {
+    "S": 330032.247270086,
+    "A": 337929.05659159645,
+    "L": 45563.55571462639,
+    "S_over_A": 0.9766317540102681,
+    "r": 0.9729899413650943,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 329509.33451037086
+   },
+   "SYN": {
+    "S": 327703.48184397543,
+    "A": 337785.64851223736,
+    "L": 45623.49795908458,
+    "S_over_A": 0.9701521757580039,
+    "r": 0.9654911950464033,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-wriothesley-lanyan-shenhe-xilonen",
+    "selection": 327732.6297951291
+   },
+   "XO": {
+    "S": 328290.84842130553,
+    "A": 338037.1622454426,
+    "L": 45626.815075542894,
+    "S_over_A": 0.9711679220136735,
+    "r": 0.9666690528619564,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-wriothesley-xilonen-shenhe-chiori",
+    "selection": 328260.6737908488
+   }
+  },
+  {
+   "case": "yoimiya-furina-yunjin-xilonen--rk6QCLfwKJkD",
+   "stratum": "primary (A/L>=2)",
+   "A_over_L": 2.466002113286049,
+   "V21S": {
+    "S": 215833.216566598,
+    "A": 239728.84693272068,
+    "L": 96394.3875670095,
+    "S_over_A": 0.9003222571173134,
+    "r": 0.8332876094704198,
+    "audit_failure": false,
+    "selected_role": "structure-0",
+    "selection": 215327.20943711585
+   },
+   "SYN": {
+    "S": 248249.11680625737,
+    "A": 239728.84693272068,
+    "L": 96394.3875670095,
+    "S_over_A": 1.0355412791683258,
+    "r": 1.0594432763149968,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-yoimiya-furina-xilonen-bennett",
+    "selection": 247749.58129383944
+   },
+   "XO": {
+    "S": 247812.64285519815,
+    "A": 239728.84693272068,
+    "L": 96394.3875670095,
+    "S_over_A": 1.0337205806723218,
+    "r": 1.0563981331373495,
+    "audit_failure": false,
+    "selected_role": "synth-transplant-yoimiya-furina-xilonen-bennett",
+    "selection": 249285.80917980612
+   }
+  }
+ ]
+}

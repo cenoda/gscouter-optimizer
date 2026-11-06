@@ -1,0 +1,8 @@
+{
+ "dropped_for_leakage": [
+  "if .hutao .burst .ready { hutao burst ; }",
+  "xingqiu burst , attack , skill , dash ;",
+  "if .$SELF .skill .ready { $SELF skill , dash ; }"
+ ],
+ "sha256": "fa1c825f1c43701d68e5e65cdb7a6ee25bbb24901f4398ed14d33783edc8c6fd"
+}

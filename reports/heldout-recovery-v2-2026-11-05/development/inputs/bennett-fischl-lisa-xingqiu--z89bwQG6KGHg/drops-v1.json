@@ -1,0 +1,12 @@
+{
+ "dropped_for_leakage": [
+  "bennett skill , attack ;",
+  "bennett skill , attack , burst ;",
+  "fischl attack : 2 , burst ;",
+  "fischl skill , attack ;",
+  "lisa burst ;",
+  "lisa skill [ hold = 1 ] ;",
+  "xingqiu skill , dash , burst , attack ;"
+ ],
+ "sha256": "2b8520db366ba7e34219521c921f09c898892d64a9b6d06961cd4fa755561653"
+}

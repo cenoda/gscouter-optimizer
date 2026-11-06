@@ -1,0 +1,14 @@
+{
+ "dropped_for_leakage": [
+  "chevreuse skill [ hold = 1 ] , attack ;",
+  "citlali skill , attack ;",
+  "citlali skill , burst , attack : 2 ;",
+  "mavuika burst ;",
+  "mavuika skill , attack ;",
+  "mavuika charge : 3 , charge [ hold = 6 ] , charge [ final = 1 ] , dash ;",
+  "mavuika charge ;",
+  "mavuika charge , dash , attack ;",
+  "xilonen skill , attack : 2 ;"
+ ],
+ "sha256": "b2825d90e16b6543a966cb0a96338dfd1ec3a6e70e14e43d792e54c539855801"
+}

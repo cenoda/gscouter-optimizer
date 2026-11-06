@@ -1,0 +1,16 @@
+{
+ "dropped_for_leakage": [
+  "chevreuse burst , skill [ hold = 1 ] ;",
+  "chevreuse skill [ hold = 1 ] ;",
+  "chevreuse burst ;",
+  "chevreuse attack ;",
+  "if .chevreuse .burst .ready { chevreuse burst ; }",
+  "mavuika skill , burst , charge : 2 , dash , charge : 2 , dash ;",
+  "ororon skill , burst ;",
+  "varesa skill , attack , high_plunge [ collision = 1 ] ;",
+  "if .varesa .energy >= 30 && .varesa .status .apex-drive { varesa burst ; }",
+  "varesa burst ;",
+  "varesa charge , high_plunge [ collision = 1 ] ;"
+ ],
+ "sha256": "fd2db29bf588a5de3e6e992a787faa7756f02f3e847294a38d2317fde9ca82f4"
+}

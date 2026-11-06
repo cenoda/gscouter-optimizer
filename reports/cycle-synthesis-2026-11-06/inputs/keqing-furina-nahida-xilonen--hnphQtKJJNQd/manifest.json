@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/keqing-furina-nahida-xilonen/alt/hnphQtKJJNQd/build.txt": "b194b4333ae3d88d54245311f8ea7434ea576ec71d4c1ffcafd452d408ae1871"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "keqing",
+      "cons": 6,
+      "weapon": "mistsplitterreforged",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "splendoroftranquilwaters",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "nahida",
+      "cons": 6,
+      "weapon": "athousandfloatingdreams",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "xilonen",
+      "cons": 6,
+      "weapon": "peakpatrolsong",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nkeqing char lvl=90/90 cons=6 talent=10,10,10;\nkeqing add weapon=\"mist\" refine=5 lvl=90/90;\nkeqing add set=\"marechausseehunter\" count=4;\nkeqing add stats hp=4780 atk=311 atk%=0.466 electro%=0.466 cd=0.622;\nkeqing add stats hp=507.88 hp%=0.0991 atk=33.07 atk%=0.1982 def=39.35 def%=0.1239 em=39.63 er=0.1101 cr=0.3966 cd=0.6605;\n\nfurina char lvl=90/90 cons=6 talent=10,10,10;\nfurina add weapon=\"splendor\" refine=5 lvl=90/90;\nfurina add set=\"goldentroupe\" count=4;\nfurina add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cr=0.311;\nfurina add stats hp=507.88 hp%=0.1982 atk=33.07 atk%=0.0991 def=39.35 def%=0.1239 em=39.63 er=0.1101 cr=0.3305 cd=0.7926;\n\nnahida char lvl=90/90 cons=6 talent=10,10,10;\nnahida add weapon=\"athousandfloatingdreams\" refine=5 lvl=90/90;\nnahida add set=\"deepwoodmemories\" count=4;\nnahida add stats hp=4780 atk=311 em=186.5 em=186.5 cd=0.622;\nnahida add stats hp=507.88 hp%=0.0991 atk=33.07 atk%=0.0991 def=39.35 def%=0.1239 em=59.45 er=0.2752 cr=0.3966 cd=0.5284;\n\nxilonen char lvl=90/90 cons=6 talent=10,10,10;\nxilonen add weapon=\"peakpatrolsong\" refine=5 lvl=90/90;\nxilonen add set=\"scrolloftheheroofcindercity\" count=4;\nxilonen add stats hp=4780 atk=311 def%=0.583 def%=0.583 cr=0.311;\nxilonen add stats hp=507.88 hp%=0.0991 atk=33.07 atk%=0.0991 def=236.10 def%=0.4956 em=39.63 er=0.1101 cr=0.1983 cd=0.1321;\n"
+}

@@ -1,0 +1,14 @@
+{
+ "dropped_for_leakage": [
+  "furina skill , dash , attack ;",
+  "ineffa skill ;",
+  "ineffa burst ;",
+  "ineffa attack ;",
+  "if .ineffa .burst .ready { ineffa burst ; }",
+  "sucrose skill ;",
+  "sucrose attack , skill , dash ;",
+  "sucrose burst ;",
+  "if .sucrose .burst .ready { sucrose burst ; }"
+ ],
+ "sha256": "e165d4323074690041105038fb3547e4e8cac80bcba7b52c9f862ae7002a6870"
+}

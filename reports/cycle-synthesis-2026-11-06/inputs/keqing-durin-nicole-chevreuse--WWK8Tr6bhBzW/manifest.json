@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/keqing-durin-nicole-chevreuse/alt/WWK8Tr6bhBzW/build.txt": "1fd8b3b82a81c6b29e42d39b71265e7b44224116e8b4b610fb1c1e5b10aaed3a"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "keqing",
+      "cons": 6,
+      "weapon": "mistsplitterreforged",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "durin",
+      "cons": 6,
+      "weapon": "athameartis",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "nicole",
+      "cons": 6,
+      "weapon": "angelosheptades",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "chevreuse",
+      "cons": 6,
+      "weapon": "symphonistofscents",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nkeq char lvl=100/100 cons=6 talent=10,10,10;\nkeq add weapon=\"mist\" refine=5 lvl=90/90;\nkeq add set=\"risingwinds\" count=4;\nkeq add stats hp=4780 atk=311 atk%=0.466 electro%=0.466 cr=0.311;\nkeq add stats def%=0.062*1 def=19.68*1 hp=253.94*1 hp%=0.0496*1 atk=16.54*1 atk%=0.0496*6 er=0.0551*1 em=19.82*1 cr=0.0331*12 cd=0.0662*15;\n\ndurin char lvl=100/100 cons=6 talent=10,10,10;\ndurin add weapon=\"athame\" refine=5 lvl=90/90;\ndurin add set=\"risingwinds\" count=4;\ndurin add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cd=0.622;\ndurin add stats def%=0.062*1 def=19.68*1 hp=253.94*1 hp%=0.0496*1 atk=16.54*1 atk%=0.0496*8 er=0.0551*1 em=19.82*1 cr=0.0331*13 cd=0.0662*12;\n\nnicole char lvl=100/100 cons=6 talent=10,10,10;\nnicole add weapon=\"heptades\" refine=5 lvl=90/90;\nnicole add set=\"cg\" count=4;\nnicole add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 atk%=0.466;\nnicole add stats def%=0.062*1 def=19.68*1 hp=253.94*1 hp%=0.0496*1 atk=16.54*1 atk%=0.0496*6 er=0.0551*7 em=19.82*1 cr=0.0331*13 cd=0.0662*7;\n\nchev char lvl=100/100 cons=6 talent=10,10,10;\nchev add weapon=\"symphonist\" refine=5 lvl=90/90;\nchev add set=\"no\" count=4;\nchev add stats hp=4780 atk=311 hp%=0.466 hp%=0.466 cr=0.311;\nchev add stats def%=0.062*1 def=19.68*1 hp=253.94*2 hp%=0.0496*9 atk=16.54*1 atk%=0.0496*1 er=0.0551*14 em=19.82*1 cr=0.0331*8 cd=0.0662*2;\n"
+}

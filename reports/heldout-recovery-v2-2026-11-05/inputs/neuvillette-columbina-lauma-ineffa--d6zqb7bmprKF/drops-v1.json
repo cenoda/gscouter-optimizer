@@ -1,0 +1,12 @@
+{
+ "dropped_for_leakage": [
+  "columbina skill , burst ;",
+  "ineffa burst ;",
+  "ineffa attack , skill ;",
+  "lauma skill [ hold = 1 ] ;",
+  "neuvillette skill ;",
+  "neuvillette charge , skill , charge , burst ;",
+  "neuvillette charge ;"
+ ],
+ "sha256": "d89f02e25edd74beeb60fa4efddf466b6da0174fb24b7f206d27c98762dc18b8"
+}

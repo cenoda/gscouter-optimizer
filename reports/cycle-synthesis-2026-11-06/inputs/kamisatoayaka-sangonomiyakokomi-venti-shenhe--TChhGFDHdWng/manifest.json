@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/kamisatoayaka-sangonomiyakokomi-venti-shenhe/alt/TChhGFDHdWng/build.txt": "adbb499b91ba16765ced3a4cad189212f2ad601d1644a79166f80457d835def8"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "kamisatoayaka",
+      "cons": 6,
+      "weapon": "mistsplitterreforged",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "sangonomiyakokomi",
+      "cons": 6,
+      "weapon": "thrillingtalesofdragonslayers",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "venti",
+      "cons": 6,
+      "weapon": "elegyfortheend",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "shenhe",
+      "cons": 6,
+      "weapon": "calamityqueller",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nayaka char lvl=90/90 cons=6 talent=9,9,9;\nayaka add weapon=\"mistsplitterreforged\" refine=5 lvl=90/90;\nayaka add set=\"blizzardstrayer\" count=4;\nayaka add stats hp=4780 atk=311 atk%=0.466 cryo%=0.466 cd=0.622;\nayaka add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2204 em=39.64 cr=0.3972 cd=0.662;\n\nkokomi char lvl=90/90 cons=6 talent=9,9,9;\nkokomi add weapon=\"thrillingtalesofdragonslayers\" refine=5 lvl=90/90;\nkokomi add set=\"tenacityofthemillelith\" count=4;\nkokomi add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 heal=0.359;\nkokomi add stats def%=0.1240 def=39.36 hp=1015.76 hp%=0.496 atk=33.08 atk%=0.5952 er=0.1102 em=39.64 cr=0.0662 cd=0.1324;\n\nventi char lvl=90/90 cons=6 talent=9,9,9;\nventi add weapon=\"elegyfortheend\" refine=5 lvl=90/90;\nventi add set=\"viridescentvenerer\" count=4;\nventi add stats hp=4780 atk=311 atk%=0.466 anemo%=0.466 cr=0.311;\nventi add stats def%=0.1240 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nshenhe char lvl=90/90 cons=6 talent=9,9,9;\nshenhe add weapon=\"calamityqueller\" refine=5 lvl=90/90;\nshenhe add set=\"noblesseoblige\" count=4;\nshenhe add stats hp=4780 atk=311 er=0.518 atk%=0.466 atk%=0.466;\nshenhe add stats def%=0.1240 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.3964 er=0.3306 em=39.64 cr=0.2648 cd=0.3972;\n"
+}

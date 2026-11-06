@@ -1,0 +1,125 @@
+# Held-out recovery v2 searches (docs/heldout-recovery-v2.md section 9).
+# Triggered only by a push to ci/heldout-v2-runs. One job per drawn case runs
+# every arm and start of that case on the same runner. Jobs receive only the
+# case's exported inputs: no alt/, no withheld rotation A, no Gscouter checkout.
+name: heldout-v2
+on:
+  push:
+    branches: [ci/heldout-v2-runs]
+permissions:
+  contents: read
+# The run directory (matrix.json and inputs/) is named in
+# .github/heldout-v2-rundir: the development set or the frozen held-out draw.
+env:
+  V1_COMMIT: 67647e9caf6454a92299f1b84719881598e64021
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+      rundir: ${{ steps.matrix.outputs.rundir }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            src
+            docs
+            data/character-rarities.json
+            data/flins-c1/manifest.json
+            Cargo.toml
+            Cargo.lock
+            .github/heldout-v2-rundir
+            reports/heldout-recovery-v2-2026-11-05/matrix.json
+            reports/heldout-recovery-v2-2026-11-05/development/matrix.json
+            reports/heldout-recovery-v2-2026-11-05/v2.1/matrix.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.V1_COMMIT }}
+          path: v1src
+          sparse-checkout: |
+            src
+            docs
+            data/character-rarities.json
+            data/flins-c1/manifest.json
+            Cargo.toml
+            Cargo.lock
+          sparse-checkout-cone-mode: false
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+            v1src/target
+          key: cargo-${{ hashFiles('Cargo.lock', 'src/**') }}-${{ env.V1_COMMIT }}
+          restore-keys: cargo-
+      - run: cargo build --release --locked
+      - run: cargo build --release --locked
+        working-directory: v1src
+      - run: |
+          mkdir bin
+          cp target/release/gso bin/gso-v2
+          cp v1src/target/release/gso bin/gso-v1
+          sha256sum bin/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: binaries
+          path: bin
+      - id: matrix
+        run: |
+          RUNDIR=$(cat .github/heldout-v2-rundir)
+          echo "rundir=$RUNDIR" >> "$GITHUB_OUTPUT"
+          echo "matrix=$(jq -c . $RUNDIR/matrix.json)" >> "$GITHUB_OUTPUT"
+  search:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 40
+      matrix:
+        case: ${{ fromJSON(needs.build.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts/heldout_v2.py
+            ${{ needs.build.outputs.rundir }}/inputs/dictionary-v1.json
+            ${{ needs.build.outputs.rundir }}/inputs/dictionary-v2.json
+            ${{ needs.build.outputs.rundir }}/inputs/${{ matrix.case }}/
+            ${{ needs.build.outputs.rundir }}/arms
+          sparse-checkout-cone-mode: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: binaries
+          path: bin
+      - run: |
+          chmod +x bin/*
+          sudo apt-get install -y -q strace >/dev/null
+          nproc; grep -m1 "model name" /proc/cpuinfo; echo "$ImageOS $ImageVersion"
+      - name: materialize inputs
+        run: python3 scripts/heldout_v2.py materialize --case "${{ matrix.case }}" --inputs-root "${{ needs.build.outputs.rundir }}/inputs" --dest work/inputs --v2-bin bin/gso-v2
+      - name: search (all arms and starts of this case)
+        run: |
+          ARMS=$(cat "${{ needs.build.outputs.rundir }}/arms" 2>/dev/null || echo V1,V2)
+          python3 scripts/heldout_v2.py job --case "${{ matrix.case }}" --arms "$ARMS" --inputs work/inputs --out "work/out/${{ matrix.case }}" --v1-bin bin/gso-v1 --v2-bin bin/gso-v2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: case-${{ matrix.case }}
+          path: work/out
+  aggregate:
+    needs: search
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: case-*
+          path: results
+          merge-multiple: true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: heldout-v2-results
+          path: results

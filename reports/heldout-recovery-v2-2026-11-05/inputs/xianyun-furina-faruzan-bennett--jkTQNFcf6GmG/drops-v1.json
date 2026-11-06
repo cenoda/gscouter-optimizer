@@ -1,0 +1,12 @@
+{
+ "dropped_for_leakage": [
+  "bennett skill , burst ;",
+  "faruzan skill , burst ;",
+  "furina skill , dash , burst ;",
+  "xianyun jump ;",
+  "xianyun skill : 3 , high_plunge ;",
+  "xianyun high_plunge [ collision = rand ( ) > 0.5 ] , dash ;",
+  "xianyun skill : 3 , high_plunge , burst ;"
+ ],
+ "sha256": "665dd460213e0011877e917ec72ddc922924ffe26089614acb96d35bc2c104c0"
+}

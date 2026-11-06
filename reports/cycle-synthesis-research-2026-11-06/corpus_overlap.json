@@ -1,0 +1,379 @@
+[
+ {
+  "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+  "on_field": "mavuika",
+  "rotations_with_member": 276,
+  "sharing_3plus": 24,
+  "sim_L_to_A": 0.2,
+  "best_other_sim_to_A": 0.9052631578947369,
+  "top": [
+   {
+    "team": "mavuika-bennett-lanyan-ororon",
+    "shared": 3,
+    "sim_A": 0.9052631578947369,
+    "sim_L": 0.19941348973607037
+   },
+   {
+    "team": "mavuika-bennett-neuvillette-xilonen",
+    "shared": 2,
+    "sim_A": 0.8877551020408163,
+    "sim_L": 0.19020172910662825
+   },
+   {
+    "team": "mavuika-bennett-kaedeharakazuha-ororon",
+    "shared": 3,
+    "sim_A": 0.8865979381443299,
+    "sim_L": 0.19825072886297376
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+  "on_field": "arlecchino",
+  "rotations_with_member": 183,
+  "sharing_3plus": 27,
+  "sim_L_to_A": 0.2980132450331126,
+  "best_other_sim_to_A": 0.8102893890675241,
+  "top": [
+   {
+    "team": "arlecchino-citlali-xilonen-mavuika",
+    "shared": 3,
+    "sim_A": 0.8102893890675241,
+    "sim_L": 0.32014388489208634
+   },
+   {
+    "team": "arlecchino-citlali-escoffier-bennett",
+    "shared": 3,
+    "sim_A": 0.6433333333333333,
+    "sim_L": 0.4142857142857143
+   },
+   {
+    "team": "arlecchino-yunjin-chiori-zhongli",
+    "shared": 1,
+    "sim_A": 0.42727272727272725,
+    "sim_L": 0.4945652173913043
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+  "on_field": "cyno",
+  "rotations_with_member": 87,
+  "sharing_3plus": 12,
+  "sim_L_to_A": 0.3780487804878049,
+  "best_other_sim_to_A": 0.813953488372093,
+  "top": [
+   {
+    "team": "cyno-furina-nahida-ororon",
+    "shared": 3,
+    "sim_A": 0.813953488372093,
+    "sim_L": 0.3509933774834437
+   },
+   {
+    "team": "cyno-furina-xilonen-citlali",
+    "shared": 3,
+    "sim_A": 0.7647058823529411,
+    "sim_L": 0.42857142857142855
+   },
+   {
+    "team": "cyno-furina-fischl-xilonen",
+    "shared": 3,
+    "sim_A": 0.7445255474452555,
+    "sim_L": 0.4217687074829932
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+  "on_field": "mualani",
+  "rotations_with_member": 77,
+  "sharing_3plus": 9,
+  "sim_L_to_A": 0.7519685039370079,
+  "best_other_sim_to_A": 0.7309236947791165,
+  "top": [
+   {
+    "team": "mualani-barbara-sucrose-xiangling",
+    "shared": 3,
+    "sim_A": 0.7309236947791165,
+    "sim_L": 0.8611111111111112
+   },
+   {
+    "team": "mualani-candace-lynette-xiangling",
+    "shared": 3,
+    "sim_A": 0.7076923076923077,
+    "sim_L": 0.8778280542986425
+   },
+   {
+    "team": "mualani-candace-xilonen-xiangling",
+    "shared": 3,
+    "sim_A": 0.7044534412955465,
+    "sim_L": 0.7117903930131004
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+  "on_field": "neuvillette",
+  "rotations_with_member": 253,
+  "sharing_3plus": 45,
+  "sim_L_to_A": 0.7307692307692307,
+  "best_other_sim_to_A": 0.717948717948718,
+  "top": [
+   {
+    "team": "neuvillette-chiori-furina-xilonen",
+    "shared": 3,
+    "sim_A": 0.717948717948718,
+    "sim_L": 0.7355371900826446
+   },
+   {
+    "team": "neuvillette-furina-kukishinobu-xilonen",
+    "shared": 3,
+    "sim_A": 0.7142857142857143,
+    "sim_L": 0.7317073170731707
+   },
+   {
+    "team": "neuvillette-furina-xilonen-sigewinne",
+    "shared": 3,
+    "sim_A": 0.7142857142857143,
+    "sim_L": 0.717741935483871
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "mualani-mona-xilonen-mavuika--M8TgfHLLtqbp",
+  "on_field": "mualani",
+  "rotations_with_member": 77,
+  "sharing_3plus": 14,
+  "sim_L_to_A": 0.48863636363636365,
+  "best_other_sim_to_A": 0.7384615384615385,
+  "top": [
+   {
+    "team": "mavuika-mualani-yelan-nahida",
+    "shared": 2,
+    "sim_A": 0.7384615384615385,
+    "sim_L": 0.44565217391304346
+   },
+   {
+    "team": "mualani-mavuika-citlali-nahida",
+    "shared": 2,
+    "sim_A": 0.7131782945736435,
+    "sim_L": 0.4032258064516129
+   },
+   {
+    "team": "mualani-zhongli-mavuika-xilonen",
+    "shared": 3,
+    "sim_A": 0.6845637583892618,
+    "sim_L": 0.5396825396825397
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "wriothesley-furina-xilonen-bennett--PFGMCrLDpbcq",
+  "on_field": "wriothesley",
+  "rotations_with_member": 139,
+  "sharing_3plus": 19,
+  "sim_L_to_A": 0.66,
+  "best_other_sim_to_A": 0.7099236641221374,
+  "top": [
+   {
+    "team": "wriothesley-emilie-mavuika-xilonen",
+    "shared": 2,
+    "sim_A": 0.7099236641221374,
+    "sim_L": 0.6466165413533834
+   },
+   {
+    "team": "wriothesley-escoffier-xiangling-bennett",
+    "shared": 2,
+    "sim_A": 0.7039473684210527,
+    "sim_L": 0.8405797101449275
+   },
+   {
+    "team": "wriothesley-shenhe-mavuika-xilonen",
+    "shared": 2,
+    "sim_A": 0.6858974358974359,
+    "sim_L": 0.5636363636363636
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "yoimiya-furina-yunjin-xilonen--rk6QCLfwKJkD",
+  "on_field": "yoimiya",
+  "rotations_with_member": 136,
+  "sharing_3plus": 6,
+  "sim_L_to_A": 0.7428571428571429,
+  "best_other_sim_to_A": 0.7226890756302521,
+  "top": [
+   {
+    "team": "yoimiya-furina-sigewinne-bennett",
+    "shared": 2,
+    "sim_A": 0.7226890756302521,
+    "sim_L": 0.6396396396396397
+   },
+   {
+    "team": "yoimiya-yunjin-xilonen-bennett",
+    "shared": 3,
+    "sim_A": 0.7142857142857143,
+    "sim_L": 0.7075471698113207
+   },
+   {
+    "team": "yoimiya-yelan-fischl-durin",
+    "shared": 1,
+    "sim_A": 0.7117117117117117,
+    "sim_L": 0.7395833333333334
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+  "on_field": "wriothesley",
+  "rotations_with_member": 139,
+  "sharing_3plus": 16,
+  "sim_L_to_A": 0.5290697674418605,
+  "best_other_sim_to_A": 0.7024793388429752,
+  "top": [
+   {
+    "team": "wriothesley-shenhe-furina-lynette",
+    "shared": 2,
+    "sim_A": 0.7024793388429752,
+    "sim_L": 0.45614035087719296
+   },
+   {
+    "team": "wriothesley-emilie-mavuika-xilonen",
+    "shared": 2,
+    "sim_A": 0.6428571428571429,
+    "sim_L": 0.5337423312883436
+   },
+   {
+    "team": "wriothesley-shenhe-mavuika-xilonen",
+    "shared": 3,
+    "sim_A": 0.64,
+    "sim_L": 0.5879120879120879
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "raidenshogun-furina-xilonen-yelan--PhjwKhdjDwtb",
+  "on_field": "yelan",
+  "rotations_with_member": 631,
+  "sharing_3plus": 40,
+  "sim_L_to_A": 0.8617021276595744,
+  "best_other_sim_to_A": 0.8064516129032258,
+  "top": [
+   {
+    "team": "raidenshogun-furina-yelan-baizhu",
+    "shared": 3,
+    "sim_A": 0.8064516129032258,
+    "sim_L": 0.7604166666666666
+   },
+   {
+    "team": "baizhu-furina-yelan-thoma",
+    "shared": 2,
+    "sim_A": 0.8043478260869565,
+    "sim_L": 0.7395833333333334
+   },
+   {
+    "team": "baizhu-furina-yelan-nilou",
+    "shared": 2,
+    "sim_A": 0.7894736842105263,
+    "sim_L": 0.71
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "clorinde-kujousara-nahida-xilonen--DQkpHtnCkKgR",
+  "on_field": "clorinde",
+  "rotations_with_member": 143,
+  "sharing_3plus": 7,
+  "sim_L_to_A": 0.6390532544378699,
+  "best_other_sim_to_A": 0.7637795275590551,
+  "top": [
+   {
+    "team": "clorinde-nahida-lisa-xilonen",
+    "shared": 3,
+    "sim_A": 0.7637795275590551,
+    "sim_L": 0.5755813953488372
+   },
+   {
+    "team": "clorinde-fischl-shikanoinheizou-nahida",
+    "shared": 2,
+    "sim_A": 0.7573529411764706,
+    "sim_L": 0.6627906976744186
+   },
+   {
+    "team": "clorinde-ororon-yelan-xilonen",
+    "shared": 2,
+    "sim_A": 0.7346938775510204,
+    "sim_L": 0.6236559139784946
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "flins-ineffa-furina-sucrose--j86qrckHDPmb",
+  "on_field": "flins",
+  "rotations_with_member": 16,
+  "sharing_3plus": 4,
+  "sim_L_to_A": 0.6949152542372882,
+  "best_other_sim_to_A": 0.7096774193548387,
+  "top": [
+   {
+    "team": "flins-columbina-fischl-durin",
+    "shared": 1,
+    "sim_A": 0.7096774193548387,
+    "sim_L": 0.5927835051546392
+   },
+   {
+    "team": "flins-ineffa-aino-sucrose",
+    "shared": 3,
+    "sim_A": 0.704225352112676,
+    "sim_L": 0.5543478260869565
+   },
+   {
+    "team": "flins-ineffa-columbina-xilonen",
+    "shared": 2,
+    "sim_A": 0.6527777777777778,
+    "sim_L": 0.5243243243243243
+   }
+  ],
+  "same_party_other_rotations": []
+ },
+ {
+  "case": "mualani-chiori-xiangling-xilonen--fKzfLbrbfhj9",
+  "on_field": "mualani",
+  "rotations_with_member": 77,
+  "sharing_3plus": 9,
+  "sim_L_to_A": 0.45222929936305734,
+  "best_other_sim_to_A": 0.5582089552238806,
+  "top": [
+   {
+    "team": "mualani-lynette-xilonen-xiangling",
+    "shared": 3,
+    "sim_A": 0.5582089552238806,
+    "sim_L": 0.6363636363636364
+   },
+   {
+    "team": "mualani-lauma-emilie-mavuika",
+    "shared": 1,
+    "sim_A": 0.5555555555555556,
+    "sim_L": 0.47766323024054985
+   },
+   {
+    "team": "mualani-kaedeharakazuha-xilonen-xiangling",
+    "shared": 3,
+    "sim_A": 0.5513196480938416,
+    "sim_L": 0.6176470588235294
+   }
+  ],
+  "same_party_other_rotations": []
+ }
+]

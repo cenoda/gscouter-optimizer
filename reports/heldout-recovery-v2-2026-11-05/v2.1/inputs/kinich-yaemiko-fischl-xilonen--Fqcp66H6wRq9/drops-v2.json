@@ -1,0 +1,6 @@
+{
+ "dropped_for_leakage": [
+  "if .$SELF .burst .ready { $SELF attack : 2 , burst ; }"
+ ],
+ "sha256": "ec90efba5744c23322f8010f34b13668cccf8b94622d886f496ec8aa8a3caa2d"
+}

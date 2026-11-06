@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/yoimiya-yelan-fischl-durin/alt/hhdWBgW6Fqpf/build.txt": "38ffd959aba3b65ec53f05edb627e534b26eee2a4bcd222302a670aaeaa9604c"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "yoimiya",
+      "cons": 1,
+      "weapon": "rust",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "yelan",
+      "cons": 0,
+      "weapon": "favoniuswarbow",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "durin",
+      "cons": 0,
+      "weapon": "lionsroar",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "fischl",
+      "cons": 6,
+      "weapon": "sacrificialbow",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nyoimiya char lvl=90/90 cons=1 talent=9,9,9;\nyoimiya add weapon=\"rust\" refine=5 lvl=90/90;\nyoimiya add set=\"echoes\" count=4;\nyoimiya add stats hp=4780 atk=311 em=187 pyro%=0.466 cr=0.311;\nyoimiya add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*4 er=0.0551*2 em=19.82*2 cr=0.0331*10 cd=0.0662*12;\n\nyelan char lvl=90/90 cons=0 talent=9,9,9;\nyelan add weapon=\"favbow\" refine=5 lvl=90/90;\nyelan add set=\"no\" count=4;\nyelan add stats hp=4780 atk=311 er=0.518 hydro%=0.466 cr=0.311;\nyelan add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*4 atk=16.54*2 atk%=0.0496*2 er=0.0551*3 em=19.82*2 cr=0.0331*10 cd=0.0662*11;\n\ndurin char lvl=90/90 cons=0 talent=9,9,9;\ndurin add weapon=\"lionsroar\" refine=5 lvl=90/90;\ndurin add set=\"risingwinds\" count=5;\ndurin add stats hp=4780 atk=311 em=187 pyro%=0.466 cr=0.311;\ndurin add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*3 em=19.82*3 cr=0.0331*10 cd=0.0662*12;\n\nfischl char lvl=90/90 cons=6 talent=9,9,9;\nfischl add weapon=\"sacbow\" refine=5 lvl=90/90;\nfischl add set=\"gift\" count=4;\nfischl add stats hp=4780 atk=311 em=187 electro%=0.466 cr=0.311;\nfischl add stats def%=0.062*2 def=19.68*2 hp=253.94*2 hp%=0.0496*2 atk=16.54*2 atk%=0.0496*2 er=0.0551*6 em=19.82*2 cr=0.0331*8 cd=0.0662*12;\n"
+}

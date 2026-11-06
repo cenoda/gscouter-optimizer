@@ -1,0 +1,10 @@
+{
+ "dropped_for_leakage": [
+  "columbina charge ;",
+  "columbina swap ;",
+  "lauma skill [ hold = 1 ] , burst ;",
+  "nahida attack , skill , charge ;",
+  "nilou skill , attack : 3 ;"
+ ],
+ "sha256": "f55c8d402491c79dfe52af2e0de6f656b72b8ac6bbe370b2d01d4c2a1bcc4adb"
+}

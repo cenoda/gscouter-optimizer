@@ -1,0 +1,312 @@
+{
+ "cases": 40,
+ "informative": 32,
+ "control": 8,
+ "arms": {
+  "V1@36": {
+   "n": 0,
+   "median_r": null,
+   "quartiles": null,
+   "r_ge_half": 0,
+   "regressions": 0,
+   "reading": "undefined",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V1@108": {
+   "n": 0,
+   "median_r": null,
+   "quartiles": null,
+   "r_ge_half": 0,
+   "regressions": 0,
+   "reading": "undefined",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V1@192": {
+   "n": 0,
+   "median_r": null,
+   "quartiles": null,
+   "r_ge_half": 0,
+   "regressions": 0,
+   "reading": "undefined",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": "undefined",
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2S@36": {
+   "n": 32,
+   "median_r": 0.7864497731785491,
+   "quartiles": [
+    0.48,
+    0.786,
+    0.986
+   ],
+   "r_ge_half": 22,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2S@108": {
+   "n": 32,
+   "median_r": 0.8420662007568134,
+   "quartiles": [
+    0.547,
+    0.842,
+    1.039
+   ],
+   "r_ge_half": 25,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2S@192": {
+   "n": 32,
+   "median_r": 0.9203291168123924,
+   "quartiles": [
+    0.648,
+    0.92,
+    1.048
+   ],
+   "r_ge_half": 26,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 32,
+   "median_r_strip": 0.901579939130406,
+   "reading_strip": "Partial (>5% regressions)",
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2S@288": {
+   "n": 32,
+   "median_r": 0.9051373332200034,
+   "quartiles": [
+    0.693,
+    0.905,
+    1.162
+   ],
+   "r_ge_half": 28,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2S@384": {
+   "n": 32,
+   "median_r": 0.9920331951230041,
+   "quartiles": [
+    0.702,
+    0.992,
+    1.28
+   ],
+   "r_ge_half": 28,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 32,
+   "median_r_strip": 0.9920331951230041,
+   "reading_strip": "Promising",
+   "control_regressions": 0,
+   "selected_audit_failures": 0
+  },
+  "V2T@288": {
+   "n": 32,
+   "median_r": 0.9590376678807158,
+   "quartiles": [
+    0.742,
+    0.959,
+    1.132
+   ],
+   "r_ge_half": 27,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 0,
+   "median_r_strip": null,
+   "reading_strip": null,
+   "control_regressions": 0,
+   "selected_audit_failures": 2
+  },
+  "V2T@384": {
+   "n": 32,
+   "median_r": 0.9635429239141806,
+   "quartiles": [
+    0.769,
+    0.964,
+    1.213
+   ],
+   "r_ge_half": 28,
+   "regressions": 0,
+   "reading": "Promising",
+   "strip_n": 30,
+   "median_r_strip": 0.9635429239141806,
+   "reading_strip": "Promising",
+   "control_regressions": 0,
+   "selected_audit_failures": 2
+  }
+ },
+ "comparisons": {
+  "Q2 two-pass vs equal-CPU single (primary)": {
+   "x": [
+    "V2T",
+    384
+   ],
+   "y": [
+    "V2S",
+    384
+   ],
+   "paired_fights": true,
+   "n": 32,
+   "median_d_start_averaged": 0.009731839948992373,
+   "mean_d": 0.04344433817242095,
+   "x_better_cases": 21,
+   "wilcoxon": {
+    "n": 32,
+    "W_plus": 389.0,
+    "z": 2.337367475021143,
+    "p": 0.01942008481166588
+   },
+   "reading": "V2T@384 beats V2S@384",
+   "secondary_selected": {
+    "n": 32,
+    "median": -0.0020487037157249643,
+    "wilcoxon": {
+     "n": 32,
+     "W_plus": 253.0,
+     "z": -0.20568833780186058,
+     "p": 0.8370343688651636
+    }
+   }
+  },
+  "Q1 v2 vs v1 at 192": {
+   "x": [
+    "V2S",
+    192
+   ],
+   "y": [
+    "V1",
+    192
+   ],
+   "paired_fights": true,
+   "n": 0,
+   "median_d_start_averaged": null,
+   "mean_d": null,
+   "x_better_cases": 0,
+   "wilcoxon": {
+    "n": 0,
+    "p": 1.0
+   },
+   "reading": "no detectable difference at this sample size",
+   "secondary_selected": {
+    "n": 0,
+    "median": null,
+    "wilcoxon": {
+     "n": 0,
+     "p": 1.0
+    }
+   }
+  },
+  "budget V2S 384 vs 192 (unpaired fights)": {
+   "x": [
+    "V2S",
+    384
+   ],
+   "y": [
+    "V2S",
+    192
+   ],
+   "paired_fights": false,
+   "n": 32,
+   "median_d_start_averaged": 0.02992893980018626,
+   "mean_d": 0.05137016384943517,
+   "x_better_cases": 27,
+   "wilcoxon": {
+    "n": 32,
+    "W_plus": 484.0,
+    "z": 4.1137667560372115,
+    "p": 3.8925475018218707e-05
+   },
+   "reading": "V2S@384 beats V2S@192",
+   "secondary_selected": {
+    "n": 32,
+    "median": 0.016637742621045004,
+    "wilcoxon": {
+     "n": 32,
+     "W_plus": 464.0,
+     "z": 3.7397879600338286,
+     "p": 0.00018417555129966856
+    }
+   }
+  },
+  "(descriptive) V2T 288 vs V2S 288": {
+   "x": [
+    "V2T",
+    288
+   ],
+   "y": [
+    "V2S",
+    288
+   ],
+   "paired_fights": true,
+   "n": 32,
+   "median_d_start_averaged": 0.015080938304127243,
+   "mean_d": 0.053444759138037895,
+   "x_better_cases": 21,
+   "wilcoxon": {
+    "n": 32,
+    "W_plus": 392.0,
+    "z": 2.3934642944216504,
+    "p": 0.016690105726464025
+   },
+   "reading": "V2T@288 beats V2S@288",
+   "secondary_selected": {
+    "n": 32,
+    "median": -0.0002973328427758881,
+    "wilcoxon": {
+     "n": 32,
+     "W_plus": 308.0,
+     "z": 0.8227533512074423,
+     "p": 0.4106482693074592
+    }
+   }
+  }
+ },
+ "accounting": {
+  "discovery_cpu_seconds": 69174.1353298,
+  "audit_cpu_seconds": 4382.959495068001,
+  "job_children_cpu_seconds": 74777.12,
+  "sum_job_wall_seconds": 27364.61474132538,
+  "max_job_wall_seconds": 862.3356034755707,
+  "local_measure_cpu_seconds": 225.40481726299998,
+  "job_errors": 0,
+  "cpu_models": [
+   "AMD EPYC 7763 64-Core Processor",
+   "AMD EPYC 9V45 96-Core Processor",
+   "AMD EPYC 9V74 80-Core Processor",
+   "INTEL(R) XEON(R) PLATINUM 8573C",
+   "Intel(R) Xeon(R) 6973P-C",
+   "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz"
+  ],
+  "nproc": [
+   4
+  ],
+  "L_reproduction_failures": 0
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "dropped_for_leakage": [
+  "candace skill , burst , attack ;",
+  "candace attack ;",
+  "candace attack : 2 , skill ;",
+  "mualani attack ;",
+  "mualani walk [ f = 1 ] ;",
+  "mualani skill ;",
+  "mualani burst ;",
+  "sucrose skill , dash , attack ;",
+  "sucrose skill , dash , burst , attack ;",
+  "xiangling attack : 3 ;",
+  "xiangling attack ;",
+  "xiangling skill , dash ;",
+  "xiangling burst , skill , dash , attack ;"
+ ],
+ "sha256": "d50f149253306c7a6e453247fc24ee2810e0e5d52419866f81d3680d6cbf5af5"
+}

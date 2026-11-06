@@ -1,0 +1,730 @@
+{
+ "v2": {
+  "V1@192": {
+   "all": {
+    "n": 32,
+    "median_S_over_A": 0.9738665278347162,
+    "below_0.90": 8,
+    "below_0.95": 13,
+    "at_or_above_A": 10
+   },
+   "A/L<1.25": {
+    "n": 17,
+    "median_S_over_A": 0.9783917238534763,
+    "below_0.90": 3,
+    "below_0.95": 6,
+    "at_or_above_A": 5
+   },
+   "A/L>=1.25": {
+    "n": 15,
+    "median_S_over_A": 0.969341331815956,
+    "below_0.90": 5,
+    "below_0.95": 7,
+    "at_or_above_A": 5
+   },
+   "A/L>=2": {
+    "n": 10,
+    "median_S_over_A": 0.9165970604409057,
+    "below_0.90": 5,
+    "below_0.95": 7,
+    "at_or_above_A": 1
+   }
+  },
+  "V2S@192": {
+   "all": {
+    "n": 32,
+    "median_S_over_A": 0.9915455478182074,
+    "below_0.90": 7,
+    "below_0.95": 12,
+    "at_or_above_A": 16
+   },
+   "A/L<1.25": {
+    "n": 17,
+    "median_S_over_A": 1.0075414945114116,
+    "below_0.90": 2,
+    "below_0.95": 5,
+    "at_or_above_A": 11
+   },
+   "A/L>=1.25": {
+    "n": 15,
+    "median_S_over_A": 0.9513152071451462,
+    "below_0.90": 5,
+    "below_0.95": 7,
+    "at_or_above_A": 5
+   },
+   "A/L>=2": {
+    "n": 10,
+    "median_S_over_A": 0.8815113050532866,
+    "below_0.90": 5,
+    "below_0.95": 7,
+    "at_or_above_A": 0
+   }
+  },
+  "V2S@384": {
+   "all": {
+    "n": 32,
+    "median_S_over_A": 0.9896843255797317,
+    "below_0.90": 5,
+    "below_0.95": 10,
+    "at_or_above_A": 15
+   },
+   "A/L<1.25": {
+    "n": 17,
+    "median_S_over_A": 1.0077892579324195,
+    "below_0.90": 1,
+    "below_0.95": 4,
+    "at_or_above_A": 11
+   },
+   "A/L>=1.25": {
+    "n": 15,
+    "median_S_over_A": 0.9740918228746914,
+    "below_0.90": 4,
+    "below_0.95": 6,
+    "at_or_above_A": 4
+   },
+   "A/L>=2": {
+    "n": 10,
+    "median_S_over_A": 0.9262737400752392,
+    "below_0.90": 4,
+    "below_0.95": 6,
+    "at_or_above_A": 0
+   }
+  },
+  "V2T@384": {
+   "all": {
+    "n": 32,
+    "median_S_over_A": 0.9967576881117602,
+    "below_0.90": 5,
+    "below_0.95": 12,
+    "at_or_above_A": 16
+   },
+   "A/L<1.25": {
+    "n": 17,
+    "median_S_over_A": 1.0112833920397053,
+    "below_0.90": 1,
+    "below_0.95": 4,
+    "at_or_above_A": 11
+   },
+   "A/L>=1.25": {
+    "n": 15,
+    "median_S_over_A": 0.941933042024858,
+    "below_0.90": 4,
+    "below_0.95": 8,
+    "at_or_above_A": 5
+   },
+   "A/L>=2": {
+    "n": 10,
+    "median_S_over_A": 0.9086945953670191,
+    "below_0.90": 4,
+    "below_0.95": 8,
+    "at_or_above_A": 0
+   }
+  }
+ },
+ "v2.1": {
+  "V2S@192": {
+   "all": {
+    "n": 32,
+    "median_S_over_A": 0.9680220652861854,
+    "below_0.90": 7,
+    "below_0.95": 13,
+    "at_or_above_A": 9
+   },
+   "A/L<1.25": {
+    "n": 17,
+    "median_S_over_A": 0.990449281049159,
+    "below_0.90": 1,
+    "below_0.95": 5,
+    "at_or_above_A": 7
+   },
+   "A/L>=1.25": {
+    "n": 15,
+    "median_S_over_A": 0.9464620926770494,
+    "below_0.90": 6,
+    "below_0.95": 8,
+    "at_or_above_A": 2
+   },
+   "A/L>=2": {
+    "n": 10,
+    "median_S_over_A": 0.8828240761134287,
+    "below_0.90": 5,
+    "below_0.95": 7,
+    "at_or_above_A": 0
+   }
+  },
+  "V2S@384": {
+   "all": {
+    "n": 32,
+    "median_S_over_A": 0.9982115864068287,
+    "below_0.90": 7,
+    "below_0.95": 11,
+    "at_or_above_A": 15
+   },
+   "A/L<1.25": {
+    "n": 17,
+    "median_S_over_A": 1.0169983276366732,
+    "below_0.90": 1,
+    "below_0.95": 3,
+    "at_or_above_A": 10
+   },
+   "A/L>=1.25": {
+    "n": 15,
+    "median_S_over_A": 0.9486004463005437,
+    "below_0.90": 6,
+    "below_0.95": 8,
+    "at_or_above_A": 5
+   },
+   "A/L>=2": {
+    "n": 10,
+    "median_S_over_A": 0.8836210073783205,
+    "below_0.90": 6,
+    "below_0.95": 7,
+    "at_or_above_A": 1
+   }
+  },
+  "V2T@384": {
+   "all": {
+    "n": 32,
+    "median_S_over_A": 0.9813872361374754,
+    "below_0.90": 8,
+    "below_0.95": 10,
+    "at_or_above_A": 12
+   },
+   "A/L<1.25": {
+    "n": 17,
+    "median_S_over_A": 0.9999636439828299,
+    "below_0.90": 2,
+    "below_0.95": 4,
+    "at_or_above_A": 8
+   },
+   "A/L>=1.25": {
+    "n": 15,
+    "median_S_over_A": 0.9712311346863632,
+    "below_0.90": 6,
+    "below_0.95": 6,
+    "at_or_above_A": 4
+   },
+   "A/L>=2": {
+    "n": 10,
+    "median_S_over_A": 0.9223373788334344,
+    "below_0.90": 5,
+    "below_0.95": 5,
+    "at_or_above_A": 1
+   }
+  }
+ },
+ "v2.1_rows": [
+  {
+   "case": "raidenshogun-furina-yaemiko-xilonen--P6KGMM7fwqrG",
+   "stratum": "other",
+   "A_over_L": 1.0698165833846829,
+   "V2S@192": 1.092801769273015,
+   "V2S@192:start_mean": 1.0408134983997528,
+   "V2S@384": 1.129429947874493,
+   "V2S@384:start_mean": 1.0629309051961129,
+   "V2T@384": 1.0935406222990987,
+   "V2T@384:start_mean": 1.0688474823874816
+  },
+  {
+   "case": "arlecchino-citlali-kaedeharakazuha-bennett--qRnm9CBFdG7p",
+   "stratum": "other",
+   "A_over_L": 1.0706853926794728,
+   "V2S@192": 1.0644880619240666,
+   "V2S@192:start_mean": 1.059400957169231,
+   "V2S@384": 1.0708825491970706,
+   "V2S@384:start_mean": 1.0643921534785608,
+   "V2T@384": 1.061283501292848,
+   "V2T@384:start_mean": 1.0640324413506679
+  },
+  {
+   "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+   "stratum": "frame",
+   "A_over_L": 5.867245186299461,
+   "V2S@192": 0.8240441098060842,
+   "V2S@192:start_mean": 0.6435941433124124,
+   "V2S@384": 0.8227983291896639,
+   "V2S@384:start_mean": 0.6664740442415937,
+   "V2T@384": 0.8395218569443064,
+   "V2T@384:start_mean": 0.7078678513257679
+  },
+  {
+   "case": "aratakiitto-xilonen-furina-mavuika--bkd7t7WCRqBd",
+   "stratum": "frame",
+   "A_over_L": 1.2009548915413892,
+   "V2S@192": 1.0092025032981358,
+   "V2S@192:start_mean": 0.9898511272013282,
+   "V2S@384": 1.0844187298883603,
+   "V2S@384:start_mean": 1.058773276245198,
+   "V2T@384": 1.0171206210426185,
+   "V2T@384:start_mean": 0.935841957223496
+  },
+  {
+   "case": "hutao-xingqiu-zhongli-yelan--fjPG7F9FpwDQ",
+   "stratum": "frame",
+   "A_over_L": 1.2989379243293915,
+   "V2S@192": 0.9862417288444448,
+   "V2S@192:start_mean": 0.9199876491866268,
+   "V2S@384": 1.0070138854040915,
+   "V2S@384:start_mean": 0.9735095590793491,
+   "V2T@384": 1.0365267608110285,
+   "V2T@384:start_mean": 0.9789141960240181
+  },
+  {
+   "case": "varka-prune-nicole-durin--dDfWKHTKH8zK",
+   "stratum": "other",
+   "A_over_L": 1.107394537753035,
+   "V2S@192": 0.9301183362466253,
+   "V2S@192:start_mean": 0.9216772360856303,
+   "V2S@384": 0.9375234475362065,
+   "V2S@384:start_mean": 0.9327359238702757,
+   "V2T@384": 0.9595678434408472,
+   "V2T@384:start_mean": 0.9409654086973125
+  },
+  {
+   "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+   "stratum": "other",
+   "A_over_L": 6.922712945665118,
+   "V2S@192": 0.8240574816412914,
+   "V2S@192:start_mean": 0.7110823903467044,
+   "V2S@384": 0.8676304828700822,
+   "V2S@384:start_mean": 0.731672088812867,
+   "V2T@384": 0.8763179887131277,
+   "V2T@384:start_mean": 0.7591040398043677
+  },
+  {
+   "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+   "stratum": "frame",
+   "A_over_L": 2.284305266128015,
+   "V2S@192": 0.8032148560354593,
+   "V2S@192:start_mean": 0.7055118230389327,
+   "V2S@384": 0.8211291983338551,
+   "V2S@384:start_mean": 0.7284620047952058,
+   "V2T@384": 0.8254023652331052,
+   "V2T@384:start_mean": 0.7416262043847927
+  },
+  {
+   "case": "mualani-mona-xilonen-mavuika--M8TgfHLLtqbp",
+   "stratum": "other",
+   "A_over_L": 1.1674365575046308,
+   "V2S@192": 0.8956751613467488,
+   "V2S@192:start_mean": 0.8703014222014218,
+   "V2S@384": 0.8974632526642843,
+   "V2S@384:start_mean": 0.869656777914866,
+   "V2T@384": 0.8957457656282937,
+   "V2T@384:start_mean": 0.8826793608298213
+  },
+  {
+   "case": "chasca-furina-chevreuse-bennett--6CGDtR8WQHwq",
+   "stratum": "frame",
+   "A_over_L": 1.8514647391440546,
+   "V2S@192": 0.8970499770514143,
+   "V2S@192:start_mean": 0.8541234213488161,
+   "V2S@384": 0.9054680845539291,
+   "V2S@384:start_mean": 0.8602958064580145,
+   "V2T@384": 0.8934021455312838,
+   "V2T@384:start_mean": 0.8913022727332578
+  },
+  {
+   "case": "kaedeharakazuha-furina-chongyun-xianyun--DrCQ7p7RghND",
+   "stratum": "frame",
+   "A_over_L": 3.9536984381436975,
+   "V2S@192": 0.9672153233290955,
+   "V2S@192:start_mean": 0.8817477246260192,
+   "V2S@384": 0.8996115318865588,
+   "V2S@384:start_mean": 0.8765212379497701,
+   "V2T@384": 0.9640282699415751,
+   "V2T@384:start_mean": 0.8919078872399732
+  },
+  {
+   "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+   "stratum": "frame",
+   "A_over_L": 2.3255106296547217,
+   "V2S@192": 0.7491609404421982,
+   "V2S@192:start_mean": 0.7287207525456999,
+   "V2S@384": 0.7743645046649175,
+   "V2S@384:start_mean": 0.7568007366004764,
+   "V2T@384": 0.8806464877252936,
+   "V2T@384:start_mean": 0.7909447592353113
+  },
+  {
+   "case": "hutao-xilonen-furina-yelan--CC7rJ6cHHjLL",
+   "stratum": "other",
+   "A_over_L": 1.1046185284603487,
+   "V2S@192": 0.9936209960609375,
+   "V2S@192:start_mean": 0.9641091336466879,
+   "V2S@384": 1.0521219064929768,
+   "V2S@384:start_mean": 0.9998949905663534,
+   "V2T@384": 1.0326952978488417,
+   "V2T@384:start_mean": 0.9950880842706057
+  },
+  {
+   "case": "hutao-fischl-yelan-bennett--zmJmWDr9CMM8",
+   "stratum": "other",
+   "A_over_L": 1.1086238168287164,
+   "V2S@192": 1.0251925666798003,
+   "V2S@192:start_mean": 0.9964925070237449,
+   "V2S@384": 1.0306623867151823,
+   "V2S@384:start_mean": 1.0005733467043547,
+   "V2T@384": 1.033787167944818,
+   "V2T@384:start_mean": 0.9985524428071891
+  },
+  {
+   "case": "flins-fischl-aino-sucrose--BbCHM7ppcJ8w",
+   "stratum": "other",
+   "A_over_L": 1.2445159295741988,
+   "V2S@192": 1.0381543823028998,
+   "V2S@192:start_mean": 1.00267628042403,
+   "V2S@384": 1.0477110537342063,
+   "V2S@384:start_mean": 1.0275559851325644,
+   "V2T@384": 1.0453018718436762,
+   "V2T@384:start_mean": 1.04226562131857
+  },
+  {
+   "case": "bennett-beidou-lisa-xingqiu--7pBGp67L8wnp",
+   "stratum": "frame",
+   "A_over_L": 1.0976924541451087,
+   "V2S@192": 1.0277695649304057,
+   "V2S@192:start_mean": 1.006363888027151,
+   "V2S@384": 1.0169983276366732,
+   "V2S@384:start_mean": 1.0050427450164643,
+   "V2T@384": 1.0357370001925723,
+   "V2T@384:start_mean": 1.012933306010117
+  },
+  {
+   "case": "eula-furina-shenhe-escoffier--rptHHcMzkqg9",
+   "stratum": "frame",
+   "A_over_L": 1.1048841078619145,
+   "V2S@192": 0.9513434039875425,
+   "V2S@192:start_mean": 0.9388184904193226,
+   "V2S@384": 0.998710933227397,
+   "V2S@384:start_mean": 0.9680097919824396,
+   "V2T@384": 0.9050722993338386,
+   "V2T@384:start_mean": 0.9327499056688728
+  },
+  {
+   "case": "aratakiitto-albedo-gorou-furina--g6wbFkjbNKLc",
+   "stratum": "frame",
+   "A_over_L": 1.1888879064502609,
+   "V2S@192": 0.9064524840102045,
+   "V2S@192:start_mean": 0.8796934183976792,
+   "V2S@384": 0.9084413781505064,
+   "V2S@384:start_mean": 0.885986245928202,
+   "V2T@384": 0.8411221903886332,
+   "V2T@384:start_mean": 0.8906775519214426
+  },
+  {
+   "case": "neuvillette-columbina-lauma-ineffa--d6zqb7bmprKF",
+   "stratum": "frame",
+   "A_over_L": 1.3225900137449311,
+   "V2S@192": 1.0556030914713117,
+   "V2S@192:start_mean": 1.0131683822963824,
+   "V2S@384": 1.0945905270947698,
+   "V2S@384:start_mean": 1.0363263665231115,
+   "V2T@384": 1.0780933410746563,
+   "V2T@384:start_mean": 1.0224571345085147
+  },
+  {
+   "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+   "stratum": "frame",
+   "A_over_L": 11.732167341932753,
+   "V2S@192": 0.6765991919930125,
+   "V2S@192:start_mean": 0.5559270763015851,
+   "V2S@384": 0.7431738333376396,
+   "V2S@384:start_mean": 0.5972927276064487,
+   "V2T@384": 0.7237758407472821,
+   "V2T@384:start_mean": 0.6460432440956628
+  },
+  {
+   "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+   "stratum": "frame",
+   "A_over_L": 7.4166524383679215,
+   "V2S@192": 0.9990099550686272,
+   "V2S@192:start_mean": 0.9184139965638063,
+   "V2S@384": 0.9977122395862604,
+   "V2S@384:start_mean": 0.9179731174191611,
+   "V2T@384": 1.0102280744040473,
+   "V2T@384:start_mean": 0.9507446994003763
+  },
+  {
+   "case": "yoimiya-furina-yunjin-xilonen--rk6QCLfwKJkD",
+   "stratum": "other",
+   "A_over_L": 2.4869585562341046,
+   "V2S@192": 0.9738202216008759,
+   "V2S@192:start_mean": 0.7424364313019072,
+   "V2S@384": 0.9778305428247197,
+   "V2S@384:start_mean": 0.9185921963685038,
+   "V2T@384": 0.9846438902413306,
+   "V2T@384:start_mean": 0.9300404278302606
+  },
+  {
+   "case": "wriothesley-furina-xilonen-bennett--PFGMCrLDpbcq",
+   "stratum": "other",
+   "A_over_L": 2.748284039168483,
+   "V2S@192": 0.9415906705855661,
+   "V2S@192:start_mean": 0.8623676805841287,
+   "V2S@384": 1.0180297894192274,
+   "V2S@384:start_mean": 0.8995566994854448,
+   "V2T@384": 0.9826217082012854,
+   "V2T@384:start_mean": 0.9133527807051315
+  },
+  {
+   "case": "raidenshogun-furina-xilonen-yelan--PhjwKhdjDwtb",
+   "stratum": "other",
+   "A_over_L": 2.0406225452093576,
+   "V2S@192": 0.9464620926770494,
+   "V2S@192:start_mean": 0.9103123011239873,
+   "V2S@384": 0.9486004463005437,
+   "V2S@384:start_mean": 0.9301040467874698,
+   "V2T@384": 0.9712311346863632,
+   "V2T@384:start_mean": 0.9233316240686318
+  },
+  {
+   "case": "xianyun-furina-faruzan-bennett--jkTQNFcf6GmG",
+   "stratum": "frame",
+   "A_over_L": 1.0962554398806288,
+   "V2S@192": 1.0804004819642423,
+   "V2S@192:start_mean": 1.0564398035155813,
+   "V2S@384": 1.0852622210277807,
+   "V2S@384:start_mean": 1.0585105559000658,
+   "V2T@384": 1.1135893101543848,
+   "V2T@384:start_mean": 1.0679529189422672
+  },
+  {
+   "case": "dehya-bennett-rosaria-kaeya--cCBPwNCGK9qP",
+   "stratum": "other",
+   "A_over_L": 1.1753101173475802,
+   "V2S@192": 0.990449281049159,
+   "V2S@192:start_mean": 0.9322683250225735,
+   "V2S@384": 1.0436573932837248,
+   "V2S@384:start_mean": 0.9947124776291028,
+   "V2T@384": 0.9999636439828299,
+   "V2T@384:start_mean": 0.9765722919300978
+  },
+  {
+   "case": "kinich-yaemiko-fischl-xilonen--Fqcp66H6wRq9",
+   "stratum": "frame",
+   "A_over_L": 1.1851154163083755,
+   "V2S@192": 0.9610622164360418,
+   "V2S@192:start_mean": 0.9187396384170362,
+   "V2S@384": 1.00943672408062,
+   "V2S@384:start_mean": 0.9507506555157621,
+   "V2T@384": 0.9738680243200929,
+   "V2T@384:start_mean": 0.9338601954877553
+  },
+  {
+   "case": "raidenshogun-chevreuse-mavuika-kujousara--gQGRTkcB7LWm",
+   "stratum": "frame",
+   "A_over_L": 1.112897626382432,
+   "V2S@192": 0.9688288072432752,
+   "V2S@192:start_mean": 0.951662355927438,
+   "V2S@384": 0.9692528970047217,
+   "V2S@384:start_mean": 0.9543699449345487,
+   "V2T@384": 0.9980994672007932,
+   "V2T@384:start_mean": 0.9760745606658029
+  },
+  {
+   "case": "raidenshogun-furina-yelan-citlali--c8R8zmM7tDdp",
+   "stratum": "other",
+   "A_over_L": 1.7708135864838273,
+   "V2S@192": 0.9737598393304837,
+   "V2S@192:start_mean": 0.9331048637890007,
+   "V2S@384": 1.040186838154916,
+   "V2S@384:start_mean": 0.970055894548871,
+   "V2T@384": 0.9801527640736655,
+   "V2T@384:start_mean": 0.9760068629783965
+  },
+  {
+   "case": "ganyu-shenhe-furina-escoffier--mNzjGgdChFmh",
+   "stratum": "other",
+   "A_over_L": 1.5507994510254666,
+   "V2S@192": 1.0092765440675122,
+   "V2S@192:start_mean": 0.9948683478757576,
+   "V2S@384": 1.0112604338018893,
+   "V2S@384:start_mean": 1.00614680620727,
+   "V2T@384": 1.0118093274310869,
+   "V2T@384:start_mean": 1.000457724658192
+  },
+  {
+   "case": "hutao-yelan-aino-ineffa--nKWfzCChmKbr",
+   "stratum": "other",
+   "A_over_L": 1.0743944000498515,
+   "V2S@192": 0.94629990054899,
+   "V2S@192:start_mean": 0.9414165990434714,
+   "V2S@384": 0.9630363723444991,
+   "V2S@384:start_mean": 0.9461072706363194,
+   "V2T@384": 0.9418580328394013,
+   "V2T@384:start_mean": 0.9388032607718118
+  },
+  {
+   "case": "alhaitham-furina-nahida-kukishinobu--PzrDR9zzLn9H",
+   "stratum": "frame",
+   "A_over_L": 1.1136836228754565,
+   "V2S@192": 0.9471561194874383,
+   "V2S@192:start_mean": 0.9374465552333949,
+   "V2S@384": 0.9607289307205631,
+   "V2S@384:start_mean": 0.9391026230606754,
+   "V2T@384": 0.9764801208779966,
+   "V2T@384:start_mean": 0.9559135652598535
+  }
+ ],
+ "pool": {
+  "rule": "classification rows of kind database, class informative/control, not a stage-1 or v2 case, not an alternative of flins-ineffa-columbina-sucrose / mavuika-citlali-xilonen-nicole; 'strict' also removes parties that appear among the 70 development cases (shared L)",
+  "base": {
+   "total": 133,
+   "informative": 97,
+   "control": 36,
+   "informative_by_stratum": {
+    "frame": 51,
+    "other": 46
+   },
+   "informative_A_over_L>=1.25": 63,
+   "informative_A_over_L>=2": 26,
+   "informative_A_over_L<1.25": 34
+  },
+  "strict": {
+   "total": 131,
+   "informative": 96,
+   "control": 35,
+   "informative_by_stratum": {
+    "frame": 50,
+    "other": 46
+   },
+   "informative_A_over_L>=1.25": 62,
+   "informative_A_over_L>=2": 25,
+   "informative_A_over_L<1.25": 34
+  },
+  "strict_cases": [
+   "alhaitham-nilou-xingqiu-kirara--TWKmtWP7qwNh",
+   "aratakiitto-albedo-gorou-zhongli--PzCDKn6bjhT6",
+   "aratakiitto-albedo-gorou-zhongli--r7GQDJJgkzPp",
+   "aratakiitto-gorou-zhongli-bennett--tbCbDkPd6ndC",
+   "aratakiitto-travelergeo-gorou-zhongli--c6dQCFMtJKCh",
+   "aratakiitto-travelergeo-gorou-zhongli--zRhRMFP6CRLg",
+   "arlecchino-citlali-escoffier-bennett--hk9WD9fMLpJR",
+   "arlecchino-citlali-sucrose-bennett--MN6Gr6zWDzDG",
+   "arlecchino-furina-kaedeharakazuha-bennett--PWzB7dFwcBMq",
+   "arlecchino-kaeya-xilonen-bennett--pWQjnfqmQQLL",
+   "arlecchino-rosaria-kaeya-bennett--QWRCBGLDDbNC",
+   "arlecchino-zhongli-chiori-bennett--T9gR8kNtdT7G",
+   "bennett-kaedeharakazuha-xiangling-dehya--pnkNwWQznTgz",
+   "bennett-xiangling-furina-kaedeharakazuha--NwtzKPQ7CPwc",
+   "charlotte-furina-shenhe-kaedeharakazuha--dzRdDDwTbPhJ",
+   "charlotte-xiangling-xianyun-bennett--rTCzzmJwMr8g",
+   "chasca-durin-ineffa-mona--zjrzLHGDm7gG",
+   "chasca-xilonen-furina-bennett--TzBTDHTnjzzL",
+   "clorinde-furina-xilonen-chiori--fQHPqwGcjzF7",
+   "clorinde-mavuika-ororon-chevreuse--JztbbjLkhwKn",
+   "columbina-nilou-lauma-nahida--kHdhjLRzw9Tt",
+   "cyno-furina-fischl-nahida--7QttpgtRd8zg",
+   "cyno-kaedeharakazuha-fischl-nahida--nghw7Br6TtQw",
+   "dehya-bennett-citlali-xilonen--bcrq7DBbMPtB",
+   "dehya-bennett-furina-kaedeharakazuha--BnjBwTgnP6HT",
+   "dehya-bennett-furina-xilonen--FhKP6jnfh97G",
+   "dehya-bennett-raidenshogun-chevreuse--8HbwrHWqbtkF",
+   "dehya-bennett-rosaria-citlali--tmjgqKrTWCpC",
+   "dehya-emilie-durin-nicole--mbnhDmffpLgt",
+   "eula-furina-rosaria-escoffier--z9rTPFd8GtBh",
+   "eula-raidenshogun-nahida-shenhe--M69DLfgnr7nt",
+   "eula-raidenshogun-nahida-shenhe--TcHbd9zDmDhh",
+   "fischl-kukishinobu-yelan-nahida--fbmcKGPnfGDJ",
+   "fischl-nahida-kaedeharakazuha-sucrose--CRk7TTPCCmr9",
+   "flins-fischl-columbina-nicole--B8tTztqwDgnR",
+   "flins-fischl-columbina-sucrose--crFc77PfHpCQ",
+   "flins-ineffa-aino-sucrose--Gjb9dqBQkNhp",
+   "furina-raidenshogun-mika-eula--bGrwgjfDDmRP",
+   "furina-xiangling-xianyun-yelan--rDk7m6g7CjGM",
+   "ganyu-furina-escoffier-citlali--BMQBK8wRhDWL",
+   "hutao-columbina-fischl-ineffa--HTq7rrRmh8zf",
+   "hutao-columbina-fischl-mona--wWBKQkFnFdDk",
+   "hutao-furina-fischl-mona--pdqbqgh9kFGQ",
+   "hutao-xingqiu-sucrose-thoma--9t7WBhKznhhd",
+   "hutao-xingqiu-yelan-fischl--gwwwczFcrFKg",
+   "hutao-yelan-bennett-furina--NCRNPPgkD6Mk",
+   "hutao-yelan-xingqiu-kaedeharakazuha--GhjMjQPnhgrm",
+   "hutao-yelan-xingqiu-lisa--8qTzBz8TCnbF",
+   "hutao-zhongli-yelan-fischl--JqDDRr6mkLtQ",
+   "kaedeharakazuha-faruzan-bennett-furina--BQtcFktRQRMm",
+   "kaedeharakazuha-furina-bennett-xianyun--PnrGrChJrnLc",
+   "kaedeharakazuha-furina-nahida-bennett--DndWrPt9DNRQ",
+   "kaedeharakazuha-xianyun-citlali-bennett--WNMmHnMtgMP8",
+   "kaedeharakazuha-xianyun-citlali-bennett--tmP7fFNN9wTR",
+   "kaedeharakazuha-yaemiko-fischl-baizhu--8MW6cpjwkQch",
+   "kaedeharakazuha-yaemiko-fischl-nahida--MN6777qTjHNP",
+   "kamisatoayaka-furina-shenhe-escoffier--jWbCfcR8M7QR",
+   "kamisatoayaka-kaedeharakazuha-mona-shenhe--gPBrjHNwpRGT",
+   "kamisatoayaka-sangonomiyakokomi-kaedeharakazuha-shenhe--pknGWHWGNbLq",
+   "kamisatoayaka-sangonomiyakokomi-traveleranemo-shenhe--KzdnthkJJhFH",
+   "kamisatoayaka-sangonomiyakokomi-venti-shenhe--TChhGFDHdWng",
+   "kamisatoayato-columbina-lauma-ineffa--tkD7GgpJ6wCz",
+   "kamisatoayato-furina-bennett-xilonen--7jFnMPBq6zNb",
+   "kamisatoayato-furina-kaedeharakazuha-xilonen--dMk9F9HqRMjp",
+   "kamisatoayato-nilou-nahida-baizhu--kCQMzp8whGcM",
+   "keqing-chevreuse-fischl-bennett--TFdMDHQ9g6rW",
+   "keqing-durin-nicole-chevreuse--WWK8Tr6bhBzW",
+   "keqing-furina-nahida-xilonen--hnphQtKJJNQd",
+   "keqing-nahida-furina-fischl--PCGJzJJQjjPP",
+   "kinich-emilie-durin-nicole--hGLg8BNQmKnK",
+   "kinich-mavuika-bennett-emilie--bwDcdkBN8LL7",
+   "klee-chiori-xilonen-furina--bjPhn8ppbKh9",
+   "lisa-nahida-kamisatoayato-beidou--n7BMfcTqjhFb",
+   "lyney-xiangling-kaedeharakazuha-bennett--bRrtzdr7jpGh",
+   "mavuika-chasca-citlali-bennett--PtRKrwg9m8dH",
+   "mavuika-yelan-furina-xilonen--rhWGWQLnptKc",
+   "mualani-kaedeharakazuha-xilonen-xiangling--dznPhh7MjWGD",
+   "mualani-mona-sucrose-mavuika--DjkBz9MFDTjC",
+   "mualani-mona-sucrose-mavuika--cfDJ8TCdpgGR",
+   "mualani-sucrose-travelerpyro-mona--9n7JrjBghnGw",
+   "mualani-sucrose-travelerpyro-mona--KhBLfkWFDPd7",
+   "mualani-sucrose-xilonen-xiangling--WBFzNGMR7dGj",
+   "mualani-xilonen-sucrose-mavuika--jRWpgmRPkqKD",
+   "nahida-xingqiu-yelan-raidenshogun--6zWp6LCM8B9c",
+   "nahida-xingqiu-yelan-raidenshogun--M6HRLnCf7LGr",
+   "nahida-yelan-yaoyao-raidenshogun--Tmhb8thdmMGP",
+   "navia-furina-chiori-bennett--NNzFfBLtHh7J",
+   "navia-mona-bennett-zhongli--rhdgntzBTKpW",
+   "navia-xilonen-bennett-furina--KLFtfPP6WLWB",
+   "navia-xilonen-furina-mavuika--pp8gJgfnz6Gp",
+   "neuvillette-beidou-fischl-lanyan--hKhHzkt8JHJQ",
+   "neuvillette-chiori-furina-xilonen--H8LcLCNrRPPM",
+   "neuvillette-furina-baizhu-kaedeharakazuha--GRJb7RnzKm8j",
+   "neuvillette-furina-citlali-escoffier--6nwfwkqzfHWR",
+   "neuvillette-furina-kaedeharakazuha-xilonen--QBGmBmnGHrCK",
+   "neuvillette-furina-kaedeharakazuha-xilonen--TMFtkdkpcjDG",
+   "neuvillette-furina-zhongli-kaedeharakazuha--gkCP8FNwGqtw",
+   "noelle-furina-gorou-xilonen--jwFpbrDQLc7g",
+   "raidenshogun-chevreuse-durin-nicole--BbFnWtCQ79JG",
+   "raidenshogun-furina-fischl-nahida--DRMbHJmRQwkP",
+   "raidenshogun-furina-kujousara-xilonen--6hR8LtNDdrtQ",
+   "raidenshogun-furina-kujousara-xilonen--nzH9PNLrRpzJ",
+   "raidenshogun-furina-nahida-baizhu--kkbdwKqGRpLH",
+   "raidenshogun-furina-nahida-xiangling--wwLCcjFKcdfj",
+   "raidenshogun-furina-yelan-jean--rbwkKDjP7gGk",
+   "raidenshogun-kaedeharakazuha-nahida-kujousara--7tdB8bGQwFNq",
+   "raidenshogun-kaedeharakazuha-yaoyao-kujousara--7jjpgNNHJcCP",
+   "raidenshogun-kujousara-bennett-kaedeharakazuha--GNDdpbgWr8WW",
+   "raidenshogun-kujousara-chevreuse-bennett--rPNPQF6KB8Bn",
+   "raidenshogun-xiangling-dehya-chevreuse--bwG8nQQpNC7z",
+   "raidenshogun-yaemiko-kaedeharakazuha-nahida--fFBTzKGN8Kdh",
+   "sangonomiyakokomi-nahida-nilou-travelerdendro--hc7MQmfk9kNc",
+   "sangonomiyakokomi-nilou-collei-kirara--JWpNJ8TzB9rd",
+   "sethos-nahida-fischl-xilonen--FRtpGQLNrKhN",
+   "skirk-furina-mona-escoffier--HDjJgKcgtqzf",
+   "varesa-chevreuse-durin-nicole--CghBhWfKQqgK",
+   "varesa-furina-xilonen-xianyun--fBtwMCLgF9g6",
+   "wriothesley-bennett-xiangling-xilonen--qNbB6k8HggkL",
+   "wriothesley-escoffier-xiangling-bennett--wPDhFhdKJhHG",
+   "wriothesley-furina-shenhe-escoffier--rCGPdjnjt9NL",
+   "xianyun-faruzan-durin-nicole--8nDQTqkDgKqK",
+   "xianyun-faruzan-durin-nicole--nW9RNPm7kn7L",
+   "xianyun-furina-xiangling-bennett--cBp9fPLQQpFf",
+   "xiao-faruzan-zhongli-albedo--RqLrHQfhFJ7n",
+   "xilonen-furina-yelan-kaedeharakazuha--CWB6gTBpHBPc",
+   "yaemiko-nahida-fischl-tighnari--8mtfnHG8RWtN",
+   "yelan-furina-escoffier-citlali--FTjTFjpN7fpm",
+   "yelan-furina-kaedeharakazuha-zhongli--bjnThCNLM8Cr",
+   "yelan-furina-xilonen-chiori--KkWbqJbtNwjb",
+   "yoimiya-furina-yelan-bennett--PCKCJzbrDWCT",
+   "yoimiya-yelan-furina-xilonen--LFWM8kDNzwpq"
+  ]
+ }
+}

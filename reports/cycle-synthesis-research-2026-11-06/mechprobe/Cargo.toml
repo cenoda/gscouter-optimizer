@@ -1,0 +1,11 @@
+[package]
+name = "mechprobe"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+gse = { path = "/root/.cargo/git/checkouts/gscouter-engine-48511b9bcef10589/1ba0af1/engine" }
+
+[profile.release]
+codegen-units = 16
+opt-level = 2

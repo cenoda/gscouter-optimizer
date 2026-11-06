@@ -1,0 +1,927 @@
+{
+ "jobs": [
+  {
+   "case": "raidenshogun-furina-yaemiko-xilonen--P6KGMM7fwqrG",
+   "wall_seconds": 687.030522108078,
+   "children_cpu_seconds": 2586.39,
+   "discovery_cpu": 2304.862516424002,
+   "audit_cpu": 246.76834981899995,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007862",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 40.330283027
+  },
+  {
+   "case": "arlecchino-citlali-kaedeharakazuha-bennett--qRnm9CBFdG7p",
+   "wall_seconds": 698.3537585735321,
+   "children_cpu_seconds": 2472.89,
+   "discovery_cpu": 2303.872269209001,
+   "audit_cpu": 110.04208242999991,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007851",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 14.360863871000001
+  },
+  {
+   "case": "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ",
+   "wall_seconds": 702.263082742691,
+   "children_cpu_seconds": 2484.92,
+   "discovery_cpu": 2309.822655358999,
+   "audit_cpu": 148.16100098400034,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007852",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 32.322662578
+  },
+  {
+   "case": "aratakiitto-xilonen-furina-mavuika--bkd7t7WCRqBd",
+   "wall_seconds": 750.8964848518372,
+   "children_cpu_seconds": 2563.1,
+   "discovery_cpu": 2304.327983696,
+   "audit_cpu": 227.7919799400002,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007843",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 48.34192829900001
+  },
+  {
+   "case": "noelle-furina-yelan-xilonen--cp6jwz87tHkb",
+   "wall_seconds": 686.7564599514008,
+   "children_cpu_seconds": 2582.2799999999997,
+   "discovery_cpu": 2326.340446822999,
+   "audit_cpu": 226.38143943600002,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007858",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 29.011540671000006
+  },
+  {
+   "case": "hutao-xingqiu-zhongli-yelan--fjPG7F9FpwDQ",
+   "wall_seconds": 766.0353088378906,
+   "children_cpu_seconds": 2458.8,
+   "discovery_cpu": 2312.5349339310005,
+   "audit_cpu": 104.45486631900006,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007846",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 21.882808961999995
+  },
+  {
+   "case": "varka-prune-nicole-durin--dDfWKHTKH8zK",
+   "wall_seconds": 701.6589047908783,
+   "children_cpu_seconds": 2603.6,
+   "discovery_cpu": 2304.393953649999,
+   "audit_cpu": 259.23442358,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007834",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 33.30935158300001
+  },
+  {
+   "case": "neuvillette-furina-citlali-xilonen--gLgzMjmTN8z6",
+   "wall_seconds": 683.7485680580139,
+   "children_cpu_seconds": 2564.8999999999996,
+   "discovery_cpu": 2304.1213408730005,
+   "audit_cpu": 229.08786581999985,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007825",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 32.710267265999995
+  },
+  {
+   "case": "arlecchino-bennett-citlali-xilonen--DnLT9CbL979h",
+   "wall_seconds": 681.9002418518066,
+   "children_cpu_seconds": 2522.45,
+   "discovery_cpu": 2304.5242170099987,
+   "audit_cpu": 175.35208746700013,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007842",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 23.676203376000007
+  },
+  {
+   "case": "mualani-mona-xilonen-mavuika--M8TgfHLLtqbp",
+   "wall_seconds": 706.6186122894287,
+   "children_cpu_seconds": 2502.21,
+   "discovery_cpu": 2320.497578267,
+   "audit_cpu": 159.65743629100018,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "Intel(R) Xeon(R) 6973P-C",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007832",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 29.3717557
+  },
+  {
+   "case": "chasca-furina-chevreuse-bennett--6CGDtR8WQHwq",
+   "wall_seconds": 684.3161158561707,
+   "children_cpu_seconds": 2501.37,
+   "discovery_cpu": 2304.500686217004,
+   "audit_cpu": 154.41984624099936,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007864",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 22.78942664699999
+  },
+  {
+   "case": "yoimiya-yelan-fischl-durin--hhdWBgW6Fqpf",
+   "wall_seconds": 916.3905556201935,
+   "children_cpu_seconds": 2462.44,
+   "discovery_cpu": 2310.6831185530036,
+   "audit_cpu": 112.82505090799998,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007827",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 25.545403161000007
+  },
+  {
+   "case": "kaedeharakazuha-furina-chongyun-xianyun--DrCQ7p7RghND",
+   "wall_seconds": 818.0174248218536,
+   "children_cpu_seconds": 2481.73,
+   "discovery_cpu": 2315.547651749007,
+   "audit_cpu": 145.08837173700005,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007831",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 26.046956216
+  },
+  {
+   "case": "cyno-furina-nahida-xilonen--jBkf669CgWCr",
+   "wall_seconds": 679.2553005218506,
+   "children_cpu_seconds": 2557.89,
+   "discovery_cpu": 2304.636973008,
+   "audit_cpu": 221.7879049050004,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007833",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 38.035172368
+  },
+  {
+   "case": "hutao-xilonen-furina-yelan--CC7rJ6cHHjLL",
+   "wall_seconds": 815.5151789188385,
+   "children_cpu_seconds": 3172.22,
+   "discovery_cpu": 2305.081105765001,
+   "audit_cpu": 854.7680433339997,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007838",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 151.08148266100002
+  },
+  {
+   "case": "hutao-fischl-yelan-bennett--zmJmWDr9CMM8",
+   "wall_seconds": 712.5944974422455,
+   "children_cpu_seconds": 2485.99,
+   "discovery_cpu": 2313.962054426,
+   "audit_cpu": 137.07811371000025,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007854",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 20.943137965000002
+  },
+  {
+   "case": "beidou-kamisatoayato-nahida-kukishinobu--mj99qRckDmtz",
+   "wall_seconds": 678.8300495147705,
+   "children_cpu_seconds": 2465.67,
+   "discovery_cpu": 2313.2153940029943,
+   "audit_cpu": 119.90291804500018,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007841",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 16.865281344
+  },
+  {
+   "case": "flins-fischl-aino-sucrose--BbCHM7ppcJ8w",
+   "wall_seconds": 836.3241047859192,
+   "children_cpu_seconds": 2491.09,
+   "discovery_cpu": 2304.3481681130042,
+   "audit_cpu": 144.72280450499997,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007861",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 27.754703228
+  },
+  {
+   "case": "raidenshogun-kujousara-bennett-xilonen--R6NLqzkK8Qzm",
+   "wall_seconds": 670.3389320373535,
+   "children_cpu_seconds": 2450.7000000000003,
+   "discovery_cpu": 2303.3461051080003,
+   "audit_cpu": 115.89585193299997,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007829",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 19.128915774
+  },
+  {
+   "case": "bennett-beidou-lisa-xingqiu--7pBGp67L8wnp",
+   "wall_seconds": 713.9333517551422,
+   "children_cpu_seconds": 2427.46,
+   "discovery_cpu": 2317.2911301039985,
+   "audit_cpu": 61.73606255499998,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V45 96-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007848",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 17.755789982
+  },
+  {
+   "case": "wanderer-faruzan-jean-bennett--8h9Dp9qGTfR7",
+   "wall_seconds": 682.3563332557678,
+   "children_cpu_seconds": 2480.08,
+   "discovery_cpu": 2325.276791927001,
+   "audit_cpu": 132.85400662599997,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007847",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 21.398493362999996
+  },
+  {
+   "case": "eula-furina-shenhe-escoffier--rptHHcMzkqg9",
+   "wall_seconds": 687.818724155426,
+   "children_cpu_seconds": 2456.56,
+   "discovery_cpu": 2304.3969282619973,
+   "audit_cpu": 115.93626371100041,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V45 96-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007855",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 31.398771112000002
+  },
+  {
+   "case": "aratakiitto-albedo-gorou-furina--g6wbFkjbNKLc",
+   "wall_seconds": 1047.0762858390808,
+   "children_cpu_seconds": 2446.23,
+   "discovery_cpu": 2309.0337293790003,
+   "audit_cpu": 92.64311502599998,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007830",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 16.914827514000002
+  },
+  {
+   "case": "neuvillette-columbina-lauma-ineffa--d6zqb7bmprKF",
+   "wall_seconds": 698.6704211235046,
+   "children_cpu_seconds": 2644.85,
+   "discovery_cpu": 2304.7777051599996,
+   "audit_cpu": 309.4570393710001,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007849",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 38.02545330399999
+  },
+  {
+   "case": "mavuika-chevreuse-ororon-bennett--Mw9HdnKTkBfJ",
+   "wall_seconds": 672.8355057239532,
+   "children_cpu_seconds": 2505.17,
+   "discovery_cpu": 2304.428250562999,
+   "audit_cpu": 168.87879447100016,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007836",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 24.451077369000004
+  },
+  {
+   "case": "wriothesley-kaedeharakazuha-shenhe-xilonen--bjFtkcfmqph7",
+   "wall_seconds": 679.7984352111816,
+   "children_cpu_seconds": 2481.98,
+   "discovery_cpu": 2304.0193647480014,
+   "audit_cpu": 132.81748738499954,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007860",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 16.138665852
+  },
+  {
+   "case": "yoimiya-furina-yunjin-xilonen--rk6QCLfwKJkD",
+   "wall_seconds": 898.3784778118134,
+   "children_cpu_seconds": 2478.2,
+   "discovery_cpu": 2312.073327549999,
+   "audit_cpu": 130.23293647700027,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261026.354.1",
+     "RUNNER_NAME": "GitHub Actions 1000007845",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 28.816965201000013
+  },
+  {
+   "case": "wriothesley-furina-xilonen-bennett--PFGMCrLDpbcq",
+   "wall_seconds": 685.7588157653809,
+   "children_cpu_seconds": 2470.64,
+   "discovery_cpu": 2320.2641175479957,
+   "audit_cpu": 114.818720257,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V45 96-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007828",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 29.033184615
+  },
+  {
+   "case": "raidenshogun-furina-xilonen-yelan--PhjwKhdjDwtb",
+   "wall_seconds": 690.714839220047,
+   "children_cpu_seconds": 2524.01,
+   "discovery_cpu": 2304.753847446001,
+   "audit_cpu": 197.512036025,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007826",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 36.931621827
+  },
+  {
+   "case": "xianyun-furina-faruzan-bennett--jkTQNFcf6GmG",
+   "wall_seconds": 671.2451837062836,
+   "children_cpu_seconds": 2547.5,
+   "discovery_cpu": 2322.521989445002,
+   "audit_cpu": 198.8998627880005,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007835",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 29.350899469000005
+  },
+  {
+   "case": "dehya-bennett-rosaria-kaeya--cCBPwNCGK9qP",
+   "wall_seconds": 719.0981075763702,
+   "children_cpu_seconds": 2459.17,
+   "discovery_cpu": 2320.0251382999995,
+   "audit_cpu": 100.19787457400032,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007856",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 16.529474507000003
+  },
+  {
+   "case": "kinich-yaemiko-fischl-xilonen--Fqcp66H6wRq9",
+   "wall_seconds": 669.7720251083374,
+   "children_cpu_seconds": 2505.72,
+   "discovery_cpu": 2310.610901065999,
+   "audit_cpu": 166.29959343399997,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007837",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 22.278774269000003
+  },
+  {
+   "case": "hutao-furina-columbina-ineffa--kqm-16561ddb-eae0-4ab7-a99e-7b7e4b11842c",
+   "wall_seconds": 684.9571175575256,
+   "children_cpu_seconds": 2572.79,
+   "discovery_cpu": 2303.653585111999,
+   "audit_cpu": 235.33459040200026,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007863",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 29.764145578
+  },
+  {
+   "case": "raidenshogun-chevreuse-mavuika-kujousara--gQGRTkcB7LWm",
+   "wall_seconds": 669.8347899913788,
+   "children_cpu_seconds": 2515.5,
+   "discovery_cpu": 2313.415078671001,
+   "audit_cpu": 177.81241811300004,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007839",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 24.143779682999995
+  },
+  {
+   "case": "hutao-fischl-xingqiu-bennett--bCdwKDcgWWRf",
+   "wall_seconds": 683.289057970047,
+   "children_cpu_seconds": 2490.91,
+   "discovery_cpu": 2303.9786940309987,
+   "audit_cpu": 150.7080622480002,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007857",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 22.367092364999998
+  },
+  {
+   "case": "raidenshogun-furina-yelan-citlali--c8R8zmM7tDdp",
+   "wall_seconds": 681.962856054306,
+   "children_cpu_seconds": 2471.83,
+   "discovery_cpu": 2304.4419522339986,
+   "audit_cpu": 132.644289642,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V45 96-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007859",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 35.262186691000004
+  },
+  {
+   "case": "varesa-ororon-mavuika-chevreuse--hR9DNJ7zhgL9",
+   "wall_seconds": 700.4220561981201,
+   "children_cpu_seconds": 2580.54,
+   "discovery_cpu": 2304.436929518999,
+   "audit_cpu": 250.66014238599988,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007844",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 41.385939368999985
+  },
+  {
+   "case": "ganyu-shenhe-furina-escoffier--mNzjGgdChFmh",
+   "wall_seconds": 696.3044533729553,
+   "children_cpu_seconds": 2575.2,
+   "discovery_cpu": 2304.2091011539997,
+   "audit_cpu": 230.34146254699994,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007840",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 34.026827339
+  },
+  {
+   "case": "hutao-yelan-aino-ineffa--nKWfzCChmKbr",
+   "wall_seconds": 925.275162935257,
+   "children_cpu_seconds": 2473.44,
+   "discovery_cpu": 2306.0818965909984,
+   "audit_cpu": 124.55058883099997,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007853",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 26.415140478999994
+  },
+  {
+   "case": "alhaitham-furina-nahida-kukishinobu--PzrDR9zzLn9H",
+   "wall_seconds": 690.8345293998718,
+   "children_cpu_seconds": 2570.85,
+   "discovery_cpu": 2305.837260998999,
+   "audit_cpu": 228.4476496340002,
+   "errors": 0,
+   "environment": {
+    "nproc": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "runner_image": {
+     "ImageOS": "ubuntu24",
+     "ImageVersion": "20261101.360.1",
+     "RUNNER_NAME": "GitHub Actions 1000007850",
+     "RUNNER_ARCH": "X64",
+     "GITHUB_RUN_ID": "42134765379",
+     "GITHUB_SHA": "b572cd8aade665905e7e3c881ecd8610f23879fe"
+    }
+   },
+   "measure_cpu": 31.19832914100001
+  }
+ ],
+ "totals": {
+  "discovery_cpu_seconds": 92376.146871993,
+  "audit_cpu_seconds": 7346.203433907002,
+  "job_children_cpu_seconds": 101089.27,
+  "sum_job_wall_seconds": 29127.180633306503,
+  "max_job_wall_seconds": 1047.0762858390808,
+  "local_measure_cpu_seconds": 1227.095583726,
+  "job_errors": 0,
+  "cpu_models": [
+   "AMD EPYC 7763 64-Core Processor",
+   "AMD EPYC 9V45 96-Core Processor",
+   "AMD EPYC 9V74 80-Core Processor",
+   "INTEL(R) XEON(R) PLATINUM 8573C",
+   "Intel(R) Xeon(R) 6973P-C",
+   "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz"
+  ],
+  "nproc": [
+   4
+  ],
+  "L_reproduction_failures": 0
+ },
+ "ci_run": {
+  "run_id": 42134765379,
+  "workflow": ".github/workflows/heldout-v2.yml",
+  "head_sha": "b572cd8aade665905e7e3c881ecd8610f23879fe",
+  "run_started_at": "2026-11-06T00:09:37Z",
+  "run_completed_at": "2026-11-06T00:29:16Z",
+  "build_job_seconds": 98,
+  "binaries_sha256": {
+   "gso-v1": "ffa7d7486813c5549e1f5978836cb09e0db5f82959ba49c5dbd912b9f81565b4",
+   "gso-v2": "3c9c66cb62e14c422a7dd0f00282140538d4679462758936d53be4c16057d43a"
+  }
+ },
+ "local_confirm": {
+  "wall_seconds": 340,
+  "children_cpu_seconds": 1235,
+  "machine": "4 cores, 15 GB (development container)"
+ },
+ "development_ci_run": {
+  "run_id": 42131383476,
+  "cases": 12,
+  "see": "development/accounting.json"
+ }
+}
