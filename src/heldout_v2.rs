@@ -880,7 +880,7 @@ pub fn cli(args: &[String]) -> Result<(), String> {
     }
 }
 
-#[cfg(test)]
+#[cfg(all(test, not(gso_browser)))]
 mod tests {
     use super::*;
 

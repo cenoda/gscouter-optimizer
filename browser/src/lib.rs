@@ -10,8 +10,37 @@ mod artifact;
 mod discovery;
 #[path = "../../src/heldout.rs"]
 mod heldout;
+#[path = "../../src/heldout_v2.rs"]
+mod heldout_v2;
+#[path = "../../src/synth.rs"]
+mod synth;
 #[path = "../../src/program.rs"]
 mod program;
+
+pub mod evaluate {
+    use std::path::Path;
+    use serde::Serialize;
+    pub struct Evaluator;
+    impl Evaluator {
+        pub fn config(m: &crate::artifact::Manifest, p: &crate::program::Program) -> String {
+            format!("{}{}{}", m.header(), m.build(), p.gcsl(m))
+        }
+        pub fn eval(&mut self, _m: &crate::artifact::Manifest, _p: &crate::program::Program, _seed: i64, _samples: usize) -> Result<Vec<Sample>, String> {
+            Ok(Vec::new())
+        }
+    }
+    #[derive(Clone, Debug, Default)]
+    pub struct Sample { pub frames: i32, pub dps: f64 }
+    #[derive(Clone, Debug, Default)]
+    pub struct Stats {
+        pub n: usize,
+        pub mean: f64,
+        pub se: f64,
+        pub chars: [f64; 4],
+    }
+    pub fn stats(_v: &[Sample]) -> Stats { Stats::default() }
+    pub fn atomic(_p: &Path, _v: &impl Serialize) -> Result<(), String> { Ok(()) }
+}
 
 use artifact::{Manifest, Scoring};
 use heldout::Dictionary;
@@ -51,11 +80,34 @@ fn default_scoring() -> Scoring {
     }
 }
 
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+pub enum PilotArm {
+    Baseline,
+    #[serde(rename = "2.1", alias = "v21")]
+    V21,
+    Syn,
+    Xo,
+}
+
+impl PilotArm {
+    pub fn as_str(&self) -> &'static str {
+        match self {
+            Self::Baseline => "baseline",
+            Self::V21 => "2.1",
+            Self::Syn => "syn",
+            Self::Xo => "xo",
+        }
+    }
+}
+
 #[derive(Clone, Deserialize)]
 pub struct Input {
     pub build: String,
     pub rotation: String,
     pub dictionary: Dictionary,
+    #[serde(default)]
+    pub pilot: Option<String>,
     #[serde(default = "default_seed")]
     pub seed: u64,
     /// Discovery fight attempts only. Final audit has an explicit separate cap.
@@ -167,6 +219,9 @@ pub struct Session {
     audit_selected: Option<Stats>,
     improvement: Option<Stats>,
     audit_error: Option<String>,
+    pilot_arm: PilotArm,
+    synth_ctx: Option<synth::Context>,
+    synth_spec: Option<synth::CycleSpec>,
 }
 
 impl Session {
@@ -197,6 +252,25 @@ impl Session {
         manifest.scoring = Some(input.scoring.clone());
         manifest.validate(&manifest)?;
         let baseline = Candidate::new(Program::baseline(&input.rotation, &manifest)?, &manifest)?;
+        let pilot_arm = match input.pilot.as_deref().unwrap_or("syn") {
+            "baseline" | "기존" | "v1" => PilotArm::Baseline,
+            "2.1" | "v21" | "heldout_v2" => PilotArm::V21,
+            "xo" | "crossover" => PilotArm::Xo,
+            _ => PilotArm::Syn,
+        };
+        let mut rng = Rng(input.seed);
+        let (synth_ctx, synth_spec) = if pilot_arm == PilotArm::Syn {
+            if let Ok(facts) = synth::probe(&manifest) {
+                let ctx = synth::context(facts, &input.rotation, &manifest, &input.dictionary);
+                let specs = synth::skeleton_grid(&ctx, &input.rotation, &manifest, &[0, 1, 2, 3], &mut rng);
+                let initial_spec = specs.into_iter().next();
+                (Some(ctx), initial_spec)
+            } else {
+                (None, None)
+            }
+        } else {
+            (None, None)
+        };
         let seed = SEARCH_SEED + input.seed as i64 * 1_000_000;
         let pending = Some(Block {
             kind: Kind::Initial,
@@ -210,7 +284,7 @@ impl Session {
             restart: false,
         });
         Ok(Self {
-            rng: Rng(input.seed),
+            rng,
             current: baseline.clone(),
             best: baseline.clone(),
             baseline,
@@ -229,13 +303,16 @@ impl Session {
             best_dps: None,
             generic: None,
             micro: None,
-            last_event: json!({"kind":"started","operator":"baseline"}),
+            last_event: json!({"kind":"started","operator":"baseline","pilot":pilot_arm.as_str()}),
             complete: false,
             stop_reason: None,
             audit_baseline: None,
             audit_selected: None,
             improvement: None,
             audit_error: None,
+            pilot_arm,
+            synth_ctx,
+            synth_spec,
         })
     }
 
@@ -415,24 +492,92 @@ impl Session {
             .map(|m| gse::gcsl::char_key(&m.key).unwrap())
             .collect();
         let context = self.manifest.build();
-        for _ in 0..8 {
-            if self.rng.index(100) < 25 {
-                if self.generic.as_ref().is_none_or(|(key, _)| key != raw) {
-                    self.generic = Some((raw.to_string(), p.local_neighbors(&self.manifest)));
+
+        match self.pilot_arm {
+            PilotArm::Baseline => {
+                for _ in 0..8 {
+                    if self.rng.index(100) < 25 {
+                        if self.generic.as_ref().is_none_or(|(key, _)| key != raw) {
+                            self.generic = Some((raw.to_string(), p.local_neighbors(&self.manifest)));
+                        }
+                        let list = &self.generic.as_ref().unwrap().1;
+                        if !list.is_empty() {
+                            let (program, label) = list[self.rng.index(list.len())].clone();
+                            return (program, format!("generic {label}"));
+                        }
+                    } else if let Some((source, label)) = heldout::macro_edit(
+                        raw,
+                        &self.input.dictionary,
+                        &members,
+                        &context,
+                        &mut self.rng,
+                    ) {
+                        return (p.with_source(source), label);
+                    }
                 }
-                let list = &self.generic.as_ref().unwrap().1;
-                if !list.is_empty() {
-                    let (program, label) = list[self.rng.index(list.len())].clone();
-                    return (program, format!("generic {label}"));
+            }
+            PilotArm::V21 => {
+                let proposer = heldout_v2::Proposer {
+                    dict: &self.input.dictionary,
+                    derived: &[],
+                    members: members.clone(),
+                    context: context.clone(),
+                };
+                for _ in 0..8 {
+                    if self.rng.index(100) < 20 {
+                        if self.generic.as_ref().is_none_or(|(key, _)| key != raw) {
+                            self.generic = Some((raw.to_string(), p.local_neighbors(&self.manifest)));
+                        }
+                        let list = &self.generic.as_ref().unwrap().1;
+                        if !list.is_empty() {
+                            let (program, label) = list[self.rng.index(list.len())].clone();
+                            return (program, format!("generic {label}"));
+                        }
+                    } else if let Some((source, label)) = proposer.edit(raw, &mut self.rng) {
+                        if proposer.params_allowed(raw, &source) {
+                            return (p.with_source(source), format!("v2.1 {label}"));
+                        }
+                    }
                 }
-            } else if let Some((source, label)) = heldout::macro_edit(
-                raw,
-                &self.input.dictionary,
-                &members,
-                &context,
-                &mut self.rng,
-            ) {
-                return (p.with_source(source), label);
+            }
+            PilotArm::Syn => {
+                if let (Some(spec), Some(ctx)) = (&self.synth_spec, &self.synth_ctx) {
+                    if self.rng.index(100) < 50 {
+                        if let Some((next_spec, label)) = synth::typed_proposal(spec, ctx, &mut self.rng) {
+                            let source = next_spec.source(&self.manifest);
+                            self.synth_spec = Some(next_spec);
+                            return (p.with_source(source), format!("syn {label}"));
+                        }
+                    }
+                }
+                let proposer = heldout_v2::Proposer {
+                    dict: &self.input.dictionary,
+                    derived: &[],
+                    members: members.clone(),
+                    context: context.clone(),
+                };
+                for _ in 0..8 {
+                    if let Some((source, label)) = proposer.edit(raw, &mut self.rng) {
+                        if proposer.params_allowed(raw, &source) {
+                            return (p.with_source(source), format!("syn {label}"));
+                        }
+                    }
+                }
+            }
+            PilotArm::Xo => {
+                let proposer = heldout_v2::Proposer {
+                    dict: &self.input.dictionary,
+                    derived: &[],
+                    members: members.clone(),
+                    context: context.clone(),
+                };
+                for _ in 0..8 {
+                    if let Some((source, label)) = proposer.edit(raw, &mut self.rng) {
+                        if proposer.params_allowed(raw, &source) {
+                            return (p.with_source(source), format!("xo {label}"));
+                        }
+                    }
+                }
             }
         }
         (p.clone(), "no valid edit drawn".into())
@@ -531,7 +676,7 @@ impl Session {
         };
         json!({"format":1,"phase":phase,"complete":self.complete,
             "evaluations":self.search_evaluations+self.audit_evaluations,"search_evaluations":self.search_evaluations,
-            "audit_evaluations":self.audit_evaluations,"max_evaluations":self.input.max_evaluations,
+            "pilot":self.pilot_arm.as_str(),"audit_evaluations":self.audit_evaluations,"max_evaluations":self.input.max_evaluations,
             "audit_samples":self.input.audit_samples,"decisions":self.decisions,"accepted":self.accepted,
             "promotions":self.promotions,"failed_evaluations":self.failed_evaluations,
             "failed_proposals":self.failed_proposals,"best_dps":self.best_dps,
@@ -672,6 +817,7 @@ mod tests {
         include_str!("../../reports/heldout-recovery-2026-11-05/dictionary.json");
     fn input() -> Input {
         Input {
+            pilot: None,
             build: BUILD.replace("cons=6", "cons=0"),
             rotation: ROTATION.into(),
             dictionary: serde_json::from_str(DICTIONARY).unwrap(),
@@ -735,6 +881,18 @@ mod tests {
         assert_eq!(ar["improvement"]["se"], paired(&selected, &base).se);
         assert_eq!(ar["baseline"]["n"], 16);
         assert_eq!(ar["selected"]["n"], 16);
+    }
+
+    #[test]
+    fn pilot_arms_select_and_execute() {
+        for arm in ["baseline", "2.1", "syn", "xo"] {
+            let mut inp = input();
+            inp.pilot = Some(arm.into());
+            let mut s = Session::start(inp).unwrap();
+            assert_eq!(s.pilot_arm.as_str(), arm);
+            let r = s.step().unwrap();
+            assert_eq!(r["pilot"], arm);
+        }
     }
 
     #[test]
