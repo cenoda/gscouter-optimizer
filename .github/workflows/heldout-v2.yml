@@ -31,6 +31,7 @@ jobs:
             .github/heldout-v2-rundir
             reports/heldout-recovery-v2-2026-11-05/matrix.json
             reports/heldout-recovery-v2-2026-11-05/development/matrix.json
+            reports/heldout-recovery-v2-2026-11-05/v2.1/matrix.json
           sparse-checkout-cone-mode: false
       - uses: actions/checkout@v4
         with:
