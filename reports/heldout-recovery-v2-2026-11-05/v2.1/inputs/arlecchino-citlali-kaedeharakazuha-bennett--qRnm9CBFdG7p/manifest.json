@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/arlecchino-citlali-kaedeharakazuha-bennett/alt/qRnm9CBFdG7p/build.txt": "0ad02722ddf501b562badfa17f497fc8f37c5443b8ce9af7f05b75fd17988780"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "arlecchino",
+      "cons": 1,
+      "weapon": "crimsonmoonssemblance",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "skywardblade",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "citlali",
+      "cons": 0,
+      "weapon": "thrillingtalesofdragonslayers",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "kaedeharakazuha",
+      "cons": 0,
+      "weapon": "xiphosmoonlight",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\narlecchino char lvl=90/90 cons=1 talent=10,10,10;\narlecchino add weapon=\"crimsonmoonssemblance\" refine=1 lvl=90/90;\narlecchino add set=\"fragmentofharmonicwhimsy\" count=4;\narlecchino add stats def%=0.263 def=83 hp=4780 hp%=0.057999999999999996 atk=329 atk%=0.513 er=0.156 em=42 cr=0.649 cd=1.088 pyro%=0.466;\n\nbennett char lvl=90/90 cons=6 talent=1,1,10;\nbennett add weapon=\"skywardblade\" refine=1 lvl=90/90;\nbennett add set=\"noblesseoblige\" count=4;\nbennett add stats def%=0.066 def=44 hp=4780 hp%=0.205 atk=311 atk%=0.053 er=1.082 em=61 cr=0.563 cd=0.8320000000000001 pyro%=0.466;\n\ncitlali char lvl=90/90 cons=0 talent=1,9,9;\ncitlali add weapon=\"thrillingtalesofdragonslayers\" refine=5 lvl=90/90;\ncitlali add set=\"scrolloftheheroofcindercity\" count=4;\ncitlali add stats def%=0.24 def=35 hp=5736 hp%=0.239 atk=399 atk%=0.099 er=1.204 em=554;\n\nkazuha char lvl=90/90 cons=0 talent=1,9,9;\nkazuha add weapon=\"xiphosmoonlight\" refine=5 lvl=90/90;\nkazuha add set=\"viridescentvenerer\" count=4;\nkazuha add stats def%=0.182 def=35 hp=5736 hp%=0.040999999999999995 atk=346 atk%=0.419 er=0.674 em=720.5 cr=0.062000000000000006 cd=0.132;\n"
+}

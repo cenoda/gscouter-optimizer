@@ -1,0 +1,17 @@
+{
+ "dropped_for_leakage": [
+  "fischl skill ;",
+  "fischl attack ;",
+  "fischl attack : 1 , burst ;",
+  "kinich skill ;",
+  "kinich skill [ hold = 1 ] ;",
+  "kinich burst ;",
+  "kinich attack ;",
+  "if .kinich .burst .ready { kinich burst ; }",
+  "kinich attack [ direction = .kinich .blind_spot ] ;",
+  "xilonen skill , attack : 2 ;",
+  "yaemiko skill : 3 ;",
+  "yaemiko attack ;"
+ ],
+ "sha256": "497ddc180936807b20369a8356c92d05cd95f47704bd91a22ae8b5465c6ab5c8"
+}

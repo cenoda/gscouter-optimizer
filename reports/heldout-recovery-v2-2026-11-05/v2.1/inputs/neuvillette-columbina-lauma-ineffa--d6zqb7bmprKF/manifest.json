@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/neuvillette-columbina-lauma-ineffa/alt/d6zqb7bmprKF/build.txt": "70074eb0fa94cb85b0fa2e49e6f0a0bedf41eb7938d48b367c12fa16f2ea2fbc"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "columbina",
+      "cons": 6,
+      "weapon": "nocturnescurtaincall",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "neuvillette",
+      "cons": 6,
+      "weapon": "tomeoftheeternalflow",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "ineffa",
+      "cons": 6,
+      "weapon": "fracturedhalo",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "lauma",
+      "cons": 6,
+      "weapon": "nightweaverslookingglass",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\ncolumbina char lvl=90/90 cons=6 talent=10,10,10;\ncolumbina add weapon=\"nocturnescurtaincall\" refine=5 lvl=90/90;\ncolumbina add set=\"sms\" count=4;\ncolumbina add stats hp=4780 atk=311 hp%=0.466 hp%=0.466 cr=0.311;\ncolumbina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.3968 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.1986 cd=0.7944;\n\nneuv char lvl=90/90 cons=6 talent=10,10,10;\nneuv add weapon=\"tomeoftheeternalflow\" refine=5 lvl=90/90;\nneuv add set=\"mh\" count=4;\nneuv add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cr=0.311;\nneuv add stats def%=0.124 def=39.36 hp=507.88 hp%=0.496 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.2648 cd=0.5296;\n\nineffa char lvl=90/90 cons=6 talent=10,10,10;\nineffa add weapon=\"fracturedhalo\" refine=5 lvl=90/90;\nineffa add set=\"aubadeofmorningstarandmoon\" count=5;\nineffa add stats hp=4780 atk=311 atk%=0.466 atk%=0.466 cr=0.311;\nineffa add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nlauma char lvl=90/90 cons=6 talent=10,10,10;\nlauma add weapon=\"nightweaverslookingglass\" refine=5 lvl=90/90;\nlauma add set=\"deepwoodmemories\" count=4;\nlauma add stats hp=4780 atk=311 em=187 em=187 em=187;\nlauma add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.1102 em=118.92 cr=0.3972 cd=0.5296;\n"
+}

@@ -311,12 +311,15 @@ def job(args):
             futures.append(pool.submit(guarded, run_caps, v2, "V2T", seed, two, CONT_CAPS,
                                        ["--heldout-v2", "--algorithm", "anneal", "--second-pass-from", SECOND_PASS_FROM]))
 
+    arms = args.arms.split(",")
     with flock:
         for seed in STARTS:
-            futures.append(pool.submit(guarded, v2_chain, seed))
+            if "V2" in arms:
+                futures.append(pool.submit(guarded, v2_chain, seed))
         for seed in STARTS:
-            futures.append(pool.submit(guarded, run_caps, v1, "V1", seed, out / "V1" / str(seed), V1_CAPS,
-                                       ["--algorithm", "greedy"]))
+            if "V1" in arms:
+                futures.append(pool.submit(guarded, run_caps, v1, "V1", seed, out / "V1" / str(seed), V1_CAPS,
+                                           ["--algorithm", "greedy"]))
     done = 0
     while True:
         with flock:
@@ -337,7 +340,7 @@ def job(args):
             f.unlink()
         for f in d.glob("worker-*"):
             f.unlink() if f.is_file() else shutil.rmtree(f)
-    write(out / "job.json", {"case": args.case, "environment": environment(), "workers": args.workers,
+    write(out / "job.json", {"case": args.case, "arms": arms, "environment": environment(), "workers": args.workers,
                              "wall_seconds": time.time() - started,
                              "children_cpu_seconds": (t1.children_user + t1.children_system) - (t0.children_user + t0.children_system),
                              "searches": stats, "errors": errors,
@@ -362,6 +365,30 @@ def materialize(args):
     print("materialized", args.case)
 
 
+def v21export(args):
+    """Labeled post-unblinding run v2.1: the frozen draw's inputs with the v2.1
+    dictionary (v2 plus library parameter triples); same drop lists."""
+    src, dest = OUT / "inputs", OUT / "v2.1" / "inputs"
+    order = load(OUT / "matrix.json")
+    for c in order:
+        (dest / c).mkdir(parents=True, exist_ok=True)
+        for f in ["manifest.json", "L.gcsl", "build.txt", "drops-v1.json"]:
+            shutil.copyfile(src / c / f, dest / c / f)
+        drops = load(src / c / "drops-v2.json")
+        tmp = RUNS / "v21" / c / "dictionary-v2.json"
+        tmp.parent.mkdir(parents=True, exist_ok=True)
+        write(tmp.parent / "drops.json", drops)
+        p = call([BIN(args), "dictionary-v2", "drop", "--dictionary", RUNS / "dictionary-v21.json",
+                  "--drops", tmp.parent / "drops.json", "--out", tmp])
+        assert p.returncode == 0, p.stderr
+        write(dest / c / "drops-v2.json", {"dropped_for_leakage": drops["dropped_for_leakage"], "sha256": sha(tmp)})
+    shutil.copyfile(src / "dictionary-v1.json", dest / "dictionary-v1.json")
+    shutil.copyfile(RUNS / "dictionary-v21.json", dest / "dictionary-v2.json")
+    write(OUT / "v2.1" / "matrix.json", order)
+    (OUT / "v2.1" / "arms").write_text("V2\n")
+    print("v2.1 inputs", len(order))
+
+
 def dev(args):
     """Development: a stage-1 case (already analysed with A) through `job`."""
     case = args.case
@@ -377,7 +404,7 @@ def dev(args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("phase", choices=["filter", "draw", "devexport", "job", "materialize", "dev", "confirm", "report"])
+    parser.add_argument("phase", choices=["filter", "draw", "devexport", "v21export", "job", "materialize", "dev", "confirm", "report"])
     parser.add_argument("--cases", nargs="*", default=[])
     parser.add_argument("--case", default="")
     parser.add_argument("--inputs", default="")
@@ -388,6 +415,7 @@ def main():
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--scale", type=float, default=1.0)
     parser.add_argument("--draw", default="")
+    parser.add_argument("--arms", default="V1,V2")
     parser.add_argument("--report-dir", default="")
     parser.add_argument("--v1-bin", default=str(ROOT / "target-v1/release/gso"))
     parser.add_argument("--v2-bin", default=str(ROOT / "target/release/gso"))
@@ -396,7 +424,7 @@ def main():
         import heldout_v2_report
         getattr(heldout_v2_report, args.phase)(args)
         return
-    {"filter": filter_, "draw": draw, "devexport": devexport, "job": job, "materialize": materialize, "dev": dev}[args.phase](args)
+    {"filter": filter_, "draw": draw, "devexport": devexport, "v21export": v21export, "job": job, "materialize": materialize, "dev": dev}[args.phase](args)
 
 
 if __name__ == "__main__":

@@ -43,6 +43,10 @@ pub struct Dictionary {
     /// when empty so format-1 files serialize exactly as in stage 1.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub templates: Vec<Block>,
+    /// v2.1 only: every "character action key" parameter triple used in the
+    /// library rotations. Proposals may not introduce other triples.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub param_keys: Vec<String>,
 }
 
 pub(crate) fn tokens(raw: &str) -> Vec<gse::gcsl::Token> {
@@ -272,6 +276,7 @@ impl Dictionary {
             blocks,
             dropped_for_leakage: Vec::new(),
             templates: Vec::new(),
+            param_keys: Vec::new(),
         }
     }
 

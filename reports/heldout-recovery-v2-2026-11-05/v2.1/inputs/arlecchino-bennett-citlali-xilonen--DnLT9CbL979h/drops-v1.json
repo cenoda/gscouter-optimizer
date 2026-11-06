@@ -1,0 +1,17 @@
+{
+ "dropped_for_leakage": [
+  "arlecchino skill ;",
+  "arlecchino attack : 3 ;",
+  "arlecchino charge ;",
+  "arlecchino attack : 3 , dash ;",
+  "arlecchino charge [ early_cancel = 1 ] , dash ;",
+  "arlecchino burst ;",
+  "arlecchino dash ;",
+  "arlecchino swap ;",
+  "if .arlecchino .weapon == .keys .weapon .crimsonmoonssemblance { arlecchino charge ; }",
+  "bennett skill , burst ;",
+  "citlali skill , attack ;",
+  "xilonen skill , attack : 2 ;"
+ ],
+ "sha256": "ee6a934db47b03cdf6e71afccd5e388b98cb057d21f0d97ab3f66021be417579"
+}

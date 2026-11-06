@@ -277,3 +277,32 @@ the situations exist):
    the repository for pool alternative ids after a first, uncommitted draw
    contained the Mavuika one; that draw was discarded before any search and
    the draw below is rerun with the same seed.
+
+## Amendment 2 (2026-11-06, after the v2 held-out results): labeled run v2.1
+
+**Post-unblinding.** Written after the v2 held-out results and the gcsim
+parity check were seen. It does not change the v2 run, its readings or its
+report; v2.1 is a separate labeled run on the same 40 cases, reported next to
+v2.
+
+Reason (from the parity check, not from r): gcsim refuses 6 of v2's selected
+programs at parse time (for example "character escoffier: key hold is invalid
+for action skill", "key bounce is invalid"), and 30 of the 120 v2 selections
+(V2S@192, V2S@384, V2T@384) contain an action parameter that no library
+rotation uses for that character and action. Templates and owner
+reassignment carry parameters from one character to another; the native
+engine ignores unknown keys, gcsim does not.
+
+Change (one rule, character-agnostic, declared before v2.1 runs): the v2.1
+dictionary also lists every `character action key` parameter triple in the
+4,570 main library rotations (174 triples). A proposal may not introduce a
+triple that is neither in that list nor already in its parent program. Nothing
+else changes (same draw, seeds, caps, budgets, selection rule, metrics and
+reading tables).
+
+Arms: V2S and V2T only, with the v2.1 code, one runner job per case (6
+search chains per job instead of 9, so per-job load differs from the v2 run).
+V1 is not rerun. Readings per arm use the section-7 table. The V2T-vs-V2S
+comparison within v2.1 is paired and same-runner. Comparisons of v2.1 with
+V1 or with v2 mix runner jobs on possibly different hardware (all budgets are
+CPU-capped) and are descriptive only.

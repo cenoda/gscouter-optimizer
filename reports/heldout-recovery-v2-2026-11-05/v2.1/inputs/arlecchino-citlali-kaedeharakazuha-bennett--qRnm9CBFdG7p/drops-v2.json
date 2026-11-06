@@ -1,0 +1,7 @@
+{
+ "dropped_for_leakage": [
+  "arlecchino charge [ early_cancel = 1 ] , dash ;",
+  "arlecchino dash ;"
+ ],
+ "sha256": "302515585739f33dc53ef6d816ccbf91cc73f5444871bbd1045b7eb48bdbc21e"
+}

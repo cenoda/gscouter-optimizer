@@ -238,6 +238,7 @@ pub fn build(source: &str, rotations: &[(String, String)]) -> Dictionary {
         blocks,
         dropped_for_leakage: Vec::new(),
         templates,
+        param_keys: Vec::new(),
     }
 }
 
@@ -501,6 +502,44 @@ fn pick_weighted<'a>(blocks: &[&'a Block], rng: &mut Rng) -> &'a Block {
     blocks[blocks.len() - 1]
 }
 
+/// "character action key" triples of every action parameter in a rotation.
+pub fn param_triples(raw: &str) -> BTreeSet<String> {
+    let t = tokens(raw);
+    let mut out = BTreeSet::new();
+    for s in statements(&t) {
+        for (a, b) in actions(&t, s.start, s.end) {
+            if t[a].typ != Tok::ActionKey {
+                continue;
+            }
+            let mut depth = 0;
+            for k in a + 1..=b {
+                match t[k].typ {
+                    Tok::LeftSquareParen => depth += 1,
+                    Tok::RightSquareParen => depth -= 1,
+                    Tok::Identifier
+                        if depth == 1 && t.get(k + 1).is_some_and(|n| n.typ == Tok::Assign) =>
+                    {
+                        out.insert(format!("{} {} {}", owner_name(s.owner), t[a].val, t[k].val));
+                    }
+                    _ => {}
+                }
+            }
+        }
+    }
+    out
+}
+
+/// v2.1: the library's parameter triples (built from the same rotations).
+pub fn library_params(rotations: &[(String, String)]) -> Vec<String> {
+    let mut all = BTreeSet::new();
+    for (_, raw) in rotations {
+        if !gse::gcsl::lex(raw).iter().any(|t| t.typ == Tok::Error) {
+            all.extend(param_triples(raw));
+        }
+    }
+    all.into_iter().collect()
+}
+
 /// The v2 macro proposer for one case.
 pub struct Proposer<'a> {
     pub dict: &'a Dictionary,
@@ -510,6 +549,18 @@ pub struct Proposer<'a> {
 }
 
 impl Proposer<'_> {
+    /// v2.1 (when the dictionary carries `param_keys`): every parameter
+    /// triple of `child` is a library triple or already in `parent`.
+    pub fn params_allowed(&self, parent: &str, child: &str) -> bool {
+        if self.dict.param_keys.is_empty() {
+            return true;
+        }
+        let old = param_triples(parent);
+        param_triples(child)
+            .iter()
+            .all(|p| old.contains(p) || self.dict.param_keys.binary_search(p).is_ok())
+    }
+
     fn vocabulary(&self, t: &[Token], owner: u16) -> Vec<String> {
         let mut v: BTreeSet<String> = BASIC_ACTIONS.iter().map(|s| s.to_string()).collect();
         for s in statements(t).iter().filter(|s| s.owner == owner) {
@@ -683,6 +734,7 @@ impl Proposer<'_> {
         let source = changed.join(" ");
         if source == text.join(" ")
             || adds_assumptions(raw, &source)
+            || !self.params_allowed(raw, &source)
             || !parses(&self.context, &source)
         {
             return None;
@@ -764,10 +816,11 @@ pub fn cli(args: &[String]) -> Result<(), String> {
                 let (name, path) = line.split_once('\t').ok_or("list: NAME<TAB>PATH")?;
                 rotations.push((name.to_string(), read(path)?));
             }
-            write(
-                &arg(args, "--out")?,
-                &build(&arg(args, "--source")?, &rotations),
-            )
+            let mut d = build(&arg(args, "--source")?, &rotations);
+            if args.iter().any(|a| a == "--param-keys") {
+                d.param_keys = library_params(&rotations);
+            }
+            write(&arg(args, "--out")?, &d)
         }
         ("dictionary-v2", Some("filter")) => {
             let d = load(&arg(args, "--dictionary")?)?;
@@ -798,14 +851,32 @@ pub fn cli(args: &[String]) -> Result<(), String> {
             // Full engine/gcsim config of a rotation on a manifest (parity checks).
             let m = crate::artifact::Manifest::load(&arg(args, "--manifest")?)?;
             let p = crate::program::Program::baseline(&read(&arg(args, "--rotation")?)?, &m)?;
-            std::fs::write(arg(args, "--out")?, crate::evaluate::Evaluator::config(&m, &p))
-                .map_err(|e| e.to_string())
+            std::fs::write(
+                arg(args, "--out")?,
+                crate::evaluate::Evaluator::config(&m, &p),
+            )
+            .map_err(|e| e.to_string())
+        }
+        ("param-check", _) => {
+            // Parameter triples of a rotation that the library never uses.
+            let d = load(&arg(args, "--dictionary")?)?;
+            let unseen: Vec<String> = param_triples(&read(&arg(args, "--rotation")?)?)
+                .into_iter()
+                .filter(|p| d.param_keys.binary_search(p).is_err())
+                .collect();
+            println!(
+                "{}",
+                serde_json::to_string(&unseen).map_err(|e| e.to_string())?
+            );
+            Ok(())
         }
         ("strip-assumptions", _) => {
             let raw = read(&arg(args, "--rotation")?)?;
             std::fs::write(arg(args, "--out")?, strip(&raw)).map_err(|e| e.to_string())
         }
-        _ => Err("dictionary-v2 build|filter|drop | strip-assumptions | config".into()),
+        _ => {
+            Err("dictionary-v2 build|filter|drop | strip-assumptions | config | param-check".into())
+        }
     }
 }
 
@@ -958,6 +1029,34 @@ mod tests {
         }
         assert!(delete_unit(&raw, n, &m.build()).is_none());
         assert!(similarity(&raw, &raw) == 1.0);
+        // v2.1: parameter triples outside the library are rejected.
+        let mut d21 = d.clone();
+        d21.param_keys = library_params(&rotations);
+        assert!(d21.param_keys.contains(&"bennett skill hold".to_string()));
+        let p21 = Proposer {
+            dict: &d21,
+            derived: &derived,
+            members: prop.members.clone(),
+            context: m.build(),
+        };
+        assert!(p21.params_allowed(&raw, &raw));
+        assert!(!p21.params_allowed(
+            &raw,
+            &raw.replace(
+                "xiangling skill [ hold = 1 ]",
+                "xiangling skill [ travel = 1 ]"
+            )
+        ));
+        for _ in 0..500 {
+            if let Some((s, _)) = p21.edit(&raw, &mut rng) {
+                let base = param_triples(&raw);
+                assert!(
+                    param_triples(&s)
+                        .iter()
+                        .all(|t| base.contains(t) || d21.param_keys.contains(t))
+                );
+            }
+        }
         let counter = "active bennett; while 1 { bennett skill[counter=1], attack:3; }";
         assert!(
             micro(counter, &m.build())

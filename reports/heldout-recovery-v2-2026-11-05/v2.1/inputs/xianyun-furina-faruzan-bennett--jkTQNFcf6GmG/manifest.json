@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/xianyun-furina-faruzan-bennett/alt/jkTQNFcf6GmG/build.txt": "7bd58beefebc274dee65045d3b10f836502190d013dedb0f2ba79c1d5600f6ce"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "xianyun",
+      "cons": 1,
+      "weapon": "flowingpurity",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 0,
+      "weapon": "favoniussword",
+      "refinement": 3,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "faruzan",
+      "cons": 6,
+      "weapon": "favoniuswarbow",
+      "refinement": 4,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "bennett",
+      "cons": 6,
+      "weapon": "thealleyflash",
+      "refinement": 1,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\nxianyun char lvl=90/90 cons=1 talent=9,9,9;\nxianyun add weapon=\"flowingpurity\" refine=5 lvl=90/90;\nxianyun add set=\"mh\" count=4;\nxianyun add stats hp=4780 atk=311 atk%=0.466 anemo%=0.466 cd=0.622;\nxianyun add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.2755 em=39.64 cr=0.3972 cd=0.5958;\n\nfurina char lvl=90/90 cons=0 talent=9,9,9;\nfurina add weapon=\"favsword\" refine=3 lvl=90/90;\nfurina add set=\"tom\" count=4;\nfurina add stats hp=4780 atk=311 hp%=0.466 hydro%=0.466 cd=0.622;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.2976 atk=33.08 atk%=0.0992 er=0.4408 em=39.64 cr=0.3972 cd=0.1324;\n\nfaruzan char lvl=90/90 cons=6 talent=9,9,9;\nfaruzan add weapon=\"favbow\" refine=4 lvl=90/90;\nfaruzan add set=\"scroll\" count=4;\nfaruzan add stats hp=4780 atk=311 er=0.518 anemo%=0.466 cr=0.311;\nfaruzan add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.248 er=0.1102 em=39.64 cr=0.331 cd=0.7282;\n\nbennett char lvl=90/90 cons=6 talent=9,9,9;\nbennett add weapon=\"alleyflash\" refine=1 lvl=90/90;\nbennett add set=\"noblesse\" count=4;\nbennett add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311;\nbennett add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.551 em=39.64 cr=0.1986 cd=0.662;\n"
+}

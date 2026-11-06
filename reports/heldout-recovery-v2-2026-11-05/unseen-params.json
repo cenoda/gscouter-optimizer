@@ -1,0 +1,140 @@
+{
+ "raidenshogun-furina-yaemiko-xilonen--P6KGMM7fwqrG": {
+  "V2S@384": [
+   "yaemiko skill short_hold"
+  ]
+ },
+ "mualani-candace-sucrose-xiangling--WDNJCKpjFNqQ": {
+  "V2S@192": [
+   "sucrose skill hold"
+  ],
+  "V2S@384": [
+   "sucrose skill hold",
+   "xiangling burst prestack",
+   "xiangling skill travel"
+  ]
+ },
+ "aratakiitto-xilonen-furina-mavuika--bkd7t7WCRqBd": {
+  "V2S@192": [
+   "mavuika walk f"
+  ],
+  "V2S@384": [
+   "mavuika walk f"
+  ]
+ },
+ "mualani-mona-xilonen-mavuika--M8TgfHLLtqbp": {
+  "V2T@384": [
+   "xilonen walk f"
+  ]
+ },
+ "kaedeharakazuha-furina-chongyun-xianyun--DrCQ7p7RghND": {
+  "V2S@192": [
+   "kaedeharakazuha walk f"
+  ],
+  "V2S@384": [
+   "kaedeharakazuha walk f"
+  ],
+  "V2T@384": [
+   "kaedeharakazuha skill bounce",
+   "kaedeharakazuha skill mine"
+  ]
+ },
+ "hutao-xilonen-furina-yelan--CC7rJ6cHHjLL": {
+  "V2S@192": [
+   "yelan walk f"
+  ],
+  "V2T@384": [
+   "yelan walk f"
+  ]
+ },
+ "flins-fischl-aino-sucrose--BbCHM7ppcJ8w": {
+  "V2S@192": [
+   "aino skill hold"
+  ]
+ },
+ "raidenshogun-kujousara-bennett-xilonen--R6NLqzkK8Qzm": {
+  "V2S@384": [
+   "raidenshogun skill hold"
+  ],
+  "V2T@384": [
+   "raidenshogun skill hold"
+  ]
+ },
+ "eula-furina-shenhe-escoffier--rptHHcMzkqg9": {
+  "V2S@192": [
+   "escoffier skill hold"
+  ],
+  "V2S@384": [
+   "escoffier skill hold"
+  ],
+  "V2T@384": [
+   "escoffier skill hold"
+  ]
+ },
+ "wriothesley-furina-xilonen-bennett--PFGMCrLDpbcq": {
+  "V2S@384": [
+   "wriothesley attack direction",
+   "wriothesley skill hold",
+   "xilonen low_plunge collision"
+  ]
+ },
+ "xianyun-furina-faruzan-bennett--jkTQNFcf6GmG": {
+  "V2S@192": [
+   "faruzan skill hold"
+  ],
+  "V2S@384": [
+   "faruzan skill hold"
+  ]
+ },
+ "dehya-bennett-rosaria-kaeya--cCBPwNCGK9qP": {
+  "V2S@384": [
+   "rosaria low_plunge collision"
+  ]
+ },
+ "kinich-yaemiko-fischl-xilonen--Fqcp66H6wRq9": {
+  "V2S@192": [
+   "fischl skill hold",
+   "yaemiko skill hold"
+  ],
+  "V2S@384": [
+   "yaemiko skill hold"
+  ]
+ },
+ "raidenshogun-chevreuse-mavuika-kujousara--gQGRTkcB7LWm": {
+  "V2S@384": [
+   "raidenshogun low_plunge collision"
+  ],
+  "V2T@384": [
+   "raidenshogun low_plunge collision"
+  ]
+ },
+ "raidenshogun-furina-yelan-citlali--c8R8zmM7tDdp": {
+  "V2T@384": [
+   "furina skill bounce",
+   "furina skill mine"
+  ]
+ },
+ "varesa-ororon-mavuika-chevreuse--hR9DNJ7zhgL9": {
+  "V2T@384": [
+   "ororon skill hold",
+   "varesa skill hold"
+  ]
+ },
+ "ganyu-shenhe-furina-escoffier--mNzjGgdChFmh": {
+  "V2T@384": [
+   "shenhe skill bounce",
+   "shenhe skill mine"
+  ]
+ },
+ "hutao-yelan-aino-ineffa--nKWfzCChmKbr": {
+  "V2S@384": [
+   "hutao skill hold",
+   "yelan skill bounce",
+   "yelan skill mine"
+  ],
+  "V2T@384": [
+   "ineffa skill bounce",
+   "ineffa skill mine"
+  ]
+ }
+}

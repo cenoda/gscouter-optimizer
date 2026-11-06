@@ -1,0 +1,10 @@
+{
+ "dropped_for_leakage": [
+  "faruzan skill , aim [ weakspot = 1 ] , burst ;",
+  "while ! .jean .mods .favonius-cd { jean attack ; }",
+  "while .wanderer .skydweller-points > 3 { if .wanderer .normal < 3 { wanderer attack ; } else if .wanderer .mods .wanderer-a4 { wanderer dash ; } else if .wanderer .skydweller-points > 2 { wanderer charge ; } else { wanderer attack ; } }",
+  "while .$SELF .skydweller-points > 3 { if .$SELF .normal < 3 { $SELF attack ; } else if .$SELF .mods .wanderer-a4 { $SELF dash ; } else if .$SELF .skydweller-points > 2 { $SELF charge ; } else { $SELF attack ; } }",
+  "if .$SELF .burst .ready { $SELF attack : 2 , burst ; }"
+ ],
+ "sha256": "2869f2cadaa83851c4ddd92f9b7566133eff4c193b43f276c62c062d55efbe72"
+}

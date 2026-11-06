@@ -1,0 +1,52 @@
+{
+  "format": 2,
+  "engine": "1ba0af119e0477d6f44ee966a78fa06d84d2c5de",
+  "site_commit": "6e0e8220563a5a6941a1e037b362349243719efd",
+  "sources": {
+    "teams/eula-furina-shenhe-escoffier/alt/rptHHcMzkqg9/build.txt": "2dce4dc4b1b11cef72c07f2bb92ebb498e99d5d296f71c92518d9e740cb09f53"
+  },
+  "max_rolls": {},
+  "members": [
+    {
+      "key": "eula",
+      "cons": 6,
+      "weapon": "songofbrokenpines",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "furina",
+      "cons": 6,
+      "weapon": "splendoroftranquilwaters",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "shenhe",
+      "cons": 6,
+      "weapon": "favoniuslance",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    },
+    {
+      "key": "escoffier",
+      "cons": 6,
+      "weapon": "symphonistofscents",
+      "refinement": 5,
+      "set": "",
+      "useful": [],
+      "weights": {},
+      "pieces": []
+    }
+  ],
+  "fixed_build": "# Build from the source config, used to validate the rotation.\n\neula char lvl=90/90 cons=6 talent=10,10,10;\neula add weapon=\"sobp\" refine=5 lvl=90/90;\neula add set=\"mh\" count=4;\neula add stats hp=4780 atk=311 atk%=0.466 phys%=0.583 cd=0.622;\neula add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.0992 er=0.3306 em=39.64 cr=0.3972 cd=0.5296;\n\nfurina char lvl=90/90 cons=6 talent=10,10,10;\nfurina add weapon=\"splendoroftranquilwaters\" refine=5 lvl=90/90;\nfurina add set=\"tom\" count=4;\nfurina add stats hp=4780 atk=311 hp%=0.466 er=0.518 cr=0.311;\nfurina add stats def%=0.124 def=39.36 hp=507.88 hp%=0.1984 atk=33.08 atk%=0.0992 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n\nshenhe char lvl=90/90 cons=6 talent=10,10,10;\nshenhe add weapon=\"favlance\" refine=5 lvl=90/90;\nshenhe add set=\"no\" count=4;\nshenhe add stats hp=4780 atk=311 er=0.518 atk%=0.466 cr=0.311;\nshenhe add stats def%=0.124 def=39.36 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.496 er=0.1102 em=39.64 cr=0.331 cd=0.3972;\n\nescoffier char lvl=90/90 cons=6 talent=10,10,10;\nescoffier add weapon=\"symphonistofscents\" refine=5 lvl=90/90;\nescoffier add set=\"gt\" count=4;\nescoffier add stats hp=4780 atk=311 atk%=0.466 cryo%=0.466 cr=0.311;\nescoffier add stats def=39.36 def%=0.124 hp=507.88 hp%=0.0992 atk=33.08 atk%=0.1984 er=0.1102 em=39.64 cr=0.331 cd=0.7944;\n"
+}

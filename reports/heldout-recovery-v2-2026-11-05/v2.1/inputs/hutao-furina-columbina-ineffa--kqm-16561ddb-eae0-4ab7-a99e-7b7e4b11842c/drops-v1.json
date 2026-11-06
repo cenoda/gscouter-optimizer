@@ -1,0 +1,12 @@
+{
+ "dropped_for_leakage": [
+  "columbina skill ;",
+  "columbina burst ;",
+  "if .columbina .burst .ready { columbina burst ; }",
+  "furina skill , burst ;",
+  "hutao attack , burst ;",
+  "ineffa skill , burst ;",
+  "ineffa attack , skill ;"
+ ],
+ "sha256": "95892f31157a4811b82a2f62a0c612b35c5fe25a1101bfe162b893e385239874"
+}

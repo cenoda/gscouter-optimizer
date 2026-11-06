@@ -1,0 +1,13 @@
+{
+ "dropped_for_leakage": [
+  "cyno skill ;",
+  "cyno attack ;",
+  "cyno dash ;",
+  "cyno skill , burst ;",
+  "furina skill , dash , attack ;",
+  "furina burst , attack : 2 ;",
+  "nahida skill , burst , attack , charge ;",
+  "xilonen skill , attack : 2 ;"
+ ],
+ "sha256": "9ac1cabe908b06270f09e08477237335431718a1aeeb56cd1a132818e4a3ece4"
+}

@@ -1,0 +1,7 @@
+{
+ "dropped_for_leakage": [
+  "beidou skill [ counter = 2 ] , burst ;",
+  "beidou skill [ counter = 2 ] , attack ;"
+ ],
+ "sha256": "581951bac1f456b88720d187f6bda99d8693c41b1322b912fd83e4091757a177"
+}
